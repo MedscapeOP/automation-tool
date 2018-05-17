@@ -9,6 +9,7 @@
   "author": "Brandon Antonelli",
   "license": "ISC",
   "dependencies": {
+    "lodash": "^4.17.10",
     "xml2js": "^0.4.19"
   }
 }
