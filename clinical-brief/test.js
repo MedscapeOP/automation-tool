@@ -7,7 +7,6 @@ Main algorithm
     - get starting index of chunk using indexOf()
     - get ending index 
     - get substrings using indeces 
-    - 
 */
 var fs = require('fs');
 var _ = require("lodash");
@@ -15,6 +14,8 @@ var _ = require("lodash");
 var prodTicket = fs.readFileSync(__dirname + '/article.html', 'utf8');
 
 function cleanHTML(string) {
+    // Case for empty formatting tags 
+    // 
     var str = string.replace(/\(Insert.*\)/, "").replace(/<{1}[^<>]{1,}>{1}/g," ");
     return str; 
 }
@@ -28,6 +29,7 @@ function getClinicalContext(ticket) {
     var endIndex = ticket.indexOf("<strong>Study Synopsis");
     var mainBlock = ticket.substring(startIndex, endIndex);
     mainBlock = _.split(cleanHTML(mainBlock).replace("Clinical Context", ""), /\n/);
+
     _.remove(mainBlock, function (n) {
         if (n.length > 10) {
             return false;
