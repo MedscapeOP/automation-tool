@@ -15,7 +15,6 @@ var prodTicket = fs.readFileSync(__dirname + '/article.html', 'utf8');
 
 function cleanHTML(string) {
     // Case for empty formatting tags 
-    // 
     var str = string.replace(/\(Insert.*\)/, "").replace(/<{1}[^<>]{1,}>{1}/g," ");
     return str; 
 }
