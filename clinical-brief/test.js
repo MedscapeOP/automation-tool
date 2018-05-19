@@ -7,6 +7,10 @@ Main algorithm
     - Clinical Context 
     - Synopsis and Perspective
     - Study Highlights
+- Grabbing pieces of the prod ticket 
+    - get starting index of chunk using indexOf()
+    - get ending index 
+    - get substrings using indeces 
     - Clinical Implications
 */
 var fs = require('fs');
@@ -16,6 +20,7 @@ var xml2js = require('xml2js');
 var prodTicket = fs.readFileSync(__dirname + '/article.html', 'utf8');
 
 function cleanHTML(string) {
+    // Case for empty formatting tags 
     var str = string.replace(/\(Insert.*\)/, "").replace(/<{1}[^<>]{1,}>{1}/g," ");
     return str; 
 }
@@ -41,6 +46,7 @@ function getClinicalContext(ticket) {
     var endIndex = ticket.indexOf("<strong>Study Synopsis");
     var mainBlock = ticket.substring(startIndex, endIndex);
     mainBlock = _.split(cleanHTML(mainBlock).replace("Clinical Context", ""), /\n/);
+
     _.remove(mainBlock, function (n) {
         if (n.length > 10) {
             return false;

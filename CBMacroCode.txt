@@ -3,14 +3,18 @@ SET !EXTRACT_TEST_POPUP NO
 TAB T=1
 SET !VAR0 {{!CLIPBOARD}}
 
+// Clipboard == Var0 
+// iMacro has built in var 1 - 10 (var 0 being the clipboard)
+// 
 
-
+// Get rid of tags first 
 SET !VAR0 EVAL("var s=\"{{!VAR0}}\"; s.replace(/<\Sp>/g,\"\");")
 SET !VAR0 EVAL("var s=\"{{!VAR0}}\"; s.replace(/<p>&#8226;\t*/g,\"<li>\");")
 SET !VAR0 EVAL("var s=\"{{!VAR0}}\"; s.replace(/<p><strong>/g,\"</li></ul><p><strong>\");")
 SET !VAR0 EVAL("var s=\"{{!VAR0}}\"; s.replace(/<a\sname.*<\Sa>/g,\"\");")
 SET !VAR0 EVAL("var s=\"{{!VAR0}}\"; s.replace(/<sup>/g,\"<sup type=ref>\");")
 
+// Grab cleaned chunks of text 
 SET !VAR1 EVAL("var s=\"{{!VAR0}}\"; s=s.match(/Clinical Context[^]+Synopsis and Perspective/i);")
 SET !VAR2 EVAL("var s=\"{{!VAR0}}\"; s=s.match(/Synopsis and Perspective[^]+Study Highlights/i);")
 SET !VAR3 EVAL("var s=\"{{!VAR0}}\"; s=s.match(/Study Highlights[^]+Clinical Implications/i);")
