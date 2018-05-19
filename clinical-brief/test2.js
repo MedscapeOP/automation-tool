@@ -11,7 +11,11 @@ Main algorithm
     - get starting index of chunk using indexOf()
     - get ending index 
     - get substrings using indeces 
-    - Clinical Implications
+    - clean the html 
+    - wrap the html 
+    - turn string into JS object 
+    - Take JS object and turn into xml
+    - Take xml and write to file. 
 */
 var fs = require('fs');
 var _ = require("lodash");
