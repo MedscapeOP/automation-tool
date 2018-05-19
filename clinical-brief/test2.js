@@ -15,7 +15,7 @@ Main algorithm
 */
 var fs = require('fs');
 var _ = require("lodash");
-var utils = require("./utils");
+var utils = require("./utils2");
 
 var prodTicket = fs.readFileSync(__dirname + '/article.html', 'utf8');
 
@@ -26,8 +26,8 @@ function getSynopsisAndPerspective(ticket) {
     var endIndex = ticket.indexOf("<strong>Study Highlights");
     // xml2js needs 1 root node 
     // To handle this wrapper is used around the main result string. 
-    var mainBlock = "<wrapper>" + "<p>" + ticket.substring(startIndex, endIndex - 3) + "</wrapper>";
-    return utils.getJSONFromXMLString(mainBlock);
+    var mainBlock = "<wrapper><p>" + ticket.substring(startIndex, endIndex - 3) + "</wrapper>";
+    return utils.xmlStringToJS(mainBlock);
 }
 
 
@@ -42,16 +42,17 @@ function getClinicalContext(ticket) {
     var startIndex = ticket.indexOf("<strong>Clinical Context</strong>");
     var endIndex = ticket.indexOf("<strong>Study Synopsis");
     var mainBlock = ticket.substring(startIndex, endIndex);
-    mainBlock = _.split(utils.cleanHTML(mainBlock).replace("Clinical Context", ""), /\n/);
-
-    _.remove(mainBlock, function (n) {
-        if (n.length > 10) {
-            return false;
-        } else {
-            return true;
-        }
-    });
-    return mainBlock; 
+    mainBlock = "<wrapper>" + utils.cleanHTML(mainBlock) + "</p></wrapper>";
+    // mainBlock = _.split(utils.cleanHTML(mainBlock).replace("Clinical Context", ""), /\n/);
+    // _.remove(mainBlock, function (n) {
+    //     if (n.length > 10) {
+    //         return false;
+    //     } else {
+    //         return true;
+    //     }
+    // });
+    return mainBlock;
+    // return utils.xmlStringToJS(mainBlock); 
 }
 
 function buildClinicalContext(ccArray) {
@@ -64,17 +65,15 @@ function buildClinicalContext(ccArray) {
     return element;
 }
 
+
 var clinicalContextArray = getClinicalContext(prodTicket);
 var synopsisAndPerspective = getSynopsisAndPerspective(prodTicket);
 
+console.log(clinicalContextArray);
 
-// fs.writeFileSync(__dirname + '/article2.json', JSON.stringify(buildClinicalContext(clinicalContextArray)));
+// fs.writeFileSync(__dirname + '/article2.json', JSON.stringify((clinicalContextArray)));
 
-synopsisAndPerspective.then(function (result) {
-    // console.log(JSON.stringify(result, undefined, 2));
-    // fs.writeFileSync(__dirname + '/article2.json', JSON.stringify(result));
-    utils.writeXMLFromObject(result, __dirname + "/", "article2.xml");
-}).catch(function (error){
-    console.log(error);
-});
 // fs.writeFileSync(__dirname + '/article2.html', synopsisAndPerspective);
+
+// console.log(synopsisAndPerspective);
+// utils.writeXMLFromObject(synopsisAndPerspective, __dirname + "/article2.xml");
