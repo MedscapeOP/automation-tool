@@ -22,11 +22,13 @@ var prodTicket = fs.readFileSync(__dirname + '/article.html', 'utf8');
 /* STUDY SYNOPSIS AND PERSPECTIVE  
 -------------------------------------- */
 function getSynopsisAndPerspective(ticket) {
-    var startIndex = ticket.indexOf("<strong>Study Synopsis and Perspective</strong>");
-    var endIndex = ticket.indexOf("<strong>Study Highlights");
+    var startIndex = ticket.indexOf("Study Synopsis and Perspective");
+    var endIndex = ticket.indexOf("Study Highlights");
+    var mainBlock = ticket.substring(startIndex, endIndex);
+    mainBlock = mainBlock.replace('Study Synopsis and Perspective','');
+    mainBlock = "<subsec_content>" + utils.cleanHTML(mainBlock) + "</subsec_content>";
     // xml2js needs 1 root node 
-    // To handle this wrapper is used around the main result string. 
-    var mainBlock = "<wrapper><p>" + ticket.substring(startIndex, endIndex - 3) + "</wrapper>";
+    // To handle this, subsec_content is used around the main result string as wrapper.     
     return utils.xmlStringToJS(mainBlock);
 }
 
@@ -39,20 +41,12 @@ function getClinicalContext(ticket) {
     // ticket.replace(/<\Sp>\\n.*<p><tt>o\t<\Stt>/g, "</li><li>");
     // ticket.replace(/<p><tt>o\t<\Stt>/g,"<ul><li>");
     // ticket.replace(/<S+>&nbsp;<\S\S+>/g,"");
-    var startIndex = ticket.indexOf("<strong>Clinical Context</strong>");
-    var endIndex = ticket.indexOf("<strong>Study Synopsis");
+    var startIndex = ticket.indexOf("Clinical Context");
+    var endIndex = ticket.indexOf("Study Synopsis");
     var mainBlock = ticket.substring(startIndex, endIndex);
-    mainBlock = "<wrapper>" + utils.cleanHTML(mainBlock) + "</p></wrapper>";
-    // mainBlock = _.split(utils.cleanHTML(mainBlock).replace("Clinical Context", ""), /\n/);
-    // _.remove(mainBlock, function (n) {
-    //     if (n.length > 10) {
-    //         return false;
-    //     } else {
-    //         return true;
-    //     }
-    // });
-    return mainBlock;
-    // return utils.xmlStringToJS(mainBlock); 
+    mainBlock = mainBlock.replace('Clinical Context','');
+    mainBlock = "<subsec_content>" + utils.cleanHTML(mainBlock) + "</subsec_content>";
+    return utils.xmlStringToJS(mainBlock); 
 }
 
 function buildClinicalContext(ccArray) {
@@ -66,14 +60,14 @@ function buildClinicalContext(ccArray) {
 }
 
 
-var clinicalContextArray = getClinicalContext(prodTicket);
+var clinicalContext = getClinicalContext(prodTicket);
 var synopsisAndPerspective = getSynopsisAndPerspective(prodTicket);
 
-console.log(clinicalContextArray);
+// console.log(clinicalContext);
 
-// fs.writeFileSync(__dirname + '/article2.json', JSON.stringify((clinicalContextArray)));
+// fs.writeFileSync(__dirname + '/article2.json', JSON.stringify((clinicalContext)));
 
-// fs.writeFileSync(__dirname + '/article2.html', synopsisAndPerspective);
+// fs.writeFileSync(__dirname + '/article2.html', clinicalContext);
 
 // console.log(synopsisAndPerspective);
-// utils.writeXMLFromObject(synopsisAndPerspective, __dirname + "/article2.xml");
+utils.writeXMLFromObject(clinicalContext, __dirname + "/article2.xml");
