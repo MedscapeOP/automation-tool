@@ -3,14 +3,15 @@ Main algorithm
 - read in string file of prodticket
     - write functions to grab each important piece of the ticket.
     
-- Grabbing pieces of the prod ticket 
-    - get starting index of chunk using indexOf()
-    - get ending index 
-    - get substrings using indeces 
-    - 
+- Pieces to grab from the prod ticket
+    - Clinical Context 
+    - Synopsis and Perspective
+    - Study Highlights
+    - Clinical Implications
 */
 var fs = require('fs');
 var _ = require("lodash");
+var xml2js = require('xml2js');
 
 var prodTicket = fs.readFileSync(__dirname + '/article.html', 'utf8');
 
@@ -19,6 +20,18 @@ function cleanHTML(string) {
     return str; 
 }
 
+/* STUDY SYNOPSIS AND PERSPECTIVE  
+-------------------------------------- */
+function getSynopsisAndPerspective(ticket) {
+    var startIndex = ticket.indexOf("<strong>Study Synopsis and Perspective</strong>");
+    var endIndex = ticket.indexOf("<strong>Study Highlights");
+    var mainBlock = ticket.substring(startIndex, endIndex);
+    return mainBlock;
+}
+
+
+/* CLINICAL CONTEXT 
+-------------------------------------- */
 function getClinicalContext(ticket) {
     // ticket.replace(/<\Sp>\\n.*<\Sli>/g, "</li>\\n</ul>");
     // ticket.replace(/<\Sp>\\n.*<p><tt>o\t<\Stt>/g, "</li><li>");
@@ -49,6 +62,8 @@ function buildClinicalContext(ccArray) {
 }
 
 var clinicalContextArray = getClinicalContext(prodTicket);
+var synopsisAndPerspective = getSynopsisAndPerspective(prodTicket);
 // console.log(clinicalContextArray);
 
-fs.writeFileSync(__dirname + '/article2.html', JSON.stringify(buildClinicalContext(clinicalContextArray)));
+// fs.writeFileSync(__dirname + '/article2.json', JSON.stringify(buildClinicalContext(clinicalContextArray)));
+fs.writeFileSync(__dirname + '/article2.html', synopsisAndPerspective);
