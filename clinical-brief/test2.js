@@ -2,12 +2,13 @@
 Main algorithm 
 - read in string file of prodticket
     - write functions to grab each important piece of the ticket.
-    
+    - plug in content programmatically via JS object properties. 
 - Pieces to grab from the prod ticket
-    - Clinical Context 
-    - Synopsis and Perspective
+    - Clinical Context (DONE **** )
+    - Synopsis and Perspective (DONE **** )
     - Study Highlights
-- Grabbing pieces of the prod ticket 
+    - Clinical Implications 
+- Grabbing pieces of the prod ticket (DONE **** )
     - get starting index of chunk using indexOf()
     - get ending index 
     - get substrings using indeces 
@@ -17,13 +18,13 @@ Main algorithm
     - Take JS object and turn into xml
     - Take xml and write to file. 
 - Build Final Prod Ticket 
-    - Create one master function
-    - Call factory function to generate TOC element 
+    - Create one master function (TODO) 
+    - Call factory function to generate TOC element (DONE **** ) 
     - This function calls other functions that build each 
-      section/subsection 
+      section/subsection (DONE **** )
         - Take the result of each of these sections/subsections and 
-          push them onto the TOC element array. 
-        - This way they go on into the correct order. 
+          push them onto the TOC element array. (DONE **** ) 
+        - This way they go on into the correct order. (DONE **** )
 */
 var fs = require('fs');
 var _ = require("lodash");
