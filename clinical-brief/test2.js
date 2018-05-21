@@ -16,6 +16,14 @@ Main algorithm
     - turn string into JS object 
     - Take JS object and turn into xml
     - Take xml and write to file. 
+- Build Final Prod Ticket 
+    - Create one master function
+    - Call factory function to generate TOC element 
+    - This function calls other functions that build each 
+      section/subsection 
+        - Take the result of each of these sections/subsections and 
+          push them onto the TOC element array. 
+        - This way they go on into the correct order. 
 */
 var fs = require('fs');
 var _ = require("lodash");
@@ -31,6 +39,7 @@ function getSynopsisAndPerspective(ticket) {
     var mainBlock = ticket.substring(startIndex, endIndex);
     mainBlock = mainBlock.replace('Study Synopsis and Perspective','');
     mainBlock = "<subsec_content>" + utils.cleanHTML(mainBlock) + "</subsec_content>";
+    // mainBlock = utils.cleanHTML(mainBlock);
     // xml2js needs 1 root node 
     // To handle this, subsec_content is used around the main result string as wrapper.     
     return utils.xmlStringToJS(mainBlock);
@@ -74,4 +83,20 @@ var synopsisAndPerspective = getSynopsisAndPerspective(prodTicket);
 // fs.writeFileSync(__dirname + '/article2.html', clinicalContext);
 
 // console.log(synopsisAndPerspective);
-utils.writeXMLFromObject(clinicalContext, __dirname + "/article2.xml");
+// utils.writeXMLFromObject(clinicalContext, __dirname + "/article2.xml");
+
+
+var SectionElement = require("../classes/sec_element");
+var TOCElement = require("../classes/toc_element");
+
+var secInstance = new SectionElement("My Section Header");
+var tocInstance = new TOCElement("", "Default");
+
+tocInstance.insertSectionElement(secInstance.toObjectLiteral().elements[0]);
+tocInstance.tocLabel = "My TOC Build";
+tocInstance.tocType = "Sidebar";
+
+console.log(tocInstance.toObjectLiteral().elements[0]);
+
+utils.writeXMLFromObject(tocInstance.toObjectLiteral(), __dirname + "/tocElementBuild.xml");
+
