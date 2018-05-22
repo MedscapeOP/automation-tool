@@ -1,0 +1,68 @@
+COMMAND LINE XML AUTOMATION TOOL   
+
+---------------------- OVERVIEW
+- For many job processes there are repetitive tasks that require 
+  significant usage of an online CMS. However, this current approach 
+  decreases productivity due to the overhead of using a web application. 
+  Every time we add content we have to save our work, which requires HTTP requests
+  to the server, or even a page reload. This added bottleneck takes time, and slows 
+  down overall productivity. In other words, coder workflow can be 
+  greatly enhanced by simply having an offline tool to generate CCE in 
+  the form of XML, which can then be input into the CMS in 1 go.
+    
+
+
+---------------------- GENERATING XML - Workflow/Thought Process
+
+1) Analyze the Prod ticket
+    - Also convert prodticket to text/html file (using R2Net) 
+2) Identify main sections that need to be isolated/cleaned
+    2a) Write functions to isolate those parts of the prod ticket string. 
+3) After isolating a string section, run an appropriate HTML cleaning/parsing function. 
+    - example usage: 
+        utils.cleanHTML(<htmlString>)
+4) Turn parsed/cleaned string into JS object 
+    - example usage: 
+        utils.xmlStringToJS(<string>);
+5) Insert the JS object into the proper construct (TOCelement, SectionElement, etc.)
+    - example usage:        
+        var secInstance = new SectionElement("My Section Header");
+        var tocInstance = new TOCElement("", "Default");
+        tocInstance.insertSectionElement(secInstance.toObjectLiteral());
+6) Write fully constructed JS object to XML file 
+    - example usage: 
+        utils.writeXMLFromObject(tocInstance.toObjectLiteral(), "<pathToFile>");
+7) Then simply copy the contents of the new file and replace it in D2. 
+
+
+
+---------------------- TOOLS USED (AS OF 5/22/18) 
+1) NodeJS 
+    - Main runtime for non-browser/native JavaScript application
+    - Will make use of various built-in Node Apis, most notably the 'fs' 
+      library which allows reading in data from files and writing to files
+2) NPM (Node package manager) 
+    - Built in NodeJS dependency management tool 
+    - Allows installation and usage of 3rd-party packages 
+      for added functionality     
+3) NPM packages:      
+    a) Lodash (version: "^4.17.10"): https://lodash.com/
+        - Library that provides utilities to operate on arrays, objects, strings, enumerables, etc.
+    b) Sanitize-HTML (version: "^1.18.2"): https://www.npmjs.com/package/sanitize-html
+        - This package utilizes an HTML parser to allow cleaning up HTML 
+        files via various built-in configurations and also via custom filter functions.
+    c) XML-JS (version: "^1.6.3"): https://www.npmjs.com/package/xml-js
+        - XML parser that converts to and from XML to JavaScript Objects/JSON
+    d) Vorpal (version: "^1.12.0"): http://vorpal.js.org/
+        - Framework used to create the interactive CLI
+4) Git SCM  
+    - A source code management tool used via the command line / terminal 
+
+
+
+---------------------- USEFUL LINKS 
+https://stackoverflow.com/questions/43729591/gulp-whats-the-easiest-way-to-take-in-xml-files-count-how-many-of-a-certain-e
+
+
+
+

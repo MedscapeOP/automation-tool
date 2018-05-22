@@ -58,20 +58,21 @@ function getClinicalContext(ticket) {
     var startIndex = ticket.indexOf("Clinical Context");
     var endIndex = ticket.indexOf("Study Synopsis");
     var mainBlock = ticket.substring(startIndex, endIndex);
+    var mainLabel = mainBlock.match("Clinical Context");
     mainBlock = mainBlock.replace('Clinical Context','');
     mainBlock = "<subsec_content>" + utils.cleanHTML(mainBlock) + "</subsec_content>";
     return utils.xmlStringToJS(mainBlock); 
 }
 
-function buildClinicalContext(ccArray) {
-    var element = [];
-    var p;
-    for (var i = 0; i < ccArray.length; i++) {
-        p = {"p": [ccArray[i]]};
-        element.push(p);
-    }
-    return element;
-}
+// function buildClinicalContext(ccArray) {
+//     var element = [];
+//     var p;
+//     for (var i = 0; i < ccArray.length; i++) {
+//         p = {"p": [ccArray[i]]};
+//         element.push(p);
+//     }
+//     return element;
+// }
 
 
 var clinicalContext = getClinicalContext(prodTicket);
@@ -84,7 +85,7 @@ var synopsisAndPerspective = getSynopsisAndPerspective(prodTicket);
 // fs.writeFileSync(__dirname + '/article2.html', clinicalContext);
 
 // console.log(synopsisAndPerspective);
-// utils.writeXMLFromObject(clinicalContext, __dirname + "/article2.xml");
+utils.writeXMLFromObject(clinicalContext, __dirname + "/article2.xml");
 
 
 var SectionElement = require("../classes/sec_element");
@@ -93,11 +94,13 @@ var TOCElement = require("../classes/toc_element");
 var secInstance = new SectionElement("My Section Header");
 var tocInstance = new TOCElement("", "Default");
 
+
+
 tocInstance.insertSectionElement(secInstance.toObjectLiteral().elements[0]);
-tocInstance.tocLabel = "My TOC Build";
+
+tocInstance.tocLabel = "My TOC Build2";
 tocInstance.tocType = "Sidebar";
 
 console.log(tocInstance.toObjectLiteral().elements[0]);
 
 utils.writeXMLFromObject(tocInstance.toObjectLiteral(), __dirname + "/tocElementBuild.xml");
-
