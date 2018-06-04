@@ -4,7 +4,7 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha tests/**/*.test.js"
   },
   "author": "Brandon Antonelli",
   "license": "ISC",
@@ -17,6 +17,9 @@
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "chai": "^4.1.2",
+    "chai-things": "^0.2.0",
+    "mocha": "^5.2.0",
+    "tap": "^12.0.1"
   }
 }

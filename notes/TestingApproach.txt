@@ -1,0 +1,25 @@
+---------------------- BDD Approach   
+CREATING TEST SUITES: 
+    1) Create folder with same name of module you wish to test inside of /tests directory. 
+    2) Inside of this folder create a file using the following convention: "module-name.test.js"
+        - This file will be targeted by the main npm test script located in package.json 
+    3) Be sure to include any resource files that are required for the tests inside of the tests/module-name/ directory. 
+        - Typically you would use an /input folder for files to be read in. As well as  an /output folder for files output
+        - *** When writing tests don't forget to require dependencies appropriately.
+    4) Be sure to use describe blocks to wrap all module-level behavior
+        - Example: 
+        describe("clinical brief", function () {
+            describe("someFunction()", function () {
+                it("should do something", function () {
+                    ...
+                });
+            });
+        })
+        - This makes reading test results far easier. 
+    5) For assertions we use the "chai" npm library 
+        - Typically we will use the "expect" approach 
+        - Common uses of this library are to test equality of objects or complex values 
+            - .to.deep.equal() --> good use for comparing object properties 
+                - Doesn't do strict equality, only looks at the object properties 
+                  and sees if they match.  
+
