@@ -1,15 +1,26 @@
 var fs = require('fs');
 var utils = require('../utils/utils');
 
-var result = utils.xmlFileToJS(__dirname + '/tocElementBuild.xml');
+// var result = utils.xmlFileToJS(__dirname + '/tocElementBuild.xml');
+//     // result.prof_article.title = [{"p": ["Some new Title I PUT."]}]
+//     // var newXmlFile = builder.buildObject(result);
+// fs.writeFile(__dirname + "/tocElementBuild.json", JSON.stringify(result), function(err) {
+//     if(err) {
+//         return console.log(err);
+//     }
+//     console.log("The new file was created!");
+// }); 
+
+var result = utils.xmlFileToJS(__dirname + '/article.xml');
     // result.prof_article.title = [{"p": ["Some new Title I PUT."]}]
     // var newXmlFile = builder.buildObject(result);
-fs.writeFile(__dirname + "/tocElementBuild.json", JSON.stringify(result), function(err) {
+fs.writeFile(__dirname + "/article.js", JSON.stringify(result), function(err) {
     if(err) {
         return console.log(err);
     }
     console.log("The new file was created!");
 }); 
+
 
 /* 
 FOR SLIDES: Make this a master util function that is used within different programs. 

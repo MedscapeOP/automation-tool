@@ -1,0 +1,31 @@
+TODO:
+  1) Create Test suite for SubsectionElement 
+  2) Implement SubsectionElement methods and properties 
+  3) Update insert...() logic to call toObjectLiteral() for you so you can just pass the element instances directly.
+    - Do this for TOCElement and SectionElement. 
+
+- Constructor should:
+    - Take in parameters for main fields 
+        - Example: TOC parameters 
+            - TOC Label 
+            - TOC type 
+    - Establish main _elements array 
+        - This property is a private representation of the 
+          classes' child elements 
+        - New child elements will be pushed onto this array 
+            - Need different implementations for inserting 
+              content onto this array. 
+- Getters and Setters: (Computed properties)
+    - To avoid having to drill down just to manually set data 
+      classes should implement getters and setters to encapsulate 
+      this logic. 
+        - This reduces need of developer to have to know the 
+          object structure in order to implement new solutions. 
+- insert...() 
+    - Classes should implement various insert() methods to insert 
+    child JS objects into its own _elements array
+- toObjectLiteral(): 
+    - This is the main API for producing object literals that 
+      are formatted for xml conversion. 
+    - Basically after building out the object in JS you 
+      call this method when ready to convert to XML. 
