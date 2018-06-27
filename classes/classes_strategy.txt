@@ -1,6 +1,6 @@
 TODO:
-  1) Create Test suite for SubsectionElement 
-  2) Implement SubsectionElement methods and properties 
+  1) Create Test suite for SubsectionElement - DONE 
+  2) Implement SubsectionElement methods and properties - DONE  
   3) Update insert...() logic to call toObjectLiteral() for you so you can just pass the element instances directly.
     - Do this for TOCElement and SectionElement. 
 

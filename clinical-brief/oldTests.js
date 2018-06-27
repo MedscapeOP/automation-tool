@@ -1,5 +1,6 @@
-var clinicalContext = clinicalBrief.getClinicalContext(prodTicket);
-var synopsisAndPerspective = clinicalBrief.getSynopsisAndPerspective(prodTicket);
+require('../utils');
+// var clinicalContext = clinicalBrief.getClinicalContext(prodTicket);
+// var synopsisAndPerspective = clinicalBrief.getSynopsisAndPerspective(prodTicket);
 
 // console.log(clinicalContext);
 
@@ -19,7 +20,7 @@ var tocInstance = new TOCElement("", "Default");
 
 
 
-tocInstance.insertSectionElement(secInstance.toObjectLiteral().elements[0]);
+tocInstance.insertSectionElement(secInstance);
 
 tocInstance.tocLabel = "My TOC Build2";
 tocInstance.tocType = "Sidebar";

@@ -58,7 +58,7 @@ class TOCElement {
         /* 
             - Pushes the new section element onto the elements array of the TocElement
         */
-        this._elements.push(secElement);
+        this._elements.push(secElement.toObjectLiteral().elements[0]);
     }
 
     toObjectLiteral() {

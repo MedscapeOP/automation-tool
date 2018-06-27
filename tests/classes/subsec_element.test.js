@@ -1,7 +1,7 @@
 const SubsectionElement = require("../../classes/subsec_element");
 const fs = require('fs');
 const _ = require("lodash");
-const utils = require("../../utils/utils");
+const utils = require("../../utils");
 const expect = require('chai').expect;
 
 

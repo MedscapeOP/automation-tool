@@ -40,7 +40,7 @@ class SectionElement {
         /* 
             - Pushes the new subsec_element onto the elements array of the section
         */
-        this._elements.push(subsecElement);
+        this._elements.push(subsecElement.toObjectLiteral().elements[0]);
     }
 
     toObjectLiteral() {

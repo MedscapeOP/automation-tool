@@ -1,5 +1,5 @@
 var fs = require('fs');
-var utils = require('../utils/utils');
+var utils = require('../utils');
 
 // var result = utils.xmlFileToJS(__dirname + '/tocElementBuild.xml');
 //     // result.prof_article.title = [{"p": ["Some new Title I PUT."]}]

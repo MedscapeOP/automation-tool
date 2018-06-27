@@ -61,7 +61,6 @@ class SubsectionElement {
             - Pushes the new subsec_element onto the elements array of the section
         */
        var content = subsectionContent.elements[0];
-
        this._elements.push(content);
     }
 

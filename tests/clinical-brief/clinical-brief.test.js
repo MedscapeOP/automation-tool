@@ -1,6 +1,6 @@
 var fs = require('fs');
 var _ = require("lodash");
-var utils = require("../../utils/utils");
+var utils = require("../../utils");
 var clinicalBrief = require("../../clinical-brief/clinical-brief");
 var expect = require('chai').expect;
 
