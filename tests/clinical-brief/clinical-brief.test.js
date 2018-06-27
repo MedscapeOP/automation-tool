@@ -23,24 +23,33 @@ describe('Clinical Brief', function () {
     beforeEach(function() {
         prodTicket = fs.readFileSync(__dirname + '/input/article.html', 'utf8');
         completeClinicalContext = require('./input/clinical-context');
-        // completeStudySynopsis = require('./input/study-synopsis');
+        completeStudySynopsis = require('./input/study-synopsis');
         // completeStudyHighlights = require('./input/study-highlights');
         // completeClinicalImplications = require('./input/clinical-implications');
     });
     
     describe('#getClinicalContext()', function () {
         it('should return clinical context as JavaScript object', function () {
-            var result = clinicalBrief.getClinicalContext(prodTicket);
-            expect(result).to.deep.equal(completeClinicalContext);
+            var result = clinicalBrief.getClinicalContext(prodTicket).toObjectLiteral().elements[0];
+            // fs.writeFileSync(
+            //     __dirname + "/output/clinical-context.json", 
+            //     JSON.stringify(result, undefined, 2), 
+            //     function(err) {
+            //         if(err) {
+            //             return console.log(err);
+            //         }
+            //     }
+            // ); 
+            expect(utils.trimObjectText(result)).to.deep.equal(utils.trimObjectText(completeClinicalContext));
         });
     });
     
-    describe('#getClinicalContext()', function () {
-      it('should return clinical context as JavaScript object', function () {
-          var result = clinicalBrief.getClinicalContext(prodTicket);
-          expect(result).to.deep.equal(completeClinicalContext);
-      });
-  });
+    // describe('#getSynopsisAndPerspective()', function () {
+    //   it('should return synopsis and perspective as JavaScript object', function () {
+    //       var result = clinicalBrief.getSynopsisAndPerspective(prodTicket);
+    //       expect(utils.trimObjectText(result)).to.deep.equal(utils.trimObjectText(completeStudySynopsis));
+    //   });
+    // });
 
 });
 

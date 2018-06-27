@@ -559,12 +559,7 @@
                                         {
                                             "type": "element",
                                             "name": "qna_form",
-                                            "elements": [
-                                                {
-                                                    "type": "text",
-                                                    "text": "3"
-                                                }
-                                            ]
+                                            "elements": []
                                         }
                                     ]
                                 }

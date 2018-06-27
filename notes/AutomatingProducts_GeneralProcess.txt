@@ -28,10 +28,10 @@ COMMAND LINE XML AUTOMATION TOOL
     - example usage:        
         var secInstance = new SectionElement("My Section Header");
         var tocInstance = new TOCElement("", "Default");
-        tocInstance.insertSectionElement(secInstance.toObjectLiteral());
+        tocInstance.insertSectionElement(secInstance);
 6) Write fully constructed JS object to XML file 
     - example usage: 
-        utils.writeXMLFromObject(tocInstance.toObjectLiteral(), "<pathToFile>");
+        utils.writeXMLFromObject(tocInstance, "<pathToFile>");
 7) Then simply copy the contents of the new file and replace it in D2. 
 
 

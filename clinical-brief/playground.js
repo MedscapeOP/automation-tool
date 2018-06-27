@@ -1,4 +1,17 @@
 require('../utils');
+
+// OLD WAY TO BUILD JS OBJECT
+// function buildClinicalContext(ccArray) {
+//     var element = [];
+//     var p;
+//     for (var i = 0; i < ccArray.length; i++) {
+//         p = {"p": [ccArray[i]]};
+//         element.push(p);
+//     }
+//     return element;
+// }
+
+
 // var clinicalContext = clinicalBrief.getClinicalContext(prodTicket);
 // var synopsisAndPerspective = clinicalBrief.getSynopsisAndPerspective(prodTicket);
 
