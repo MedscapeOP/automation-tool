@@ -1,39 +1,23 @@
-var _ = require("lodash");
+const _ = require("lodash");
+const XMLElement = require("./xml_element");
 
-class SectionElement {
-    constructor(sectionHeader) {
-        this._elements = [
-            {
-                "type": "element",
-                "name": "sec_header",
-                "elements": [
-                    {
-                        "type": "element",
-                        "name": "p",
-                        "elements": [
-                            {
-                                "type": "text",
-                                "text": sectionHeader
-                            }
-                        ]
-                    }
-                ]
-            }
-        ];
-        // _elements ==> starts with [label, type]
-        // _elements ==> over time push(newElements)
-    }
-
-    get elements() {       
-        return this._elements;
+class SectionElement extends XMLElement {
+    constructor() {
+        super("sec_element", false, false);
+        this._sectionHeader = {
+            "type": "element",
+            "name": "sec_header",
+            "elements": []
+        };
+        this._elements[0] = this._sectionHeader;
     }
 
     get sectionHeader() {
-        return this._elements[0].elements[0].elements[0].text;
+        this.getParagraphTextField("_sectionHeader");
     }
 
     set sectionHeader(newHeader) {
-        this._elements[0].elements[0].elements[0].text = newHeader;
+        this.setParagraphTextField("_sectionHeader", newHeader);
     }
 
     insertSubsectionElement(subsecElement) {
@@ -41,28 +25,6 @@ class SectionElement {
             - Pushes the new subsec_element onto the elements array of the section
         */
         this._elements.push(subsecElement.toObjectLiteral().elements[0]);
-    }
-
-    toObjectLiteral() {
-        var selfElements = this.elements;
-        var object = {
-            elements: [
-                {
-                    type: "element",
-                    name: "sec_element",
-                    elements: selfElements
-                }    
-            ]
-        }        
-        return object;
-        /*
-            USES: 
-            - This will be the go to API for producing objects that 
-              are formatted and ready to be converted to xml
-            - At highest level (article object): 
-                we will also need to inject TOC elements using this method 
-                —> tocInstance.toObjectLiteral().elements[0];            
-        */
     }
 }
 

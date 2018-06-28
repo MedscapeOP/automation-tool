@@ -1,59 +1,25 @@
-var _ = require("lodash");
+const _ = require("lodash");
+const XMLElement = require("./xml_element");
 
-class SubsectionElement {
-    constructor(subsectionHeader) {
-        this._elements = [
-            {
-                "type": "element",
-                "name": "subsec_header",
-                "elements": [
-                    {
-                        "type": "element",
-                        "name": "p",
-                        "elements": [
-                            {
-                                "type": "text",
-                                "text": subsectionHeader
-                            }
-                        ]
-                    }
-                ]
-            }
-        ];
-        this._qnaForm = {
+class SubsectionElement extends XMLElement {
+    constructor() {
+        super("subsec_element", true, false);
+        this._subsectionHeader = {
             "type": "element",
-            "name": "qna_form",
+            "name": "subsec_header",
             "elements": []
-        }
+        };
+        this._elements[0] = this._subsectionHeader;
         // _elements ==> starts with [subsec_header]
         // _elements ==> after instantiation push(subsectionContent)
     }
 
-    get elements() {                
-        return _.concat(this._elements, this._qnaForm);
-    }
-
     get subsectionHeader() {
-        return this._elements[0].elements[0].elements[0].text;
+        this.getParagraphTextField("_subsectionHeader");
     }
 
     set subsectionHeader(newHeader) {
-        this._elements[0].elements[0].elements[0].text = newHeader;
-    }
-
-    get qnaForm() {
-        return this._qnaForm.elements[0].text || "";
-    }
-
-    set qnaForm(newFormNumber) {
-        if (this._qnaForm.elements[0]) {
-            this._qnaForm.elements[0].text = newFormNumber;
-        } else {
-            this._qnaForm.elements[0] = {
-                "type": "text",
-                "text": "" + newFormNumber
-            }
-        }
+        this.setParagraphTextField("_subsectionHeader", newHeader);
     }
 
     insertSubsectionContent(subsectionContent) {
@@ -62,20 +28,6 @@ class SubsectionElement {
         */
        var content = subsectionContent.elements[0];
        this._elements.push(content);
-    }
-
-    toObjectLiteral() {
-        var selfElements = this.elements;
-        var object = {
-            elements: [
-                {
-                    type: "element",
-                    name: "subsec_element",
-                    elements: selfElements
-                }    
-            ]
-        }        
-        return object;
     }
 }
 

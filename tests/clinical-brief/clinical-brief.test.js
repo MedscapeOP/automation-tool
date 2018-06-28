@@ -33,7 +33,7 @@ describe('Clinical Brief', function () {
             var result = clinicalBrief.getClinicalContext(prodTicket).toObjectLiteral().elements[0];
             // fs.writeFileSync(
             //     __dirname + "/output/clinical-context.json", 
-            //     JSON.stringify(result, undefined, 2), 
+            //     JSON.stringify(utils.trimObjectText(result), undefined, 2), 
             //     function(err) {
             //         if(err) {
             //             return console.log(err);
@@ -44,12 +44,12 @@ describe('Clinical Brief', function () {
         });
     });
     
-    // describe('#getSynopsisAndPerspective()', function () {
-    //   it('should return synopsis and perspective as JavaScript object', function () {
-    //       var result = clinicalBrief.getSynopsisAndPerspective(prodTicket);
-    //       expect(utils.trimObjectText(result)).to.deep.equal(utils.trimObjectText(completeStudySynopsis));
-    //   });
-    // });
+    describe('#getSynopsisAndPerspective()', function () {
+      it('should return synopsis and perspective as JavaScript object', function () {
+          var result = clinicalBrief.getSynopsisAndPerspective(prodTicket).toObjectLiteral().elements[0];
+          expect(utils.trimObjectText(result)).to.deep.equal(utils.trimObjectText(completeStudySynopsis));
+      });
+    });
 
 });
 

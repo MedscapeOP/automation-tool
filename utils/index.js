@@ -30,21 +30,23 @@ function writeXMLFromObject(object, pathToFile) {
 }
 
 function trimObjectText(xmlJSObject) {
-    var textPropertyPath = pathBuilder.createPathToProperty(xmlJSObject, "text", "");
-
-    console.log(textPropertyPath);
-    for (var i = 0; i < textPropertyPath.length; i++) {
-        if (_.hasIn(xmlJSObject, textPropertyPath[i])) {
-            _.update(xmlJSObject, textPropertyPath[i], function (text) {
-                if (text !== undefined) {
-                    return text.trim();
-                }          
-            });
-        } else {
-            continue;
-        }
-    }
     pathBuilder.resetMyObject();
+    var textPropertyPaths = pathBuilder.createPathToProperty(xmlJSObject, "text", "");
+
+    _.remove(textPropertyPaths, function(path) {
+        if (_.hasIn(xmlJSObject, path)) {
+            return false;
+        }
+    });    
+
+    // console.log(textPropertyPaths);
+    for (var i = 0; i < textPropertyPaths.length; i++) {
+        _.update(xmlJSObject, textPropertyPaths[i], function (text) {
+            if (typeof text === "string") {
+                return text.trim();
+            }                   
+        });
+    }
     return xmlJSObject;
 }
 

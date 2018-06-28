@@ -1,7 +1,6 @@
 - Constructor should:
-    - Take in parameters for main fields 
+    - Take in parameters for required fields 
         - Example: TOC parameters 
-            - TOC Label 
             - TOC type 
     - Establish main _elements array 
         - This property is a private representation of the 
@@ -16,9 +15,10 @@
         - This reduces need of developer to have to know the 
           object structure in order to implement new solutions. 
 - insert...() 
-    - Classes should implement various insert() methods to insert 
+    - Child classes should implement various insert() methods to insert 
     child JS objects into its own _elements array
 - toObjectLiteral(): 
+    - Child classes inherit this method from generic XMLElement(). 
     - This is the main API for producing object literals that 
       are formatted for xml conversion. 
     - Basically after building out the object in JS you 

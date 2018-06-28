@@ -5,7 +5,7 @@ const utils = require("../../utils");
 const expect = require('chai').expect;
 
 
-describe('Clinical Brief', function () {
+describe('Subsection Element', function () {
     /*
     Main sections to test: 
       1) Clinical Context 
@@ -23,7 +23,8 @@ describe('Clinical Brief', function () {
         // fs.readFileSync(__dirname + '/input/article.html', 'utf8');
         completeSubsection = require('./input/subsection');
         subsectionContent = require('./input/subsection_content'); 
-        subsectionInstance = new SubsectionElement("");
+        subsectionInstance = new SubsectionElement();
+        subsectionInstance.subsectionHeader = "My Subsection";
     });
     
     describe('#insertSubsectionContent()', function () {

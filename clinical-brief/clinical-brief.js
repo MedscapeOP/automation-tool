@@ -31,7 +31,7 @@ function getSubsectionText(ticket, startText, endText) {
     var startIndex = ticket.indexOf(startText);
     var endIndex = ticket.indexOf(endText);
     var mainBlock = ticket.substring(startIndex, endIndex);
-    var mainLabel = mainBlock.match(startText);
+    var mainLabel = mainBlock.match(startText)[0];
     mainBlock = mainBlock.replace(mainLabel,'');
 
     // Put together final string of XML. 
@@ -47,8 +47,9 @@ function buildSection(mainBlock, mainLabel) {
     var subsectionContent = utils.xmlStringToJS(mainBlock); 
 
     // Return instance of section for use in master BUILD function
-    var sectionInstance = new SectionElement(mainLabel);
+    var sectionInstance = new SectionElement();
     var subsectionInstance = new SubsectionElement();
+    sectionInstance.sectionHeader = mainLabel;
     subsectionInstance.insertSubsectionContent(subsectionContent);
     sectionInstance.insertSubsectionElement(subsectionInstance);
     return sectionInstance;
@@ -59,7 +60,6 @@ function buildSection(mainBlock, mainLabel) {
 function getClinicalContext(ticket) {
     // Get XML string from prod ticket.
     var {mainBlock, mainLabel} = getSubsectionText(ticket, "Clinical Context", "Study Synopsis");
-
     // build the actual section element
     return buildSection(mainBlock, mainLabel);
 }
@@ -67,21 +67,11 @@ function getClinicalContext(ticket) {
 
 /* STUDY SYNOPSIS AND PERSPECTIVE  
 -------------------------------------- */
-/*
-TODO: 
-- Make the get functions insert the text directly into a subsection instance 
-- Then return the entire subsection which can then be inserted into a section 
-  parent. 
-*/
 function getSynopsisAndPerspective(ticket) {
-    var startIndex = ticket.indexOf("Study Synopsis and Perspective");
-    var endIndex = ticket.indexOf("Study Highlights");
-    var mainBlock = ticket.substring(startIndex, endIndex);
-    mainBlock = mainBlock.replace('Study Synopsis and Perspective','');
-    mainBlock = "<subsec_content>" + utils.cleanHTML.paragraph(mainBlock) + "</subsec_content>";
-    // xml2js needs 1 root node 
-    // To handle this, subsec_content is used around the main result string as wrapper.     
-    return utils.xmlStringToJS(mainBlock);
+    // Get XML string from prod ticket.
+    var {mainBlock, mainLabel} = getSubsectionText(ticket, "Study Synopsis and Perspective", "Study Highlights");
+    // build the actual section element
+    return buildSection(mainBlock, mainLabel);
 }
 
 function getStudyHighlights (ticket) {

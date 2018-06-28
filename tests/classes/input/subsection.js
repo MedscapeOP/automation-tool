@@ -14,7 +14,7 @@ module.exports = {
                             "elements": [
                                 {
                                     "type": "text",
-                                    "text": ""
+                                    "text": "My Subsection"
                                 }
                             ]
                         }
