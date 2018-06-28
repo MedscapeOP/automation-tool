@@ -7,6 +7,7 @@ describe('Utility Functions', function () {
 
     var xmlJSObject;
     var xmlJSObjectTrimmed;
+    var dirtyListHTML = fs.readFileSync(__dirname + '/input/dirty-list.html', 'utf8');
     beforeEach(function() {
         // prodTicket = fs.readFileSync(__dirname + '/input/article.html', 'utf8');
         xmlJSObject = require('./input/xml-js-object');
@@ -18,6 +19,17 @@ describe('Utility Functions', function () {
             var result = utils.trimObjectText(xmlJSObject)
             // console.log(xmlJSObject);
             expect(result).to.deep.equal(xmlJSObjectTrimmed);
+        });
+    });
+
+    describe("#cleanHTML.unorderedList()", function () {
+        it('should transform HTML entities from R2Net conversion into proper <ul><li> list.', function () {
+            var result = utils.cleanHTML.unorderedList(dirtyListHTML);
+            fs.writeFileSync(__dirname + "/output/clean-list.html", result, function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+            }); 
         });
     });
 });

@@ -27,7 +27,7 @@ const SectionElement = require('../classes/sec_element');
 const TOCElement = require("../classes/toc_element");
 
 
-function getSubsectionText(ticket, startText, endText) {
+function getSubsectionText(ticket, startText, endText, cleaningFn) {
     var startIndex = ticket.indexOf(startText);
     var endIndex = ticket.indexOf(endText);
     var mainBlock = ticket.substring(startIndex, endIndex);
@@ -35,7 +35,7 @@ function getSubsectionText(ticket, startText, endText) {
     mainBlock = mainBlock.replace(mainLabel,'');
 
     // Put together final string of XML. 
-    mainBlock = "<subsec_content>" + utils.cleanHTML.paragraph(mainBlock) + "</subsec_content>";
+    mainBlock = "<subsec_content>" + cleaningFn(mainBlock) + "</subsec_content>";
     return {
         mainLabel,
         mainBlock
@@ -59,7 +59,12 @@ function buildSection(mainBlock, mainLabel) {
 -------------------------------------- */
 function getClinicalContext(ticket) {
     // Get XML string from prod ticket.
-    var {mainBlock, mainLabel} = getSubsectionText(ticket, "Clinical Context", "Study Synopsis");
+    var {mainBlock, mainLabel} = getSubsectionText(
+        ticket, 
+        "Clinical Context", 
+        "Study Synopsis", 
+        utils.cleanHTML.paragraph
+    );
     // build the actual section element
     return buildSection(mainBlock, mainLabel);
 }
@@ -69,7 +74,12 @@ function getClinicalContext(ticket) {
 -------------------------------------- */
 function getSynopsisAndPerspective(ticket) {
     // Get XML string from prod ticket.
-    var {mainBlock, mainLabel} = getSubsectionText(ticket, "Study Synopsis and Perspective", "Study Highlights");
+    var {mainBlock, mainLabel} = getSubsectionText(
+        ticket, 
+        "Study Synopsis and Perspective", 
+        "Study Highlights", 
+        utils.cleanHTML.paragraph
+    );
     // build the actual section element
     return buildSection(mainBlock, mainLabel);
 }
