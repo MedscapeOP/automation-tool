@@ -20,11 +20,11 @@
             - Insert subsections and sections as needed
 */
 
-var fs = require('fs');
-var _ = require("lodash");
-var utils = require("../utils");
-var SubsectionElement = require('../classes/subsec_element');
-var SectionElement = require('../classes/sec_element');
+const _ = require("lodash");
+const utils = require("../utils");
+const SubsectionElement = require('../classes/subsec_element');
+const SectionElement = require('../classes/sec_element');
+const TOCElement = require("../classes/toc_element");
 
 
 function getSubsectionText(ticket, startText, endText) {
