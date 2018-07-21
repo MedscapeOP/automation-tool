@@ -1,4 +1,5 @@
 const sanitizeHtml = require('sanitize-html');
+// const buildList = require('./build-list');
 
 /*
 Common Entities / Things to remove: 
@@ -39,7 +40,7 @@ function paragraph(string) {
 function unorderedList(string) {
     var str = string.replace(/\(Insert.*\)/, "");
     var options =   {
-        allowedTags: [ 'ul', 'li', 'em', 'strong', 'sup' ],
+        allowedTags: [ 'ul', 'li', 'em', 'strong', 'sup', 'tt' ],
         allowedAttributes: {
           'sup': ["type"],
         },
@@ -51,9 +52,21 @@ function unorderedList(string) {
             return !frame.text.trim();
         }
     }
+    
+    // General Cleanup 
     var clean = sanitizeHtml(str, options);
-    var regexp = new RegExp(`&amp;([A-Za-z]+|#?[0-9]+);`);
-    clean.replace(regexp, "&$1;");
+
+    // Remove &amp; from before entitities 
+    var entityRegexp = new RegExp(`&amp;([A-Za-z]+|#?[0-9]+);`, 'g');
+    clean = clean.replace(entityRegexp, "&$1;");
+
+    var liRegexp = new RegExp(`&#8226;(.*)`);
+    var index = (clean.search(liRegexp));
+    // clean = clean.replace(liRegexp, "<li>$1</li>");
+
+    // clean = clean.substring(index);
+    // clean = buildList(clean, null);
+
     return clean;
 }
 

@@ -20,6 +20,15 @@
             - Insert subsections and sections as needed
 */
 
+/*
+Make Ability to Do Variations of Headlines 
+- Known Variants: 
+    - Clinical Context --> ''
+    - Study Synopsis and Perspective --> Synopsis and Perspective
+    - Study Highlights --> Recommendation Highlights
+    - Clinical Implications --> ''
+*/
+
 const _ = require("lodash");
 const utils = require("../utils");
 const SubsectionElement = require('../classes/subsec_element');

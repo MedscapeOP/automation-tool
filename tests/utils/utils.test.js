@@ -7,7 +7,7 @@ describe('Utility Functions', function () {
 
     var xmlJSObject;
     var xmlJSObjectTrimmed;
-    var dirtyListHTML = fs.readFileSync(__dirname + '/input/dirty-list.html', 'utf8');
+    var dirtyListHTML = fs.readFileSync(__dirname + '/input/dirty-list2.html', 'utf8');
     beforeEach(function() {
         // prodTicket = fs.readFileSync(__dirname + '/input/article.html', 'utf8');
         xmlJSObject = require('./input/xml-js-object');
