@@ -4,7 +4,7 @@
             - TOC type 
     - Establish main _elements array 
         - This property is a private representation of the 
-          classes' child elements 
+          classes' child elements. 
         - New child elements will be pushed onto this array 
             - Need different implementations for inserting 
               content onto this array. 
