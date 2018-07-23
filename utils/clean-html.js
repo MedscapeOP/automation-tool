@@ -1,5 +1,5 @@
 const sanitizeHtml = require('sanitize-html');
-const buildList = require('./build-list');
+const formatList = require('./format-list');
 
 /*
 Common Entities / Things to remove: 
@@ -59,8 +59,8 @@ function unorderedList(string) {
     // Remove &amp; from before entitities 
     var entityRegexp = new RegExp(`&amp;([A-Za-z]+|#?[0-9]+);`, 'g');
     clean = clean.replace(entityRegexp, "&$1;");
-    // console.log(buildList);
-    clean = buildList(clean, null, buildList);
+    // console.log(formatList);
+    clean = formatList(clean, null, formatList);
 
     var ttRegExp = new RegExp(`</tt>`, 'g');
     clean = clean.replace(ttRegExp, "");
