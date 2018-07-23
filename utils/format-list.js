@@ -1,5 +1,5 @@
 /*
-    buildList(substring, prevSymbol) {
+    formatList(substring, prevSymbol) {
         nextSymbol = Find(&#8226; || <tt>o || &#9642;);
 
         // Main list track (DONE)
@@ -8,14 +8,14 @@
             // Case where the new list starts. (DONE)
             - If (nextSymbol == "&#8226;")
                 - replace &#8226; with <li>
-                return buildList(substring, nextSymbol);
+                return formatList(substring, nextSymbol);
 
             // Case where new sub-list begins (DONE)
             - if (nextSymbol == <tt>o)
                 - Find last </li> and remove it
                     - substring = substring.replace(new RegExp('</li>$'), '');
                 - replace <tt>o with <ul><li>$1</li></ul>
-                return buildList(substring, nextSymbol);
+                return formatList(substring, nextSymbol);
         }
 
         // Sub-list track 
@@ -26,7 +26,7 @@
                 - Find last </ul> and remove it
                     - substring = substring.replace(new RegExp('</ul>$'), '');
                 - replace <tt>o with <li>$1</li></ul>
-                return buildList(substring, nextSymbol);
+                return formatList(substring, nextSymbol);
 
             // Case where new sub-sub-list begins (DONE)
             - if (nextSymbol == "&#9642;")
@@ -35,14 +35,14 @@
                 - Find last </li> and remove it
                     - substring = substring.replace(new RegExp('</li>$'), '');
                 - replace <tt>o with <ul><li>$1</li></ul>
-                return buildList(substring, nextSymbol);
+                return formatList(substring, nextSymbol);
 
             // Case where the new list starts. (DONE) 
             - If (nextSymbol == "&#8226;") 
                 - Find last </ul> and add closing </li>
                 - substring = substring.replace(new RegExp('</ul>$'), '</ul></li>');
                 - replace &#8226; with <li>
-                return buildList(substring, nextSymbol);
+                return formatList(substring, nextSymbol);
 
         }
 
@@ -53,28 +53,28 @@
                 - Find last </ul> and add closing </li>
                     - substring = substring.replace(new RegExp('</ul>$'), '</ul></li>');
                 - replace <tt>o with <li>$1</li></ul>
-                return buildList(substring, nextSymbol);
+                return formatList(substring, nextSymbol);
 
             // Case where sub-sub-list continues (DONE)
             - if (nextSymbol == "&#9642;")
                 - Find last </ul> and remove it
                     - substring = substring.replace(new RegExp('</ul>$'), '');
                 - replace &#9642; with <li>$1</li></ul>
-                return buildList(substring, nextSymbol);
+                return formatList(substring, nextSymbol);
 
             // Case where the new list starts. (DONE)
             - If (nextSymbol == "&#8226;")
                 - Find last </ul> and add closing </li></ul></li>
                     - substring = substring.replace(new RegExp('</ul>$'), '</ul></li></ul></li>');
                 - replace &#8226; with <li>
-                return buildList(substring, nextSymbol);
+                return formatList(substring, nextSymbol);
         } 
         
         else {
             If (nextSymbol == "&#8226;") {
                 var liRegexp = new RegExp(`&#8226;(.*)`);
                 substring = substring.replace(liRegexp, "<li>$1</li>");
-                return buildlist(substring, nextSymbol);
+                return formatList(substring, nextSymbol);
             }
         }
     }
@@ -152,7 +152,7 @@ function findLastAndReplace(str, removeString, replaceString) {
 
 // console.log(findNextSymbol(testString2));
 
-let buildList = (substring, prevSymbol, fn) => {
+let formatList = (substring, prevSymbol, fn) => {
     // Replace &#8226; entity with <li>
     // var liRegexp = new RegExp(`&#8226;(.*)`);
     // clean = clean.replace(liRegexp, "<li>$1</li>");
@@ -171,7 +171,7 @@ let buildList = (substring, prevSymbol, fn) => {
         if (nextSymbol == bulletSymbol) {
             var liRegexp = new RegExp(bulletSymbol + `(.*)`);
             substring = substring.replace(liRegexp, "<li>$1</li>");
-            return fn(substring, nextSymbol, buildList);
+            return fn(substring, nextSymbol, formatList);
         }            
 
         // Case where new sub-list begins (DONE)
@@ -180,7 +180,7 @@ let buildList = (substring, prevSymbol, fn) => {
             // - replace <tt>o with <ul><li>$1</li></ul>
             var liRegexp = new RegExp(subBulletSymbol + `(.*)`);
             substring = substring.replace(liRegexp, '<ul><li>$1</li></ul>');
-            return fn(substring, nextSymbol, buildList);
+            return fn(substring, nextSymbol, formatList);
         }
     }
 
@@ -194,7 +194,7 @@ let buildList = (substring, prevSymbol, fn) => {
             // - replace <tt>o with <li>$1</li></ul>
             var liRegexp = new RegExp(subBulletSymbol + `(.*)`);
             substring = substring.replace(liRegexp, '<li>$1</li></ul>');
-            return fn(substring, nextSymbol, buildList);
+            return fn(substring, nextSymbol, formatList);
         }            
 
         // Case where new sub-sub-list begins "&#9642;" (DONE)
@@ -206,7 +206,7 @@ let buildList = (substring, prevSymbol, fn) => {
             // - replace "&#9642;" with <ul><li>$1</li></ul>
             var liRegexp = new RegExp(subSubBulletSymbol + `(.*)`);
             substring = substring.replace(liRegexp, '<ul><li>$1</li></ul>');
-            return fn(substring, nextSymbol, buildList);
+            return fn(substring, nextSymbol, formatList);
         }            
 
         // Case where the new list starts. (DONE) 
@@ -216,7 +216,7 @@ let buildList = (substring, prevSymbol, fn) => {
             // - replace &#8226; with <li>
             var liRegexp = new RegExp(bulletSymbol + `(.*)`);
             substring = substring.replace(liRegexp, '<li>$1</li>');           
-            return fn(substring, nextSymbol, buildList);
+            return fn(substring, nextSymbol, formatList);
         }            
     }
 
@@ -229,7 +229,7 @@ let buildList = (substring, prevSymbol, fn) => {
             // - replace <tt>o with <li>$1</li></ul>
             var liRegexp = new RegExp(subBulletSymbol + `(.*)`);
             substring = substring.replace(liRegexp, '<li>$1</li></ul>'); 
-            return fn(substring, nextSymbol, buildList);
+            return fn(substring, nextSymbol, formatList);
         }
 
         // Case where sub-sub-list continues (DONE)
@@ -239,7 +239,7 @@ let buildList = (substring, prevSymbol, fn) => {
             // - replace &#9642; with <li>$1</li></ul>
             var liRegexp = new RegExp(subSubBulletSymbol + `(.*)`);
             substring = substring.replace(liRegexp, '<li>$1</li></ul>');
-            return fn(substring, nextSymbol, buildList);
+            return fn(substring, nextSymbol, formatList);
         }            
 
         // Case where the new list starts. (DONE)
@@ -249,7 +249,7 @@ let buildList = (substring, prevSymbol, fn) => {
             // - replace &#8226; with <li>
             var liRegexp = new RegExp(subSubBulletSymbol + `(.*)`);
             substring = substring.replace(liRegexp, '<li>$1</li>');
-            return fn(substring, nextSymbol, buildList);
+            return fn(substring, nextSymbol, formatList);
         }
     } 
     
@@ -257,10 +257,10 @@ let buildList = (substring, prevSymbol, fn) => {
         if (nextSymbol == bulletSymbol) {
             var liRegexp = new RegExp(bulletSymbol + `(.*)`);
             substring = substring.replace(liRegexp, "<li>$1</li>");
-            return fn(substring, nextSymbol, buildList);
+            return fn(substring, nextSymbol, formatList);
         }
     }
 };
 
 
-module.exports = buildList;
+module.exports = formatList;
