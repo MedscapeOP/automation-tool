@@ -62,11 +62,24 @@ function unorderedList(string) {
     // console.log(buildList);
     clean = buildList(clean, null, buildList);
 
+    var ttRegExp = new RegExp(`</tt>`, 'g');
+    clean = clean.replace(ttRegExp, "");
     return clean;
+}
+
+function slides(str) {
+    str = unorderedList(str);
+    var h3RegExp = new RegExp(`<strong>&lt;&lt;Level 2&gt;&gt;(.*)</strong>`, 'g');
+    str = str.replace(h3RegExp, "<h3>$1</h3>");
+
+    var supRegExp = new RegExp(`<sup>\\[`, 'g');
+    str = str.replace(supRegExp, '<sup type="ref">[');
+    return str;
 }
 
 
 module.exports = {
     paragraph,
-    unorderedList
+    unorderedList,
+    slides
 }; 
