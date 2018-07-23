@@ -30,6 +30,9 @@ function writeXMLFromObject(object, pathToFile) {
 }
 
 function trimObjectText(xmlJSObject) {
+    /*
+    Remove empty space from text properties of object. 
+    */
     pathBuilder.resetMyObject();
     var textPropertyPaths = pathBuilder.createPathToProperty(xmlJSObject, "text", "");
 
