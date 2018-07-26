@@ -68,6 +68,15 @@ function unorderedList(string) {
 }
 
 function slides(str) {
+/*
+TODO: 
+- Add support for edge cases: 
+    1) Remove Random <strong> tags in headline if any 
+    2) Also check for case where there is 1 or more greater than / less than. 
+    3) Also check for case where bracket doesn't directly follow sup tag 
+        - When there is a space in between them.  
+*/
+    
     str = unorderedList(str);
     var h3RegExp = new RegExp(`<strong>&lt;&lt;Level 2&gt;&gt;(.*)</strong>`, 'g');
     str = str.replace(h3RegExp, "<h3>$1</h3>");
