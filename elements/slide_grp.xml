@@ -1,1 +1,11 @@
-<slide_grp><sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/XXX/XXX/Slide22.png</sec_img><sec_label>Slide 22.</sec_label><sec_caption/><sec_txt/><sec_alt_txt>Slide 22.</sec_alt_txt><qna_form/></slide_grp>
+<slide_grp>
+    <sec_img>
+        <?dctmLink?>
+        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/XXX/XXX/Slide22.png
+    </sec_img>
+    <sec_label>Slide 22.</sec_label>
+    <sec_caption/>
+    <sec_txt/>
+    <sec_alt_txt>Slide 22.</sec_alt_txt>
+    <qna_form/>
+</slide_grp>

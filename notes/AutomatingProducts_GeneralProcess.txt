@@ -65,4 +65,71 @@ https://stackoverflow.com/questions/43729591/gulp-whats-the-easiest-way-to-take-
 
 
 
+---------------------- CONTRIBUTORS:
+- Add the image directly based on markup on staging site 
+- Use a static .json file to store commonly used / in-house contribs
+- Keep naming conventions EXACTLY THE SAME for headshots 
+- Keep file extensions EXACTLY THE SAME for headshots  
 
+
+---------------------- IN LANGUAGE: 
+- Expert commentary 
+    Vars: 
+    - Article # 
+    - Program Title
+    TOC: 
+        - Label is changed according to language 
+            - Pull this from a expertCommentary.json file 
+                - Get the headings from Notetab clip
+        - TOC type is Sidebar 
+    SECTION: 
+        - Section header 
+            - Same as TOC label 
+    SUBSECTION: 
+        -  Slide intro 
+            - Pull from the expertCommentary.json file 
+
+- Downloadable PDF 
+    Vars: 
+    - Article #
+    TOC: 
+        - Label is changed according to language 
+            - Pull this from a pdfDownload.json file 
+                - Get the headings from Notetab clip
+        - TOC type is Sidebar 
+    SECTION: 
+        - Section header 
+            - Same as TOC label 
+    SUBSECTION: 
+        -  Slide intro 
+            - Pull from the pdfDownload.json file 
+
+- Transcript PDF
+    Vars: 
+    - Article #
+    TOC: 
+        - Label is changed according to language 
+            - Pull this from a pdfDownload.json file 
+                - Get the headings from Notetab clip
+        - TOC type is Sidebar 
+    SECTION: 
+        - Header
+            - Same as TOC Label  
+    SUBSECTION: 
+        -  Slide intro 
+            - Pull from the pdfDownload.json file 
+
+- Subtitles 
+    Vars: 
+    - Article #
+    TOC: 
+        - Label is changed according to language 
+            - Pull this from a subtitles.json file 
+                - Get the headings from Notetab clip
+        - TOC type is Sidebar 
+    SECTION: 
+        - Header
+            - Same as TOC Label  
+    SUBSECTION: 
+        -  Slide intro 
+            - Pull from the subtitles.json file 

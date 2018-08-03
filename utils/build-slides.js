@@ -12,6 +12,7 @@ function buildSlides(string, subsectionElement, articleID = "XXXXXX") {
         - substr = string.substring(0, index)
         - string = string.replace(substr, "");
         - insert substr into slide XML element content.
+            - 
         - insert slide into subsectionElement
         - return buildSlides(string, subsectionElement);
     } else {
@@ -88,3 +89,4 @@ let buildSlidesXML = (substring, prevSymbol, fn) => {
 
 
 module.exports = buildSlidesXML;
+
