@@ -1,0 +1,48 @@
+-----------------------
+SLIDES 
+-----------------------
+- if last item of slide <ul> is a SubSub list item it breaks. 
+    - What Happened:
+        - <p>&#9642; item 
+        - became a top level <li> (without including a closing tag)
+EXAMPLE INPUT: 
+<p>&lt;&lt;insert slide 46; 49:21 &gt;&gt;  </p>
+
+<p><strong>&lt;&lt;Level 2&gt;&gt; Eric: Is There Anything He Hasn't Tried?</strong></p>
+
+<p>&#8226;	Toolbox of options is not enough</p>
+
+<p><tt>o	</tt>Don't work in all patients</p>
+
+<p><tt>o	</tt>Can cause a lot of side effects</p>
+
+<p>&#8226;	Patients are treated by trial and error</p>
+
+<p><tt>o	</tt>Warn patients that it may take a few tries to find a treatment that works</p>
+
+<p>&#8226;	Eric cycled through multiple medications</p>
+
+<p><tt>o	</tt>Cyproheptadine</p>
+
+<p><tt>o	</tt>Nortriptyline caused orthostatic hypotension</p>
+
+<p><tt>o	</tt>Divalproex sodium caused nosebleeds</p>
+
+<p><tt>o	</tt>Topiramate, gabapentin, pregabalin</p>
+
+<p><tt>o	</tt>Steroids cased irritability</p>
+
+<p><tt>o	</tt>Dexamethasone, indomethacin</p>
+
+<p><tt>o	</tt>Duloxetine caused dizziness and orthostatic hypotension</p>
+
+<p><tt>o	</tt>Methergine, tizanidine</p>
+
+<p><tt>o	</tt>Buprenorphine patch when attacks worsened</p>
+
+<p><tt>o	</tt>Fentanyl patch caused withdrawal symptoms</p>
+
+<p>&#9642;	Hospitalization for intravenous infusions of dihydroergotamine, magnesium, prochlorperazine, diphenhydramine, levetiracetam, but caused encephalopathy</p>
+
+OUTPUT: 
+<li>	Hospitalization for intravenous infusions of dihydroergotamine, magnesium, prochlorperazine, diphenhydramine, levetiracetam, but caused encephalopathy
