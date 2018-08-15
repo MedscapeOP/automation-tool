@@ -89,10 +89,12 @@ class SlideGroup extends XMLElement {
         return this._sectionText.elements;
     }
 
-    set sectionText() {
-        this._sectionText.elements;
+    set sectionText(sectionText) {
+        // Remove already existing section text
+        this._sectionText.elements = [];
+        console.log("here");
+        this.insertSectionText(sectionText);
     }
-
 
     // Section Alt-Text Props
     get sectionAltText() {
@@ -103,16 +105,18 @@ class SlideGroup extends XMLElement {
         this._sectionAltText.elements[0].text = newAltText;
     }
 
-    insertSubsectionContent(subsectionContent) {
+    insertSectionText(sectionText) {
         /* 
             - Pushes the new subsec_element onto the elements array of the section
         */
-       var content = subsectionContent.elements[0];
-       this._elements.push(content);
+       var content = sectionText.elements[0].elements;       
+       for (var i = 0; i < content.length; i++) {
+           this._sectionText.elements.push(content[i]);
+       }       
     }
 }
 
-module.exports = SubsectionElement;
+module.exports = SlideGroup;
 
 /*
 {
