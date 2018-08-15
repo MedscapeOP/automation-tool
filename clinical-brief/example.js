@@ -11,10 +11,10 @@ var utils = require('../utils');
 //     console.log("The new file was created!");
 // }); 
 
-var result = utils.xmlFileToJS(__dirname + '/article.xml');
+var result = utils.xmlFileToJS(__dirname + '/../elements/spotlight_complete.xml');
     // result.prof_article.title = [{"p": ["Some new Title I PUT."]}]
     // var newXmlFile = builder.buildObject(result);
-fs.writeFile(__dirname + "/article.js", JSON.stringify(result), function(err) {
+fs.writeFile(__dirname + "/../elements/spotlight_complete.json", JSON.stringify(result), function(err) {
     if(err) {
         return console.log(err);
     }
