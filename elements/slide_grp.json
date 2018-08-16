@@ -1,1 +1,65 @@
-{"elements":[{"type":"element","name":"slide_grp","elements":[{"type":"element","name":"sec_img","elements":[{"type":"instruction","name":"dctmLink","instruction":""},{"type":"instruction","name":"dctmEditor","instruction":""},{"type":"text","text":"/webmd/professional_assets/medscape/images/content/article/XXX/XXX/Slide22.png"}]},{"type":"element","name":"sec_label","elements":[{"type":"text","text":"Slide 22."}]},{"type":"element","name":"sec_caption","elements":[]},{"type":"element","name":"sec_txt","elements":[]},{"type":"element","name":"sec_alt_txt","elements":[{"type":"text","text":"Slide 22."}]},{"type":"element","name":"qna_form","elements":[]}]}]}
+{
+    "elements": [
+        {
+            "type": "element",
+            "name": "slide_grp",
+            "elements": [
+                {
+                    "type": "element",
+                    "name": "sec_img",
+                    "elements": [
+                        {
+                            "type": "instruction",
+                            "name": "dctmLink",
+                            "instruction": ""
+                        },
+                        {
+                            "type": "instruction",
+                            "name": "dctmEditor",
+                            "instruction": ""
+                        },
+                        {
+                            "type": "text",
+                            "text": "/webmd/professional_assets/medscape/images/content/article/XXX/XXX/Slide22.png"
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "sec_label",
+                    "elements": [
+                        {
+                            "type": "text",
+                            "text": "Slide 22."
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "sec_caption",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "sec_txt",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "sec_alt_txt",
+                    "elements": [
+                        {
+                            "type": "text",
+                            "text": "Slide 22."
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "qna_form",
+                    "elements": []
+                }
+            ]
+        }
+    ]
+}
