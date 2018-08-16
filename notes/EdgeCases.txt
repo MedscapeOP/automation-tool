@@ -52,3 +52,9 @@ SLIDES
 
 - Variation: Capitalization 
     - <p><strong>&lt;&lt;level 2 vs <p><strong>&lt;&lt;Level 2
+
+- TODO: as of 8/16/18
+    - Remove - </strong> <strong> after formatting slides 
+    - FORMAT LISTS():
+        - Wrap lists in <ul></ul> 
+            - shouldn't rely on D2 to wrap list in <ul>  
