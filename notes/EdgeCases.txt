@@ -58,3 +58,76 @@ SLIDES
     - FORMAT LISTS():
         - Wrap lists in <ul></ul> 
             - shouldn't rely on D2 to wrap list in <ul>  
+
+
+ANOTHER EDGE CASE 1: 
+<p><strong>&lt;&lt;insert slide [18]; 17:35&gt;&gt;</strong></p>
+
+<p><strong>&lt;&lt;Level 2&gt;&gt; Considerations for Patients With Loss of Response to Biologic Therapy</strong></p>
+
+<p>&#8226;	There is still a great deal to discuss regarding how best to use ADA testing</p>
+
+<p>&#8226;	While it is not practical or cost-efficient to test all patients, ADA testing can provide information in certain patient populations, including patients who are not responding to treatment with a biologic agent</p>
+
+<p><tt>o	</tt>If the patient has no/low drug concentration, measure ADAs</p>
+
+<p>&#9642;	If a high ADA titer is found, the drug is likely being cleared because of immunogenicity</p>
+
+<p>&#9642;	The drug mechanism is not failing, but the specific drug is failing; can switch from 1 anti-TNF agent to another</p>
+
+<p><tt>o	</tt>If the patient&#8217;s drug concentration is at a good level, then consider that the target is blocked (drug mechanism is failing)</p>
+
+<p>&#9642;	Switch to a drug with a different mechanism of action</p>
+
+<p>&#8226;	If the patient is responding well, but a low drug concentration is present, there are 2 explanations</p>
+
+<p><tt>o	</tt>The patient is doing well and not taking his or her drugs </p>
+
+<p><tt>o	</tt>The patient is doing well despite making ADAs and clearing the drug</p>
+
+<p>&#9642;	In this case, there is no benefit to continuing the drug </p>
+
+Expected Output: 
+•	There is still a great deal to discuss regarding how best to use ADA testing
+•	While it is not practical or cost-efficient to test all patients, ADA testing can provide information in certain patient populations, including patients who are not responding to treatment with a biologic agent
+    o	If the patient has no/low drug concentration, measure ADAs
+        	If a high ADA titer is found, the drug is likely being cleared because of immunogenicity
+        	The drug mechanism is not failing, but the specific drug is failing; can switch from 1 anti-TNF agent to another
+    o	If the patient’s drug concentration is at a good level, then consider that the target is blocked (drug mechanism is failing)
+        	Switch to a drug with a different mechanism of action
+•	If the patient is responding well, but a low drug concentration is present, there are 2 explanations
+    o	The patient is doing well and not taking his or her drugs 
+    o	The patient is doing well despite making ADAs and clearing the drug
+        	In this case, there is no benefit to continuing the drug 
+
+
+
+
+
+ANOTHER EDGE CASE 2: 
+<p><strong>&lt;&lt;insert slide [22]; 23:05&gt;&gt;</strong></p>
+
+<p><strong>&lt;&lt;Level 2&gt;&gt; Potential Predictors of Response to Anti-TNF Treatment<sup>[11]</sup></strong></p>
+
+<p>&#8226;	Several factors help predict response to anti-TNF therapy</p>
+
+<p><tt>o	</tt>Concomitant use of MTX</p>
+
+<p>&#9642;	Patients on monotherapy, without using combination therapy with MTX, are at increased risk of developing neutralizing antibodies</p>
+
+<p><tt>o	</tt>Patients with a higher body mass index require more bioavailability of the drug; they may need more drug to have an effect</p>
+
+<p>&#9642;	May never develop ADAs</p>
+
+<p>&#9642;	Probably more relevant for drug levels</p>
+
+<p><tt>o	</tt>Patients with impaired renal function are more likely to retain the drug, leading to higher drug levels</p>
+
+Expected Output: 
+•	Several factors help predict response to anti-TNF therapy
+    o	Concomitant use of MTX
+        	Patients on monotherapy, without using combination therapy with MTX, are at increased risk of developing neutralizing antibodies
+    o	Patients with a higher body mass index require more bioavailability of the drug; they may need more drug to have an effect
+        	May never develop ADAs
+        	Probably more relevant for drug levels
+    o	Patients with impaired renal function are more likely to retain the drug, leading to higher drug levels
