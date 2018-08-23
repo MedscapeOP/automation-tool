@@ -1,0 +1,48 @@
+<ul>
+    <li>
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+    </li>
+
+/* 
+ALGO IDEA: 
+-  next newline (\n.+)
+- grab first 4 chars 
+    - if <li> || <ul> 
+        - currentIsListItem = true;
+        - if (<li> and prevWasListItem == false)
+            - Insert <ul> at beginning of new line 
+    - else 
+        -
+
+PsuedoCode...
+wrapUls(prevWasListItem, remainingString) {
+    var currentLine = remainingString.match(\n.+);
+    var nextLine = remainingString.match();
+    var currentStart = currentLine.substring(4);
+    if currentStart == '<li>' || '<ul>' {
+        if (!prevWasListItem && currentStart == '<li>') {
+            return '<ul>' + currentLine + wrapUls(true, remainingString.substring(nextLine));
+        } else {
+            return currentLine + wrapUls(false, remainingString.substring(nextLine));
+        }
+    } else {
+        if (prevWasListItem) {
+            return '</ul>' + currentLine + wrapUls(false, remainingString.substring(nextLine));
+        } else {
+            return currentLine + wrapUls(false, remainingString.substring(nextLine));
+        }        
+    }    
+}
+
+    
+
+str.indexOf(searchValue[, fromIndex])
+
+
+
+
+
+*/

@@ -59,8 +59,8 @@ function unorderedList(string) {
     // Remove &amp; from before entitities 
     var entityRegexp = new RegExp(`&amp;([A-Za-z]+|#?[0-9]+);`, 'g');
     clean = clean.replace(entityRegexp, "&$1;");
-    // console.log(formatList);
-    clean = formatList(clean, null, formatList);
+    // console.log(formatList.formatUlItems);
+    clean = formatList.formatUlItems(clean, null, formatList.formatUlItems);
 
     var ttRegExp = new RegExp(`</tt>`, 'g');
     clean = clean.replace(ttRegExp, "");
@@ -85,6 +85,9 @@ TODO:
     str = str.replace(supRegExp, '<sup type="ref">[');
     return str;
 }
+
+
+
 
 
 module.exports = {
