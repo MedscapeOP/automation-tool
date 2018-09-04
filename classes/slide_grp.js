@@ -73,7 +73,7 @@ class SlideGroup extends XMLElement {
         this._sectionImage.elements[2].text == newImagePath;
     }
 
-    // Section Label Props
+    // Section Label Props - DONE
     get sectionLabel() {
         return this._sectionLabel.elements[0].text;
     }
@@ -82,7 +82,7 @@ class SlideGroup extends XMLElement {
         this._sectionLabel.elements[0].text = newLabel;
     }
 
-    // Section Caption Props
+    // Section Caption Props - TODO
     
     // Section Text Props
     get sectionText() {
@@ -92,7 +92,6 @@ class SlideGroup extends XMLElement {
     set sectionText(sectionText) {
         // Remove already existing section text
         this._sectionText.elements = [];
-        console.log("here");
         this.insertSectionText(sectionText);
     }
 
@@ -107,7 +106,7 @@ class SlideGroup extends XMLElement {
 
     insertSectionText(sectionText) {
         /* 
-            - Pushes the new subsec_element onto the elements array of the section
+        - Pushes the new elements onto the elements array of the slide group's section Text
         */
        var content = sectionText.elements[0].elements;       
        for (var i = 0; i < content.length; i++) {
