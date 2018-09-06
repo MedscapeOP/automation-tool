@@ -53,7 +53,7 @@ function getSubsectionText(ticket, startText, endText, cleaningFn) {
 
 function buildSection(mainBlock, mainLabel) {
     // Use package to convert XML string to JS object
-    var subsectionContent = utils.xmlStringToJS(mainBlock); 
+    var subsectionContent = utils.xmlOps.xmlStringToJS(mainBlock); 
 
     // Return instance of section for use in master BUILD function
     var sectionInstance = new SectionElement();

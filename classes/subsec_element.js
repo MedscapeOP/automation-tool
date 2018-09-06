@@ -2,7 +2,7 @@ const _ = require("lodash");
 const XMLElement = require("./xml_element");
 
 class SubsectionElement extends XMLElement {
-    constructor() {
+    constructor(hasSlides) {
         super("subsec_element", true, false);
         this._subsectionHeader = {
             "type": "element",
@@ -12,6 +12,14 @@ class SubsectionElement extends XMLElement {
         this._elements[0] = this._subsectionHeader;
         // _elements ==> starts with [subsec_header]
         // _elements ==> after instantiation push(subsectionContent)
+
+        if (hasSlides) {
+            this._elements[1] = {
+                "type": "element",
+                "name": "slide_intro",
+                "elements": []
+            };
+        }
     }
 
     get subsectionHeader() {
@@ -24,11 +32,20 @@ class SubsectionElement extends XMLElement {
 
     insertSubsectionContent(subsectionContent) {
         /* 
-            - Pushes the new subsec_element onto the elements array of the section
+            - Pushes the new subsec_content onto the elements array of the subsection
         */
        var content = subsectionContent.elements[0];
        this._elements.push(content);
     }
+
+    insertSlideGroup(slideGroup) {
+        /* 
+            - Pushes the new slide_grp onto the elements array of the subsection
+        */
+       var slide = slideGroup.elements[0];
+       this._elements.push(slide);
+    }
+
 }
 
 module.exports = SubsectionElement;

@@ -1,7 +1,7 @@
 var fs = require('fs');
 var utils = require("../../utils");
 var expect = require('chai').expect;
-
+const SubsectionElement = require('../../classes/subsec_element');
 
 describe('Utility Functions', function () {
 
@@ -10,6 +10,9 @@ describe('Utility Functions', function () {
     var dirtyListHTML = fs.readFileSync(__dirname + '/input/dirty-list.html', 'utf8');
 
     var dirtySlidesHTML = fs.readFileSync(__dirname + '/input/dirty-slides.html', 'utf8');
+
+    var dirtySlidesHTML2 = fs.readFileSync(__dirname + '/input/dirty-slides2.html', 'utf8');
+
     beforeEach(function() {
         // prodTicket = fs.readFileSync(__dirname + '/input/article.html', 'utf8');
         xmlJSObject = require('./input/xml-js-object');
@@ -43,6 +46,19 @@ describe('Utility Functions', function () {
                     return console.log(err);
                 }
             }); 
+        });
+    });
+
+    describe("#buildSlides()", function () {
+        it('should transform Slides HTML from from R2Net conversion into JS Object.', function () {
+            var subsectionElement = new SubsectionElement(true);
+            var result = utils.buildSlides(dirtySlidesHTML2, subsectionElement, "901602");
+            // fs.writeFileSync(__dirname + "/output/clean-slides.xml", result, function(err) {
+            //     if(err) {
+            //         return console.log(err);
+            //     }
+            // }); 
+            utils.xmlOps.writeXMLFromObject(result.toObjectLiteral(), __dirname + "/output/clean-slides.xml");
         });
     });
 });
