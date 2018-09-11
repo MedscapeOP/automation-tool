@@ -97,6 +97,7 @@ let buildSlidesXML = (substring, subsectionElement, articleID = 'XXXXXX', counte
         var slideContent = "";
         if (upcomingSlideSymbol != -1) {
             slideContent = substring.substring(0, upcomingSlideSymbol.index);
+            substring = substring.substring(upcomingSlideSymbol.index);
         } else {
             slideContent = substring;
         }
