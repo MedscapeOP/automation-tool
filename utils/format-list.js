@@ -80,6 +80,8 @@
     }
 */
 
+const {findLastAndReplace, findFirstAndReplace} = require('./string-ops');
+
 const testString = `
 <strong>&lt;&lt;Level 2&gt;&gt; Enrichment Analysis in Primary vs Metastatic Tumors<sup>[5]</sup></strong>
 &#8226;	Which of these genes are more commonly mutated in localized prostate cancer vs advanced metastatic castration-resistant prostate cancer (mCRPC)? 
@@ -140,13 +142,6 @@ function findNextSymbol(substring) {
     } else {
         return -1;
     }
-}
-
-function findLastAndReplace(str, removeString, replaceString) {
-    var index = str.lastIndexOf(removeString);
-    str = str.substring(0, index) + replaceString + str.substring(index + removeString.length, str.length);
-    // str = str.replace(new RegExp(removeString + '$'), replaceString);
-    return str;
 }
 
 
@@ -263,6 +258,122 @@ let formatUlItems = (substring, prevSymbol, fn) => {
 };
 
 
+var testString3 = `
+<strong>&lt;&lt;insert slide [17]; 16:17&gt;&gt;</strong>
+
+<h3> Potential Predictors of Response to Anti-TNF Treatment<sup type="ref">[11]</sup></h3>
+
+<li>	It is unknown why certain patients achieve different responses</li>
+
+<li>	There are several factors, which have been identified, that can help predict a response to anti-tumor necrosis factor (TNF) treatment</li>
+
+<li>	Some differences occur once a patient has achieved a response
+
+<ul><li>	Some patients maintain the response indefinitely</li>
+
+<li>	Others lose response
+
+<ul><li>	Some lose the response gradually, and some seem to lose response quite suddenly </li></ul></li>
+
+<li>	There may be a role for doing an ADA test in these different subsets of patients
+
+<ul><li>	More research is needed to determine the optimal place for ADA testing</li></ul></li></ul></li>
+
+<strong>&lt;&lt;insert slide [17]; 16:17&gt;&gt;</strong>
+
+<h3> Potential Predictors of Response to Anti-TNF Treatment<sup type="ref">[11]</sup></h3>
+
+<li>	It is unknown why certain patients achieve different responses</li>
+
+<li>	There are several factors, which have been identified, that can help predict a response to anti-tumor necrosis factor (TNF) treatment</li>
+
+<li>	Some differences occur once a patient has achieved a response
+
+<ul><li>	Some patients maintain the response indefinitely</li>
+
+<li>	Others lose response
+
+<ul><li>	Some lose the response gradually, and some seem to lose response quite suddenly </li></ul></li>
+
+<li>	There may be a role for doing an ADA test in these different subsets of patients
+
+<ul><li>	More research is needed to determine the optimal place for ADA testing</li></ul></li></ul></li>
+`
+
+function wrapUls(prevWasListItem, remainingString, fn) {
+    var newLineRegExp = new RegExp('.*', 'g');
+    // console.log("REMAINING STRING: ", remainingString);
+
+    var matchArray = remainingString.match(newLineRegExp);
+    var currentLine = "";
+    var currentLineMatchIndex = 0;
+    for(var i = 0; currentLine == ""; i++) {
+        currentLine = matchArray[i];
+        currentLineMatchIndex = i;
+    }  
+
+    var nextLine = ""; 
+    for(var i = currentLineMatchIndex + 1; nextLine == ""; i++) {
+        nextLine = matchArray[i];
+    } 
+    var nextLineIndex = remainingString.indexOf(nextLine);
+    // console.log("CURRENT LINE", currentLine);
+    // console.log("NEXT LINE", nextLine);
+    
+    var currentStart = currentLine.substring(0, 4);
+    if (currentStart == '<ul>') {
+        // Current start is already a <ul>
+        if (nextLineIndex == -1 || nextLine.length < 4) {
+            // Current start is a <ul> but there are no more lines 
+            // Means we need to close with </ul> 
+            return remainingString + '</ul>';
+        }
+        var nextStart = nextLine.substring(0, 4);
+        if (nextStart != '<ul>' && nextStart != '<li>') {
+            // Current start is a <ul> but there isn't another list item following 
+            // Means we need to close with </ul> and keep going 
+            return currentLine + '</ul>\n' + fn(true, remainingString.substring(nextLineIndex), wrapUls);
+        }
+        // There are more lines 
+        // Therefore it must be already part of a nest list 
+            // Dont do anything move on
+        return currentLine + fn(true, remainingString.substring(nextLineIndex), wrapUls);
+    }
+
+    if (nextLineIndex == -1) {
+        return remainingString;
+    }
+    // Cases where there are more lines 
+    var nextStart = nextLine.substring(0, 4);
+    if (currentStart == '<li>') {
+        if ((nextStart == '<ul>' || nextStart == '<li>') && !prevWasListItem) {
+            // Next line is continuing list Y
+            // But previous line wasn't a list N  
+            // Therefore current line is start of a list 
+                // Must add opening <ul>  
+            return '<ul>' + currentLine + fn(true, remainingString.substring(nextLineIndex), wrapUls);
+        } else if ((nextStart == '<ul>' || nextStart == '<li>') && prevWasListItem) {
+            // Next line is continuing list Y
+            // Previous line was a list Y
+            // Therefore current line is nested list 
+                // Don't add opening <ul> 
+            return currentLine + fn(true, remainingString.substring(nextLineIndex), wrapUls);
+        } else if ((nextStart != '<ul>' && nextStart != '<li>') && !prevWasListItem) {
+            // Next line is NOT continuing list N
+            // Previous line wasn't a list N
+            // Therefore current line is a one line list 
+                // Must add opening <ul> AND closing </ul>
+            return '<ul>' + currentLine + '</ul>' + fn(true, remainingString.substring(nextLineIndex), wrapUls);
+        }
+    } else {
+        // Current is NOT A <ul> or <li>
+        return currentLine + fn(false, remainingString.substring(nextLineIndex), wrapUls);
+    }
+}
+
+console.log(wrapUls(false, testString3, wrapUls));
+
 module.exports = {
-    formatUlItems
+    formatUlItems,
+    wrapUls
 };

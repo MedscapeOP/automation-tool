@@ -61,6 +61,7 @@ function unorderedList(string) {
     clean = clean.replace(entityRegexp, "&$1;");
     // console.log(formatList.formatUlItems);
     clean = formatList.formatUlItems(clean, null, formatList.formatUlItems);
+    // clean = formatList.wrapUls(false, clean, formatList.wrapUls);
 
     var ttRegExp = new RegExp(`</tt>`, 'g');
     clean = clean.replace(ttRegExp, "");
