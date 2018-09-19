@@ -3,7 +3,7 @@
 TODO: 
     - Create the slide_grp class - done 
     - Refactor findNextSymbol into findNextSlide - done
-    - Implement buildSlides() algorithm
+    - Implement buildSlides() algorithm - done
 */
 
 const testString = `

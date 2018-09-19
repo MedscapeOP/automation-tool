@@ -79,11 +79,19 @@ TODO:
 */
     
     str = unorderedList(str);
+
+    var supRegExp1 = new RegExp(`</strong>\\s{0,}(<sup>.*</sup>)`, 'g');
+    str = str.replace(supRegExp1, "$1</strong>");
+
+    var supRegExp2 = new RegExp(`</strong>\\s{0,}</sup>`, 'g');
+    str = str.replace(supRegExp2, "</sup></strong>");
+    
+    var supRegExp3 = new RegExp(`<sup>\\[`, 'g');
+    str = str.replace(supRegExp3, '<sup type="ref">[');
+
     var h3RegExp = new RegExp(`<strong>&lt;&lt;Level 2&gt;&gt;(.*)</strong>`, 'g');
     str = str.replace(h3RegExp, "<h3>$1</h3>");
 
-    var supRegExp = new RegExp(`<sup>\\[`, 'g');
-    str = str.replace(supRegExp, '<sup type="ref">[');
     return str;
 }
 
