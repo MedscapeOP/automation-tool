@@ -84,6 +84,8 @@ TODO:
 
     // Capitalization Edge Cases 
 
+    // Strong tag Edge Cases
+
     // Sup Edge Cases
     var supRegExp1 = new RegExp(`</strong>\\s{0,}(<sup>.*</sup>)`, 'g');
     str = str.replace(supRegExp1, "$1</strong>");

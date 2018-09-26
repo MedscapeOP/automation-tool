@@ -117,9 +117,8 @@ let formatUlItems = (substring, prevSymbol, fn) => {
         // Case where new sub-sub-list begins "&#9642;" (DONE)
         if (nextSymbol == subSubBulletSymbol) {
             // - Find last </ul> and remove it
-            substring = findLastAndReplace(substring, "</ul>", '');
-            // - Find last </li> and remove it
-            substring = findLastAndReplace(substring, "</li>", '');                
+            substring = findLastAndReplace(substring, "</li></ul>", '');  
+            substring = findLastAndReplace(substring, "</li>", '');            
             // - replace "&#9642;" with <ul><li>$1</li></ul>
             var liRegexp = new RegExp(subSubBulletSymbol + `(.*)`);
             /* POSSIBLY ADD CLOSING </li> - DONE */
@@ -148,14 +147,14 @@ let formatUlItems = (substring, prevSymbol, fn) => {
             substring = findLastAndReplace(substring, '</ul></li>', '');            
             // - replace <tt>o with <li>$1</li></ul>
             var liRegexp = new RegExp(subBulletSymbol + `(.*)`);
-            substring = substring.replace(liRegexp, '<li>$1</li></ul>'); 
+            substring = substring.replace(liRegexp, '<li>$1</li></ul></li>'); 
             return fn(substring, nextSymbol, formatUlItems);
         }
 
         // Case where sub-sub-list continues (DONE)
         if (nextSymbol == subSubBulletSymbol) {
             // - Find last </ul> and remove it
-            substring = findLastAndReplace(substring, '</ul>', '');
+            substring = findLastAndReplace(substring, '</ul></li>', '');
             // - replace &#9642; with <li>$1</li></ul>
             var liRegexp = new RegExp(subSubBulletSymbol + `(.*)`);
             substring = substring.replace(liRegexp, '<li>$1</li></ul>');
@@ -165,9 +164,12 @@ let formatUlItems = (substring, prevSymbol, fn) => {
         // Case where the new list starts. (DONE)
         if (nextSymbol == bulletSymbol) {
             // - Find last </ul> and add closing </li></ul></li>
-            substring = findLastAndReplace(substring, '</ul>', '</ul></li></ul></li>');                
+            /* OLD */
+            // substring = findLastAndReplace(substring, '</ul>', '</ul></li></ul></li>');
+            
+            substring = findLastAndReplace(substring, '', '');
             // - replace &#8226; with <li>
-            var liRegexp = new RegExp(subSubBulletSymbol + `(.*)`);
+            var liRegexp = new RegExp(bulletSymbol + `(.*)`);
             substring = substring.replace(liRegexp, '<li>$1</li>');
             return fn(substring, nextSymbol, formatUlItems);
         }
