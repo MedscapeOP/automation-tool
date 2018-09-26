@@ -1,83 +1,5 @@
 /*
-    formatUlItems(substring, prevSymbol) {
-        nextSymbol = Find(&#8226; || <tt>o || &#9642;);
 
-        // Main list track (DONE)
-        if (prevSymbol == "&#8226;") {
-
-            // Case where the new list starts. (DONE)
-            - If (nextSymbol == "&#8226;")
-                - replace &#8226; with <li>
-                return formatUlItems(substring, nextSymbol);
-
-            // Case where new sub-list begins (DONE)
-            - if (nextSymbol == <tt>o)
-                - Find last </li> and remove it
-                    - substring = substring.replace(new RegExp('</li>$'), '');
-                - replace <tt>o with <ul><li>$1</li></ul>
-                return formatUlItems(substring, nextSymbol);
-        }
-
-        // Sub-list track 
-        else if (prevSymbol == "<tt>o") {
-
-            // Case where sub-list continues (DONE)
-            - if (nextSymbol == "<tt>o")
-                - Find last </ul> and remove it
-                    - substring = substring.replace(new RegExp('</ul>$'), '');
-                - replace <tt>o with <li>$1</li></ul>
-                return formatUlItems(substring, nextSymbol);
-
-            // Case where new sub-sub-list begins (DONE)
-            - if (nextSymbol == "&#9642;")
-                - Find last </ul> and remove it
-                    - substring = substring.replace(new RegExp('</ul>$'), '');
-                - Find last </li> and remove it
-                    - substring = substring.replace(new RegExp('</li>$'), '');
-                - replace <tt>o with <ul><li>$1</li></ul>
-                return formatUlItems(substring, nextSymbol);
-
-            // Case where the new list starts. (DONE) 
-            - If (nextSymbol == "&#8226;") 
-                - Find last </ul> and add closing </li>
-                - substring = substring.replace(new RegExp('</ul>$'), '</ul></li>');
-                - replace &#8226; with <li>
-                return formatUlItems(substring, nextSymbol);
-
-        }
-
-        else if (prevSymbol == "&#9642;") {
-
-            // Case where sub-list continues (DONE)
-            - if (nextSymbol == "<tt>o")
-                - Find last </ul> and add closing </li>
-                    - substring = substring.replace(new RegExp('</ul>$'), '</ul></li>');
-                - replace <tt>o with <li>$1</li></ul>
-                return formatUlItems(substring, nextSymbol);
-
-            // Case where sub-sub-list continues (DONE)
-            - if (nextSymbol == "&#9642;")
-                - Find last </ul> and remove it
-                    - substring = substring.replace(new RegExp('</ul>$'), '');
-                - replace &#9642; with <li>$1</li></ul>
-                return formatUlItems(substring, nextSymbol);
-
-            // Case where the new list starts. (DONE)
-            - If (nextSymbol == "&#8226;")
-                - Find last </ul> and add closing </li></ul></li>
-                    - substring = substring.replace(new RegExp('</ul>$'), '</ul></li></ul></li>');
-                - replace &#8226; with <li>
-                return formatUlItems(substring, nextSymbol);
-        } 
-        
-        else {
-            If (nextSymbol == "&#8226;") {
-                var liRegexp = new RegExp(`&#8226;(.*)`);
-                substring = substring.replace(liRegexp, "<li>$1</li>");
-                return formatUlItems(substring, nextSymbol);
-            }
-        }
-    }
 */
 
 const {findLastAndReplace, findFirstAndReplace} = require('./string-ops');
@@ -153,7 +75,7 @@ let formatUlItems = (substring, prevSymbol, fn) => {
     // clean = clean.replace(liRegexp, "<li>$1</li>");
 
 
-    var nextSymbol = findNextSymbol(substring);
+    let nextSymbol = findNextSymbol(substring);
 
     if (nextSymbol == -1) {
         return substring;
@@ -162,7 +84,7 @@ let formatUlItems = (substring, prevSymbol, fn) => {
     // Main list track (DONE)
     if (prevSymbol == bulletSymbol) {
 
-        // Case where the new list starts. (DONE)
+        // Case where there is new top list item. (DONE)
         if (nextSymbol == bulletSymbol) {
             var liRegexp = new RegExp(bulletSymbol + `(.*)`);
             substring = substring.replace(liRegexp, "<li>$1</li>");
@@ -200,7 +122,8 @@ let formatUlItems = (substring, prevSymbol, fn) => {
             substring = findLastAndReplace(substring, "</li>", '');                
             // - replace "&#9642;" with <ul><li>$1</li></ul>
             var liRegexp = new RegExp(subSubBulletSymbol + `(.*)`);
-            substring = substring.replace(liRegexp, '<ul><li>$1</li></ul>');
+            /* POSSIBLY ADD CLOSING </li> - DONE */
+            substring = substring.replace(liRegexp, '<ul><li>$1</li></ul></li></ul></li>');
             return fn(substring, nextSymbol, formatUlItems);
         }            
 
@@ -220,7 +143,9 @@ let formatUlItems = (substring, prevSymbol, fn) => {
         // Case where sub-list continues (DONE)
         if (nextSymbol == subBulletSymbol) {
             // - Find last </ul> and add closing </li>
-            substring = findLastAndReplace(substring, '</ul>', '</ul></li>');            
+
+            /* OPEN UP UNTIL CLOSING OF SUB SUB */
+            substring = findLastAndReplace(substring, '</ul></li>', '');            
             // - replace <tt>o with <li>$1</li></ul>
             var liRegexp = new RegExp(subBulletSymbol + `(.*)`);
             substring = substring.replace(liRegexp, '<li>$1</li></ul>'); 
@@ -250,6 +175,7 @@ let formatUlItems = (substring, prevSymbol, fn) => {
     
     else {
         if (nextSymbol == bulletSymbol) {
+            // Case where new list starts (DONE)
             var liRegexp = new RegExp(bulletSymbol + `(.*)`);
             substring = substring.replace(liRegexp, "<li>$1</li>");
             return fn(substring, nextSymbol, formatUlItems);

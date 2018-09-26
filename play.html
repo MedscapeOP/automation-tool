@@ -1,58 +1,53 @@
-<ul>
-    <li>
-        <ul>
-            <li></li>
-            <li></li>
-        </ul>
-    </li>
+<p><strong>&lt;&lt;insert slide [17]; 16:17&gt;&gt;</strong></p>
 
-/* 
-ALGO IDEA: 
--  next newline (\n.+)
-- grab first 4 chars 
-    - if <li> || <ul> 
-        - currentIsListItem = true;
-        - if (<li> and prevWasListItem == false)
-            - Insert <ul> at beginning of new line 
-    - else 
-        -
+<p><strong>&lt;&lt;&lt;&lt;Level 2&gt;&gt; Potential Predictors of Response to Anti-TNF Treatment<sup>[11]</sup></strong></p>
 
-PsuedoCode...
-wrapUls(prevWasListItem, remainingString) {
-    var currentLine = remainingString.match(\n.+);
-    var nextLine = remainingString.match();
-    var currentStart = currentLine.substring(4);
-    if currentStart == '<li>' || '<ul>' {
-        if (!prevWasListItem && currentStart == '<li>') {
-            return '<ul>' + currentLine + wrapUls(true, remainingString.substring(nextLine));
-        } else {
-            return currentLine + wrapUls(false, remainingString.substring(nextLine));
-        }
-    } else {
-        if (prevWasListItem) {
-            return '</ul>' + currentLine + wrapUls(false, remainingString.substring(nextLine));
-        } else {
-            return currentLine + wrapUls(false, remainingString.substring(nextLine));
-        }        
-    }    
-}
+<li>It is unknown why certain patients achieve different responses</li>
 
-    
+<li>There are several factors, which have been identified, that can help predict a response to anti-tumor necrosis factor (TNF) treatment</li>
 
-str.indexOf(searchValue[, fromIndex])
-*/
+<!-- BULLET -->
+<li>	Some differences occur once a patient has achieved a response
 
-TODO: 9/13/18
-- wrapUls() - DONE 
+<!-- SUB-BULLET -->
+<ul><li>	Some patients maintain the response indefinitely</li>
 
-- class for slide_article_pres
-    - getters for:
-        - title, byline, (peer reviewer) if time 
+<!-- SUB-BULLET -->
+<li>    Others lose response	
 
-- class for contributor_group 
-    - insert dynamically each contrib 
-    - peform this like slides 
-    
-- For contributors 
-    - Leave quotes out of contributor names 
-    - for disclosures quotes are fine 
+<!-- SUB-SUB-BULLET -->
+<ul><li>Some lose the response gradually, and some seem to lose response quite suddenly</li></ul></li>
+
+<!-- SUB-BULLET -->
+<li>	There may be a role for doing an ADA test in these different subsets of patients
+
+<!-- SUB-SUB-BULLET -->
+<ul><li>More research is needed to determine the optimal place for ADA testing</li></ul></li></ul></li>
+
+
+
+
+
+
+
+
+<p><strong>&lt;&lt;insert slide [17]; 16:17&gt;&gt;</strong></p>
+
+<p><strong>&lt;&lt;&lt;&lt;Level 2&gt;&gt; Potential Predictors of Response to Anti-TNF Treatment<sup>[11]</sup></strong></p>
+
+<p>&#8226;	It is unknown why certain patients achieve different responses</p>
+
+<p>&#8226;	There are several factors, which have been identified, that can help predict a response to anti-tumor necrosis factor (TNF) treatment</p>
+
+<p>&#8226;	Some differences occur once a patient has achieved a response</p>
+
+<p><tt>o	</tt>Some patients maintain the response indefinitely</p>
+
+<p><tt>o	</tt>Others lose response</p>
+
+<p>&#9642;	Some lose the response gradually, and some seem to lose response quite suddenly </p>
+
+<p><tt>o	</tt>There may be a role for doing an ADA test in these different subsets of patients</p>
+
+<p>&#9642;	More research is needed to determine the optimal place for ADA testing</p>
+

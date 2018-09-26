@@ -55,7 +55,7 @@ SLIDES
 
 - TODO: as of 8/16/18
     - Remove - </strong> <strong> after formatting slides 
-    - FORMAT LISTS():
+    - FORMAT LISTS(): DONE 
         - Wrap lists in <ul></ul> 
             - shouldn't rely on D2 to wrap list in <ul>  
 
