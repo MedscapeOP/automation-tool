@@ -49,17 +49,17 @@ describe('Utility Functions', function () {
         });
     });
 
-    describe("#buildSlides()", function () {
-        it('should transform Slides HTML from from R2Net conversion into JS Object.', function () {
-            var subsectionElement = new SubsectionElement(true);
-            var result = utils.buildSlides(dirtySlidesHTML2, subsectionElement, "901602");
-            // fs.writeFileSync(__dirname + "/output/clean-slides.xml", result, function(err) {
-            //     if(err) {
-            //         return console.log(err);
-            //     }
-            // }); 
-            utils.xmlOps.writeXMLFromObject(result.toObjectLiteral(), __dirname + "/output/clean-slides.xml");
-        });
-    });
+    // describe("#buildSlides()", function () {
+    //     it('should transform Slides HTML from from R2Net conversion into JS Object.', function () {
+    //         var subsectionElement = new SubsectionElement(true);
+    //         var result = utils.buildSlides(dirtySlidesHTML2, subsectionElement, "901602");
+    //         // fs.writeFileSync(__dirname + "/output/clean-slides.xml", result, function(err) {
+    //         //     if(err) {
+    //         //         return console.log(err);
+    //         //     }
+    //         // }); 
+    //         utils.xmlOps.writeXMLFromObject(result.toObjectLiteral(), __dirname + "/output/clean-slides.xml");
+    //     });
+    // });
 });
 

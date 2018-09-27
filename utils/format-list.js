@@ -2,7 +2,7 @@
 
 */
 
-const {findLastAndReplace, findFirstAndReplace} = require('./string-ops');
+const {findLastAndReplace, findFirstAndReplace, isBlankOrWhiteSpace, isEmptyString} = require('./string-ops');
 
 const testString = `
 <strong>&lt;&lt;Level 2&gt;&gt; Enrichment Analysis in Primary vs Metastatic Tumors<sup>[5]</sup></strong>
@@ -228,74 +228,101 @@ var testString3 = `
 <ul><li>	More research is needed to determine the optimal place for ADA testing</li></ul></li></ul></li>
 `
 
-function wrapUls(prevWasListItem, remainingString, fn) {
-    var newLineRegExp = new RegExp('.*', 'g');
-    // console.log("REMAINING STRING: ", remainingString);
 
+function wrapUls(prevWasListItem, remainingString, fn) {
+    // console.log("REMAINING STRING: ", remainingString);
+    let newLineRegExp = new RegExp('.*', 'g');
     var matchArray = remainingString.match(newLineRegExp);
     var currentLine = "";
     var currentLineMatchIndex = 0;
-    for(var i = 0; currentLine == ""; i++) {
+    for(var i = 0; i < matchArray.length && isBlankOrWhiteSpace(currentLine); i++) {
         currentLine = matchArray[i];
         currentLineMatchIndex = i;
     }  
 
+    if (isBlankOrWhiteSpace(currentLine)) {
+        return "";
+    }
+
     var nextLine = ""; 
-    for(var i = currentLineMatchIndex + 1; nextLine == ""; i++) {
+    for(var i = currentLineMatchIndex + 1; i < matchArray.length && isBlankOrWhiteSpace(nextLine); i++) {
         nextLine = matchArray[i];
     } 
-    var nextLineIndex = remainingString.indexOf(nextLine);
-    // console.log("CURRENT LINE", currentLine);
-    // console.log("NEXT LINE", nextLine);
-    
-    var currentStart = currentLine.substring(0, 4);
+
+    var nextLineIndex = -1;
+    console.log("CURRENT LINE", currentLine);
+    console.log("NEXT LINE", nextLine);
+    if (!isBlankOrWhiteSpace(nextLine)) {
+        nextLineIndex = remainingString.indexOf(nextLine);
+    } else if (isBlankOrWhiteSpace(nextLine) && prevWasListItem) {
+        return "</ul>\n";
+    } else {
+        return "";
+    }
+
+    // Cases where there are more lines 
+    currentLine = currentLine.trimLeft() + "\n";
+    nextLine = nextLine.trimLeft() + "\n";
+
+    var nextStart = "";
+    if (nextLine.length >= 4) {
+        nextStart = nextLine.substring(0, 4);
+    }
+    var currentStart = "";
+    if (nextLine.length >= 4) {
+        currentStart = currentLine.substring(0, 4);
+    }
+
+    remainingString = remainingString.substring(nextLineIndex);
+
     if (currentStart == '<ul>') {
         // Current start is already a <ul>
-        if (nextLineIndex == -1 || nextLine.length < 4) {
+        if (nextLineIndex == -1) {
             // Current start is a <ul> but there are no more lines 
             // Means we need to close with </ul> 
             return remainingString + '</ul>';
         }
-        var nextStart = nextLine.substring(0, 4);
         if (nextStart != '<ul>' && nextStart != '<li>') {
             // Current start is a <ul> but there isn't another list item following 
             // Means we need to close with </ul> and keep going 
-            return currentLine + '</ul>\n' + fn(true, remainingString.substring(nextLineIndex), wrapUls);
+            return currentLine + '</ul>\n' + fn(true, remainingString, wrapUls);
         }
         // There are more lines 
         // Therefore it must be already part of a nest list 
             // Dont do anything move on
-        return currentLine + fn(true, remainingString.substring(nextLineIndex), wrapUls);
-    }
-
-    if (nextLineIndex == -1) {
-        return remainingString;
-    }
-    // Cases where there are more lines 
-    var nextStart = nextLine.substring(0, 4);
+        return currentLine + fn(true, remainingString, wrapUls);
+    } 
     if (currentStart == '<li>') {
         if ((nextStart == '<ul>' || nextStart == '<li>') && !prevWasListItem) {
             // Next line is continuing list Y
             // But previous line wasn't a list N  
             // Therefore current line is start of a list 
                 // Must add opening <ul>  
-            return '<ul>' + currentLine + fn(true, remainingString.substring(nextLineIndex), wrapUls);
+            return '<ul>' + currentLine + fn(true, remainingString, wrapUls);
         } else if ((nextStart == '<ul>' || nextStart == '<li>') && prevWasListItem) {
             // Next line is continuing list Y
             // Previous line was a list Y
             // Therefore current line is nested list 
                 // Don't add opening <ul> 
-            return currentLine + fn(true, remainingString.substring(nextLineIndex), wrapUls);
+            return currentLine + fn(true, remainingString, wrapUls);
         } else if ((nextStart != '<ul>' && nextStart != '<li>') && !prevWasListItem) {
             // Next line is NOT continuing list N
             // Previous line wasn't a list N
             // Therefore current line is a one line list 
                 // Must add opening <ul> AND closing </ul>
-            return '<ul>' + currentLine + '</ul>' + fn(true, remainingString.substring(nextLineIndex), wrapUls);
+            return '<ul>' + currentLine + '</ul>' + fn(true, remainingString, wrapUls);
+        } 
+        else {
+        // else if ((nextStart != '<ul>' && nextStart != '<li>') && prevWasListItem) {
+            // Next line is NOT continuing list N
+            // Previous line wasn't a list N
+            // Therefore current line is a one line list 
+                // Must add opening <ul> AND closing </ul>
+            return currentLine + '</ul>\n' + fn(true, remainingString, wrapUls);
         }
     } else {
         // Current is NOT A <ul> or <li>
-        return currentLine + fn(false, remainingString.substring(nextLineIndex), wrapUls);
+        return currentLine + fn(false, remainingString, wrapUls);
     }
 }
 
