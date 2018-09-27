@@ -11,7 +11,21 @@ function findFirstAndReplace(str, removeString, replaceString) {
     return str;
 }
 
+function isEmptyString(str) {
+    return (!str || 0 === str.length);
+}
+
+function isBlankOrWhiteSpace(str) {
+    return (!str || /^\s*$/.test(str) || str.trim().length === 0);
+}
+
+// function isBlankOrWhiteSpace(str) {
+//     return (!str || str.length === 0 || !str.trim());
+// }
+
 module.exports = {
     findLastAndReplace,
-    findFirstAndReplace
+    findFirstAndReplace,
+    isEmptyString,
+    isBlankOrWhiteSpace
 }
