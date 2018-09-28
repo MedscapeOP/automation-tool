@@ -256,9 +256,10 @@ function wrapUls(prevWasListItem, remainingString, fn) {
         nextLineIndex = remainingString.indexOf(nextLine);
     } else if (isBlankOrWhiteSpace(nextLine) && prevWasListItem) {
         return "</ul>\n";
-    } else {
-        return "";
-    }
+    } 
+    // else {
+    //     return "";
+    // }
 
     // Cases where there are more lines 
     currentLine = currentLine.trimLeft() + "\n";
