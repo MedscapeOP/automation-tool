@@ -73,7 +73,7 @@ function slides(str) {
 TODO: 
 - Add support for edge cases: 
     1) Remove Random <strong> tags in headline if any 
-    2) Also check for case where there is 1 or more greater than / less than. 
+    2) Also check for case where there is 1 or more greater than / less than. *DONE
     3) Also check for case where bracket doesn't directly follow sup tag 
         - When there is a space in between them.  
 */
@@ -101,6 +101,12 @@ TODO:
 
     var supRegExp2 = new RegExp(`</strong>\\s{0,}</sup>`, 'g');
     str = str.replace(supRegExp2, "</sup></strong>");
+
+    var supRegExp3 = new RegExp(`<sup>\\s{0,}\\[`, 'g');
+    str = str.replace(supRegExp3, "<sup>[");
+
+    var supRegExp3 = new RegExp(`<sup>.*\\[`, 'g');
+    str = str.replace(supRegExp3, "<sup>[");
     
 
 
