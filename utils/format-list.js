@@ -294,7 +294,8 @@ function wrapUls(prevWasListItem, remainingString, fn) {
         // return "</ul>\n";
     } 
     else {
-        return "";
+        // END OF FUNCTION / TERMINATION-BASE CASE 
+        return remainingString;
     }
 
 
@@ -339,9 +340,8 @@ function wrapUls(prevWasListItem, remainingString, fn) {
         else {
         // else if ((nextStart != '<ul>' && nextStart != '<li>') && prevWasListItem) {
             // Next line is NOT continuing list N
-            // Previous line wasn't a list N
-            // Therefore current line is a one line list 
-                // Must add opening <ul> AND closing </ul>
+            // Previous line was a list Y
+                // Therefore current line is the end of the current list  
             return currentLine + '</ul>\n' + fn(true, remainingString, wrapUls);
         }
     } else {

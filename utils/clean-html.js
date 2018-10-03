@@ -74,8 +74,7 @@ TODO:
 - Add support for edge cases: 
     1) Remove Random <strong> tags in headline if any 
     2) Also check for case where there is 1 or more greater than / less than. *DONE
-    3) Also check for case where bracket doesn't directly follow sup tag 
-        - When there is a space in between them.  
+    3) Also check for case where bracket doesn't directly follow sup tag *DONE 
 */
     
     str = unorderedList(str);
