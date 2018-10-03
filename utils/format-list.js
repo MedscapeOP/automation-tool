@@ -266,7 +266,6 @@ function wrapUls(prevWasListItem, remainingString, fn) {
         } else {
             nextLineIndex = remainingString.indexOf(nextLine);
         }        
-        console.log(nextLineIndex);
         // Cases where there are more lines 
         currentLine = currentLine.trimLeft() + "\n";
         nextLine = nextLine.trimLeft() + "\n";
@@ -350,7 +349,7 @@ function wrapUls(prevWasListItem, remainingString, fn) {
     }
 }
 
-console.log(wrapUls(false, testString3, wrapUls));
+// console.log(wrapUls(false, testString3, wrapUls));
 
 module.exports = {
     formatUlItems,
