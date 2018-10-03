@@ -78,6 +78,14 @@ let formatUlItems = (substring, prevSymbol, fn) => {
     let nextSymbol = findNextSymbol(substring);
 
     if (nextSymbol == -1) {
+        // if (prevSymbol == bulletSymbol) {
+        //     return substring;
+        // } else if (prevSymbol == subBulletSymbol) {
+        //     // close the bulletSymbol li
+        //     return substring + "</li>";
+        // } else if (prevSymbol == subSubBulletSymbol) {
+        //     return substring + "</li>";
+        // }
         return substring;
     }
 
@@ -96,7 +104,7 @@ let formatUlItems = (substring, prevSymbol, fn) => {
             substring = findLastAndReplace(substring, '</li>', '');
             // - replace <tt>o with <ul><li>$1</li></ul>
             var liRegexp = new RegExp(subBulletSymbol + `(.*)`);
-            substring = substring.replace(liRegexp, '<ul><li>$1</li></ul>');
+            substring = substring.replace(liRegexp, '<ul><li>$1</li></ul></li>');
             return fn(substring, nextSymbol, formatUlItems);
         }
     }
@@ -106,11 +114,12 @@ let formatUlItems = (substring, prevSymbol, fn) => {
 
         // Case where sub-list continues (DONE)
         if (nextSymbol == subBulletSymbol) {
-            // - Find last </ul> and remove it
-            substring = findLastAndReplace(substring, '</ul>', '');                
+            // - Find last </ul></li> and remove it
+            // Find end of bullet </li> and subBullet </ul>
+            substring = findLastAndReplace(substring, '</ul></li>', '');                
             // - replace <tt>o with <li>$1</li></ul>
             var liRegexp = new RegExp(subBulletSymbol + `(.*)`);
-            substring = substring.replace(liRegexp, '<li>$1</li></ul>');
+            substring = substring.replace(liRegexp, '<li>$1</li></ul></li>');
             return fn(substring, nextSymbol, formatUlItems);
         }            
 
@@ -128,8 +137,8 @@ let formatUlItems = (substring, prevSymbol, fn) => {
 
         // Case where the new list starts. (DONE) 
         if (nextSymbol == bulletSymbol) {
-            // - Find last </ul> and add closing </li>
-            substring = findLastAndReplace(substring, '</ul>', '</ul></li>'); 
+            // Dont have to replace anything just start new li 
+            // substring = findLastAndReplace(substring, '', ''); 
             // - replace &#8226; with <li>
             var liRegexp = new RegExp(bulletSymbol + `(.*)`);
             substring = substring.replace(liRegexp, '<li>$1</li>');           
@@ -150,24 +159,21 @@ let formatUlItems = (substring, prevSymbol, fn) => {
             substring = substring.replace(liRegexp, '<li>$1</li></ul></li>'); 
             return fn(substring, nextSymbol, formatUlItems);
         }
-
+        // </li></ul></li></ul></li>
         // Case where sub-sub-list continues (DONE)
         if (nextSymbol == subSubBulletSymbol) {
-            // - Find last </ul> and remove it
-            substring = findLastAndReplace(substring, '</ul></li>', '');
+            // - Remove all closing tags up to last sub-sub-item 
+            substring = findLastAndReplace(substring, '</ul></li></ul></li>', '');
             // - replace &#9642; with <li>$1</li></ul>
             var liRegexp = new RegExp(subSubBulletSymbol + `(.*)`);
-            substring = substring.replace(liRegexp, '<li>$1</li></ul>');
+            substring = substring.replace(liRegexp, '<li>$1</li></ul></li></ul></li>');
             return fn(substring, nextSymbol, formatUlItems);
         }            
 
         // Case where the new list starts. (DONE)
         if (nextSymbol == bulletSymbol) {
-            // - Find last </ul> and add closing </li></ul></li>
-            /* OLD */
-            // substring = findLastAndReplace(substring, '</ul>', '</ul></li></ul></li>');
-            
-            substring = findLastAndReplace(substring, '', '');
+            // - Don't replace anything just continue with new list item. 
+            // substring = findLastAndReplace(substring, '', '');
             // - replace &#8226; with <li>
             var liRegexp = new RegExp(bulletSymbol + `(.*)`);
             substring = substring.replace(liRegexp, '<li>$1</li>');
@@ -250,31 +256,42 @@ function wrapUls(prevWasListItem, remainingString, fn) {
     } 
 
     var nextLineIndex = -1;
+    var nextStart = "";
+    var currentStart = "";
     console.log("CURRENT LINE", currentLine);
     console.log("NEXT LINE", nextLine);
     if (!isBlankOrWhiteSpace(nextLine)) {
         nextLineIndex = remainingString.indexOf(nextLine);
+            // Cases where there are more lines 
+        currentLine = currentLine.trimLeft() + "\n";
+        nextLine = nextLine.trimLeft() + "\n";
+
+        if (nextLine.length >= 4) {
+            nextStart = nextLine.substring(0, 4);
+        }
+        
+        if (currentLine.length >= 4) {
+            currentStart = currentLine.substring(0, 4);
+        }
+
+        remainingString = remainingString.substring(nextLineIndex);
     } else if (isBlankOrWhiteSpace(nextLine) && prevWasListItem) {
-        return "</ul>\n";
+        // Cases where we are on the last line  
+        currentLine = currentLine.trimLeft() + "\n";
+        
+        if (currentLine.length >= 4) {
+            currentStart = currentLine.substring(0, 4);
+        }
+        nextLineIndex = remainingString.indexOf(currentLine) + currentLine.length;
+
+        remainingString = remainingString.substring(nextLineIndex);
+        // return "</ul>\n";
     } 
     // else {
     //     return "";
     // }
 
-    // Cases where there are more lines 
-    currentLine = currentLine.trimLeft() + "\n";
-    nextLine = nextLine.trimLeft() + "\n";
 
-    var nextStart = "";
-    if (nextLine.length >= 4) {
-        nextStart = nextLine.substring(0, 4);
-    }
-    var currentStart = "";
-    if (nextLine.length >= 4) {
-        currentStart = currentLine.substring(0, 4);
-    }
-
-    remainingString = remainingString.substring(nextLineIndex);
 
     if (currentStart == '<ul>') {
         // Current start is already a <ul>
