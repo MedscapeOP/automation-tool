@@ -40,7 +40,7 @@ describe('Utility Functions', function () {
 
     describe("#cleanHTML.slides()", function () {
         it('should transform Slides HTML from from R2Net conversion into proper format.', function () {
-            var result = utils.cleanHTML.slides(dirtySlidesHTML);
+            var result = utils.cleanHTML.slides(dirtySlidesHTML2);
             fs.writeFileSync(__dirname + "/output/clean-slides.html", result, function(err) {
                 if(err) {
                     return console.log(err);

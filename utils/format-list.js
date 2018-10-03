@@ -258,11 +258,16 @@ function wrapUls(prevWasListItem, remainingString, fn) {
     var nextLineIndex = -1;
     var nextStart = "";
     var currentStart = "";
-    console.log("CURRENT LINE", currentLine);
-    console.log("NEXT LINE", nextLine);
+    // console.log("CURRENT LINE", currentLine);
+    // console.log("NEXT LINE", nextLine);
     if (!isBlankOrWhiteSpace(nextLine)) {
-        nextLineIndex = remainingString.indexOf(nextLine);
-            // Cases where there are more lines 
+        if (nextLine === currentLine) {
+            nextLineIndex = remainingString.indexOf(nextLine) + nextLine.length;
+        } else {
+            nextLineIndex = remainingString.indexOf(nextLine);
+        }        
+        console.log(nextLineIndex);
+        // Cases where there are more lines 
         currentLine = currentLine.trimLeft() + "\n";
         nextLine = nextLine.trimLeft() + "\n";
 
@@ -277,7 +282,8 @@ function wrapUls(prevWasListItem, remainingString, fn) {
         remainingString = remainingString.substring(nextLineIndex);
     } else if (isBlankOrWhiteSpace(nextLine) && prevWasListItem) {
         // Cases where we are on the last line  
-        currentLine = currentLine.trimLeft() + "\n";
+        // currentLine = currentLine.trimLeft() + "\n";
+        currentLine = currentLine.trimLeft();
         
         if (currentLine.length >= 4) {
             currentStart = currentLine.substring(0, 4);
@@ -287,9 +293,9 @@ function wrapUls(prevWasListItem, remainingString, fn) {
         remainingString = remainingString.substring(nextLineIndex);
         // return "</ul>\n";
     } 
-    // else {
-    //     return "";
-    // }
+    else {
+        return "";
+    }
 
 
 
@@ -298,7 +304,7 @@ function wrapUls(prevWasListItem, remainingString, fn) {
         if (nextLineIndex == -1) {
             // Current start is a <ul> but there are no more lines 
             // Means we need to close with </ul> 
-            return remainingString + '</ul>';
+            return remainingString + '</ul>\n';
         }
         if (nextStart != '<ul>' && nextStart != '<li>') {
             // Current start is a <ul> but there isn't another list item following 
@@ -328,7 +334,7 @@ function wrapUls(prevWasListItem, remainingString, fn) {
             // Previous line wasn't a list N
             // Therefore current line is a one line list 
                 // Must add opening <ul> AND closing </ul>
-            return '<ul>' + currentLine + '</ul>' + fn(true, remainingString, wrapUls);
+            return '<ul>' + currentLine + '</ul>\n' + fn(true, remainingString, wrapUls);
         } 
         else {
         // else if ((nextStart != '<ul>' && nextStart != '<li>') && prevWasListItem) {

@@ -82,7 +82,16 @@ TODO:
 
     /* CLEAN UP HTML FOR EDGE CASES */
 
-    // Capitalization Edge Cases 
+    // Headline edge cases / Capitalization Edge Cases 
+    var headlineRegExp1 = new RegExp(`&lt;&lt;.*level 2.*&gt;&gt;`, 'g');
+    str = str.replace(headlineRegExp1, "&lt;&lt;Level 2&gt;&gt;");
+
+    // Insert Slide edge cases / Capitalization Edge Cases 
+    var insertSlideRegExp1 = new RegExp(`&lt;&lt;.*slide`, 'g');
+    str = str.replace(insertSlideRegExp1, "&lt;&lt;insert slide");
+
+    var insertSlideRegExp2 = new RegExp(`&lt;&lt;.*Slide`, 'g');
+    str = str.replace(insertSlideRegExp2, "&lt;&lt;insert slide");
 
     // Strong tag Edge Cases
 
