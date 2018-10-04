@@ -42,7 +42,7 @@ class SubsectionElement extends XMLElement {
         /* 
             - Pushes the new slide_grp onto the elements array of the subsection
         */
-       var slide = slideGroup.elements[0];
+       var slide = slideGroup.toObjectLiteral().elements[0];
        this._elements.push(slide);
     }
 

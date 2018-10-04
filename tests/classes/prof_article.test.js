@@ -24,9 +24,9 @@ describe('Prof Article Element', function () {
             var tocInstance1 = new TOCElement("TOC1");
             var tocInstance2 = new TOCElement("TOC2");
             var tocInstance3 = new TOCElement("TOC3");
-            profArticleInstance.insertTOCElement(tocInstance1.toObjectLiteral());
-            profArticleInstance.insertTOCElement(tocInstance2.toObjectLiteral());
-            profArticleInstance.insertTOCElement(tocInstance3.toObjectLiteral());
+            profArticleInstance.insertTOCElement(tocInstance1);
+            profArticleInstance.insertTOCElement(tocInstance2);
+            profArticleInstance.insertTOCElement(tocInstance3);
 
             console.log("ELEMENTS: ", profArticleInstance.elements);
             // expect(profArticleInstance.toObjectLiteral()).to.deep.equal(completeProfArticle);

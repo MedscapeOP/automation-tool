@@ -116,7 +116,7 @@ let buildSlidesXML = (substring, subsectionElement, articleID = 'XXXXXX', counte
         slide_grp.insertSectionText(slideContent);
 
         // Push slide_grp onto subsection element 
-        subsectionElement.insertSlideGroup(slide_grp.toObjectLiteral());
+        subsectionElement.insertSlideGroup(slide_grp);
 
         // Continue recursive definition
         return fn(substring, subsectionElement, articleID, counter, buildSlidesXML);
