@@ -385,13 +385,14 @@ class ProfArticle extends XMLElement{
             - Pushes the new contrbtr_group element onto the this._contrbtr_groups array
         */
         // this._elements.push(secElement.toObjectLiteral().elements[0]);
-
+        this._contrbtr_groups.push(contrbtrGroup.toObjectLiteral().elements[0]);
     }
     insertLayerGroup(layerGrp) {
         /* 
             - Pushes the new layer_grp element onto the this._layer_grps array
         */
         // this._elements.push(secElement.toObjectLiteral().elements[0]);
+        this._layer_grps.push(layerGrp.toObjectLiteral().elements[0]);
     }
     insertTOCElement(tocElement) {
         /* 
