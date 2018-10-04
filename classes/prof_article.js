@@ -1,5 +1,6 @@
 const _ = require("lodash");
 const XMLElement = require("./xml_element");
+const xmlOps = require('../utils/index').xmlOps;
 
 
 class ProfArticle extends XMLElement{
@@ -23,27 +24,7 @@ class ProfArticle extends XMLElement{
         this._above_title = {
             "type": "element",
             "name": "above_title",
-            "elements": [
-                {
-                    "type": "element",
-                    "name": "p",
-                    "elements": [
-                        {
-                            "type": "element",
-                            "name": "a",
-                            "attributes": {
-                                "href": "/sites/advances/evolving-anticoagulation"
-                            },
-                            "elements": [
-                                {
-                                    "type": "text",
-                                    "text": "Evolving Anticoagulation in AF and VTE"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "elements": []
         };
         this._title = {
             "type": "element",
@@ -367,19 +348,39 @@ class ProfArticle extends XMLElement{
         return _.flatten(this._elements);               
     }
 
-
-    get tocLabel() {
-        this.getParagraphTextField("_label");
+    get aboveTitle() {
+        // console.log(this._above_title.elements[0].elements);
+        return xmlOps.objectToXMLString(this._above_title.elements[0]);         
     }
-
-    set tocLabel(newLabel) {
-        this.setParagraphTextField("_label", newLabel);
-    }
-
 
     //--------------------------------
     // METHODS 
     //-------------------------------- 
+    insertAboveTitleCA (advancesTitle, advancesFileName) {
+        var aboveTitleObject = {
+            "type": "element",
+            "name": "p",
+            "elements": [
+                {
+                    "type": "element",
+                    "name": "a",
+                    "attributes": {
+                        "href": `/sites/advances/${advancesFileName}`
+                    },
+                    "elements": [
+                        {
+                            "type": "text",
+                            "text": `${advancesTitle}`
+                        }
+                    ]
+                }
+            ]
+        };
+        this._above_title.elements.push(aboveTitleObject);
+        // this._above_title.elements[0].elements[0].attributes.href = advancesURL;
+        // this._above_title.elements[0].elements[0].elements[0].text = advancesTitle;
+    }
+
     insertContributorGroup(contrbtrGroup) {
         /* 
             - Pushes the new contrbtr_group element onto the this._contrbtr_groups array

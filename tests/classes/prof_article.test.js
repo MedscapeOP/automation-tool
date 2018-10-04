@@ -28,8 +28,21 @@ describe('Prof Article Element', function () {
             profArticleInstance.insertTOCElement(tocInstance2);
             profArticleInstance.insertTOCElement(tocInstance3);
 
-            console.log("ELEMENTS: ", profArticleInstance.elements);
+            // console.log("ELEMENTS: ", profArticleInstance.elements);
             // expect(profArticleInstance.toObjectLiteral()).to.deep.equal(completeProfArticle);
+            done();
+        });
+    });
+
+
+    describe('insertAboveTitleCA() && .aboveTitle', function () {
+        it('should insert above_title in CA format, and getter should return XML string of above_title', function (done) {
+            
+            profArticleInstance.insertAboveTitleCA('Evolving Anticoagulation in AF and VTE', 'evolving-anticoagulation');
+
+            // console.log("ABOVE TITLE", profArticleInstance.aboveTitle);
+            // console.log("ELEMENTS: ", profArticleInstance.elements);
+            expect(profArticleInstance.aboveTitle).to.equal('<a href="/sites/advances/evolving-anticoagulation">Evolving Anticoagulation in AF and VTE</a>');
             done();
         });
     });

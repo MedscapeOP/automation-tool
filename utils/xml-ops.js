@@ -26,8 +26,16 @@ function writeXMLFromObject(object, pathToFile) {
     });
 }
 
+function objectToXMLString(object) {
+    // Need options or the file will be output as empty. 
+    var options = { compact: false, fullTagEmptyElement: true};
+    var result = convert.js2xml(object, options);
+    return result;
+}
+
 module.exports = {
     xmlStringToJS,
     xmlFileToJS,
     writeXMLFromObject,
+    objectToXMLString
 };

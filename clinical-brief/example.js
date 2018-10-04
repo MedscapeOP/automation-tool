@@ -23,6 +23,7 @@ fs.writeFile(__dirname + "/../elements/spotlight_complete.json", JSON.stringify(
 
 
 /* 
+DONE ----
 FOR SLIDES: Make this a master util function that is used within different programs. 
 - Factory function for TOC element - global 
 - Create Factory function for slide_grp - global
