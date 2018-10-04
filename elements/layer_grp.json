@@ -1,0 +1,96 @@
+{
+    "elements": [
+        {
+            "type": "element",
+            "name": "layer_grp",
+            "elements": [
+                {
+                    "type": "element",
+                    "name": "layer_img_sm",
+                    "elements": [
+                        {
+                            "type": "text",
+                            "text": "/webmd/professional_assets/medscape/images/content/article/902/642/902642-thumb1.jpg"
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "layer_img_full",
+                    "elements": [
+                        {
+                            "type": "text",
+                            "text": "/webmd/professional_assets/medscape/images/content/article/902/642/902642-fig1.jpg"
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "layer_caption",
+                    "elements": [
+                        {
+                            "type": "element",
+                            "name": "p",
+                            "elements": [
+                                {
+                                    "type": "element",
+                                    "name": "b",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Figure."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " Computed tomography images of the chest of an HIV-infected 47-year-old man (case-patient 3) with \r\n            "
+                                },
+                                {
+                                    "type": "element",
+                                    "name": "em",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Cryptococcus gattii"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " complex infection, southeastern United States. Transverse (A) and frontal (B) views without intravenous contrast showed a mass (arrows) (4.0 cm × 2.5 cm) that had central cavitation posteriorly in the right lower lobe abutting the pleural surface. The central cavitary portion of this lesion had a maximum length of ≈1.3 cm and no evidence of fluid level or internal soft tissues.\r\n        "
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "layer_label",
+                    "elements": [
+                        {
+                            "type": "element",
+                            "name": "p",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "[[F1]]"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "layer_alt_txt",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "layer_table",
+                    "elements": []
+                }
+            ]
+        }
+    ]
+}

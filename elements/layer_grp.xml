@@ -1,0 +1,489 @@
+<layer_grp>
+    <layer_img_sm>/webmd/professional_assets/medscape/images/content/article/902/642/902642-thumb1.jpg</layer_img_sm>
+    <layer_img_full>/webmd/professional_assets/medscape/images/content/article/902/642/902642-fig1.jpg</layer_img_full>
+    <layer_caption>
+        <p>
+            <b>Figure.</b> Computed tomography images of the chest of an HIV-infected 47-year-old man (case-patient 3) with 
+            <em>Cryptococcus gattii</em> complex infection, southeastern United States. Transverse (A) and frontal (B) views without intravenous contrast showed a mass (arrows) (4.0 cm × 2.5 cm) that had central cavitation posteriorly in the right lower lobe abutting the pleural surface. The central cavitary portion of this lesion had a maximum length of ≈1.3 cm and no evidence of fluid level or internal soft tissues.
+        </p>
+    </layer_caption>
+    <layer_label>
+        <p>[[F1]]</p>
+    </layer_label>
+    <layer_alt_txt/>
+    <layer_table/>
+</layer_grp>
+<layer_grp>
+    <layer_img_sm/>
+    <layer_img_full/>
+    <layer_caption>
+        <p>
+            <strong>Table 1. Sociodemographic Characteristics of Colon Cancer Patients, by Age Group, Florida Cancer Data System, 1981–2013</strong>
+        </p>
+    </layer_caption>
+    <layer_label>
+        <p>[[T1]]Table 1.</p>
+    </layer_label>
+    <layer_alt_txt>Table 1</layer_alt_txt>
+    <layer_table>
+        <table class="inline_data_table">
+            <tbody>
+                <tr>
+                    <th class="row1left" colspan="1" rowspan="3">Characteristic</th>
+                    <th class="row1" colspan="1" rowspan="3">All, n (%)
+                        <sup>b</sup>
+                    </th>
+                    <th class="row1" colspan="4" rowspan="1">Age Group and Stage Presentation
+                        <sup>a</sup>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="row1" colspan="2" rowspan="1">&lt;50 years</th>
+                    <th class="row1" colspan="2" rowspan="1">≥ 50 years</th>
+                </tr>
+                <tr>
+                    <th class="row1" colspan="1" rowspan="1">Early, n (%)
+                        <sup>b</sup>
+                    </th>
+                    <th class="row1" colspan="1" rowspan="1">Advanced, n (%)
+                        <sup>b</sup>
+                    </th>
+                    <th class="row1" colspan="1" rowspan="1">Early, n (%)
+                        <sup>b</sup>
+                    </th>
+                    <th class="row1" colspan="1" rowspan="1">Advanced, n (%)
+                        <sup>b</sup>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">
+                        <b>Total</b>
+                    </th>
+                    <td colspan="1" rowspan="1">182,095 (100.0)</td>
+                    <td colspan="1" rowspan="1">3,861 (2.1)</td>
+                    <td colspan="1" rowspan="1">8,850 (4.9)</td>
+                    <td colspan="1" rowspan="1">67,380 (37.0)</td>
+                    <td colspan="1" rowspan="1">102,004 (56.0)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="6" rowspan="1">
+                        <b>Sex</b>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Male</th>
+                    <td colspan="1" rowspan="1">95,502 (52.4)</td>
+                    <td colspan="1" rowspan="1">1,934 (50.1)</td>
+                    <td colspan="1" rowspan="1">4,655 (52.6)</td>
+                    <td colspan="1" rowspan="1">35,612 (52.9)</td>
+                    <td colspan="1" rowspan="1">53,301 (52.3)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Female</th>
+                    <td colspan="1" rowspan="1">86,593 (47.6)</td>
+                    <td colspan="1" rowspan="1">1,927 (49.9)</td>
+                    <td colspan="1" rowspan="1">4,195 (47.4)</td>
+                    <td colspan="1" rowspan="1">31,768 (47.1)</td>
+                    <td colspan="1" rowspan="1">48,703 (47.7)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="6" rowspan="1">
+                        <b>Race</b>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">White</th>
+                    <td colspan="1" rowspan="1">164,865 (90.5)</td>
+                    <td colspan="1" rowspan="1">3,165 (82.0)</td>
+                    <td colspan="1" rowspan="1">6,979 (78.9)</td>
+                    <td colspan="1" rowspan="1">62,112 (92.1)</td>
+                    <td colspan="1" rowspan="1">92,609 (90.8)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Black</th>
+                    <td colspan="1" rowspan="1">15,342 (8.4)</td>
+                    <td colspan="1" rowspan="1">614 (15.9)</td>
+                    <td colspan="1" rowspan="1">1,626 (18.4)</td>
+                    <td colspan="1" rowspan="1">4,688 (7.0)</td>
+                    <td colspan="1" rowspan="1">8,414 (8.2)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Other
+                        <sup>c</sup>
+                    </th>
+                    <td colspan="1" rowspan="1">1,888 (1.0)</td>
+                    <td colspan="1" rowspan="1">82 (2.1)</td>
+                    <td colspan="1" rowspan="1">245 (2.8)</td>
+                    <td colspan="1" rowspan="1">580 (0.9)</td>
+                    <td colspan="1" rowspan="1">981 (1.0)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="6" rowspan="1">
+                        <b>Ethnicity</b>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Non-Hispanic</th>
+                    <td colspan="1" rowspan="1">162,633 (89.3)</td>
+                    <td colspan="1" rowspan="1">3,303 (85.5)</td>
+                    <td colspan="1" rowspan="1">7,488 (84.6)</td>
+                    <td colspan="1" rowspan="1">60,687 (90.1)</td>
+                    <td colspan="1" rowspan="1">91,155 (89.4)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Hispanic</th>
+                    <td colspan="1" rowspan="1">19,462 (10.7)</td>
+                    <td colspan="1" rowspan="1">558 (14.5)</td>
+                    <td colspan="1" rowspan="1">1,362 (15.4)</td>
+                    <td colspan="1" rowspan="1">6,693 (9.9)</td>
+                    <td colspan="1" rowspan="1">10,849 (10.6)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="6" rowspan="1">
+                        <b>Neighborhood socioeconomic status</b>
+                        <sup>
+                            <b>d</b>
+                        </sup>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Lowest</th>
+                    <td colspan="1" rowspan="1">26,705 (14.7)</td>
+                    <td colspan="1" rowspan="1">628 (16.3)</td>
+                    <td colspan="1" rowspan="1">1,596 (18.0)</td>
+                    <td colspan="1" rowspan="1">9,135 (13.6)</td>
+                    <td colspan="1" rowspan="1">15,346 (15.0)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Middle-low</th>
+                    <td colspan="1" rowspan="1">58,224 (32.0)</td>
+                    <td colspan="1" rowspan="1">1,227 (31.8)</td>
+                    <td colspan="1" rowspan="1">2,919 (33.0)</td>
+                    <td colspan="1" rowspan="1">21,162 (31.4)</td>
+                    <td colspan="1" rowspan="1">32,916 (32.3)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Middle-high</th>
+                    <td colspan="1" rowspan="1">65,437 (35.9)</td>
+                    <td colspan="1" rowspan="1">1,236 (32.0)</td>
+                    <td colspan="1" rowspan="1">2,791 (31.5)</td>
+                    <td colspan="1" rowspan="1">25,139 (37.3)</td>
+                    <td colspan="1" rowspan="1">36,271 (35.6)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Highest</th>
+                    <td colspan="1" rowspan="1">31,729 (17.4)</td>
+                    <td colspan="1" rowspan="1">770 (19.9)</td>
+                    <td colspan="1" rowspan="1">1,544 (17.4)</td>
+                    <td colspan="1" rowspan="1">11,944 (17.7)</td>
+                    <td colspan="1" rowspan="1">17,471 (17.1)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="6" rowspan="1">
+                        <b>Smoking status</b>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Never</th>
+                    <td colspan="1" rowspan="1">82,134 (45.1)</td>
+                    <td colspan="1" rowspan="1">1,890 (49.0)</td>
+                    <td colspan="1" rowspan="1">4,210 (47.6)</td>
+                    <td colspan="1" rowspan="1">30,406 (45.1)</td>
+                    <td colspan="1" rowspan="1">45,628 (44.7)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Current</th>
+                    <td colspan="1" rowspan="1">21,709 (11.9)</td>
+                    <td colspan="1" rowspan="1">702 (18.2)</td>
+                    <td colspan="1" rowspan="1">1,825 (20.6)</td>
+                    <td colspan="1" rowspan="1">6,759 (10.0)</td>
+                    <td colspan="1" rowspan="1">12,423 (12.2)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Former</th>
+                    <td colspan="1" rowspan="1">41,643 (22.9)</td>
+                    <td colspan="1" rowspan="1">446 (11.6)</td>
+                    <td colspan="1" rowspan="1">1,046 (11.8)</td>
+                    <td colspan="1" rowspan="1">15,862 (23.5)</td>
+                    <td colspan="1" rowspan="1">24,289 (23.8)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Unknown
+                        <sup>e</sup>
+                    </th>
+                    <td colspan="1" rowspan="1">36,609 (20.1)</td>
+                    <td colspan="1" rowspan="1">823 (21.3)</td>
+                    <td colspan="1" rowspan="1">1,769 (20.0)</td>
+                    <td colspan="1" rowspan="1">14,353 (21.3)</td>
+                    <td colspan="1" rowspan="1">19,664 (19.3)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="6" rowspan="1">
+                        <b>Anatomic site of cancer</b>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Ascending colon</th>
+                    <td colspan="1" rowspan="1">32,860 (18.0)</td>
+                    <td colspan="1" rowspan="1">333 (8.6)</td>
+                    <td colspan="1" rowspan="1">1,054 (11.9)</td>
+                    <td colspan="1" rowspan="1">12,001 (17.8)</td>
+                    <td colspan="1" rowspan="1">19,472 (19.1)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Hepatic flexure</th>
+                    <td colspan="1" rowspan="1">8,682 (4.8)</td>
+                    <td colspan="1" rowspan="1">104 (2.7)</td>
+                    <td colspan="1" rowspan="1">285 (3.2)</td>
+                    <td colspan="1" rowspan="1">3,003 (4.5)</td>
+                    <td colspan="1" rowspan="1">5,290 (5.2)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Transverse colon</th>
+                    <td colspan="1" rowspan="1">15,335 (8.4)</td>
+                    <td colspan="1" rowspan="1">184 (4.8)</td>
+                    <td colspan="1" rowspan="1">656 (7.4)</td>
+                    <td colspan="1" rowspan="1">5,072 (7.5)</td>
+                    <td colspan="1" rowspan="1">9,423 (9.2)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Splenic flexure</th>
+                    <td colspan="1" rowspan="1">6,291 (3.5)</td>
+                    <td colspan="1" rowspan="1">90 (2.3)</td>
+                    <td colspan="1" rowspan="1">358 (4.0)</td>
+                    <td colspan="1" rowspan="1">1,750 (2.6)</td>
+                    <td colspan="1" rowspan="1">4,093 (4.0)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Descending colon</th>
+                    <td colspan="1" rowspan="1">10,938 (6.0)</td>
+                    <td colspan="1" rowspan="1">208 (5.4)</td>
+                    <td colspan="1" rowspan="1">616 (7.0)</td>
+                    <td colspan="1" rowspan="1">3,798 (5.6)</td>
+                    <td colspan="1" rowspan="1">6,316 (6.2)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Sigmoid colon</th>
+                    <td colspan="1" rowspan="1">50,234 (27.6)</td>
+                    <td colspan="1" rowspan="1">997 (25.8)</td>
+                    <td colspan="1" rowspan="1">2,457 (27.8)</td>
+                    <td colspan="1" rowspan="1">18,992 (28.2)</td>
+                    <td colspan="1" rowspan="1">27,788 (27.2)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Rectosigmoid junction</th>
+                    <td colspan="1" rowspan="1">20,907 (11.5)</td>
+                    <td colspan="1" rowspan="1">432 (11.2)</td>
+                    <td colspan="1" rowspan="1">1,130 (12.8)</td>
+                    <td colspan="1" rowspan="1">7,238 (10.7)</td>
+                    <td colspan="1" rowspan="1">12,107 (11.9)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Rectum</th>
+                    <td colspan="1" rowspan="1">36,848 (20.2)</td>
+                    <td colspan="1" rowspan="1">1,513 (39.2)</td>
+                    <td colspan="1" rowspan="1">2,294 (25.9)</td>
+                    <td colspan="1" rowspan="1">15,526 (23.0)</td>
+                    <td colspan="1" rowspan="1">17,515 (17.2)</td>
+                </tr>
+            </tbody>
+        </table>
+        <blockquote>
+            <sup>a</sup> Early = localized; advanced = regional (with or without lymph node extension) or distant.
+            <br/>
+            <sup>b</sup> Column percentages except for the Total row.
+            <br/>
+            <sup>c</sup> Other race includes Asian/Pacific Islander, Native American, Asian/Indian, or Pakistani.
+            <br/>
+            <sup>d</sup> US census tract neighborhood level socioeconomic status defined as the percentage of people living below poverty level as low (20%–100%), middle-low (10% to &lt;20%), middle-high (5% to &lt;10%), and highest (0% to &lt;5%).
+            <br/>
+            <sup>e</sup> Unknown smoking status refers to nonresponse or refused to respond.
+        </blockquote>
+    </layer_table>
+</layer_grp>
+<layer_grp>
+    <layer_img_sm/>
+    <layer_img_full/>
+    <layer_caption>
+        <p>
+            <strong>Table 2. Multivariable Logistic Regression Models Predicting Advanced Stage Colon Cancer
+                <sup>a</sup> Presentation at Diagnosis, Florida Cancer Data System, 1981–2013
+            </strong>
+        </p>
+    </layer_caption>
+    <layer_label>
+        <p>[[T2]]Table 2.</p>
+    </layer_label>
+    <layer_alt_txt>Table 2.</layer_alt_txt>
+    <layer_table>
+        <table class="inline_data_table">
+            <tbody>
+                <tr>
+                    <th class="row1left" colspan="1" rowspan="2">Characteristic</th>
+                    <th class="row1" colspan="1" rowspan="2">All, AOR (95% CI)</th>
+                    <th class="row1" colspan="2" rowspan="1">Age Group</th>
+                </tr>
+                <tr>
+                    <th class="row1" colspan="1" rowspan="1">&lt;50 years, AOR (95% CI)</th>
+                    <th class="row1" colspan="1" rowspan="1">≥ 50 years, AOR (95% CI)</th>
+                </tr>
+                <tr>
+                    <th class="left" colspan="4" rowspan="1">
+                        <b>Age-group (reference, ≥50 years)</b>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">&lt;50 years</th>
+                    <td colspan="1" rowspan="1">1.53 (1.47–1.60)</td>
+                    <td colspan="2" rowspan="1">NA</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="4" rowspan="1">
+                        <b>Sex (reference, male)</b>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Female</th>
+                    <td colspan="1" rowspan="1">1.00 (0.98–1.02)</td>
+                    <td colspan="1" rowspan="1">0.88 (0.81–0.95)</td>
+                    <td colspan="1" rowspan="1">1.01 (0.99–1.03)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="4" rowspan="1">
+                        <b>Race (reference, white)</b>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Black</th>
+                    <td colspan="1" rowspan="1">1.16 (1.12–1.21)</td>
+                    <td colspan="1" rowspan="1">1.15 (1.03–1.29)</td>
+                    <td colspan="1" rowspan="1">1.16 (1.12–1.21)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Other
+                        <sup>b</sup>
+                    </th>
+                    <td colspan="1" rowspan="1">1.21 (1.10–1.34)</td>
+                    <td colspan="1" rowspan="1">1.43 (1.10–1.84)</td>
+                    <td colspan="1" rowspan="1">1.18 (1.06–1.31)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="4" rowspan="1">
+                        <b>Ethnicity (reference, non-Hispanic)</b>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Hispanic</th>
+                    <td colspan="1" rowspan="1">1.08 (1.05–1.12)</td>
+                    <td colspan="1" rowspan="1">1.09 (0.97–1.21)</td>
+                    <td colspan="1" rowspan="1">1.08 (1.04–1.12)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="4" rowspan="1">
+                        <b>Neighborhood socioeconomic status</b>
+                        <sup>
+                            <b>c</b>
+                        </sup>
+                        <b> (reference, highest)</b>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Lowest</th>
+                    <td colspan="1" rowspan="1">1.10 (1.06–1.14)</td>
+                    <td colspan="1" rowspan="1">1.16 (1.01–1.33)</td>
+                    <td colspan="1" rowspan="1">1.09 (1.05–1.14)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Middle-low</th>
+                    <td colspan="1" rowspan="1">1.06 (1.03–1.09)</td>
+                    <td colspan="1" rowspan="1">1.16 (1.04–1.30)</td>
+                    <td colspan="1" rowspan="1">1.05 (1.02–1.08)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Middle-high</th>
+                    <td colspan="1" rowspan="1">0.99 (0.96–1.02)</td>
+                    <td colspan="1" rowspan="1">1.12 (1.00–1.25)</td>
+                    <td colspan="1" rowspan="1">0.98 (0.96–1.01)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="4" rowspan="1">
+                        <b>Smoking status (reference, never)</b>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Current</th>
+                    <td colspan="1" rowspan="1">1.26 (1.22–1.30)</td>
+                    <td colspan="1" rowspan="1">1.19 (1.07–1.32)</td>
+                    <td colspan="1" rowspan="1">1.26 (1.22–1.31)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Former</th>
+                    <td colspan="1" rowspan="1">1.05 (1.02–1.08)</td>
+                    <td colspan="1" rowspan="1">1.11 (0.98–1.25)</td>
+                    <td colspan="1" rowspan="1">1.05 (1.02–1.08)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Unknown</th>
+                    <td colspan="1" rowspan="1">0.94 (0.91–0.96)</td>
+                    <td colspan="1" rowspan="1">1.00 (0.91–1.11)</td>
+                    <td colspan="1" rowspan="1">0.93 (0.91–0.96)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="4" rowspan="1">
+                        <b>Anatomic site (reference, rectum)</b>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Ascending colon</th>
+                    <td colspan="1" rowspan="1">1.49 (1.44–1.53)</td>
+                    <td colspan="1" rowspan="1">2.08 (1.81–2.39)</td>
+                    <td colspan="1" rowspan="1">1.45 (1.41–1.50)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Hepatic flexure</th>
+                    <td colspan="1" rowspan="1">1.59 (1.52–1.67)</td>
+                    <td colspan="1" rowspan="1">1.78 (1.41–2.25)</td>
+                    <td colspan="1" rowspan="1">1.57 (1.49–1.65)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Transverse colon</th>
+                    <td colspan="1" rowspan="1">1.70 (1.63–1.76)</td>
+                    <td colspan="1" rowspan="1">2.33 (1.96–2.78)</td>
+                    <td colspan="1" rowspan="1">1.66 (1.59–1.72)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Splenic flexure</th>
+                    <td colspan="1" rowspan="1">2.12 (2.00–2.24)</td>
+                    <td colspan="1" rowspan="1">2.61 (2.06–3.33)</td>
+                    <td colspan="1" rowspan="1">2.08 (1.95–2.20)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Descending colon</th>
+                    <td colspan="1" rowspan="1">1.51 (1.45–1.58)</td>
+                    <td colspan="1" rowspan="1">1.97 (1.66–2.34)</td>
+                    <td colspan="1" rowspan="1">1.48 (1.41–1.55)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Sigmoid colon</th>
+                    <td colspan="1" rowspan="1">1.33 (1.30–1.37)</td>
+                    <td colspan="1" rowspan="1">1.66 (1.50–1.83)</td>
+                    <td colspan="1" rowspan="1">1.31 (1.27–1.34)</td>
+                </tr>
+                <tr>
+                    <th class="left" colspan="1" rowspan="1">Rectosigmoid junction</th>
+                    <td colspan="1" rowspan="1">1.51 (1.46–1.56)</td>
+                    <td colspan="1" rowspan="1">1.75 (1.54–1.99)</td>
+                    <td colspan="1" rowspan="1">1.49 (1.43–1.54)</td>
+                </tr>
+            </tbody>
+        </table>
+        <blockquote>Abbreviations: AOR, adjusted odds ratio; CI, confidence interval; NA, not applicable.
+            <br/>
+            <sup>a</sup> Regional (with or without lymph node extension) or distant.
+            <br/>
+            <sup>b</sup> Other race includes Asian/Pacific Islander, Native American, Asian/Indian, or Pakistani.
+            <br/>
+            <sup>c</sup> US census tract neighborhood level socioeconomic status defined as the percentage of people living below poverty level as low (20%–100%), middle-low (10% to &lt;20%), middle-high (5% to &lt;10%), and highest (0% to &lt;5%).
+        </blockquote>
+    </layer_table>
+</layer_grp>

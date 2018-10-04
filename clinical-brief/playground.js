@@ -43,6 +43,8 @@ var fs = require('fs');
 
 // utils.writeXMLFromObject(tocInstance.toObjectLiteral(), __dirname + "/output/tocElementBuild.xml");
 
-var slideGrp = utils.xmlFileToJS(__dirname + '/../elements/slide_grp.xml');
+// var layerGrp = utils.xmlOps.xmlFileToJS(__dirname + '/../elements/layer_grp.xml');
 
-fs.writeFileSync(__dirname + '/../elements/slide_grp.json', JSON.stringify(slideGrp));
+var spotlightOutline = utils.xmlOps.xmlFileToJS(__dirname + '/../elements/curbside_complete.xml');
+
+fs.writeFileSync(__dirname + '/../elements/curbside_complete.json', JSON.stringify(spotlightOutline));

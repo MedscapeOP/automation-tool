@@ -1,0 +1,298 @@
+{
+    "elements": [
+        {
+            "type": "element",
+            "name": "prof_article_slide_presentation",
+            "elements": [
+                {
+                    "type": "element",
+                    "name": "front_label",
+                    "elements": [
+                        {
+                            "type": "text",
+                            "text": "Front Matter"
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "above_title",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "title",
+                    "elements": [
+                        {
+                            "type": "element",
+                            "name": "p",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Optimizing Statin Therapy: Role of Patient-Centered Care"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "contrbtr_pre_content",
+                    "elements": [
+                        {
+                            "type": "element",
+                            "name": "p",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "As an organization accredited by the ACCME, Medscape, LLC, requires everyone who is in a position to control the content of an education activity to disclose all relevant financial relationships with any commercial interest.  The ACCME defines \"relevant financial relationships\" as financial relationships in any amount, occurring within the past 12 months, including financial relationships of a spouse or life partner, that could create a conflict of interest."
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "p",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Medscape, LLC, encourages Authors to identify investigational products or off-label uses of products regulated by the US Food and Drug Administration, at first mention and where appropriate in the content."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "contrbtr_byline",
+                    "elements": [
+                        {
+                            "type": "element",
+                            "name": "p",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Joyce L. Ross, MSN, CRNP, CLS; Joseph Lillo, DO, CPI; Michael Cobble, MD"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "contrbtr_group",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "contrbtr_group",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "contrbtr_bulk_info",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "contrbtr_post_content",
+                    "elements": [
+                        {
+                            "type": "element",
+                            "name": "h3",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Peer Reviewer"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "p",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "This activity has been peer reviewed and the reviewer has disclosed the following relevant financial relationships:\r\n              "
+                                },
+                                {
+                                    "type": "element",
+                                    "name": "br",
+                                    "elements": []
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\r\n            Served as a consultant for: Abbot; Heartware ; Medtronic; Thoratec;\r\n          "
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "supprtr_grant_group",
+                    "elements": [
+                        {
+                            "type": "element",
+                            "name": "supprtr_grant_attr",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "/webmd/professional_assets/medscape/images/grant_attribution/kowa_pharm_amer-ieg-txt.gif"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "body_label",
+                    "elements": [
+                        {
+                            "type": "text",
+                            "text": "Body"
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "toc_element",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "back_label",
+                    "elements": [
+                        {
+                            "type": "text",
+                            "text": "Back Matter"
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "ref_grp",
+                    "elements": [
+                        {
+                            "type": "element",
+                            "name": "ref_item",
+                            "elements": []
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "cpyrt_holder",
+                    "elements": [
+                        {
+                            "type": "element",
+                            "name": "p",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Medscape, LLC"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "cpyrt_ovrd",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "disclmr_ovrd",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "bkmtr_front",
+                    "elements": [
+                        {
+                            "type": "element",
+                            "name": "p",
+                            "elements": [
+                                {
+                                    "type": "element",
+                                    "name": "strong",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Disclaimer"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "p",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "The educational activity presented above may involve simulated case-based scenarios. The patients depicted in these scenarios are fictitious and no association with any actual patient is intended or should be inferred."
+                                }
+                            ]
+                        },
+                        {
+                            "type": "element",
+                            "name": "p",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "The material presented here does not necessarily reflect the views of Medscape, LLC, or companies that support educational programming on medscape.org. These materials may discuss therapeutic products that have not been approved by the US Food and Drug Administration and off-label uses of approved products. A qualified healthcare professional should be consulted before using any therapeutic product discussed. Readers should verify all information and data before treating patients or employing any therapies described in this educational activity."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "element",
+                    "name": "bkmtr_glossary",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "bkmtr_ack",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "bkmtr_discl",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "bkmtr_funding",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "bkmtr_reprnt_addr",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "bkmtr_abbr_notes",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "bkmtr_last",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "img_ttl_bkgrd",
+                    "elements": []
+                },
+                {
+                    "type": "element",
+                    "name": "img_publ_logo",
+                    "elements": []
+                }
+            ]
+        }
+    ]
+}
