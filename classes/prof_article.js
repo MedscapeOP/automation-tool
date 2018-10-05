@@ -4,12 +4,14 @@ const xmlOps = require('../utils/index').xmlOps;
 
 
 class ProfArticle extends XMLElement{
-    constructor(type = "Article") {
+    constructor(type = "Article", hasOUS = false) {
         if (type == "SlidePresentation") {
             super("prof_article_slide_presentation", false, false);
         } else if (type == "Article") {
             super("prof_article", false, false);
         }  
+
+        this.hasOUS = hasOUS;
 
         this._front_label = {
             "type": "element",
@@ -68,47 +70,31 @@ class ProfArticle extends XMLElement{
             "name": "contrbtr_bulk_info",
             "elements": []
         };
-        this._contrbtr_post_content = {
-            "type": "element",
-            "name": "contrbtr_post_content",
-            "elements": [
-                {
+
+        // Only need Peer Reviewer if NON-OUS 
+        if (!hasOUS) {
+            this._contrbtr_post_content = {
+                "type": "element",
+                "name": "contrbtr_post_content",
+                "elements": [{
                     "type": "element",
                     "name": "h3",
                     "elements": [
                         {
-                            "type": "element",
-                            "name": "strong",
-                            "elements": [
-                                {
-                                    "type": "text",
-                                    "text": "Peer Reviewer"
-                                }
-                            ]
+                            "type": "text",
+                            "text": "Peer Reviewer"
                         }
                     ]
-                },
-                {
-                    "type": "element",
-                    "name": "p",
-                    "elements": [
-                        {
-                            "type": "text",
-                            "text": "This activity has been peer reviewed and the reviewer has disclosed the following relevant financial relationships:"
-                        },
-                        {
-                            "type": "element",
-                            "name": "br",
-                            "elements": []
-                        },
-                        {
-                            "type": "text",
-                            "text": "Served as an advisor or consultant for: Abbott Laboratories; HeartWare International, Inc.; Medtronic, Inc.; Thoratec Corporation"
-                        }
-                    ]
-                }
-            ]
-        };
+                }]
+            };
+        } else {
+            this._contrbtr_post_content = {
+                "type": "element",
+                "name": "contrbtr_post_content",
+                "elements": []
+            };
+        }
+
         this._supprtr_grant_group = {
             "type": "element",
             "name": "supprtr_grant_group",
@@ -264,12 +250,7 @@ class ProfArticle extends XMLElement{
         this._img_ttl_bkgrd = {
             "type": "element",
             "name": "img_ttl_bkgrd",
-            "elements": [
-                {
-                    "type": "text",
-                    "text": "/webmd/professional_assets/medscape/images/title_background/banner-evolving-anticoagulation-2017.jpg"
-                }
-            ]
+            "elements": []
         };
         this._img_publ_logo = {
             "type": "element",
@@ -403,6 +384,55 @@ class ProfArticle extends XMLElement{
             this._contrbtr_byline.elements = bylineObject.elements;
         } else {
             this._contrbtr_byline.elements = [];
+        }
+    }
+
+    get contrbtrPostContent() {
+        if (this._contrbtr_post_content.elements[0]) {
+            return xmlOps.objectToXMLString(this._contrbtr_post_content);
+        } else {
+            return null; 
+        }
+    }
+
+    set contrbtrPostContent(newPostContentMarkup) {
+        if (newPostContentMarkup) {
+            var postContentObject = xmlOps.xmlStringToJS(newPostContentMarkup);
+            this._contrbtr_post_content.elements[1] = postContentObject.elements[0];
+        } else {
+            this._contrbtr_post_content.elements = [{
+                "type": "element",
+                "name": "h3",
+                "elements": [
+                    {
+                        "type": "text",
+                        "text": "Peer Reviewer"
+                    }
+                ]
+            }];
+        }
+    }
+
+    get bannerImage() {
+        // {
+        //     "type": "text",
+        //     "text": "/webmd/professional_assets/medscape/images/title_background/banner-evolving-anticoagulation-2017.jpg"
+        // }
+        if (this._img_ttl_bkgrd.elements[0]) {  
+            return this._img_ttl_bkgrd.elements[0].text;
+        } else {
+            return null; 
+        }
+    }
+
+    set bannerImage(advancesBannerFileName) {
+        if (advancesBannerFileName) {
+            this._img_ttl_bkgrd.elements[0] = {
+                "type": "text",
+                "text": `/webmd/professional_assets/medscape/images/title_background/${advancesBannerFileName}`
+            };
+        } else {
+            this._img_ttl_bkgrd.elements = [];
         }
     }
 

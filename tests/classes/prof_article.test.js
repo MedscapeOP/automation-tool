@@ -70,8 +70,6 @@ describe('Prof Article Element', function () {
         it('should set and get byline markup and return null if no byline', function (done) {
             profArticleInstance.contrbtrByline = "<p>Mark A. Crowther, MD; Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP</p>";
 
-            // console.log(JSON.stringify(profArticleInstance.toObjectLiteral(), undefined, 2));
-            console.log("BYLINE: ", profArticleInstance.contrbtrByline);
             expect(profArticleInstance.contrbtrByline).to.equal('<p>Mark A. Crowther, MD; Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP</p>');
             done();
         });
@@ -79,7 +77,26 @@ describe('Prof Article Element', function () {
 
 
     /* TEST GETTERS AND SETTERS FOR CONTRIBUTOR POST CONTENT (PEER REVIEWER) */
+    describe('#get/set .contrbtrPostContent', function () {
+        it('should set and get byline markup and return null if no byline', function (done) {
+            profArticleInstance.contrbtrPostContent = "<p>Reviewer Disclosure<br/>Served as a consultant for: Abbot; Heartware ; Medtronic; Thoratec;</p>";
 
+            expect(profArticleInstance.contrbtrPostContent).to.equal('<h3>Peer Reviewer</h3><p>Reviewer Disclosure<br/>Served as a consultant for: Abbot; Heartware ; Medtronic; Thoratec;</p>');
+            done();
+        });
+    });
+
+
+    /* TEST GETTERS AND SETTERS FOR BANNER IMAGE (PEER REVIEWER) */
+    describe('#get/set .bannerImage', function () {
+        it('should set and get bannerImage by inputting filename and return null if no image set', function (done) {
+            profArticleInstance.bannerImage = "banner-evolving-anticoagulation-2017.jpg";
+
+            console.log("BANNER IMAGE: ", profArticleInstance.bannerImage);
+            expect(profArticleInstance.bannerImage).to.equal('/webmd/professional_assets/medscape/images/title_background/banner-evolving-anticoagulation-2017.jpg');
+            done();
+        });
+    });
 
 
     /* TEST INSERT METHODS */
@@ -94,15 +111,4 @@ describe('Prof Article Element', function () {
             done();
         });
     });
-
-    // describe('#insertContrbtrPostContent() && .contrbtrPostContent', function () {
-    //     it('should set and get contributor post content element and return null if not set', function () {
-    //         expect(profArticleInstance.contrbtrPostContent).to.equal(null);
-
-    //         profArticleInstance.insertContrbtrPostContent("Mark A. Crowther, MD; Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP");
-
-    //         expect(profArticleInstance.contrbtrByline).to.equal('Mark A. Crowther, MD; Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP');
-    //     });
-    // });
-
 });

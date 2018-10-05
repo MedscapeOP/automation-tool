@@ -469,7 +469,7 @@
                     "elements": [
                         {
                             "type": "element",
-                            "name": "p",
+                            "name": "h3",
                             "elements": [
                                 {
                                     "type": "element",
@@ -485,7 +485,7 @@
                         },
                         {
                             "type": "element",
-                            "name": "h3",
+                            "name": "p",
                             "elements": [
                                 {
                                     "type": "text",
