@@ -106,6 +106,9 @@ TODO:
     var strongRegExp1 = new RegExp(`<strong></strong>`, 'g');
     str = str.replace(strongRegExp1, "");
 
+    var strongRegExp2 = new RegExp(`</strong> <strong>`, 'g');
+    str = str.replace(strongRegExp2, "");
+
     var emRegExp1 = new RegExp(`<em></em>`, 'g');
     str = str.replace(emRegExp1, "");
 
