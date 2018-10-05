@@ -1,39 +1,40 @@
-<strong>&lt;&lt;insert slide [17]; 16:17&gt;&gt;</strong>
-<h3> Potential Predictors of Response to Anti-TNF Treatment<sup type="ref">[11]</sup></h3>
-<ul>
-    <li> It is unknown why certain patients achieve different responses</li>
-    <li> There are several factors, which have been identified, that can help predict a response to anti-tumor necrosis
-        factor (TNF) treatment</li>
-    <li> Some differences occur once a patient has achieved a response<ul>
-            <li> Some patients maintain the response indefinitely</li>
-            <li> Others lose response<ul>
-                    <li> Some lose the response gradually, and some seem to lose response quite suddenly </li>
-                </ul>
-            </li>
-            <li> There may be a role for
-                doing an ADA test in these different subsets of patients<ul>
-                    <li> More research is needed to determine the optimal place for ADA testing</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-</ul>
-<strong>&lt;&lt;insert slide [17]; 16:17&gt;&gt;</strong>
-<h3> Potential Predictors of Response to Anti-TNF Treatment<sup type="ref">[11]</sup></h3>
-<ul>
-    <li> It is unknown why certain patients achieve different responses</li>
-    <li> There are several factors, which have been identified, that can help predict a response to anti-tumor necrosis
-        factor (TNF) treatment</li>
-    <li> Some differences occur once a patient has achieved a response<ul>
-            <li> Some patients maintain the response indefinitely</li>
-            <li> Others lose response<ul>
-                    <li> Some lose the response gradually, and some seem to lose response quite suddenly </li>
-                </ul>
-            </li>
-            <li> There may be a role for
-                doing an ADA test in these different subsets of patients<ul>
-                    <li> More research is needed to determine the optimal place for ADA testing</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
+VERSION BUILD=8240212 RECORDER=FX
+SET !EXTRACT_TEST_POPUP NO
+TAB T=1
+SET !VAR0 {{!CLIPBOARD}}
+SET !VAR0 EVAL("var s=\"{{!VAR0}}\"; s.replace(/&#953;/gi,\"\");")
+SET !VAR0 EVAL("var s=\"{{!VAR0}}\"; s.replace(/<\Sstrong><\Sp>\\n<\Std>\\n<td><p>/gi,\"\");")
+SET TITLE EVAL("var s=\"{{!VAR0}}\"; s.replace(/title<\Sstrong>:\s*/i,\"title:\");")
+SET TITLE EVAL("var s=\"{{TITLE}}\"; s=s.match(/title\s*:.*/i);")
+SET TITLE EVAL("var s=\"{{TITLE}}\"; s.replace(/title\s*:\s*/i,\"\");")
+SET TITLE EVAL("var s=\"{{TITLE}}\"; s.replace(/\s*<\Sp>/,\"\");")
+SET LO EVAL("var s=\"{{!VAR0}}\"; s=s.match(/be able to:[^]+/i);")
+SET LO EVAL("var s=\"{{LO}}\"; s.replace(/be able to:/i,\"\");")
+SET LO EVAL("var s=\"{{LO}}\"; s.replace(/Activity Length:[^]+/i,\"\");")
+SET LO EVAL("var s=\"{{LO}}\"; s.replace(/<p>Click <strong>\S<\Sstrong> to add another table row<\Sp>[^]+/i,\"\");")
+SET LO EVAL("var s=\"{{LO}}\"; s.replace(/.*Add Learning Objective.*/i,\"\");")
+SET LO EVAL("var s=\"{{LO}}\"; s.replace(/<tr valign=\"top\">\\n<td><p>Add LO.*<\Sp>[^]+/g,\"\");")
+SET LO EVAL("var s=\"{{LO}}\"; s.replace(/<tr valign=\"top\">\\n<td><p>Etc.<\Sp>/g,\"\");")
+SET LO1 EVAL("var s=\"{{LO}}\"; s.split(/<tr valign=\"top\">\\n<td><p>\s*/i)[1];")
+SET LO1 EVAL("var s=\"{{LO1}}\"; s.replace(/.*Add LO\d\s*/,\"\");")
+SET LO1 EVAL("var s=\"{{LO1}}\"; s.replace(/\s*<\Sp>[^]+/,\"\");")
+SET LO2 EVAL("var s=\"{{LO}}\"; s.split(/<tr valign=\"top\">\\n<td><p>\s*/i)[2];")
+SET LO2 EVAL("var s=\"{{LO2}}\"; s.replace(/.*Add LO\d\s*/,\"\");")
+SET LO2 EVAL("var s=\"{{LO2}}\"; s.replace(/\s*<\Sp>[^]+/,\"\");")
+SET LO3 EVAL("var s=\"{{LO}}\"; s.split(/<tr valign=\"top\">\\n<td><p>\s*/i)[3];")
+SET LO3 EVAL("var s=\"{{LO3}}\"; s.replace(/.*Add LO\d\s*/,\"\");")
+SET LO3 EVAL("var s=\"{{LO3}}\"; s.replace(/\s*<\Sp>[^]+/,\"\");")
+SET LO4 EVAL("var s=\"{{LO}}\"; s.split(/<tr valign=\"top\">\\n<td><p>\s*/i)[4];")
+SET LO4 EVAL("var s=\"{{LO4}}\"; s.replace(/.*Add LO\d\s*/,\"\");")
+SET LO4 EVAL("var s=\"{{LO4}}\"; s.replace(/\s*<\Sp>[^]+/,\"\");")
+SET LO5 EVAL("var s=\"{{LO}}\"; s.split(/<tr valign=\"top\">\\n<td><p>\s*/i)[5];")
+SET LO5 EVAL("var s=\"{{LO5}}\"; s.replace(/.*Add LO\d\s*/,\"\");")
+SET LO5 EVAL("var s=\"{{LO5}}\"; s.replace(/\s*<\Sp>[^]+/,\"\");")
+SET FACULTY EVAL("var s=\"{{!VAR0}}\"; s.match(/faculty\Sauthor.*/i);")
+SET FACULTY EVAL("var s=\"{{FACULTY}}\"; s.replace(/faculty.*:\s*/i,\"\");")
+SET FACULTY EVAL("var s=\"{{FACULTY}}\"; s.replace(/\s*<\S*p>/g,\"\");")
+SET FACULTY1 EVAL("var s=\"{{FACULTY}}\"; s.split(/\s*;\s*/)[0];")
+SET FACULTY2 EVAL("var s=\"{{FACULTY}}\"; s.split(/\s*;\s*/)[1];")
+SET FACULTY3 EVAL("var s=\"{{FACULTY}}\"; s.split(/\s*;\s*/)[2];")
+SET FACULTY4 EVAL("var s=\"{{FACULTY}}\"; s.split(/\s*;\s*/)[3];")
+SET FACULTY5 EVAL("var s=\"{{FACULTY}}\"; s.split(/\s*;\s*/)[4];")
