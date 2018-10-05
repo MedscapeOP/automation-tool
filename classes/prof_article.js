@@ -29,18 +29,7 @@ class ProfArticle extends XMLElement{
         this._title = {
             "type": "element",
             "name": "title",
-            "elements": [
-                {
-                    "type": "element",
-                    "name": "p",
-                    "elements": [
-                        {
-                            "type": "text",
-                            "text": "Extraordinary Cases of VTE Prevention in Patient with Cancer"
-                        }
-                    ]
-                }
-            ]
+            "elements": []
         };
         this._contrbtr_pre_content = {
             "type": "element",
@@ -71,18 +60,7 @@ class ProfArticle extends XMLElement{
         this._contrbtr_byline = {
             "type": "element",
             "name": "contrbtr_byline",
-            "elements": [
-                {
-                    "type": "element",
-                    "name": "p",
-                    "elements": [
-                        {
-                            "type": "text",
-                            "text": "Mark A. Crowther, MD; Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP"
-                        }
-                    ]
-                }
-            ]
+            "elements": []
         };
         this._contrbtr_groups = [];
         this._contrbtr_bulk_info = {
@@ -96,7 +74,7 @@ class ProfArticle extends XMLElement{
             "elements": [
                 {
                     "type": "element",
-                    "name": "p",
+                    "name": "h3",
                     "elements": [
                         {
                             "type": "element",
@@ -112,7 +90,7 @@ class ProfArticle extends XMLElement{
                 },
                 {
                     "type": "element",
-                    "name": "h3",
+                    "name": "p",
                     "elements": [
                         {
                             "type": "text",
@@ -348,14 +326,98 @@ class ProfArticle extends XMLElement{
         return _.flatten(this._elements);               
     }
 
-    get aboveTitle() {
-        // console.log(this._above_title.elements[0].elements);
-        return xmlOps.objectToXMLString(this._above_title.elements[0]);         
+    get titleText() {
+        if (this._title.elements[0]) {
+            return this._title.elements[0].elements[0].text;
+        } else {
+            return null;
+        }        
+    }
+
+    set titleText(newTitle) {
+        // Extraordinary Cases of VTE Prevention in Patient with Cancer
+        var titleObject = {
+            "type": "element",
+            "name": "p",
+            "elements": [
+                {
+                    "type": "text",
+                    "text": `${newTitle}`
+                }
+            ]
+        };
+        this._title.elements[0] = titleObject; 
+    }
+
+    get title() {
+        if (this._title.elements[0]) {
+            return xmlOps.objectToXMLString(this._title);
+        } else {
+            return null;
+        }  
+    }
+
+    set title(newTitleMarkup) {
+        if (newTitleMarkup) {
+            var titleObject = xmlOps.xmlStringToJS(newTitleMarkup);
+            this._title.elements = titleObject.elements;
+        } else {
+            this._title.elements = [];
+        }
+    }
+
+    get contrbtrBylineText() {
+        if (this._contrbtr_byline.elements[0]) {
+            return this._contrbtr_byline.elements[0].elements[0].text;
+        } else {
+            return null;
+        }        
+    }
+
+    set contrbtrBylineText(newByline) {
+        // Extraordinary Cases of VTE Prevention in Patient with Cancer
+        var bylineObject = {
+            "type": "element",
+            "name": "p",
+            "elements": [
+                {
+                    "type": "text",
+                    "text": `${newByline}`
+                }
+            ]
+        };
+        this._contrbtr_byline.elements[0] = bylineObject; 
+    }
+
+    get contrbtrByline() {
+        if (this._contrbtr_byline.elements[0]) {
+            return xmlOps.objectToXMLString(this._contrbtr_byline);
+        } else {
+            return null;
+        }  
+    }
+
+    set contrbtrByline(newBylineMarkup) {
+        if (newBylineMarkup) {
+            var bylineObject = xmlOps.xmlStringToJS(newBylineMarkup);
+            this._contrbtr_byline.elements = bylineObject.elements;
+        } else {
+            this._contrbtr_byline.elements = [];
+        }
     }
 
     //--------------------------------
     // METHODS 
     //-------------------------------- 
+
+    get aboveTitle() {
+        if (this._above_title.elements[0]) {
+            return xmlOps.objectToXMLString(this._above_title);
+        } else {
+            return null;
+        }          
+    }
+
     insertAboveTitleCA (advancesTitle, advancesFileName) {
         var aboveTitleObject = {
             "type": "element",
@@ -380,6 +442,8 @@ class ProfArticle extends XMLElement{
         // this._above_title.elements[0].elements[0].attributes.href = advancesURL;
         // this._above_title.elements[0].elements[0].elements[0].text = advancesTitle;
     }
+
+
 
     insertContributorGroup(contrbtrGroup) {
         /* 

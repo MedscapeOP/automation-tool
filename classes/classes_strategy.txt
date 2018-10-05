@@ -23,3 +23,30 @@
       are formatted for xml conversion. 
     - Basically after building out the object in JS you 
       call this method when ready to convert to XML. 
+
+
+------------------------------ 
+GETTERS AND SETTERS
+------------------------------ 
+- Only use getters and setters for properties that have   the same consistent HTML/XML markup
+  - For inserting dynamic content markup create an 
+    insertProperty() method. 
+  - Examples:
+    - TOC elements, tables, etc. are always different     and therefore require a method 
+    - Title, Byline, etc. always have the same markup 
+      so they will use getters/setters. 
+
+SETTER API:
+  - classInstance.someProperty(<newValue>)
+  - <newValue>: 
+    - Should be a string of XML/HTML 
+    - When passed the setter will convert it to a JS 
+      object and mutate the elements array of its intended parent element. 
+
+GETTER API: 
+  - classInstance.someProperty 
+  - This will return a string or null
+    - The string will be plain text or HTML/XML 
+      - Some properties will have 'Text' version of property to get plain text. 
+    - Null gets returned when the property hasn't been 
+      set yet.   
