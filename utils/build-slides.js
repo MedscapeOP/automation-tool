@@ -106,7 +106,9 @@ let buildSlidesXML = (substring, subsectionElement, articleID = 'XXXXXX', counte
         // }
         
         // Turn Content into JS object
+        console.log(slideContent);
         slideContent = xmlOps.xmlStringToJS(`<sec_txt>${slideContent}</sec_txt>`);
+        // slideContent = xmlOps.xmlStringToJS(`<sec_txt>Stuff</sec_txt>`);
         
         // Increment counter to reflect Slide #
         counter++;

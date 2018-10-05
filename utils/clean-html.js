@@ -85,14 +85,29 @@ TODO:
     var headlineRegExp1 = new RegExp(`&lt;&lt;.*level 2.*&gt;&gt;`, 'g');
     str = str.replace(headlineRegExp1, "&lt;&lt;Level 2&gt;&gt;");
 
-    // Insert Slide edge cases / Capitalization Edge Cases 
+    // Remove End Slides 
+    var endSlidesRegExp1 = new RegExp(`&lt;&lt;end slides&gt;&gt;`, 'g');
+    str = str.replace(endSlidesRegExp1, "");
+
+    // Insert Slide edge cases / Capitalization Edge Cases
     var insertSlideRegExp1 = new RegExp(`&lt;&lt;.*slide`, 'g');
     str = str.replace(insertSlideRegExp1, "&lt;&lt;insert slide");
 
     var insertSlideRegExp2 = new RegExp(`&lt;&lt;.*Slide`, 'g');
     str = str.replace(insertSlideRegExp2, "&lt;&lt;insert slide");
 
-    // Strong tag Edge Cases
+    var insertSlideRegExp3 = new RegExp(`&gt;&gt;.*slide`, 'g');
+    str = str.replace(insertSlideRegExp3, "&lt;&lt;insert slide");
+
+    var insertSlideRegExp4 = new RegExp(`&gt;&gt;.*Slide`, 'g');
+    str = str.replace(insertSlideRegExp4, "&lt;&lt;insert slide");
+
+    // Strong/Em tag Edge Cases
+    var strongRegExp1 = new RegExp(`<strong></strong>`, 'g');
+    str = str.replace(strongRegExp1, "");
+
+    var emRegExp1 = new RegExp(`<em></em>`, 'g');
+    str = str.replace(emRegExp1, "");
 
     // Sup Edge Cases
     var supRegExp1 = new RegExp(`</strong>\\s{0,}(<sup>.*</sup>)`, 'g');

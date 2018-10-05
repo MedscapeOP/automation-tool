@@ -9,9 +9,9 @@ describe('Utility Functions', function () {
     var xmlJSObjectTrimmed;
     var dirtyListHTML = fs.readFileSync(__dirname + '/input/dirty-list.html', 'utf8');
 
-    var dirtySlidesHTML = fs.readFileSync(__dirname + '/input/dirty-slides.html', 'utf8');
+    var dirtySlidesHTML = fs.readFileSync(__dirname + '/input/dirty-slides-html.html', 'utf8');
 
-    var dirtySlidesHTML2 = fs.readFileSync(__dirname + '/input/dirty-slides2.html', 'utf8');
+    var dirtySlidesXML = fs.readFileSync(__dirname + '/input/dirty-slides-xml.html', 'utf8');
 
     beforeEach(function() {
         // prodTicket = fs.readFileSync(__dirname + '/input/article.html', 'utf8');
@@ -40,7 +40,7 @@ describe('Utility Functions', function () {
 
     describe("#cleanHTML.slides()", function () {
         it('should transform Slides HTML from from R2Net conversion into proper format.', function () {
-            var result = utils.cleanHTML.slides(dirtySlidesHTML2);
+            var result = utils.cleanHTML.slides(dirtySlidesHTML);
             fs.writeFileSync(__dirname + "/output/clean-slides.html", result, function(err) {
                 if(err) {
                     return console.log(err);
@@ -52,7 +52,7 @@ describe('Utility Functions', function () {
     describe("#buildSlides()", function () {
         it('should transform Slides HTML from from R2Net conversion into JS Object.', function () {
             var subsectionElement = new SubsectionElement(true);
-            var result = utils.buildSlides(dirtySlidesHTML2, subsectionElement, "901602");
+            var result = utils.buildSlides(dirtySlidesXML, subsectionElement, "901602");
             // fs.writeFileSync(__dirname + "/output/clean-slides.xml", result, function(err) {
             //     if(err) {
             //         return console.log(err);
