@@ -1,4 +1,6 @@
 const _ = require('lodash');
+const formatList = require('./format-list');
+const stringOps = require('./string-ops');
 const cleanHTML = require('./clean-html');
 const pathBuilder = require('./path-builder');
 const xmlOps = require('./xml-ops');
@@ -29,7 +31,9 @@ function trimObjectText(xmlJSObject) {
 }
 
 module.exports = {
+    stringOps,
     xmlOps,
+    formatList,
     trimObjectText,
     cleanHTML,
     buildSlides

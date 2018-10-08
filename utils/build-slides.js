@@ -72,7 +72,7 @@ function findNextSlide(substring) {
     }
 }
 
-console.log(findNextSlide(testString));
+// console.log(findNextSlide(testString));
 
 
 let buildSlidesXML = (substring, subsectionElement, articleID = 'XXXXXX', counter = 0, fn) => {
@@ -106,7 +106,7 @@ let buildSlidesXML = (substring, subsectionElement, articleID = 'XXXXXX', counte
         // }
         
         // Turn Content into JS object
-        console.log(slideContent);
+        // console.log(slideContent);
         slideContent = xmlOps.xmlStringToJS(`<sec_txt>${slideContent}</sec_txt>`);
         // slideContent = xmlOps.xmlStringToJS(`<sec_txt>Stuff</sec_txt>`);
         
