@@ -31,34 +31,20 @@ Make Ability to Do Variations of Headlines
 
 const _ = require("lodash");
 const utils = require("../utils");
+const prodticket = require('../prodticket');
 const SubsectionElement = require('../classes/subsec_element');
 const SectionElement = require('../classes/sec_element');
 const TOCElement = require("../classes/toc_element");
 
 
-function getSubsectionText(ticket, startText, endText, cleaningFn) {
-    var startIndex = ticket.indexOf(startText);
-    var endIndex = ticket.indexOf(endText);
-    var mainBlock = ticket.substring(startIndex, endIndex);
-    var mainLabel = mainBlock.match(startText)[0];
-    mainBlock = mainBlock.replace(mainLabel,'');
-
-    // Put together final string of XML. 
-    mainBlock = "<subsec_content>" + cleaningFn(mainBlock) + "</subsec_content>";
-    return {
-        mainLabel,
-        mainBlock
-    }
-}
-
-function buildSection(mainBlock, mainLabel) {
+function buildSection(textBlock, label) {
     // Use package to convert XML string to JS object
-    var subsectionContent = utils.xmlOps.xmlStringToJS(mainBlock); 
+    var subsectionContent = utils.xmlOps.xmlStringToJS(textBlock); 
 
     // Return instance of section for use in master BUILD function
     var sectionInstance = new SectionElement();
     var subsectionInstance = new SubsectionElement();
-    sectionInstance.sectionHeader = mainLabel;
+    sectionInstance.sectionHeader = label;
     subsectionInstance.insertSubsectionContent(subsectionContent);
     sectionInstance.insertSubsectionElement(subsectionInstance);
     return sectionInstance;
@@ -68,14 +54,14 @@ function buildSection(mainBlock, mainLabel) {
 -------------------------------------- */
 function getClinicalContext(ticket) {
     // Get XML string from prod ticket.
-    var {mainBlock, mainLabel} = getSubsectionText(
+    var {textBlock, label} = utils.stringOps.getTextBlock(
         ticket, 
         "Clinical Context", 
-        "Study Synopsis", 
-        utils.cleanHTML.paragraph
+        "Study Synopsis"
     );
+    textBlock = prodticket.wrapSubsectionContent(textBlock, utils.cleanHTML.paragraph);
     // build the actual section element
-    return buildSection(mainBlock, mainLabel);
+    return buildSection(textBlock, label);
 }
 
 
@@ -83,14 +69,14 @@ function getClinicalContext(ticket) {
 -------------------------------------- */
 function getSynopsisAndPerspective(ticket) {
     // Get XML string from prod ticket.
-    var {mainBlock, mainLabel} = getSubsectionText(
+    var {textBlock, label} = utils.stringOps.getTextBlock(
         ticket, 
         "Study Synopsis and Perspective", 
-        "Study Highlights", 
-        utils.cleanHTML.paragraph
+        "Study Highlights"
     );
+    textBlock = prodticket.wrapSubsectionContent(textBlock, utils.cleanHTML.paragraph);
     // build the actual section element
-    return buildSection(mainBlock, mainLabel);
+    return buildSection(textBlock, label);
 }
 
 function getStudyHighlights (ticket) {

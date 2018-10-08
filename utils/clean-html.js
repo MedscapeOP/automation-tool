@@ -9,12 +9,39 @@ Common Entities / Things to remove:
 <tt>o     </tt> --> Unorder List Sub-bullet 
 */
 
+function removeTicketFluff(str) {
+    // Remove this from Prod ticket (Insert text)
+    var insertRegExp = new RegExp(`(Insert.*)`, 'g');
+    str = str.replace(insertRegExp, "");
+
+    var insertRegExp2 = new RegExp(`(insert.*)`, 'g');
+    str = str.replace(insertRegExp2, "");
+
+    // Remove this from Prod ticket (60 character limit)
+    var charLimitRegExp = new RegExp(`(.*limit)`, 'g');
+    str = str.replace(charLimitRegExp, "");
+
+    return str;
+}
+
+function plainText(string) {
+    var str = removeTicketFluff(string);
+    var options = {
+        allowedTags: [ 'em' ],
+        exclusiveFilter: function(frame) {
+            return !frame.text.trim();
+        }
+    };
+    var clean = sanitizeHtml(str, options);
+    return clean;
+}
+
 function paragraph(string) {
     // Removes ALL HTML: 
         // var str = string.replace(/\(Insert.*\)/, "").replace(/<{1}[^<>]{1,}>{1}/g," ");       
     // Removes (Insert ...) statements 
     var str = string.replace(/\(Insert.*\)/, "");
-
+    str = str.replace(/\(.*limit\)/, "");
     // Removes certain tags and replaces them with flags for later use 
     // var tags = ["em", "strong"];
     // for (var i = 0; i < tags.length; i++) {
@@ -39,6 +66,7 @@ function paragraph(string) {
 
 function unorderedList(string) {
     var str = string.replace(/\(Insert.*\)/, "");
+    str = string.replace(/\(insert.*\)/, "");
     var options =   {
         allowedTags: [ 'ul', 'li', 'em', 'strong', 'sup', 'tt' ],
         allowedAttributes: {
@@ -131,10 +159,8 @@ function slides(str) {
 }
 
 
-
-
-
 module.exports = {
+    plainText,
     paragraph,
     unorderedList,
     slides

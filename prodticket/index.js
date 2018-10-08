@@ -34,10 +34,19 @@ function getProgramAbbreviations (ticketHTML, program) {
     return rawAbbreviations;
 }
 
+function wrapSubsectionContent(textBlock, cleaningFn) {
+    // Put together final string of XML. 
+    if (cleaningFn) {
+        return "<subsec_content>" + cleaningFn(textBlock) + "</subsec_content>";
+    } else {
+        return "<subsec_content>" + textBlock + "</subsec_content>";
+    }       
+}
 
 module.exports = {
     getProgramTitle,
     getProgramByline,
     getProgramReferences,
-    getProgramAbbreviations
+    getProgramAbbreviations,
+    wrapSubsectionContent
 }
