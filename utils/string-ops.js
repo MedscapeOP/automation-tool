@@ -23,8 +23,11 @@ function getTextBlock(str, startText, endText) {
     var startIndex = str.indexOf(startText);
     var endIndex = str.indexOf(endText);
     var textBlock = str.substring(startIndex, endIndex);
-    var label = textBlock.match(startText)[0];
-    textBlock = textBlock.replace(label,'');
+    var label = "";
+    if (textBlock.match(startText)) {
+        label = textBlock.match(startText)[0];
+    }
+    textBlock = textBlock.replace(startText,'');
     return {label, textBlock};
 }
 

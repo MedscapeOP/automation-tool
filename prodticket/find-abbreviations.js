@@ -1,17 +1,23 @@
 const config = require('../config');
+const {stringOps, cleanHTML} = require('../utils');
 
 var exportObject = {};
 
-exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
-    return "";
-}
+// NO CLINICAL BRIEF ABBREVIATIONS 
+// exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
+//     return "";   
+// }
 
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
-    return "";
+    var {textBlock: rawAbbreviations, label: abbrLabel} = stringOps.getTextBlock(ticketHTML, "Abbreviations", "Additional Resources");
+    // console.log(cleanHTML.abbreviations(rawAbbreviations));
+    // return "";
+    rawAbbreviations = cleanHTML.singleLine(cleanHTML.abbreviations(rawAbbreviations)).trim();
+    return '<p>' + stringOps.findLastAndReplace(rawAbbreviations, '<br>', "") + '</p>';
 }
 
 exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML) {
-    return "";
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
 module.exports = exportObject;
