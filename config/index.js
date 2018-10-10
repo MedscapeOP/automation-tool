@@ -7,7 +7,7 @@ const programs = {
     spotlight: {
         name: "Spotlight",
         codeName: "spotlight",
-        profArticleType: "SlidePresentation"
+        profArticleType: "SlidePresentation" 
     },
     curbsideConsult: {
         name: "Curbside Consult",
@@ -21,6 +21,30 @@ const programs = {
     }
 }
 
+// USE CLIP INSTEAD OF CONFLUENCE TO BUILD OBJECT
+// Put required code snippets inside of language object
+var languages = {
+    french: {
+        expertCommentary: false, 
+        downloadablePDF: false,
+        transcriptPDF: false, 
+        subtitles: false
+    }
+}
+
+var addOns = {
+    inLanguage: {
+        hasTranslations: false, 
+        languages: []
+    },
+    pdfLinks: {
+        forYourPatient: false, 
+        clinicianHandout: false
+    }
+};
+
 module.exports = {
-    programs
+    programs,
+    addOns,
+    languages
 };

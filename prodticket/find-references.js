@@ -22,4 +22,10 @@ exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML) {
     return "<ol>" + cleanHTML.singleLine(textBlock) + "</ol>";
 }
 
+exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
+    var {textBlock} = stringOps.getTextBlock(ticketHTML, "<strong>References", "</html>");
+    textBlock = cleanHTML.references(textBlock).trim(); 
+    return "<ol>" + cleanHTML.singleLine(textBlock) + "</ol>";
+}
+
 module.exports = exportObject;

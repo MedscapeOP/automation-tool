@@ -1,3 +1,8 @@
+let regexIndexOf = function(string, regex, startpos) {
+    var indexOf = string.substring(startpos || 0).search(regex);
+    return (indexOf >= 0) ? (indexOf + (startpos || 0)) : indexOf;
+}
+
 function findLastAndReplace(str, removeString, replaceString) {
     var index = str.lastIndexOf(removeString);
     str = str.substring(0, index) + replaceString + str.substring(index + removeString.length, str.length);
@@ -20,15 +25,27 @@ function isBlankOrWhiteSpace(str) {
 }
 
 function getTextBlock(str, startText, endText) {
-    var startIndex = str.indexOf(startText);
-    var endIndex = str.indexOf(endText);
-    var textBlock = str.substring(startIndex, endIndex);
-    var label = "";
-    if (textBlock.match(startText)) {
-        label = textBlock.match(startText)[0];
+    if (startText instanceof RegExp) {
+        var startIndex = regexIndexOf(str, startText);
+        var endIndex = regexIndexOf(str, endText);
+        var textBlock = str.substring(startIndex, endIndex);
+        var label = "";
+        if (textBlock.match(startText)) {
+            label = textBlock.match(startText)[0];
+        }
+        textBlock = textBlock.replace(startText,'');
+        return {label, textBlock, startIndex, endIndex};
+    } else {
+        var startIndex = str.indexOf(startText);
+        var endIndex = str.indexOf(endText);
+        var textBlock = str.substring(startIndex, endIndex);
+        var label = "";
+        if (textBlock.match(startText)) {
+            label = textBlock.match(startText)[0];
+        }
+        textBlock = textBlock.replace(startText,'');
+        return {label, textBlock, startIndex, endIndex};
     }
-    textBlock = textBlock.replace(startText,'');
-    return {label, textBlock};
 }
 
 // function isBlankOrWhiteSpace(str) {

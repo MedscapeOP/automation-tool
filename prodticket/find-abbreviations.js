@@ -20,4 +20,8 @@ exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
+exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+}
+
 module.exports = exportObject;
