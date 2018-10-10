@@ -73,8 +73,8 @@ describe('Prodticket Module Functions', function () {
 
     describe("prodticket.getReferences()", function () {
         var referencesCB = fs.readFileSync(__dirname + '/input/references-cb.html').toString();
-        var referencesCC = fs.readFileSync(__dirname + '/input/references-cc.html').toString();
         var referencesSL = fs.readFileSync(__dirname + '/input/references-sl.html').toString();
+        var referencesCC = fs.readFileSync(__dirname + '/input/references-cc.html').toString();
 
         it("should return the program references from the .html - Clinical Brief", function () {
             var result = prodticket.getReferences(prodticketCB, config.programs.clinicalBrief);
@@ -91,6 +91,21 @@ describe('Prodticket Module Functions', function () {
             var result = prodticket.getReferences(prodticketCC, config.programs.curbsideConsult);
             expect(result).to.equalIgnoreSpaces(referencesCC);
         });
+    });
+
+    describe("prodticket.getPeerReviewer()", function () {
+        var peerReviewerSL = fs.readFileSync(__dirname + '/input/peer-reviewer-sl.html').toString();
+        var peerReviewerCC = fs.readFileSync(__dirname + '/input/peer-reviewer-cc.html').toString();
+    
+        it("should return the program peer reviewer statement from .html - Spotlight", function () {
+            var result = prodticket.getPeerReviewer(prodticketSL, config.programs.spotlight);
+            expect(result).to.equal(peerReviewerSL);
+        });
+
+        // it("should return the program peer reviewer statement from .html - Curbside", function () {
+        //     var result = prodticket.getPeerReviewer(prodticketCC, config.programs.curbsideConsult);
+        //     expect(result).to.equalIgnoreSpaces(peerReviewerCC);
+        // });
     });
 });
 

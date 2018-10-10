@@ -27,6 +27,13 @@ function removeTicketFluff(str) {
     var copyEditorRegExp = /\(.*Copy Editor?\)/g;
     str = str.replace(copyEditorRegExp, "");
 
+    // Remove instructions for Peer Reviewer
+    var peerReviewerRegExp = /<p>Indicate which reviewers were involved.*/g;
+    str = str.replace(peerReviewerRegExp, "");
+
+    var peerReviewerRegExp2 = /<p><strong>Include Peer Reviewer.*/g
+    str = str.replace(peerReviewerRegExp2, "");
+
     return str;
 }
 
@@ -200,6 +207,31 @@ function references(string) {
     return clean.replace(pRegExp, "<li>$2</li>");
 }
 
+function peerReviewer(string) {
+    var str = removeTicketFluff(string);
+    var options = {
+        allowedTags: [ 'p', 'br', 'em', 'strong', 'sup' ],
+        allowedAttributes: [],
+        exclusiveFilter: function(frame) {
+            // return frame.tag === 'a' && !frame.text.trim();
+            return !frame.text.trim();
+        }
+    }
+    var clean = sanitizeHtml(str, options);
+
+    // Main regex series 
+    var servedRegExp = /\s+(Served|served)/g;
+    clean = clean.replace(servedRegExp, "<br>$1");
+
+    var recievedRegExp = /\s+(Recieved|recieved)/g;
+    clean = clean.replace(recievedRegExp, "<br>$1");
+
+    var ownsRegExp = /\s+(Owns|owns)/g;
+    clean = clean.replace(ownsRegExp, "<br>$1");
+    
+    return clean;
+}
+
 module.exports = {
     singleLine,
     plainText,
@@ -207,5 +239,6 @@ module.exports = {
     unorderedList,
     slides,
     abbreviations,
-    references
+    references,
+    peerReviewer
 }; 
