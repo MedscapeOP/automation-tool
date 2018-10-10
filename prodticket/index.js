@@ -14,24 +14,28 @@ let findByline = require('./find-byline');
 let findReferences = require('./find-references');
 let findAbbreviations = require('./find-abbreviations');
 
-function getProgramTitle (ticketHTML, program) {
+function getTitle (ticketHTML, program) {
     var rawTitle = findTitle[program.codeName](ticketHTML);
     return rawTitle;
 }
 
-function getProgramByline (ticketHTML, program) {
+function getByline (ticketHTML, program) {
     var rawByline = findByline[program.codeName](ticketHTML);
     return rawByline;
 }
 
-function getProgramReferences (ticketHTML, program) {
+function getReferences (ticketHTML, program) {
     var rawReferences = findReferences[program.codeName](ticketHTML);
     return rawReferences;
 }
 
-function getProgramAbbreviations (ticketHTML, program) {
+function getAbbreviations (ticketHTML, program) {
     var rawAbbreviations = findAbbreviations[program.codeName](ticketHTML);
     return rawAbbreviations;
+}
+
+function getPeerReviewer () {
+
 }
 
 function wrapSubsectionContent(textBlock, cleaningFn) {
@@ -44,9 +48,9 @@ function wrapSubsectionContent(textBlock, cleaningFn) {
 }
 
 module.exports = {
-    getProgramTitle,
-    getProgramByline,
-    getProgramReferences,
-    getProgramAbbreviations,
+    getTitle,
+    getByline,
+    getReferences,
+    getAbbreviations,
     wrapSubsectionContent
 }
