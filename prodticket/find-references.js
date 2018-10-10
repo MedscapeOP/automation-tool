@@ -6,7 +6,7 @@ var exportObject = {};
 exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
     var {textBlock} = stringOps.getTextBlock(ticketHTML, "<strong>References", "<strong>Tagging Info");
     textBlock = cleanHTML.references(textBlock).trim();
-    return ("<ol>" + cleanHTML.singleLine(textBlock) + "</ol>");
+    return "<ol>" + cleanHTML.singleLine(textBlock) + "</ol>";
   
 }
 

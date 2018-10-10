@@ -2,8 +2,12 @@
 const fs = require('fs');
 const utils = require("../../utils");
 const prodticket = require("../../prodticket");
-const expect = require('chai').expect;
+const chai = require('chai');
 const config = require('../../config');
+
+chai.use(require('chai-string'));
+let expect = chai.expect;
+
 
 describe('Prodticket Module Functions', function () {
 
@@ -72,19 +76,20 @@ describe('Prodticket Module Functions', function () {
         var referencesCC = fs.readFileSync(__dirname + '/input/references-cc.html').toString();
         var referencesSL = fs.readFileSync(__dirname + '/input/references-sl.html').toString();
 
-        // it("should return the program references from the .html - Clinical Brief", function () {
-        //     var result = prodticket.getProgramReferences(prodticketCB, config.programs.clinicalBrief);
-        //     expect(result).to.equal(referencesCB);
-        // });
+        it("should return the program references from the .html - Clinical Brief", function () {
+            var result = prodticket.getProgramReferences(prodticketCB, config.programs.clinicalBrief);
+            console.log("RESULT: ", result);
+            expect(result).to.equalIgnoreSpaces(referencesCB);
+        });
 
-        // it("should return the program references from the .html - Spotlight", function () {
-        //     var result = prodticket.getProgramReferences(prodticketSL, config.programs.spotlight);
-        //     expect(result).to.equal(referencesSL);
-        // });
+        it("should return the program references from the .html - Spotlight", function () {
+            var result = prodticket.getProgramReferences(prodticketSL, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(referencesSL);
+        });
 
         it("should return the program references from the .html - Curbside", function () {
             var result = prodticket.getProgramReferences(prodticketCC, config.programs.curbsideConsult);
-            expect(result).to.equal(referencesCC);
+            expect(result).to.equalIgnoreSpaces(referencesCC);
         });
     });
 });
