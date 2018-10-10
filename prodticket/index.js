@@ -14,6 +14,7 @@ let findByline = require('./find-byline');
 let findReferences = require('./find-references');
 let findAbbreviations = require('./find-abbreviations');
 let findPeerReviewer = require('./find-peer-reviewer');
+let findSlides = require('./find-slides');
 
 function getTitle (ticketHTML, program) {
     var rawTitle = findTitle[program.codeName](ticketHTML);
@@ -38,6 +39,11 @@ function getAbbreviations (ticketHTML, program) {
 function getPeerReviewer (ticketHTML, program) {
     var rawPeerReviewer = findPeerReviewer[program.codeName](ticketHTML);
     return rawPeerReviewer; 
+}
+
+function getSlides (ticketHTML, program) {
+    var slideComponents = findSlides[program.codeName](ticketHTML, program);
+    return slideComponents;
 }
 
 function wrapSubsectionContent(textBlock, cleaningFn) {

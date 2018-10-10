@@ -2,22 +2,26 @@ const programs = {
     clinicalBrief: {
         name: "Clinical Brief",
         codeName: "brief",
-        profArticleType: "Article"
+        profArticleType: "Article",
+        articleID: ""
     },
     spotlight: {
         name: "Spotlight",
         codeName: "spotlight",
-        profArticleType: "SlidePresentation" 
+        profArticleType: "SlidePresentation",
+        articleID: "" 
     },
     curbsideConsult: {
         name: "Curbside Consult",
         codeName: "curbside",
-        profArticleType: "SlidePresentation"
+        profArticleType: "SlidePresentation",
+        articleID: ""
     },
     firstResponse: {
         name: "First Response",
         codeName: "firstResponse",
-        profArticleType: "SlidePresentation"
+        profArticleType: "SlidePresentation",
+        articleID: ""
     }
 }
 
