@@ -13,6 +13,11 @@ const programs = {
         name: "Curbside Consult",
         codeName: "curbside",
         profArticleType: "SlidePresentation"
+    },
+    firstResponse: {
+        name: "First Response",
+        codeName: "firstResponse",
+        profArticleType: "SlidePresentation"
     }
 }
 

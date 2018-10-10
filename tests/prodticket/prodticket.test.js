@@ -99,13 +99,13 @@ describe('Prodticket Module Functions', function () {
     
         it("should return the program peer reviewer statement from .html - Spotlight", function () {
             var result = prodticket.getPeerReviewer(prodticketSL, config.programs.spotlight);
-            expect(result).to.equal(peerReviewerSL);
+            expect(result).to.equalIgnoreSpaces(peerReviewerSL);
         });
 
-        // it("should return the program peer reviewer statement from .html - Curbside", function () {
-        //     var result = prodticket.getPeerReviewer(prodticketCC, config.programs.curbsideConsult);
-        //     expect(result).to.equalIgnoreSpaces(peerReviewerCC);
-        // });
+        it("should return the program peer reviewer statement from .html - Curbside", function () {
+            var result = prodticket.getPeerReviewer(prodticketCC, config.programs.curbsideConsult);
+            expect(result).to.equalIgnoreSpaces(peerReviewerCC);
+        });
     });
 });
 

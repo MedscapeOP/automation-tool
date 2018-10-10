@@ -210,7 +210,7 @@ function references(string) {
 function peerReviewer(string) {
     var str = removeTicketFluff(string);
     var options = {
-        allowedTags: [ 'p', 'br', 'em', 'strong', 'sup' ],
+        allowedTags: ['br', 'em', 'strong', 'sup' ],
         allowedAttributes: [],
         exclusiveFilter: function(frame) {
             // return frame.tag === 'a' && !frame.text.trim();
@@ -220,15 +220,36 @@ function peerReviewer(string) {
     var clean = sanitizeHtml(str, options);
 
     // Main regex series 
-    var servedRegExp = /\s+(Served|served)/g;
-    clean = clean.replace(servedRegExp, "<br>$1");
-
-    var recievedRegExp = /\s+(Recieved|recieved)/g;
-    clean = clean.replace(recievedRegExp, "<br>$1");
-
-    var ownsRegExp = /\s+(Owns|owns)/g;
-    clean = clean.replace(ownsRegExp, "<br>$1");
+    // "Served" statements 
+    // var servedRegExp = /<p>(Served|served)/g;
+    // clean = clean.replace(servedRegExp, "$1");
     
+    var servedRegExp2 = /\s+(Served|served)/g;
+    clean = clean.replace(servedRegExp2, "$1");
+
+    var servedRegExp3 = /(Served|served)/g;
+    clean = clean.replace(servedRegExp3, "<br>$1");
+
+    // "Recieved" statements 
+    // var recievedRegExp = /<p>(Recieved|recieved)/g;
+    // clean = clean.replace(recievedRegExp, "$1");
+    
+    var recievedRegExp2 = /\s+(Recieved|recieved)/g;
+    clean = clean.replace(recievedRegExp2, "$1");
+
+    var recievedRegExp3 = /(Recieved|recieved)/g;
+    clean = clean.replace(recievedRegExp3, "<br>$1");
+
+    // "Owns" statements
+    // var ownsRegExp = /<p>(Owns|owns)/g;
+    // clean = clean.replace(ownsRegExp, "$1");
+    
+    var ownsRegExp2 = /\s+(Owns|owns)/g;
+    clean = clean.replace(ownsRegExp2, "$1");
+
+    var ownsRegExp3 = /(Owns|owns)/g;
+    clean = clean.replace(ownsRegExp3, "<br>$1");
+
     return clean;
 }
 
