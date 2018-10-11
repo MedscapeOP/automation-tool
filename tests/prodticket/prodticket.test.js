@@ -121,10 +121,13 @@ describe('Prodticket Module Functions', function () {
             expect(result[0].rawSlides).to.equalIgnoreSpaces(slideComponentsSL[0].rawSlides);
         });
 
-        // it("should return an array of slide components from .html - Curbside", function () {
-        //     var result = prodticket.getSlides(prodticketCC, config.programs.curbsideConsult);
-        //     expect(result).to.deep.equal(slideComponentsCC);
-        // });
+        it("should return an array of slide components from .html - Curbside", function () {
+            var result = prodticket.getSlides(prodticketCC, config.programs.curbsideConsult);
+            expect(result[0].articleID).to.equal(slideComponentsCC[0].articleID);
+            expect(result[0].componentNumber).to.equal(slideComponentsCC[0].componentNumber);
+            expect(result[0].slidePath).to.equal(slideComponentsCC[0].slidePath);
+            expect(result[0].rawSlides).to.equalIgnoreSpaces(slideComponentsCC[0].rawSlides);
+        });
 
         // it("should return an array of slide components from .html - First Response", function () {
         //     var result = prodticket.getSlides(prodticketFR, config.programs.firstResponse);

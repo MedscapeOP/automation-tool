@@ -128,6 +128,12 @@ module.exports = [
         
         <p><strong>&lt;&lt;level 2&gt;&gt; Summary </strong></p>
         <p><strong>&lt;&lt;insert slide 23  (26:34) chapter title:     &gt;&gt;</strong></p>
-        <p><strong>&lt;&lt;level 2&gt;&gt;Thank you</strong></p>`
+        <p><strong>&lt;&lt;level 2&gt;&gt;Thank you</strong></p>
+        
+        <p> <em>This content has been condensed for improved clarity.</em></p>
+
+
+        <table border="1" cellpadding="3" cellspacing="1">
+        <tr valign="top">`
     }
 ];

@@ -28,6 +28,7 @@ FUNCTION REQUIREMENTS:
 let startSlideMatches = [
     /<p><strong>&lt;&lt;Component/g,
     /<p><strong>&lt;&lt;.*slide 1/g,
+    /<p>&lt;&lt;.*slide 1/g,
     /<strong>Content<\/strong>/g
 ];
 let endSlideMatches = [
@@ -72,12 +73,13 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML, program
         var textBlockObject = stringOps.getTextBlock(ticketHTML, startSlideRegExp, endSlideRegExp, false); 
         var slideComponent = new SlideComponent(program.articleID, null, textBlockObject.textBlock);
         slideComponents.push(slideComponent.toObjectLiteral());
+        // console.log(JSON.stringify(slideComponents, undefined, 2));
         return slideComponents;
-    }
+    }    
 }
 
 exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML, program) {
-    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+    return exportObject[config.programs.spotlight.codeName](ticketHTML, program);
 }
 
 exportObject[config.programs.firstResponse.codeName] = function (ticketHTML, program) {

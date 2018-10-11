@@ -207,8 +207,6 @@ module.exports = [
         
         <p>&lt;&lt;insert slide 26: 27:04 &gt;&gt;  </p>
         
-        <p><strong>&lt;&lt;Level 2&gt;&gt; Thank you</strong></p>
-        
-        <p>&lt;&lt;end slides&gt;&gt;</p>`
+        <p><strong>&lt;&lt;Level 2&gt;&gt; Thank you</strong></p>`
     }
 ];
