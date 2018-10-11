@@ -2,7 +2,7 @@ const _ = require("lodash");
 const XMLElement = require("./xml_element");
 
 class SlideGroup extends XMLElement {
-    constructor(articleID, slideNumber) {
+    constructor(slidePath, slideNumber) {
         super("slide_grp", true, false);
         this._sectionImage = {
             "type": "element",
@@ -20,7 +20,7 @@ class SlideGroup extends XMLElement {
                 },
                 {
                     "type": "text",
-                    "text": `/webmd/professional_assets/medscape/images/content/article/${articleID.slice(0, 3)}/${articleID.slice(3)}/Slide${slideNumber}.png`
+                    "text": `/webmd/professional_assets/medscape/images/content/article/${slidePath}/Slide${slideNumber}.png`
                 }
             ]
         };

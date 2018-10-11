@@ -23,7 +23,7 @@ describe('Slide Group Element', function () {
         // fs.readFileSync(__dirname + '/input/article.html', 'utf8');
         sectionText = require('./input/section_text'); 
         completeSlideGroup = require('./input/slide_group');
-        slideGroupInstance = new SlideGroup("896814", 6);
+        slideGroupInstance = new SlideGroup("896/814", 6);
     });
     
     describe('#insertSectionText()', function () {

@@ -74,8 +74,8 @@ function findNextSlide(substring) {
 
 // console.log(findNextSlide(testString));
 
-
-let buildSlidesXML = (substring, subsectionElement, articleID = 'XXXXXX', counter = 0, fn) => {
+// Slide Path ${articleID.slice(0, 3)}/${articleID.slice(3)}
+let buildSlidesXML = (substring, subsectionElement, slidePath = "XXX/XXX", counter = 0, fn) => {
     var nextSlideSymbol = findNextSlide(substring);
     if (nextSlideSymbol != -1) {
         // Remove insert slide line 
@@ -114,27 +114,27 @@ let buildSlidesXML = (substring, subsectionElement, articleID = 'XXXXXX', counte
         counter++;
 
         // Create new Slide Group XML object and insert Slide Content as section text
-        var slide_grp = new SlideGroup(articleID, counter);
+        var slide_grp = new SlideGroup(slidePath, counter);
         slide_grp.insertSectionText(slideContent);
 
         // Push slide_grp onto subsection element 
         subsectionElement.insertSlideGroup(slide_grp);
 
         // Continue recursive definition
-        return fn(substring, subsectionElement, articleID, counter, buildSlidesXML);
+        return fn(substring, subsectionElement, slidePath, counter, buildSlidesXML);
     } else {
         return subsectionElement;
     }
 };
 
-let buildSlides = function (substring, subsectionElement, articleID) {
+let buildSlides = function (substring, subsectionElement, slidePath) {
     var cleanSlides = cleanHTML.slides(substring);
-    return buildSlidesXML(cleanSlides, subsectionElement, articleID, 0, buildSlidesXML);
+    return buildSlidesXML(cleanSlides, subsectionElement, slidePath, 0, buildSlidesXML);
 };
 
 /* 
 Algorithm 
-function buildSlides(string, subsectionElement, articleID = "XXXXXX") {
+function buildSlides(string, subsectionElement, slidePath = "XXXXXX") {
     - index = Find next slide (Use findNextSymbol w/ `&lt;&lt;insert slide`
     if (index != -1) {
         - Remove `&lt;&lt;insert slide` entire line      

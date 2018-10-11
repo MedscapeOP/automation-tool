@@ -52,7 +52,7 @@ describe('Utility Functions', function () {
     describe("#buildSlides()", function () {
         it('should transform Slides HTML from from R2Net conversion into JS Object.', function () {
             var subsectionElement = new SubsectionElement(true);
-            var result = utils.buildSlides(dirtySlidesXML, subsectionElement, "901602");
+            var result = utils.buildSlides(dirtySlidesXML, subsectionElement, "901/602");
             // fs.writeFileSync(__dirname + "/output/clean-slides.xml", result, function(err) {
             //     if(err) {
             //         return console.log(err);

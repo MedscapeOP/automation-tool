@@ -107,5 +107,19 @@ describe('Prodticket Module Functions', function () {
             expect(result).to.equalIgnoreSpaces(peerReviewerCC);
         });
     });
+
+    describe("prodticket.getSlides()", function () {
+        it("should return an array of slide components from .html - Spotlight", function () {
+            
+        });
+
+        it("should return an array of slide components from .html - Curbside", function () {
+
+        });
+
+        it("should return an array of slide components from .html - First Response", function () {
+
+        });
+    });
 });
 

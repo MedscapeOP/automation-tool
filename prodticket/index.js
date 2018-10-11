@@ -61,5 +61,6 @@ module.exports = {
     getReferences,
     getAbbreviations,
     getPeerReviewer,
+    getSlides,
     wrapSubsectionContent
 }
