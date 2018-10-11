@@ -14,12 +14,13 @@ describe('Prodticket Module Functions', function () {
     let prodticketCB;
     let prodticketCC;
     let prodticketSL;
-
+    let prodticketFR;
 
     beforeEach(function() {
         prodticketCB = fs.readFileSync(__dirname + '/input/prodticket-cb.html').toString();
         prodticketCC = fs.readFileSync(__dirname + '/input/prodticket-cc.html').toString();      
         prodticketSL = fs.readFileSync(__dirname + '/input/prodticket-sl.html').toString();
+        prodticketFR = fs.readFileSync(__dirname + '/input/prodticket-fr.html').toString();
     });
 
     describe("prodticket.getTitle()", function () {
@@ -78,7 +79,6 @@ describe('Prodticket Module Functions', function () {
 
         it("should return the program references from the .html - Clinical Brief", function () {
             var result = prodticket.getReferences(prodticketCB, config.programs.clinicalBrief);
-            console.log("RESULT: ", result);
             expect(result).to.equalIgnoreSpaces(referencesCB);
         });
 
@@ -109,17 +109,27 @@ describe('Prodticket Module Functions', function () {
     });
 
     describe("prodticket.getSlides()", function () {
+        var slideComponentsSL = require('./input/slide-components-sl');
+        var slideComponentsCC = require('./input/slide-components-cc');
+        var slideComponentsFR = require('./input/slide-components-fr');
+
         it("should return an array of slide components from .html - Spotlight", function () {
-            
+            var result = prodticket.getSlides(prodticketSL, config.programs.spotlight);
+            expect(result[0].articleID).to.equal(slideComponentsSL[0].articleID);
+            expect(result[0].componentNumber).to.equal(slideComponentsSL[0].componentNumber);
+            expect(result[0].slidePath).to.equal(slideComponentsSL[0].slidePath);
+            expect(result[0].rawSlides).to.equalIgnoreSpaces(slideComponentsSL[0].rawSlides);
         });
 
-        it("should return an array of slide components from .html - Curbside", function () {
+        // it("should return an array of slide components from .html - Curbside", function () {
+        //     var result = prodticket.getSlides(prodticketCC, config.programs.curbsideConsult);
+        //     expect(result).to.deep.equal(slideComponentsCC);
+        // });
 
-        });
-
-        it("should return an array of slide components from .html - First Response", function () {
-
-        });
+        // it("should return an array of slide components from .html - First Response", function () {
+        //     var result = prodticket.getSlides(prodticketFR, config.programs.firstResponse);
+        //     expect(result).to.deep.equal(slideComponentsFR);
+        // });
     });
 });
 

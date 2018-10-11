@@ -128,7 +128,7 @@ let buildSlidesXML = (substring, subsectionElement, slidePath = "XXX/XXX", count
 };
 
 let buildSlides = function (substring, subsectionElement, slidePath) {
-    var cleanSlides = cleanHTML.slides(substring);
+    var cleanSlides = cleanHTML.slidesFinal(substring);
     return buildSlidesXML(cleanSlides, subsectionElement, slidePath, 0, buildSlidesXML);
 };
 

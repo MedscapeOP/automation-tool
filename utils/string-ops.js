@@ -24,7 +24,7 @@ function isBlankOrWhiteSpace(str) {
     return (!str || /^\s*$/.test(str) || str.trim().length === 0);
 }
 
-function getTextBlock(str, startText, endText) {
+function getTextBlock(str, startText, endText, stripStart = true) {
     if (startText instanceof RegExp) {
         var startIndex = regexIndexOf(str, startText);
         var endIndex = regexIndexOf(str, endText);
@@ -33,7 +33,9 @@ function getTextBlock(str, startText, endText) {
         if (textBlock.match(startText)) {
             label = textBlock.match(startText)[0];
         }
-        textBlock = textBlock.replace(startText,'');
+        if (stripStart) {
+            textBlock = textBlock.replace(startText,'');
+        }        
         return {label, textBlock, startIndex, endIndex};
     } else {
         var startIndex = str.indexOf(startText);
@@ -43,7 +45,9 @@ function getTextBlock(str, startText, endText) {
         if (textBlock.match(startText)) {
             label = textBlock.match(startText)[0];
         }
-        textBlock = textBlock.replace(startText,'');
+        if (stripStart) {
+            textBlock = textBlock.replace(startText,'');
+        }        
         return {label, textBlock, startIndex, endIndex};
     }
 }
@@ -57,5 +61,6 @@ module.exports = {
     findFirstAndReplace,
     isEmptyString,
     isBlankOrWhiteSpace,
-    getTextBlock
+    getTextBlock,
+    regexIndexOf
 }

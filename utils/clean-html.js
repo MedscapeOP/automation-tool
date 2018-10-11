@@ -112,20 +112,7 @@ function unorderedList(string) {
     return clean;
 }
 
-function slides(str) {
-        
-    str = unorderedList(str);
-
-    /* CLEAN UP HTML FOR EDGE CASES */
-
-    // Headline edge cases / Capitalization Edge Cases 
-    var headlineRegExp1 = new RegExp('&lt;&lt;.*level 2.*&gt;&gt;', 'g');
-    str = str.replace(headlineRegExp1, "&lt;&lt;Level 2&gt;&gt;");
-
-    // Remove End Slides 
-    var endSlidesRegExp1 = new RegExp('&lt;&lt;end slides&gt;&gt;', 'g');
-    str = str.replace(endSlidesRegExp1, "");
-
+function slidesInitial (str) {
     // Insert Slide edge cases / Capitalization Edge Cases
     var insertSlideRegExp1 = new RegExp('&lt;&lt;.*slide', 'g');
     str = str.replace(insertSlideRegExp1, "&lt;&lt;insert slide");
@@ -138,6 +125,23 @@ function slides(str) {
 
     var insertSlideRegExp4 = new RegExp('&gt;&gt;.*Slide', 'g');
     str = str.replace(insertSlideRegExp4, "&lt;&lt;insert slide");
+    
+    return str;
+}
+
+function slidesFinal (str) {
+        
+    str = unorderedList(str);
+
+    /* CLEAN UP HTML FOR EDGE CASES */
+
+    // Headline edge cases / Capitalization Edge Cases 
+    var headlineRegExp1 = new RegExp('&lt;&lt;.*level 2.*&gt;&gt;', 'g');
+    str = str.replace(headlineRegExp1, "&lt;&lt;Level 2&gt;&gt;");
+
+    // Remove End Slides 
+    var endSlidesRegExp1 = new RegExp('&lt;&lt;end slides&gt;&gt;', 'g');
+    str = str.replace(endSlidesRegExp1, "");
 
     // Strong/Em tag Edge Cases
     var strongRegExp1 = new RegExp('<strong></strong>', 'g');
@@ -258,7 +262,8 @@ module.exports = {
     plainText,
     paragraph,
     unorderedList,
-    slides,
+    slidesInitial,
+    slidesFinal,
     abbreviations,
     references,
     peerReviewer

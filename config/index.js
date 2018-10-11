@@ -9,19 +9,19 @@ const programs = {
         name: "Spotlight",
         codeName: "spotlight",
         profArticleType: "SlidePresentation",
-        articleID: "" 
+        articleID: "901602" 
     },
     curbsideConsult: {
         name: "Curbside Consult",
         codeName: "curbside",
         profArticleType: "SlidePresentation",
-        articleID: ""
+        articleID: "902082"
     },
     firstResponse: {
         name: "First Response",
         codeName: "firstResponse",
         profArticleType: "SlidePresentation",
-        articleID: ""
+        articleID: "900319"
     }
 }
 

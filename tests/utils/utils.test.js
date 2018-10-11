@@ -19,6 +19,13 @@ describe('Utility Functions', function () {
         xmlJSObjectTrimmed = require('./input/xml-js-object-trimmed');
     });
     
+    // describe('#getTextBlock()', function () {
+    //     var prodticketSL = fs.readFileSync(__dirname + '/input/prodticket-sl.html').toString();
+    //     it('should return text between specified start and end RegExp', function () {
+    //         console.log(utils.stringOps.getTextBlock(prodticketSL, /&lt;&lt;.*slide 1/g, /&lt;&lt;end slides&gt;&gt;/g));
+    //     });
+    // });
+
     describe('#trimObjectText()', function () {
         it('should return trimmed "text" property of JavaScript Object', function () {
             var result = utils.trimObjectText(xmlJSObject)
@@ -38,9 +45,20 @@ describe('Utility Functions', function () {
         });
     });
 
-    describe("#cleanHTML.slides()", function () {
-        it('should transform Slides HTML from from R2Net conversion into proper format.', function () {
-            var result = utils.cleanHTML.slides(dirtySlidesHTML);
+    describe("#cleanHTML.slidesInitial()", function () {
+        it('should transform Slides HTML from from R2Net into format suitable for initial processing/formatting.', function () {
+            var result = utils.cleanHTML.slidesInitial(dirtySlidesHTML);
+            fs.writeFileSync(__dirname + "/output/fixed-slides.html", result, function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+            }); 
+        });
+    });
+
+    describe("#cleanHTML.slidesForFinalBuild()", function () {
+        it('should transform Slides HTML from from R2Net into format for use in buildSlides().', function () {
+            var result = utils.cleanHTML.slidesFinal(dirtySlidesHTML);
             fs.writeFileSync(__dirname + "/output/clean-slides.html", result, function(err) {
                 if(err) {
                     return console.log(err);
