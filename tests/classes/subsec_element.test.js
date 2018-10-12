@@ -1,9 +1,10 @@
-const SubsectionElement = require("../../classes/subsec_element");
 const fs = require('fs');
 const _ = require("lodash");
 const utils = require("../../utils");
 const expect = require('chai').expect;
 
+const app = require("../../app");
+const SubsectionElement = app.classes.SubsectionElement;
 
 describe('Subsection Element', function () {
     /*
@@ -22,14 +23,15 @@ describe('Subsection Element', function () {
     beforeEach(function() {
         // fs.readFileSync(__dirname + '/input/article.html', 'utf8');
         completeSubsection = require('./input/subsection');
-        subsectionContent = require('./input/subsection_content'); 
+        // subsectionContent = require('./input/subsection_content');
+        subsectionContent = fs.readFileSync(__dirname + "/input/subsection_content.html").toString(); 
         subsectionInstance = new SubsectionElement();
         subsectionInstance.subsectionHeader = "My Subsection";
     });
     
-    describe('#insertSubsectionContent()', function () {
+    describe('#get/set .subsectionContent()', function () {
         it('should merge subsection content into main subsection element', function (done) {
-            subsectionInstance.insertSubsectionContent(subsectionContent);
+            subsectionInstance.subsectionContent = utils.wrapSubsectionContent(subsectionContent);
             // subsectionInstance.qnaForm = 3;
 
             // fs.writeFileSync(

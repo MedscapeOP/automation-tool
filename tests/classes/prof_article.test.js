@@ -1,9 +1,11 @@
-const ProfArticle = require("../../classes/prof_article");
-const TOCElement = require('../../classes/toc_element');
 const fs = require('fs');
 const _ = require("lodash");
-const utils = require("../../utils");
 const expect = require('chai').expect;
+
+const app = require('../../app');
+const ProfArticle = app.classes.ProfArticle;
+const TOCElement = app.classes.TOCElement;
+const utils = app.utils;
 
 
 describe('Prof Article Element', function () {

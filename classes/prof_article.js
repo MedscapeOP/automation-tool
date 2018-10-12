@@ -2,7 +2,6 @@ const _ = require("lodash");
 const XMLElement = require("./xml_element");
 const xmlOps = require('../utils/index').xmlOps;
 
-
 class ProfArticle extends XMLElement{
     constructor(type = "Article", hasOUS = false) {
         if (type == "SlidePresentation") {

@@ -1,9 +1,9 @@
 const _ = require('lodash');
+const xmlOps = require('./xml-ops');
 const formatList = require('./format-list');
 const stringOps = require('./string-ops');
 const cleanHTML = require('./clean-html');
 const pathBuilder = require('./path-builder');
-const xmlOps = require('./xml-ops');
 const buildSlides = require('./build-slides');
 
 function trimObjectText(xmlJSObject) {
@@ -30,11 +30,31 @@ function trimObjectText(xmlJSObject) {
     return xmlJSObject;
 }
 
+function wrapSubsectionContent(textBlock, cleaningFn) {
+    // Put together final string of XML. 
+    if (cleaningFn) {
+        return "<subsec_content>" + cleaningFn(textBlock) + "</subsec_content>";
+    } else {
+        return "<subsec_content>" + textBlock + "</subsec_content>";
+    }       
+}
+
+function wrapSlideIntro(textBlock, cleaningFn) {
+    // Put together final string of XML. 
+    if (cleaningFn) {
+        return "<slide_intro>" + cleaningFn(textBlock) + "</slide_intro>";
+    } else {
+        return "<slide_intro>" + textBlock + "</slide_intro>";
+    }       
+}
+
 module.exports = {
     stringOps,
     xmlOps,
     formatList,
     trimObjectText,
     cleanHTML,
-    buildSlides
+    buildSlides,
+    wrapSubsectionContent,
+    wrapSlideIntro
 };

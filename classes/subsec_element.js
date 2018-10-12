@@ -1,24 +1,32 @@
 const _ = require("lodash");
 const XMLElement = require("./xml_element");
+const xmlOps = require('../utils/xml-ops');
 
 class SubsectionElement extends XMLElement {
     constructor(hasSlides) {
         super("subsec_element", true, false);
+        this._hasSlides = hasSlides;
         this._subsectionHeader = {
             "type": "element",
             "name": "subsec_header",
             "elements": []
         };
         this._elements[0] = this._subsectionHeader;
-        // _elements ==> starts with [subsec_header]
-        // _elements ==> after instantiation push(subsectionContent)
 
         if (hasSlides) {
-            this._elements[1] = {
+            this._slideIntro = {
                 "type": "element",
                 "name": "slide_intro",
                 "elements": []
             };
+            this._elements[1] = this._slideIntro;
+        } else {
+            this._subsectionContent = {
+                "type": "element",
+                "name": "subsec_content",
+                "elements": []
+            };
+            this._elements[1] = this._subsectionContent;
         }
     }
 
@@ -30,12 +38,47 @@ class SubsectionElement extends XMLElement {
         this.setParagraphTextField("_subsectionHeader", newHeader);
     }
 
-    insertSubsectionContent(subsectionContent) {
+    get subsectionContent() {
+        if (this._hasSlides) {
+            if (this._slideIntro.elements[0]) {
+                return xmlOps.objectToXMLString(this._slideIntro);
+            } else {
+                return null;
+            }  
+        } else {
+            if (this._subsectionContent.elements[0]) {
+                return xmlOps.objectToXMLString(this._subsectionContent);
+            } else {
+                return null;
+            }
+        }
+    }
+
+    set subsectionContent(subsectionContent) {
         /* 
             - Pushes the new subsec_content onto the elements array of the subsection
         */
-       var content = subsectionContent.elements[0];
-       this._elements.push(content);
+        if (subsectionContent) {
+            var subsectionContentObject = xmlOps.xmlStringToJS(subsectionContent);
+            var content = subsectionContentObject.elements[0].elements; 
+            if (this._hasSlides) {
+                for (var i = 0; i < content.length; i++) {
+                    this._slideIntro.elements.push(content[i]);
+                }
+            }
+            else {
+                for (var i = 0; i < content.length; i++) {
+                    this._subsectionContent.elements = content;
+                }
+            }   
+        } else {
+            if (this._hasSlides) {
+                this._slideIntro.elements = [];
+            }
+            else {
+                this._subsectionContent.elements = [];
+            }
+        }
     }
 
     insertSlideGroup(slideGroup) {

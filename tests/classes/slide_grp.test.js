@@ -1,8 +1,11 @@
-const SlideGroup = require("../../classes/slide_grp");
 const fs = require('fs');
-const _ = require("lodash");
-const utils = require("../../utils");
 const expect = require('chai').expect;
+// const _ = require("lodash");
+
+
+const app = require('../../app');
+const SlideGroup = app.classes.SlideGroup;
+const utils = app.utils;
 
 
 describe('Slide Group Element', function () {
@@ -21,14 +24,15 @@ describe('Slide Group Element', function () {
     var slideGroupInstance;  
     beforeEach(function() {
         // fs.readFileSync(__dirname + '/input/article.html', 'utf8');
-        sectionText = require('./input/section_text'); 
+        // sectionText = require('./input/section_text');
+        sectionText = fs.readFileSync(__dirname + "/input/section_text.html").toString(); 
         completeSlideGroup = require('./input/slide_group');
         slideGroupInstance = new SlideGroup("896/814", 6);
     });
     
     describe('#insertSectionText()', function () {
-        it('should merge subsection content into main subsection element', function (done) {
-            slideGroupInstance.sectionText = sectionText;
+        it('should merge subsection content into main subsection element', function () {
+            slideGroupInstance.sectionText = `<sec_txt>${sectionText}</sec_txt>`;
             // slideGroupInstance.qnaForm = 3;
 
             // fs.writeFileSync(
@@ -40,8 +44,9 @@ describe('Slide Group Element', function () {
             //         }
             //     }
             // ); 
-            expect(slideGroupInstance.toObjectLiteral()).to.deep.equal(completeSlideGroup);
-            done();
+            var result = utils.trimObjectText(slideGroupInstance.toObjectLiteral());
+            expect(result).to.deep.equal(completeSlideGroup);
+            // done();
         });
     });
 

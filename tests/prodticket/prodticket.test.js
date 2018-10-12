@@ -1,9 +1,11 @@
 // const SubsectionElement = require('../../classes/subsec_element');
 const fs = require('fs');
-const utils = require("../../utils");
-const prodticket = require("../../prodticket");
 const chai = require('chai');
-const config = require('../../config');
+
+const app = require('../../app');
+const config = app.config;
+const utils = app.utils;
+const prodticket = app.prodTicket;
 
 chai.use(require('chai-string'));
 let expect = chai.expect;

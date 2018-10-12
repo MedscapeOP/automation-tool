@@ -1,8 +1,10 @@
-var fs = require('fs');
-var _ = require("lodash");
-var utils = require("../../utils");
-var clinicalBrief = require("../../clinical-brief/clinical-brief");
-var expect = require('chai').expect;
+const fs = require('fs');
+const _ = require("lodash");
+const expect = require('chai').expect;
+
+const app = require('../../app');
+const utils = app.utils;
+const clinicalBrief = app.clinicalBrief;
 
 describe('Clinical Brief', function () {
     /*
@@ -22,6 +24,8 @@ describe('Clinical Brief', function () {
     var completeClinicalImplications;
     beforeEach(function() {
         prodTicket = fs.readFileSync(__dirname + '/input/article.html', 'utf8');
+        // completeClinicalContext = utils.xmlOps.objectToXMLString(require('./input/clinical-context'));
+
         completeClinicalContext = require('./input/clinical-context');
         completeStudySynopsis = require('./input/study-synopsis');
         // completeStudyHighlights = require('./input/study-highlights');

@@ -1,7 +1,9 @@
 var fs = require('fs');
-var utils = require("../../utils");
 var expect = require('chai').expect;
-const SubsectionElement = require('../../classes/subsec_element');
+
+const app = require('../../app');
+var utils = app.utils;
+const SubsectionElement = app.classes.SubsectionElement;
 
 describe('Utility Functions', function () {
 

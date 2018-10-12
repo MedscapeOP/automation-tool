@@ -107,15 +107,15 @@ let buildSlidesXML = (substring, subsectionElement, slidePath = "XXX/XXX", count
         
         // Turn Content into JS object
         // console.log(slideContent);
-        slideContent = xmlOps.xmlStringToJS(`<sec_txt>${slideContent}</sec_txt>`);
-        // slideContent = xmlOps.xmlStringToJS(`<sec_txt>Stuff</sec_txt>`);
+        // slideContent = xmlOps.xmlStringToJS(`<sec_txt>${slideContent}</sec_txt>`);
+        slideContent = `<sec_txt>${slideContent}</sec_txt>`;
         
         // Increment counter to reflect Slide #
         counter++;
 
         // Create new Slide Group XML object and insert Slide Content as section text
         var slide_grp = new SlideGroup(slidePath, counter);
-        slide_grp.insertSectionText(slideContent);
+        slide_grp.sectionText = (slideContent);
 
         // Push slide_grp onto subsection element 
         subsectionElement.insertSlideGroup(slide_grp);

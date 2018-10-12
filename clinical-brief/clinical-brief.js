@@ -31,7 +31,6 @@ Make Ability to Do Variations of Headlines
 
 const _ = require("lodash");
 const utils = require("../utils");
-const prodticket = require('../prodticket');
 const SubsectionElement = require('../classes/subsec_element');
 const SectionElement = require('../classes/sec_element');
 const TOCElement = require("../classes/toc_element");
@@ -39,13 +38,15 @@ const TOCElement = require("../classes/toc_element");
 
 function buildSection(textBlock, label) {
     // Use package to convert XML string to JS object
-    var subsectionContent = utils.xmlOps.xmlStringToJS(textBlock); 
+    // var subsectionContent = utils.xmlOps.xmlStringToJS(textBlock);
+
+    var subsectionContent = textBlock;
 
     // Return instance of section for use in master BUILD function
     var sectionInstance = new SectionElement();
     var subsectionInstance = new SubsectionElement();
     sectionInstance.sectionHeader = label;
-    subsectionInstance.insertSubsectionContent(subsectionContent);
+    subsectionInstance.subsectionContent = (subsectionContent);
     sectionInstance.insertSubsectionElement(subsectionInstance);
     return sectionInstance;
 }
@@ -59,7 +60,7 @@ function getClinicalContext(ticket) {
         "Clinical Context", 
         "Study Synopsis"
     );
-    textBlock = prodticket.wrapSubsectionContent(textBlock, utils.cleanHTML.paragraph);
+    textBlock = utils.wrapSubsectionContent(textBlock, utils.cleanHTML.paragraph);
     // build the actual section element
     return buildSection(textBlock, label);
 }
@@ -74,7 +75,7 @@ function getSynopsisAndPerspective(ticket) {
         "Study Synopsis and Perspective", 
         "Study Highlights"
     );
-    textBlock = prodticket.wrapSubsectionContent(textBlock, utils.cleanHTML.paragraph);
+    textBlock = utils.wrapSubsectionContent(textBlock, utils.cleanHTML.paragraph);
     // build the actual section element
     return buildSection(textBlock, label);
 }

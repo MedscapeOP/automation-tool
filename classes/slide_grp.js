@@ -1,5 +1,6 @@
-const _ = require("lodash");
+// const _ = require("lodash");
 const XMLElement = require("./xml_element");
+const xmlOps = require('../utils/xml-ops');
 
 class SlideGroup extends XMLElement {
     constructor(slidePath, slideNumber) {
@@ -86,13 +87,24 @@ class SlideGroup extends XMLElement {
     
     // Section Text Props
     get sectionText() {
-        return this._sectionText.elements;
+        if (this._sectionText.elements[0]) {
+            return xmlOps.objectToXMLString(this._sectionText);
+        } else {
+            return null;
+        }  
     }
 
     set sectionText(sectionText) {
         // Remove already existing section text
         this._sectionText.elements = [];
-        this.insertSectionText(sectionText);
+        if (sectionText) {
+            var sectionTextObject = xmlOps.xmlStringToJS(sectionText);
+            var content = sectionTextObject.elements[0].elements;       
+            for (var i = 0; i < content.length; i++) {
+                this._sectionText.elements.push(content[i]);
+            }
+        }
+        // this.insertSectionText(sectionText);
     }
 
     // Section Alt-Text Props
@@ -102,16 +114,6 @@ class SlideGroup extends XMLElement {
 
     set sectionAltText(newAltText) {
         this._sectionAltText.elements[0].text = newAltText;
-    }
-
-    insertSectionText(sectionText) {
-        /* 
-        - Pushes the new elements onto the elements array of the slide group's section Text
-        */
-       var content = sectionText.elements[0].elements;       
-       for (var i = 0; i < content.length; i++) {
-           this._sectionText.elements.push(content[i]);
-       }       
     }
 }
 

@@ -46,21 +46,11 @@ function getSlides (ticketHTML, program) {
     return slideComponents;
 }
 
-function wrapSubsectionContent(textBlock, cleaningFn) {
-    // Put together final string of XML. 
-    if (cleaningFn) {
-        return "<subsec_content>" + cleaningFn(textBlock) + "</subsec_content>";
-    } else {
-        return "<subsec_content>" + textBlock + "</subsec_content>";
-    }       
-}
-
 module.exports = {
     getTitle,
     getByline,
     getReferences,
     getAbbreviations,
     getPeerReviewer,
-    getSlides,
-    wrapSubsectionContent
+    getSlides
 }
