@@ -24,11 +24,19 @@ function isBlankOrWhiteSpace(str) {
     return (!str || /^\s*$/.test(str) || str.trim().length === 0);
 }
 
-function getTextBlock(str, startText, endText, stripStart = true) {
+function getTextBlock(str, startText, endText, stripStart = true, includeEnd = false) {
     if (startText instanceof RegExp) {
         var startIndex = regexIndexOf(str, startText);
         var endIndex = regexIndexOf(str, endText);
-        var textBlock = str.substring(startIndex, endIndex);
+        var textBlock = "";
+        if (startIndex != -1 && endIndex != -1) {
+            if (includeEnd) {
+                endIndex = endIndex + str.match(endText)[0].length;
+                textBlock = str.substring(startIndex, endIndex);
+            } else {
+                textBlock = str.substring(startIndex, endIndex);
+            }
+        }        
         var label = "";
         if (textBlock.match(startText)) {
             label = textBlock.match(startText)[0];
@@ -40,7 +48,15 @@ function getTextBlock(str, startText, endText, stripStart = true) {
     } else {
         var startIndex = str.indexOf(startText);
         var endIndex = str.indexOf(endText);
-        var textBlock = str.substring(startIndex, endIndex);
+        var textBlock = "";
+        if (startIndex != -1 && endIndex != -1) {
+            if (includeEnd) {
+                endIndex = endIndex + str.match(endText)[0].length;
+                textBlock = str.substring(startIndex, endIndex);
+            } else {
+                textBlock = str.substring(startIndex, endIndex);
+            }
+        }   
         var label = "";
         if (textBlock.match(startText)) {
             label = textBlock.match(startText)[0];

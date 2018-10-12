@@ -3,7 +3,8 @@ module.exports = [
         articleID: "900319",
         componentNumber: 1, 
         slidePath: "900/319/900319_2",
-        rawSlides: `<p>&lt;&lt;insert Intro slide 1; 00:00 &gt;&gt;  </p>
+        rawSlides: `<p><strong>&lt;&lt;Component 1 (video Intro)&gt;&gt;</strong></p>
+        <p>&lt;&lt;insert Intro slide 1; 00:00 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt;</strong> <strong>Diagnostic and Management Challenges in Patients With Chronic Migraine</strong></p>
         
@@ -21,7 +22,9 @@ module.exports = [
         articleID: "900319",
         componentNumber: 2, 
         slidePath: "900/319/900319_3",
-        rawSlides: `<p>&lt;&lt;insert Buse slide 1; 00:00 &gt;&gt;  </p>
+        rawSlides: `<p><strong>&lt;&lt;Component 2 (video Buse)&gt;&gt;</strong></p>
+        
+        <p>&lt;&lt;insert Buse slide 1; 00:00 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt; Stigma and Quality of Life in Patients With Frequent Migraine</strong></p>
 
@@ -93,7 +96,9 @@ module.exports = [
         articleID: "900319",
         componentNumber: 3, 
         slidePath: "900/319/900319_4",
-        rawSlides: `<p>&lt;&lt;insert Lipton slide 1; 00:00 &gt;&gt;  </p>
+        rawSlides: `<p><strong>&lt;&lt;Component 3 (video Lipton)&gt;&gt;</strong></p>
+        
+        <p>&lt;&lt;insert Lipton slide 1; 00:00 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt; Considerations in Preventive Therapy for Migraine</strong></p>
         
@@ -239,7 +244,9 @@ module.exports = [
         articleID: "900319",
         componentNumber: 4, 
         slidePath: "900/319/900319_5",
-        rawSlides: `<p>&lt;&lt;insert Dodick slide 1; 00:00 &gt;&gt;  </p>
+        rawSlides: `<p><strong>&lt;&lt;Component 4 (video Dodick)&gt;&gt;</strong></p>
+        
+        <p>&lt;&lt;insert Dodick slide 1; 00:00 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt; Migraine Headache: A Treatment Update</strong></p>
         
@@ -363,7 +370,9 @@ module.exports = [
         articleID: "900319",
         componentNumber: 5, 
         slidePath: "900/319/900319_6",
-        rawSlides: `<p>&lt;&lt;insert Halker Singh slide 1; 00:00 &gt;&gt;  </p>
+        rawSlides: `<p><strong>&lt;&lt;Component 5 (video Halker-Singh)&gt;&gt;</strong></p>
+        
+        <p>&lt;&lt;insert Halker Singh slide 1; 00:00 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt; Emerging Approaches for Preventive Therapy of CM</strong></p>
         

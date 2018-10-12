@@ -129,10 +129,16 @@ describe('Prodticket Module Functions', function () {
             expect(result[0].rawSlides).to.equalIgnoreSpaces(slideComponentsCC[0].rawSlides);
         });
 
-        // it("should return an array of slide components from .html - First Response", function () {
-        //     var result = prodticket.getSlides(prodticketFR, config.programs.firstResponse);
-        //     expect(result).to.deep.equal(slideComponentsFR);
-        // });
+        it("should return an array of slide components from .html - First Response", function () {
+            var result = prodticket.getSlides(prodticketFR, config.programs.firstResponse);
+            for (var i = 0; i < slideComponentsFR.length; i++) {
+                expect(result[i].articleID).to.equal(slideComponentsFR[i].articleID);
+                expect(result[i].componentNumber).to.equal(slideComponentsFR[i].componentNumber);
+                expect(result[i].slidePath).to.equal(slideComponentsFR[i].slidePath);
+                expect(result[i].rawSlides).to.equalIgnoreSpaces(slideComponentsFR[i].rawSlides);
+            }
+            // expect(result).to.deep.equal(slideComponentsFR);
+        });
     });
 });
 
