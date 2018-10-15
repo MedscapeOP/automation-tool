@@ -250,5 +250,80 @@ module.exports = {
             tocType: "Sidebar",
             calloutText: "&#26085;&#26412;&#35486;&#12398;&#23383;&#24149;"
         }
+    },
+    korean: {
+        videoConfigSuffix: "k",
+        transcriptSuffix: "transcript_kor",
+        expertCommentary: {
+            tocType: "Sidebar",
+            calloutText: "&#54620;&#44397;&#50612; &#51204;&#47928;&#44032; &#51452;&#49437;",
+            addOnIntroduction: function (articleID, programTitle) {
+                return `
+                <p>&#51060; &#45436;&#54217;&#51008; &#51204;&#52404; &#44368;&#50977; &#54876;&#46041;&#51032; &#54620; &#48512;&#48516;&#51077;&#45768;&#45796;.&#160; &#52280;&#50668;&#54616;&#49888; &#54980;, &#44288;&#47144;&#46108; &#47784;&#46304; &#44368;&#50977; &#45236;&#50857;&#50640; &#50641;&#49464;&#49828;&#54616;&#47140;&#47732;&#160;<strong><a href="/viewarticle/${articleID}">${programTitle}</a></strong>&#47196; &#44032;&#49884;&#44592; &#48148;&#46989;&#45768;&#45796;.&#160;</p>
+                `;
+            }
+        }, 
+        downloadablePDF: {
+            tocType: "Sidebar",
+            calloutText: "&#45796;&#50868;&#47196;&#46300; &#44032;&#45733;&#54620; &#54620;&#44397;&#50612; PDF"
+        },
+        transcriptPDF: {
+            tocType: "Sidebar",
+            calloutText: "&#54620;&#44397;&#50612; &#45824;&#48376;&#160;"
+        }, 
+        subtitles: {
+            tocType: "Sidebar",
+            calloutText: "&#54620;&#44397;&#50612; &#51088;&#47561;"
+        }
+    },
+    chinese: {
+        videoConfigSuffix: "c",
+        transcriptSuffix: "transcript_chi",
+        expertCommentary: {
+            tocType: "Sidebar",
+            calloutText: "&#20013;&#25991;&#19987;&#23478;&#35780;&#35770;",
+            addOnIntroduction: function (articleID, programTitle) {
+                return `
+                <p>&#36825;&#20010;&#35780;&#35770;&#39033;&#30446;&#26159;&#19968;&#22823;&#22411;&#22521;&#35757;&#27963;&#21160;&#30340;&#19968;&#37096;&#20998;. &#21152;&#20837;&#20043;&#21518;, &#35831;&#22238; &#21040;&#160;<strong><a href="/viewarticle/${articleID}">${programTitle}</a></strong>&#160;&#160;,&#20415;&#21487;&#35775;&#38382;&#25152;&#26377;&#30456;&#20851;&#30340;&#22521;&#35757;&#20869;&#23481;.</p>
+                `;
+            }
+        }, 
+        downloadablePDF: {
+            tocType: "Sidebar",
+            calloutText: "&#21487;&#19979;&#36733;&#30340;PDF&#20013;&#25991;&#29256;"
+        },
+        transcriptPDF: {
+            tocType: "Sidebar",
+            calloutText: "&#20013;&#25991;&#25991;&#23383;&#31295;"
+        }, 
+        subtitles: {
+            tocType: "Sidebar",
+            calloutText: "&#20013;&#25991;&#23383;&#24149;"
+        }
+    },
+    arabic: {
+        videoConfigSuffix: "",
+        transcriptSuffix: "transcript_ara",
+        expertCommentary: {
+            tocType: "Sidebar",
+            calloutText: "",
+            addOnIntroduction: function (articleID, programTitle) {
+                return `
+                <p><strong><a href="/viewarticle/${articleID}">${programTitle}</a></strong></p>
+                `;
+            }
+        }, 
+        downloadablePDF: {
+            tocType: "Sidebar",
+            calloutText: "&#1605;&#1604;&#1601; PDF &#1602;&#1575;&#1576;&#1604; &#1604;&#1604;&#1578;&#1581;&#1605;&#1610;&#1604; &#1576;&#1575;&#1604;&#1604;&#1594;&#1577; &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;&#160;"
+        },
+        transcriptPDF: {
+            tocType: "Sidebar",
+            calloutText: ""
+        }, 
+        subtitles: {
+            tocType: "Sidebar",
+            calloutText: ""
+        }
     }
 };
