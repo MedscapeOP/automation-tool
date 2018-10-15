@@ -1,0 +1,128 @@
+{
+  "elements": [
+    {
+      "type": "element",
+      "name": "toc_element",
+      "elements": [
+        {
+          "type": "element",
+          "name": "toc_label",
+          "elements": [
+            {
+              "type": "element",
+              "name": "p",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "Deutscher Expertenkommentar"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "toc_type",
+          "elements": [
+            {
+              "type": "text",
+              "text": "Sidebar"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "sec_element",
+          "elements": [
+            {
+              "type": "element",
+              "name": "sec_header",
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "p",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "Deutscher Expertenkommentar"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "subsec_element",
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "subsec_header",
+                  "elements": []
+                },
+                {
+                  "type": "element",
+                  "name": "slide_intro",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "p",
+                      "elements": [
+                        {
+                          "type": "text",
+                          "text": "Dieser Kommentar ist Teil einer umfangreicheren Fortbildungsmaßnahme. Kehren Sie für den Zugriff auf alle zugehörigen Fortbildungsinhalte nach Ihrer Teilnahme bitte zurück zu"
+                        },
+                        {
+                          "type": "element",
+                          "name": "strong",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "a",
+                              "attributes": {
+                                "href": "/viewarticle/900219"
+                              },
+                              "elements": [
+                                {
+                                  "type": "text",
+                                  "text": "Test Title"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "text": "."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "element",
+                      "name": "div",
+                      "attributes": {
+                        "class": "app-loading"
+                      },
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "div",
+                          "attributes": {
+                            "class": "webcomp-player",
+                            "data-config": "en/pi/editorial/studio/configs/2018/education/900219/900219_g.json",
+                            "data-playertype": "edu",
+                            "id": "cme-video-player"
+                          },
+                          "elements": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

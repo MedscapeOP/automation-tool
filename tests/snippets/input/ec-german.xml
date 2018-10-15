@@ -1,0 +1,27 @@
+                        
+<toc_element>
+    <toc_label>
+        <p>Deutscher Expertenkommentar</p>
+    </toc_label>
+    <toc_type>Sidebar</toc_type>
+    
+    <sec_element>
+        <sec_header>
+            <p>Deutscher Expertenkommentar</p>
+        </sec_header>
+        <subsec_element>
+            <subsec_header/>
+            <slide_intro>
+                <p>Dieser Kommentar ist Teil einer umfangreicheren Fortbildungsma&#223;nahme. Kehren Sie f&#252;r den Zugriff auf alle zugeh&#246;rigen Fortbildungsinhalte nach Ihrer Teilnahme bitte zur&#252;ck zu&#160;&#160;
+                                            
+                    <strong>
+                        <a href="/viewarticle/900219">Test Title</a>
+                    </strong>.
+                                        
+                </p>
+                <div class="app-loading">
+                    <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/900219/900219_g.json" data-playertype="edu" id="cme-video-player"/></div>
+            </slide_intro>
+        </subsec_element>
+    </sec_element>
+</toc_element>

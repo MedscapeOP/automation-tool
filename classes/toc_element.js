@@ -2,8 +2,8 @@ const _ = require("lodash");
 const XMLElement = require("./xml_element");
 
 class TOCElement extends XMLElement{
-    constructor(type = "Default") {
-        super("toc_element", false, true);
+    constructor(type = "Default", hasQnaForm = false, hasFootnotes = true) {
+        super("toc_element", hasQnaForm, hasFootnotes);
         this._label = {
             "type": "element",
             "name": "toc_label",
@@ -27,7 +27,7 @@ class TOCElement extends XMLElement{
     }
 
     get tocLabel() {
-        this.getParagraphTextField("_label");
+        return this.getParagraphTextField("_label");
     }
 
     set tocLabel(newLabel) {

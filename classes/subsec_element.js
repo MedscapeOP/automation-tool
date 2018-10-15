@@ -3,8 +3,8 @@ const XMLElement = require("./xml_element");
 const xmlOps = require('../utils/xml-ops');
 
 class SubsectionElement extends XMLElement {
-    constructor(hasSlides) {
-        super("subsec_element", true, false);
+    constructor(hasSlides, hasQnaForm = true, hasFootnotes = false) {
+        super("subsec_element", hasQnaForm, hasFootnotes);
         this._hasSlides = hasSlides;
         this._subsectionHeader = {
             "type": "element",

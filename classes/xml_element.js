@@ -96,7 +96,7 @@ class XMLElement {
         return object;
     }
 
-    getParagraphTextField() {
+    getParagraphTextField(propName) {
         return this[propName].elements[0].elements[0].text || "";
     }
 

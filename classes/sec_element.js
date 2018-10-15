@@ -2,8 +2,8 @@ const _ = require("lodash");
 const XMLElement = require("./xml_element");
 
 class SectionElement extends XMLElement {
-    constructor() {
-        super("sec_element", false, false);
+    constructor(hasQnaForm = false, hasFootnotes = false) {
+        super("sec_element", hasQnaForm, hasFootnotes);
         this._sectionHeader = {
             "type": "element",
             "name": "sec_header",

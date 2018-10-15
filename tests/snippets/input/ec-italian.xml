@@ -1,0 +1,29 @@
+        
+<toc_element>
+    <toc_label>
+        <p>Commento dell'esperto in italiano</p>
+    </toc_label>
+    <toc_type>Sidebar</toc_type>
+    
+    <sec_element>
+        <sec_header>
+            <p>Commento dell'esperto in italiano</p>
+        </sec_header>
+        <subsec_element>
+            <subsec_header/>
+            <slide_intro>
+                <p>Il presente commento fa parte di un'attivit&#224; didattica pi&#249; ampia.
+                            
+                    <strong>&#160;</strong>Dopo la partecipazione, si prega di tornare a&#160;
+                            
+                    <strong>
+                        <a href="/viewarticle/900219">Test Title</a>
+                    </strong>&#160;per accedere all'intero contenuto didattico correlato.
+                        
+                </p>
+                <div class="app-loading">
+                    <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/900219/900219_i.json" data-playertype="edu" id="cme-video-player"/></div>
+            </slide_intro>
+        </subsec_element>
+    </sec_element>
+</toc_element>

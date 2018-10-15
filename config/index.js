@@ -1,3 +1,5 @@
+const languages = require('./languages');
+
 const programs = {
     clinicalBrief: {
         name: "Clinical Brief",
@@ -23,18 +25,7 @@ const programs = {
         profArticleType: "SlidePresentation",
         articleID: "900319"
     }
-}
-
-// USE CLIP INSTEAD OF CONFLUENCE TO BUILD OBJECT
-// Put required code snippets inside of language object
-var languages = {
-    french: {
-        expertCommentary: false, 
-        downloadablePDF: false,
-        transcriptPDF: false, 
-        subtitles: false
-    }
-}
+};
 
 var addOns = {
     inLanguage: {

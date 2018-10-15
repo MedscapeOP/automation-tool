@@ -3,9 +3,9 @@ const XMLElement = require("./xml_element");
 const xmlOps = require('../utils/index').xmlOps;
 
 class ProfArticle extends XMLElement{
-    constructor(type = "Article", hasOUS = false) {
+    constructor(type = "Article", hasOUS = false, hasQnaForm = false, hasFootnotes = false) {
         if (type == "SlidePresentation") {
-            super("prof_article_slide_presentation", false, false);
+            super("prof_article_slide_presentation", hasQnaForm, hasFootnotes);
         } else if (type == "Article") {
             super("prof_article", false, false);
         }  

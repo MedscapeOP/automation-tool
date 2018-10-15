@@ -9,7 +9,7 @@ function xmlStringToJS(xmlString) {
 
 function xmlFileToJS(pathToFile) {
     var xml = fs.readFileSync(pathToFile, 'utf8');
-    var options = { compact: false, alwaysChildren: true, ignoreComment: true, alwaysChildren: true };
+    var options = { compact: false, alwaysChildren: true, ignoreComment: true, alwaysChildren: true};
     var result = convert.xml2js(xml, options); // or convert.xml2json(xml, options)
     return result;
 }

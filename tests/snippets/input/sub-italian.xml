@@ -1,0 +1,19 @@
+<toc_element>
+    <toc_label>
+        <p>Sottotitoli in italiano</p>
+    </toc_label>
+    <toc_type>Sidebar</toc_type>
+    <sec_element>
+        <sec_header>
+            <p>Sottotitoli in italiano</p>
+        </sec_header>
+        <subsec_element>
+            <subsec_header/>
+            <slide_intro>
+                <div class="app-loading">
+                    <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/900219/900219_i.json" data-playertype="edu" id="cme-video-player"/></div>
+            </slide_intro>
+        </subsec_element>
+    </sec_element>
+    
+</toc_element>

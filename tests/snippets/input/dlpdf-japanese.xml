@@ -1,0 +1,31 @@
+<toc_element>
+    <toc_label>
+        <p>&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#21487;&#33021;&#12394;&#26085;&#26412;&#35486;PDF</p>
+    </toc_label>
+    <toc_type>Sidebar</toc_type>
+    
+    <sec_element>
+        <sec_header>
+            <p>&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#21487;&#33021;&#12394;&#26085;&#26412;&#35486;PDF</p>
+        </sec_header>
+        <subsec_element>
+            <subsec_header/>
+            <slide_intro>
+                <p>
+                    <style type="text/css">#inlinePdfChrome {display:none;} #inlinePdfNonChrome {display:block;} #edu_left_col {width:100% !important;}</style>
+                    <span class="disableAccmeOverlay" id="inlinePdfNonChrome">
+                        <object width="100%" height="500px" data="http://img.medscapestatic.com/images/900/219/900219_transcript_jpn.pdf#view=FitV" type="application/pdf">
+                            <div id="dlSlides">
+                                <p>Download the pdf.</p>
+                                <div class="dlBtn">
+                                    <a class="cme_btn" href="http://img.medscapestatic.com/images/900/219/900219_transcript_jpn.pdf" target="_blank">Download Now</a>
+                                </div>
+                            </div>
+                        </object>
+                    </span>
+                    <iframe width="860px" height="500px" class="disableAccmeOverlay" id="inlinePdfChrome" src="http://img.medscapestatic.com/images/900/219/900219_transcript_jpn.pdf"></iframe>
+                </p>
+            </slide_intro>
+        </subsec_element>
+    </sec_element>
+</toc_element>

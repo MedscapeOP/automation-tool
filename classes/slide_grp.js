@@ -3,8 +3,8 @@ const XMLElement = require("./xml_element");
 const xmlOps = require('../utils/xml-ops');
 
 class SlideGroup extends XMLElement {
-    constructor(slidePath, slideNumber) {
-        super("slide_grp", true, false);
+    constructor(slidePath, slideNumber, hasQnaForm = true, hasFootnotes = false) {
+        super("slide_grp", hasQnaForm, hasFootnotes);
         this._sectionImage = {
             "type": "element",
             "name": "sec_img",
