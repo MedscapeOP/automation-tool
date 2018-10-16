@@ -31,9 +31,8 @@ Make Ability to Do Variations of Headlines
 
 const _ = require("lodash");
 const utils = require("../utils");
-const SubsectionElement = require('../classes/subsec_element');
-const SectionElement = require('../classes/sec_element');
-const TOCElement = require("../classes/toc_element");
+const {ProfArticle, TOCElement, SectionElement, SubsectionElement} = require("../classes");
+const prodticket = require('../prodticket');
 
 
 function buildSection(textBlock, label) {
@@ -49,6 +48,29 @@ function buildSection(textBlock, label) {
     subsectionInstance.subsectionContent = (subsectionContent);
     sectionInstance.insertSubsectionElement(subsectionInstance);
     return sectionInstance;
+}
+
+function buildCMETestSection(qnaFormNumber, label) {
+    // Return instance of section for use in master BUILD function
+    var sectionInstance = new SectionElement();
+    var subsectionInstance = new SubsectionElement(false, true);
+    sectionInstance.sectionHeader = label;
+    // subsectionInstance.subsectionContent = (subsectionContent);
+    subsectionInstance.qnaForm = qnaFormNumber;
+    sectionInstance.insertSubsectionElement(subsectionInstance);
+    return sectionInstance;
+}
+
+function buildReferences(referencesMarkup) {
+    var referencesSubsection = new SubsectionElement(false, true, false);
+    referencesSubsection.subsectionContent = utils.wrapSubsectionContent(referencesMarkup);
+    
+    var referencesSection = new SectionElement();
+    referencesSection.insertSubsectionElement(referencesSubsection);
+    
+    var referencesTOC = new TOCElement("References");
+    referencesTOC.insertSectionElement(referencesSection);
+    return referencesTOC;
 }
 
 /* CLINICAL CONTEXT 
@@ -81,24 +103,69 @@ function getSynopsisAndPerspective(ticket) {
 }
 
 function getStudyHighlights (ticket) {
-    // Have to clean up bullets into proper unordered lists
-    // ticket.replace(/<\Sp>\\n.*<\Sli>/g, "</li>\\n</ul>");
-    // ticket.replace(/<\Sp>\\n.*<p><tt>o\t<\Stt>/g, "</li><li>");
-    // ticket.replace(/<p><tt>o\t<\Stt>/g,"<ul><li>");
-    // ticket.replace(/<S+>&nbsp;<\S\S+>/g,"");
+    var {textBlock, label} = utils.stringOps.getTextBlock(
+        ticket,
+        "Study Highlights",
+        "Clinical Implications"
+    );
+    textBlock = utils.wrapSubsectionContent(textBlock, utils.cleanHTML.unorderedList);
+    return buildSection(textBlock, label);
 }
 
 function getClinicalImplications(ticket) {
-    // Have to clean up bullets into proper unordered lists
-    // ticket.replace(/<\Sp>\\n.*<\Sli>/g, "</li>\\n</ul>");
-    // ticket.replace(/<\Sp>\\n.*<p><tt>o\t<\Stt>/g, "</li><li>");
-    // ticket.replace(/<p><tt>o\t<\Stt>/g,"<ul><li>");
-    // ticket.replace(/<S+>&nbsp;<\S\S+>/g,"");
+    var {textBlock, label} = utils.stringOps.getTextBlock(
+        ticket,
+        "Clinical Implications",
+        "CME Post Test Questions"
+    );
+    textBlock = utils.wrapSubsectionContent(textBlock, utils.cleanHTML.unorderedList);
+    return buildSection(textBlock, label);
 }
+
+function buildClinicalBrief(ticket, program) {
+    var clinicalContext, synopsisAndPerspective, studyHighlights, clinicalImplications, references, title, byline;
+    
+    // Clinical Brief Sections
+    clinicalContext = getClinicalContext(ticket);
+    synopsisAndPerspective = getSynopsisAndPerspective(ticket);
+    studyHighlights = getStudyHighlights(ticket);
+    clinicalImplications = getClinicalImplications(ticket);
+    cmeTest = buildCMETestSection(3, "CME Test");
+
+    // Universal Info (Markup Strings)
+    references = prodticket.getReferences(ticket, program);
+    title = prodticket.getTitle(ticket, program);
+    byline = prodticket.getByline(ticket, program);
+ 
+    // Build Main TOC - Insert Brief Sections & Insert CME Test Section 
+    var mainTOCInstance = new TOCElement();
+    mainTOCInstance.insertSectionElement(clinicalContext);
+    mainTOCInstance.insertSectionElement(synopsisAndPerspective);
+    mainTOCInstance.insertSectionElement(studyHighlights);
+    mainTOCInstance.insertSectionElement(clinicalImplications);
+    mainTOCInstance.insertSectionElement(cmeTest);
+    
+    // Build References TOC
+    var referencesTOC = buildReferences(references);
+
+
+    // Instantiate and Populate Article
+    var finalArticle = new ProfArticle("Article");
+    // Set article title (pass markup)
+    finalArticle.titleText = title;
+    // Set article byline (pass markup)
+    finalArticle.contrbtrByline = byline;
+          
+    // Insert Main TOC Object & Insert References TOC Object 
+    finalArticle.insertTOCElement(mainTOCInstance);
+    finalArticle.insertTOCElement(referencesTOC);
+    return finalArticle;
+};
 
 module.exports = {
     getSynopsisAndPerspective,
     getClinicalContext,
     getStudyHighlights,
-    getClinicalImplications
+    getClinicalImplications,
+    buildClinicalBrief
 }
