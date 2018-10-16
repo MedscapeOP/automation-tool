@@ -155,6 +155,8 @@ function buildClinicalBrief(ticket, program) {
     finalArticle.titleText = title;
     // Set article byline (pass markup)
     finalArticle.contrbtrByline = byline;
+    // remove existing contrbtr_pre_content
+    finalArticle.contrbtrPreContent = null;
           
     // Insert Main TOC Object & Insert References TOC Object 
     finalArticle.insertTOCElement(mainTOCInstance);

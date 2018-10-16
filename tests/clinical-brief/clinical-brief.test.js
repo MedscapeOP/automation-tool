@@ -70,7 +70,9 @@ describe('Clinical Brief', function () {
                 clinicalBrief.buildClinicalBrief(prodTicket, app.config.programs.clinicalBrief));
             // expect(result).to.equalIgnoreSpaces(completeClinicalBrief.toString());
             var differences = [
-                "contrbtr_pre_content shouldn't have anything - TO FIX",
+                "contrbtr_pre_content shouldn't have anything - FIXED",
+                "contrbtr_post_content shouldn't have peer reviewer automatically - FIXED",
+                "prof_article wrapper element is not present - TO FIX",
                 "References should be wrapped in <ol></ol> - FIXED",
                 "contrbtr_groups not inserted - KNOWN ISSUE",
                 "supprtr_grant_attr not found or handled - KNOWN ISSUE"

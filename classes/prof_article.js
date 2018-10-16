@@ -70,29 +70,11 @@ class ProfArticle extends XMLElement{
             "elements": []
         };
 
-        // Only need Peer Reviewer if NON-OUS 
-        if (!hasOUS) {
-            this._contrbtr_post_content = {
-                "type": "element",
-                "name": "contrbtr_post_content",
-                "elements": [{
-                    "type": "element",
-                    "name": "h3",
-                    "elements": [
-                        {
-                            "type": "text",
-                            "text": "Peer Reviewer"
-                        }
-                    ]
-                }]
-            };
-        } else {
-            this._contrbtr_post_content = {
-                "type": "element",
-                "name": "contrbtr_post_content",
-                "elements": []
-            };
-        }
+        this._contrbtr_post_content = {
+            "type": "element",
+            "name": "contrbtr_post_content",
+            "elements": []
+        };
 
         this._supprtr_grant_group = {
             "type": "element",
@@ -386,6 +368,23 @@ class ProfArticle extends XMLElement{
         }
     }
 
+    get contrbtrPreContent() {
+        if (this._contrbtr_pre_content.elements[0]) {
+            return xmlOps.objectToXMLString(this._contrbtr_pre_content);
+        } else {
+            return null; 
+        }
+    }
+    
+    set contrbtrPreContent(newPreContentMarkup) {
+        if (newPreContentMarkup) {
+            var preContentObject = xmlOps.xmlStringToJS(newPreContentMarkup);
+            this._contrbtr_pre_content.elements = preContentObject.elements;
+        } else {
+            this._contrbtr_pre_content.elements = [];
+        }
+    }
+
     get contrbtrPostContent() {
         if (this._contrbtr_post_content.elements[0]) {
             return xmlOps.objectToXMLString(this._contrbtr_post_content);
@@ -396,19 +395,25 @@ class ProfArticle extends XMLElement{
 
     set contrbtrPostContent(newPostContentMarkup) {
         if (newPostContentMarkup) {
+            // Only need Peer Reviewer if NON-OUS 
+            var contentIndex = 0;
+            if (!this.hasOUS) {
+                this._contrbtr_post_content.elements[0] = {
+                    "type": "element",
+                    "name": "h3",
+                    "elements": [
+                        {
+                            "type": "text",
+                            "text": "Peer Reviewer"
+                        }
+                    ]
+                };
+                contentIndex++;
+            } 
             var postContentObject = xmlOps.xmlStringToJS(newPostContentMarkup);
-            this._contrbtr_post_content.elements[1] = postContentObject.elements[0];
+            this._contrbtr_post_content.elements[contentIndex] = postContentObject.elements[0];
         } else {
-            this._contrbtr_post_content.elements = [{
-                "type": "element",
-                "name": "h3",
-                "elements": [
-                    {
-                        "type": "text",
-                        "text": "Peer Reviewer"
-                    }
-                ]
-            }];
+            this._contrbtr_post_content.elements = [];
         }
     }
 
