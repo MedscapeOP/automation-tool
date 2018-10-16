@@ -499,6 +499,11 @@ class ProfArticle extends XMLElement{
         */
        this._toc_elements.push(tocElement.toObjectLiteral().elements[0]);
     }
+
+    toFinalXML() {
+        // return `<${this._xmlTagName}>${(xmlOps.objectToXMLString(this.toObjectLiteral()))}</${this._xmlTagName}>`
+        return `${xmlOps.objectToXMLString(this.toObjectLiteral())}`;
+    }
 }
 
 module.exports = ProfArticle;

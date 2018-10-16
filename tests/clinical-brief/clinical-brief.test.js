@@ -66,18 +66,18 @@ describe('Clinical Brief', function () {
 
     describe('#buildClinicalBrief()', function () {
         it('should return complete XML string of article', function () {
-            var result = utils.xmlOps.objectToXMLString(
-                clinicalBrief.buildClinicalBrief(prodTicket, app.config.programs.clinicalBrief));
+            var result = utils.xmlOps.objectToXMLString(clinicalBrief.buildClinicalBrief(prodTicket, app.config.programs.clinicalBrief).toObjectLiteral());
             // expect(result).to.equalIgnoreSpaces(completeClinicalBrief.toString());
             var differences = [
                 "contrbtr_pre_content shouldn't have anything - FIXED",
                 "contrbtr_post_content shouldn't have peer reviewer automatically - FIXED",
-                "prof_article wrapper element is not present - TO FIX",
+                "prof_article wrapper element is not present - FIXED",
                 "References should be wrapped in <ol></ol> - FIXED",
                 "contrbtr_groups not inserted - KNOWN ISSUE",
                 "supprtr_grant_attr not found or handled - KNOWN ISSUE"
             ]
             // console.log("EVERYTHING PASSES EXCEPT THESE DIFFERENCES: ", differences);
+            // var result = clinicalBrief.buildClinicalBrief(prodTicket, app.config.programs.clinicalBrief).toFinalXML();
             console.log(result);
         });
     });
