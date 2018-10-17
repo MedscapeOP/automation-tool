@@ -66,28 +66,74 @@ class SlideGroup extends XMLElement {
     }
 
     // Section Image Props
+    get sectionImagePath() {
+        if (this._sectionImage.elements.length >= 1) {              
+            return this._sectionImage.elements[2].text;            
+        } else {
+            return null;
+        }
+    }
+
     get sectionImage() {
-        return this._sectionImage.elements[2].text;
+        if (this._sectionImage.elements.length >= 1) {  
+            return xmlOps.objectToXMLString(this._sectionImage);
+        } else {
+            return null;
+        }
     }
 
     set sectionImage(newImagePath) {
-        this._sectionImage.elements[2].text == newImagePath;
+        if (newImagePath) {
+            this._sectionImage.elements = [
+                {
+                    "type": "instruction",
+                    "name": "dctmLink",
+                    "instruction": ""
+                },
+                {
+                    "type": "instruction",
+                    "name": "dctmEditor",
+                    "instruction": ""
+                },
+                {
+                    "type": "text",
+                    "text": `${newImagePath}`
+                }
+            ];
+        } else {
+            this._sectionImage.elements = [];
+        }
     }
 
     // Section Label Props - DONE
     get sectionLabel() {
-        return this._sectionLabel.elements[0].text;
+        if (this._sectionLabel.elements.length > 0) {
+            return this._sectionLabel.elements[0].text;
+        } else {
+            return null;
+        }
     }
 
     set sectionLabel(newLabel) {
-        this._sectionLabel.elements[0].text = newLabel;
+        if ((this._sectionLabel.elements.length > 0) && newLabel) {
+            this._sectionLabel.elements[0].text = newLabel;
+        } else if (newLabel) {
+            this._sectionLabel.elements = [
+                {
+                    "type": "text",
+                    "text": `${newLabel}`
+                }
+            ];
+        } else {
+            this._sectionLabel.elements = [];
+        }
     }
 
     // Section Caption Props - TODO
     
     // Section Text Props
     get sectionText() {
-        if (this._sectionText.elements[0]) {
+        if (this._sectionText.elements.length > 0) {
             return xmlOps.objectToXMLString(this._sectionText);
         } else {
             return null;
@@ -109,11 +155,26 @@ class SlideGroup extends XMLElement {
 
     // Section Alt-Text Props
     get sectionAltText() {
-        return this._sectionAltText.elements[0].text;
+        if (this._sectionAltText.elements.length > 0) {
+            return this._sectionAltText.elements[0].text;
+        } else {
+            return null;
+        }
     }
 
     set sectionAltText(newAltText) {
-        this._sectionAltText.elements[0].text = newAltText;
+        if ((this._sectionAltText.elements.length > 0) && newAltText) {
+            this._sectionAltText.elements[0].text = newAltText;
+        } else if (newAltText) {
+            this._sectionAltText.elements = [
+                {
+                    "type": "text",
+                    "text": `${newAltText}`
+                }
+            ];
+        } else {
+            this._sectionAltText.elements = [];
+        }
     }
 }
 

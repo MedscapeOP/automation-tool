@@ -43,7 +43,7 @@ describe('Article Utilities', function () {
         completeBlankTOC = fs.readFileSync(__dirname + "/input/article-utils/blank-toc.xml").toString();
 
         it('should return TOC with a section and a subsection with no text content', function () {
-            var result = articleUtils.buildBlankTOC();
+            var result = articleUtils.buildBlankTOC().toObjectLiteral();
             result = utils.xmlOps.objectToXMLString(result);
             expect(result).to.equalIgnoreSpaces(completeBlankTOC);
         });
@@ -57,17 +57,17 @@ describe('Article Utilities', function () {
         completeSlidesTOC3 = fs.readFileSync(__dirname + '/input/article-utils/slides-toc-edu-impact.xml').toString();
 
         it('should return Slides TOC', function () {
-            var result = articleUtils.buildSlidesTOC();
+            var result = articleUtils.buildSlidesTOC().toObjectLiteral();
             result = utils.xmlOps.objectToXMLString(result);
             expect(result).to.equalIgnoreSpaces(completeSlidesTOC);
         });
         it('should return Slides TOC with a video embed in subsection slide intro', function () {
-            var result = articleUtils.buildSlidesTOC();
+            var result = articleUtils.buildSlidesTOC().toObjectLiteral();
             result = utils.xmlOps.objectToXMLString(result);
             expect(result).to.equalIgnoreSpaces(completeSlidesTOC2);
         });
         it('should return Slides TOC with an educational impact challenge subsection', function () {
-            var result = articleUtils.buildSlidesTOC();
+            var result = articleUtils.buildSlidesTOC().toObjectLiteral();
             result = utils.xmlOps.objectToXMLString(result);
             expect(result).to.equalIgnoreSpaces(completeSlidesTOC3);
         });
@@ -77,7 +77,7 @@ describe('Article Utilities', function () {
         completeEduImpactPre = fs.readFileSync(__dirname + '/input/article-utils/edu-impact-pre.xml').toString();
 
         it('should output TOC element - section header: EDU impact, slide intro: goal statement', function () {
-            var result = articleUtils.buildEduImpactPreSection();
+            var result = articleUtils.buildEduImpactPreSection().toObjectLiteral();
             result = utils.xmlOps.objectToXMLString(result);
             expect(result).to.equalIgnoreSpaces(completeEduImpactPre);
         });
@@ -87,7 +87,7 @@ describe('Article Utilities', function () {
         completeEduImpactPost = fs.readFileSync(__dirname + '/input/article-utils/edu-impact-post.xml').toString();
 
         it('should output TOC element - section header: EDU impact, slide: qna form number', function () {
-            var result = articleUtils.buildEduImpactPostSection();
+            var result = articleUtils.buildEduImpactPostSection().toObjectLiteral();
             result = utils.xmlOps.objectToXMLString(result);
             expect(result).to.equalIgnoreSpaces(completeEduImpactPost);
         });
@@ -97,7 +97,7 @@ describe('Article Utilities', function () {
         completeLLAPreTOC = fs.readFileSync(__dirname + '/input/article-utils/lla-pre-toc.xml').toString();
 
         it('should return LLA-Pre TOC', function () {
-            var result = articleUtils.buildLLAPreTOC();
+            var result = articleUtils.buildLLAPreTOC().toObjectLiteral();
             result = utils.xmlOps.objectToXMLString(result);
             expect(result).to.equalIgnoreSpaces(completeLLAPreTOC);
         });
@@ -107,7 +107,7 @@ describe('Article Utilities', function () {
         completeLLAPostTOC = fs.readFileSync(__dirname + '/input/article-utils/lla-post-toc.xml').toString();
 
         it('should return LLA-Post TOC', function () {
-            var result = articleUtils.buildLLAPostTOC();
+            var result = articleUtils.buildLLAPostTOC().toObjectLiteral();
             result = utils.xmlOps.objectToXMLString(result);
             expect(result).to.equalIgnoreSpaces(completeLLAPostTOC);
         });
@@ -117,7 +117,7 @@ describe('Article Utilities', function () {
         completeReferences = fs.readFileSync(__dirname + '/input/article-utils/references.xml').toString();
 
         it('should return References TOC', function () {
-            var result = articleUtils.buildReferences();
+            var result = articleUtils.buildReferences().toObjectLiteral();
             result = utils.xmlOps.objectToXMLString(result);
             expect(result).to.equalIgnoreSpaces(completeReferences);
         });
@@ -127,7 +127,7 @@ describe('Article Utilities', function () {
         completeAbbreviations = fs.readFileSync(__dirname + '/input/article-utils/abbreviations.xml').toString();
 
         it('should return Abbreviations TOC', function () {
-            var result = articleUtils.buildAbbreviations();
+            var result = articleUtils.buildAbbreviations().toObjectLiteral();
             result = utils.xmlOps.objectToXMLString(result);
             expect(result).to.equalIgnoreSpaces(completeAbbreviations);
         });

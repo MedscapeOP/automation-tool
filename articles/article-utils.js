@@ -1,7 +1,8 @@
 const _ = require("lodash");
 const utils = require("../utils");
-const {TOCElement, SectionElement, SubsectionElement} = require("../classes");
+const {TOCElement, SectionElement, SubsectionElement, SlideGroup} = require("../classes");
 
+/* DONE */
 function buildSection(textBlock, label) {
     // Use package to convert XML string to JS object
     // var subsectionContent = utils.xmlOps.xmlStringToJS(textBlock);
@@ -17,6 +18,7 @@ function buildSection(textBlock, label) {
     return sectionInstance;
 }
 
+/* DONE */
 function buildCMETestSection(qnaFormNumber, label) {
     // Return instance of section for use in master BUILD function
     var sectionInstance = new SectionElement();
@@ -28,8 +30,23 @@ function buildCMETestSection(qnaFormNumber, label) {
     return sectionInstance;
 }
 
+/* DONE */
 function buildBlankTOC() {
+    var slideGroup = new SlideGroup("", "", true, false);
+    slideGroup.sectionImage = null;
+    slideGroup.sectionLabel = null;
+    slideGroup.sectionAltText = null;
 
+    var subsectionInstance = new SubsectionElement(true, false, false);
+
+    subsectionInstance.insertSlideGroup(slideGroup);
+    
+    var sectionInstance = new SectionElement();
+    sectionInstance.insertSubsectionElement(subsectionInstance);
+
+    var tocInstance = new TOCElement();
+    tocInstance.insertSectionElement(sectionInstance);
+    return tocInstance;
 }
 
 function buildSlidesTOC() {
