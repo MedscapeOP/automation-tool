@@ -7,7 +7,7 @@ let expect = chai.expect;
 
 const app = require('../../app');
 const utils = app.utils;
-const clinicalBrief = app.clinicalBrief;
+const clinicalBrief = app.articles.clinicalBrief;
 
 describe('Clinical Brief', function () {
     /*
@@ -26,14 +26,14 @@ describe('Clinical Brief', function () {
     var completeStudyHighlights;
     var completeClinicalImplications;
     beforeEach(function() {
-        prodTicket = fs.readFileSync(__dirname + '/input/article.html', 'utf8');
-        // completeClinicalContext = utils.xmlOps.objectToXMLString(require('./input/clinical-context'));
+        prodTicket = fs.readFileSync(__dirname + '/input/clinical-brief/article.html', 'utf8');
+        // completeClinicalContext = utils.xmlOps.objectToXMLString(require('./input/clinical-brief/clinical-context'));
 
-        completeClinicalContext = fs.readFileSync(__dirname + '/input/clinical-context.xml');
-        completeStudySynopsis = fs.readFileSync(__dirname + '/input/study-synopsis.xml');
-        completeStudyHighlights = fs.readFileSync(__dirname + '/input/study-highlights.xml');
-        completeClinicalImplications = fs.readFileSync(__dirname + '/input/clinical-implications.xml');
-        completeClinicalBrief = fs.readFileSync(__dirname + '/input/complete-article.xml');
+        completeClinicalContext = fs.readFileSync(__dirname + '/input/clinical-brief/clinical-context.xml');
+        completeStudySynopsis = fs.readFileSync(__dirname + '/input/clinical-brief/study-synopsis.xml');
+        completeStudyHighlights = fs.readFileSync(__dirname + '/input/clinical-brief/study-highlights.xml');
+        completeClinicalImplications = fs.readFileSync(__dirname + '/input/clinical-brief/clinical-implications.xml');
+        completeClinicalBrief = fs.readFileSync(__dirname + '/input/clinical-brief/complete-article.xml');
     });
     
     describe('#getClinicalContext()', function () {
@@ -65,7 +65,7 @@ describe('Clinical Brief', function () {
     });
 
     describe('#buildClinicalBrief()', function () {
-        it('should return complete XML string of article', function () {
+        it('should return complete XML string of Clinical Brief article', function () {
             var result = clinicalBrief.buildClinicalBrief(prodTicket, app.config.programs.clinicalBrief).toObjectLiteral();
             var differences = [
                 "contrbtr_pre_content shouldn't have anything - FIXED",
@@ -75,7 +75,7 @@ describe('Clinical Brief', function () {
                 "contrbtr_groups not inserted - KNOWN ISSUE",
                 "supprtr_grant_attr not found or handled - KNOWN ISSUE"
             ]
-            utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/finished-cb.xml");
+            utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/clinical-brief/finished-cb.xml");
             
             // console.log("EVERYTHING PASSES EXCEPT THESE DIFFERENCES: ", differences);
             // var result = clinicalBrief.buildClinicalBrief(prodTicket, app.config.programs.clinicalBrief).toFinalXML();

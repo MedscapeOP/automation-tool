@@ -3,7 +3,7 @@ const utils = require('./utils');
 const classes = require('./classes');
 const prodTicket = require('./prodticket');
 const snippets = require('./snippets');
-const clinicalBrief = require('./clinical-brief/clinical-brief');
+const articles = require('./articles');
 
 module.exports = {
     config,
@@ -11,5 +11,5 @@ module.exports = {
     classes,
     prodTicket,
     snippets,
-    clinicalBrief
+    articles
 };
