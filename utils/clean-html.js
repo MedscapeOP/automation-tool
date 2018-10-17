@@ -37,6 +37,22 @@ function removeTicketFluff(str) {
     return str;
 }
 
+function supEdgeCases (str) {
+    // Sup Edge Cases
+    var supRegExp1 = new RegExp('</strong>\\s{0,}(<sup>.*</sup>)', 'g');
+    str = str.replace(supRegExp1, "$1</strong>");
+
+    var supRegExp2 = new RegExp('</strong>\\s{0,}</sup>', 'g');
+    str = str.replace(supRegExp2, "</sup></strong>");
+
+    var supRegExp3 = new RegExp('<sup>\\s{0,}\\[', 'g');
+    str = str.replace(supRegExp3, "<sup>[");
+
+    var supRegExp3 = new RegExp('<sup>.*\\[', 'g');
+    str = str.replace(supRegExp3, "<sup>[");
+    return str;
+}
+
 function plainText(string) {
     var str = removeTicketFluff(string);
     var options = {
@@ -78,6 +94,11 @@ function paragraph(string) {
         }
     }
     var clean = sanitizeHtml(str, options);
+    clean = supEdgeCases(clean);
+
+    var supRegExp = new RegExp('<sup>\\[', 'g');
+    clean = clean.replace(supRegExp, '<sup type="ref">[');
+
     return clean;
 }
 
@@ -154,19 +175,8 @@ function slidesFinal (str) {
     str = str.replace(emRegExp1, "");
 
     // Sup Edge Cases
-    var supRegExp1 = new RegExp('</strong>\\s{0,}(<sup>.*</sup>)', 'g');
-    str = str.replace(supRegExp1, "$1</strong>");
-
-    var supRegExp2 = new RegExp('</strong>\\s{0,}</sup>', 'g');
-    str = str.replace(supRegExp2, "</sup></strong>");
-
-    var supRegExp3 = new RegExp('<sup>\\s{0,}\\[', 'g');
-    str = str.replace(supRegExp3, "<sup>[");
-
-    var supRegExp3 = new RegExp('<sup>.*\\[', 'g');
-    str = str.replace(supRegExp3, "<sup>[");
+    str = supEdgeCases(str);
     
-
 
     /* MAIN REGEX SERIES */
     var h3RegExp = new RegExp('<strong>(?:&lt;){1,}Level 2(?:&gt;){1,}(.*)</strong>', 'g');

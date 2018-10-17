@@ -66,8 +66,7 @@ describe('Clinical Brief', function () {
 
     describe('#buildClinicalBrief()', function () {
         it('should return complete XML string of article', function () {
-            var result = utils.xmlOps.objectToXMLString(clinicalBrief.buildClinicalBrief(prodTicket, app.config.programs.clinicalBrief).toObjectLiteral());
-            // expect(result).to.equalIgnoreSpaces(completeClinicalBrief.toString());
+            var result = clinicalBrief.buildClinicalBrief(prodTicket, app.config.programs.clinicalBrief).toObjectLiteral();
             var differences = [
                 "contrbtr_pre_content shouldn't have anything - FIXED",
                 "contrbtr_post_content shouldn't have peer reviewer automatically - FIXED",
@@ -76,9 +75,12 @@ describe('Clinical Brief', function () {
                 "contrbtr_groups not inserted - KNOWN ISSUE",
                 "supprtr_grant_attr not found or handled - KNOWN ISSUE"
             ]
+            utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/finished-cb.xml");
+            
             // console.log("EVERYTHING PASSES EXCEPT THESE DIFFERENCES: ", differences);
             // var result = clinicalBrief.buildClinicalBrief(prodTicket, app.config.programs.clinicalBrief).toFinalXML();
-            console.log(result);
+            // expect(result).to.equalIgnoreSpaces(completeClinicalBrief.toString());
+            // console.log(result);
         });
     });
 });
