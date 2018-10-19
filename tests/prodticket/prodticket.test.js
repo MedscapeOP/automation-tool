@@ -142,5 +142,68 @@ describe('Prodticket Module Functions', function () {
             // expect(result).to.deep.equal(slideComponentsFR);
         });
     });
+
+    describe("prodticket.getGoalStatement()", function () {
+        var goalStatementCB = fs.readFileSync(__dirname + '/input/goal-statement-cb.html').toString();
+        var goalStatementSL = fs.readFileSync(__dirname + '/input/goal-statement-sl.html').toString();
+        var goalStatementCC = fs.readFileSync(__dirname + '/input/goal-statement-cc.html').toString();
+
+        it("should return the program goal statement - Clinical Brief", function () {
+            var result = prodticket.getGoalStatement(prodticketCB, config.programs.clinicalBrief);
+            expect(result).to.equalIgnoreSpaces(goalStatementCB);
+        });
+
+        it("should return the program goal statement from .html - Spotlight", function () {
+            var result = prodticket.getGoalStatement(prodticketSL, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(goalStatementSL);
+        });
+
+        it("should return the program goal statement from .html - Curbside", function () {
+            var result = prodticket.getGoalStatement(prodticketCC, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(goalStatementCC);
+        });
+    });
+
+    describe("prodticket.getTargetAudience()", function () {
+        var targetAudienceCB = fs.readFileSync(__dirname + '/input/target-audience-cb.html').toString();
+        var targetAudienceSL = fs.readFileSync(__dirname + '/input/target-audience-sl.html').toString();
+        var targetAudienceCC = fs.readFileSync(__dirname + '/input/target-audience-cc.html').toString();
+
+        it("should return the program target audience from .html - Clinical Brief", function () {
+            var result = prodticket.getTargetAudience(prodticketCB, config.programs.clinicalBrief);
+            expect(result).to.equalIgnoreSpaces(targetAudienceCB);
+        });
+
+        it("should return the program target audience from .html - Spotlight", function () {
+            var result = prodticket.getTargetAudience(prodticketSL, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(targetAudienceSL);
+        });
+
+        it("should return the program target audience from .html - Curbside", function () {
+            var result = prodticket.getTargetAudience(prodticketCC, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(targetAudienceCC);
+        });
+    });
+
+    describe("prodticket.getLearningObjectives()", function () {
+        var learningObjectivesCB = fs.readFileSync(__dirname + '/input/learning-objectives-cb.html').toString();
+        var learningObjectivesSL = fs.readFileSync(__dirname + '/input/learning-objectives-sl.html').toString();
+        var learningObjectivesCC = fs.readFileSync(__dirname + '/input/learning-objectives-cc.html').toString();
+
+        it("should return the program learning objectives from .html - Clinical Brief", function () {
+            var result = prodticket.getLearningObjectives(prodticketCB, config.programs.clinicalBrief);
+            expect(result).to.equalIgnoreSpaces(learningObjectivesCB);
+        });
+
+        it("should return the program learning objectives from .html - Spotlight", function () {
+            var result = prodticket.getLearningObjectives(prodticketSL, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(learningObjectivesSL);
+        });
+
+        it("should return the program learning objectives from .html - Curbside", function () {
+            var result = prodticket.getLearningObjectives(prodticketCC, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(learningObjectivesCC);
+        });
+    });
 });
 

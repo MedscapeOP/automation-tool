@@ -25,7 +25,7 @@ function isBlankOrWhiteSpace(str) {
 }
 
 function getTextBlock(str, startText, endText, stripStart = true, includeEnd = false) {
-    if (startText instanceof RegExp) {
+    if ((startText instanceof RegExp) || (endText instanceof RegExp)) {
         var startIndex = regexIndexOf(str, startText);
         var endIndex = regexIndexOf(str, endText);
         var textBlock = "";

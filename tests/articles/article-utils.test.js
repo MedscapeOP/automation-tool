@@ -49,88 +49,88 @@ describe('Article Utilities', function () {
         });
     });
 
-    describe('#buildSlidesTOC()', function () {
-        completeSlidesTOC = fs.readFileSync(__dirname + '/input/article-utils/slides-toc.xml').toString();
+    // describe('#buildSlidesTOC()', function () {
+    //     completeSlidesTOC = fs.readFileSync(__dirname + '/input/article-utils/slides-toc.xml').toString();
 
-        completeSlidesTOC2 = fs.readFileSync(__dirname + '/input/article-utils/slides-toc-video-embed.xml').toString();
+    //     completeSlidesTOC2 = fs.readFileSync(__dirname + '/input/article-utils/slides-toc-video-embed.xml').toString();
 
-        completeSlidesTOC3 = fs.readFileSync(__dirname + '/input/article-utils/slides-toc-edu-impact.xml').toString();
+    //     completeSlidesTOC3 = fs.readFileSync(__dirname + '/input/article-utils/slides-toc-edu-impact.xml').toString();
 
-        it('should return Slides TOC', function () {
-            var result = articleUtils.buildSlidesTOC().toObjectLiteral();
-            result = utils.xmlOps.objectToXMLString(result);
-            expect(result).to.equalIgnoreSpaces(completeSlidesTOC);
-        });
-        it('should return Slides TOC with a video embed in subsection slide intro', function () {
-            var result = articleUtils.buildSlidesTOC().toObjectLiteral();
-            result = utils.xmlOps.objectToXMLString(result);
-            expect(result).to.equalIgnoreSpaces(completeSlidesTOC2);
-        });
-        it('should return Slides TOC with an educational impact challenge subsection', function () {
-            var result = articleUtils.buildSlidesTOC().toObjectLiteral();
-            result = utils.xmlOps.objectToXMLString(result);
-            expect(result).to.equalIgnoreSpaces(completeSlidesTOC3);
-        });
-    });
+    //     it('should return Slides TOC', function () {
+    //         var result = articleUtils.buildSlidesTOC().toObjectLiteral();
+    //         result = utils.xmlOps.objectToXMLString(result);
+    //         expect(result).to.equalIgnoreSpaces(completeSlidesTOC);
+    //     });
+    //     it('should return Slides TOC with a video embed in subsection slide intro', function () {
+    //         var result = articleUtils.buildSlidesTOC().toObjectLiteral();
+    //         result = utils.xmlOps.objectToXMLString(result);
+    //         expect(result).to.equalIgnoreSpaces(completeSlidesTOC2);
+    //     });
+    //     it('should return Slides TOC with an educational impact challenge subsection', function () {
+    //         var result = articleUtils.buildSlidesTOC().toObjectLiteral();
+    //         result = utils.xmlOps.objectToXMLString(result);
+    //         expect(result).to.equalIgnoreSpaces(completeSlidesTOC3);
+    //     });
+    // });
 
-    describe('#buildEduImpactPreSection()', function () {
-        completeEduImpactPre = fs.readFileSync(__dirname + '/input/article-utils/edu-impact-pre.xml').toString();
+    // describe('#buildEduImpactPreSection()', function () {
+    //     completeEduImpactPre = fs.readFileSync(__dirname + '/input/article-utils/edu-impact-pre.xml').toString();
 
-        it('should output TOC element - section header: EDU impact, slide intro: goal statement', function () {
-            var result = articleUtils.buildEduImpactPreSection().toObjectLiteral();
-            result = utils.xmlOps.objectToXMLString(result);
-            expect(result).to.equalIgnoreSpaces(completeEduImpactPre);
-        });
-    });
+    //     it('should output TOC element - section header: EDU impact, slide intro: goal statement', function () {
+    //         var result = articleUtils.buildEduImpactPreSection().toObjectLiteral();
+    //         result = utils.xmlOps.objectToXMLString(result);
+    //         expect(result).to.equalIgnoreSpaces(completeEduImpactPre);
+    //     });
+    // });
 
-    describe('#buildEduImpactPostSection()', function () {
-        completeEduImpactPost = fs.readFileSync(__dirname + '/input/article-utils/edu-impact-post.xml').toString();
+    // describe('#buildEduImpactPostSection()', function () {
+    //     completeEduImpactPost = fs.readFileSync(__dirname + '/input/article-utils/edu-impact-post.xml').toString();
 
-        it('should output TOC element - section header: EDU impact, slide: qna form number', function () {
-            var result = articleUtils.buildEduImpactPostSection().toObjectLiteral();
-            result = utils.xmlOps.objectToXMLString(result);
-            expect(result).to.equalIgnoreSpaces(completeEduImpactPost);
-        });
-    });
+    //     it('should output TOC element - section header: EDU impact, slide: qna form number', function () {
+    //         var result = articleUtils.buildEduImpactPostSection().toObjectLiteral();
+    //         result = utils.xmlOps.objectToXMLString(result);
+    //         expect(result).to.equalIgnoreSpaces(completeEduImpactPost);
+    //     });
+    // });
 
-    describe('#buildLLAPreTOC()', function () {
-        completeLLAPreTOC = fs.readFileSync(__dirname + '/input/article-utils/lla-pre-toc.xml').toString();
+    // describe('#buildLLAPreTOC()', function () {
+    //     completeLLAPreTOC = fs.readFileSync(__dirname + '/input/article-utils/lla-pre-toc.xml').toString();
 
-        it('should return LLA-Pre TOC', function () {
-            var result = articleUtils.buildLLAPreTOC().toObjectLiteral();
-            result = utils.xmlOps.objectToXMLString(result);
-            expect(result).to.equalIgnoreSpaces(completeLLAPreTOC);
-        });
-    });
+    //     it('should return LLA-Pre TOC', function () {
+    //         var result = articleUtils.buildLLAPreTOC().toObjectLiteral();
+    //         result = utils.xmlOps.objectToXMLString(result);
+    //         expect(result).to.equalIgnoreSpaces(completeLLAPreTOC);
+    //     });
+    // });
 
-    describe('#buildLLAPostTOC()', function () {
-        completeLLAPostTOC = fs.readFileSync(__dirname + '/input/article-utils/lla-post-toc.xml').toString();
+    // describe('#buildLLAPostTOC()', function () {
+    //     completeLLAPostTOC = fs.readFileSync(__dirname + '/input/article-utils/lla-post-toc.xml').toString();
 
-        it('should return LLA-Post TOC', function () {
-            var result = articleUtils.buildLLAPostTOC().toObjectLiteral();
-            result = utils.xmlOps.objectToXMLString(result);
-            expect(result).to.equalIgnoreSpaces(completeLLAPostTOC);
-        });
-    });
+    //     it('should return LLA-Post TOC', function () {
+    //         var result = articleUtils.buildLLAPostTOC().toObjectLiteral();
+    //         result = utils.xmlOps.objectToXMLString(result);
+    //         expect(result).to.equalIgnoreSpaces(completeLLAPostTOC);
+    //     });
+    // });
 
-    describe('#buildReferences()', function () {
-        completeReferences = fs.readFileSync(__dirname + '/input/article-utils/references.xml').toString();
+    // describe('#buildReferences()', function () {
+    //     completeReferences = fs.readFileSync(__dirname + '/input/article-utils/references.xml').toString();
 
-        it('should return References TOC', function () {
-            var result = articleUtils.buildReferences().toObjectLiteral();
-            result = utils.xmlOps.objectToXMLString(result);
-            expect(result).to.equalIgnoreSpaces(completeReferences);
-        });
-    });
+    //     it('should return References TOC', function () {
+    //         var result = articleUtils.buildReferences().toObjectLiteral();
+    //         result = utils.xmlOps.objectToXMLString(result);
+    //         expect(result).to.equalIgnoreSpaces(completeReferences);
+    //     });
+    // });
 
-    describe('#buildAbbreviations()', function () {
-        completeAbbreviations = fs.readFileSync(__dirname + '/input/article-utils/abbreviations.xml').toString();
+    // describe('#buildAbbreviations()', function () {
+    //     completeAbbreviations = fs.readFileSync(__dirname + '/input/article-utils/abbreviations.xml').toString();
 
-        it('should return Abbreviations TOC', function () {
-            var result = articleUtils.buildAbbreviations().toObjectLiteral();
-            result = utils.xmlOps.objectToXMLString(result);
-            expect(result).to.equalIgnoreSpaces(completeAbbreviations);
-        });
-    });
+    //     it('should return Abbreviations TOC', function () {
+    //         var result = articleUtils.buildAbbreviations().toObjectLiteral();
+    //         result = utils.xmlOps.objectToXMLString(result);
+    //         expect(result).to.equalIgnoreSpaces(completeAbbreviations);
+    //     });
+    // });
 });
 

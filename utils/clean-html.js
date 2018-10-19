@@ -27,6 +27,14 @@ function removeTicketFluff(str) {
     var copyEditorRegExp = /\(.*Copy Editor?\)/g;
     str = str.replace(copyEditorRegExp, "");
 
+    // Remove Select Response 
+    var selectResponseRegExp = /.*\(Select response...\).*/g;
+    str = str.replace(selectResponseRegExp, "");
+
+    //Remove Click + to add another row
+    var addRowRegExp = /.*Click.*to add.*/g;
+    str = str.replace(addRowRegExp, "");
+
     // Remove instructions for Peer Reviewer
     var peerReviewerRegExp = /<p>Indicate which reviewers were involved.*/g;
     str = str.replace(peerReviewerRegExp, "");
@@ -53,10 +61,28 @@ function supEdgeCases (str) {
     return str;
 }
 
-function plainText(string) {
-    var str = removeTicketFluff(string);
+function plainText(string, removeFluff=true) {
+    var str = string;
+    if (removeFluff) {
+        str = removeTicketFluff(str);
+    }
     var options = {
         allowedTags: [ 'em' ],
+        exclusiveFilter: function(frame) {
+            return !frame.text.trim();
+        }
+    };
+    var clean = sanitizeHtml(str, options);
+    return clean;
+}
+
+function onlyParagraphTags(string, removeFluff=true) {
+    var str = string;
+    if (removeFluff) {
+        str = removeTicketFluff(str);
+    }
+    var options = {
+        allowedTags: [ 'p' ],
         exclusiveFilter: function(frame) {
             return !frame.text.trim();
         }
@@ -71,7 +97,7 @@ function singleLine(string) {
     return string.replace(lineBreakRegExp, "");
 }
 
-function paragraph(string) {
+function paragraph(string, removeFluff=true) {
     // Removes ALL HTML: 
         // var str = string.replace(/\(Insert.*\)/, "").replace(/<{1}[^<>]{1,}>{1}/g," ");       
     // Removes certain tags and replaces them with flags for later use 
@@ -81,7 +107,10 @@ function paragraph(string) {
     //     var regexp = new RegExp('<${tag}>.\s<\\/${tag}>|<${tag}>[\S]{0,1}<\\/${tag}>', 'gi');
     //     str.replace(regexp, '||${tag}||');
     // }
-    var str = removeTicketFluff(string);
+    var str = string;
+    if (removeFluff) {
+        str = removeTicketFluff(str);
+    }
     var options =   {
         allowedTags: [ 'p', 'em', 'strong', 'sup' ],
         allowedAttributes: {
@@ -102,8 +131,11 @@ function paragraph(string) {
     return clean;
 }
 
-function unorderedList(string) {
-    var str = removeTicketFluff(string);
+function unorderedList(string, removeFluff=true, format=true) {
+    var str = string;
+    if (removeFluff) {
+        str = removeTicketFluff(str);
+    }
     var options =   {
         allowedTags: [ 'ul', 'li', 'em', 'strong', 'sup', 'tt' ],
         allowedAttributes: {
@@ -125,8 +157,11 @@ function unorderedList(string) {
     var entityRegexp = new RegExp('&amp;([A-Za-z]+|#?[0-9]+);', 'g');
     clean = clean.replace(entityRegexp, "&$1;");
     // console.log(formatList.formatUlItems);
-    clean = formatList.formatUlItems(clean, null, formatList.formatUlItems);
-    clean = formatList.wrapUls(false, clean, formatList.wrapUls);
+
+    if (format) {
+        clean = formatList.formatUlItems(clean, null, formatList.formatUlItems);
+        clean = formatList.wrapUls(false, clean, formatList.wrapUls);
+    }
 
     var ttRegExp = new RegExp('</tt>', 'g');
     clean = clean.replace(ttRegExp, "");
@@ -188,8 +223,11 @@ function slidesFinal (str) {
     return str;
 }
 
-function abbreviations(string) {
-    var str = removeTicketFluff(string);
+function abbreviations(string, removeFluff=true) {
+    var str = string;
+    if (removeFluff) {
+        str = removeTicketFluff(str);
+    }
     var options = {
         allowedTags: [ 'p', 'br', 'em', 'strong', 'sup' ],
         allowedAttributes: [],
@@ -205,8 +243,11 @@ function abbreviations(string) {
     return clean.replace(pRegExp, "$1<br>");
 }
 
-function references(string) {
-    var str = removeTicketFluff(string);
+function references(string, removeFluff=true) {
+    var str = string;
+    if (removeFluff) {
+        str = removeTicketFluff(str);
+    }
     var options = {
         allowedTags: [ 'p', 'br', 'em', 'strong', 'sup' ],
         allowedAttributes: [],
@@ -221,8 +262,11 @@ function references(string) {
     return clean.replace(pRegExp, "<li>$2</li>");
 }
 
-function peerReviewer(string) {
-    var str = removeTicketFluff(string);
+function peerReviewer(string, removeFluff=true) {
+    var str = string;
+    if (removeFluff) {
+        str = removeTicketFluff(str);
+    }
     var options = {
         allowedTags: ['br', 'em', 'strong', 'sup' ],
         allowedAttributes: [],
@@ -267,14 +311,45 @@ function peerReviewer(string) {
     return clean;
 }
 
+function learningObjectives(textBlock, removeFluff=true) {
+    if (removeFluff){
+        textBlock = removeTicketFluff(textBlock);
+    }    
+
+    var removeRegExp = /.*Question type assessing.*/g;
+    textBlock = textBlock.replace(removeRegExp, '');
+
+    removeRegExp = /&#8226;/g;
+    textBlock = textBlock.replace(removeRegExp, '');
+
+    removeRegExp = /.*<p>Question #.*/g;
+    textBlock = textBlock.replace(removeRegExp, '');
+
+    removeRegExp = /.*<p>Linked Pre-\/Post-assessment.*/g;
+    textBlock = textBlock.replace(removeRegExp, '');
+    
+    removeRegExp = /<p>\d+<\/p>|<p>\d+,\d+<\/p>/g;
+    textBlock = textBlock.replace(removeRegExp, '');
+
+    removeRegExp = /<p>CME evaluation<\/p>/g;
+    textBlock = textBlock.replace(removeRegExp, '');
+
+    removeRegExp = /.*Posttest.*/g;
+    textBlock = textBlock.replace(removeRegExp, '');
+    return textBlock;
+}
+
 module.exports = {
+    removeTicketFluff,
     singleLine,
     plainText,
+    onlyParagraphTags,
     paragraph,
     unorderedList,
     slidesInitial,
     slidesFinal,
     abbreviations,
     references,
-    peerReviewer
+    peerReviewer,
+    learningObjectives
 }; 

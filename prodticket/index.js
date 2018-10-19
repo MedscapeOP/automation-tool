@@ -1,10 +1,19 @@
 /*
-Module for retrieving info that is universal to every program. 
-Finding program-specific content and building the program XML will be 
-in the corresponding article/program module. 
-    - EXAMPLE: clinical-brief module 
+Module for retrieving info that is universal to every program.
+    - find...() functions 
+        - These are meant to find raw HTML of the section
+    - getFormatted...() functions 
+        - These are meant to format found sections into the HTML required by our programs. 
+    - getPlain...() functions 
+        - These are meant to format found sections into plain text 
+        usable by Producers in the checklist log. 
+
+Program-specific content and also building final XML will be 
+in the articles module. 
+    - EXAMPLE: articles.clinicalBrief module 
         - finds "Clinical Context", "Study Highlights", etc.
         - Builds the appropriate XML transcript.  
+    
 */
 
 const _ = require("lodash");
@@ -15,6 +24,9 @@ let findReferences = require('./find-references');
 let findAbbreviations = require('./find-abbreviations');
 let findPeerReviewer = require('./find-peer-reviewer');
 let findSlides = require('./find-slides');
+let findGoalStatement = require('./find-goal-statement');
+let findTargetAudience = require('./find-target-audience');
+let findLearningObjectives = require('./find-learning-objectives');
 
 function getTitle (ticketHTML, program) {
     var rawTitle = findTitle[program.codeName](ticketHTML);
@@ -46,11 +58,29 @@ function getSlides (ticketHTML, program) {
     return slideComponents;
 }
 
+function getGoalStatement (ticketHTML, program) {
+    var goalStatement = findGoalStatement[program.codeName](ticketHTML, program);
+    return goalStatement;
+}
+
+function getTargetAudience(ticketHTML, program) {
+    var targetAudience = findTargetAudience[program.codeName](ticketHTML, program);
+    return targetAudience;
+}
+
+function getLearningObjectives(ticketHTML, program) {
+    var learningObjectives = findLearningObjectives[program.codeName](ticketHTML, program);
+    return learningObjectives;
+}
+
 module.exports = {
     getTitle,
     getByline,
     getReferences,
     getAbbreviations,
     getPeerReviewer,
-    getSlides
+    getSlides,
+    getGoalStatement,
+    getTargetAudience, 
+    getLearningObjectives
 }

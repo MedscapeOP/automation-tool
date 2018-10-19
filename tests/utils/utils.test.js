@@ -69,6 +69,31 @@ describe('Utility Functions', function () {
         });
     });
 
+    describe("#formatLearningObjectives()", function () {
+        var learningObjectivesCB = fs.readFileSync(__dirname + '/input/learning-objectives-cb.html').toString();
+        var learningObjectivesSL = fs.readFileSync(__dirname + '/input/learning-objectives-sl.html').toString();
+        var learningObjectivesCC = fs.readFileSync(__dirname + '/input/learning-objectives-cc.html').toString();
+
+        var formattedObjectivesCB = fs.readFileSync(__dirname + '/input/formatted-objectives-cb.html').toString();
+        var formattedObjectivesSL = fs.readFileSync(__dirname + '/input/formatted-objectives-sl.html').toString();
+        var formattedObjectivesCC = fs.readFileSync(__dirname + '/input/formatted-objectives-cc.html').toString();
+
+        it("should format cleaned learning objectives into format usable by formatList() - Clinical Brief", function () {
+            var result = utils.formatLearningObjectives(learningObjectivesCB);
+            expect(result).to.equalIgnoreSpaces(formattedObjectivesCB);
+        });
+
+        it("should format cleaned learning objectives into format usable by formatList() - Spotlight", function () {
+            var result = utils.formatLearningObjectives(learningObjectivesSL);
+            expect(result).to.equalIgnoreSpaces(formattedObjectivesSL);
+        });
+
+        it("should format cleaned learning objectives into format usable by formatList() - Curbside", function () {
+            var result = utils.formatLearningObjectives(learningObjectivesCC);
+            expect(result).to.equalIgnoreSpaces(formattedObjectivesCC);
+        });
+    });
+
     describe("#buildSlides()", function () {
         it('should transform Slides HTML from from R2Net conversion into JS Object.', function () {
             var subsectionElement = new SubsectionElement(true);
