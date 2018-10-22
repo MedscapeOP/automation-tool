@@ -21,11 +21,13 @@ describe('Clinical Brief', function () {
     */
 
     var prodTicket;
+    var program;
     var completeClinicalContext;
     var completeStudySynopsis;
     var completeStudyHighlights;
     var completeClinicalImplications;
     beforeEach(function() {
+        program = app.config.programs.clinicalBrief;
         prodTicket = fs.readFileSync(__dirname + '/input/clinical-brief/article.html', 'utf8');
         // completeClinicalContext = utils.xmlOps.objectToXMLString(require('./input/clinical-brief/clinical-context'));
 
@@ -66,7 +68,7 @@ describe('Clinical Brief', function () {
 
     describe('#buildClinicalBrief()', function () {
         it('should return complete XML string of Clinical Brief article', function () {
-            var result = clinicalBrief.buildClinicalBrief(prodTicket, app.config.programs.clinicalBrief).toObjectLiteral();
+            var result = clinicalBrief.buildClinicalBrief(prodTicket, program).toObjectLiteral();
             var differences = [
                 "contrbtr_pre_content shouldn't have anything - FIXED",
                 "contrbtr_post_content shouldn't have peer reviewer automatically - FIXED",

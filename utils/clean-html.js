@@ -238,9 +238,9 @@ function abbreviations(string, removeFluff=true) {
     }
     var clean = sanitizeHtml(str, options);
 
-    // Turn <p> tags into <br> 
+    // Turn <p> tags into <br/>
     var pRegExp = new RegExp('<p>(.*)</p>', 'g');     
-    return clean.replace(pRegExp, "$1<br>");
+    return clean.replace(pRegExp, "$1<br/>");
 }
 
 function references(string, removeFluff=true) {

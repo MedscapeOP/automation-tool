@@ -1,5 +1,5 @@
 <toc_element>
-    <TOCLabel/>
+    <toc_Label/>
     <toc_type>Default</toc_type>
     <sec_element>
         <sec_header/>
@@ -7,7 +7,7 @@
             <subsec_header/>
             <slide_intro/>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide1.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide1.png</sec_img>
                 <sec_label>Slide 1.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -17,7 +17,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide2.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide2.png</sec_img>
                 <sec_label>Slide 2.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -27,7 +27,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide3.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide3.png</sec_img>
                 <sec_label>Slide 3.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -41,7 +41,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide4.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide4.png</sec_img>
                 <sec_label>Slide 4.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -61,7 +61,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide5.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide5.png</sec_img>
                 <sec_label>Slide 5.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -73,7 +73,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide6.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide6.png</sec_img>
                 <sec_label>Slide 6.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -89,7 +89,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide7.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide7.png</sec_img>
                 <sec_label>Slide 7.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -99,7 +99,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide8.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide8.png</sec_img>
                 <sec_label>Slide 8.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -111,7 +111,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide9.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide9.png</sec_img>
                 <sec_label>Slide 9.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -123,7 +123,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide10.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide10.png</sec_img>
                 <sec_label>Slide 10.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -135,7 +135,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide11.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide11.png</sec_img>
                 <sec_label>Slide 11.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -156,7 +156,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide12.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide12.png</sec_img>
                 <sec_label>Slide 12.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -179,7 +179,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide13.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide13.png</sec_img>
                 <sec_label>Slide 13.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -196,7 +196,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide14.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide14.png</sec_img>
                 <sec_label>Slide 14.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -219,7 +219,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide15.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide15.png</sec_img>
                 <sec_label>Slide 15.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -236,7 +236,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide16.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide16.png</sec_img>
                 <sec_label>Slide 16.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -253,7 +253,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide17.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide17.png</sec_img>
                 <sec_label>Slide 17.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -263,7 +263,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide18.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide18.png</sec_img>
                 <sec_label>Slide 18.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -286,7 +286,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide19.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide19.png</sec_img>
                 <sec_label>Slide 19.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -298,7 +298,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide20.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide20.png</sec_img>
                 <sec_label>Slide 20.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -311,7 +311,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide21.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide21.png</sec_img>
                 <sec_label>Slide 21.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -321,7 +321,7 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide22.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide22.png</sec_img>
                 <sec_label>Slide 22.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -331,23 +331,16 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide23.png</sec_img>
+                <sec_img><?dctmLink?><?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide23.png</sec_img>
                 <sec_label>Slide 23.</sec_label>
                 <sec_caption/>
                 <sec_txt>
-                    <h3>Thank you</h3>
+                    <h3>Thank you</h3>                    
+                    <em>This content has been condensed for improved clarity.</em>
                 </sec_txt>
                 <sec_alt_txt>Slide 23.</sec_alt_txt>
                 <qna_form/>
             </slide_grp>
-        </subsec_element>
-        <subsec_element>
-            <subsec_header/>
-            <slide_intro>
-                <p>
-                    <em>This content has been condensed for improved clarity.</em>
-                </p>
-            </slide_intro>
         </subsec_element>
         <subsec_element>
             <subsec_header>

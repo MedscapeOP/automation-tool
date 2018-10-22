@@ -20,11 +20,62 @@ function downloadableSlides(articleID) {
     </div>`;
 }
 
+function videoEmbed (slidesComponent, articleID=null) {
+    if (articleID) {
+        return `
+        <div class="app-loading">
+            <div id="cme-video-player" data-playertype="edu" data-config="en/pi/editorial/studio/configs/2018/education/${articleID}/${articleID}.json" class="webcomp-player">
+                &nbsp;
+            </div>
+        </div>
+        `;
+    } 
+    // IF NO ARTICLE ID USE SLIDES COMPONENT TO BUILD SNIPPET 
+    var videoEmbedPath = function () {
+        if (slidesComponent.componentNumber) {
+            return `${slidesComponent.articleID}/${slidesComponent.articleID}_${slidesComponent.componentNumber + 1}`;
+        } else {
+            return `${slidesComponent.articleID}/${slidesComponent.articleID}`;
+        }
+    }
+
+    if (slidesComponent.componentNumber) {
+        return `
+        <div class="app-loading">
+            <div id="cme-video-player" data-playertype="edu" data-config="en/pi/editorial/studio/configs/2018/education/${videoEmbedPath()}.json" class="webcomp-player">
+                &nbsp;
+            </div>
+        </div>
+        `;
+    } else {
+        return `
+        <div class="app-loading">
+            <div id="cme-video-player" data-playertype="edu" data-config="en/pi/editorial/studio/configs/2018/education/${videoEmbedPath()}.json" class="webcomp-player">
+                &nbsp;
+            </div>
+        </div>
+        <div id="page_nav_top">
+            <div id="prev_page_nav">
+                <a href="${slidesComponent.articleID}">&laquo; Back </a>
+            </div>
+            <div id="next_page_nav">
+                <a href="${slidesComponent.articleID}_3">Next&raquo;</a>
+                <a style="height: 17px;" id="next_toc_link" href="javascript:next_toc();">
+                    <img border="0" src="http://img.medscape.com/pi/cme/ornaments/arrow-next-toc.png" class="inline_img" alt="" />
+                </a>
+            </div>
+            <div class="spacer">&nbsp;</div>
+        </div>
+        `;
+    }
+}
+
 /* 
 In-Language stuff 
 */
 
 module.exports = {
+    videoEmbed,
     forYourPatient,
     downloadableSlides,
     inLanguage

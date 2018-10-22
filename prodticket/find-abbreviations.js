@@ -13,7 +13,7 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     // console.log(cleanHTML.abbreviations(rawAbbreviations));
     // return "";
     rawAbbreviations = cleanHTML.singleLine(cleanHTML.abbreviations(rawAbbreviations)).trim();
-    return '<p>' + stringOps.findLastAndReplace(rawAbbreviations, '<br>', "") + '</p>';
+    return '<p>' + stringOps.findLastAndReplace(rawAbbreviations, '<br/>', "") + '</p>';
 }
 
 exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML) {

@@ -1,4 +1,6 @@
 const _ = require("lodash");
+const prodticket = require('../prodticket');
+const snippets = require('../snippets');
 const utils = require("../utils");
 const buildSlides = require('./build-slides');
 const {TOCElement, SectionElement, SubsectionElement, SlideGroup} = require("../classes");
@@ -50,43 +52,108 @@ function buildBlankTOC() {
     return tocInstance;
 }
 
-function buildSlidesTOC() {
+function buildSlidesTOC(slidesComponent, videoEmbed=false, eduImpactSubsection=false) {
+    // BUILD: Main TOC Element 
+    var slidesTOC = new TOCElement();
 
+    // BUILD: Main Section Element 
+    var slidesSection = new SectionElement();
+
+    // BUILD: Main Slides Subsection
+    var subsectionElement = new SubsectionElement(true, false, false);
+    var slidesSubsection = buildSlides(slidesComponent.rawSlides, subsectionElement, slidesComponent.slidePath);
+
+
+    // Insert Video Embed - If necessary 
+    if (videoEmbed) {
+        slidesSubsection.subsectionContent = utils.wrapSlideIntro(snippets.videoEmbed(slidesComponent));
+    } 
+
+    // INSERT: Main Slides Subsection
+    slidesSection.insertSubsectionElement(slidesSubsection);
+
+    // INSERT: Educational Impact Subsection - If necessary 
+    if (eduImpactSubsection) {
+        var eduImpactSubsection = new SubsectionElement(true, false, false);
+        eduImpactSubsection.subsectionContent = utils.wrapSlideIntro(`<p>What did you learn from this activity? Please click on the “Next” button to proceed to a brief survey to see how your knowledge improved after the education. You can also see how your answers compare with those of your peers.</p>`);
+        slidesSection.insertSubsectionElement(eduImpactSubsection);
+    }
+
+    // INSERT: Main Section
+    slidesTOC.insertSectionElement(slidesSection);
+    return slidesTOC;
 }
 
-function buildEduImpactPreSection () {
+/* DONE */
+function buildEduImpactPreSection (qnaFormNumber, goalStatementMarkup) {
+    // Set up slide group with QNA form #
+    var slideGroup = new SlideGroup('', '', true, false);
+    slideGroup.sectionImage = null;
+    slideGroup.sectionLabel = null;
+    slideGroup.sectionAltText = null;
+    slideGroup.qnaForm = qnaFormNumber;    
 
+    // Insert goal statement + "before you begin..."
+    var subsection = new SubsectionElement(true, false, false);
+    subsection.subsectionContent =  utils.wrapSubsectionContent(`${goalStatementMarkup}<p>Before you begin this activity, please assess your clinical knowledge by completing this brief survey. Answering these questions again after the activity will allow you to see what you learned and to compare your answers with those of your peers.</p>`);
+
+    // Insert "Educational Impact Challenge" header 
+    var eduImpactPreSection = new SectionElement(false, false);
+    eduImpactPreSection.sectionHeader = "Educational Impact Challenge";
+
+    subsection.insertSlideGroup(slideGroup);
+    eduImpactPreSection.insertSubsectionElement(subsection);
+    return eduImpactPreSection;
 }
 
-function buildEduImpactPostSection () {
-    
+/* DONE */
+function buildEduImpactPostSection (qnaFormNumber) {
+    // Set up slide group with QNA form #
+    var slideGroup = new SlideGroup('', '', true, false);
+    slideGroup.sectionImage = null;
+    slideGroup.sectionLabel = null;
+    slideGroup.sectionAltText = null;
+    slideGroup.qnaForm = qnaFormNumber;    
+
+    // Insert goal statement + "before you begin..."
+    var subsection = new SubsectionElement(true, false, false);
+
+    // Insert "Educational Impact Challenge" header 
+    var eduImpactPreSection = new SectionElement(false, false);
+    eduImpactPreSection.sectionHeader = "Educational Impact Challenge";
+
+    subsection.insertSlideGroup(slideGroup);
+    eduImpactPreSection.insertSubsectionElement(subsection);
+    return eduImpactPreSection;
 }
 
-function buildLLAPreTOC() {
-    var llaPreSubsection = new SubsectionElement(false, true, false);
-    
-    var llaPreSection = new SectionElement();
-    llaPreSection.insertSubsectionElement(llaPreSubsection);
+/* DONE */
+function buildLLAPreTOC(goalStatementMarkup) {
+    var llaPreSection = buildEduImpactPreSection(3, goalStatementMarkup);
 
     var llaPreTOC = new TOCElement();
     llaPreTOC.insertSectionElement(llaPreSection);
     return llaPreTOC;
 }
 
+/* DONE */
 function buildLLAPostTOC() {
-    var llaPostSubsection = new SubsectionElement(false, true, false);
-    
-    var llaPostSection = new SectionElement();
-    llaPostSection.insertSubsectionElement(llaPostSubsection);
+    var llaPostSection = buildEduImpactPostSection(4);
 
     var llaPostTOC = new TOCElement();
     llaPostTOC.insertSectionElement(llaPostSection);
     return llaPostTOC;
 }
 
-function buildReferences(referencesMarkup) {
-    var referencesSubsection = new SubsectionElement(false, true, false);
-    referencesSubsection.subsectionContent = utils.wrapSubsectionContent(referencesMarkup);
+/* DONE */
+function buildReferences(referencesMarkup, program) {
+    if (program.profArticleType == "SlidePresentation") {
+        var referencesSubsection = new SubsectionElement(true, false, false);
+        referencesSubsection.subsectionContent = utils.wrapSlideIntro(referencesMarkup);
+    } else {
+        var referencesSubsection = new SubsectionElement(false, false, false);
+        referencesSubsection.subsectionContent = utils.wrapSubsectionContent(referencesMarkup);
+    }
     
     var referencesSection = new SectionElement();
     referencesSection.insertSubsectionElement(referencesSubsection);
@@ -96,8 +163,27 @@ function buildReferences(referencesMarkup) {
     return referencesTOC;
 }
 
-function buildAbbreviations(abbreviationsMarkup) {
+/* DONE */
+function buildAbbreviations(abbreviationsMarkup, program) {
+    // console.log("ABBRV MARKUP: ", abbreviationsMarkup);
+    if (program.profArticleType == "SlidePresentation") {
+        var abbreviationsSubsection = new SubsectionElement(true, false, false);
+        abbreviationsSubsection.subsectionContent = utils.wrapSlideIntro(abbreviationsMarkup);
+    } else {
+        var abbreviationsSubsection = new SubsectionElement(false, false, false);
+        abbreviationsSubsection.subsectionContent = utils.wrapSubsectionContent(abbreviationsMarkup);
+    }
+    // console.log("ABBRV MARKUP: ", utils.wrapSubsectionContent(abbreviationsMarkup));
 
+    var abbreviationsSection = new SectionElement();
+    abbreviationsSection.sectionHeader = "Abbreviations";
+
+    var abbreviationsTOC = new TOCElement("Sidebar");
+    abbreviationsTOC.tocLabel = "Abbreviations";
+
+    abbreviationsSection.insertSubsectionElement(abbreviationsSubsection);
+    abbreviationsTOC.insertSectionElement(abbreviationsSection);
+    return abbreviationsTOC;
 }
 
 module.exports = {

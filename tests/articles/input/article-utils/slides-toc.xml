@@ -1,5 +1,5 @@
 <toc_element>
-    <TOCLabel/>
+    <toc_Label/>
     <toc_type>Default</toc_type>
     <sec_element>
         <sec_header/>
@@ -7,7 +7,10 @@
             <subsec_header/>
             <slide_intro/>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide1.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide1.png
+                </sec_img>
                 <sec_label>Slide 1.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -17,7 +20,10 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide2.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide2.png
+                </sec_img>
                 <sec_label>Slide 2.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -27,7 +33,10 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide3.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide3.png
+                </sec_img>
                 <sec_label>Slide 3.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -41,12 +50,19 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide4.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide4.png
+                </sec_img>
                 <sec_label>Slide 4.</sec_label>
                 <sec_caption/>
                 <sec_txt>
                     <h3>Cancer-Associated Thrombosis: 
+                        
+                        
                         <em>How to Identify Those at Risk 
+                            
+                            
                             <sup type="ref">[1]</sup>
                         </em>
                     </h3>
@@ -61,11 +77,16 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide5.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide5.png
+                </sec_img>
                 <sec_label>Slide 5.</sec_label>
                 <sec_caption/>
                 <sec_txt>
                     <h3>Risk of VTE in Medical Patients
+                        
+                        
                         <sup type="ref">[2]</sup>
                     </h3>
                 </sec_txt>
@@ -73,11 +94,16 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide6.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide6.png
+                </sec_img>
                 <sec_label>Slide 6.</sec_label>
                 <sec_caption/>
                 <sec_txt>
                     <h3>Primary Prevention Trials
+                        
+                        
                         <sup type="ref">[3,4]</sup>
                     </h3>
                     <ul>
@@ -89,7 +115,10 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide7.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide7.png
+                </sec_img>
                 <sec_label>Slide 7.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -99,11 +128,16 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide8.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide8.png
+                </sec_img>
                 <sec_label>Slide 8.</sec_label>
                 <sec_caption/>
                 <sec_txt>
                     <h3>Treating the Patient With VTE
+                        
+                        
                         <sup type="ref">[1]</sup>
                     </h3>
                 </sec_txt>
@@ -111,11 +145,16 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide9.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide9.png
+                </sec_img>
                 <sec_label>Slide 9.</sec_label>
                 <sec_caption/>
                 <sec_txt>
                     <h3>How Long to Treat?
+                        
+                        
                         <sup type="ref">[1]</sup>
                     </h3>
                 </sec_txt>
@@ -123,11 +162,16 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide10.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide10.png
+                </sec_img>
                 <sec_label>Slide 10.</sec_label>
                 <sec_caption/>
                 <sec_txt>
                     <h3>NOACs vs LMWH In Patients With Cancer
+                        
+                        
                         <sup type="ref">[5,6]</sup>
                     </h3>
                 </sec_txt>
@@ -135,17 +179,24 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide11.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide11.png
+                </sec_img>
                 <sec_label>Slide 11.</sec_label>
                 <sec_caption/>
                 <sec_txt>
                     <h3>Study Results
+                        
+                        
                         <sup type="ref">[5,6]</sup>
                     </h3>
                     <ul>
                         <li>In both those trials, the non-vitamin K antagonist oral anticoagulants (NOACs) were better in terms of reducing the risk of recurrent VTE with some increase in bleeding</li>
                         <li>Both trials assessed the 6-month time point
 
+                            
+                            
                             <ul>
                                 <li>The Hokusai study extended to 12 months, but for most patients the median time was around 6 months</li>
                             </ul>
@@ -156,11 +207,16 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide12.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide12.png
+                </sec_img>
                 <sec_label>Slide 12.</sec_label>
                 <sec_caption/>
                 <sec_txt>
                     <h3>LMWH and VKAs
+                        
+                        
                         <sup type="ref">[7]</sup>
                     </h3>
                     <ul>
@@ -169,6 +225,8 @@
                         <li>Or, if a patient develops thrombocytopenia, you can titrate the dose down and ramp it back up again as the platelet count recovers</li>
                         <li>There is a flexibility in dosing, which is not seen with VKAs
 
+                            
+                            
                             <ul>
                                 <li>VKAs are only effective when the international normalized ratio (INR) is between 2 and 3, and that is difficult to maintain</li>
                             </ul>
@@ -179,11 +237,16 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide13.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide13.png
+                </sec_img>
                 <sec_label>Slide 13.</sec_label>
                 <sec_caption/>
                 <sec_txt>
                     <h3>Study Results (cont)
+                        
+                        
                         <sup type="ref">[5,6]</sup>
                     </h3>
                     <ul>
@@ -196,18 +259,27 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide14.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide14.png
+                </sec_img>
                 <sec_label>Slide 14.</sec_label>
                 <sec_caption/>
                 <sec_txt>
                     <h3>Patient Persistence with Anticoagulant: 
+                        
+                        
                         <em>LMWH vs Oral Agents
+                            
+                            
                             <sup type="ref">[8]</sup>
                         </em>
                     </h3>
                     <ul>
                         <li>Consistently in studies looking at different populations -- older patients, younger patients, patients with private insurance, patients with Medicare -- the results are the same
 
+                            
+                            
                             <ul>
                                 <li>Persistence on low molecular weight heparin (LMWH) is much lower than persistence on any oral agent, including VKAs</li>
                             </ul>
@@ -219,7 +291,10 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide15.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide15.png
+                </sec_img>
                 <sec_label>Slide 15.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -228,6 +303,8 @@
                         <li>In the Hokusai VTE Cancer study, for example, only about 11% of the patients had hematological malignancies; thrombocytopenia was not a big issue</li>
                         <li>In patents with lymphoma or leukemia, thrombocytopenia becomes a major challenge</li>
                         <li>If anticoagulants are stopped, the risk of reoccurrence is at least around 20% in that first year
+                            
+                            
                             <sup type="ref">[9]</sup>
                         </li>
                     </ul>
@@ -236,11 +313,16 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide16.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide16.png
+                </sec_img>
                 <sec_label>Slide 16.</sec_label>
                 <sec_caption/>
                 <sec_txt>
                     <h3>Ottawa Risk Score
+                        
+                        
                         <sup type="ref">[10]</sup>
                     </h3>
                     <ul>
@@ -253,7 +335,10 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide17.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide17.png
+                </sec_img>
                 <sec_label>Slide 17.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -263,19 +348,30 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide18.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide18.png
+                </sec_img>
                 <sec_label>Slide 18.</sec_label>
                 <sec_caption/>
                 <sec_txt>
                     <h3>ISTH Guidance Statement
+                        
+                        
                         <sup type="ref">[11]</sup>
                     </h3>
                     <ul>
                         <li>The term 
+                            
+                            
                             <em>suggest</em> has a specific meaning in the guidelines
+                        
+                        
                         </li>
                         <li>The Hokusai VTE Cancer study carefully captured the different chemotherapeutic or biological agents being used by patients
 
+                            
+                            
                             <ul>
                                 <li>A wide array of different agents was used, and there did not seem to be a problem with them</li>
                             </ul>
@@ -286,11 +382,16 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide19.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide19.png
+                </sec_img>
                 <sec_label>Slide 19.</sec_label>
                 <sec_caption/>
                 <sec_txt>
                     <h3>CARAVAGGIO
+                        
+                        
                         <sup type="ref">[12]</sup>
                     </h3>
                 </sec_txt>
@@ -298,7 +399,10 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide20.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide20.png
+                </sec_img>
                 <sec_label>Slide 20.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -311,7 +415,10 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide21.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide21.png
+                </sec_img>
                 <sec_label>Slide 21.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -321,7 +428,10 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide22.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide22.png
+                </sec_img>
                 <sec_label>Slide 22.</sec_label>
                 <sec_caption/>
                 <sec_txt>
@@ -331,23 +441,19 @@
                 <qna_form/>
             </slide_grp>
             <slide_grp>
-                <sec_img>/webmd/professional_assets/medscape/images/content/article/901/602/Slide23.png</sec_img>
+                <sec_img>
+                    <?dctmLink?>
+                    <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/901/602/Slide23.png
+                </sec_img>
                 <sec_label>Slide 23.</sec_label>
                 <sec_caption/>
                 <sec_txt>
                     <h3>Thank you</h3>
+                    <em>This content has been condensed for improved clarity.</em>
                 </sec_txt>
                 <sec_alt_txt>Slide 23.</sec_alt_txt>
                 <qna_form/>
             </slide_grp>
-        </subsec_element>
-        <subsec_element>
-            <subsec_header/>
-            <slide_intro>
-                <p>
-                    <em>This content has been condensed for improved clarity.</em>
-                </p>
-            </slide_intro>
         </subsec_element>
     </sec_element>
     <pg_footnotes/>

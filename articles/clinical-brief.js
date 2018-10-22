@@ -96,7 +96,7 @@ function buildClinicalBrief(ticket, program) {
     mainTOCInstance.insertSectionElement(cmeTest);
     
     // Build References TOC
-    var referencesTOC = articleUtils.buildReferences(references);
+    var referencesTOC = articleUtils.buildReferences(references, program);
 
 
     // Instantiate and Populate Article
