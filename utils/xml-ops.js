@@ -22,7 +22,7 @@ function writeXMLFromObject(object, pathToFile) {
         if (err) {
             return console.log(err);
         }
-        console.log("The new file was created!");
+        // console.log("The new file was created!");
     });
 }
 

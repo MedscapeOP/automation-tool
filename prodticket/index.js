@@ -13,7 +13,6 @@ in the articles module.
     - EXAMPLE: articles.clinicalBrief module 
         - finds "Clinical Context", "Study Highlights", etc.
         - Builds the appropriate XML transcript.  
-    
 */
 
 const _ = require("lodash");

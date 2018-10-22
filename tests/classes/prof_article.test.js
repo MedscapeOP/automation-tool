@@ -94,7 +94,7 @@ describe('Prof Article Element', function () {
         it('should set and get bannerImage by inputting filename and return null if no image set', function (done) {
             profArticleInstance.bannerImage = "banner-evolving-anticoagulation-2017.jpg";
 
-            console.log("BANNER IMAGE: ", profArticleInstance.bannerImage);
+            // console.log("BANNER IMAGE: ", profArticleInstance.bannerImage);
             expect(profArticleInstance.bannerImage).to.equal('/webmd/professional_assets/medscape/images/title_background/banner-evolving-anticoagulation-2017.jpg');
             done();
         });
