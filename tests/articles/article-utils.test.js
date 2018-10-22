@@ -8,6 +8,7 @@ let expect = chai.expect;
 const app = require('../../app');
 const utils = app.utils;
 const articleUtils = app.articles.articleUtils;
+const {SubsectionElement, SectionElement, TOCElement, ProfArticle} = app.classes;
 
 describe('Article Utilities', function () {
     /*
@@ -37,6 +38,20 @@ describe('Article Utilities', function () {
     var completeAbbreviations;
     beforeEach(function() {
         prodTicket = fs.readFileSync(__dirname + '/input/article-utils/article.html', 'utf8');
+    });
+
+    describe("#buildSlides()", function () {
+        var dirtySlidesXML = fs.readFileSync(__dirname + '/input/article-utils/dirty-slides-xml.html', 'utf8');
+        it('should transform Slides HTML from from R2Net conversion into JS Object.', function () {
+            var subsectionElement = new SubsectionElement(true);
+            var result = articleUtils.buildSlides(dirtySlidesXML, subsectionElement, "901/602");
+            // fs.writeFileSync(__dirname + "/output/clean-slides.xml", result, function(err) {
+            //     if(err) {
+            //         return console.log(err);
+            //     }
+            // }); 
+            utils.xmlOps.writeXMLFromObject(result.toObjectLiteral(), __dirname + "/output/article-utils/clean-slides.xml");
+        });
     });
     
     describe('#buildBlankTOC()', function () {

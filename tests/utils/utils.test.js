@@ -13,8 +13,6 @@ describe('Utility Functions', function () {
 
     var dirtySlidesHTML = fs.readFileSync(__dirname + '/input/dirty-slides-html.html', 'utf8');
 
-    var dirtySlidesXML = fs.readFileSync(__dirname + '/input/dirty-slides-xml.html', 'utf8');
-
     beforeEach(function() {
         // prodTicket = fs.readFileSync(__dirname + '/input/article.html', 'utf8');
         xmlJSObject = require('./input/xml-js-object');
@@ -58,19 +56,6 @@ describe('Utility Functions', function () {
         it("should format cleaned learning objectives into format usable by formatList() - Curbside", function () {
             var result = utils.formatLearningObjectives(learningObjectivesCC);
             expect(result).to.equalIgnoreSpaces(formattedObjectivesCC);
-        });
-    });
-
-    describe("utils.buildSlides()", function () {
-        it('should transform Slides HTML from from R2Net conversion into JS Object.', function () {
-            var subsectionElement = new SubsectionElement(true);
-            var result = utils.buildSlides(dirtySlidesXML, subsectionElement, "901/602");
-            // fs.writeFileSync(__dirname + "/output/clean-slides.xml", result, function(err) {
-            //     if(err) {
-            //         return console.log(err);
-            //     }
-            // }); 
-            utils.xmlOps.writeXMLFromObject(result.toObjectLiteral(), __dirname + "/output/clean-slides.xml");
         });
     });
 

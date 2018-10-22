@@ -2,8 +2,8 @@
 Module for retrieving info that is universal to every program.
     - find...() functions 
         - These are meant to find raw HTML of the section
-    - getFormatted...() functions 
-        - These are meant to format found sections into the HTML required by our programs. 
+    - get...() functions 
+        - These are meant to proxy to the appropriate find function given a program object. 
     - getPlain...() functions 
         - These are meant to format found sections into plain text 
         usable by Producers in the checklist log. 

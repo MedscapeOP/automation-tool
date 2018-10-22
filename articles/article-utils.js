@@ -1,5 +1,6 @@
 const _ = require("lodash");
 const utils = require("../utils");
+const buildSlides = require('./build-slides');
 const {TOCElement, SectionElement, SubsectionElement, SlideGroup} = require("../classes");
 
 /* DONE */
@@ -103,6 +104,7 @@ module.exports = {
     buildSection,
     buildCMETestSection,
     buildBlankTOC,
+    buildSlides,
     buildSlidesTOC,
     buildEduImpactPreSection,
     buildEduImpactPostSection,
