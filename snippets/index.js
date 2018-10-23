@@ -7,9 +7,9 @@ function forYourPatient (articleID, nameOfAddon, pdfFilename) {
                 <a href="/px/trk.svr/${articleID}?exturl=http://img.medscape.com/images/${articleID.slice(0, 3)}/${articleID.slice(3)}/${pdfFilename}" target="_blank">${nameOfAddon}</a>
             </div>
             <div class="downloadbtn_rt"></div>
-            <div class="spacer">&nbsp;</div>
+            <div class="spacer">--SPACEENTITY--</div>
         </div>
-        <div class="spacer">&nbsp;</div>`;
+        <div class="spacer">--SPACEENTITY--</div>`;
 }
 
 function downloadableSlides(articleID) {
@@ -23,9 +23,9 @@ function downloadableSlides(articleID) {
 function videoEmbed (slidesComponent, articleID=null) {
     if (articleID) {
         return `
-        <div class="app-loading">
-            <div id="cme-video-player" data-playertype="edu" data-config="en/pi/editorial/studio/configs/2018/education/${articleID}/${articleID}.json" class="webcomp-player">
-                &nbsp;
+        <div class="app-loading">        
+            <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/${articleID}/${articleID}.json" data-playertype="edu" id="cme-video-player">
+                --SPACEENTITY--
             </div>
         </div>
         `;
@@ -42,31 +42,32 @@ function videoEmbed (slidesComponent, articleID=null) {
     if (slidesComponent.componentNumber) {
         return `
         <div class="app-loading">
-            <div id="cme-video-player" data-playertype="edu" data-config="en/pi/editorial/studio/configs/2018/education/${videoEmbedPath()}.json" class="webcomp-player">
-                &nbsp;
+            <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/${videoEmbedPath()}.json" data-playertype="edu" id="cme-video-player">
+                --SPACEENTITY--
             </div>
         </div>
         `;
     } else {
         return `
         <div class="app-loading">
-            <div id="cme-video-player" data-playertype="edu" data-config="en/pi/editorial/studio/configs/2018/education/${videoEmbedPath()}.json" class="webcomp-player">
-                &nbsp;
+            <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/${videoEmbedPath()}.json" data-playertype="edu" id="cme-video-player">
+                --SPACEENTITY--
             </div>
         </div>
         <div id="page_nav_top">
             <div id="prev_page_nav">
-                <a href="${slidesComponent.articleID}">&laquo; Back </a>
+                <a href="${slidesComponent.articleID}">« Back </a>
             </div>
             <div id="next_page_nav">
-                <a href="${slidesComponent.articleID}_3">Next&raquo;</a>
-                <a style="height: 17px;" id="next_toc_link" href="javascript:next_toc();">
-                    <img border="0" src="http://img.medscape.com/pi/cme/ornaments/arrow-next-toc.png" class="inline_img" alt="" />
+                <a href="${slidesComponent.articleID}_3">Next»</a>
+                <a href="javascript:next_toc();" id="next_toc_link" style="height: 17px;">
+                    <img alt="" border="0" class="inline_img" src="http://img.medscape.com/pi/cme/ornaments/arrow-next-toc.png"/>
                 </a>
             </div>
-            <div class="spacer">&nbsp;</div>
-        </div>
-        `;
+            <div class="spacer">
+                --SPACEENTITY--
+            </div>
+        </div>`;
     }
 }
 

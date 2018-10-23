@@ -134,6 +134,7 @@ function paragraph(string, removeFluff=true) {
 
 function unorderedList(string, removeFluff=true, format=true) {
     var str = string;
+    
     if (removeFluff) {
         str = removeTicketFluff(str);
     }
@@ -154,10 +155,8 @@ function unorderedList(string, removeFluff=true, format=true) {
     // General Cleanup 
     var clean = sanitizeHtml(str, options);
 
-    // Remove &amp; from before entitities 
-    var entityRegexp = new RegExp('&amp;([A-Za-z]+|#?[0-9]+);', 'g');
-    clean = clean.replace(entityRegexp, "&$1;");
-    // console.log(formatList.formatUlItems);
+    // Clean entities; 
+    clean = cleanEntities(clean);
 
     if (format) {
         clean = formatList.formatUlItems(clean, null, formatList.formatUlItems);
@@ -361,6 +360,32 @@ function learningObjectives(textBlock, removeFluff=true) {
     return textBlock;
 }
 
+function insertEntityPlaceholders (xmlString) {
+    var str = xmlString;
+
+    var blankRegExp = new RegExp('&nbsp;', 'g');
+    str = str.replace(blankRegExp, "--SPACEENTITY--");
+
+    var entityRegexp = new RegExp('&(#?[0-9]+);', 'g');
+    str = str.replace(entityRegexp, '--ENTITY$1;--');
+    return str;
+}
+
+function cleanEntities (xmlString) {
+    var clean = xmlString;
+    // Remove &amp; from before entitities  
+    var entityRegexp = new RegExp('&amp;([A-Za-z]+|#?[0-9]+);', 'g');
+    clean = clean.replace(entityRegexp, "&$1;");
+
+    // Remove Entity Placeholders
+    var blankRegExp = new RegExp('--SPACEENTITY--', 'g');
+    clean = clean.replace(blankRegExp, "&nbsp;");
+
+    var entityRegexp2 = new RegExp('--ENTITY(#?[0-9]+);--', 'g');
+    clean = clean.replace(entityRegexp2, '&$1;');
+    return clean;
+}
+
 module.exports = {
     removeTicketFluff,
     singleLine,
@@ -373,5 +398,7 @@ module.exports = {
     abbreviations,
     references,
     peerReviewer,
-    learningObjectives
+    learningObjectives,
+    insertEntityPlaceholders,
+    cleanEntities
 }; 

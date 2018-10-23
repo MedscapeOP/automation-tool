@@ -6,7 +6,11 @@ In-Language Addon Functions
 */
 
 function buildInLanguageTOC (slideIntro, sectionHeader, tocType, tocLabel) {
+
+    slideIntro = utils.cleanHTML.insertEntityPlaceholders(slideIntro);
+
     var subsectionInstance = new SubsectionElement(true, false, false);
+    console.log(utils.wrapSlideIntro(slideIntro));
     subsectionInstance.subsectionContent = utils.wrapSlideIntro(slideIntro);
 
     var sectionInstance = new SectionElement(false, false);
@@ -36,7 +40,7 @@ function pdfSlideIntro (firstThree, lastThree, articleID, language) {
                     </div>
                 </object>
             </span>
-            <iframe width="860px" height="500px" class="disableAccmeOverlay" id="inlinePdfChrome" src="http://img.medscapestatic.com/images/${firstThree}/${lastThree}/${articleID}_${language.transcriptSuffix}.pdf"></iframe>
+            <iframe width="860px" height="500px" class="disableAccmeOverlay" id="inlinePdfChrome" src="http://img.medscapestatic.com/images/${firstThree}/${lastThree}/${articleID}_${language.transcriptSuffix}.pdf">--SPACEENTITY--</iframe>
         </p>
     `;
 }
@@ -44,7 +48,8 @@ function pdfSlideIntro (firstThree, lastThree, articleID, language) {
 function videoEmbed (articleID, language) {
     return `
     <div class="app-loading">
-    <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/${articleID}/${articleID}_${language.videoConfigSuffix}.json" data-playertype="edu" id="cme-video-player"/></div>
+    <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/${articleID}/${articleID}_${language.videoConfigSuffix}.json" data-playertype="edu" id="cme-video-player">--SPACEENTITY--</div>
+    </div>
     `;
 }
 

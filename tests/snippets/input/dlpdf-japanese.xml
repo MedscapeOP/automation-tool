@@ -23,7 +23,7 @@
                             </div>
                         </object>
                     </span>
-                    <iframe width="860px" height="500px" class="disableAccmeOverlay" id="inlinePdfChrome" src="http://img.medscapestatic.com/images/900/219/900219_transcript_jpn.pdf"></iframe>
+                    <iframe width="860px" height="500px" class="disableAccmeOverlay" id="inlinePdfChrome" src="http://img.medscapestatic.com/images/900/219/900219_transcript_jpn.pdf">&nbsp;</iframe>
                 </p>
             </slide_intro>
         </subsec_element>

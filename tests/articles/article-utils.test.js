@@ -66,19 +66,19 @@ describe('Article Utilities', function () {
 
         it('should return Slides TOC', function () {
             var result = articleUtils.buildSlidesTOC(slidesComponent).toObjectLiteral();
-            result = utils.xmlOps.objectToXMLString(result);
+            result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
             expect(result).to.equalIgnoreSpaces(completeSlidesTOC);
         });
 
-        // it('should return Slides TOC with a video embed in subsection slide intro', function () {
-        //     var result = articleUtils.buildSlidesTOC(slidesComponent, videoEmbed=true).toObjectLiteral();
-        //     result = utils.xmlOps.objectToXMLString(result);
-        //     expect(result).to.equalIgnoreSpaces(completeSlidesTOC2);
-        // });
+        it('should return Slides TOC with a video embed in subsection slide intro', function () {
+            var result = articleUtils.buildSlidesTOC(slidesComponent, videoEmbed=true).toObjectLiteral();
+            result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
+            expect(result).to.equalIgnoreSpaces(completeSlidesTOC2);
+        });
 
         // it('should return Slides TOC with an educational impact challenge subsection', function () {
         //     var result = articleUtils.buildSlidesTOC(slidesComponent, false, true).toObjectLiteral();
-        //     result = utils.xmlOps.objectToXMLString(result);
+        //     result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
         //     expect(result).to.equalIgnoreSpaces(completeSlidesTOC3);
         // });
     });
