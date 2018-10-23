@@ -10,8 +10,10 @@ describe('Utility Functions', function () {
     var xmlJSObject;
     var xmlJSObjectTrimmed;
     var dirtyListHTML = fs.readFileSync(__dirname + '/input/dirty-list.html', 'utf8');
-
     var dirtySlidesHTML = fs.readFileSync(__dirname + '/input/dirty-slides-html.html', 'utf8');
+
+    var slidesInitialComplete = fs.readFileSync(__dirname + '/input/slides-initial-complete.html', 'utf8').toString();
+    var slidesFinalComplete = fs.readFileSync(__dirname + '/input/slides-final-complete.html', 'utf8').toString();
 
     beforeEach(function() {
         // prodTicket = fs.readFileSync(__dirname + '/input/article.html', 'utf8');
@@ -31,6 +33,31 @@ describe('Utility Functions', function () {
             var result = utils.trimObjectText(xmlJSObject)
             // console.log(xmlJSObject);
             expect(result).to.deep.equal(xmlJSObjectTrimmed);
+        });
+    });
+
+    describe('utils.stringOps.removeFromRegexCapture()', function () {
+        it('should remove a regex string ONLY within a specified regex match', function () {
+            var h3RegExp = new RegExp('<h3>(.*)</h3>', 'g');
+            var strongRegExp = new RegExp('<strong>|</strong>', 'g');            
+            var testString = `
+                <h3><strong>Stuff</strong></h3>
+                <strong>MORE</strong>
+                Other
+                <h3><strong>Stuff</strong></h3>
+            `;
+            var completeString = `
+                <h3>Stuff</h3>
+                <strong>MORE</strong>
+                Other
+                <h3>Stuff</h3>
+            `;
+            var result = utils.stringOps.removeFromRegexCapture(
+                testString,
+                h3RegExp,
+                strongRegExp
+            );
+            expect(result).equalIgnoreSpaces(completeString);
         });
     });
 
@@ -74,22 +101,24 @@ describe('Utility Functions', function () {
         describe(".slidesInitial()", function () {
             it('should transform Slides HTML from from R2Net into format suitable for initial processing/formatting.', function () {
                 var result = utils.cleanHTML.slidesInitial(dirtySlidesHTML);
-                fs.writeFileSync(__dirname + "/output/fixed-slides.html", result, function(err) {
-                    if(err) {
-                        return console.log(err);
-                    }
-                }); 
+                // fs.writeFileSync(__dirname + "/output/fixed-slides.html", result, function(err) {
+                //     if(err) {
+                //         return console.log(err);
+                //     }
+                // }); 
+                expect(result).to.equalIgnoreSpaces(slidesInitialComplete);
             });
         });
     
         describe(".slidesForFinalBuild()", function () {
             it('should transform Slides HTML from from R2Net into format for use in buildSlides().', function () {
-                var result = utils.cleanHTML.slidesFinal(dirtySlidesHTML);
+                var result = utils.cleanHTML.slidesFinal(slidesInitialComplete);
                 fs.writeFileSync(__dirname + "/output/clean-slides.html", result, function(err) {
                     if(err) {
                         return console.log(err);
                     }
                 }); 
+                expect(result).to.equalIgnoreSpaces(slidesFinalComplete);
             });
         });
     });

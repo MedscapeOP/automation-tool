@@ -63,6 +63,7 @@ function buildSlidesTOC(slidesComponent, videoEmbed=false, eduImpactSubsection=f
     var subsectionElement = new SubsectionElement(true, false, false);
     var slidesSubsection = buildSlides(slidesComponent.rawSlides, subsectionElement, slidesComponent.slidePath);
 
+    // console.log("SLIDES SUBSECTION: ", slidesSubsection.toObjectLiteral().elements[0].elements[3].elements[3].elements);
 
     // Insert Video Embed - If necessary 
     if (videoEmbed) {

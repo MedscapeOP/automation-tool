@@ -14,7 +14,7 @@
                 <sec_label>Slide 1.</sec_label>
                 <sec_caption/>
                 <sec_txt>
-                    <h3>Cancer-Associated Thrombosis: Emerging Concepts and Paradigms</h3>
+                    <h3> Cancer-Associated Thrombosis: Emerging Concepts and Paradigms</h3>
                 </sec_txt>
                 <sec_alt_txt>Slide 1.</sec_alt_txt>
                 <qna_form/>
@@ -27,8 +27,7 @@
                 <sec_label>Slide 2.</sec_label>
                 <sec_caption/>
                 <sec_txt>
-                    <h3/> Panelists
-
+                    <h3> Panelists</h3>
                 </sec_txt>
                 <sec_alt_txt>Slide 2.</sec_alt_txt>
                 <qna_form/>
@@ -43,8 +42,8 @@
                 <sec_txt>
                     <h3> Cancer-Associated Thrombosis: Who Is at Risk?</h3>
                     <ul>
-                        <li> Separating cancer into subcategories of patients who can or are likely to get blood clots vs those who are not likely to get blood clots is key</li>
-                        <li> A single risk factor does not predict the full assessment of risk in this population </li>
+                        <li>Separating cancer into subcategories of patients who can or are likely to get blood clots vs those who are not likely to get blood clots is key</li>
+                        <li>        A single risk factor does not predict the full assessment of risk in this population </li>
                     </ul>
                 </sec_txt>
                 <sec_alt_txt>Slide 3.</sec_alt_txt>
@@ -64,9 +63,9 @@
                         </em>
                     </h3>
                     <ul>
-                        <li>   Surveys suggest that cancer patients are very unware of the risk of venous thromboembolism (VTE)</li>
+                        <li>      Surveys suggest that cancer patients are very unware of the risk of venous thromboembolism (VTE)</li>
                         <li>       They are very aware of becoming nauseated, having emesis, and getting infections and when to report these problems</li>
-                        <li>     They are not aware of leg swelling or increased shortness of breath or sudden onset of chest pain as being concerning</li>
+                        <li>      They are not aware of leg swelling or increased shortness of breath or sudden onset of chest pain as being concerning</li>
                         <li>  Providers must assess the risk, have a discussion, and educate patients about warning signs and symptoms of VTE </li>
                     </ul>
                 </sec_txt>
@@ -81,7 +80,7 @@
                 <sec_label>Slide 5.</sec_label>
                 <sec_caption/>
                 <sec_txt>
-                    <h3>Risk of VTE in Medical Patients
+                    <h3> Risk of VTE in Medical Patients
                         <sup type="ref">[2]</sup>
                     </h3>
                 </sec_txt>
@@ -100,8 +99,8 @@
                         <sup type="ref">[3,4]</sup>
                     </h3>
                     <ul>
-                        <li> Two studies that will be completed soon are looking at prophylaxis with either rivaroxaban 10 mg once a day vs placebo or apixaban 2.5 mg twice a day vs placebo</li>
-                        <li>       Both studies identify the highest risk patients </li>
+                        <li>     Two studies that will be completed soon are looking at prophylaxis with either rivaroxaban 10 mg once a day vs placebo or apixaban 2.5 mg twice a day vs placebo</li>
+                        <li>        Both studies identify the highest risk patients </li>
                     </ul>
                 </sec_txt>
                 <sec_alt_txt>Slide 6.</sec_alt_txt>
@@ -178,7 +177,7 @@
                     </h3>
                     <ul>
                         <li> In both those trials, the non-vitamin K antagonist oral anticoagulants (NOACs) were better in terms of reducing the risk of recurrent VTE with some increase in bleeding</li>
-                        <li>       Both trials assessed the 6-month time point
+                        <li>        Both trials assessed the 6-month time point
 
                             <ul>
                                 <li>        The Hokusai study extended to 12 months, but for most patients the median time was around 6 months </li>
@@ -197,14 +196,16 @@
                 <sec_label>Slide 12.</sec_label>
                 <sec_caption/>
                 <sec_txt>
-                    <h3>LMWH and VKAs
+                    <h3>LMWH
+and VKAs
                         <sup type="ref">[7]</sup>
                     </h3>
                     <ul>
-                        <li>        The advantage of low-molecular heparin vs vitamin K antagonist (VKA) is that you can titrate the dose </li>
-                        <li> If, for example, a patient presents with gastrointestinal bleeding (GI), a lower dose can be used to start and then the dose can be gradually increased when bleeding ceases</li>
-                        <li>   Or, if a patient develops thrombocytopenia, you can titrate the dose down and ramp it back up again as the platelet count recovers</li>
-                        <li>     There is a flexibility in dosing, which is not seen with VKAs
+                        <li>  The advantage of low-molecular heparin vs vitamin K antagonist (VKA) is that you can titrate the dose </li>
+                        <li> If, for example, a patient presents with
+gastrointestinal bleeding (GI), a lower dose can be used to start and then the dose can be gradually increased when bleeding ceases</li>
+                        <li>    Or, if a patient develops thrombocytopenia, you can titrate the dose down and ramp it back up again as the platelet count recovers</li>
+                        <li>      There is a flexibility in dosing, which is not seen with VKAs
 
                             <ul>
                                 <li>        VKAs are only effective when the international normalized ratio (INR) is between 2 and 3, and that is difficult to maintain </li>
@@ -227,9 +228,10 @@
                         <sup type="ref">[5,6]</sup>
                     </h3>
                     <ul>
-                        <li>      Hokusai VTE Cancer and SELECT-D studies had similar results</li>
-                        <li>    Bleeding was seen especially in patients with GI cancer </li>
-                        <li>       There are now broader options for anticoagulation to manage thrombosis in our cancer patients </li>
+                        <li>        Hokusai VTE Cancer and SELECT-D studies had similar results</li>
+                        <li>    Bleeding was seen especially in patients
+with GI cancer </li>
+                        <li>        There are now broader options for anticoagulation to manage thrombosis in our cancer patients </li>
                     </ul>
                 </sec_txt>
                 <sec_alt_txt>Slide 13.</sec_alt_txt>
@@ -249,7 +251,7 @@
                         </em>
                     </h3>
                     <ul>
-                        <li>       Consistently in studies looking at different populations -- older patients, younger patients, patients with private insurance, patients with Medicare -- the results are the same
+                        <li> Consistently in studies looking at different populations -- older patients, younger patients, patients with private insurance, patients with Medicare -- the results are the same
 
                             <ul>
                                 <li>        Persistence on low molecular weight heparin (LMWH) is much lower than persistence on any oral agent, including VKAs</li>
@@ -271,9 +273,10 @@
                 <sec_txt>
                     <h3> Challenges of Anticoagulation Therapy</h3>
                     <ul>
-                        <li> In the Hokusai VTE Cancer study, for example, only about 11% of the patients had hematological malignancies; thrombocytopenia was not a big issue</li>
-                        <li>      In patents with lymphoma or leukemia, thrombocytopenia becomes a major challenge </li>
-                        <li>      If anticoagulants are stopped, the risk of reoccurrence is at least around 20% in that first year
+                        <li>   In the Hokusai VTE Cancer study,
+for example, only about 11% of the patients had hematological malignancies; thrombocytopenia was not a big issue</li>
+                        <li>       In patents with lymphoma or leukemia, thrombocytopenia becomes a major challenge </li>
+                        <li>       If anticoagulants are stopped, the risk of reoccurrence is at least around 20% in that first year
                             <sup type="ref">[9]</sup>
                         </li>
                     </ul>
@@ -293,9 +296,10 @@
                         <sup type="ref">[10]</sup>
                     </h3>
                     <ul>
-                        <li> The Ottawa score has not been validated in every study</li>
-                        <li> It is very good at predicting low-risk patients, but not so good at predicting high-risk patients </li>
-                        <li>     The other challenge is all of these risk assessment tools were developed in the LMWH era</li>
+                        <li>       The Ottawa score has not been validated in every study</li>
+                        <li> It is very good at predicting low-risk patients, but not
+so good at predicting high-risk patients </li>
+                        <li>      The other challenge is all of these risk assessment tools were developed in the LMWH era</li>
                     </ul>
                 </sec_txt>
                 <sec_alt_txt>Slide 16.</sec_alt_txt>
@@ -326,10 +330,10 @@
                         <sup type="ref">[11]</sup>
                     </h3>
                     <ul>
-                        <li>  The term 
+                        <li>     The term 
                             <em>suggest</em> has a specific meaning in the guidelines
                         </li>
-                        <li>     The Hokusai VTE Cancer study carefully captured the different chemotherapeutic or biological agents being used by patients
+                        <li>      The Hokusai VTE Cancer study carefully captured the different chemotherapeutic or biological agents being used by patients
 
                             <ul>
                                 <li>        A wide array of different agents was used, and there did not seem to be a problem with them </li>
@@ -365,7 +369,7 @@
                 <sec_txt>
                     <h3> Managing Anticoagulation</h3>
                     <ul>
-                        <li>     New International Society on Thrombosis and Haemostasis (ISTH) guidelines recommend taking patient preferences and values into account and having an informed discussion about the risk of bleeding and risk of recurrent VTE</li>
+                        <li>        New International Society on Thrombosis and Haemostasis (ISTH) guidelines recommend taking patient preferences and values into account and having an informed discussion about the risk of bleeding and risk of recurrent VTE</li>
                     </ul>
                 </sec_txt>
                 <sec_alt_txt>Slide 20.</sec_alt_txt>
@@ -414,4 +418,4 @@
         </subsec_element>
     </sec_element>
     <pg_footnotes/>
-</toc_element>
+</toc_element> 

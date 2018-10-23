@@ -3,6 +3,33 @@ let regexIndexOf = function(string, regex, startpos) {
     return (indexOf >= 0) ? (indexOf + (startpos || 0)) : indexOf;
 }
 
+function removeFromRegexCapture(string, regex, removeRegex) {
+    // Must take in non-global regexp   
+    // if (regex.global) {
+    //     throw new Error("Regex must NOT be global for this function");
+    // } 
+
+    var str = string;
+    var matches = string.match(regex);
+    var match = "";
+    var updatedMatch = "";
+    var matchIndex = 0;
+    for (var i = 0; i < matches.length; i++) {
+        // Get the first match
+        match = matches[i];
+        
+        // Remove from match
+        updatedMatch = match.replace(removeRegex, "");
+
+        // Get match index
+        matchIndex = str.indexOf(match);
+
+        // Replace match with updated match using .substring   
+        str = str.substring(0, matchIndex) + updatedMatch + str.substring(matchIndex + match.length, str.length);
+    }
+    return str;
+}
+
 function findLastAndReplace(str, removeString, replaceString) {
     var index = str.lastIndexOf(removeString);
     str = str.substring(0, index) + replaceString + str.substring(index + removeString.length, str.length);
@@ -78,5 +105,6 @@ module.exports = {
     isEmptyString,
     isBlankOrWhiteSpace,
     getTextBlock,
-    regexIndexOf
+    regexIndexOf,
+    removeFromRegexCapture
 }

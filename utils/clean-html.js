@@ -1,5 +1,6 @@
 const sanitizeHtml = require('sanitize-html');
 const formatList = require('./format-list');
+const stringOps = require('./string-ops');
 
 /*
 Common Entities / Things to remove: 
@@ -192,12 +193,28 @@ function slidesFinal (str) {
     /* CLEAN UP HTML FOR EDGE CASES */
 
     // Headline edge cases / Capitalization Edge Cases 
-    var headlineRegExp1 = new RegExp('&lt;&lt;.*level 2.*&gt;&gt;', 'g');
-    str = str.replace(headlineRegExp1, "&lt;&lt;Level 2&gt;&gt;");
+    // Handle cases like &lt;&lt;level 2&gt;&gt;</strong> Panelists
+    var headlineRegExp1 = new RegExp('<strong>(?:&lt;){1,}level 2(?:&gt;){1,}</strong>(.*)', 'g');
+    str = str.replace(headlineRegExp1, "<strong>&lt;&lt;Level 2&gt;&gt;$1</strong>");
+    
+    var headlineRegExp2 = new RegExp('<strong>(?:&lt;){1,}Level 2(?:&gt;){1,}</strong>(.*)', 'g');
+    str = str.replace(headlineRegExp2, "<strong>&lt;&lt;Level 2&gt;&gt;$1</strong>");
+    
+    // Change all Level 2 statements to be titlecase -> "Level"
+    var headlineRegExp3 = new RegExp('(?:&lt;){1,}.*level 2.*(?:&gt;){1,}', 'g');
+    str = str.replace(headlineRegExp3, "&lt;&lt;Level 2&gt;&gt;");
+    
+    // var headlineRegExp4 = new RegExp('<strong>(?:&lt;){1,}Level 2(?:&gt;){1,}(?:\s){1,}</strong>(.*)</p>', 'g');
+    // str = str.replace(headlineRegExp4, "<strong>&lt;&lt;Level 2&gt;&gt;$1</strong>");
+
+    // var headlineRegExp5 = new RegExp('<strong>(?:&lt;){1,}level 2(?:&gt;){1,}(?:\s){1,}</strong>(.*)</p>', 'g');
+    // str = str.replace(headlineRegExp5, "<strong>&lt;&lt;Level 2&gt;&gt;$1</strong>");
+
 
     // Remove End Slides 
     var endSlidesRegExp1 = new RegExp('&lt;&lt;end slides&gt;&gt;', 'g');
     str = str.replace(endSlidesRegExp1, "");
+
 
     // Strong/Em tag Edge Cases
     var strongRegExp1 = new RegExp('<strong></strong>', 'g');
@@ -209,6 +226,7 @@ function slidesFinal (str) {
     var emRegExp1 = new RegExp('<em></em>', 'g');
     str = str.replace(emRegExp1, "");
 
+
     // Sup Edge Cases
     str = supEdgeCases(str);
     
@@ -216,6 +234,10 @@ function slidesFinal (str) {
     /* MAIN REGEX SERIES */
     var h3RegExp = new RegExp('<strong>(?:&lt;){1,}Level 2(?:&gt;){1,}(.*)</strong>', 'g');
     str = str.replace(h3RegExp, "<h3>$1</h3>");
+
+    var h3RegExp2 = new RegExp('<h3>(.*)</h3>', 'g');
+    var strongRegExp = new RegExp('<strong>|</strong>', 'g'); 
+    str = stringOps.removeFromRegexCapture(str, h3RegExp2, strongRegExp); 
 
     var supRegExp = new RegExp('<sup>\\[', 'g');
     str = str.replace(supRegExp, '<sup type="ref">[');
