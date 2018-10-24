@@ -5,7 +5,23 @@
         <sec_header/>
         <subsec_element>
             <subsec_header/>
-            <slide_intro/>
+            <slide_intro>
+                <div class="app-loading">
+                    <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/901602/901602.json" data-playertype="edu" id="cme-video-player">&nbsp;</div>
+                </div>
+                <div id="page_nav_top">
+                    <div id="prev_page_nav">
+                        <a href="901602">« Back</a>
+                    </div>
+                    <div id="next_page_nav">
+                        <a href="901602_3">Next»</a>
+                        <a href="javascript:next_toc();" id="next_toc_link" style="height: 17px;">
+                            <img alt="" border="0" class="inline_img" src="http://img.medscape.com/pi/cme/ornaments/arrow-next-toc.png"/>
+                        </a>
+                    </div>
+                    <div class="spacer">&nbsp;</div>
+                </div>
+            </slide_intro>
             <slide_grp>
                 <sec_img>
                     <?dctmLink?>
@@ -45,10 +61,7 @@
                 <sec_txt>
                     <h3>Cancer-Associated Thrombosis: Who Is at Risk?</h3>
                     <ul>
-                        <li>
-                            Separating cancer into subcategories of patients who can or are likely to get blood
-                            clots vs those who are not likely to get blood clots is key
-                        </li>
+                        <li>Separating cancer into subcategories of patients who can or are likely to get blood clots vs those who are not likely to get blood clots is key</li>
                         <li>A single risk factor does not predict the full assessment of risk in this population</li>
                     </ul>
                 </sec_txt>
@@ -87,10 +100,7 @@
                     <?dctmEditor?>
                     /webmd/professional_assets/medscape/images/content/article/901/602/Slide5.png
                 </sec_img>
-                <sec_label>
-                    Slide
-                    5.
-                </sec_label>
+                <sec_label>Slide 5.</sec_label>
                 <sec_caption/>
                 <sec_txt>
                     <h3>
@@ -115,7 +125,7 @@
                         <sup type="ref">[3,4]</sup>
                     </h3>
                     <ul>
-                        <li>Two studies that will be completed soon are looking at prophylaxis with either rivaroxaban 10 mg once a day vs placebo or apixaban 2.5 mg twice a day vs placebo</li>
+                        <li>Twostudies that will be completed soon are looking at prophylaxis with either rivaroxaban 10 mg once a day vs placebo or apixaban 2.5 mg twice a day vs placebo</li>
                         <li>Both studies identify the highest risk patients</li>
                     </ul>
                 </sec_txt>
@@ -146,8 +156,7 @@
                 <sec_caption/>
                 <sec_txt>
                     <h3>
-                        Treating the Patient With
-                        VTE
+                        Treating the Patient With VTE
                         <sup type="ref">[1]</sup>
                     </h3>
                 </sec_txt>
@@ -202,10 +211,7 @@
                         <sup type="ref">[5,6]</sup>
                     </h3>
                     <ul>
-                        <li>
-                            In both those trials, the non-vitamin K antagonist oral anticoagulants (NOACs) were better in terms
-                            of reducing the risk of recurrent VTE with some increase in bleeding
-                        </li>
+                        <li>In both those trials, the non-vitamin K antagonist oral anticoagulants (NOACs) were better in terms of reducing the risk of recurrent VTE with some increase in bleeding</li>
                         <li>
                             Both trials assessed the 6-month time point
                             <ul>
@@ -261,9 +267,7 @@
                     <ul>
                         <li>Hokusai VTE Cancer and SELECT-D studies had similar results</li>
                         <li>Bleeding was seen especially in patients with GI cancer</li>
-                        <li>
-                            There are now broader options for anticoagulation to manage thrombosis in our cancer patients
-                        </li>
+                        <li>There are now broader options for anticoagulation to manage thrombosis in our cancer patients</li>
                     </ul>
                 </sec_txt>
                 <sec_alt_txt>Slide 13.</sec_alt_txt>
@@ -335,10 +339,7 @@
                     </h3>
                     <ul>
                         <li>The Ottawa score has not been validated in every study</li>
-                        <li>
-                            It is very good at predicting low-risk patients, but not so good at
-                            predicting high-risk patients
-                        </li>
+                        <li>It is very good at predicting low-risk patients, but not so good atpredicting high-risk patients</li>
                         <li>The other challenge is all of these risk assessment tools were developed in the LMWH era</li>
                     </ul>
                 </sec_txt>
@@ -417,11 +418,7 @@
                 <sec_txt>
                     <h3>Managing Anticoagulation</h3>
                     <ul>
-                        <li>
-                            New International Society on Thrombosis and
-                            Haemostasis (ISTH) guidelines recommend taking patient preferences and values into account and having an informed discussion about the risk of bleeding and
-                            risk of recurrent VTE
-                        </li>
+                        <li>New International Society on Thrombosis andHaemostasis (ISTH) guidelines recommend taking patient preferences and values into account and having an informed discussion about the risk of bleeding andrisk of recurrent VTE</li>
                     </ul>
                 </sec_txt>
                 <sec_alt_txt>Slide 20.</sec_alt_txt>
@@ -470,6 +467,14 @@
                 <sec_alt_txt>Slide 23.</sec_alt_txt>
                 <qna_form/>
             </slide_grp>
+        </subsec_element>
+        <subsec_element>
+            <subsec_header>
+                <p>Educational Impact Challenge</p>
+            </subsec_header>
+            <slide_intro>
+                <p>What did you learn from this activity? Please click on the “Next” button to proceed to a brief survey to see how your knowledge improved after the education. You can also see how your answers compare with those of your peers.</p>
+            </slide_intro>
         </subsec_element>
     </sec_element>
     <pg_footnotes/>

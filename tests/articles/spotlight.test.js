@@ -35,6 +35,7 @@ describe('Spotlight', function () {
     var completeSpotlight;
     var completeSlidesTOC;
     var completeSlidesTOCLLA;
+    var completeLLAPreTOC;
     beforeEach(function() {
         prodTicket = fs.readFileSync(__dirname + '/input/spotlight/article.html', 'utf8');
         // completeClinicalContext = utils.xmlOps.objectToXMLString(require('./input/clinical-context'));
@@ -44,6 +45,8 @@ describe('Spotlight', function () {
         completeSlidesTOC = fs.readFileSync(__dirname + '/input/spotlight/slides-sl.xml').toString();
 
         completeSlidesTOCLLA = fs.readFileSync(__dirname + '/input/spotlight/slides-sl-lla.xml').toString();
+
+        completeLLAPreTOC = fs.readFileSync(__dirname + '/input/spotlight/lla-pre-toc-sl.xml').toString();
 
         program = app.config.programs.spotlight;
 
@@ -70,6 +73,19 @@ describe('Spotlight', function () {
             result = utils.cleanHTML.cleanEntities(result);
             
             expect(result).to.equalIgnoreSpaces(completeSlidesTOCLLA);
+        });
+    });
+
+    describe('#getLLAPreTOC()', function () {
+        it('should return LLA Pre TOC with program goal statement', function () {
+            program.hasLLA = true;
+
+            var result = spotlight.getLLAPreTOC(prodTicket, program).toObjectLiteral();
+
+            result = utils.xmlOps.objectToXMLString(result);
+            result = utils.cleanHTML.cleanEntities(result);
+
+            expect(result).to.equalIgnoreSpaces(completeLLAPreTOC);
         });
     });
 

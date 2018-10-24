@@ -59,12 +59,19 @@ function getSlidesTOC (ticket, program) {
 }
 
 
-/* SECTION FUNCTION  
+/* LLA PRE TOC   
 -------------------------------------- */
+function getLLAPreTOC(ticket, program) {
+    var goalStatementMarkup = prodticket.getGoalStatement(ticket, program);
+    return articleUtils.buildLLAPreTOC(goalStatementMarkup);
+}
 
 
-/* SECTION FUNCTION2 
+/* LLA POST TOC  
 -------------------------------------- */
+function getLLAPostTOC(ticket, program) {
+    return articleUtils.buildLLAPostTOC();
+}
 
 
 /* MASTER FUNCTION 
@@ -113,5 +120,7 @@ function buildSpotlight(ticket, program) {
 
 module.exports = {
     getSlidesTOC,
+    getLLAPreTOC,
+    getLLAPostTOC,
     buildSpotlight
 }
