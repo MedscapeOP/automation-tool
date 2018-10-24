@@ -46,10 +46,16 @@ const prodticket = require('../prodticket');
 
 /* SLIDES / MAIN CONTENT 
 -------------------------------------- */
-function getSlidesContent (ticket) {
-    // Get XML string from prod ticket.
-    var slides = "";
-    return articleUtils.buildSection(slides, label);
+function getSlidesTOC (ticket, program) {
+    // Get Slide Component from prodticket.getSlides.
+    // Check if LLA 
+    // If LLA build slides with Video embed AND Edu Impact challenge 
+    var slidesComponent = prodticket.getSlides(ticket, program)[0];
+
+    if (program.hasLLA) {
+        return articleUtils.buildSlidesTOC(slidesComponent, true, true);
+    }
+    return articleUtils.buildSlidesTOC(slidesComponent, false, false);
 }
 
 
@@ -106,5 +112,6 @@ function buildSpotlight(ticket, program) {
 };
 
 module.exports = {
+    getSlidesTOC,
     buildSpotlight
 }

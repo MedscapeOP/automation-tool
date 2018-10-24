@@ -5,25 +5,29 @@ const programs = {
         name: "Clinical Brief",
         codeName: "brief",
         profArticleType: "Article",
-        articleID: ""
+        articleID: "",
+        hasLLA: false
     },
     spotlight: {
         name: "Spotlight",
         codeName: "spotlight",
         profArticleType: "SlidePresentation",
-        articleID: "901602" 
+        articleID: "901602",
+        hasLLA: false 
     },
     curbsideConsult: {
         name: "Curbside Consult",
         codeName: "curbside",
         profArticleType: "SlidePresentation",
-        articleID: "902082"
+        articleID: "902082",
+        hasLLA: false
     },
     firstResponse: {
         name: "First Response",
         codeName: "firstResponse",
         profArticleType: "SlidePresentation",
-        articleID: "900319"
+        articleID: "900319",
+        hasLLA: false
     }
 };
 

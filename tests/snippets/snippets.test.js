@@ -167,8 +167,7 @@ describe('Snippet Module Functions', function () {
 
             it("should return TOCElement with appropriate TOC Type & Label, Section Header, and Slide Intro - Japanese", function () {
                 var result = snippets.inLanguage.subtitles("900219", config.languages.japanese);
-                result = utils.xmlOps.objectToXMLString(result.toObjectLiteral());  
-                console.log("JAP: ", result);              
+                result = utils.xmlOps.objectToXMLString(result.toObjectLiteral());              
                 result = utils.cleanHTML.cleanEntities(result);                
                 expect(result).to.equalIgnoreSpaces(subJapanese);
             });   

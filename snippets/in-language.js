@@ -10,7 +10,6 @@ function buildInLanguageTOC (slideIntro, sectionHeader, tocType, tocLabel) {
     slideIntro = utils.cleanHTML.insertEntityPlaceholders(slideIntro);
 
     var subsectionInstance = new SubsectionElement(true, false, false);
-    console.log(utils.wrapSlideIntro(slideIntro));
     subsectionInstance.subsectionContent = utils.wrapSlideIntro(slideIntro);
 
     var sectionInstance = new SectionElement(false, false);

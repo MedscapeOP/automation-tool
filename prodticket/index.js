@@ -1,9 +1,11 @@
 /*
 Module for retrieving info that is universal to every program.
     - find...() functions 
-        - These are meant to find raw HTML of the section
+        - These are meant to find raw HTML of the section (DONE)
     - get...() functions 
-        - These are meant to proxy to the appropriate find function given a program object. 
+        - These are meant to proxy to the appropriate find function given a program object. (DONE) 
+        - These functions also perform input validation and throw appropriate errors
+            - Will help users understand where they went wrong.  
     - getPlain...() functions 
         - These are meant to format found sections into plain text 
         usable by Producers in the checklist log. 
@@ -27,49 +29,75 @@ let findGoalStatement = require('./find-goal-statement');
 let findTargetAudience = require('./find-target-audience');
 let findLearningObjectives = require('./find-learning-objectives');
 
+function checkTicket(ticketHTML) {
+    if (ticketHTML) {
+        return true;
+    } else {
+        throw Error("Badly formed prodticket html!");
+    }
+}
+
 function getTitle (ticketHTML, program) {
-    var rawTitle = findTitle[program.codeName](ticketHTML);
-    return rawTitle;
+    if (checkTicket(ticketHTML)) {
+        var rawTitle = findTitle[program.codeName](ticketHTML);
+        return rawTitle;
+    }
 }
 
 function getByline (ticketHTML, program) {
-    var rawByline = findByline[program.codeName](ticketHTML);
-    return rawByline;
+    if (checkTicket(ticketHTML)) {
+        var rawByline = findByline[program.codeName](ticketHTML);
+        return rawByline;
+    }
 }
 
 function getReferences (ticketHTML, program) {
-    var rawReferences = findReferences[program.codeName](ticketHTML);
-    return rawReferences;
+    if (checkTicket(ticketHTML)) {
+        var rawReferences = findReferences[program.codeName](ticketHTML);
+        return rawReferences;
+    }    
 }
 
 function getAbbreviations (ticketHTML, program) {
-    var rawAbbreviations = findAbbreviations[program.codeName](ticketHTML);
-    return rawAbbreviations;
+    if (checkTicket(ticketHTML)) {
+        var rawAbbreviations = findAbbreviations[program.codeName](ticketHTML);
+        return rawAbbreviations;
+    }   
 }
 
 function getPeerReviewer (ticketHTML, program) {
-    var rawPeerReviewer = findPeerReviewer[program.codeName](ticketHTML);
-    return rawPeerReviewer; 
+    if (checkTicket(ticketHTML)) {
+        var rawPeerReviewer = findPeerReviewer[program.codeName](ticketHTML);
+        return rawPeerReviewer;
+    }    
 }
 
 function getSlides (ticketHTML, program) {
-    var slideComponents = findSlides[program.codeName](ticketHTML, program);
-    return slideComponents;
+    if (checkTicket(ticketHTML)) {
+        var slideComponents = findSlides[program.codeName](ticketHTML, program);
+        return slideComponents;
+    }
 }
 
 function getGoalStatement (ticketHTML, program) {
-    var goalStatement = findGoalStatement[program.codeName](ticketHTML, program);
-    return goalStatement;
+    if (checkTicket(ticketHTML)) {
+        var goalStatement = findGoalStatement[program.codeName](ticketHTML, program);
+        return goalStatement;
+    }    
 }
 
 function getTargetAudience(ticketHTML, program) {
-    var targetAudience = findTargetAudience[program.codeName](ticketHTML, program);
-    return targetAudience;
+    if (checkTicket(ticketHTML)) {
+        var targetAudience = findTargetAudience[program.codeName](ticketHTML, program);
+        return targetAudience;
+    }
 }
 
 function getLearningObjectives(ticketHTML, program) {
-    var learningObjectives = findLearningObjectives[program.codeName](ticketHTML, program);
-    return learningObjectives;
+    if (checkTicket(ticketHTML)) {
+        var learningObjectives = findLearningObjectives[program.codeName](ticketHTML, program);
+        return learningObjectives;
+    }
 }
 
 module.exports = {

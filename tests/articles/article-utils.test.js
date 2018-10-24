@@ -151,7 +151,6 @@ describe('Article Utilities', function () {
 
         it('should return Abbreviations TOC', function () {
             var abbreviationsMarkup = app.prodTicket.getAbbreviations(prodTicket, program);
-            console.log("ABBRV MARKUP: ", abbreviationsMarkup);
             var result = articleUtils.buildAbbreviations(abbreviationsMarkup, program).toObjectLiteral();
             result = utils.xmlOps.objectToXMLString(result);
             expect(result).to.equalIgnoreSpaces(completeAbbreviations);
