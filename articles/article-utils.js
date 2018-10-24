@@ -76,6 +76,7 @@ function buildSlidesTOC(slidesComponent, videoEmbed=false, eduImpactSubsection=f
     // INSERT: Educational Impact Subsection - If necessary 
     if (eduImpactSubsection) {
         var eduImpactSubsection = new SubsectionElement(true, false, false);
+        eduImpactSubsection.subsectionHeader = "Educational Impact Challenge";
         eduImpactSubsection.subsectionContent = utils.wrapSlideIntro(`<p>What did you learn from this activity? Please click on the “Next” button to proceed to a brief survey to see how your knowledge improved after the education. You can also see how your answers compare with those of your peers.</p>`);
         slidesSection.insertSubsectionElement(eduImpactSubsection);
     }

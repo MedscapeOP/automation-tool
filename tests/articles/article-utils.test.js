@@ -76,11 +76,11 @@ describe('Article Utilities', function () {
             expect(result).to.equalIgnoreSpaces(completeSlidesTOC2);
         });
 
-        // it('should return Slides TOC with an educational impact challenge subsection', function () {
-        //     var result = articleUtils.buildSlidesTOC(slidesComponent, false, true).toObjectLiteral();
-        //     result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
-        //     expect(result).to.equalIgnoreSpaces(completeSlidesTOC3);
-        // });
+        it('should return Slides TOC with an educational impact challenge subsection', function () {
+            var result = articleUtils.buildSlidesTOC(slidesComponent, false, true).toObjectLiteral();
+            result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
+            expect(result).to.equalIgnoreSpaces(completeSlidesTOC3);
+        });
     });
                     
     describe('#buildBlankTOC()', function () {
