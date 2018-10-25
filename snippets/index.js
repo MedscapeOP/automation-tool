@@ -1,6 +1,6 @@
 const inLanguage = require('./in-language');
 
-function forYourPatient (articleID, nameOfAddon, pdfFilename) {
+function downloadablePDF (articleID, nameOfAddon, pdfFilename) {
     return `<div class="downloadbtn">
             <div class="downloadbtn_lt"></div>
             <div class="downloadbtn_bg_pdf">
@@ -10,6 +10,10 @@ function forYourPatient (articleID, nameOfAddon, pdfFilename) {
             <div class="spacer">--SPACEENTITY--</div>
         </div>
         <div class="spacer">--SPACEENTITY--</div>`;
+}
+
+function forYourPatient(articleID) {
+    return downloadablePDF(articleID, "For Your Patient", `${articleID}_ForYourPatient.pdf`);
 }
 
 function downloadableSlides(articleID) {
@@ -77,7 +81,8 @@ In-Language stuff
 
 module.exports = {
     videoEmbed,
-    forYourPatient,
     downloadableSlides,
+    downloadablePDF,
+    forYourPatient,
     inLanguage
 };

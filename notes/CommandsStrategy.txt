@@ -1,0 +1,61 @@
+generate article  
+PROMPTS: IMPLEMENT NOW 
+- Choose program type: Radio Button picker
+- Please Enter Article ID: text input with validation  
+- Is Program LLA? YES/NO     
+- Is OUS? YES/NO
+- Peer Reviewer? YES/NO 
+- Collection Page? YES/NO
+    - Find URL and Collection Slug from ticket 
+    - Rest of info from internal db/config file 
+- Has Slide Deck? YES/NO 
+- Has For Your Patient PDF? YES/NO 
+    - Make new subsection and insert in the beginning of program 
+
+generate article  
+PROMPTS: FUTURE POSSIBLES 
+- Has Activity? YES/NO  
+    - Chain to this series of prompts: 
+        - Has CME Author
+        - Has CME Reviewer 
+        - Has Nurse 
+        - Has Pharma 
+        - Has MOC 
+- Has Transcript? YES/NO 
+
+
+generate il
+- Has EC? YES/NO 
+    - Choose your language(s): Checkbox picker 
+- Has Downloadable PDF? YES/NO 
+    - Choose your language(s): Checkbox picker 
+- Has Transcript PDF? YES/NO 
+    - Choose your language(s): Checkbox picker 
+- Has Subtitles? YES/NO 
+    - Choose your language(s): Checkbox picker 
+
+
+generate checklist    
+- Come up with getPlain...() functions that use find and NO formatting 
+    - Remove HTML EXCEPT:  
+        - <em>, <i>
+    - Decode Entities
+    - Replace each paragraph with \n
+    - Export plain text to the output file. 
+- OUTPUT FILE FORMATTING: 
+    - Use flags for each section
+    - All caps for flag for readability 
+    - 
+- Take program object 
+    - Use that to determine checklist function 
+- The checklist function should:
+    - run through all of the prodticket.get...() functions 
+    - Also put the default text necessary for program
+
+
+generate checklist --properties 
+- SEE excel for which ones to include 
+- Basically this is a subset of the full command above. 
+
+
+

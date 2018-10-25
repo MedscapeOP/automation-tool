@@ -6,28 +6,52 @@ const programs = {
         codeName: "brief",
         profArticleType: "Article",
         articleID: "",
-        hasLLA: false
+        hasLLA: false,
+        hasOUS: false, 
+        hasPeerReviewer: false, 
+        hasCollectionPage: false,
+        hasSlideDeck: false, 
+        hasForYourPatient: false, 
+        hasInLanguage: false 
     },
     spotlight: {
         name: "Spotlight",
         codeName: "spotlight",
         profArticleType: "SlidePresentation",
         articleID: "901602",
-        hasLLA: false 
+        hasLLA: false,
+        hasOUS: false, 
+        hasPeerReviewer: false, 
+        hasCollectionPage: false,
+        hasSlideDeck: false, 
+        hasForYourPatient: false, 
+        hasInLanguage: false  
     },
     curbsideConsult: {
         name: "Curbside Consult",
         codeName: "curbside",
         profArticleType: "SlidePresentation",
         articleID: "902082",
-        hasLLA: false
+        hasLLA: false,
+        hasOUS: false, 
+        hasPeerReviewer: false, 
+        hasCollectionPage: false,
+        hasSlideDeck: false, 
+        hasForYourPatient: false, 
+        hasInLanguage: false 
     },
     firstResponse: {
         name: "First Response",
         codeName: "firstResponse",
         profArticleType: "SlidePresentation",
         articleID: "900319",
-        hasLLA: false
+        hasLLA: false,
+        hasOUS: false, 
+        hasPeerReviewer: false, 
+        hasCollectionPage: false,
+        hasSlideDeck: false, 
+        hasForYourPatient: false, 
+        hasInLanguage: false 
     }
 };
 

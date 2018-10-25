@@ -1,0 +1,17 @@
+<prof_output_versions>
+    <intro>
+        <div id="dlSlides">
+            <p>A Powerpoint version of the slides from this presentation
+                <br/>
+is available for use as a professional resource from Medscape Education.
+            </p>
+            <div class="dlBtn">
+                <a target="_blank" href="https://img.medscape.com/images/897/908/897908_slides.pptx" class="cme_btn">Download Now</a>
+            </div>
+            <p class="legaltext">Medscape Education makes these downloadable slides available solely for non-commercial use by you as a reference tool. You may not use these slides for any commercial purpose or provide these slides to any third party for such party’s use for any commercial purpose. Please refer to the Medscape 
+                <a href="https://www.medscape.com/public/termsofuse" target="_blank">Terms of Use</a> for additional details.
+            </p>
+        </div>
+    </intro>
+    <content_below_media/>
+</prof_output_versions>

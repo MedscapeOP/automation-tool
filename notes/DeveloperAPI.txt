@@ -1,0 +1,45 @@
+1) TITLE - COMPLETE
+    - Find and Extract title from HTML - Built (prodticket.getTitle())
+    - Insert title into article - Built (ProfArticle.title) 
+2) CONTRIBUTOR PAGE INFO - COMPLETE 
+    - BYLINE: 
+        - Find and Extract - Built (prodticket.getByline())
+        - Insert into article - Built 
+            (ProfArticle.contrbtrByline or .contrbtrBylineText)
+    - CONTRIBUTOR POST CONTENT / Peer Reviewer: 
+        - Find and Extract - Built (prodticket.getPeerReviewer)
+        - Insert into article - Built (ProfArticle.contrbtrPostContent)
+3) BANNER - INCOMPLETE 
+        - Find and Extract - Not Built 
+            - (FINISH IMPLEMENTING - prodticket.getCollectionPage)
+        - Insert into article - Built 
+            - BANNER IMAGE: use ProfArticle.bannerImage
+                - Pass banner filename
+            - ABOVE TITLE: use ProfArticle.insertAboveTitleCA()  
+                - Pass advancesTitle, and advancesFileName (strings)   
+4) SLIDES CONTENT - COMPLETE 
+    - Find and Extract from prodticket: prodticket.js.getSlides()
+    - Insert into article: 
+        - Use: articleUtils.buildSlidesTOC()
+            - Pass slideComponent object 
+        - Then Use: ProfArticle.insertTOCElement() 
+5) PRE/POST ASSESSMENT - COMPLETE
+    - Find and Extract - Built (prodticket.getGoalStatement)
+    - Insert into article - Built 
+        - Use: 
+            - articleUtils.buildLLAPreTOC(goalStatementMarkup)
+            - articleUtils.buildLLAPostTOC()
+6) BLANK RESULTS PAGE - COMPLETE
+    - Insert into article - Built 
+        - Use: 
+            - articleUtils.buildBlankTOC()
+7) ABBREVIATIONS - COMPLETE
+    - Find and Extract - Built (prodticket.getAbbreviations())
+    - Insert into article - Built 
+        - Use: 
+            - articleUtils.buildAbbreviations()
+8) REFERENCES - COMPLETE 
+    - Find and Extract - Built (prodticket.getReferences())
+    - Insert into article - Built 
+        - Use: 
+            - articleUtils.buildReferences()

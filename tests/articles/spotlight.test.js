@@ -91,12 +91,13 @@ describe('Spotlight', function () {
 
     describe('#buildSpotlight()', function () {
         it('should return complete XML string of Spotlight article', function () {
-            // var result = spotlight.buildSpotlight(prodTicket, program).toObjectLiteral();
+            var result = spotlight.buildSpotlight(prodTicket, program).toObjectLiteral();
 
-            // var differences = [                
-            // ];
+            var differences = [                
+            ];
 
-            // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
+            console.log("RESULT: ", result);
+            utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
 
             // result = utils.xmlOps.objectToXMLString(result);
             // expect(result).to.equalIgnoreSpaces(completeSpotlight)

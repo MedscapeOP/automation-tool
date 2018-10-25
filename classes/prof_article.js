@@ -368,6 +368,7 @@ class ProfArticle extends XMLElement{
         }
     }
 
+    // AKA Content Above Contributors 
     get contrbtrPreContent() {
         if (this._contrbtr_pre_content.elements[0]) {
             return xmlOps.objectToXMLString(this._contrbtr_pre_content);
@@ -385,6 +386,7 @@ class ProfArticle extends XMLElement{
         }
     }
 
+    // AKA Content Below Contributors 
     get contrbtrPostContent() {
         if (this._contrbtr_post_content.elements[0]) {
             return xmlOps.objectToXMLString(this._contrbtr_post_content);

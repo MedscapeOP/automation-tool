@@ -12,27 +12,37 @@ let expect = chai.expect;
 
 
 describe('Snippet Module Functions', function () {
-    // beforeEach(function() {});
+    beforeEach(function() {});
 
-    // describe("snippets.forYourPatient()", function () {
-    //     let forYourPatientHTML = fs.readFileSync(__dirname + "/input/for-your-patient.html");
+    describe("snippets.downloadablePDF()", function () {
+        let downloadablePDFHTML = fs.readFileSync(__dirname + "/input/downloadable-pdf.html");
 
-    //     it("should return a html snippet for PTL pdf (specific to the articleID)", function () {
-    //         var result = snippets.forYourPatient("900219", "For Your Patient", "ForYourPatient.pdf");
-    //         
-    //         expect(result).to.equalIgnoreSpaces(forYourPatientHTML.toString());
-    //     });
-    // });
+        it("should return a html snippet for downloadable PDF", function () {
+            var result = snippets.downloadablePDF("900219", "For Your Patient", "ForYourPatient.pdf");
+            
+            expect(result).to.equalIgnoreSpaces(downloadablePDFHTML.toString());
+        });
+    });
 
-    // describe("snippets.downloadableSlides()", function () {
-    //     let downloadableSlidesHTML = fs.readFileSync(__dirname + "/input/downloadable-slides.html");
+    describe("snippets.forYourPatient()", function () {
+        let forYourPatientHTML = fs.readFileSync(__dirname + "/input/for-your-patient.html");
 
-    //     it("should return a html snippet for downloadable slides (specific to the articleID)", function () {
-    //         var result = snippets.downloadableSlides("900219");
-    //         
-    //         expect(result).to.equalIgnoreSpaces(downloadableSlidesHTML.toString());
-    //     });
-    // });
+        it("should return a html snippet for PTL pdf (specific to the articleID)", function () {
+            var result = snippets.forYourPatient("900219");
+
+            expect(result).to.equalIgnoreSpaces(forYourPatientHTML.toString());
+        });
+    });
+
+    describe("snippets.downloadableSlides()", function () {
+        let downloadableSlidesHTML = fs.readFileSync(__dirname + "/input/downloadable-slides.html");
+
+        it("should return a html snippet for downloadable slides (specific to the articleID)", function () {
+            var result = snippets.downloadableSlides("900219");
+            
+            expect(result).to.equalIgnoreSpaces(downloadableSlidesHTML.toString());
+        });
+    });
 
     describe("snippets.inLanguage", function () {
         describe("expertCommentary()", function () {

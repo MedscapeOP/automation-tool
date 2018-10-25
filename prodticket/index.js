@@ -41,6 +41,8 @@ function getTitle (ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
         var rawTitle = findTitle[program.codeName](ticketHTML);
         return rawTitle;
+    } else {
+        return "TITLE IS BAD";
     }
 }
 
@@ -100,6 +102,36 @@ function getLearningObjectives(ticketHTML, program) {
     }
 }
 
+function getCollectionPage(ticketHTML, program) {
+    /* 
+        Should return the collection page as an object 
+        {
+            type: "Clinical Advances", 
+            url: "https://www.medscape.org/sites/advances/anticoagulation-thrombosis",
+            title: "Clinical Advances in Anticoagulation Management and Vascular Protection" 
+        }
+
+        - APPROACH:
+            - Check Prodticket for Is there a collection Page?
+                - If yes move on otherwise return null 
+            - Get the Type and URL from the Prodticket and update 
+              result object.  
+                - Check Prodticket for Is there a collection Page?
+                - If yes move on otherwise return null 
+            - Then complete the result object properties using one of the strategies below. 
+
+            Strategy 1: Build internal database of collection pages that we pull from to extract data.  
+
+            Strategy 2: Should request the collection page URL if there is one and extract necessary info (banner image filename, title, & type).
+            - Make request using axios to the URL 
+            - Take the response object and search it for: 
+                - the first instance of <title> 
+                    - This will be the title of the collection page.
+            - Return a Promise object to handle async issues         
+
+    */
+}
+
 module.exports = {
     getTitle,
     getByline,
@@ -109,5 +141,6 @@ module.exports = {
     getSlides,
     getGoalStatement,
     getTargetAudience, 
-    getLearningObjectives
+    getLearningObjectives,
+    getCollectionPage
 }
