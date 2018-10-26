@@ -7,7 +7,7 @@
 			<subsec_header />
 			<slide_intro>
 				<div class="app-loading">
-					<div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/901602/901602.json" data-playertype="edu" id="cme-video-player">&nbsp;</div>
+					<div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/901602/901602.json" data-playertype="edu" id="cme-video-player">&#160;</div>
 				</div>
 				<div id="page_nav_top">
 					<div id="prev_page_nav">
@@ -19,7 +19,7 @@
 							<img alt="" border="0" class="inline_img" src="http://img.medscape.com/pi/cme/ornaments/arrow-next-toc.png" />
 						</a>
 					</div>
-					<div class="spacer">&nbsp;</div>
+					<div class="spacer">&#160;</div>
 				</div>
 			</slide_intro>
 			<slide_grp>

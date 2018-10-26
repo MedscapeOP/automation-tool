@@ -17,7 +17,7 @@
                     </strong>&#160;&#12395;&#25147;&#12387;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
                 </p>
                 <div class="app-loading">
-                    <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/900219/900219_j.json" data-playertype="edu" id="cme-video-player">&nbsp;</div>
+                    <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/900219/900219_j.json" data-playertype="edu" id="cme-video-player">&#160;</div>
                 </div>
             </slide_intro>
         </subsec_element>

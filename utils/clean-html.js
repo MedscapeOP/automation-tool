@@ -379,7 +379,7 @@ function cleanEntities (xmlString) {
 
     // Remove Entity Placeholders
     var blankRegExp = new RegExp('--SPACEENTITY--', 'g');
-    clean = clean.replace(blankRegExp, "&nbsp;");
+    clean = clean.replace(blankRegExp, "&#160;");
 
     var entityRegexp2 = new RegExp('--ENTITY(#?[0-9]+);--', 'g');
     clean = clean.replace(entityRegexp2, '&$1;');
