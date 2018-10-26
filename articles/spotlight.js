@@ -91,15 +91,17 @@ function buildSpotlight(ticket, program) {
     byline = prodticket.getByline(ticket, program);
     if (program.hasPeerReviewer) {
         peerReviewer = prodticket.getPeerReviewer(ticket, program);
-    }
+    } 
     if (program.hasCollectionPage) {
         collectionPageInfo = prodticket.getCollectionPage(ticket, program);
     }
-    slidesTOC = getSlidesTOC(ticket, program);
-    preAssessmentTOC = getLLAPreTOC(ticket, program);
-    postAssessmentTOC = getLLAPostTOC(ticket, program);
-    blankResultsTOC = articleUtils.buildBlankTOC();
+    if (program.hasLLA) {
+        preAssessmentTOC = getLLAPreTOC(ticket, program);
+        postAssessmentTOC = getLLAPostTOC(ticket, program);
+        blankResultsTOC = articleUtils.buildBlankTOC();
+    }
 
+    slidesTOC = getSlidesTOC(ticket, program); 
     var abbreviationsMarkup = prodticket.getAbbreviations(ticket, program);
     abbreviationsTOC = articleUtils.buildAbbreviations(abbreviationsMarkup, program);
 
@@ -112,24 +114,28 @@ function buildSpotlight(ticket, program) {
     
 
     // Build Main Article Object - Instantiate and Populate Article
-    var finalArticle = new ProfArticle("Article");
+    var finalArticle = new ProfArticle("SlidePresentation");
     // Set article title (pass markup)
     finalArticle.titleText = title;
     // Set article byline (pass markup)
     finalArticle.contrbtrByline = byline;
     // remove existing contrbtr_pre_content
     finalArticle.contrbtrPreContent = null;
+    // insert peer reviewer
+    finalArticle.contrbtrPostContent = peerReviewer;
+    // insert collection page info - Banner image and Above title
+    if (collectionPageInfo) {
+        finalArticle.bannerImage = collectionPageInfo.bannerFileName;
+        finalArticle.insertAboveTitleCA(collectionPageInfo.title, collectionPageInfo.advancesFileName);
+    } 
           
-    // // Insert Main TOC Object & Insert References TOC Object 
-    // finalArticle.insertTOCElement(mainTOCInstance);
-    // finalArticle.insertTOCElement(referencesTOC);
-    
-    // var mainTOCInstance = new TOCElement();
-    // mainTOCInstance.insertSectionElement(clinicalContext);
-    // mainTOCInstance.insertSectionElement(synopsisAndPerspective);
-    // mainTOCInstance.insertSectionElement(studyHighlights);
-    // mainTOCInstance.insertSectionElement(clinicalImplications);
-    // mainTOCInstance.insertSectionElement(cmeTest);
+    // Insert Main TOC Objects  
+    finalArticle.insertTOCElement(preAssessmentTOC);
+    finalArticle.insertTOCElement(slidesTOC);
+    finalArticle.insertTOCElement(postAssessmentTOC);
+    finalArticle.insertTOCElement(blankResultsTOC);
+    finalArticle.insertTOCElement(abbreviationsTOC);
+    finalArticle.insertTOCElement(referencesTOC);
     
     return finalArticle;
 };

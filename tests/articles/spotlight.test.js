@@ -91,13 +91,22 @@ describe('Spotlight', function () {
 
     describe('#buildSpotlight()', function () {
         it('should return complete XML string of Spotlight article', function () {
+            program.hasCollectionPage = true;
+            program.hasPeerReviewer = true;
+
             var result = spotlight.buildSpotlight(prodTicket, program).toObjectLiteral();
+
+            // console.log("RESULT: ", JSON.stringify(result, undefined, 2));
 
             var differences = [                
             ];
 
-            console.log("RESULT: ", result);
-            utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
+            result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
+
+            fs.writeFileSync(__dirname + '/output/spotlight/finished-sl.xml', result);
+
+            // console.log("RESULT: ", result);
+            // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
 
             // result = utils.xmlOps.objectToXMLString(result);
             // expect(result).to.equalIgnoreSpaces(completeSpotlight)

@@ -80,8 +80,8 @@ describe('Prof Article Element', function () {
 
     /* TEST GETTERS AND SETTERS FOR CONTRIBUTOR POST CONTENT (PEER REVIEWER) */
     describe('#get/set .contrbtrPostContent', function () {
-        it('should set and get byline markup and return null if no byline', function (done) {
-            profArticleInstance.contrbtrPostContent = "<p>Reviewer Disclosure<br/>Served as a consultant for: Abbot; Heartware ; Medtronic; Thoratec;</p>";
+        it('should set and get post content markup and return null if no peer reviewer', function (done) {
+            profArticleInstance.contrbtrPostContent = "<div><h3>Peer Reviewer</h3><p>Reviewer Disclosure<br/>Served as a consultant for: Abbot; Heartware ; Medtronic; Thoratec;</p></div>";
 
             expect(profArticleInstance.contrbtrPostContent).to.equal('<h3>Peer Reviewer</h3><p>Reviewer Disclosure<br/>Served as a consultant for: Abbot; Heartware ; Medtronic; Thoratec;</p>');
             done();
@@ -95,6 +95,7 @@ describe('Prof Article Element', function () {
             profArticleInstance.bannerImage = "banner-evolving-anticoagulation-2017.jpg";
 
             // console.log("BANNER IMAGE: ", profArticleInstance.bannerImage);
+            // expect(profArticleInstance.bannerImage).to.equal('/webmd/professional_assets/medscape/images/title_background/banner-evolving-anticoagulation-2017.jpg?interpolation=lanczos-none&resize=1240:600');
             expect(profArticleInstance.bannerImage).to.equal('/webmd/professional_assets/medscape/images/title_background/banner-evolving-anticoagulation-2017.jpg');
             done();
         });

@@ -70,7 +70,7 @@ function getAbbreviations (ticketHTML, program) {
 function getPeerReviewer (ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
         var rawPeerReviewer = findPeerReviewer[program.codeName](ticketHTML);
-        return rawPeerReviewer;
+        return `<div>${rawPeerReviewer}</div>`;
     }    
 }
 
@@ -105,12 +105,6 @@ function getLearningObjectives(ticketHTML, program) {
 function getCollectionPage(ticketHTML, program) {
     /* 
         Should return the collection page as an object 
-        {
-            type: "Clinical Advances", 
-            url: "https://www.medscape.org/sites/advances/anticoagulation-thrombosis",
-            title: "Clinical Advances in Anticoagulation Management and Vascular Protection" 
-        }
-
         - APPROACH:
             - Check Prodticket for Is there a collection Page?
                 - If yes move on otherwise return null 
@@ -130,6 +124,13 @@ function getCollectionPage(ticketHTML, program) {
             - Return a Promise object to handle async issues         
 
     */
+    return {
+        type: "Clinical Advances", 
+        url: "https://www.medscape.org/sites/advances/anticoagulation-thrombosis",
+        title: "Clinical Advances in Anticoagulation Management and Vascular Protection",
+        bannerFileName: "33543-collection-header.png",
+        advancesFileName: "anticoagulation-thrombosis" 
+    };
 }
 
 module.exports = {

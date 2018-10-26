@@ -1,6 +1,7 @@
 const _ = require("lodash");
 const XMLElement = require("./xml_element");
 const xmlOps = require('../utils/index').xmlOps;
+const TOCElement = require('./toc_element');
 
 class ProfArticle extends XMLElement{
     constructor(type = "Article", hasOUS = false, hasQnaForm = false, hasFootnotes = false) {
@@ -398,22 +399,9 @@ class ProfArticle extends XMLElement{
     set contrbtrPostContent(newPostContentMarkup) {
         if (newPostContentMarkup) {
             // Only need Peer Reviewer if NON-OUS 
-            var contentIndex = 0;
-            if (!this.hasOUS) {
-                this._contrbtr_post_content.elements[0] = {
-                    "type": "element",
-                    "name": "h3",
-                    "elements": [
-                        {
-                            "type": "text",
-                            "text": "Peer Reviewer"
-                        }
-                    ]
-                };
-                contentIndex++;
-            } 
+            console.log(newPostContentMarkup);             
             var postContentObject = xmlOps.xmlStringToJS(newPostContentMarkup);
-            this._contrbtr_post_content.elements[contentIndex] = postContentObject.elements[0];
+            this._contrbtr_post_content.elements = postContentObject.elements[0].elements;
         } else {
             this._contrbtr_post_content.elements = [];
         }
@@ -499,7 +487,9 @@ class ProfArticle extends XMLElement{
         /* 
             - Pushes the new toc_element onto the this._toc_elements array
         */
-       this._toc_elements.push(tocElement.toObjectLiteral().elements[0]);
+       if ((tocElement) && (tocElement instanceof TOCElement)) {
+           this._toc_elements.push(tocElement.toObjectLiteral().elements[0]);
+       }
     }
 
     toFinalXML() {

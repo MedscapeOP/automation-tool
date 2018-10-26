@@ -307,7 +307,7 @@ function peerReviewer(string, removeFluff=true) {
     clean = clean.replace(servedRegExp2, "$1");
 
     var servedRegExp3 = /(Served|served)/g;
-    clean = clean.replace(servedRegExp3, "<br>$1");
+    clean = clean.replace(servedRegExp3, "<br/>$1");
 
     // "Recieved" statements 
     // var recievedRegExp = /<p>(Recieved|recieved)/g;
@@ -317,7 +317,7 @@ function peerReviewer(string, removeFluff=true) {
     clean = clean.replace(recievedRegExp2, "$1");
 
     var recievedRegExp3 = /(Recieved|recieved)/g;
-    clean = clean.replace(recievedRegExp3, "<br>$1");
+    clean = clean.replace(recievedRegExp3, "<br/>$1");
 
     // "Owns" statements
     // var ownsRegExp = /<p>(Owns|owns)/g;
@@ -327,7 +327,7 @@ function peerReviewer(string, removeFluff=true) {
     clean = clean.replace(ownsRegExp2, "$1");
 
     var ownsRegExp3 = /(Owns|owns)/g;
-    clean = clean.replace(ownsRegExp3, "<br>$1");
+    clean = clean.replace(ownsRegExp3, "<br/>$1");
 
     return clean;
 }

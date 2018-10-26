@@ -146,7 +146,7 @@
                 <subsec_header/>
                 <slide_intro>
                     <div class="app-loading">
-                        <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/901602/901602.json" data-playertype="edu" id="cme-video-player"></div>
+                        <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/901602/901602.json" data-playertype="edu" id="cme-video-player">&nbsp;</div>
                     </div>
                     <div id="page_nav_top">
                         <div id="prev_page_nav">
@@ -158,7 +158,7 @@
                                 <img alt="" border="0" class="inline_img" src="http://img.medscape.com/pi/cme/ornaments/arrow-next-toc.png"/>
                             </a>
                         </div>
-                        <div class="spacer"></div>
+                        <div class="spacer">&nbsp;</div>
                     </div>
                 </slide_intro>
                 <slide_grp>
@@ -491,18 +491,11 @@
                     <sec_caption/>
                     <sec_txt>
                         <h3>Thank you</h3>
+                        <em>This content has been condensed for improved clarity.</em>
                     </sec_txt>
                     <sec_alt_txt>Slide 23.</sec_alt_txt>
                     <qna_form/>
                 </slide_grp>
-            </subsec_element>
-            <subsec_element>
-                <subsec_header/>
-                <slide_intro>
-                    <p>
-                        <em>This content has been condensed for improved clarity.</em>
-                    </p>
-                </slide_intro>
             </subsec_element>
             <subsec_element>
                 <subsec_header>
