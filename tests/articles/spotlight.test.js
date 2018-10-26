@@ -5,7 +5,7 @@ const chai = require('chai');
 chai.use(require('chai-string'));
 let expect = chai.expect;
 
-const app = require('../../app');
+const app = require('../../automation-tool');
 const utils = app.utils;
 const spotlight = app.articles.spotlight;
 

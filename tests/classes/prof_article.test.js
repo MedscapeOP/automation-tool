@@ -2,7 +2,7 @@ const fs = require('fs');
 const _ = require("lodash");
 const expect = require('chai').expect;
 
-const app = require('../../app');
+const app = require('../../automation-tool');
 const ProfArticle = app.classes.ProfArticle;
 const TOCElement = app.classes.TOCElement;
 const utils = app.utils;

@@ -2,7 +2,7 @@
 const fs = require('fs');
 const chai = require('chai');
 
-const app = require('../../app');
+const app = require('../../automation-tool');
 const config = app.config;
 const utils = app.utils;
 const snippets = app.snippets;

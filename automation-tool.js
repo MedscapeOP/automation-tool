@@ -4,6 +4,7 @@ const classes = require('./classes');
 const prodTicket = require('./prodticket');
 const snippets = require('./snippets');
 const articles = require('./articles');
+const commands = require('./commands');
 
 module.exports = {
     config,
@@ -11,5 +12,6 @@ module.exports = {
     classes,
     prodTicket,
     snippets,
-    articles
+    articles,
+    commands
 };
