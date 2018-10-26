@@ -1,7 +1,7 @@
 var fs = require('fs');
 var expect = require('chai').expect;
 
-const app = require('../../automation-tool');
+const app = require('../../commands');
 var utils = app.utils;
 const SubsectionElement = app.classes.SubsectionElement;
 

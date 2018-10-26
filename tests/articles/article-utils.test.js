@@ -5,7 +5,7 @@ const chai = require('chai');
 chai.use(require('chai-string'));
 let expect = chai.expect;
 
-const app = require('../../automation-tool');
+const app = require('../../commands');
 const utils = app.utils;
 const articleUtils = app.articles.articleUtils;
 const {SubsectionElement, SectionElement, TOCElement, ProfArticle} = app.classes;

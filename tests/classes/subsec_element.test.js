@@ -3,7 +3,7 @@ const _ = require("lodash");
 const utils = require("../../utils");
 const expect = require('chai').expect;
 
-const app = require("../../automation-tool");
+const app = require("../../commands");
 const SubsectionElement = app.classes.SubsectionElement;
 
 describe('Subsection Element', function () {

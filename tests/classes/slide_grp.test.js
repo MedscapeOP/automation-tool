@@ -3,7 +3,7 @@ const expect = require('chai').expect;
 // const _ = require("lodash");
 
 
-const app = require('../../automation-tool');
+const app = require('../../commands');
 const SlideGroup = app.classes.SlideGroup;
 const utils = app.utils;
 
