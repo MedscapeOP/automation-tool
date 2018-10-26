@@ -43,6 +43,21 @@ function removeTicketFluff(str) {
     var peerReviewerRegExp2 = /<p><strong>Include Peer Reviewer.*/g
     str = str.replace(peerReviewerRegExp2, "");
 
+    // Remove Add References / Add Abbreviations 
+    // <p><em>Add references below:</em></p>
+    // <em>Add abbreviations below:</em>
+    var addRefRegExp = /<p><em>Add references below:<\/em><\/p>/gi;
+    str = str.replace(addRefRegExp, "");
+
+    var addRefRegExp2 = /<em>Add references below:<\/em>/gi;
+    str = str.replace(addRefRegExp2, "");
+
+    var addAbbrevRegExp = /<p><em>Add abbreviations below:<\/em><\/p>/gi;
+    str = str.replace(addAbbrevRegExp, "");
+
+    var addAbbrevRegExp2 = /<em>Add abbreviations below:<\/em>/gi;
+    str = str.replace(addAbbrevRegExp2, "");
+
     return str;
 }
 
