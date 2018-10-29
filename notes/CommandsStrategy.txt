@@ -73,3 +73,33 @@ the command
 
 - Use vorpal.exec('nameOfCommand');
     - This is useful for programmatically triggering commands 
+
+- Emit events?? - Look into this 
+// vorpal.emit('client_prompt_submit', 'properties');
+
+
+
+CATCHING ERRORS
+- Use a set of Exception classes
+- Throw instances of these within core module functions 
+- Use try/catch blocks in the commands 
+    - This is where the exceptions would be caught and 
+      shown to the user. 
+EXAMPLE: core module 
+if (someProblem) {
+    throw new utils.RandomException(`What the user should do differently...`);
+} 
+
+EXAMPLE 2: command 
+}, (result) => {
+if (result.yes) {
+    try {
+        this.log(store.removeComponent(args.name));
+    } catch (error) {
+        this.log(error);
+        callback(); 
+    }                                
+} else {
+    this.log('component not removed');
+}
+callback(); 

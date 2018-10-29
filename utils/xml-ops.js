@@ -1,5 +1,6 @@
 const convert = require('xml-js');
 const fs = require('fs');
+const cliTools = require('./cli-tools');
 
 function xmlStringToJS(xmlString) {
     var options = { compact: false, alwaysChildren: true, spaces: 4 };
@@ -20,6 +21,7 @@ function writeXMLFromObject(object, pathToFile) {
     var result = convert.js2xml(object, options);
     fs.writeFile(pathToFile, result, function (err) {
         if (err) {
+            // throw new cliTools.RandomException(err.message);
             return console.log(err);
         }
         // console.log("The new file was created!");

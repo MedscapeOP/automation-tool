@@ -6,6 +6,7 @@
 // REQUIRES
 // ------------------------------------------------------------
 const _ = require('lodash');
+
 const utils = require('../utils');
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
@@ -21,6 +22,7 @@ Generates code for in language add-ons. ${N}Use flags for components you wish to
 
 const languageChoices = _.keys(languages);
 
+let outputFile = 'inLanguage.html';
 
 // EXPORT
 // ------------------------------------------------------------
@@ -35,7 +37,8 @@ module.exports = function (vorpal) {
     .action(function(args, callback) {
         let message = `Please choose which languages.`;
         let self = this;
-        self.log(args.stdin[0]);
+        self.log("Arguments: ", args);
+        // self.log("Current Working Dir: ", cliTools.getOutputDirectory());
         // args.options.template --> option flag value (true/false)
         // args.stdin[0] --> input from the user         
         self.prompt({
@@ -53,8 +56,8 @@ module.exports = function (vorpal) {
         }, (answers) => {            
             if (answers) {
                 try {                                         
-                    // vorpal.emit('client_prompt_submit', 'properties');
-                    self.log(answers);
+                    var text = "<h1>Test Output From Command</h1>";
+                    utils.cliTools.writeOutputFile(outputFile, text);
                     callback();                                     
                 } catch (error) {
                     self.log(error);
