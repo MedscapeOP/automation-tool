@@ -58,4 +58,18 @@ generate checklist --properties
 - Basically this is a subset of the full command above. 
 
 
+CODING STRATEGY: 
+- Use Pipes for post formatting / auto processing of output 
 
+- Use Options for choosing a particular 'way' of performing 
+the command 
+    - Example: generate article --brief
+    - Options Help: gets triggered by typing the command and then 
+      an empty options flag 
+      EXAMPLE: generate article --
+        - this will return a list of possible options. 
+
+- Use Prompts for chaining required input 
+
+- Use vorpal.exec('nameOfCommand');
+    - This is useful for programmatically triggering commands 

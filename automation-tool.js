@@ -1,11 +1,12 @@
-const commands = require('./commands');
-
+#!/usr/bin/env node
 // #! /usr/bin/env node
 const fs = require("fs");
 const os = require("os");
 const _ = require("lodash");
 const vorpal = require('vorpal')();
 const chalk = vorpal.chalk;
+
+const commands = require('./commands');
 
 // MODULE HIERARCHY: tests/app > commands > coremodules > utils
     // utils ONLY import other utils  
@@ -19,6 +20,6 @@ const chalk = vorpal.chalk;
 vorpal
     // Define app delimiter (the name in the command line) 
     .delimiter(chalk.magenta('op-automation-tool$'))
-    .use(commands.commands)
+    .use(commands.commands(vorpal))
     // Show the delimiter prompt in the shell (keep the prompt running)
     .show();

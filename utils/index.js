@@ -5,6 +5,7 @@ const stringOps = require('./string-ops');
 const cleanHTML = require('./clean-html');
 const pathBuilder = require('./path-builder');
 const formatLearningObjectives = require('./format-learning-objectives');
+const cliTools = require('./cli-tools');
 
 function trimObjectText(xmlJSObject) {
     /*
@@ -51,6 +52,7 @@ function wrapSlideIntro(textBlock, cleaningFn) {
 module.exports = {
     stringOps,
     xmlOps,
+    cliTools,
     formatList,
     formatLearningObjectives,
     trimObjectText,

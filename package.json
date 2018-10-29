@@ -8,6 +8,9 @@
   },
   "author": "Brandon Antonelli",
   "license": "ISC",
+  "bin": {
+    "automation-tool": "./automation-tool.js"
+  },
   "dependencies": {
     "lodash": "^4.17.10",
     "npm": "^6.1.0",
