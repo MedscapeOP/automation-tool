@@ -60,7 +60,7 @@ function expertCommentary(articleID, language, programTitle) {
     return buildInLanguageTOC(slideIntro, sectionHeader, tocType, tocLabel);
 }
 
-function downloadablePDF (articleID, language) {
+function downloadablePDF (articleID, language, programTitle) {
     var firstThree = articleID.slice(0, 3);
     var lastThree = articleID.slice(3);
     var tocLabel = language.downloadablePDF.calloutText;
@@ -70,7 +70,7 @@ function downloadablePDF (articleID, language) {
     return buildInLanguageTOC(slideIntro, sectionHeader, tocType, tocLabel);
 }
 
-function transcriptPDF(articleID, language) {
+function transcriptPDF(articleID, language, programTitle) {
     var firstThree = articleID.slice(0, 3);
     var lastThree = articleID.slice(3);
     var tocLabel = language.transcriptPDF.calloutText;
@@ -80,7 +80,7 @@ function transcriptPDF(articleID, language) {
     return buildInLanguageTOC(slideIntro, sectionHeader, tocType, tocLabel);
 }
 
-function subtitles(articleID, language) {
+function subtitles(articleID, language, programTitle) {
     var tocLabel = language.subtitles.calloutText; 
     var sectionHeader = language.subtitles.calloutText;
     var tocType = language.subtitles.tocType;

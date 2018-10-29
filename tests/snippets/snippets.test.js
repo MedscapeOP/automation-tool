@@ -90,7 +90,7 @@ describe('Snippet Module Functions', function () {
 
 
             it("should return TOCElement with appropriate TOC Type & Label, Section Header, and Slide Intro - German", function () {
-                var result = snippets.inLanguage.downloadablePDF("900219", config.languages.german);
+                var result = snippets.inLanguage.downloadablePDF("900219", config.languages.german, null); 
                 result = utils.xmlOps.objectToXMLString(result.toObjectLiteral());
                 
                 result = utils.cleanHTML.cleanEntities(result);
@@ -98,7 +98,7 @@ describe('Snippet Module Functions', function () {
             });
     
             it("should return TOCElement with appropriate TOC Type & Label, Section Header, and Slide Intro - Italian", function () {
-                var result = snippets.inLanguage.downloadablePDF("900219", config.languages.italian);
+                var result = snippets.inLanguage.downloadablePDF("900219", config.languages.italian, null);
                 result = utils.xmlOps.objectToXMLString(result.toObjectLiteral());
                 
                 result = utils.cleanHTML.cleanEntities(result);
@@ -123,7 +123,7 @@ describe('Snippet Module Functions', function () {
 
 
             it("should return TOCElement with appropriate TOC Type & Label, Section Header, and Slide Intro - German", function () {
-                var result = snippets.inLanguage.transcriptPDF("900219", config.languages.german);
+                var result = snippets.inLanguage.transcriptPDF("900219", config.languages.german, null);
                 result = utils.xmlOps.objectToXMLString(result.toObjectLiteral());
                 
                 result = utils.cleanHTML.cleanEntities(result);
@@ -131,7 +131,7 @@ describe('Snippet Module Functions', function () {
             });
     
             it("should return TOCElement with appropriate TOC Type & Label, Section Header, and Slide Intro - Italian", function () {
-                var result = snippets.inLanguage.transcriptPDF("900219", config.languages.italian);
+                var result = snippets.inLanguage.transcriptPDF("900219", config.languages.italian, null);
                 result = utils.xmlOps.objectToXMLString(result.toObjectLiteral());
                 
                 result = utils.cleanHTML.cleanEntities(result);
@@ -155,7 +155,7 @@ describe('Snippet Module Functions', function () {
             var subJapanese = (fs.readFileSync(__dirname + "/input/sub-japanese.xml").toString());
 
             it("should return TOCElement with appropriate TOC Type & Label, Section Header, and Slide Intro - German", function () {
-                var result = snippets.inLanguage.subtitles("900219", config.languages.german);
+                var result = snippets.inLanguage.subtitles("900219", config.languages.german, null);
                 result = utils.xmlOps.objectToXMLString(result.toObjectLiteral());
                 result = utils.cleanHTML.cleanEntities(result);
                 
@@ -165,7 +165,7 @@ describe('Snippet Module Functions', function () {
             });
     
             it("should return TOCElement with appropriate TOC Type & Label, Section Header, and Slide Intro - Italian", function () {
-                var result = snippets.inLanguage.subtitles("900219", config.languages.italian);
+                var result = snippets.inLanguage.subtitles("900219", config.languages.italian, null);
                 result = utils.xmlOps.objectToXMLString(result.toObjectLiteral());
                 result = utils.cleanHTML.cleanEntities(result);
 
@@ -176,7 +176,7 @@ describe('Snippet Module Functions', function () {
             });
 
             it("should return TOCElement with appropriate TOC Type & Label, Section Header, and Slide Intro - Japanese", function () {
-                var result = snippets.inLanguage.subtitles("900219", config.languages.japanese);
+                var result = snippets.inLanguage.subtitles("900219", config.languages.japanese, null);
                 result = utils.xmlOps.objectToXMLString(result.toObjectLiteral());              
                 result = utils.cleanHTML.cleanEntities(result);                
                 expect(result).to.equalIgnoreSpaces(subJapanese);

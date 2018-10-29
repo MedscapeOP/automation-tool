@@ -68,6 +68,8 @@ the command
       an empty options flag 
       EXAMPLE: generate article --
         - this will return a list of possible options. 
+    - // args.options.template --> value for --template option (true/false)
+        // args.stdin[0] --> input from the user
 
 - Use Prompts for chaining required input 
 
