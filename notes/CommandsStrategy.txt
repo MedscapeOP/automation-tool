@@ -24,16 +24,18 @@ PROMPTS: FUTURE POSSIBLES
 - Has Transcript? YES/NO 
 
 
-generate il
-- Has EC? YES/NO 
+generate il <articleID>
+- Enter Article Title: Input 
+- Has EC? YES/NO : Confirm
     - Choose your language(s): Checkbox picker 
-- Has Downloadable PDF? YES/NO 
+- Has Downloadable PDF? YES/NO : Confirm 
     - Choose your language(s): Checkbox picker 
-- Has Transcript PDF? YES/NO 
+- Has Transcript PDF? YES/NO : Confirm
     - Choose your language(s): Checkbox picker 
-- Has Subtitles? YES/NO 
+- Has Subtitles? YES/NO : Confirm
     - Choose your language(s): Checkbox picker 
 
+// Access option via --> args.options.nameOfOption 
 
 generate checklist    
 - Come up with getPlain...() functions that use find and NO formatting 
