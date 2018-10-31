@@ -26,13 +26,11 @@ FUNCTION REQUIREMENTS:
 */
 
 let startSlideMatches = [
-    /<p><strong>&lt;&lt;component/g,
-    /<p><strong>&lt;&lt;Component/g,
-    /<p>&lt;&lt;component/g,
-    /<p>&lt;&lt;Component/g,
-    /<p><strong>&lt;&lt;.*slide 1/g,
-    /<p>&lt;&lt;.*slide 1/g,
-    /<strong>Content<\/strong>/g
+    /<p><strong>&lt;&lt;component/gi,
+    /<p>&lt;&lt;component/gi,
+    /<p><strong>&lt;&lt;.*slide 1/gi,
+    /<p>&lt;&lt;.*slide 1/gi,
+    /<strong>Content<\/strong>/gi
 ];
 let endSlideMatches = [
     /.*end slides&gt;&gt;.*/g, 

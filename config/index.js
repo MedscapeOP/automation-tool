@@ -1,6 +1,6 @@
 const languages = require('./languages');
 
-const programs = {
+let programs = {
     clinicalBrief: {
         name: "Clinical Brief",
         codeName: "brief",
@@ -55,15 +55,9 @@ const programs = {
     }
 };
 
-var addOns = {
-    inLanguage: {
-        hasTranslations: false, 
-        languages: []
-    },
-    pdfLinks: {
-        forYourPatient: false, 
-        clinicianHandout: false
-    }
+let addOns = {    
+    forYourPatient: false, 
+    clinicianHandout: false
 };
 
 module.exports = {

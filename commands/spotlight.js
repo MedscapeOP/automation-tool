@@ -1,7 +1,10 @@
 // ------------------------------------------------------------
-// COMMAND FOR IN-LANGUAGE ADDONS  
+// COMMAND FOR GENERATING CLINICAL BRIEF XML 
 // ------------------------------------------------------------
 
+/*
+
+*/
 
 // REQUIRES
 // ------------------------------------------------------------
@@ -10,116 +13,33 @@ const _ = require('lodash');
 const utils = require('../utils');
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
-const languages = require('../config').languages;
 const cliTools = utils.cliTools;
 const N = cliTools.N;
+let config = require('../config');
+let prompts = require('./prompts');
 
 
 // VARS
 // ------------------------------------------------------------
-const inLanguageHelp = `
-Generates code for in language add-ons. ${N}Use flags for components you wish to include.`;
+const clinicalBriefHelp = `
+Generates clinical brief XML code from R2Net html file.`;
 
-const languageChoices = _.keys(languages);
+let program = config.programs.spotlight;
 let outputFile = function () {
-    return `${infoObject.articleID}_in-language.xml`; 
-}; 
+    return `${program.articleID}.xml`; // Make dynamic considering
+};  
 
-
-let infoObject = {
-    articleID: null,
-    articleTitle: "",
-    addons: {
-        expertCommentary: {
-            has: false,
-            languages: []
-        },
-        downloadablePDF: {
-            has: false, 
-            languages: []
-        },
-        transcriptPDF: {
-            has: false,
-            languages: []
-        },
-        subtitles: {
-            has: false, 
-            languages: []
-        }
-    }
-};
 
 // PROMPTS 
 // ------------------------------------------------------------
-let articleTitlePrompt = function (self) {
-    return self.prompt({
-        type: 'input',
-        name: 'title',
-        message: 'Please Enter the Article Title: ',
-        validate: function (answer) {
-            if (answer.length < 1) {
-                return ('You must enter a title!');
-            } else {
-                return true;
-            }
-        }                    
-    });
-};
 
-let expertCommentaryPrompt = function (self) {
-    return self.prompt({
-        type: 'confirm',
-        name: 'expertCommentary',
-        message: 'Has Expert Commentary?'                  
-    });
-};
-
-let downloadablePDFPrompt = function (self) {
-    return self.prompt({
-        type: 'confirm',
-        name: 'downloadablePDF',
-        message: 'Has Downloadable PDF?'                  
-    });
-};
-
-let transcriptPDFPrompt = function (self) {
-    return self.prompt({
-        type: 'confirm',
-        name: 'transcriptPDF',
-        message: 'Has Transcript PDF?'                  
-    });
-};
-
-let subtitlesPrompt = function (self) {
-    return self.prompt({
-        type: 'confirm',
-        name: 'subtitles',
-        message: 'Has Subtitles?'                  
-    });
-};
-
-let languagePrompt = function (self) {
-    return self.prompt({
-        type: 'checkbox',
-        name: 'languages',
-        choices: languageChoices,
-        message: `Please choose which languages.`,
-        validate: function (answer) {
-            if (answer.length < 1) {
-                return ('You must choose at least 1 language');
-            } else {
-                return true;
-            }
-        }                    
-    });
-};
 
 // PROMISE THEN CALLBACK
-let promiseCallback = async function (self, callback, answers, addOn, nextFunction) {
+let promiseCallbackAddon = async function (self, callback, answers, nameOfPrompt, nextFunction) {
     if (answers) {
         // message = 'Please choose which addons you need!'
-        infoObject.addons[addOn].has = answers[addOn];
-        if (answers[addOn]) {
+        addons[nameOfPrompt].has = answers[nameOfPrompt];
+        if (answers[nameOfPrompt]) {
             // Get Languages 
             try {
                 await languagePrompt(self)
@@ -127,7 +47,7 @@ let promiseCallback = async function (self, callback, answers, addOn, nextFuncti
                     if (answers) {
                         infoObject.addons[addOn].languages = answers.languages;
                     } else {
-                        self.log(`Not getting answers for ${addOn} languages`);
+                        self.log(`Not getting answers for ${nameOfPrompt}!`);
                         callback();
                     }
                 });
@@ -232,7 +152,7 @@ module.exports = function (vorpal) {
             }    
             try {
                 result = utils.cleanHTML.cleanEntities(result);
-                utils.cliTools.writeOutputFile(outputFile(), result);
+                utils.cliTools.writeOutputFile(outputFile, result);
                 callback();                                     
             } catch (error) {
                 self.log(error);
