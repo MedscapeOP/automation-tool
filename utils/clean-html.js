@@ -58,6 +58,13 @@ function removeTicketFluff(str) {
     var addAbbrevRegExp2 = /<em>Add abbreviations below:<\/em>/gi;
     str = str.replace(addAbbrevRegExp2, "");
 
+    // Remove End of Slides Fluff
+    var endOfSlidesRegExp = /<em>Mandatory Insertion after Main CONTENT with abridged Transcripts:<\/em>/gi;
+    str = str.replace(endOfSlidesRegExp, "");
+
+    var endOfSlidesRegExp2 = /<em>This content has been condensed for improved clarity\.<\/em>/gi;
+    str = str.replace(endOfSlidesRegExp2, "");
+
     return str;
 }
 
@@ -224,6 +231,12 @@ function slidesFinal (str) {
     // var headlineRegExp5 = new RegExp('<strong>(?:&lt;){1,}level 2(?:&gt;){1,}(?:\s){1,}</strong>(.*)</p>', 'g');
     // str = str.replace(headlineRegExp5, "<strong>&lt;&lt;Level 2&gt;&gt;$1</strong>");
 
+    // Remove End of Slides Fluff
+    var endOfSlidesRegExp = /<em>Mandatory Insertion after Main CONTENT with abridged Transcripts:<\/em>/gi;
+    str = str.replace(endOfSlidesRegExp, "");
+
+    var endOfSlidesRegExp2 = /<p><em>This content has been condensed for improved clarity\.<\/em><\/p>/gi;
+    str = str.replace(endOfSlidesRegExp2, "");
 
     // Remove End Slides 
     var endSlidesRegExp1 = new RegExp('&lt;&lt;end slides&gt;&gt;', 'g');

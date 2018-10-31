@@ -110,7 +110,7 @@ describe('Utility Functions', function () {
             });
         });
     
-        describe(".slidesForFinalBuild()", function () {
+        describe(".slidesFinal()", function () {
             it('should transform Slides HTML from from R2Net into format for use in buildSlides().', function () {
                 var result = utils.cleanHTML.slidesFinal(slidesInitialComplete);
                 fs.writeFileSync(__dirname + "/output/clean-slides.html", result, function(err) {

@@ -65,19 +65,19 @@ describe('Article Utilities', function () {
         var slidesComponent = app.prodTicket.getSlides(prodTicket, program)[0];
 
         it('should return Slides TOC', function () {
-            var result = articleUtils.buildSlidesTOC(slidesComponent).toObjectLiteral();
+            var result = articleUtils.buildSlidesTOC(slidesComponent, false, false, true).toObjectLiteral();
             result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
             expect(result).to.equalIgnoreSpaces(completeSlidesTOC);
         });
 
         it('should return Slides TOC with a video embed in subsection slide intro', function () {
-            var result = articleUtils.buildSlidesTOC(slidesComponent, videoEmbed=true).toObjectLiteral();
+            var result = articleUtils.buildSlidesTOC(slidesComponent, videoEmbed=true, false, true).toObjectLiteral();
             result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
             expect(result).to.equalIgnoreSpaces(completeSlidesTOC2);
         });
 
         it('should return Slides TOC with an educational impact challenge subsection', function () {
-            var result = articleUtils.buildSlidesTOC(slidesComponent, false, true).toObjectLiteral();
+            var result = articleUtils.buildSlidesTOC(slidesComponent, false, true, true).toObjectLiteral();
             result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
             expect(result).to.equalIgnoreSpaces(completeSlidesTOC3);
         });

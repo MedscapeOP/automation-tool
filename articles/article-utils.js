@@ -52,7 +52,7 @@ function buildBlankTOC() {
     return tocInstance;
 }
 
-function buildSlidesTOC(slidesComponent, videoEmbed=false, eduImpactSubsection=false) {
+function buildSlidesTOC(slidesComponent, videoEmbed=false, eduImpactSubsection=false, isLastComponent=false) {
     // BUILD: Main TOC Element 
     var slidesTOC = new TOCElement();
 
@@ -69,6 +69,17 @@ function buildSlidesTOC(slidesComponent, videoEmbed=false, eduImpactSubsection=f
     if (videoEmbed) {
         slidesSubsection.subsectionContent = utils.wrapSlideIntro(snippets.videoEmbed(slidesComponent));
     } 
+
+    if (isLastComponent) {
+        var lastSlideGroup = new SlideGroup(slidesComponent.slidePath, "undefined");
+        lastSlideGroup.sectionImage = null;
+        lastSlideGroup.sectionLabel = null;
+        lastSlideGroup.sectionAltText = null;
+        lastSlideGroup.sectionText = `<p><em>This content has been condensed for improved clarity.</em></p>`;
+
+        // Push last slide_grp onto subsection element 
+        slidesSubsection.insertSlideGroup(lastSlideGroup);
+    }
 
     // INSERT: Main Slides Subsection
     slidesSection.insertSubsectionElement(slidesSubsection);

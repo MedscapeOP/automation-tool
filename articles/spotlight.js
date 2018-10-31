@@ -37,9 +37,9 @@ function getSlidesTOC (ticket, program) {
     var slidesComponent = prodticket.getSlides(ticket, program)[0];
 
     if (program.hasLLA) {
-        return articleUtils.buildSlidesTOC(slidesComponent, true, true);
+        return articleUtils.buildSlidesTOC(slidesComponent, true, true, true);
     }
-    return articleUtils.buildSlidesTOC(slidesComponent, false, false);
+    return articleUtils.buildSlidesTOC(slidesComponent, false, false, true);
 }
 
 

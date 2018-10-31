@@ -352,11 +352,20 @@
                 <sec_caption/>
                 <sec_txt>
                     <h3>Thank you</h3>                    
-                    <em>This content has been condensed for improved clarity.</em>
                 </sec_txt>
                 <sec_alt_txt>Slide 23.</sec_alt_txt>
                 <qna_form/>
             </slide_grp>
+            <slide_grp>
+				<sec_img/>
+				<sec_label/>
+				<sec_caption/>
+				<sec_txt>
+					<em>This content has been condensed for improved clarity.</em>
+				</sec_txt>
+				<sec_alt_txt/>
+				<qna_form />
+			</slide_grp>
         </subsec_element>
     </sec_element>
     <pg_footnotes/>
