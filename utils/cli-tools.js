@@ -18,6 +18,12 @@ function ProdticketException(message) {
     this.name = "Malformed Prodticket HTML"
 }
 
+function getInputDirectory () {
+    // process.cwd() returns the directory from which you ran Node process 
+    var currentDir = process.cwd();
+    return path.join(currentDir, 'input');
+} 
+
 function getOutputDirectory () {
     // process.cwd() returns the directory from which you ran Node process 
     var currentDir = process.cwd();
@@ -51,6 +57,7 @@ function writeOutputFile(filename, data) {
 module.exports = {
     N,
     headlineTextFlag,
+    getInputDirectory,
     getOutputDirectory,
     writeOutputFile,
     BadInputException,

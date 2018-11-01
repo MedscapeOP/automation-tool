@@ -2,17 +2,14 @@
 // COMMAND FOR GENERATING CLINICAL BRIEF XML 
 // ------------------------------------------------------------
 
-/*
-
-*/
 
 // REQUIRES
 // ------------------------------------------------------------
 const _ = require('lodash');
+const fs = require('fs');
 
 const utils = require('../utils');
-const prodticket = require('../prodticket');
-const snippets = require('../snippets');
+const articles = require('../articles');
 const cliTools = utils.cliTools;
 const N = cliTools.N;
 let config = require('../config');
@@ -24,10 +21,11 @@ let prompts = require('./prompts');
 const spotlightHelp = `
 Generates Spotlight XML code from R2Net html file.`;
 
-let program = config.programs.spotlight;
 let outputFile = function () {
     return `${program.articleID}.xml`; // Make dynamic considering
 };  
+
+var program = config.programs.spotlight;
 
 
 // PROMPTS 
@@ -62,30 +60,9 @@ let promiseCallback = function (self, callback, answers, nameOfPrompt, nextFunct
 // BUILD FUNCTION LOGIC 
 // ------------------------------------------------------------
 
-let buildFinalOutput = function (self) {   
-    var tocElements = [];
-    var keys = _.keys(infoObject.addons);
-    var currentKey = "";
-    var addonObject = null;
-    var languageString = null;
-    var languageObject = null;
-    for (var i = 0; i < 4; i++) {
-        currentKey = keys[i];
-        addonObject = infoObject.addons[currentKey];
-        // self.log("CURRENT KEY: ", keys[i]);
-        // self.log("KEYS: ", keys);
-        // self.log("ADDON OBJECT: ", addonObject);        
-        if (addonObject.has) {
-            for (var z = 0; z < addonObject.languages.length; z++) {
-                // (articleID, language, programTitle)
-                languageString = addonObject.languages[z];
-                languageObject = languages[languageString];
-                tocElements.push(snippets.inLanguage[currentKey](infoObject.articleID, languageObject, infoObject.articleTitle));
-            }
-        } 
-    }
-    // self.log(tocElements);
-    return tocElements;
+let buildFinalOutput = function (self) {
+    var prodTicket = fs.readFileSync(cliTools.getInputDirectory() + '/spotlight/article.html', 'utf8');  
+    return articles.spotlight.buildSpotlight(prodTicket, program);
 }
 
 
@@ -95,7 +72,7 @@ let buildFinalOutput = function (self) {
 module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
-    .command('il <articleID>', inLanguageHelp)
+    .command('generate spotlight <articleID>', spotlightHelp)
     // .parse(function (command, args) { 
     //     args.articleID = String(args.articleID);
     //     return command + ` ` + args.articleID;   
@@ -103,52 +80,46 @@ module.exports = function (vorpal) {
     .types({string: ['_']})
     .action(function(args, callback) {
         // this.log("RAW ARTICLE ID: ", args.articleID);
-        infoObject.articleID = args.articleID;        
+        program.articleID = args.articleID;        
         let self = this;
 
-        // Get TITLE
-        articleTitlePrompt(self)
-        .then(answers => {           
-            // Get Has Expert Commentary?
-            if (answers) {
-                infoObject.articleTitle = answers.title;
-                return expertCommentaryPrompt(self);
-            } else {
-                self.log('Not getting answer for article title');
-                callback();
-            }  
+        // Has LLA? 
+        prompts.llaPrompt(self)
+        .then((answers) => {
+            // Has OUS?
+            return promiseCallback(self, callback, answers, "hasLLA", prompts.ousPrompt);
         })
         .then((answers) => {
-            // Get Has Downloadable PDF?
-            return promiseCallback(self, callback, answers, "expertCommentary", downloadablePDFPrompt);
+            // Has Peer Reviewer?
+            return promiseCallback(self, callback, answers, "expertCommentary", prompts.peerReviewerPrompt);
         })
         .then((answers) => {
-            // Get Has Transcript PDF?
-            return promiseCallback(self, callback, answers, "downloadablePDF", transcriptPDFPrompt);
+            // Has Collection Page?
+            return promiseCallback(self, callback, answers, "downloadablePDF", prompts.collectionPagePrompt);
         })
         .then((answers) => {
-            // Get Has Subtitles?
-            return promiseCallback(self, callback, answers, "transcriptPDF", subtitlesPrompt);
+            // Has Downloadable Slide Deck?
+            return promiseCallback(self, callback, answers, "transcriptPDF", prompts.slideDeckPrompt);
+        })
+        .then((answers) => {
+            // Has For Your Patient PDF?
+            return promiseCallback(self, callback, answers, "subtitles", prompts.forYourPatientPrompt);
         })
         .then((answers) => {
             // Build Final Output
             return promiseCallback(self, callback, answers, "subtitles", buildFinalOutput);
         })
-        .then((tocElements) => {
-            var result = "";
-            var xmlString = "";
-            for (var i = 0; i < tocElements.length; i++) {
-                xmlString = utils.xmlOps.objectToXMLString(tocElements[i].toObjectLiteral());
-                result += `${xmlString}\n\n`;
-            }    
-            try {
-                result = utils.cleanHTML.cleanEntities(result);
-                utils.cliTools.writeOutputFile(outputFile, result);
-                callback();                                     
-            } catch (error) {
-                self.log(error);
-                callback(); 
-            }   
+        .then((finishedArticleObject) => {
+            self.log(program);
+            // var result = utils.xmlOps.objectToXMLString(finishedArticleObject.toObjectLiteral());
+            // try {
+            //     result = utils.cleanHTML.cleanEntities(result);
+            //     utils.cliTools.writeOutputFile(outputFile, result);
+            //     callback();                                     
+            // } catch (error) {
+            //     self.log(error);
+            //     callback(); 
+            // }   
         }) 
         .catch((err) => {
             self.log(err);

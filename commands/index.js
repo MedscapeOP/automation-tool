@@ -8,11 +8,13 @@ const articles = require('../articles');
 
 // COMMANDS
 const inLanguage = require('./in-language');
+const spotlight = require('./spotlight');
 
 
 // Build commands function 
 let commands = function (vorpal) {
     inLanguage(vorpal);
+    spotlight(vorpal);
 }
 
 // ------------------------------------------------------------
