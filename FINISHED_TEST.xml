@@ -656,3 +656,20 @@ RI, et al. Low-molecular-weight heparin versus a coumarin for the prevention of 
     <img_ttl_bkgrd>/webmd/professional_assets/medscape/images/title_background/33543-collection-header.png</img_ttl_bkgrd>
     <img_publ_logo/>
 </prof_article_slide_presentation>
+
+Update XMLElement class with _childElements property 
+- _childElements
+    - Array of non Object Literal versions of XML instances 
+    - This will allow us access to child element methods and 
+      properties 
+        - Therefore we can update a child even after being 
+          inserted into a parent element. 
+- insertChildElement() method 
+    - pushes the XMLElement instance onto the _childElements array 
+- childElements() 
+    - Computed property that returns object literal version 
+      of _childElements
+- Updated elements() getter 
+    - Now will insert childElements at the specified _childElementIndex of the _elements array and flatten the result. 
+- Updated sub classes ProfArticle, TOCElement, SectionElement, SubsectionElement to utilize insertChildElement() method and _childElementIndex as needed. 
+- Get tests working with new API. 

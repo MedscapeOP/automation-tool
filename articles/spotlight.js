@@ -23,7 +23,7 @@
 const _ = require("lodash");
 const utils = require("../utils");
 const articleUtils = require('./article-utils');
-const {ProfArticle, TOCElement, OutputVersion} = require("../classes");
+const {ProfArticle, TOCElement, SectionElement, SubsectionElement, SlideGroup} = require("../classes");
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
 
@@ -137,7 +137,23 @@ function buildSpotlight(ticket, program) {
 
     // Addons 
     if (program.hasForYourPatient) {
-        forYourPatientMarkup = snippets.forYourPatient(program.articleID, "For Your Patient", `${program.articleID}_ForYourPatient.pdf`);            
+        forYourPatientMarkup = snippets.forYourPatient(program.articleID, "For Your Patient", `${program.articleID}_ForYourPatient.pdf`);
+        // console.log("FINAL ARTICLE CHILD ELEMENTS: ", finalArticle._childElements[0]._childElements[0]);
+        var forYourPatientSubsection = new SubsectionElement(true, false, false);
+        
+        if (program.hasLLA) {
+            var slideGroup = new SlideGroup('', '', true, false);
+            slideGroup.sectionImage = null;
+            slideGroup.sectionLabel = null;
+            slideGroup.sectionAltText = null;
+            slideGroup.qnaForm = 3;
+            forYourPatientSubsection.insertSlideGroup(slideGroup);
+            finalArticle._childElements[0]._childElements[0]._childElements[0]._childElements = [];
+        }
+
+        forYourPatientSubsection.subsectionContent = utils.wrapSlideIntro(forYourPatientMarkup);
+
+        finalArticle._childElements[0]._childElements[0].insertSubsectionElement(forYourPatientSubsection); 
     }
     
     return finalArticle;

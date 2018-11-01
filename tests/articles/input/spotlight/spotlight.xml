@@ -36,6 +36,20 @@
                     <p>The goal of this activity is to provide an update on new treatment strategies for patients with cancer at risk for thromboembolism.</p>
                     <p>Before you begin this activity, please assess your clinical knowledge by completing this brief survey. Answering these questions again after the activity will allow you to see what you learned and to compare your answers with those of your peers.</p>
                 </slide_intro>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header/>
+                <slide_intro>
+                    <div class="downloadbtn">
+                        <div class="downloadbtn_lt"/>
+                        <div class="downloadbtn_bg_pdf">
+                            <a href="/px/trk.svr/901602?exturl=http://img.medscape.com/images/901/602/901602_ForYourPatient.pdf" target="_blank">For Your Patient</a>
+                        </div>
+                        <div class="downloadbtn_rt"/>
+                        <div class="spacer">&#160;</div>
+                    </div>
+                    <div class="spacer">&#160;</div>
+                </slide_intro>
                 <slide_grp>
                     <sec_img/>
                     <sec_label/>

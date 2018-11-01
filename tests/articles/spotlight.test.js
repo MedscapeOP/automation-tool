@@ -93,6 +93,8 @@ describe('Spotlight', function () {
         it('should return complete XML string of Spotlight article', function () {
             program.hasCollectionPage = true;
             program.hasPeerReviewer = true;
+            program.hasForYourPatient = true;
+            program.hasLLA = true;
             // program.articleID = "897160";
 
             var result = spotlight.buildSpotlight(prodTicket, program).toObjectLiteral();
