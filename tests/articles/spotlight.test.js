@@ -104,13 +104,13 @@ describe('Spotlight', function () {
 
             result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
 
-            fs.writeFileSync(__dirname + '/output/spotlight/finished-sl.xml', result);
+            // fs.writeFileSync(__dirname + '/output/spotlight/finished-sl.xml', result);
 
             // console.log("RESULT: ", result);
             // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
 
             // result = utils.xmlOps.objectToXMLString(result);
-            // expect(result).to.equalIgnoreSpaces(completeSpotlight)
+            expect(result).to.equalIgnoreSpaces(completeSpotlight)
         });
     });
 });

@@ -19,12 +19,14 @@ var _ = require("lodash");
 */
 
 class XMLElement {
-    constructor(xmlTagName, hasQnaForm, hasFootnotes, xmlType = "element") {
+    constructor(xmlTagName, hasQnaForm, hasFootnotes, childElementIndex = null, xmlType = "element") {
         this.hasQnaForm = hasQnaForm;
         this.hasFootnotes = hasFootnotes;
         this._xmlTagName = xmlTagName;
         this._xmlType = xmlType;
         this._elements = [];
+        this._childElementIndex = childElementIndex;
+        this._childElements = [];
         if (this.hasQnaForm) {
             this._qnaForm = {
                 "type": "element",
@@ -44,15 +46,42 @@ class XMLElement {
     //--------------------------------
     // COMPUTED PROPERTIES 
     //-------------------------------- 
+
+    get childElements() {
+        // Object Literal Array of Child XML elements 
+        // For TOCElement these would be Section Elements 
+        var result = [];
+        for (var i = 0; i < this._childElements.length; i++) {
+            result.push(this._childElements[i].toObjectLiteral().elements[0]);
+        }
+        return result;
+    }
+
     get elements() {
-        if (this.hasFootnotes && this.hasQnaForm) {
-            return _.concat(this._elements, this._footnotes, this._qnaForm);
-        } else if (this.hasQnaForm) {
-            return _.concat(this._elements, this._qnaForm);
-        } else if (this.hasFootnotes) {
-            return _.concat(this._elements, this._footnotes);
+        var resultingElements = [];
+        var childElements = this.childElements;
+        if (this._childElementIndex && this._elements.length > 0) {            
+            // resultingElements.push(_.slice(this._elements, 0, this._childElementIndex));
+            // resultingElements.push(this.childElements);
+            // resultingElements.push(_.slice(this._elements, this._childElementIndex, this._elements.length));
+            var beginning = _.slice(this._elements, 0, this._childElementIndex);
+            var end = _.slice(this._elements, this._childElementIndex, this._elements.length);
+            resultingElements = _.concat(beginning, childElements, end);
+            // console.log("BEGINNING: ", beginning);
+            // console.log("END: ", end);
         } else {
-            return this._elements;
+            resultingElements = _.concat(this._elements, childElements);
+        }
+
+        resultingElements = _.flatten(resultingElements);
+        if (this.hasFootnotes && this.hasQnaForm) {
+            return (_.concat(resultingElements, this._footnotes, this._qnaForm));
+        } else if (this.hasQnaForm) {
+            return (_.concat(resultingElements, this._qnaForm));
+        } else if (this.hasFootnotes) {
+            return (_.concat(resultingElements, this._footnotes));
+        } else {
+            return (resultingElements);
         }                     
     }
 
@@ -82,6 +111,10 @@ class XMLElement {
     //--------------------------------
     // METHODS 
     //-------------------------------- 
+    insertChildElement(childElement) {
+        this._childElements.push(childElement);
+    }
+
     toObjectLiteral() {
         var selfElements = this.elements;
         var object = {

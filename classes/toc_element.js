@@ -1,5 +1,6 @@
 const _ = require("lodash");
 const XMLElement = require("./xml_element");
+const SectionElement = require('./sec_element');
 
 class TOCElement extends XMLElement{
     constructor(type = "Default", hasQnaForm = false, hasFootnotes = true) {
@@ -42,11 +43,18 @@ class TOCElement extends XMLElement{
         this._type.elements[0].text = newType;
     }
 
+    get sectionElements() {
+        return this.childElements;
+    }
+
     insertSectionElement(secElement) {
         /* 
             - Pushes the new section element onto the elements array of the TocElement
         */
-        this._elements.push(secElement.toObjectLiteral().elements[0]);
+        // this._elements.push(secElement.toObjectLiteral().elements[0]);
+        if ((secElement) && (secElement instanceof SectionElement)) {
+            this.insertChildElement(secElement);
+        }
     }
 }
 

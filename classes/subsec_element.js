@@ -1,5 +1,6 @@
 const _ = require("lodash");
 const XMLElement = require("./xml_element");
+const SlideGroup = require("./slide_grp");
 const xmlOps = require('../utils/xml-ops');
 
 class SubsectionElement extends XMLElement {
@@ -85,8 +86,9 @@ class SubsectionElement extends XMLElement {
         /* 
             - Pushes the new slide_grp onto the elements array of the subsection
         */
-       var slide = slideGroup.toObjectLiteral().elements[0];
-       this._elements.push(slide);
+        if ((slideGroup) && (slideGroup instanceof SlideGroup)) {
+            this.insertChildElement(slideGroup);
+        }
     }
 
 }

@@ -6,9 +6,9 @@ const TOCElement = require('./toc_element');
 class ProfArticle extends XMLElement{
     constructor(type = "Article", hasOUS = false, hasQnaForm = false, hasFootnotes = false) {
         if (type == "SlidePresentation") {
-            super("prof_article_slide_presentation", hasQnaForm, hasFootnotes);
+            super("prof_article_slide_presentation", hasQnaForm, hasFootnotes, 10);
         } else if (type == "Article") {
-            super("prof_article", false, false);
+            super("prof_article", false, false, 10);
         }  
 
         this.hasOUS = hasOUS;
@@ -103,7 +103,6 @@ class ProfArticle extends XMLElement{
                 }
             ]
         };
-        this._toc_elements = [];
         this._back_label = {
             "type": "element",
             "name": "back_label",
@@ -250,23 +249,41 @@ class ProfArticle extends XMLElement{
         this._elements[7] = this._contrbtr_post_content;
         this._elements[8] = this._supprtr_grant_group;
         this._elements[9] = this._body_label;
-        this._elements[10] = this._toc_elements;
-        this._elements[11] = this._back_label;
-        this._elements[12] = this._layer_grps;
-        this._elements[13] = this._ref_grp;
-        this._elements[14] = this._cpyrt_holder;
-        this._elements[15] = this._cpyrt_ovrd;
-        this._elements[16] = this._disclmr_ovrd;
-        this._elements[17] = this._bkmtr_front;
-        this._elements[18] = this._bkmtr_glossary;
-        this._elements[19] = this._bkmtr_ack;
-        this._elements[20] = this._bkmtr_discl;
-        this._elements[21] = this._bkmtr_funding;
-        this._elements[22] = this._bkmtr_reprnt_addr;
-        this._elements[23] = this._bkmtr_abbr_notes;
-        this._elements[24] = this._bkmtr_last;
-        this._elements[25] = this._img_ttl_bkgrd;
-        this._elements[26] = this._img_publ_logo;
+        // First slice
+        // child elements 
+        this._elements[10] = this._back_label;
+        this._elements[11] = this._layer_grps;
+        this._elements[12] = this._ref_grp;
+        this._elements[13] = this._cpyrt_holder;
+        this._elements[14] = this._cpyrt_ovrd;
+        this._elements[15] = this._disclmr_ovrd;
+        this._elements[16] = this._bkmtr_front;
+        this._elements[17] = this._bkmtr_glossary;
+        this._elements[18] = this._bkmtr_ack;
+        this._elements[19] = this._bkmtr_discl;
+        this._elements[20] = this._bkmtr_funding;
+        this._elements[21] = this._bkmtr_reprnt_addr;
+        this._elements[22] = this._bkmtr_abbr_notes;
+        this._elements[23] = this._bkmtr_last;
+        this._elements[24] = this._img_ttl_bkgrd;
+        this._elements[25] = this._img_publ_logo;
+        // this._elements[10] = this._toc_elements;
+        // this._elements[11] = this._back_label;
+        // this._elements[12] = this._layer_grps;
+        // this._elements[13] = this._ref_grp;
+        // this._elements[14] = this._cpyrt_holder;
+        // this._elements[15] = this._cpyrt_ovrd;
+        // this._elements[16] = this._disclmr_ovrd;
+        // this._elements[17] = this._bkmtr_front;
+        // this._elements[18] = this._bkmtr_glossary;
+        // this._elements[19] = this._bkmtr_ack;
+        // this._elements[20] = this._bkmtr_discl;
+        // this._elements[21] = this._bkmtr_funding;
+        // this._elements[22] = this._bkmtr_reprnt_addr;
+        // this._elements[23] = this._bkmtr_abbr_notes;
+        // this._elements[24] = this._bkmtr_last;
+        // this._elements[25] = this._img_ttl_bkgrd;
+        // this._elements[26] = this._img_publ_logo;
 
         // _elements ==> starts with [label, type]
         // _elements ==> over time push(newElements)
@@ -276,19 +293,6 @@ class ProfArticle extends XMLElement{
     //--------------------------------
     // COMPUTED PROPERTIES 
     //-------------------------------- 
-    get elements() {
-        // if (this.hasFootnotes && this.hasQnaForm) {
-        //     return _.concat(this._elements, this._footnotes, this._qnaForm);
-        // } else if (this.hasQnaForm) {
-        //     return _.concat(this._elements, this._qnaForm);
-        // } else if (this.hasFootnotes) {
-        //     return _.concat(this._elements, this._footnotes);
-        // } else {
-        //     return this._elements;
-        // }      
-        return _.flatten(this._elements);               
-    }
-
     get titleText() {
         if (this._title.elements[0]) {
             return this._title.elements[0].elements[0].text;
@@ -430,6 +434,10 @@ class ProfArticle extends XMLElement{
         }
     }
 
+    get tocElements() {
+        return this.childElements;
+    }
+
     //--------------------------------
     // METHODS 
     //-------------------------------- 
@@ -487,9 +495,9 @@ class ProfArticle extends XMLElement{
         /* 
             - Pushes the new toc_element onto the this._toc_elements array
         */
-       if ((tocElement) && (tocElement instanceof TOCElement)) {
-           this._toc_elements.push(tocElement.toObjectLiteral().elements[0]);
-       }
+        if ((tocElement) && (tocElement instanceof TOCElement)) {
+            this.insertChildElement(tocElement);
+        }
     }
 
     toFinalXML() {

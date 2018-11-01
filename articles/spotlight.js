@@ -137,7 +137,7 @@ function buildSpotlight(ticket, program) {
 
     // Addons 
     if (program.hasForYourPatient) {
-        forYourPatientMarkup = snippets.forYourPatient(program.articleID, "For Your Patient", `${program.articleID}_ForYourPatient.pdf`);        
+        forYourPatientMarkup = snippets.forYourPatient(program.articleID, "For Your Patient", `${program.articleID}_ForYourPatient.pdf`);            
     }
     
     return finalArticle;

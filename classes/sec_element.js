@@ -1,5 +1,6 @@
 const _ = require("lodash");
 const XMLElement = require("./xml_element");
+const SubsectionElement = require('./subsec_element');
 
 class SectionElement extends XMLElement {
     constructor(hasQnaForm = false, hasFootnotes = false) {
@@ -21,12 +22,12 @@ class SectionElement extends XMLElement {
     }
 
     insertSubsectionElement(subsecElement) {
-        /* 
-            - Pushes the new subsec_element onto the elements array of the section
-        */
-        this._elements.push(subsecElement.toObjectLiteral().elements[0]);
+        if ((subsecElement) && (subsecElement instanceof SubsectionElement)) {
+            this.insertChildElement(subsecElement);
+        }
     }
 }
+
 
 module.exports = SectionElement;
 
