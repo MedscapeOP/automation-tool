@@ -21,8 +21,8 @@ let prompts = require('./prompts');
 
 // VARS
 // ------------------------------------------------------------
-const clinicalBriefHelp = `
-Generates clinical brief XML code from R2Net html file.`;
+const spotlightHelp = `
+Generates Spotlight XML code from R2Net html file.`;
 
 let program = config.programs.spotlight;
 let outputFile = function () {
@@ -35,26 +35,17 @@ let outputFile = function () {
 
 
 // PROMISE THEN CALLBACK
-let promiseCallbackAddon = async function (self, callback, answers, nameOfPrompt, nextFunction) {
+let promiseCallback = function (self, callback, answers, nameOfPrompt, nextFunction) {
     if (answers) {
         // message = 'Please choose which addons you need!'
-        addons[nameOfPrompt].has = answers[nameOfPrompt];
         if (answers[nameOfPrompt]) {
-            // Get Languages 
-            try {
-                await languagePrompt(self)
-                .then((answers) => {
-                    if (answers) {
-                        infoObject.addons[addOn].languages = answers.languages;
-                    } else {
-                        self.log(`Not getting answers for ${nameOfPrompt}!`);
-                        callback();
-                    }
-                });
-            } catch (err) {
-                self.log(err);
-                callback();
-            }
+            program[nameOfPrompt] = answers[nameOfPrompt];
+            // DO SOME OTHER ASYNC TASK 
+            // - need async keyword before 'function' for this to work   
+            // try {
+            //     await languagePrompt(self)
+            //     .then((answers) => {});
+            // } catch (err) {}
         } 
         if (nextFunction) {
             return nextFunction(self);                                         
@@ -62,7 +53,7 @@ let promiseCallbackAddon = async function (self, callback, answers, nameOfPrompt
             callback();
         }                
     } else {
-        self.log(`Not getting answers for ${addOn}`);
+        self.log(`Not getting answers for ${nameOfPrompt}`);
         callback();
     } 
 } 

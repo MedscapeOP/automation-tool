@@ -109,8 +109,6 @@ function buildSpotlight(ticket, program) {
     referencesTOC = articleUtils.buildReferences(referencesMarkup, program);
 
     slideDeckDiv = snippets.downloadableSlides(program.articleID);
-
-    forYourPatientMarkup = snippets.forYourPatient(program.articleID, "For Your Patient", `${program.articleID}_ForYourPatient.pdf`);
     
 
     // Build Main Article Object - Instantiate and Populate Article
@@ -136,6 +134,11 @@ function buildSpotlight(ticket, program) {
     finalArticle.insertTOCElement(blankResultsTOC);
     finalArticle.insertTOCElement(abbreviationsTOC);
     finalArticle.insertTOCElement(referencesTOC);
+
+    // Addons 
+    if (program.hasForYourPatient) {
+        forYourPatientMarkup = snippets.forYourPatient(program.articleID, "For Your Patient", `${program.articleID}_ForYourPatient.pdf`);        
+    }
     
     return finalArticle;
 };
