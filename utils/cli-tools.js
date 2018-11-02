@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const _ = require('lodash');
 
 const N = "\n";
 
@@ -42,7 +43,7 @@ function headlineTextFlag(headlineText) {
 function writeOutputFile(filename, data) {
     var pathToFile = path.join(getOutputDirectory(), filename);
     try {
-        fs.writeFileSync(pathToFile, data);
+        fs.writeFileSync(pathToFile, data);    
     } catch (e) {
         // console.log(e);
         if (e.code == 'ENOENT') {
@@ -53,13 +54,37 @@ function writeOutputFile(filename, data) {
     }   
 };
 
+function readInputFile(filepath) {
+    try {
+        return fs.readFileSync(filepath, 'utf8');
+    } catch (e) {
+        if (e.code == 'ENOENT') {
+            throw new BadInputException(`No such directory exists: "${filepath}". ${N} Be sure to create "input/article.html" file in your current directory.`);
+        } else {
+            throw new RandomException(`Something went wrong reading the input file!`);
+        }
+    }
+}
+
+function resetProgram(program) {
+    var keys = _.keys(program);
+    var currentKey = "";
+    for (var i = 0; i < keys.length; i++) {
+        currentKey = keys[i];
+        if (typeof(program[currentKey]) == typeof(true)) {  
+            program[currentKey] = false;
+        }        
+    }
+}
 
 module.exports = {
     N,
     headlineTextFlag,
     getInputDirectory,
     getOutputDirectory,
+    readInputFile,
     writeOutputFile,
+    resetProgram,
     BadInputException,
     RandomException,
     ProdticketException 

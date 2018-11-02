@@ -1,5 +1,5 @@
 // ------------------------------------------------------------
-// COMMAND FOR GENERATING CLINICAL BRIEF XML 
+// COMMAND FOR GENERATING SPOTLIGHT XML 
 // ------------------------------------------------------------
 
 
@@ -21,18 +21,20 @@ let prompts = require('./prompts');
 const spotlightHelp = `
 Generates Spotlight XML code from R2Net html file.`;
 
+
+let inputFile = function () {
+    return cliTools.getInputDirectory() + '/spotlight/article.html';
+}
+
 let outputFile = function () {
     return `${program.articleID}.xml`; // Make dynamic considering
 };  
 
-var program = config.programs.spotlight;
+let program = config.programs.spotlight;
 
 
-// PROMPTS 
+// PROMISE THEN CALLBACK 
 // ------------------------------------------------------------
-
-
-// PROMISE THEN CALLBACK
 let promiseCallback = function (self, callback, answers, nameOfPrompt, nextFunction) {
     if (answers) {
         // message = 'Please choose which addons you need!'
@@ -61,7 +63,7 @@ let promiseCallback = function (self, callback, answers, nameOfPrompt, nextFunct
 // ------------------------------------------------------------
 
 let buildFinalOutput = function (self) {
-    var prodTicket = fs.readFileSync(cliTools.getInputDirectory() + '/spotlight/article.html', 'utf8');  
+    var prodTicket = cliTools.readInputFile(inputFile());  
     return articles.spotlight.buildSpotlight(prodTicket, program);
 }
 
@@ -91,38 +93,41 @@ module.exports = function (vorpal) {
         })
         .then((answers) => {
             // Has Peer Reviewer?
-            return promiseCallback(self, callback, answers, "expertCommentary", prompts.peerReviewerPrompt);
+            return promiseCallback(self, callback, answers, "hasOUS", prompts.peerReviewerPrompt);
         })
         .then((answers) => {
             // Has Collection Page?
-            return promiseCallback(self, callback, answers, "downloadablePDF", prompts.collectionPagePrompt);
+            return promiseCallback(self, callback, answers, "hasPeerReviewer", prompts.collectionPagePrompt);
         })
         .then((answers) => {
             // Has Downloadable Slide Deck?
-            return promiseCallback(self, callback, answers, "transcriptPDF", prompts.slideDeckPrompt);
+            return promiseCallback(self, callback, answers, "hasCollectionPage", prompts.slideDeckPrompt);
         })
         .then((answers) => {
             // Has For Your Patient PDF?
-            return promiseCallback(self, callback, answers, "subtitles", prompts.forYourPatientPrompt);
+            return promiseCallback(self, callback, answers, "hasSlideDeck", prompts.forYourPatientPrompt);
         })
         .then((answers) => {
             // Build Final Output
-            return promiseCallback(self, callback, answers, "subtitles", buildFinalOutput);
+            return promiseCallback(self, callback, answers, "hasForYourPatient", buildFinalOutput);
         })
         .then((finishedArticleObject) => {
             self.log(program);
-            // var result = utils.xmlOps.objectToXMLString(finishedArticleObject.toObjectLiteral());
-            // try {
-            //     result = utils.cleanHTML.cleanEntities(result);
-            //     utils.cliTools.writeOutputFile(outputFile, result);
-            //     callback();                                     
-            // } catch (error) {
-            //     self.log(error);
-            //     callback(); 
-            // }   
+            var result = utils.xmlOps.objectToXMLString(finishedArticleObject.toObjectLiteral());
+            try {
+                result = utils.cleanHTML.cleanEntities(result);
+                utils.cliTools.writeOutputFile(outputFile(), result);
+                self.log(`Spotlight created successfully! Check your output folder for the file: ${chalk.cyan(outputFile())}`);
+                cliTools.resetProgram(program);
+                callback();                                     
+            } catch (error) {
+                self.log(error.message);
+                callback(); 
+            }   
         }) 
         .catch((err) => {
-            self.log(err);
+            self.log(err.message);
+            callback();
         });
     });
 };

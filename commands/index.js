@@ -9,12 +9,14 @@ const articles = require('../articles');
 // COMMANDS
 const inLanguage = require('./in-language');
 const spotlight = require('./spotlight');
+const curbside = require('./curbside-consult');
 
 
 // Build commands function 
 let commands = function (vorpal) {
     inLanguage(vorpal);
     spotlight(vorpal);
+    curbside(vorpal);
 }
 
 // ------------------------------------------------------------
