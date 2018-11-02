@@ -40,11 +40,31 @@ function headlineTextFlag(headlineText) {
 `;
 }
 
-function writeOutputFile(filename, data) {
+// function writeOutputFile(filename, data) {
+//     var pathToFile = path.join(getOutputDirectory(), filename);
+//     try {
+//         fs.writeFileSync(pathToFile, data);    
+//     } catch (e) {
+//         // console.log(e);
+//         if (e.code == 'ENOENT') {
+//             throw new BadInputException(`No such directory exists: "${getOutputDirectory()}". ${N} Be sure to create an "output" folder in your current directory.`);
+//         } else {
+//             throw new RandomException(`Something went wrong writing to the output folder!`);
+//         }
+//     }   
+// };
+function writeOutputFile(filename, data, self, completionMessage, callback) {
     var pathToFile = path.join(getOutputDirectory(), filename);
     fs.ensureDir(getOutputDirectory())
     .then(() => {
-        fs.writeFile(pathToFile, data);
+        fs.writeFile(pathToFile, data, (err) => {
+            if (err) {
+                throw err;
+            } else {
+                self.log(completionMessage);
+                callback();
+            }
+        });
     })
     .catch(err => {
         if (err.code == 'ENOENT') {
@@ -55,18 +75,17 @@ function writeOutputFile(filename, data) {
     });
 };
 
+
 function readInputFile(filepath) {
-    fs.ensureFile(filepath)
-    .then(() => {
-        try {
-            return fs.readFileSync(filepath, 'utf8');
-        } catch (e) {
+    try {
+        return fs.readFileSync(filepath, 'utf8');
+    } catch (e) {
+        if (e.code == 'ENOENT') {
+            throw new BadInputException(`No such directory exists: "${filepath}". ${N} Be sure to create "input/article.html" file in your current directory.`);
+        } else {
             throw new RandomException(`Something went wrong reading the input file!`);
         }
-    })
-    .catch((err) => {
-        throw new RandomException(err.message);
-    });
+    }
 }
 
 function resetProgram(program) {
@@ -80,6 +99,7 @@ function resetProgram(program) {
     }
 }
 
+
 module.exports = {
     N,
     headlineTextFlag,
@@ -90,5 +110,5 @@ module.exports = {
     resetProgram,
     BadInputException,
     RandomException,
-    ProdticketException 
+    ProdticketException
 };
