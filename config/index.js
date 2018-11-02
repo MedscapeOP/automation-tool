@@ -40,6 +40,19 @@ let programs = {
         hasForYourPatient: false, 
         hasInLanguage: false 
     },
+    videoLecture: {
+        name: "Video Lecture",
+        codeName: "video",
+        profArticleType: "SlidePresentation",
+        articleID: "902082",
+        hasLLA: false,
+        hasOUS: false, 
+        hasPeerReviewer: false, 
+        hasCollectionPage: false,
+        hasSlideDeck: false, 
+        hasForYourPatient: false, 
+        hasInLanguage: false 
+    },
     firstResponse: {
         name: "First Response",
         codeName: "firstResponse",

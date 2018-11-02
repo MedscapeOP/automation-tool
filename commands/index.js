@@ -11,6 +11,7 @@ const inLanguage = require('./in-language');
 const brief = require('./clinical-brief');
 const spotlight = require('./spotlight');
 const curbside = require('./curbside-consult');
+const videoLecture = require('./video-lecture');
 
 
 // Build commands function 
@@ -19,6 +20,7 @@ let commands = function (vorpal) {
     brief(vorpal);
     spotlight(vorpal);
     curbside(vorpal);
+    videoLecture(vorpal);
 }
 
 // ------------------------------------------------------------

@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
 const _ = require('lodash');
 
@@ -42,28 +42,31 @@ function headlineTextFlag(headlineText) {
 
 function writeOutputFile(filename, data) {
     var pathToFile = path.join(getOutputDirectory(), filename);
-    try {
-        fs.writeFileSync(pathToFile, data);    
-    } catch (e) {
-        // console.log(e);
-        if (e.code == 'ENOENT') {
+    fs.ensureDir(getOutputDirectory())
+    .then(() => {
+        fs.writeFile(pathToFile, data);
+    })
+    .catch(err => {
+        if (err.code == 'ENOENT') {
             throw new BadInputException(`No such directory exists: "${getOutputDirectory()}". ${N} Be sure to create an "output" folder in your current directory.`);
         } else {
             throw new RandomException(`Something went wrong writing to the output folder!`);
         }
-    }   
+    });
 };
 
 function readInputFile(filepath) {
-    try {
-        return fs.readFileSync(filepath, 'utf8');
-    } catch (e) {
-        if (e.code == 'ENOENT') {
-            throw new BadInputException(`No such directory exists: "${filepath}". ${N} Be sure to create "input/article.html" file in your current directory.`);
-        } else {
+    fs.ensureFile(filepath)
+    .then(() => {
+        try {
+            return fs.readFileSync(filepath, 'utf8');
+        } catch (e) {
             throw new RandomException(`Something went wrong reading the input file!`);
         }
-    }
+    })
+    .catch((err) => {
+        throw new RandomException(err.message);
+    });
 }
 
 function resetProgram(program) {
