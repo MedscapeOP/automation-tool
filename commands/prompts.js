@@ -1,6 +1,9 @@
 // ------------------------------------------------------------
 // PROMPTS 
 // ------------------------------------------------------------
+const utils = require('../utils');
+const {ProfArticle} = require('../classes');
+
 let llaPrompt = function (self) {
     return self.prompt({
         type: 'confirm',
@@ -49,11 +52,31 @@ let forYourPatientPrompt = function (self) {
     }); 
 };
 
+function completeGenerateAction(self, callback, functionOrArticle, outputFile, completionMessage) {
+    try {
+        // Build final output function from the command module
+        if (functionOrArticle instanceof ProfArticle) {
+            var finishedArticleObject = functionOrArticle;
+        } else {
+            var finishedArticleObject = functionOrArticle(self);
+        }
+        // Convert to XML from JS 
+        var result = utils.xmlOps.objectToXMLString(finishedArticleObject.toObjectLiteral());
+        result = utils.cleanHTML.cleanEntities(result);
+        // Write the output file 
+        utils.cliTools.writeOutputFile(outputFile, result, self, completionMessage, callback);
+    } catch (error) {
+        self.log(error);
+        callback(); 
+    }  
+}
+
 module.exports = {
     llaPrompt,
     ousPrompt,
     peerReviewerPrompt,
     collectionPagePrompt,
     slideDeckPrompt,
-    forYourPatientPrompt
+    forYourPatientPrompt,
+    completeGenerateAction
 }

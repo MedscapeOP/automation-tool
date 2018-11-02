@@ -68,7 +68,6 @@ let buildFinalOutput = function (self) {
 }
 
 
-
 // EXPORT
 // ------------------------------------------------------------
 module.exports = function (vorpal) {
@@ -77,23 +76,10 @@ module.exports = function (vorpal) {
     .command('generate brief <articleID>', briefHelp)
     .types({string: ['_']})
     .action(function(args, callback) {
-        // this.log("RAW ARTICLE ID: ", args.articleID);
         program.articleID = args.articleID;        
         vorpal.emit('client_prompt_submit', program);
-        let self = this;
-        var finishedArticleObject = null;
-        var result = null;
-        try {
-            finishedArticleObject = buildFinalOutput(self);
-            result = utils.xmlOps.objectToXMLString(finishedArticleObject.toObjectLiteral());
-            result = utils.cleanHTML.cleanEntities(result);
-            utils.cliTools.writeOutputFile(outputFile(), result);
-            self.log(`Clinical Brief created successfully! Check your output folder for the file: ${chalk.cyan(outputFile())}`);
-            callback();                                     
-        } catch (error) {
-            self.log(error.message);
-            callback(); 
-        }  
+        var completionMessage = `${program.name} created successfully! Check your output folder for the file: ${chalk.cyan(outputFile())}`;
+        prompts.completeGenerateAction(this, callback, buildFinalOutput, outputFile(), completionMessage);
     });
     vorpal.on('client_prompt_submit', function (program){
         cliTools.resetProgram(program);

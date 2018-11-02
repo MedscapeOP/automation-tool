@@ -48,7 +48,7 @@ let promiseCallback = function (self, callback, answers, nameOfPrompt, nextFunct
             // } catch (err) {}
         } 
         if (nextFunction) {
-            return nextFunction(self);                                         
+            return nextFunction(self);                                     
         } else {
             callback();
         }                
@@ -114,16 +114,8 @@ module.exports = function (vorpal) {
         .then((finishedArticleObject) => {
             self.log(program);
             vorpal.emit('client_prompt_submit', program);
-            var result = utils.xmlOps.objectToXMLString(finishedArticleObject.toObjectLiteral());
-            try {
-                result = utils.cleanHTML.cleanEntities(result);
-                utils.cliTools.writeOutputFile(outputFile(), result);
-                self.log(`Spotlight created successfully! Check your output folder for the file: ${chalk.cyan(outputFile())}`);
-                callback();                                     
-            } catch (error) {
-                self.log(error.message);
-                callback(); 
-            }   
+            var completionMessage = `${program.name} created successfully! Check your output folder for the file: ${chalk.cyan(outputFile())}`;
+            prompts.completeGenerateAction(this, callback, finishedArticleObject, outputFile(), completionMessage);   
         }) 
         .catch((err) => {
             self.log(err.message);
