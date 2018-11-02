@@ -75,10 +75,10 @@ module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
     .command('generate curbside <articleID>', curbsideHelp)
-    // .parse(function (command, args) { 
-    //     args.articleID = String(args.articleID);
-    //     return command + ` ` + args.articleID;   
-    // })
+    .parse(function (command, args) { 
+        args.articleID = String(args.articleID);
+        return command + ` ` + args.articleID;   
+    })
     .types({string: ['_']})
     .action(function(args, callback) {
         // this.log("RAW ARTICLE ID: ", args.articleID);
@@ -113,12 +113,12 @@ module.exports = function (vorpal) {
         })
         .then((finishedArticleObject) => {
             self.log(program);
+            vorpal.emit('client_prompt_submit', program);
             var result = utils.xmlOps.objectToXMLString(finishedArticleObject.toObjectLiteral());
             try {
                 result = utils.cleanHTML.cleanEntities(result);
                 utils.cliTools.writeOutputFile(outputFile(), result);
                 self.log(`Curbside Consult created successfully! Check your output folder for the file: ${chalk.cyan(outputFile())}`);
-                cliTools.resetProgram(program);
                 callback();                                     
             } catch (error) {
                 self.log(error.message);
@@ -129,5 +129,8 @@ module.exports = function (vorpal) {
             self.log(err.message);
             callback();
         });
+    });
+    vorpal.on('client_prompt_submit', function (program){
+        cliTools.resetProgram(program);
     });
 };

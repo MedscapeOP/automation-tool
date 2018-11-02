@@ -113,12 +113,12 @@ module.exports = function (vorpal) {
         })
         .then((finishedArticleObject) => {
             self.log(program);
+            vorpal.emit('client_prompt_submit', program);
             var result = utils.xmlOps.objectToXMLString(finishedArticleObject.toObjectLiteral());
             try {
                 result = utils.cleanHTML.cleanEntities(result);
                 utils.cliTools.writeOutputFile(outputFile(), result);
                 self.log(`Spotlight created successfully! Check your output folder for the file: ${chalk.cyan(outputFile())}`);
-                cliTools.resetProgram(program);
                 callback();                                     
             } catch (error) {
                 self.log(error.message);
@@ -129,6 +129,9 @@ module.exports = function (vorpal) {
             self.log(err.message);
             callback();
         });
+    });
+    vorpal.on('client_prompt_submit', function (program){
+        cliTools.resetProgram(program);
     });
 };
 
