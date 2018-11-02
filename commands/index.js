@@ -8,6 +8,7 @@ const articles = require('../articles');
 
 // COMMANDS
 const inLanguage = require('./in-language');
+const brief = require('./clinical-brief');
 const spotlight = require('./spotlight');
 const curbside = require('./curbside-consult');
 
@@ -15,6 +16,7 @@ const curbside = require('./curbside-consult');
 // Build commands function 
 let commands = function (vorpal) {
     inLanguage(vorpal);
+    brief(vorpal);
     spotlight(vorpal);
     curbside(vorpal);
 }

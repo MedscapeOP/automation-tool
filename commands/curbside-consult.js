@@ -75,10 +75,6 @@ module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
     .command('generate curbside <articleID>', curbsideHelp)
-    .parse(function (command, args) { 
-        args.articleID = String(args.articleID);
-        return command + ` ` + args.articleID;   
-    })
     .types({string: ['_']})
     .action(function(args, callback) {
         // this.log("RAW ARTICLE ID: ", args.articleID);
