@@ -3,6 +3,7 @@ const {stringOps, cleanHTML} = require('../utils');
 
 var exportObject = {};
 
+// Clinical Brief
 exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
     var {textBlock: newsAuthor, label: newsAuthorLabel} = stringOps.getTextBlock(ticketHTML, "News Author", 'CME Author');
 
@@ -14,12 +15,22 @@ exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
     return `<p>${newsAuthorLabel}: ${newsAuthor}; ${cmeAuthorLabel}: ${cmeAuthor}</p>`;
 }
 
+
+// Spotlight
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     var {textBlock} = stringOps.getTextBlock(ticketHTML, "Faculty/Author(s) Byline(s): &#953;", "Indicate thumbnail URL");
     return "<p>" + cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim() + "</p>";
 }
 
+
+// Curbside
 exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+}
+
+
+// First Response
+exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 

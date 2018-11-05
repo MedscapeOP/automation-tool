@@ -31,4 +31,10 @@ exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML) {
     return cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim();
 }
 
+// First Response
+exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
+    var {textBlock} = stringOps.getTextBlock(ticketHTML, "Title: &#953;", "Teaser: &#953;");
+    return cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim();
+}
+
 module.exports = exportObject;

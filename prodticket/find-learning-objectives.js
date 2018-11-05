@@ -10,20 +10,7 @@ Base Statement: SL, CC
 Upon completion of this activity, participants will:
 */ 
 
-exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
-    var startRegExp = /<strong>Upon completion of this activity.*/g;
-    var endRegExp = /.*Questions \(Evaluations.*/g;
-    var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
-
-    textBlock = cleanHTML.learningObjectives(textBlock);
-    var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
-    return result;
-};
-
-exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML) {
-    return exportObject[config.programs.spotlight.codeName](ticketHTML);
-}
-
+// Clinical Brief
 exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
     var startRegExp = /Upon completion of this activity.*/g;
     var endRegExp = /.*<strong>Clinical Context.*/g;
@@ -38,5 +25,29 @@ exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
     var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
     return result;
 };
+
+// Spotlight
+exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
+    var startRegExp = /<strong>Upon completion of this activity.*/g;
+    var endRegExp = /.*Questions \(Evaluations.*/g;
+    var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
+
+    textBlock = cleanHTML.learningObjectives(textBlock);
+    var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
+    return result;
+};
+
+
+// Curbside 
+exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+}
+
+
+// First Response
+exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+}
+
 
 module.exports = exportObject;

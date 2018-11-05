@@ -3,6 +3,13 @@ const {stringOps, cleanHTML} = require('../utils');
 
 var exportObject = {};
 
+// Clinical Brief
+exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+};
+
+
+// Spotlight
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     var startRegExp = /<strong>Target Audience.*/g;
     var endRegExp = /<p>This.*is intended for.*/g;
@@ -15,12 +22,16 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     return `${result}`;
 };
 
+
+// Curbside
 exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
-exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
+
+// First Response 
+exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
-};
+}
 
 module.exports = exportObject;
