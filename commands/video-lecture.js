@@ -18,8 +18,8 @@ let prompts = require('./prompts');
 
 // VARS
 // ------------------------------------------------------------
-const briefHelp = `
-Generates Clinical Brief XML code from R2Net html file.`;
+const videoLectureHelp = `
+Generates Video Lecture XML code from R2Net html file.`;
 
 
 let inputFile = function () {
@@ -74,17 +74,53 @@ let buildFinalOutput = function (self) {
 module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
-    .command('generate video lecture <articleID>', briefHelp)
+    .command('generate video lecture <articleID>', videoLectureHelp)
+    // .parse(function (command, args) { 
+    //     args.articleID = String(args.articleID);
+    //     return command + ` ` + args.articleID;   
+    // })
     .types({string: ['_']})
     .action(function(args, callback) {
-        let self = this; 
-        try {
-            buildFinalOutput(self);
+        // this.log("RAW ARTICLE ID: ", args.articleID);
+        program.articleID = args.articleID;        
+        let self = this;
+
+        // Has LLA? 
+        prompts.llaPrompt(self)
+        .then((answers) => {
+            // Has OUS?
+            return promiseCallback(self, callback, answers, "hasLLA", prompts.ousPrompt);
+        })
+        .then((answers) => {
+            // Has Peer Reviewer?
+            return promiseCallback(self, callback, answers, "hasOUS", prompts.peerReviewerPrompt);
+        })
+        .then((answers) => {
+            // Has Collection Page?
+            return promiseCallback(self, callback, answers, "hasPeerReviewer", prompts.collectionPagePrompt);
+        })
+        .then((answers) => {
+            // Has Downloadable Slide Deck?
+            return promiseCallback(self, callback, answers, "hasCollectionPage", prompts.slideDeckPrompt);
+        })
+        .then((answers) => {
+            // Has For Your Patient PDF?
+            return promiseCallback(self, callback, answers, "hasSlideDeck", prompts.forYourPatientPrompt);
+        })
+        .then((answers) => {
+            // Build Final Output
+            return promiseCallback(self, callback, answers, "hasForYourPatient", buildFinalOutput);
+        })
+        .then((finishedArticleObject) => {
+            self.log(program);
+            vorpal.emit('client_prompt_submit', program);
+            var completionMessage = `${program.name} created successfully! Check your output folder for the file: ${chalk.cyan(outputFile())}`;
+            prompts.completeGenerateAction(this, callback, finishedArticleObject, outputFile(), completionMessage);   
+        }) 
+        .catch((err) => {
+            self.log(err.message);
             callback();
-        } catch (error) {
-            self.log(error.message);
-            callback();
-        }
+        });
     });
     vorpal.on('client_prompt_submit', function (program){
         cliTools.resetProgram(program);
