@@ -78,6 +78,7 @@ function findNextSlide(substring) {
 // Slide Path ${articleID.slice(0, 3)}/${articleID.slice(3)}
 let buildSlidesXML = (substring, subsectionElement, slidePath = "XXX/XXX", counter = 0, fn) => {
     var nextSlideSymbol = findNextSlide(substring);
+    // console.log("UPCOMING SLIDE SYMBOL: ", nextSlideSymbol);
     if (nextSlideSymbol != -1) {
         // Remove insert slide line 
         var slideRegExp = new RegExp(nextSlideSymbol.symbol + `(.*)`);
@@ -85,8 +86,8 @@ let buildSlidesXML = (substring, subsectionElement, slidePath = "XXX/XXX", count
 
         // Find the next "insert slide"
         // Use it's index as a stopping point for current slide's content 
-        var upcomingSlideSymbol = findNextSlide(substring);
-        
+        var upcomingSlideSymbol = findNextSlide(substring);        
+
         // Grab the slide's content 
         var slideContent = "";
         if (upcomingSlideSymbol != -1) {
@@ -111,6 +112,7 @@ let buildSlidesXML = (substring, subsectionElement, slidePath = "XXX/XXX", count
         // slideContent = xmlOps.xmlStringToJS(`<sec_txt>${slideContent}</sec_txt>`);
         slideContent = `<sec_txt>${slideContent}</sec_txt>`;
         
+        // console.log("SLIDE CONTENT: ", slideContent);
         // Increment counter to reflect Slide #
         counter++;
 

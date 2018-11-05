@@ -6,6 +6,7 @@ chai.use(require('chai-string'));
 let expect = chai.expect;
 
 const app = require('../../commands');
+const {SubsectionElement} = app.classes;
 const utils = app.utils;
 const firstResponse = app.articles.firstResponse;
 
@@ -63,8 +64,11 @@ describe('First Response', function () {
                 result += "\n\n" + slideTOCs[i].rawSlides;
             }
 
-            result = app.articles.articleUtils.buildSlides(result);
+            var subsection = new SubsectionElement(true);
+            result = utils.xmlOps.objectToXMLString(app.articles.articleUtils.buildSlides(result, subsection, "900/319").toObjectLiteral());
+
             fs.writeFileSync(__dirname + '/output/first-response/fr-slides.xml', result);
+            
             // expect(result).to.equalIgnoreSpaces(completeSlidesTOCs);
         });
     });

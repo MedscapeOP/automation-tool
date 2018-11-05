@@ -85,6 +85,7 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML, pro
     // continue loop
     // return slideComponents
     ticketHTML = cleanHTML.slidesInitial(ticketHTML);
+    // console.log("CLEAN TICKET", ticketHTML);
     var startSlideRegExp = getUsableRegExp(ticketHTML, startSlideMatches);
     var endSlideRegExp = getUsableRegExp(ticketHTML, endSlideMatches);
     // console.log("START REGEXP: ", startSlideRegExp);
