@@ -114,7 +114,9 @@ let languagePrompt = function (self) {
     });
 };
 
-// PROMISE THEN CALLBACK
+
+// PROMISE THEN CALLBACK 
+// ------------------------------------------------------------
 let promiseCallback = async function (self, callback, answers, addOn, nextFunction) {
     if (answers) {
         // message = 'Please choose which addons you need!'

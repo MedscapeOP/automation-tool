@@ -13,7 +13,7 @@ const articles = require('../articles');
 const cliTools = utils.cliTools;
 const N = cliTools.N;
 let config = require('../config');
-let prompts = require('./prompts');
+let actions = require('./actions');
 
 
 // VARS
@@ -33,30 +33,7 @@ let outputFile = function () {
 let program = config.programs.videoLecture;
 
 
-// PROMISE THEN CALLBACK 
-// ------------------------------------------------------------
-let promiseCallback = function (self, callback, answers, nameOfPrompt, nextFunction) {
-    if (answers) {
-        // message = 'Please choose which addons you need!'
-        if (answers[nameOfPrompt]) {
-            program[nameOfPrompt] = answers[nameOfPrompt];
-            // DO SOME OTHER ASYNC TASK 
-            // - need async keyword before 'function' for this to work   
-            // try {
-            //     await languagePrompt(self)
-            //     .then((answers) => {});
-            // } catch (err) {}
-        } 
-        if (nextFunction) {
-            return nextFunction(self);                                         
-        } else {
-            callback();
-        }                
-    } else {
-        self.log(`Not getting answers for ${nameOfPrompt}`);
-        callback();
-    } 
-} 
+
 
 
 // BUILD FUNCTION LOGIC 
@@ -66,7 +43,6 @@ let buildFinalOutput = function (self) {
     var prodTicket = cliTools.readInputFile(inputFile());  
     return articles.spotlight.buildSpotlight(prodTicket, program);
 }
-
 
 
 // EXPORT
@@ -84,43 +60,7 @@ module.exports = function (vorpal) {
         // this.log("RAW ARTICLE ID: ", args.articleID);
         program.articleID = args.articleID;        
         let self = this;
-
-        // Has LLA? 
-        prompts.llaPrompt(self)
-        .then((answers) => {
-            // Has OUS?
-            return promiseCallback(self, callback, answers, "hasLLA", prompts.ousPrompt);
-        })
-        .then((answers) => {
-            // Has Peer Reviewer?
-            return promiseCallback(self, callback, answers, "hasOUS", prompts.peerReviewerPrompt);
-        })
-        .then((answers) => {
-            // Has Collection Page?
-            return promiseCallback(self, callback, answers, "hasPeerReviewer", prompts.collectionPagePrompt);
-        })
-        .then((answers) => {
-            // Has Downloadable Slide Deck?
-            return promiseCallback(self, callback, answers, "hasCollectionPage", prompts.slideDeckPrompt);
-        })
-        .then((answers) => {
-            // Has For Your Patient PDF?
-            return promiseCallback(self, callback, answers, "hasSlideDeck", prompts.forYourPatientPrompt);
-        })
-        .then((answers) => {
-            // Build Final Output
-            return promiseCallback(self, callback, answers, "hasForYourPatient", buildFinalOutput);
-        })
-        .then((finishedArticleObject) => {
-            self.log(program);
-            vorpal.emit('client_prompt_submit', program);
-            var completionMessage = `${program.name} created successfully! Check your output folder for the file: ${chalk.cyan(outputFile())}`;
-            prompts.completeGenerateAction(this, callback, finishedArticleObject, outputFile(), completionMessage);   
-        }) 
-        .catch((err) => {
-            self.log(err.message);
-            callback();
-        });
+        actions.basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFile);
     });
     vorpal.on('client_prompt_submit', function (program){
         cliTools.resetProgram(program);
