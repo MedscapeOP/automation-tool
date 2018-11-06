@@ -64,8 +64,8 @@ describe('First Response', function () {
                 result += "\n\n" + slideTOCs[i].rawSlides;
             }
 
-            var subsection = new SubsectionElement(true);
-            result = utils.xmlOps.objectToXMLString(app.articles.articleUtils.buildSlides(result, subsection, "900/319").toObjectLiteral());
+            // var subsection = new SubsectionElement(true);
+            // result = utils.xmlOps.objectToXMLString(app.articles.articleUtils.buildSlides(result, subsection, "900/319").toObjectLiteral());
 
             fs.writeFileSync(__dirname + '/output/first-response/fr-slides.xml', result);
             

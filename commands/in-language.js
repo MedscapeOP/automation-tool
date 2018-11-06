@@ -233,9 +233,9 @@ module.exports = function (vorpal) {
                 result += `${xmlString}\n\n`;
             }    
             try {
+                var completionMessage = `In language TOC elements created successfully! Check your output folder for the file: ${outputFile()}`;
                 result = utils.cleanHTML.cleanEntities(result);
-                utils.cliTools.writeOutputFile(outputFile(), result);
-                self.log(`In language TOC elements created successfully! Check your output folder for the file: ${outputFile()}`);
+                utils.cliTools.writeOutputFile(outputFile(), result, self, completionMessage, callback);
                 callback();                                     
             } catch (error) {
                 self.log(error.message);
