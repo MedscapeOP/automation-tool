@@ -192,10 +192,10 @@ function unorderedList(string, removeFluff=true, format=true) {
 
 function slidesInitial (str) {
     // Insert Slide edge cases / Capitalization Edge Cases
-    var insertSlideRegExp1 = new RegExp('&lt;&lt;.*slide', 'g');
+    var insertSlideRegExp1 = new RegExp('&lt;&lt;.*slide&gt;&gt;', 'g');
     str = str.replace(insertSlideRegExp1, "&lt;&lt;insert slide");
 
-    var insertSlideRegExp2 = new RegExp('&lt;&lt;.*Slide', 'g');
+    var insertSlideRegExp2 = new RegExp('&lt;&lt;.*Slide&gt;&gt;', 'g');
     str = str.replace(insertSlideRegExp2, "&lt;&lt;insert slide");
 
     var insertSlideRegExp3 = new RegExp('&gt;&gt;.*slide', 'g');
