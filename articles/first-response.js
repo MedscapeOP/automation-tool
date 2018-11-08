@@ -14,19 +14,18 @@ function getSlidesTOCs (ticket, program) {
     // If LLA build slides with Video embed AND Edu Impact challenge 
     var slidesComponents = prodticket.getSlides(ticket, program);
 
-    // var slideTOCs = [];
+    var slideTOCs = [];
     
-    // for (var i = 0; i < slidesComponents.length; i++) {            
-    //     if (i == slidesComponents.length - 1) {
-    //         // console.log(`COMPONENT: ${i + 1}`, utils.xmlOps.objectToXMLString(articleUtils.buildSlidesTOC(slidesComponents[i]).toObjectLiteral()));
-    //         slideTOCs.push(articleUtils.buildSlidesTOC(slidesComponents[i], true, true, true));
-    //     } else {
-    //         console.log(`COMPONENT: ${i + 1}`, slidesComponents[i]);
-    //         slideTOCs.push(articleUtils.buildSlidesTOC(slidesComponents[i], true, true, false));
-    //     }
-    // }
-    // return slideTOCs;
-    return slidesComponents;
+    var hasEduImpact = program.hasLLA;
+
+    for (var i = 0; i < slidesComponents.length; i++) {            
+        if (i == slidesComponents.length - 1) {
+            slideTOCs.push(articleUtils.buildSlidesTOC(slidesComponents[i], true, hasEduImpact, true));
+        } else {
+            slideTOCs.push(articleUtils.buildSlidesTOC(slidesComponents[i], true, false, false));
+        }
+    }
+    return slideTOCs;
 }
 
 

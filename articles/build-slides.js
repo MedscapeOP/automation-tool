@@ -37,6 +37,11 @@ const SlideGroup = require('../classes/slide_grp');
 const slideSymbolType1 = `<strong>&lt;&lt;insert slide`;
 const slideSymbolType2 = `&lt;&lt;insert slide`;
 
+/**
+ * @description Finds the start of the next slide
+ * - Looks for <strong>&lt;&lt;insert slide (with and without the <strong> tag)
+ * @param {*} substring 
+ */
 function findNextSlide(substring) {
 
     var nextSlideType1 = {
@@ -76,6 +81,16 @@ function findNextSlide(substring) {
 // console.log(findNextSlide(testString));
 
 // Slide Path ${articleID.slice(0, 3)}/${articleID.slice(3)}
+/**
+ * @description Builds a subsection XML element with fully formatted slide groups
+ * - Requires substring to be slides HTML string.
+ * - Slides HTML should be already run through slidesInitial and slidesFinal cleaning functions.  
+ * @param {*} substring 
+ * @param {object} subsectionElement 
+ * @param {string} slidePath 
+ * @param {number} counter 
+ * @param {*} fn 
+ */
 let buildSlidesXML = (substring, subsectionElement, slidePath = "XXX/XXX", counter = 0, fn) => {
     var nextSlideSymbol = findNextSlide(substring);
     // console.log("UPCOMING SLIDE SYMBOL: ", nextSlideSymbol);
@@ -130,6 +145,13 @@ let buildSlidesXML = (substring, subsectionElement, slidePath = "XXX/XXX", count
     }
 };
 
+/**
+ * Function that calls slidesFinal on slides HTML and passes result to buildSlidesXML.
+ * - Returns the result of buildSlidesXML (subsection element)
+ * @param {*} substring 
+ * @param {*} subsectionElement 
+ * @param {*} slidePath 
+ */
 let buildSlides = function (substring, subsectionElement, slidePath) {
     var cleanSlides = cleanHTML.slidesFinal(substring);
     return buildSlidesXML(cleanSlides, subsectionElement, slidePath, 0, buildSlidesXML);

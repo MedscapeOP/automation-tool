@@ -13,11 +13,11 @@ Common Entities / Things to remove:
 function removeTicketFluff(str) {
     // Remove this from Prod ticket (Insert text)
     // var insertRegExp = new RegExp('(Insert.*)', 'g');
-    var insertRegExp = /\(Insert.*\)/g;
+    var insertRegExp = /\(Insert.*\)/gi;
     str = str.replace(insertRegExp, "");
 
-    var insertRegExp2 = /\(insert.*\)/g;
-    str = str.replace(insertRegExp2, "");
+    // var insertRegExp2 = /\(insert.*\)/g;
+    // str = str.replace(insertRegExp2, "");
 
     // Remove this from Prod ticket (60 character limit)
     // var charLimitRegExp = new RegExp('\(.*limit?\)', 'g');
@@ -135,7 +135,7 @@ function paragraph(string, removeFluff=true) {
         str = removeTicketFluff(str);
     }
     var options =   {
-        allowedTags: [ 'p', 'em', 'strong', 'sup' ],
+        allowedTags: [ 'p', 'em', 'strong', 'sup', 'sub' ],
         allowedAttributes: {
           'sup': ["type"],
         },
@@ -161,7 +161,7 @@ function unorderedList(string, removeFluff=true, format=true) {
         str = removeTicketFluff(str);
     }
     var options =   {
-        allowedTags: [ 'ul', 'li', 'em', 'strong', 'sup', 'tt' ],
+        allowedTags: [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' ],
         allowedAttributes: {
           'sup': ["type"],
         },
@@ -204,8 +204,12 @@ function slidesInitial (str) {
     var insertSlideRegExp4 = new RegExp('&gt;&gt;.*Slide', 'g');
     str = str.replace(insertSlideRegExp4, "&lt;&lt;insert slide");
     
-    // var insertSlideRegExp5 = /&lt;&lt;.*slide/gi;
-    // str = str.replace(insertSlideRegExp5, "&lt;&lt;insert slide");
+    var insertSlideRegExp5 = /&lt;&lt;insert.*slide/gi;
+    str = str.replace(insertSlideRegExp5, "&lt;&lt;insert slide");
+
+    // Remove Component statement
+    var componentRegExp1 = /(?:&lt;){1,}Component \d.*/gi
+    str = str.replace(componentRegExp1, "");
 
     return str;
 }
@@ -213,6 +217,8 @@ function slidesInitial (str) {
 function slidesFinal (str) {
         
     str = unorderedList(str);
+
+    // console.log("STRING AFTER UL FORMAT: ", str);
 
     /* CLEAN UP HTML FOR EDGE CASES */
 
@@ -281,7 +287,7 @@ function abbreviations(string, removeFluff=true) {
         str = removeTicketFluff(str);
     }
     var options = {
-        allowedTags: [ 'p', 'br', 'em', 'strong', 'sup' ],
+        allowedTags: [ 'p', 'br', 'em', 'strong', 'sup', 'sub' ],
         allowedAttributes: [],
         exclusiveFilter: function(frame) {
             // return frame.tag === 'a' && !frame.text.trim();
@@ -301,7 +307,7 @@ function references(string, removeFluff=true) {
         str = removeTicketFluff(str);
     }
     var options = {
-        allowedTags: [ 'p', 'br', 'em', 'strong', 'sup' ],
+        allowedTags: [ 'p', 'br', 'em', 'strong', 'sup', 'sub' ],
         allowedAttributes: [],
         exclusiveFilter: function(frame) {
             // return frame.tag === 'a' && !frame.text.trim();
@@ -320,7 +326,7 @@ function peerReviewer(string, removeFluff=true) {
         str = removeTicketFluff(str);
     }
     var options = {
-        allowedTags: ['br', 'em', 'strong', 'sup' ],
+        allowedTags: ['br', 'em', 'strong', 'sup', 'sub'],
         allowedAttributes: [],
         exclusiveFilter: function(frame) {
             // return frame.tag === 'a' && !frame.text.trim();

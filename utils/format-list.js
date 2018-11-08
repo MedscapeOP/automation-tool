@@ -67,7 +67,13 @@ function findNextSymbol(substring) {
 }
 
 
-// console.log(findNextSymbol(testString2));
+/**
+ * @description Creates nested list items without outermost <ul>
+ * - Looks for Bullet symbols: &#8226; / <tt>o / &#9642;
+ * @param {*} substring 
+ * @param {*} prevSymbol 
+ * @param {*} fn 
+ */
 
 let formatUlItems = (substring, prevSymbol, fn) => {
     // Replace &#8226; entity with <li>
@@ -78,14 +84,6 @@ let formatUlItems = (substring, prevSymbol, fn) => {
     let nextSymbol = findNextSymbol(substring);
 
     if (nextSymbol == -1) {
-        // if (prevSymbol == bulletSymbol) {
-        //     return substring;
-        // } else if (prevSymbol == subBulletSymbol) {
-        //     // close the bulletSymbol li
-        //     return substring + "</li>";
-        // } else if (prevSymbol == subSubBulletSymbol) {
-        //     return substring + "</li>";
-        // }
         return substring;
     }
 
@@ -130,7 +128,7 @@ let formatUlItems = (substring, prevSymbol, fn) => {
             substring = findLastAndReplace(substring, "</li>", '');            
             // - replace "&#9642;" with <ul><li>$1</li></ul>
             var liRegexp = new RegExp(subSubBulletSymbol + `(.*)`);
-            /* POSSIBLY ADD CLOSING </li> - DONE */
+            /* ADD CLOSING </li> - DONE */
             substring = substring.replace(liRegexp, '<ul><li>$1</li></ul></li></ul></li>');
             return fn(substring, nextSymbol, formatUlItems);
         }            
@@ -234,7 +232,14 @@ var testString3 = `
 <ul><li>	More research is needed to determine the optimal place for ADA testing</li></ul></li></ul></li>
 `
 
-
+/**
+ * @description Inserts wrapper <ul>'s as needed. 
+ * - Looks at start of each new line and determines whether to insert <ul> or </ul> 
+ * - Logic based on start of line being blank, <ul>, or <li>.
+ * @param {*} prevWasListItem 
+ * @param {*} remainingString 
+ * @param {*} fn 
+ */
 function wrapUls(prevWasListItem, remainingString, fn) {
     // console.log("REMAINING STRING: ", remainingString);
     let newLineRegExp = new RegExp('.*', 'g');

@@ -3,16 +3,16 @@ module.exports = [
         articleID: "900319",
         componentNumber: 1, 
         slidePath: "900/319/900319_2",
-        rawSlides: `<p><strong>&lt;&lt;Component 1 (video Intro)&gt;&gt;</strong></p>
-        <p>&lt;&lt;insert Intro slide 1; 00:00 &gt;&gt;  </p>
+        rawSlides: `
+        <p>&lt;&lt;insert slide 1; 00:00 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt;</strong> <strong>Diagnostic and Management Challenges in Patients With Chronic Migraine</strong></p>
         
-        <p>&lt;&lt;insert Intro slide 2; 00:15 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 2; 00:15 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Faculty</strong></p>
         
-        <p>&lt;&lt;insert Intro slide 3; 00:30 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 3; 00:30 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Disclaimer</strong></p>
         
@@ -22,13 +22,12 @@ module.exports = [
         articleID: "900319",
         componentNumber: 2, 
         slidePath: "900/319/900319_3",
-        rawSlides: `<p><strong>&lt;&lt;Component 2 (video Buse)&gt;&gt;</strong></p>
-        
-        <p>&lt;&lt;insert Buse slide 1; 00:00 &gt;&gt;  </p>
+        rawSlides: `
+        <p>&lt;&lt;insert slide 1; 00:00 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt; Stigma and Quality of Life in Patients With Frequent Migraine</strong></p>
 
-        <p>&lt;&lt;insert Buse slide 2; Chapter title: CaMEO Study Background; 00:19 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 2; Chapter title: CaMEO Study Background; 00:19 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt; CaMEO Study: Background</strong><sup><strong>[1]</strong></sup></p>
 
@@ -36,11 +35,11 @@ module.exports = [
 
         <p><tt>o	</tt>Asked respondents to postulate how their lives would be different if they did not have migraine </p>
 
-        <p>&lt;&lt;insert Buse slide 3; Chapter title: Life Without Migraine: 02:02 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 3; Chapter title: Life Without Migraine: 02:02 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt; CaMEO Study: Patient Demographics</strong><sup><strong>[2]</strong></sup></p>
 
-        <p>&lt;&lt;insert Buse slide 4; 02:32 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 4; 02:32 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt; CaMEO Study: Effect of Migraine on Life if I Didn't Have Migraine</strong><sup><strong>[2]</strong></sup></p>
 
@@ -48,7 +47,7 @@ module.exports = [
 
         <p>&#8226;	Across 9 domains assessed, almost 90% of respondents with CM and 70% with EM said lives would be better or a lot better in at least 1 area without migraine</p>
 
-        <p>&lt;&lt;insert Buse slide 5; Chapter title: Effect of Migraine on Career and Finances; 03:11 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 5; Chapter title: Effect of Migraine on Career and Finances; 03:11 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt; CaMEO Study: Effect of Migraine on Personal Career and Finances</strong><sup><strong>[3]</strong></sup></p>
 
@@ -56,7 +55,7 @@ module.exports = [
 
         <p>&#8226;	Increasing headache day frequency in EM and CM groups associated with higher rates of concern</p>
 
-        <p>&lt;&lt;insert Buse slide 6; 4:14 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 6; 4:14 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt; CaMEO Study: Effect of Migraine on Partner's Career and Finances</strong><sup><strong>[3]</strong></sup></p>
 
@@ -66,7 +65,7 @@ module.exports = [
 
         <p><tt>o	</tt>Those with CM twice as likely vs EM to agree somewhat or completely</p>
 
-        <p>&lt;&lt;insert Buse slide 7; Chapter heading: Effect of Migraine on Relationships 04:40 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 7; Chapter heading: Effect of Migraine on Relationships 04:40 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt; CaMEO Study: Effect of Migraine on Relationships</strong><sup><strong>[4]</strong></sup></p>
 
@@ -86,7 +85,7 @@ module.exports = [
 
         <p><tt>o	</tt>Held true for all areas of relationships </p>
 
-        <p>&lt;&lt;insert Buse slide 8; Chapter title: Conclusions; 6:33 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 8; Chapter title: Conclusions; 6:33 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt; Conclusions</strong></p>
 
@@ -96,13 +95,12 @@ module.exports = [
         articleID: "900319",
         componentNumber: 3, 
         slidePath: "900/319/900319_4",
-        rawSlides: `<p><strong>&lt;&lt;Component 3 (video Lipton)&gt;&gt;</strong></p>
-        
-        <p>&lt;&lt;insert Lipton slide 1; 00:00 &gt;&gt;  </p>
+        rawSlides: `
+        <p>&lt;&lt;insert slide 1; 00:00 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt; Considerations in Preventive Therapy for Migraine</strong></p>
         
-        <p>&lt;&lt;insert Lipton slide 2; Chapter title: Discontinuation of Preventive Therapies; 00:15 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 2; Chapter title: Discontinuation of Preventive Therapies; 00:15 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Patterns of Preventive Therapy Use: IBMS-II</strong><sup><strong>[5]</strong></sup></p>
         
@@ -118,7 +116,7 @@ module.exports = [
         
         <p><tt>o	</tt>The medicine causes too many side effects</p>
         
-        <p>&lt;&lt;insert Lipton slide 3; Chapter title: Treatment Efficacy and Tolerability; 00:54 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 3; Chapter title: Treatment Efficacy and Tolerability; 00:54 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Weighing Treatment Efficacy and Tolerability</strong></p>
         
@@ -144,7 +142,7 @@ module.exports = [
         
         <p><tt>o	</tt>Much greater chance of keeping people in cell A</p>
         
-        <p>&lt;&lt;insert Lipton slide 4; 02:13 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 4; 02:13 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Measuring Migraine Burden in All Phases</strong><sup><strong>[6,7]</strong></sup></p>
         
@@ -154,7 +152,7 @@ module.exports = [
         
         <p><tt>o	</tt>In the postheadache (postdrome) phase, people may have changes in mood or behavior, fatigue, and scalp sensitivity</p>
         
-        <p>&lt;&lt;insert Lipton slide 5; 02:36 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 5; 02:36 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Measuring Burden of Migraine Before, During, and After Migraine: MPFID</strong><sup><strong>[8,9]</strong></sup></p>
         
@@ -164,7 +162,7 @@ module.exports = [
         
         <p><tt>o	</tt>Daily diary measure, asks 13 questions about ability to function</p>
         
-        <p>&lt;&lt;insert Lipton slide 6; 03:01 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 6; 03:01 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Burden on Everyday Activities and Physical Impairment by Migraine Phase</strong><sup><strong>[9]</strong></sup></p>
         
@@ -178,7 +176,7 @@ module.exports = [
         
         <p><tt>o	</tt>Get a fuller picture both of the burden of disease and the benefits of treatment</p>
         
-        <p>&lt;&lt;insert Lipton slide 7; 03:43 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 7; 03:43 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Identifying Natural Subgroups of Migraine</strong><sup><strong>[10]</strong></sup></p>
         
@@ -204,7 +202,7 @@ module.exports = [
         
         <p>&#9642;	Use conditions that travel along with migraine to identify natural subgroups of migraine</p>
         
-        <p>&lt;&lt;insert Lipton slide 8; 05:15 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 8; 05:15 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Natural Subgroups of Migraine: Overall Results</strong><sup><strong>[10]</strong></sup></p>
         
@@ -212,7 +210,7 @@ module.exports = [
         
         <p><tt>o	</tt>Discovered 8 natural subgroups</p>
         
-        <p>&lt;&lt;insert Lipton slide 9; 05:23 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 9; 05:23 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Natural Subtype of Migraine: Likelihood of Progression to CM</strong><sup><strong>[10]</strong></sup></p>
         
@@ -224,7 +222,7 @@ module.exports = [
         
         <p><tt>o	</tt>Substantial differences among groups in prognosis</p>
         
-        <p>&lt;&lt;insert Lipton slide 10; 05:47 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 10; 05:47 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Looking Ahead</strong></p>
         
@@ -244,13 +242,12 @@ module.exports = [
         articleID: "900319",
         componentNumber: 4, 
         slidePath: "900/319/900319_5",
-        rawSlides: `<p><strong>&lt;&lt;Component 4 (video Dodick)&gt;&gt;</strong></p>
-        
-        <p>&lt;&lt;insert Dodick slide 1; 00:00 &gt;&gt;  </p>
+        rawSlides: `        
+        <p>&lt;&lt;insert slide 1; 00:00 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt; Migraine Headache: A Treatment Update</strong></p>
         
-        <p>&lt;&lt;insert Dodick slide 2; 00:22 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 2; 00:22 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Lasmiditan for Acute Treatment of Migraine</strong><sup><strong>[11,12]</strong></sup></p>
         
@@ -270,7 +267,7 @@ module.exports = [
         
         <p><tt>o	</tt>Both large, placebo-controlled, randomized, double-blind studies evaluating efficacy and safety of lasmiditan for acute treatment of migraine</p>
         
-        <p>&lt;&lt;insert Dodick slide 3; 01:31 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 3; 01:31 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Lasmiditan: Phase 3 Study Results</strong><sup><strong>[12]</strong></sup></p>
         
@@ -294,7 +291,7 @@ module.exports = [
         
         <p><tt>o	</tt>Option also for patients for whom triptans were not effective or were not tolerated</p>
         
-        <p>&lt;&lt;insert Dodick slide 4; 02:35 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 4; 02:35 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Rimegepant for Acute Treatment of Migraine: Phase 3 Study Results</strong><sup><strong>[13,14]</strong></sup></p>
         
@@ -312,7 +309,7 @@ module.exports = [
         
         <p><tt>o	</tt>About two-thirds of patients achieved relief of headache at 2 hours</p>
         
-        <p>&lt;&lt;insert Dodick slide 5; 03:27 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 5; 03:27 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt;Ubrogepant for Acute Treatment of Migraine: Phase 3 Study Results</strong><sup><strong>[15,16]</strong></sup></p>
         
@@ -328,7 +325,7 @@ module.exports = [
         
         <p><tt>o	</tt>Side effect profile for both compounds look very similar and comparable to placebo</p>
         
-        <p>&lt;&lt;insert Dodick slide 6; 04:12 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 6; 04:12 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; CGRP-Targeting mAbs for Migraine Prevention</strong><sup><strong>[6,17-26]</strong></sup></p>
         
@@ -338,7 +335,7 @@ module.exports = [
         
         <p>&#8226;	All of these mAbs are effective for the preventive treatment of episodic migraine and chronic migraine</p>
         
-        <p>&lt;&lt;insert Dodick slide 7; 04:40 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 7; 04:40 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Early Rapid Onset of CGRP-Targeting mAbs</strong><sup><strong>[27-29]</strong></sup></p>
         
@@ -348,7 +345,7 @@ module.exports = [
         
         <p><tt>o	</tt>Unprecedented, for preventive treatments for migraine</p>
         
-        <p>&lt;&lt;insert Dodick slide 8; 05:03 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 8; 05:03 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Benefit of CGRP-Targeting mAbs in Difficult-to-Treat Populations</strong><sup><strong>[30-35]</strong></sup></p>
         
@@ -360,7 +357,7 @@ module.exports = [
         
         <p>&#8226;	Unique attributes that go far above and beyond just their efficacy in preventing or reducing the frequency of migraine</p>
         
-        <p>&lt;&lt;insert Dodick slide 9; 05:36 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 9; 05:36 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Conclusions</strong></p>
         
@@ -370,13 +367,12 @@ module.exports = [
         articleID: "900319",
         componentNumber: 5, 
         slidePath: "900/319/900319_6",
-        rawSlides: `<p><strong>&lt;&lt;Component 5 (video Halker-Singh)&gt;&gt;</strong></p>
-        
-        <p>&lt;&lt;insert Halker Singh slide 1; 00:00 &gt;&gt;  </p>
+        rawSlides: `        
+        <p>&lt;&lt;insert slide 1; 00:00 &gt;&gt;  </p>
 
         <p><strong>&lt;&lt;Level 2&gt;&gt; Emerging Approaches for Preventive Therapy of CM</strong></p>
         
-        <p>&lt;&lt;insert Halker Singh slide 2; 00:21 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 2; 00:21 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; CM: Features and Challenges</strong><sup><strong>[6,36,37]</strong></sup></p>
         
@@ -396,7 +392,7 @@ module.exports = [
         
         <p><tt>o	</tt>The first was recently approved for migraine prevention</p>
         
-        <p>&lt;&lt;insert Halker Singh slide 3; Chapter title: Fremanezumab; 01:19 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 3; Chapter title: Fremanezumab; 01:19 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Fremanezumab for Prevention of CM: HALO-CM</strong><sup><strong>[22]</strong></sup></p>
         
@@ -420,7 +416,7 @@ module.exports = [
         
         <p>&#8226;	Study met all of its endpoints</p>
         
-        <p>&lt;&lt;insert Halker Singh slide 4; 02:42 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 4; 02:42 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Reversion From CM to EM With Fremanezumab in HALO-CM</strong><sup><strong>[38]</strong></sup></p>
         
@@ -434,7 +430,7 @@ module.exports = [
         
         <p>&#8226;	Demonstrated potential benefit for reversion from CM to EM</p>
         
-        <p>&lt;&lt;insert Halker Singh slide 5; Chapter title: Eptinezumab 03:28 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 5; Chapter title: Eptinezumab 03:28 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Eptinezumab for Prevention of CM: PROMISE-2</strong><sup><strong>[21]</strong></sup></p>
         
@@ -452,11 +448,11 @@ module.exports = [
         
         <p><tt>o	</tt>Significantly higher proportion of patients on eptinezumab achieved 100% reduction in monthly migraine days vs placebo</p>
         
-        <p>&lt;&lt;insert Halker Singh slide 6; 04:35 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 6; 04:35 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Conclusions</strong></p>
         
-        <p>&lt;&lt;insert Halker Singh slide 7; 004:55 &gt;&gt;  </p>
+        <p>&lt;&lt;insert slide 7; 004:55 &gt;&gt;  </p>
         
         <p><strong>&lt;&lt;Level 2&gt;&gt; Thank You</strong></p>
         

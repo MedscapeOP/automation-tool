@@ -57,19 +57,20 @@ describe('First Response', function () {
             var currentTOC = null;
 
             for (var i = 0; i < slideTOCs.length; i++) {
-                // currentTOC = slideTOCs[i].toObjectLiteral();
-                // currentTOC = utils.xmlOps.objectToXMLString(currentTOC);
-                // // currentTOC = utils.cleanHTML.cleanEntities(currentTOC);
-                // result += """\n" + currentTOC; 
-                result += "\n\n" + slideTOCs[i].rawSlides;
-            }
+                currentTOC = slideTOCs[i].toObjectLiteral();
+                // console.log(`CURRENT TOC: ${i + 1}`, slideTOCs[i] instanceof app.classes.TOCElement);
 
-            // var subsection = new SubsectionElement(true);
-            // result = utils.xmlOps.objectToXMLString(app.articles.articleUtils.buildSlides(result, subsection, "900/319").toObjectLiteral());
+                // console.log(`CURRENT TOC: ${i + 1}`, JSON.stringify(currentTOC, undefined, 2));
+                currentTOC = utils.xmlOps.objectToXMLString(currentTOC);
+                currentTOC = utils.cleanHTML.cleanEntities(currentTOC);
+                result += "\n" + currentTOC; 
+                // result += "\n\n" + slideTOCs[i].rawSlides;
+                // console.log("SLIDE TOC HTML: ", slideTOCs[i] + "\n\n\n");
+            }
 
             fs.writeFileSync(__dirname + '/output/first-response/fr-slides.xml', result);
             
-            // expect(result).to.equalIgnoreSpaces(completeSlidesTOCs);
+            expect(result).to.equalIgnoreSpaces(completeSlidesTOCs);
         });
     });
 
