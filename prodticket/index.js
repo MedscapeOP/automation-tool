@@ -28,6 +28,7 @@ let findSlides = require('./find-slides');
 let findGoalStatement = require('./find-goal-statement');
 let findTargetAudience = require('./find-target-audience');
 let findLearningObjectives = require('./find-learning-objectives');
+let findComponents = require('./find-components');
 
 function checkTicket(ticketHTML) {
     if (ticketHTML) {
@@ -133,6 +134,11 @@ function getCollectionPage(ticketHTML, program) {
     };
 }
 
+function getComponents(ticketHTML, program) {
+    var components = findComponents[program.codeName](ticketHTML, program);
+    return components;
+}
+
 module.exports = {
     getTitle,
     getByline,
@@ -143,5 +149,6 @@ module.exports = {
     getGoalStatement,
     getTargetAudience, 
     getLearningObjectives,
-    getCollectionPage
+    getCollectionPage,
+    getComponents
 }

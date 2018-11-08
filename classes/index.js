@@ -5,6 +5,7 @@ const SectionElement = require('./sec_element');
 const SubsectionElement = require('./subsec_element');
 const SlideGroup = require('./slide_grp');
 const SlideComponent = require('./slide_component');
+const Component = require('./component');
 
 module.exports = {
     XMLElement,
@@ -13,5 +14,6 @@ module.exports = {
     SectionElement,
     SubsectionElement,
     SlideGroup,
-    SlideComponent
+    SlideComponent,
+    Component
 }

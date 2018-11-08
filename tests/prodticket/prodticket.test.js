@@ -205,5 +205,25 @@ describe('Prodticket Module Functions', function () {
             expect(result).to.equalIgnoreSpaces(learningObjectivesCC);
         });
     });
+
+    describe("prodticket.getComponents()", function () {
+        var componentsArray = require('./input/components-fr');
+
+        it("should return an array of components from .html - First Response", function () {
+            var result = prodticket.getComponents(prodticketFR, config.programs.firstResponse);
+            // for (var i = 0; i < componentsArray.length; i++) {
+            //     expect(result[i].componentNumber).to.equal(componentsArray[i].componentNumber);
+
+            //     expect(result[i].title).to.equal(componentsArray[i].title);
+
+            //     expect(result[i].teaser).to.equalIgnoreSpaces(componentsArray[i].teaser);
+
+            //     expect(result[i].byline).to.equalIgnoreSpaces(componentsArray[i].byline);
+
+            //     expect(result[i].contentType).to.equalIgnoreSpaces(componentsArray[i].contentType);
+            // }
+            console.log("COMPONENTS RESULT: ", result);
+        });
+    });
 });
 
