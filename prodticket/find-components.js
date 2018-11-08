@@ -61,6 +61,7 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
         );
         componentNumberString = textBlock.match(/(Component.*)/gi)[0];
         componentNumber = componentNumberString.match(/((?:\d){1,})/g)[0];
+        componentNumber = parseInt(componentNumber, 10);
         
         // console.log("COMPONENT NUMBER: ", componentNumber);
 
@@ -89,28 +90,21 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
         // console.log("CONTENT TYPE: ", contentType);
         var component = new Component(componentNumber, title, teaser, byline, contentType); 
         
-        components.push(component);
+        components.push(component.toObjectLiteral());
 
-        productSpecificAddonsBlock = productSpecificAddonsBlock.substring(nextComponent + 1);
-        nextComponent = stringOps.regexIndexOf(productSpecificAddonsBlock, /\>Component.*/g);
-        if (productSpecificAddonsBlock.length < 1500) {
-            productSpecificAddonsBlock = productSpecificAddonsBlock.substring(0);
+        if (componentNumber == 1) {
+            productSpecificAddonsBlock = productSpecificAddonsBlock.substring(nextComponent + 1);
+            nextComponent = stringOps.regexIndexOf(productSpecificAddonsBlock, /\>Component.*/g);
+            productSpecificAddonsBlock = productSpecificAddonsBlock.substring(nextComponent);
         } else {
+            productSpecificAddonsBlock = productSpecificAddonsBlock.substring(textBlock.length);
+            nextComponent = stringOps.regexIndexOf(productSpecificAddonsBlock, /\>Component.*/g);
             productSpecificAddonsBlock = productSpecificAddonsBlock.substring(nextComponent);
         }
-
-        if (componentNumber == 4) {
-            console.log(productSpecificAddonsBlock);
-        }
+        // if (componentNumber == 1) {
+        //     console.log(productSpecificAddonsBlock);
+        // }
     }
-    
-
-    // var {textBlock: cmeAuthor, label: cmeAuthorLabel} = stringOps.getTextBlock(ticketHTML, "CME Author", 'Editor');
-    
-    // newsAuthor = cleanHTML.singleLine(cleanHTML.plainText(newsAuthor)).trim();
-    // cmeAuthor = cleanHTML.singleLine(cleanHTML.plainText(cmeAuthor)).trim(); 
-
-    // return productSpecificAddonsBlock;
     return components;
 }
 
