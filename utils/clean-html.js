@@ -405,21 +405,30 @@ function insertEntityPlaceholders (xmlString) {
 
     var entityRegexp = new RegExp('&(#?[0-9]+);', 'g');
     str = str.replace(entityRegexp, '--ENTITY$1;--');
+
+    var ampersandRegExp = /&/gi;
+    str = str.replace(ampersandRegExp, '--AMPERSAND--');
+
     return str;
 }
 
 function cleanEntities (xmlString) {
     var clean = xmlString;
-    // Remove &amp; from before entitities  
-    var entityRegexp = new RegExp('&amp;([A-Za-z]+|#?[0-9]+);', 'g');
-    clean = clean.replace(entityRegexp, "&$1;");
-
+    
     // Remove Entity Placeholders
     var blankRegExp = new RegExp('--SPACEENTITY--', 'g');
     clean = clean.replace(blankRegExp, "&#160;");
+    
+    var entityRegExp2 = new RegExp('--ENTITY(#?[0-9]+);--', 'g');
+    clean = clean.replace(entityRegExp2, '&$1;');
 
-    var entityRegexp2 = new RegExp('--ENTITY(#?[0-9]+);--', 'g');
-    clean = clean.replace(entityRegexp2, '&$1;');
+    // Remove Ampersand Placeholder 
+    var ampersandRegExp = new RegExp('--AMPERSAND--', 'g');
+    clean = clean.replace(ampersandRegExp, '&'); 
+
+    // Remove &amp; from before entitities  
+    var entityRegexp = new RegExp('&amp;([A-Za-z]+|#?[0-9]+);', 'g');
+    clean = clean.replace(entityRegexp, "&$1;");
     return clean;
 }
 

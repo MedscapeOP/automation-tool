@@ -24,7 +24,7 @@ function buildInLanguageTOC (slideIntro, sectionHeader, tocType, tocLabel) {
 }
 
 function pdfSlideIntro (firstThree, lastThree, articleID, language) {
-    return `
+    var result = `
         <p>
         <style type="text/css">
             #inlinePdfChrome {display:none;} #inlinePdfNonChrome {display:block;} #edu_left_col {width:100% !important;}
@@ -39,17 +39,19 @@ function pdfSlideIntro (firstThree, lastThree, articleID, language) {
                     </div>
                 </object>
             </span>
-            <iframe width="860px" height="500px" class="disableAccmeOverlay" id="inlinePdfChrome" src="http://img.medscapestatic.com/images/${firstThree}/${lastThree}/${articleID}_${language.transcriptSuffix}.pdf">--SPACEENTITY--</iframe>
+            <iframe width="860px" height="500px" class="disableAccmeOverlay" id="inlinePdfChrome" src="http://img.medscapestatic.com/images/${firstThree}/${lastThree}/${articleID}_${language.transcriptSuffix}.pdf">&nbsp;</iframe>
         </p>
     `;
+    return utils.cleanHTML.insertEntityPlaceholders(result);
 }
 
 function videoEmbed (articleID, language) {
-    return `
+    var result = `
     <div class="app-loading">
-    <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/${articleID}/${articleID}_${language.videoConfigSuffix}.json" data-playertype="edu" id="cme-video-player">--SPACEENTITY--</div>
+    <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/${articleID}/${articleID}_${language.videoConfigSuffix}.json" data-playertype="edu" id="cme-video-player">&nbsp;</div>
     </div>
     `;
+    return utils.cleanHTML.insertEntityPlaceholders(result);
 }
 
 function expertCommentary(articleID, language, programTitle) {    

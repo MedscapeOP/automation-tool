@@ -208,42 +208,27 @@ function buildTableOfContentsTOC(componentsArray, program) {
     // BUILD: Main Section Element 
     var tableOfContentsSection = new SectionElement();
 
-    // BUILD: Main Slides Subsection
+    // BUILD: Main Subsection
     var subsectionElement = new SubsectionElement(true, false, false);
-    var slidesSubsection = buildSlides(slidesComponent.rawSlides, subsectionElement, slidesComponent.slidePath);
+    var mainContent = utils.wrapSlideIntro(snippets.tableOfContents(componentsArray, program.articleID));
+
+    // console.log("MAIN CONTENT: ", mainContent);
+    subsectionElement.subsectionContent = mainContent;
+
+    if (program.hasOUS) {
+        subsectionElement.subsectionHeader = 'Contents of This CPD Activity';
+    } else {
+        subsectionElement.subsectionHeader = 'Contents of This CME Activity';
+    }
 
     // console.log("SLIDES SUBSECTION: ", slidesSubsection.toObjectLiteral().elements[0].elements[3].elements[3].elements);
 
-    // Insert Video Embed - If necessary 
-    if (videoEmbed) {
-        slidesSubsection.subsectionContent = utils.wrapSlideIntro(snippets.videoEmbed(slidesComponent));
-    } 
-
-    if (isLastComponent) {
-        var lastSlideGroup = new SlideGroup(slidesComponent.slidePath, "undefined");
-        lastSlideGroup.sectionImage = null;
-        lastSlideGroup.sectionLabel = null;
-        lastSlideGroup.sectionAltText = null;
-        lastSlideGroup.sectionText = `<p><em>This content has been condensed for improved clarity.</em></p>`;
-
-        // Push last slide_grp onto subsection element 
-        slidesSubsection.insertSlideGroup(lastSlideGroup);
-    }
-
     // INSERT: Main Slides Subsection
-    slidesSection.insertSubsectionElement(slidesSubsection);
-
-    // INSERT: Educational Impact Subsection - If necessary 
-    if (eduImpactSubsection) {
-        var eduImpactSubsection = new SubsectionElement(true, false, false);
-        eduImpactSubsection.subsectionHeader = "Educational Impact Challenge";
-        eduImpactSubsection.subsectionContent = utils.wrapSlideIntro(`<p>What did you learn from this activity? Please click on the “Next” button to proceed to a brief survey to see how your knowledge improved after the education. You can also see how your answers compare with those of your peers.</p>`);
-        slidesSection.insertSubsectionElement(eduImpactSubsection);
-    }
+    tableOfContentsSection.insertSubsectionElement(subsectionElement);
 
     // INSERT: Main Section
-    slidesTOC.insertSectionElement(slidesSection);
-    return slidesTOC;    
+    tableOfContentsTOC.insertSectionElement(tableOfContentsSection);
+    return tableOfContentsTOC;    
 } 
 
 
@@ -258,5 +243,6 @@ module.exports = {
     buildLLAPreTOC,
     buildLLAPostTOC,
     buildReferences,
-    buildAbbreviations
+    buildAbbreviations,
+    buildTableOfContentsTOC
 };

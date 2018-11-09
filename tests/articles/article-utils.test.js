@@ -26,6 +26,8 @@ describe('Article Utilities', function () {
     */
     let prodTicket = fs.readFileSync(__dirname + '/input/article-utils/article.html', 'utf8');
     let program = app.config.programs.spotlight;
+    let prodTicketFr = fs.readFileSync(__dirname + '/input/article-utils/article-fr.html', 'utf8');
+    let programFR = app.config.programs.firstResponse;
     var completeBlankTOC; 
     var completeSlidesTOC;
     var completeSlidesTOC2;
@@ -37,6 +39,7 @@ describe('Article Utilities', function () {
     var completeCMETestSection;
     var completeReferences;
     var completeAbbreviations;
+    var completeTableOfContents;
     
     beforeEach(function() {});
 
@@ -154,6 +157,18 @@ describe('Article Utilities', function () {
             var result = articleUtils.buildAbbreviations(abbreviationsMarkup, program).toObjectLiteral();
             result = utils.xmlOps.objectToXMLString(result);
             expect(result).to.equalIgnoreSpaces(completeAbbreviations);
+        });
+    });
+
+    describe('buildTableOfContentsTOC()', function () {
+        completeTableOfContents = fs.readFileSync(__dirname + '/input/article-utils/table-of-contents.xml').toString();
+
+        it('should return table of contents TOCElement for multi-component articles', function () {
+            var componentArray = app.prodTicket.getComponents(prodTicketFr, programFR);
+            var result = articleUtils.buildTableOfContentsTOC(componentArray, programFR).toObjectLiteral();
+            result = utils.xmlOps.objectToXMLString(result);
+            result = utils.cleanHTML.cleanEntities(result);
+            expect(result).to.equalIgnoreSpaces(completeTableOfContents);
         });
     });
 });

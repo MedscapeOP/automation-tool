@@ -1,15 +1,17 @@
 const inLanguage = require('./in-language');
+const utils = require('../utils');
 
 function downloadablePDF (articleID, nameOfAddon, pdfFilename) {
-    return `<div class="downloadbtn">
+    var result = `<div class="downloadbtn">
             <div class="downloadbtn_lt"></div>
             <div class="downloadbtn_bg_pdf">
                 <a href="/px/trk.svr/${articleID}?exturl=http://img.medscape.com/images/${articleID.slice(0, 3)}/${articleID.slice(3)}/${pdfFilename}" target="_blank">${nameOfAddon}</a>
             </div>
             <div class="downloadbtn_rt"></div>
-            <div class="spacer">--SPACEENTITY--</div>
+            <div class="spacer">&nbsp;</div>
         </div>
-        <div class="spacer">--SPACEENTITY--</div>`;
+        <div class="spacer">&nbsp;</div>`;
+    return utils.cleanHTML.insertEntityPlaceholders(result);
 }
 
 function forYourPatient(articleID) {
@@ -17,22 +19,25 @@ function forYourPatient(articleID) {
 }
 
 function downloadableSlides(articleID) {
-    return `<div id="dlSlides">
+    var result = `<div id="dlSlides">
         <p>A Powerpoint version of the slides from this presentation<br />
             is available for use as a professional resource from Medscape Education.</p>
         <div class="dlBtn"><a class="cme_btn" href="https://img.medscapestatic.com/images/${articleID.slice(0, 3)}/${articleID.slice(3)}/${articleID}_slides.pptx" target="_blank">Download Now</a></div>
     </div>`;
+    return utils.cleanHTML.insertEntityPlaceholders(result);
 }
 
 function videoEmbed (slidesComponent, articleID=null) {
+    var result = "";
     if (articleID) {
-        return `
+        result = `
         <div class="app-loading">        
             <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/${articleID}/${articleID}.json" data-playertype="edu" id="cme-video-player">
-                --SPACEENTITY--
+                &nbsp;
             </div>
         </div>
         `;
+        return utils.cleanHTML.insertEntityPlaceholders(result);
     } 
     // IF NO ARTICLE ID USE SLIDES COMPONENT TO BUILD SNIPPET 
     var videoEmbedPath = function () {
@@ -44,18 +49,18 @@ function videoEmbed (slidesComponent, articleID=null) {
     }
 
     if (slidesComponent.componentNumber) {
-        return `
+        result = `
         <div class="app-loading">
             <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/${videoEmbedPath()}.json" data-playertype="edu" id="cme-video-player">
-                --SPACEENTITY--
+                &nbsp;
             </div>
         </div>
         `;
     } else {
-        return `
+        result = `
         <div class="app-loading">
             <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/${videoEmbedPath()}.json" data-playertype="edu" id="cme-video-player">
-                --SPACEENTITY--
+                &nbsp;
             </div>
         </div>
         <div id="page_nav_top">
@@ -69,10 +74,11 @@ function videoEmbed (slidesComponent, articleID=null) {
                 </a>
             </div>
             <div class="spacer">
-                --SPACEENTITY--
+                &nbsp;
             </div>
         </div>`;
     }
+    return utils.cleanHTML.insertEntityPlaceholders(result);
 }
 
 function tableOfContents(componentsArray, articleID) {
@@ -103,8 +109,9 @@ function tableOfContents(componentsArray, articleID) {
         </div>`;
     }
 
-    var endSpacer = `\n<div class="spacer">--SPACEENTITY--</div>`;
-    return styles + introStatement + componentSection + endSpacer;
+    var endSpacer = `\n<div class="spacer">&nbsp;</div>`;
+    result = styles + introStatement + componentSection + endSpacer;
+    return utils.cleanHTML.insertEntityPlaceholders(result);
 }
 
 
