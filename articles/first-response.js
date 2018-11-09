@@ -6,12 +6,24 @@ const prodticket = require('../prodticket');
 const snippets = require('../snippets');
 
 
+/* TABLE OF CONTENTS TOC   
+-------------------------------------- */
+function getTableOfContentsTOC(ticket, program) {
+    var componentsArray = prodticket.getComponents(ticket, program);
+    return articleUtils.buildTableOfContentsTOC(componentsArray, program);
+}
+
+
 /* SLIDES / MAIN CONTENT 
 -------------------------------------- */
+/**
+ * @description - Get Slide Component from prodticket.getSlides.
+ * Check's if LLA 
+ * If LLA --> builds slides with Video embed AND Edu Impact challenge 
+ * @param {*} ticket 
+ * @param {*} program 
+ */
 function getSlidesTOCs (ticket, program) {
-    // Get Slide Component from prodticket.getSlides.
-    // Check if LLA 
-    // If LLA build slides with Video embed AND Edu Impact challenge 
     var slidesComponents = prodticket.getSlides(ticket, program);
 
     var slideTOCs = [];
@@ -31,9 +43,9 @@ function getSlidesTOCs (ticket, program) {
 
 /* LLA PRE TOC   
 -------------------------------------- */
-function getLLAPreTOC(ticket, program) {
+function getLLAPreSection(ticket, program) {
     var goalStatementMarkup = prodticket.getGoalStatement(ticket, program);
-    return articleUtils.buildLLAPreTOC(goalStatementMarkup);
+    return articleUtils.buildEduImpactPreSection(3, goalStatementMarkup);
 }
 
 
@@ -64,8 +76,8 @@ function buildFirstResponse(ticket, program) {
     byline, 
     peerReviewer, 
     collectionPageInfo, 
+    tableOfContentsTOC,
     slidesTOCs, 
-    preAssessmentTOC, 
     postAssessmentTOC, 
     blankResultsTOC, 
     abbreviationsTOC,
@@ -75,6 +87,11 @@ function buildFirstResponse(ticket, program) {
 
     title = prodticket.getTitle(ticket, program);
     byline = prodticket.getByline(ticket, program);
+    
+    
+    // BUILD TOCs 
+    tableOfContentsTOC = getTableOfContentsTOC(ticket, program);
+
     if (program.hasPeerReviewer) {
         peerReviewer = prodticket.getPeerReviewer(ticket, program);
     } 
@@ -82,10 +99,11 @@ function buildFirstResponse(ticket, program) {
         collectionPageInfo = prodticket.getCollectionPage(ticket, program);
     }
     if (program.hasLLA) {
-        preAssessmentTOC = getLLAPreTOC(ticket, program);
+        tableOfContentsTOC.insertSectionElement(getLLAPreSection(ticket, program));
         postAssessmentTOC = getLLAPostTOC(ticket, program);
         blankResultsTOC = articleUtils.buildBlankTOC();
     }
+
 
     slidesTOCs = getSlidesTOCs(ticket, program); 
     var abbreviationsMarkup = prodticket.getAbbreviations(ticket, program);
@@ -104,7 +122,7 @@ function buildFirstResponse(ticket, program) {
     // Set article byline (pass markup)
     finalArticle.contrbtrByline = byline;
     // remove existing contrbtr_pre_content
-    finalArticle.contrbtrPreContent = null;
+    // finalArticle.contrbtrPreContent = null;
     // insert peer reviewer
     finalArticle.contrbtrPostContent = peerReviewer;
     // insert collection page info - Banner image and Above title
@@ -114,7 +132,7 @@ function buildFirstResponse(ticket, program) {
     } 
           
     // Insert Main TOC Objects  
-    finalArticle.insertTOCElement(preAssessmentTOC);
+    finalArticle.insertTOCElement(tableOfContentsTOC);
     for (var i = 0; i < slidesTOCs.length; i++) {
         finalArticle.insertTOCElement(slidesTOCs[i]);
     }
@@ -130,15 +148,19 @@ function buildFirstResponse(ticket, program) {
         var forYourPatientSubsection = new SubsectionElement(true, false, false);
         
         if (program.hasLLA) {
+            // if LLA and for your patient 
+            // create empty slide group with qna form 3 
             var slideGroup = new SlideGroup('', '', true, false);
             slideGroup.sectionImage = null;
             slideGroup.sectionLabel = null;
             slideGroup.sectionAltText = null;
             slideGroup.qnaForm = 3;
             forYourPatientSubsection.insertSlideGroup(slideGroup);
-            finalArticle._childElements[0]._childElements[0]._childElements[0]._childElements = [];
-        }
 
+            // Remove the qna slide group from the EduImpactSubsection
+            // The LLA qna is now going to be with the PDF subsection.
+            finalArticle._childElements[0]._childElements[0]._childElements[0]._childElements = [];
+        }         
         forYourPatientSubsection.subsectionContent = utils.wrapSlideIntro(forYourPatientMarkup);
 
         finalArticle._childElements[0]._childElements[0].insertSubsectionElement(forYourPatientSubsection); 
@@ -149,7 +171,7 @@ function buildFirstResponse(ticket, program) {
 
 module.exports = {
     getSlidesTOCs,
-    getLLAPreTOC,
+    getLLAPreSection,
     getLLAPostTOC,
     buildFirstResponse
 }

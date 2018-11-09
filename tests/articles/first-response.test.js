@@ -34,6 +34,7 @@ describe('First Response', function () {
     var program; 
     var prodTicket;
     var completeFirstResponse;
+    var completeFirstResponseLLA;
     var completeSlidesTOCs;
 
     beforeEach(function() {
@@ -41,6 +42,8 @@ describe('First Response', function () {
         // completeClinicalContext = utils.xmlOps.objectToXMLString(require('./input/clinical-context'));
 
         completeFirstResponse = fs.readFileSync(__dirname + '/input/first-response/first-response.xml').toString();
+
+        completeFirstResponseLLA = fs.readFileSync(__dirname + '/input/first-response/first-response-lla.xml').toString();
         
         completeSlidesTOCs = fs.readFileSync(__dirname + '/input/first-response/slides-fr.xml').toString();
 
@@ -96,14 +99,40 @@ describe('First Response', function () {
             ];
 
             result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
+            // result = utils.xmlOps.objectToXMLString(result);
 
-            // fs.writeFileSync(__dirname + '/output/spotlight/finished-sl.xml', result);
+            // fs.writeFileSync(__dirname + '/output/first-response/finished-fr.xml', result);
 
             // console.log("RESULT: ", result);
             // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
 
+            expect(result).to.equalIgnoreSpaces(completeFirstResponse)
+        });
+
+        it('should return complete XML string of First Response article - with LLA', function () {
+            program.hasCollectionPage = false;
+            program.hasPeerReviewer = true;
+            // Tested and working with For your patient
+            program.hasForYourPatient = false;
+            program.hasLLA = true;
+            // program.articleID = "897160";
+
+            var result = firstResponse.buildFirstResponse(prodTicket, program).toObjectLiteral();
+
+            // console.log("RESULT: ", JSON.stringify(result, undefined, 2));
+
+            var differences = [                
+            ];
+
+            result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
             // result = utils.xmlOps.objectToXMLString(result);
-            // expect(result).to.equalIgnoreSpaces(completeFirstResponse)
+
+            fs.writeFileSync(__dirname + '/output/first-response/finished-fr.xml', result);
+
+            // console.log("RESULT: ", result);
+            // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
+
+            expect(result).to.equalIgnoreSpaces(completeFirstResponseLLA);
         });
     });
 });

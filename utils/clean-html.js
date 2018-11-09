@@ -33,7 +33,7 @@ function removeTicketFluff(str) {
     str = str.replace(selectResponseRegExp, "");
 
     //Remove Click + to add another row
-    var addRowRegExp = /.*Click.*to add.*/g;
+    var addRowRegExp = /.*Click.*to.*/g;
     str = str.replace(addRowRegExp, "");
 
     // Remove instructions for Peer Reviewer
@@ -62,6 +62,7 @@ function removeTicketFluff(str) {
     var endOfSlidesRegExp = /<em>Mandatory Insertion after Main CONTENT with abridged Transcripts:<\/em>/gi;
     str = str.replace(endOfSlidesRegExp, "");
 
+    // We also remove this statement because we re-include it manually 
     var endOfSlidesRegExp2 = /<em>This content has been condensed for improved clarity\.<\/em>/gi;
     str = str.replace(endOfSlidesRegExp2, "");
 
@@ -424,7 +425,7 @@ function cleanEntities (xmlString) {
 
     // Remove Ampersand Placeholder 
     var ampersandRegExp = new RegExp('--AMPERSAND--', 'g');
-    clean = clean.replace(ampersandRegExp, '&'); 
+    clean = clean.replace(ampersandRegExp, '&amp;'); 
 
     // Remove &amp; from before entitities  
     var entityRegexp = new RegExp('&amp;([A-Za-z]+|#?[0-9]+);', 'g');
