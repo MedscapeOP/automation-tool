@@ -12,6 +12,7 @@ const brief = require('./clinical-brief');
 const spotlight = require('./spotlight');
 const curbside = require('./curbside-consult');
 const videoLecture = require('./video-lecture');
+const firstResponse = require('./first-response');
 
 
 // Build commands function 
@@ -21,6 +22,7 @@ let commands = function (vorpal) {
     spotlight(vorpal);
     curbside(vorpal);
     videoLecture(vorpal);
+    firstResponse(vorpal);
 }
 
 // ------------------------------------------------------------
