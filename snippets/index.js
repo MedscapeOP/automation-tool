@@ -75,6 +75,39 @@ function videoEmbed (slidesComponent, articleID=null) {
     }
 }
 
+function tableOfContents(componentsArray, articleID) {
+    var styles = `
+    <style type="text/css">
+        div.articleTitle {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        div#prgteaser {
+            clear: left;
+            padding-top: 10px;
+        }
+    </style>
+    `;
+
+    var introStatement = `\n<p>All sections of this activity are required for credit.</p>`;
+
+    var componentSection = ``;
+    var component = null; 
+    for (var i = 0; i < componentsArray.length; i++) {
+        component = componentsArray[i];
+        componentSection += `\n
+        <div id="prgteaser">
+            <img src="professional_assets/medscape/images/thumbnail_library/${articleID}_${component.componentNumber + 1}.jpg?interpolation=lanczos-none&resize=200:150" alt="" />
+            <h4>${component.title}</h4> ${component.teaser}<br /> <em>${component.byline}</em>
+        </div>`;
+    }
+
+    var endSpacer = `\n<div class="spacer">--SPACEENTITY--</div>`;
+    return styles + introStatement + componentSection + endSpacer;
+}
+
+
 /* 
 In-Language stuff 
 */
@@ -84,5 +117,6 @@ module.exports = {
     downloadableSlides,
     downloadablePDF,
     forYourPatient,
-    inLanguage
+    inLanguage,
+    tableOfContents
 };

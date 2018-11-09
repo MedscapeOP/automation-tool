@@ -44,6 +44,17 @@ describe('Snippet Module Functions', function () {
         });
     });
 
+    describe("snippets.tableOfContents()", function () {
+        let components = require('./input/components-fr');
+        let tableOfContentsHTML = fs.readFileSync(__dirname + "/input/table-of-contents.html").toString();
+
+        it("should return html snippet for First Response table of contents", function () {
+            var result = snippets.tableOfContents(components, "900319");
+            result = utils.cleanHTML.cleanEntities(result);
+            expect(result).to.equalIgnoreSpaces(tableOfContentsHTML);
+        });
+    });
+
     describe("snippets.inLanguage", function () {
         describe("expertCommentary()", function () {
             // var ecGerman = utils.xmlOps.xmlStringToJS(fs.readFileSync(__dirname + "/input/ec-german.xml").toString());
