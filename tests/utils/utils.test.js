@@ -11,6 +11,7 @@ describe('Utility Functions', function () {
     var xmlJSObjectTrimmed;
     var dirtyListHTML = fs.readFileSync(__dirname + '/input/dirty-list.html', 'utf8');
     var dirtySlidesHTML = fs.readFileSync(__dirname + '/input/dirty-slides-html.html', 'utf8');
+    var dirtySlidesHTML2 = fs.readFileSync(__dirname + '/input/dirty-slides-html2.html', 'utf8');
 
     var slidesInitialComplete = fs.readFileSync(__dirname + '/input/slides-initial-complete.html', 'utf8').toString();
     var slidesFinalComplete = fs.readFileSync(__dirname + '/input/slides-final-complete.html', 'utf8').toString();
@@ -119,6 +120,18 @@ describe('Utility Functions', function () {
                     }
                 }); 
                 expect(result).to.equalIgnoreSpaces(slidesFinalComplete);
+            });
+        });
+
+        describe(".slidesInitial() + .slidesFinal()", function () {
+            it('should fully format dirty slides HTML', function () {
+                var result = utils.cleanHTML.slidesInitial(dirtySlidesHTML2);
+                result = utils.cleanHTML.slidesFinal(result);
+                fs.writeFileSync(__dirname + "/output/clean-slides2.html", result, function(err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                });
             });
         });
     });

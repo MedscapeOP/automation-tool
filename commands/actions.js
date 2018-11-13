@@ -79,7 +79,7 @@ function basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOu
         completeGenerateAction(self, callback, finishedArticleObject, outputFile(), completionMessage);   
     }) 
     .catch((err) => {
-        self.log(err.message);
+        self.log(err);
         callback();
     });
 }

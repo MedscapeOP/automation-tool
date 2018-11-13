@@ -24,7 +24,7 @@ Generates Curbside Consult XML code from R2Net html file.`;
 
 let inputFile = function () {
     return cliTools.getInputDirectory() + '/curbside/article.html';
-}
+};
 
 let outputFile = function () {
     return `${program.articleID}.xml`; // Make dynamic considering
