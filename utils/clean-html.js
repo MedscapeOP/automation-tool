@@ -66,6 +66,9 @@ function removeTicketFluff(str) {
     var endOfSlidesRegExp2 = /<em>This content has been condensed for improved clarity\.<\/em>/gi;
     str = str.replace(endOfSlidesRegExp2, "");
 
+    var aTagRegExp = /<a name=".*"><\/a>/g;
+    str = str.replace(aTagRegExp, "");
+
     return str;
 }
 
@@ -122,15 +125,6 @@ function singleLine(string) {
 }
 
 function paragraph(string, removeFluff=true) {
-    // Removes ALL HTML: 
-        // var str = string.replace(/\(Insert.*\)/, "").replace(/<{1}[^<>]{1,}>{1}/g," ");       
-    // Removes certain tags and replaces them with flags for later use 
-    // var tags = ["em", "strong"];
-    // for (var i = 0; i < tags.length; i++) {
-    //     var tag = tags[i];
-    //     var regexp = new RegExp('<${tag}>.\s<\\/${tag}>|<${tag}>[\S]{0,1}<\\/${tag}>', 'gi');
-    //     str.replace(regexp, '||${tag}||');
-    // }
     var str = string;
     if (removeFluff) {
         str = removeTicketFluff(str);
@@ -192,6 +186,11 @@ function unorderedList(string, removeFluff=true, format=true) {
 }
 
 function slidesInitial (str) {
+    // Remove empty random <a> tags 
+    // This is also run in removeTicketFluff() 
+    var aTagRegExp = /<a name=".*"><\/a>/g;
+    str = str.replace(aTagRegExp, "");
+
     // Insert Slide edge cases / Capitalization Edge Cases
     var insertSlideRegExp1 = new RegExp('&lt;&lt;.*slide&gt;&gt;', 'g');
     str = str.replace(insertSlideRegExp1, "&lt;&lt;insert slide");
