@@ -23,6 +23,7 @@ describe('Prodticket Module Functions', function () {
         prodticketCC = fs.readFileSync(__dirname + '/input/prodticket-cc.html').toString();      
         prodticketSL = fs.readFileSync(__dirname + '/input/prodticket-sl.html').toString();
         prodticketFR = fs.readFileSync(__dirname + '/input/prodticket-fr.html').toString();
+        prodticketTH = fs.readFileSync(__dirname + '/input/prodticket-th.html').toString();
     });
 
     describe("prodticket.getTitle()", function () {
@@ -40,6 +41,11 @@ describe('Prodticket Module Functions', function () {
             var result = prodticket.getTitle(prodticketCC, config.programs.curbsideConsult);
             expect(result).to.equal("VTE in Cancer: What Do the Latest Data Suggest?");
         });
+
+        it("should return the program title + subtitle from the .html - TownHall", function () {
+            var result = prodticket.getTitle(prodticketTH, config.programs.townHall);
+            expect(result).to.equal("Preventing HPV-Related Disease: From Global Perspectives to Local Solutions")
+        });
     });
 
     describe("prodticket.getByline()", function () {
@@ -56,6 +62,11 @@ describe('Prodticket Module Functions', function () {
         it("should return the program byline from the .html - Curbside", function () {
             var result = prodticket.getByline(prodticketCC, config.programs.curbsideConsult);
             expect(result).to.equal("<p>Jeffrey I. Weitz, MD, FRCP(C); Alok A. Khorana, MD</p>");
+        });
+
+        it("should return the program byline from the .html - TownHall", function () {
+            var result = prodticket.getByline(prodticketTH, config.programs.townHall);
+            expect(result).to.equal();
         });
     });
 

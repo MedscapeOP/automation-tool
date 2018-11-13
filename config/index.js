@@ -65,6 +65,19 @@ let programs = {
         hasSlideDeck: false, 
         hasForYourPatient: false, 
         hasInLanguage: false 
+    },
+    townHall: {
+        name: "First Response",
+        codeName: "firstResponse",
+        profArticleType: "SlidePresentation",
+        articleID: "900319",
+        hasLLA: false,
+        hasOUS: false, 
+        hasPeerReviewer: false, 
+        hasCollectionPage: false,
+        hasSlideDeck: false, 
+        hasForYourPatient: false, 
+        hasInLanguage: false 
     }
 };
 
