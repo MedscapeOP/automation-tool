@@ -21,6 +21,7 @@ const _ = require("lodash");
 const utils = require('../utils');
 let findTitle = require('./find-title');
 let findByline = require('./find-byline');
+let findContributors = require('./find-contributors'); 
 let findReferences = require('./find-references');
 let findAbbreviations = require('./find-abbreviations');
 let findPeerReviewer = require('./find-peer-reviewer');
@@ -51,6 +52,13 @@ function getByline (ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
         var rawByline = findByline[program.codeName](ticketHTML);
         return rawByline;
+    }
+}
+
+function getContributors(ticketHTML, program) {
+    if (checkTicket(ticketHTML)) {
+        var rawContributors = findContributors[program.codeName](ticketHTML);
+        return rawContributors;
     }
 }
 
@@ -142,6 +150,7 @@ function getComponents(ticketHTML, program) {
 module.exports = {
     getTitle,
     getByline,
+    getContributors,
     getReferences,
     getAbbreviations,
     getPeerReviewer,

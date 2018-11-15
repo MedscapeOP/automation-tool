@@ -67,10 +67,10 @@ let programs = {
         hasInLanguage: false 
     },
     townHall: {
-        name: "First Response",
-        codeName: "firstResponse",
+        name: "Town Hall",
+        codeName: "townHall",
         profArticleType: "SlidePresentation",
-        articleID: "900319",
+        articleID: "903975",
         hasLLA: false,
         hasOUS: false, 
         hasPeerReviewer: false, 

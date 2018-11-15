@@ -37,4 +37,17 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
     return cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim();
 }
 
+// Town Hall
+exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+    var {textBlock: title} = stringOps.getTextBlock(ticketHTML, "<strong>Title:", "<strong>Subtitle:", true, false);
+    var {textBlock: subtitle} = stringOps.getTextBlock(ticketHTML, "Title + subtitle = 80 characters max, inc. spaces*</strong>", "<strong>Teaser", true, false);
+    title = cleanHTML.singleLine(cleanHTML.plainText(title)).trim();
+    subtitle = cleanHTML.singleLine(cleanHTML.plainText(subtitle)).trim();
+    if (subtitle.length > 2) {
+        return `${title}: ${subtitle}`;
+    } else {
+        return `${title}`;
+    }
+}
+
 module.exports = exportObject;
