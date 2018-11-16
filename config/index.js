@@ -1,4 +1,5 @@
 const languages = require('./languages');
+const credentials = require('./credentials');
 
 let programs = {
     clinicalBrief: {
@@ -89,5 +90,6 @@ let addOns = {
 module.exports = {
     programs,
     addOns,
-    languages
+    languages,
+    credentials
 };

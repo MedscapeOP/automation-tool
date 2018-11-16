@@ -95,6 +95,26 @@ function getTextBlock(str, startText, endText, stripStart = true, includeEnd = f
     }
 }
 
+/**
+ * @description Return the first matching regular expression from an array of regular expressions. 
+ * - This regex returned would be the first possible match from within the string (ticketHTML). 
+ * @param {*} ticketHTML 
+ * @param {*} regexpArray 
+ */
+function getUsableRegExp (ticketHTML, regexpArray) {
+    var regexp = null;
+    for (var i = 0; i < regexpArray.length; i++) {
+        let index = regexIndexOf(ticketHTML, regexpArray[i]);
+        if (index != -1) {
+            regexp = regexpArray[i];
+            break;
+        } else {
+            continue;
+        }  
+    }
+    return regexp;
+}
+
 // function isBlankOrWhiteSpace(str) {
 //     return (!str || str.length === 0 || !str.trim());
 // }
@@ -106,5 +126,6 @@ module.exports = {
     isBlankOrWhiteSpace,
     getTextBlock,
     regexIndexOf,
-    removeFromRegexCapture
+    removeFromRegexCapture,
+    getUsableRegExp
 }

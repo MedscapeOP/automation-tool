@@ -1,84 +1,84 @@
 module.exports = [
     {
         title: "",
-        name: "<p>Henri-Jean Aubin, MD, PhD</p>",
+        name: "Henri-Jean Aubin, MD, PhD",
         affiliation: `
-        <p>Professor</p>
-
-        <p>University Paris-Sud</p>
-
-        <p>Director of the Addiction Science Research Group in the INSERM 1018 Unit</p>
-
-        <p>Villejuif, France</p>
+        Professor
+        <br/>
+        University Paris-Sud
+        <br/>
+        Director of the Addiction Science Research Group in the INSERM 1018 Unit
+        <br/>
+        Villejuif, France
         `,
         disclosure: `
-        <p>Disclosure: Henri-Jean Aubin, MD, PhD, has disclosed the following relevant financial relationships: </p>
+        Disclosure: Henri-Jean Aubin, MD, PhD, has disclosed the following relevant financial relationships: 
 
-        <p>&#9746; Served as an advisor or consultant for: D&amp;A Pharma; Ethypharm; Lundbeck, Inc.; Pfizer Inc. </p>
+        <br/> Served as an advisor or consultant for: D--AMPERSAND--amp;A Pharma; Ethypharm; Lundbeck, Inc.; Pfizer Inc. 
 
-        <p>&#9746; Served as a speaker or a member of a speakers bureau for: Lundbeck, Inc.; Merck &amp; Co., Inc.; Novartis Pharmaceuticals Corporation; Pierre Fabre Sante; Pfizer Inc. </p>
+        <br/> Served as a speaker or a member of a speakers bureau for: Lundbeck, Inc.; Merck --AMPERSAND--amp; Co., Inc.; Novartis Pharmaceuticals Corporation; Pierre Fabre Sante; Pfizer Inc. 
         `
     },
     {
         title: "",
-        name: "<p>Peter Hajek, PhD</p>",
+        name: "Peter Hajek, PhD",
         affiliation: `
-        <p>Professor of Clinical Psychology</p>
-
-        <p>Queen Mary University of London</p>
-        
-        <p>London, United Kingdom</p>
+        Professor of Clinical Psychology
+        <br/>
+        Queen Mary University of London
+        <br/>
+        London, United Kingdom
         `,
         disclosure: `
-        <p>Disclosure: Peter Hajek, PhD, has disclosed the following relevant financial relationships: </p>
+        Disclosure: Peter Hajek, PhD, has disclosed the following relevant financial relationships: 
 
-        <p>&#9746; Served as an advisor or consultant for: Pfizer Inc. </p>
+        <br/> Served as an advisor or consultant for: Pfizer Inc. 
         `
     },
     {
         title: "",
-        name: "<p>Philip Toennesen, MD, DMSc</p>",
+        name: "Philip Toennesen, MD, DMSc",
         affiliation: `
-        <p>Senior Consultant, Specialist in Pulmonary Medicine</p>
-
-        <p>Expert in Sleep Disorders and Smoking Cessation</p>
-        
-        <p>Department of Sleep Disorders</p>
-        
-        <p>Rigshospitalet</p>
-        
-        <p>Copenhagen, Denmark</p>
+        Senior Consultant, Specialist in Pulmonary Medicine
+        <br/>
+        Expert in Sleep Disorders and Smoking Cessation
+        <br/>
+        Department of Sleep Disorders
+        <br/>
+        Rigshospitalet
+        <br/>
+        Copenhagen, Denmark
         `,
         disclosure: `
-        <p>Disclosure: Philip Toennesen, MD, has disclosed the following relevant financial relationships: </p>
+        Disclosure: Philip Toennesen, MD, has disclosed the following relevant financial relationships: 
 
-        <p>&#9746; Served as an advisor or consultant for: Fertim Pharma; Pfizer Inc.</p>
+        <br/> Served as an advisor or consultant for: Fertim Pharma; Pfizer Inc.
         
-        <p>&#9746; Served as a speaker or a member of a speakers bureau for: Fertim Pharma; Pfizer Inc. </p>
+        <br/> Served as a speaker or a member of a speakers bureau for: Fertim Pharma; Pfizer Inc. 
         `
     },
     {
         title: "",
-        name: "<p>Serena Tonstad, MD, PhD</p>",
+        name: "Serena Tonstad, MD, PhD",
         affiliation: `
-        <p>Professor</p>
-
-        <p>Loma Linda University</p>
-        
-        <p>Loma Linda, California, United States </p>
-        
-        <p>Head Physician</p>
-        
-        <p>Oslo University Hospital</p>
-        
-        <p>Oslo, Norway</p>
+        Professor
+        <br/>
+        Loma Linda University
+        <br/>
+        Loma Linda, California, United States 
+        <br/>
+        Head Physician
+        <br/>
+        Oslo University Hospital
+        <br/>
+        Oslo, Norway
         `,
         disclosure: `
-        <p>Disclosure: Serena Tonstad, MD, PhD, has disclosed the following relevant financial relationships: </p>
+        Disclosure: Serena Tonstad, MD, PhD, has disclosed the following relevant financial relationships: 
 
-        <p>&#9746; Served as an advisor or consultant for: Pfizer Inc. </p>
+        <br/> Served as an advisor or consultant for: Pfizer Inc. 
         
-        <p>&#9746; Served as a speaker or a member of a speakers bureau for: Pfizer Inc. </p>
+        <br/> Served as a speaker or a member of a speakers bureau for: Pfizer Inc. 
         `
     }
 ];

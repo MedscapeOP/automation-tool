@@ -369,6 +369,30 @@ function peerReviewer(string, removeFluff=true) {
     return clean;
 }
 
+function contributorAffiliations(str) {
+    var pRegExp = /<p>/g;
+    var pCloseRegExp = /<\/p>/g;
+    var result = str.replace(pCloseRegExp, "<br/>").replace(pRegExp, "");
+    return stringOps.findLastAndReplace(result, "<br/>", "");
+}
+
+function contributorDisclosures(str) {
+    var doctorRegExp = /<p>(Dr)/g;
+    var string = str.replace(doctorRegExp, "<p><br/><br/>$1");
+    
+    var mrRegExp = /<p>(Mr)/g;
+    string = str.replace(mrRegExp, "<p><br/><br/>$1");
+
+    var msRegExp = /<p>(Ms)/g;
+    string = str.replace(msRegExp, "<p><br/><br/>$1");
+
+    var mrsRegExp = /<p>(Mrs)/g;
+    string = str.replace(mrsRegExp, "<p><br/><br/>$1");
+
+    string = peerReviewer(str).replace(/--ENTITY#9746;--/g, "");
+    return string;
+}
+
 function learningObjectives(textBlock, removeFluff=true) {
     if (removeFluff){
         textBlock = removeTicketFluff(textBlock);
@@ -444,6 +468,8 @@ module.exports = {
     abbreviations,
     references,
     peerReviewer,
+    contributorAffiliations,
+    contributorDisclosures,
     learningObjectives,
     insertEntityPlaceholders,
     cleanEntities

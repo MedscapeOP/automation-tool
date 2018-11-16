@@ -37,24 +37,12 @@ let endSlideMatches = [
     /<p>.*This content has been condensed for improved clarity.*<\/p>/g
 ];
 
-function getUsableRegExp (ticketHTML, regexpArray) {
-    var regexp = null;
-    for (var i = 0; i < regexpArray.length; i++) {
-        let index = stringOps.regexIndexOf(ticketHTML, regexpArray[i]);
-        if (index != -1) {
-            regexp = regexpArray[i];
-            break;
-        } else {
-            continue;
-        }  
-    }
-    return regexp;
-}
+
 
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML, program) {
     ticketHTML = cleanHTML.slidesInitial(ticketHTML);
-    var startSlideRegExp = getUsableRegExp(ticketHTML, startSlideMatches);
-    var endSlideRegExp = getUsableRegExp(ticketHTML, endSlideMatches);
+    var startSlideRegExp = stringOps.getUsableRegExp(ticketHTML, startSlideMatches);
+    var endSlideRegExp = stringOps.getUsableRegExp(ticketHTML, endSlideMatches);
 
     if (!startSlideRegExp && !endSlideRegExp) {
         return new Error("Regexp is not found in the prodticket");
@@ -86,8 +74,8 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML, pro
     // return slideComponents
     ticketHTML = cleanHTML.slidesInitial(ticketHTML);
     // console.log("CLEAN TICKET", ticketHTML);
-    var startSlideRegExp = getUsableRegExp(ticketHTML, startSlideMatches);
-    var endSlideRegExp = getUsableRegExp(ticketHTML, endSlideMatches);
+    var startSlideRegExp = stringOps.getUsableRegExp(ticketHTML, startSlideMatches);
+    var endSlideRegExp = stringOps.getUsableRegExp(ticketHTML, endSlideMatches);
     // console.log("START REGEXP: ", startSlideRegExp);
     // console.log("END REGEXP: ", endSlideRegExp);
     var slideComponents = [];

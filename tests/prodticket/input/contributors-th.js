@@ -1,96 +1,96 @@
 module.exports = [
     {
         title: "Co-Moderator",
-        name: "<p><strong>Kenneth A. Alexander, MD, PhD</strong></p>",
+        name: "Kenneth A. Alexander, MD, PhD",
         affiliation: `
-        <p>Chief</p>
-
-        <p>Division of Infectious Diseases</p>
-        
-        <p>Nemours Children's Hospital</p>
-        
-        <p>Orlando, Florida</p>
+        Chief
+        <br/>
+        Division of Infectious Diseases
+        <br/>
+        Nemours Children's Hospital
+        <br/>
+        Orlando, Florida
         `,
         disclosure: `
-        <p>Disclosure: Kenneth A. Alexander, MD, PhD, has disclosed the following relevant financial relationships: </p>
+        Disclosure: Kenneth A. Alexander, MD, PhD, has disclosed the following relevant financial relationships: 
 
-        <p>&#9746; Served as an advisor or consultant for: Merck &amp; Co., Inc.; Merck Sharp &amp; Dohme Corp.</p>
+        <br/> Served as an advisor or consultant for: Merck --AMPERSAND--amp; Co., Inc.; Merck Sharp --AMPERSAND--amp; Dohme Corp.
         
-        <p>&#9746; Served as a speaker or a member of a speakers bureau for: Merck &amp; Co., Inc.; Merck Sharp &amp; Dohme Corp. </p>
+        <br/> Served as a speaker or a member of a speakers bureau for: Merck --AMPERSAND--amp; Co., Inc.; Merck Sharp --AMPERSAND--amp; Dohme Corp. 
         
-        <p>Dr Alexander does not intend to discuss off-label uses of drugs, mechanical devices, biologics, or diagnostics approved by the FDA for use in the United States.</p>
+        <br/><br/>Dr Alexander does not intend to discuss off-label uses of drugs, mechanical devices, biologics, or diagnostics approved by the FDA for use in the United States.
         
-        <p>Dr Alexander does not intend to discuss investigational drugs, mechanical devices, biologics, or diagnostics not approved by the FDA for use in the United States.</p>
+        <br/><br/>Dr Alexander does not intend to discuss investigational drugs, mechanical devices, biologics, or diagnostics not approved by the FDA for use in the United States.
         `
     },
     {
-        title: "<p><strong>Co-Moderator</strong></p>",
-        name: "<p><strong>Suzanne M. Garland, AO, MBBS, MD, FRCPA, FRANZCOG&#160;<em>Ad Eundem,&#160;</em>FAChSHM, FASM, FFSc(RCPA)</strong></p>",
+        title: "Co-Moderator",
+        name: "Suzanne M. Garland, AO, MBBS, MD, FRCPA, FRANZCOG--ENTITY#160;--<em>Ad Eundem,--ENTITY#160;--</em>FAChSHM, FASM, FFSc(RCPA)",
         affiliation: `
-        <p>Professor</p>
-
-        <p>Reproductive &amp; Neonatal Infectious Diseases</p>
-        
-        <p>Department of Obstetrics and Gynecology</p>
-        
-        <p>Melbourne Medical School</p>
-        
-        <p>Melbourne, Australia</p>
+        Professor
+        <br/>
+        Reproductive --AMPERSAND--amp; Neonatal Infectious Diseases
+        <br/>
+        Department of Obstetrics and Gynecology
+        <br/>
+        Melbourne Medical School
+        <br/>
+        Melbourne, Australia
         `,
         disclosure: `
-        <p>Disclosure: Suzanne M. Garland, MD, has disclosed the following relevant financial relationships: </p>
+        Disclosure: Suzanne M. Garland, MD, has disclosed the following relevant financial relationships: 
 
-        <p>&#9746; Served as a speaker or a member of a speakers bureau for: Merck Sharp &amp; Dohme Corp. </p>
+        <br/> Served as a speaker or a member of a speakers bureau for: Merck Sharp --AMPERSAND--amp; Dohme Corp. 
         
-        <p>&#9746; Received grants for clinical research from: Merck Sharp &amp; Dohme Corp. </p>
+        <br/> Received grants for clinical research from: Merck Sharp --AMPERSAND--amp; Dohme Corp. 
         
-        <p>Dr Garland does not intend to discuss off-label uses of drugs, mechanical devices, biologics, or diagnostics approved by the FDA for use in the United States.</p>
+        <br/><br/>Dr Garland does not intend to discuss off-label uses of drugs, mechanical devices, biologics, or diagnostics approved by the FDA for use in the United States.
         
-        <p>Dr Garland does not intend to discuss investigational drugs, mechanical devices, biologics, or diagnostics not approved by the FDA for use in the United States.</p>
+        <br/><br/>Dr Garland does not intend to discuss investigational drugs, mechanical devices, biologics, or diagnostics not approved by the FDA for use in the United States.
         `
     },
     {
-        title: "<p><strong>Panelists</strong></p>",
-        name: "<p><strong>Suresh Kumarasamy, MBBS, MObGyn, FRCOG, FRCPI</strong></p>",
+        title: "Panelists",
+        name: "Suresh Kumarasamy, MBBS, MObGyn, FRCOG, FRCPI",
         affiliation: `
-        <p>Adjunct Clinical Professor</p>
-
-        <p>Penang Medical College</p>
-        
-        <p>Consultant Gynecologist and Gynecological Oncologist</p>
-        
-        <p>Gleneagles Penang</p>
-        
-        <p>Georgetown, Malaysia</p>
+        Adjunct Clinical Professor
+        <br/>
+        Penang Medical College
+        <br/>
+        Consultant Gynecologist and Gynecological Oncologist
+        <br/>
+        Gleneagles Penang
+        <br/>
+        Georgetown, Malaysia
         `,
         disclosure: `
-        <p>Disclosure: Suresh Kumarasamy, MBBS, MObGyn, FRCOG, FRCPI, has disclosed the following relevant financial relationships: </p>
+        Disclosure: Suresh Kumarasamy, MBBS, MObGyn, FRCOG, FRCPI, has disclosed the following relevant financial relationships: 
 
-        <p>&#9746; Served as an advisor or consultant for: AstraZeneca Pharmaceuticals LP; Bayer HealthCare; Merck &amp; Co., Inc. </p>
+        <br/> Served as an advisor or consultant for: AstraZeneca Pharmaceuticals LP; Bayer HealthCare; Merck --AMPERSAND--amp; Co., Inc. 
         
-        <p>&#9746; Served as a speaker or a member of a speakers bureau for: AstraZeneca Pharmaceuticals LP; Bayer HealthCare; Merck &amp; Co., Inc. </p>
+        <br/> Served as a speaker or a member of a speakers bureau for: AstraZeneca Pharmaceuticals LP; Bayer HealthCare; Merck --AMPERSAND--amp; Co., Inc. 
         
-        <p>Dr Kumarasamy does not intend to discuss off-label uses of drugs, mechanical devices, biologics, or diagnostics approved by the FDA for use in the United States.</p>
+        <br/><br/>Dr Kumarasamy does not intend to discuss off-label uses of drugs, mechanical devices, biologics, or diagnostics approved by the FDA for use in the United States.
         
-        <p>Dr Kumarasamy does not intend to discuss investigational drugs, mechanical devices, biologics, or diagnostics not approved by the FDA for use in the United States.</p>
+        <br/><br/>Dr Kumarasamy does not intend to discuss investigational drugs, mechanical devices, biologics, or diagnostics not approved by the FDA for use in the United States.
         `
     },
     {
         title: "",
-        name: "<p><strong>Batmunkh Tsetsegsaikhan, PhD, MPH/MHM</strong></p>",
+        name: "Batmunkh Tsetsegsaikhan, PhD, MPH/MHM",
         affiliation: `
-        <p>Founder &amp; CEO</p>
-
-        <p>National Cancer Council of Mongolia</p>
-        
-        <p>Ulaanbaatar, Mongolia</p>
+        Founder --AMPERSAND--amp; CEO
+        <br/>
+        National Cancer Council of Mongolia
+        <br/>
+        Ulaanbaatar, Mongolia
         `,
         disclosure: `
-        <p>Disclosure: Batmunkh Tsetsegsaikhan, PhD, MPH/MHM, has disclosed no relevant financial relationships. </p>
+        Disclosure: Batmunkh Tsetsegsaikhan, PhD, MPH/MHM, has disclosed no relevant financial relationships. 
 
-        <p>Dr Tsetsegsaikhan does not intend to discuss off-label uses of drugs, mechanical devices, biologics, or diagnostics approved by the FDA for use in the United States.</p>
+        <br/><br/>Dr Tsetsegsaikhan does not intend to discuss off-label uses of drugs, mechanical devices, biologics, or diagnostics approved by the FDA for use in the United States.
         
-        <p>Dr Tsetsegsaikhan does not intend to discuss investigational drugs, mechanical devices, biologics, or diagnostics not approved by the FDA for use in the United States.</p>
+        <br/><br/>Dr Tsetsegsaikhan does not intend to discuss investigational drugs, mechanical devices, biologics, or diagnostics not approved by the FDA for use in the United States.
         `
     }
 ];

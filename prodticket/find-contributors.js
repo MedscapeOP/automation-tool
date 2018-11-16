@@ -1,5 +1,109 @@
+const _ = require('lodash');
 const config = require('../config');
 const {stringOps, cleanHTML} = require('../utils');
+
+function Contributor(title, name, affiliation, disclosure) {
+    return {
+        title, 
+        name,
+        affiliation,
+        disclosure
+    }
+}
+
+let credentialRegexArray = function () {
+    var result = [];
+    for (var i = 0; i < config.credentials.length; i++) {
+        result.push(new RegExp(`(.*${config.credentials[i]}</p>)`, 'g'));
+        result.push(new RegExp(`(.*${config.credentials[i]}</strong></p>)`, 'g'));
+    }
+    return result;
+}();
+
+let disclosureRegexArray = [
+    /(<p>Disclosure:.*)/gi,
+    /(Disclosure:.*)/gi
+];
+
+
+function getNextContributorRegex(ticketHTML) {
+    var options = [];
+    var nextCredential = null;
+    for (var i = 0; i < credentialRegexArray.length; i++) {
+        nextCredential = {
+            index: ticketHTML.search(credentialRegexArray[i]),
+            symbol: credentialRegexArray[i],
+            isInString: function () {
+                return this.index != -1;
+            }
+        };
+        options.push(nextCredential);
+    }
+
+    // remove all options not found in string
+    _.pullAllBy(options, [{index: -1}], 'index');
+
+    var minimum = undefined;
+    for (var i = 0; i < options.length; i++) {
+        if (!minimum) {
+            minimum = options[i];
+        } else {
+            minimum = (minimum.index > options[i].index ? options[i] : minimum);
+        }
+    }
+    if (minimum) {
+        return minimum.symbol;
+    } else {
+        return -1;
+    }
+}
+
+function buildContributors(ticketHTML) {
+    var contributors = [];
+    var contributor = null;
+    var disclosureStartRegExp = /(<p>Disclosure:.*)/gi; 
+    var name, affiliations, disclosure;
+
+    var contribNameRegExp = getNextContributorRegex(ticketHTML);
+    while (contribNameRegExp != -1) {
+        console.log("CREDENTIAL: ", contribNameRegExp);
+        name = ticketHTML.match(contribNameRegExp)[0];
+        affiliations = stringOps.getTextBlock(ticketHTML, new RegExp(name, 'g'), disclosureStartRegExp);
+        var affiliationsText = cleanHTML.onlyParagraphTags(affiliations.textBlock);
+        
+        // Chop off beginning of ticket;
+        ticketHTML = ticketHTML.substring(affiliations.endIndex);
+
+        // Get next contributor name regex
+        contribNameRegExp = getNextContributorRegex(ticketHTML);
+
+        // If there is another contributor
+        var disclosureText = "";
+        if (contribNameRegExp != -1) {
+            // Get Disclosure textblock 
+            disclosure = stringOps.getTextBlock(ticketHTML, disclosureStartRegExp, contribNameRegExp, false, false);
+            disclosureText = disclosure.textBlock;
+            ticketHTML = ticketHTML.substring(disclosure.endIndex);
+        } else {
+            var index = stringOps.regexIndexOf(ticketHTML, disclosureStartRegExp);
+            disclosureText = ticketHTML.substring(index);
+            ticketHTML = "";
+        } 
+        disclosureText = cleanHTML.insertEntityPlaceholders(disclosureText);
+        disclosureText = cleanHTML.onlyParagraphTags(disclosureText);       
+        contributor = {
+            title: "",
+            name: cleanHTML.plainText(name), 
+            affiliation: cleanHTML.contributorAffiliations(affiliationsText), 
+            disclosure: cleanHTML.contributorDisclosures(disclosureText)
+        };
+        contributors.push(contributor);
+    }
+
+    // disclosure = stringOps.getTextBlock(ticketHTML, )
+
+    return contributors;
+}
 
 var exportObject = {};
 
@@ -28,15 +132,14 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
 
 // Town Hall
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
-    var {textBlock: byline} = stringOps.getTextBlock(ticketHTML, "\(Names and degrees only, separated by semicolons\)", '<strong>Location/map info', true, false);
+    var {textBlock: speakerBlock} = stringOps.getTextBlock(ticketHTML, "<strong>Speakers", '<strong>Program Details', true, true);
 
-    // console.log("BYLINE: ", byline);
+    var {textBlock: contributorBlock} = stringOps.getTextBlock(speakerBlock, "Disclosure: Clyde W. Yancy, MD, MSc, has disclosed the following relevant financial relationships:</p>", "<strong>Program Details", true, false);
 
-    if(byline.length < 4) {
-        return `<p>Byline not found in the prodticket!</p>`;
-    }
+    // console.log("CONTRIBUTOR BLOCK: ", contributorBlock);
+    return buildContributors(contributorBlock);
 
-    return "<p>" + cleanHTML.singleLine(cleanHTML.plainText(byline)).trim() + "</p>";
+    // return "<p>" + cleanHTML.singleLine(cleanHTML.plainText(byline)).trim() + "</p>";
 }
 
 module.exports = exportObject;
