@@ -25,14 +25,21 @@ let disclosureRegexArray = [
     /(Disclosure:.*)/gi
 ];
 
+let titleRegexArray = [
+    /Co-Moderator/gi,
+    /Moderator/gi,
+    /Faculty/gi,
+    /Panelist/gi 
+];
 
-function getNextContributorRegex(ticketHTML) {
+
+function getNextRegex(ticketHTML, regexArray) {
     var options = [];
     var nextCredential = null;
-    for (var i = 0; i < credentialRegexArray.length; i++) {
+    for (var i = 0; i < regexArray.length; i++) {
         nextCredential = {
-            index: ticketHTML.search(credentialRegexArray[i]),
-            symbol: credentialRegexArray[i],
+            index: ticketHTML.search(regexArray[i]),
+            symbol: regexArray[i],
             isInString: function () {
                 return this.index != -1;
             }
@@ -52,7 +59,7 @@ function getNextContributorRegex(ticketHTML) {
         }
     }
     if (minimum) {
-        return minimum.symbol;
+        return minimum;
     } else {
         return -1;
     }
@@ -64,9 +71,12 @@ function buildContributors(ticketHTML) {
     var disclosureStartRegExp = /(<p>Disclosure:.*)/gi; 
     var name, affiliations, disclosure;
 
-    var contribNameRegExp = getNextContributorRegex(ticketHTML);
+    var contribNameRegExp = getNextRegex(ticketHTML, credentialRegexArray);
+    var titleRegExp = getNextRegex(ticketHTML, titleRegexArray);
     while (contribNameRegExp != -1) {
+        contribNameRegExp = contribNameRegExp.symbol;
         console.log("CREDENTIAL: ", contribNameRegExp);
+        console.log("TITLE: ", titleRegExp);
         name = ticketHTML.match(contribNameRegExp)[0];
         affiliations = stringOps.getTextBlock(ticketHTML, new RegExp(name, 'g'), disclosureStartRegExp);
         var affiliationsText = cleanHTML.onlyParagraphTags(affiliations.textBlock);
@@ -75,7 +85,7 @@ function buildContributors(ticketHTML) {
         ticketHTML = ticketHTML.substring(affiliations.endIndex);
 
         // Get next contributor name regex
-        contribNameRegExp = getNextContributorRegex(ticketHTML);
+        contribNameRegExp = getNextRegex(ticketHTML, credentialRegexArray);
 
         // If there is another contributor
         var disclosureText = "";
