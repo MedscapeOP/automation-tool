@@ -11,11 +11,17 @@ function Contributor(title, name, affiliation, disclosure) {
     }
 }
 
+RegExp.escape = function(string) {
+    return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
+};
+
 let credentialRegexArray = function () {
     var result = [];
+    var string = "";
     for (var i = 0; i < config.credentials.length; i++) {
-        result.push(new RegExp(`(.*${config.credentials[i]}</p>)`, 'g'));
-        result.push(new RegExp(`(.*${config.credentials[i]}</strong></p>)`, 'g'));
+        string = RegExp.escape(config.credentials[i]);
+        result.push(new RegExp(`(.*${string}</p>)`, 'g'));
+        result.push(new RegExp(`(.*${string}</strong></p>)`, 'g'));
     }
     return result;
 }();
@@ -76,24 +82,34 @@ function buildContributors(ticketHTML) {
     var newTitle = null;
     var title = "";
     var previousTitle = "";
+    var previousTitleSymbol = null;
     while (contribNameRegExp != -1) {
-        // console.log("CREDENTIAL: ", contribNameRegExp);
-        // console.log("TITLE: ", titleRegExp);
         if (titleRegExp != -1) {
-            if (titleRegExp.index < contribNameRegExp.index) {
-                newTitle = true;
+            if ((previousTitleSymbol == titleRegExp.symbol) && (titleRegExp.index < contribNameRegExp.index)) {
+                title = previousTitle;
+                // ticketHTML = ticketHTML.substring(titleRegExp.index + 4);
+                // contribNameRegExp = getNextRegex(ticketHTML, credentialRegexArray);
+            }
+            else if (titleRegExp.index < contribNameRegExp.index) {
                 title = ticketHTML.match(titleRegExp.symbol)[0];
+                previousTitle = title;
+                previousTitleSymbol = titleRegExp.symbol;
                 console.log("TITLE: ", title);
-                ticketHTML = ticketHTML.substring(titleRegExp.index + 4);
+                // ticketHTML = ticketHTML.substring(titleRegExp.index + 4);
+                // contribNameRegExp = getNextRegex(ticketHTML, credentialRegexArray);
             } else {
-                newTitle = false;
                 title = previousTitle;
             }
         } 
-        // console.log("CONTRIB NAME REGEXP: ", contribNameRegExp);
+
         if (!(contribNameRegExp instanceof RegExp)) {
+            console.log("CONTRIB NAME REGEXP: ", (contribNameRegExp));
             contribNameRegExp = contribNameRegExp.symbol;
         }
+        if (ticketHTML.match(contribNameRegExp) == null) {
+            console.log("TICKET AT NULL: ", ticketHTML);
+        }
+        // console.log("CONTRIB NAME REGEXP: ", ticketHTML.match(contribNameRegExp));
         name = ticketHTML.match(contribNameRegExp)[0];
         affiliations = stringOps.getTextBlock(ticketHTML, new RegExp(name, 'g'), disclosureStartRegExp);
         var affiliationsText = cleanHTML.onlyParagraphTags(affiliations.textBlock);
@@ -110,10 +126,15 @@ function buildContributors(ticketHTML) {
 
         // If there is another contributor
         var disclosureText = "";
-        if (contribNameRegExp != -1) {
-            contribNameRegExp = contribNameRegExp.symbol;
+        if (titleRegExp != -1) {
             // Get Disclosure textblock 
-            disclosure = stringOps.getTextBlock(ticketHTML, disclosureStartRegExp, contribNameRegExp, false, false);
+            disclosure = stringOps.getTextBlock(ticketHTML, disclosureStartRegExp, titleRegExp.symbol, false, false);
+            disclosureText = disclosure.textBlock;
+            ticketHTML = ticketHTML.substring(disclosure.endIndex);
+        }
+        else if (contribNameRegExp != -1) {
+            // Get Disclosure textblock 
+            disclosure = stringOps.getTextBlock(ticketHTML, disclosureStartRegExp, contribNameRegExp.symbol, false, false);
             disclosureText = disclosure.textBlock;
             ticketHTML = ticketHTML.substring(disclosure.endIndex);
         } else {
