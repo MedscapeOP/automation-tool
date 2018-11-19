@@ -100,16 +100,29 @@ describe('Prodticket Module Functions', function () {
         // });
 
         it("should return the program contributors from the .html - TownHall", function () {
+            var result = prodticket.getContributors(prodticketTH_alt, config.programs.townHall);
+
+            // console.log("RESULT: ", result);
+
+            for (var i = 0; i < contributorsTH_alt.length; i++) {
+                expect(result[i].title).to.equalIgnoreSpaces(contributorsTH_alt[i].title);
+                expect(result[i].name).to.equalIgnoreSpaces(contributorsTH_alt[i].name);
+                expect(result[i].affiliation).to.equalIgnoreSpaces(contributorsTH_alt[i].affiliation);
+                expect(result[i].disclosure).to.equalIgnoreSpaces(contributorsTH_alt[i].disclosure);
+            }
+        });
+
+        it("should return the program contributors (With Titles) from the .html - TownHall", function () {
             var result = prodticket.getContributors(prodticketTH, config.programs.townHall);
 
             console.log("RESULT: ", result);
 
-            // for (var i = 0; i < contributorsTH.length; i++) {
-            //     expect(result[i].title).to.equalIgnoreSpaces(contributorsTH[i].title);
-            //     expect(result[i].name).to.equalIgnoreSpaces(contributorsTH[i].name);
-            //     expect(result[i].affiliation).to.equalIgnoreSpaces(contributorsTH[i].affiliation);
-            //     expect(result[i].disclosure).to.equalIgnoreSpaces(contributorsTH[i].disclosure);
-            // }
+            for (var i = 0; i < contributorsTH.length; i++) {
+                expect(result[i].title).to.equalIgnoreSpaces(contributorsTH[i].title);
+                expect(result[i].name).to.equalIgnoreSpaces(contributorsTH[i].name);
+                expect(result[i].affiliation).to.equalIgnoreSpaces(contributorsTH[i].affiliation);
+                expect(result[i].disclosure).to.equalIgnoreSpaces(contributorsTH[i].disclosure);
+            }
         });
     });
 

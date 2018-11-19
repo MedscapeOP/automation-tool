@@ -26,10 +26,10 @@ let disclosureRegexArray = [
 ];
 
 let titleRegexArray = [
-    /Co-Moderator/gi,
-    /Moderator/gi,
-    /Faculty/gi,
-    /Panelist/gi 
+    /.*Co-Moderator.*/gi,
+    /.*Moderator.*/gi,
+    /.*Faculty.*/gi,
+    /.*Panelist.*/gi 
 ];
 
 
@@ -73,10 +73,27 @@ function buildContributors(ticketHTML) {
 
     var contribNameRegExp = getNextRegex(ticketHTML, credentialRegexArray);
     var titleRegExp = getNextRegex(ticketHTML, titleRegexArray);
+    var newTitle = null;
+    var title = "";
+    var previousTitle = "";
     while (contribNameRegExp != -1) {
-        contribNameRegExp = contribNameRegExp.symbol;
-        console.log("CREDENTIAL: ", contribNameRegExp);
-        console.log("TITLE: ", titleRegExp);
+        // console.log("CREDENTIAL: ", contribNameRegExp);
+        // console.log("TITLE: ", titleRegExp);
+        if (titleRegExp != -1) {
+            if (titleRegExp.index < contribNameRegExp.index) {
+                newTitle = true;
+                title = ticketHTML.match(titleRegExp.symbol)[0];
+                console.log("TITLE: ", title);
+                ticketHTML = ticketHTML.substring(titleRegExp.index + 4);
+            } else {
+                newTitle = false;
+                title = previousTitle;
+            }
+        } 
+        // console.log("CONTRIB NAME REGEXP: ", contribNameRegExp);
+        if (!(contribNameRegExp instanceof RegExp)) {
+            contribNameRegExp = contribNameRegExp.symbol;
+        }
         name = ticketHTML.match(contribNameRegExp)[0];
         affiliations = stringOps.getTextBlock(ticketHTML, new RegExp(name, 'g'), disclosureStartRegExp);
         var affiliationsText = cleanHTML.onlyParagraphTags(affiliations.textBlock);
@@ -86,10 +103,15 @@ function buildContributors(ticketHTML) {
 
         // Get next contributor name regex
         contribNameRegExp = getNextRegex(ticketHTML, credentialRegexArray);
+        // console.log("CONTRIB NAME REGEXP 2: ", contribNameRegExp);
+
+        // Get next title regex 
+        titleRegExp = getNextRegex(ticketHTML, titleRegexArray);
 
         // If there is another contributor
         var disclosureText = "";
         if (contribNameRegExp != -1) {
+            contribNameRegExp = contribNameRegExp.symbol;
             // Get Disclosure textblock 
             disclosure = stringOps.getTextBlock(ticketHTML, disclosureStartRegExp, contribNameRegExp, false, false);
             disclosureText = disclosure.textBlock;
@@ -102,15 +124,13 @@ function buildContributors(ticketHTML) {
         disclosureText = cleanHTML.insertEntityPlaceholders(disclosureText);
         disclosureText = cleanHTML.onlyParagraphTags(disclosureText);       
         contributor = {
-            title: "",
+            title: cleanHTML.plainText(title),
             name: cleanHTML.plainText(name), 
             affiliation: cleanHTML.contributorAffiliations(affiliationsText), 
             disclosure: cleanHTML.contributorDisclosures(disclosureText)
         };
         contributors.push(contributor);
     }
-
-    // disclosure = stringOps.getTextBlock(ticketHTML, )
 
     return contributors;
 }
@@ -147,8 +167,8 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     var {textBlock: contributorBlock} = stringOps.getTextBlock(speakerBlock, "Disclosure: Clyde W. Yancy, MD, MSc, has disclosed the following relevant financial relationships:</p>", "<strong>Program Details", true, false);
 
     // console.log("CONTRIBUTOR BLOCK: ", contributorBlock);
+    // return JSON.stringify(buildContributors(contributorBlock), undefined, 2);
     return buildContributors(contributorBlock);
-
     // return "<p>" + cleanHTML.singleLine(cleanHTML.plainText(byline)).trim() + "</p>";
 }
 
