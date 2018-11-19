@@ -79,7 +79,6 @@ function buildContributors(ticketHTML) {
 
     var contribNameRegExp = getNextRegex(ticketHTML, credentialRegexArray);
     var titleRegExp = getNextRegex(ticketHTML, titleRegexArray);
-    var newTitle = null;
     var title = "";
     var previousTitle = "";
     var previousTitleSymbol = null;
@@ -87,31 +86,32 @@ function buildContributors(ticketHTML) {
         if (titleRegExp != -1) {
             if ((previousTitleSymbol == titleRegExp.symbol) && (titleRegExp.index < contribNameRegExp.index)) {
                 title = previousTitle;
-                // ticketHTML = ticketHTML.substring(titleRegExp.index + 4);
-                // contribNameRegExp = getNextRegex(ticketHTML, credentialRegexArray);
             }
             else if (titleRegExp.index < contribNameRegExp.index) {
                 title = ticketHTML.match(titleRegExp.symbol)[0];
                 previousTitle = title;
                 previousTitleSymbol = titleRegExp.symbol;
-                console.log("TITLE: ", title);
-                // ticketHTML = ticketHTML.substring(titleRegExp.index + 4);
-                // contribNameRegExp = getNextRegex(ticketHTML, credentialRegexArray);
             } else {
                 title = previousTitle;
             }
         } 
 
         if (!(contribNameRegExp instanceof RegExp)) {
-            console.log("CONTRIB NAME REGEXP: ", (contribNameRegExp));
             contribNameRegExp = contribNameRegExp.symbol;
         }
-        if (ticketHTML.match(contribNameRegExp) == null) {
-            console.log("TICKET AT NULL: ", ticketHTML);
-        }
+        // ***** DEBUGGING ***** 
+        // if (ticketHTML.match(contribNameRegExp) == null) {
+        //     console.log("CONTRIB NAME REGEXP: ", (contribNameRegExp));
+        //     console.log("TICKET AT NULL: ", ticketHTML);
+        // }
         // console.log("CONTRIB NAME REGEXP: ", ticketHTML.match(contribNameRegExp));
         name = ticketHTML.match(contribNameRegExp)[0];
-        affiliations = stringOps.getTextBlock(ticketHTML, new RegExp(name, 'g'), disclosureStartRegExp);
+        affiliations = stringOps.getTextBlock(ticketHTML, new RegExp(RegExp.escape(name), 'g'), disclosureStartRegExp);
+        // ***** DEBUGGING *****
+        // if (affiliations.startIndex == -1) {
+        //     console.log("AFFILIATION NAME: ", name);
+        //     console.log("TICKET AFFILIATION: ", ticketHTML);
+        // }
         var affiliationsText = cleanHTML.onlyParagraphTags(affiliations.textBlock);
         
         // Chop off beginning of ticket;

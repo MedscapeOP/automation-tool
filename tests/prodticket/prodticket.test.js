@@ -122,7 +122,7 @@ describe('Prodticket Module Functions', function () {
             //         return;
             //     }
             // });
-            console.log("RESULT: ", result);
+            // console.log("RESULT: ", result);
 
             // for (var i = 0; i < contributorsTH.length; i++) {
             //     expect(result[i].title).to.equalIgnoreSpaces(contributorsTH[i].title);
