@@ -257,35 +257,35 @@ describe('Prodticket Module Functions', function () {
         });
     });
 
-    // /**
-    // * GOAL STATEMENT   
-    // */
-    // describe("prodticket.getGoalStatement()", function () {
-    //     var goalStatementCB = fs.readFileSync(__dirname + '/input/goal-statement-cb.html').toString();
-    //     var goalStatementSL = fs.readFileSync(__dirname + '/input/goal-statement-sl.html').toString();
-    //     var goalStatementCC = fs.readFileSync(__dirname + '/input/goal-statement-cc.html').toString();
-    //     var goalStatementTH = fs.readFileSync(__dirname + '/input/goal-statement-th.html').toString();
+    /**
+    * GOAL STATEMENT   
+    */
+    describe("prodticket.getGoalStatement()", function () {
+        var goalStatementCB = fs.readFileSync(__dirname + '/input/goal-statement-cb.html').toString();
+        var goalStatementSL = fs.readFileSync(__dirname + '/input/goal-statement-sl.html').toString();
+        var goalStatementCC = fs.readFileSync(__dirname + '/input/goal-statement-cc.html').toString();
+        var goalStatementTH = fs.readFileSync(__dirname + '/input/goal-statement-th.html').toString();
 
-    //     it("should return the program goal statement - Clinical Brief", function () {
-    //         var result = prodticket.getGoalStatement(prodticketCB, config.programs.clinicalBrief);
-    //         expect(result).to.equalIgnoreSpaces(goalStatementCB);
-    //     });
+        it("should return the program goal statement - Clinical Brief", function () {
+            var result = prodticket.getGoalStatement(prodticketCB, config.programs.clinicalBrief);
+            expect(result).to.equalIgnoreSpaces(goalStatementCB);
+        });
 
-    //     it("should return the program goal statement from .html - Spotlight", function () {
-    //         var result = prodticket.getGoalStatement(prodticketSL, config.programs.spotlight);
-    //         expect(result).to.equalIgnoreSpaces(goalStatementSL);
-    //     });
+        it("should return the program goal statement from .html - Spotlight", function () {
+            var result = prodticket.getGoalStatement(prodticketSL, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(goalStatementSL);
+        });
 
-    //     it("should return the program goal statement from .html - Curbside", function () {
-    //         var result = prodticket.getGoalStatement(prodticketCC, config.programs.spotlight);
-    //         expect(result).to.equalIgnoreSpaces(goalStatementCC);
-    //     });
+        it("should return the program goal statement from .html - Curbside", function () {
+            var result = prodticket.getGoalStatement(prodticketCC, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(goalStatementCC);
+        });
 
-    //     it("should return the program goal statement from the .html - TownHall", function() {
-    //         var result = prodticket.getGoalStatement(prodticketTH_alt, config.programs.townHall);
-    //         expect(result).to.equalIgnoreSpaces(goalStatementTH);
-    //     });
-    // });
+        it("should return the program goal statement from the .html - TownHall", function() {
+            var result = prodticket.getGoalStatement(prodticketTH_alt, config.programs.townHall);
+            expect(result).to.equalIgnoreSpaces(goalStatementTH);
+        });
+    });
 
     // /**
     // * TARGET AUDIENCE   

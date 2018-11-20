@@ -38,7 +38,7 @@ let endSlideMatches = [
 ];
 
 
-
+// Spotlight
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML, program) {
     ticketHTML = cleanHTML.slidesInitial(ticketHTML);
     var startSlideRegExp = stringOps.getUsableRegExp(ticketHTML, startSlideMatches);
@@ -56,10 +56,12 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML, program
     }    
 }
 
+// Curbside
 exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML, program) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML, program);
 }
 
+// First Response 
 exportObject[config.programs.firstResponse.codeName] = function (ticketHTML, program) {
     // while startIndex != -1;
     // get textBlock from &lt;&lt;.*slide 1 to &lt;&lt;end slides
@@ -90,6 +92,24 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML, pro
     }
     // console.log(slideComponents);
     return slideComponents;
+}
+
+// Town Hall  
+exportObject[config.programs.townHall.codeName] = function (ticketHTML, program) {
+    ticketHTML = cleanHTML.slidesInitial(ticketHTML);
+    var startSlideRegExp = stringOps.getUsableRegExp(ticketHTML, startSlideMatches);
+    var endSlideRegExp = stringOps.getUsableRegExp(ticketHTML, endSlideMatches);
+
+    if (!startSlideRegExp && !endSlideRegExp) {
+        return new Error("Regexp is not found in the prodticket");
+    } else {
+        var slideComponents = []; 
+        var textBlockObject = stringOps.getTextBlock(ticketHTML, startSlideRegExp, endSlideRegExp, false); 
+        var slideComponent = new SlideComponent(program.articleID, null, textBlockObject.textBlock);
+        slideComponents.push(slideComponent.toObjectLiteral());
+        // console.log(JSON.stringify(slideComponents, undefined, 2));
+        return slideComponents;
+    }    
 }
 
 module.exports = exportObject;
