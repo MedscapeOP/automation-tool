@@ -319,58 +319,62 @@ describe('Prodticket Module Functions', function () {
         });
     });
 
-    // /**
-    // * LEARNING OBJECTIVES   
-    // */
-    // describe("prodticket.getLearningObjectives()", function () {
-    //     var learningObjectivesCB = fs.readFileSync(__dirname + '/input/learning-objectives-cb.html').toString();
-    //     var learningObjectivesSL = fs.readFileSync(__dirname + '/input/learning-objectives-sl.html').toString();
-    //     var learningObjectivesCC = fs.readFileSync(__dirname + '/input/learning-objectives-cc.html').toString();
-    //     var learningObjectivesTH = fs.readFileSync(__dirname + '/input/learning-objectives-th.html').toString(); 
+    /**
+    * LEARNING OBJECTIVES   
+    */
+    describe("prodticket.getLearningObjectives()", function () {
+        var learningObjectivesCB = fs.readFileSync(__dirname + '/input/learning-objectives-cb.html').toString();
+        var learningObjectivesSL = fs.readFileSync(__dirname + '/input/learning-objectives-sl.html').toString();
+        var learningObjectivesCC = fs.readFileSync(__dirname + '/input/learning-objectives-cc.html').toString();
+        var learningObjectivesTH = fs.readFileSync(__dirname + '/input/learning-objectives-th.html').toString();
+        var learningObjectivesTH_alt = fs.readFileSync(__dirname + '/input/learning-objectives-th-alt.html').toString(); 
 
-    //     it("should return the program learning objectives from .html - Clinical Brief", function () {
-    //         var result = prodticket.getLearningObjectives(prodticketCB, config.programs.clinicalBrief);
-    //         expect(result).to.equalIgnoreSpaces(learningObjectivesCB);
-    //     });
+        it("should return the program learning objectives from .html - Clinical Brief", function () {
+            var result = prodticket.getLearningObjectives(prodticketCB, config.programs.clinicalBrief);
+            expect(result).to.equalIgnoreSpaces(learningObjectivesCB);
+        });
 
-    //     it("should return the program learning objectives from .html - Spotlight", function () {
-    //         var result = prodticket.getLearningObjectives(prodticketSL, config.programs.spotlight);
-    //         expect(result).to.equalIgnoreSpaces(learningObjectivesSL);
-    //     });
+        it("should return the program learning objectives from .html - Spotlight", function () {
+            var result = prodticket.getLearningObjectives(prodticketSL, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(learningObjectivesSL);
+        });
 
-    //     it("should return the program learning objectives from .html - Curbside", function () {
-    //         var result = prodticket.getLearningObjectives(prodticketCC, config.programs.spotlight);
-    //         expect(result).to.equalIgnoreSpaces(learningObjectivesCC);
-    //     });
+        it("should return the program learning objectives from .html - Curbside", function () {
+            var result = prodticket.getLearningObjectives(prodticketCC, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(learningObjectivesCC);
+        });
 
-    //     it("should return the program learning objectives from .html - TownHall", function () {
-    //         var result = prodticket.getLearningObjectives(prodticketTH_alt, config.programs.townHall);
-    //         expect(result).to.equalIgnoreSpaces(learningObjectivesTH);
-    //     });
-    // });
+        it("should return the program learning objectives from .html - TownHall", function () {
+            var result = prodticket.getLearningObjectives(prodticketTH, config.programs.townHall);
+            expect(result).to.equalIgnoreSpaces(learningObjectivesTH);
 
-    // /**
-    // * COMPONENTS  
-    // */
-    // describe("prodticket.getComponents()", function () {
-    //     var componentsArray = require('./input/components-fr');
+            var result_alt = prodticket.getLearningObjectives(prodticketTH_alt, config.programs.townHall);
+            expect(result_alt).to.equalIgnoreSpaces(learningObjectivesTH_alt);
+        });
+    });
 
-    //     it("should return an array of components from .html - First Response", function () {
-    //         var result = prodticket.getComponents(prodticketFR, config.programs.firstResponse);
-    //         for (var i = 0; i < componentsArray.length; i++) {
-    //             expect(result[i].componentNumber).to.equal(componentsArray[i].componentNumber);
+    /**
+    * COMPONENTS  
+    */
+    describe("prodticket.getComponents()", function () {
+        var componentsArray = require('./input/components-fr');
 
-    //             expect(result[i].title).to.equalIgnoreSpaces(componentsArray[i].title);
+        it("should return an array of components from .html - First Response", function () {
+            var result = prodticket.getComponents(prodticketFR, config.programs.firstResponse);
+            for (var i = 0; i < componentsArray.length; i++) {
+                expect(result[i].componentNumber).to.equal(componentsArray[i].componentNumber);
 
-    //             expect(result[i].teaser).to.equalIgnoreSpaces(componentsArray[i].teaser);
+                expect(result[i].title).to.equalIgnoreSpaces(componentsArray[i].title);
 
-    //             expect(result[i].byline).to.equalIgnoreSpaces(componentsArray[i].byline);
+                expect(result[i].teaser).to.equalIgnoreSpaces(componentsArray[i].teaser);
 
-    //             expect(result[i].contentType).to.equalIgnoreSpaces(componentsArray[i].contentType);
-    //         }
-    //         // console.log("COMPONENTS RESULT: ", result);
-    //     });
-    // });
+                expect(result[i].byline).to.equalIgnoreSpaces(componentsArray[i].byline);
+
+                expect(result[i].contentType).to.equalIgnoreSpaces(componentsArray[i].contentType);
+            }
+            // console.log("COMPONENTS RESULT: ", result);
+        });
+    });
 
     // /**
     // * ACTIVITY OVERVIEW 
