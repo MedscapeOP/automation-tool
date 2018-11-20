@@ -124,38 +124,38 @@ describe('Prodticket Module Functions', function () {
             // });
             // console.log("RESULT: ", result);
 
-            // for (var i = 0; i < contributorsTH.length; i++) {
-            //     expect(result[i].title).to.equalIgnoreSpaces(contributorsTH[i].title);
-            //     expect(result[i].name).to.equalIgnoreSpaces(contributorsTH[i].name);
-            //     expect(result[i].affiliation).to.equalIgnoreSpaces(contributorsTH[i].affiliation);
-            //     expect(result[i].disclosure).to.equalIgnoreSpaces(contributorsTH[i].disclosure);
-            // }
+            for (var i = 0; i < contributorsTH.length; i++) {
+                expect(result[i].title).to.equalIgnoreSpaces(contributorsTH[i].title);
+                expect(result[i].name).to.equalIgnoreSpaces(contributorsTH[i].name);
+                expect(result[i].affiliation).to.equalIgnoreSpaces(contributorsTH[i].affiliation);
+                expect(result[i].disclosure).to.equalIgnoreSpaces(contributorsTH[i].disclosure);
+            }
         });
     });
 
-    // /**
-    // * ABBREVIATIONS     
-    // */
-    // describe("prodticket.getAbbreviations()", function () {
-    //     var abbreviationsCC = fs.readFileSync(__dirname + '/input/abbreviations-cc.html').toString();
-    //     var abbreviationsSL = fs.readFileSync(__dirname + '/input/abbreviations-sl.html').toString();
-    //     var abbreviationsTH = fs.readFileSync(__dirname + '/input/abbreviations-th.html').toString();
+    /**
+    * ABBREVIATIONS     
+    */
+    describe("prodticket.getAbbreviations()", function () {
+        var abbreviationsCC = fs.readFileSync(__dirname + '/input/abbreviations-cc.html').toString();
+        var abbreviationsSL = fs.readFileSync(__dirname + '/input/abbreviations-sl.html').toString();
+        var abbreviationsTH = fs.readFileSync(__dirname + '/input/abbreviations-th.html').toString();
 
-    //     it("should return the program abbreviations from the .html - Spotlight", function () {
-    //         var result = prodticket.getAbbreviations(prodticketSL, config.programs.spotlight);
-    //         expect(result).to.equal(abbreviationsSL);
-    //     });
+        it("should return the program abbreviations from the .html - Spotlight", function () {
+            var result = prodticket.getAbbreviations(prodticketSL, config.programs.spotlight);
+            expect(result).to.equal(abbreviationsSL);
+        });
 
-    //     it("should return the program abbreviations from the .html - Curbside", function () {
-    //         var result = prodticket.getAbbreviations(prodticketCC, config.programs.curbsideConsult);
-    //         expect(result).to.equal(abbreviationsCC);
-    //     });
+        it("should return the program abbreviations from the .html - Curbside", function () {
+            var result = prodticket.getAbbreviations(prodticketCC, config.programs.curbsideConsult);
+            expect(result).to.equal(abbreviationsCC);
+        });
 
-    //     it("should return the program abbreviations from the .html - TownHall", function (){
-    //         var result = prodticket.getAbbreviations(prodticketTH_alt, config.programs.townHall);
-    //         expect(result).to.equal(abbreviationsTH);
-    //     });
-    // });
+        it("should return the program abbreviations from the .html - TownHall", function (){
+            var result = prodticket.getAbbreviations(prodticketTH_alt, config.programs.townHall);
+            expect(result).to.equal(abbreviationsTH);
+        });
+    });
 
     // /**
     // * REFERENCES     

@@ -76,7 +76,7 @@ module.exports = [
         `
     },
     {
-        title: "",
+        title: "Panelists",
         name: "Batmunkh Tsetsegsaikhan, PhD, MPH/MHM",
         affiliation: `
         Founder --AMPERSAND--amp; CEO

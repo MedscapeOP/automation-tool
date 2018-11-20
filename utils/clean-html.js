@@ -320,6 +320,37 @@ function references(string, removeFluff=true) {
     return clean.replace(pRegExp, "<li>$2</li>");
 }
 
+function formatServedReceived(string) {
+    var clean = string;
+    var servedRegExp2 = /\s+(Served|served)/g;
+    clean = clean.replace(servedRegExp2, "$1");
+
+    var servedRegExp3 = /(Served|served)/g;
+    clean = clean.replace(servedRegExp3, "<br/>$1");
+
+    // "Recieved" statements 
+    // var recievedRegExp = /<p>(Recieved|recieved)/g;
+    // clean = clean.replace(recievedRegExp, "$1");
+    
+    var receivedRegExp2 = /\s+(Received|received)/g;
+    clean = clean.replace(receivedRegExp2, "$1");
+
+    var receivedRegExp3 = /(Received|received)/g;
+    clean = clean.replace(receivedRegExp3, "<br/>$1");
+
+    // "Owns" statements
+    // var ownsRegExp = /<p>(Owns|owns)/g;
+    // clean = clean.replace(ownsRegExp, "$1");
+    
+    var ownsRegExp2 = /\s+(Owns|owns)/g;
+    clean = clean.replace(ownsRegExp2, "$1");
+
+    var ownsRegExp3 = /(Owns|owns)/g;
+    clean = clean.replace(ownsRegExp3, "<br/>$1");
+
+    return clean;
+}
+
 function peerReviewer(string, removeFluff=true) {
     var str = string;
     if (removeFluff) {
@@ -335,36 +366,7 @@ function peerReviewer(string, removeFluff=true) {
     }
     var clean = sanitizeHtml(str, options);
 
-    // Main regex series 
-    // "Served" statements 
-    // var servedRegExp = /<p>(Served|served)/g;
-    // clean = clean.replace(servedRegExp, "$1");
-    
-    var servedRegExp2 = /\s+(Served|served)/g;
-    clean = clean.replace(servedRegExp2, "$1");
-
-    var servedRegExp3 = /(Served|served)/g;
-    clean = clean.replace(servedRegExp3, "<br/>$1");
-
-    // "Recieved" statements 
-    // var recievedRegExp = /<p>(Recieved|recieved)/g;
-    // clean = clean.replace(recievedRegExp, "$1");
-    
-    var recievedRegExp2 = /\s+(Recieved|recieved)/g;
-    clean = clean.replace(recievedRegExp2, "$1");
-
-    var recievedRegExp3 = /(Recieved|recieved)/g;
-    clean = clean.replace(recievedRegExp3, "<br/>$1");
-
-    // "Owns" statements
-    // var ownsRegExp = /<p>(Owns|owns)/g;
-    // clean = clean.replace(ownsRegExp, "$1");
-    
-    var ownsRegExp2 = /\s+(Owns|owns)/g;
-    clean = clean.replace(ownsRegExp2, "$1");
-
-    var ownsRegExp3 = /(Owns|owns)/g;
-    clean = clean.replace(ownsRegExp3, "<br/>$1");
+    clean = formatServedReceived(clean);
 
     return clean;
 }
@@ -377,20 +379,23 @@ function contributorAffiliations(str) {
 }
 
 function contributorDisclosures(str) {
+    var string = str;
     var doctorRegExp = /<p>(Dr)/g;
-    var string = str.replace(doctorRegExp, "<p><br/><br/>$1");
     
+    string = string.replace(doctorRegExp, "<p><br/><br/>Dr");
+
     var mrRegExp = /<p>(Mr)/g;
-    string = str.replace(mrRegExp, "<p><br/><br/>$1");
+    string = string.replace(mrRegExp, "<p><br/><br/>Mr");
 
     var msRegExp = /<p>(Ms)/g;
-    string = str.replace(msRegExp, "<p><br/><br/>$1");
+    string = string.replace(msRegExp, "<p><br/><br/>Ms");
 
     var mrsRegExp = /<p>(Mrs)/g;
-    string = str.replace(mrsRegExp, "<p><br/><br/>$1");
+    string = string.replace(mrsRegExp, "<p><br/><br/>Mrs");
 
-    string = peerReviewer(str).replace(/--ENTITY#9746;--/g, "");
-    return string;
+    string = formatServedReceived(string).replace(/--ENTITY#9746;--/g, "");
+
+    return string.replace(/<p>|<\/p>/g, "");
 }
 
 function learningObjectives(textBlock, removeFluff=true) {

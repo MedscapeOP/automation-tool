@@ -142,7 +142,11 @@ function buildContributors(ticketHTML) {
             disclosureText = ticketHTML.substring(index);
             ticketHTML = "";
         } 
+        title = cleanHTML.insertEntityPlaceholders(title);
+        name = cleanHTML.insertEntityPlaceholders(name);
+        affiliationsText = cleanHTML.insertEntityPlaceholders(affiliationsText);
         disclosureText = cleanHTML.insertEntityPlaceholders(disclosureText);
+
         disclosureText = cleanHTML.onlyParagraphTags(disclosureText);       
         contributor = {
             title: cleanHTML.plainText(title),
