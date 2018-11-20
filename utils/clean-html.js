@@ -32,6 +32,10 @@ function removeTicketFluff(str) {
     var selectResponseRegExp = /.*\(Select response...\).*/g;
     str = str.replace(selectResponseRegExp, "");
 
+    // Remove Select Appropriate statement (From Peer Reviewer statement)
+    var selectAppropriateRegExp = /\(Select appropriate statement...\)/g;
+    str = str.replace(selectAppropriateRegExp, "");
+
     //Remove Click + to add another row
     var addRowRegExp = /.*Click.*to.*/g;
     str = str.replace(addRowRegExp, "");

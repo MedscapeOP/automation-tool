@@ -187,75 +187,75 @@ describe('Prodticket Module Functions', function () {
         });
     });
 
-    // /**
-    // * PEER REVIEWER     
-    // */
-    // describe("prodticket.getPeerReviewer()", function () {
-    //     var peerReviewerSL = fs.readFileSync(__dirname + '/input/peer-reviewer-sl.html').toString();
-    //     var peerReviewerCC = fs.readFileSync(__dirname + '/input/peer-reviewer-cc.html').toString();
-    //     var peerReviewerTH = fs.readFileSync(__dirname + '/input/peer-reviewer-th.html').toString();
+    /**
+    * PEER REVIEWER     
+    */
+    describe("prodticket.getPeerReviewer()", function () {
+        var peerReviewerSL = fs.readFileSync(__dirname + '/input/peer-reviewer-sl.html').toString();
+        var peerReviewerCC = fs.readFileSync(__dirname + '/input/peer-reviewer-cc.html').toString();
+        var peerReviewerTH = fs.readFileSync(__dirname + '/input/peer-reviewer-th.html').toString();
     
-    //     it("should return the program peer reviewer statement from .html - Spotlight", function () {
-    //         var result = prodticket.getPeerReviewer(prodticketSL, config.programs.spotlight);
-    //         expect(result).to.equalIgnoreSpaces(peerReviewerSL);
-    //     });
+        it("should return the program peer reviewer statement from .html - Spotlight", function () {
+            var result = prodticket.getPeerReviewer(prodticketSL, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(peerReviewerSL);
+        });
 
-    //     it("should return the program peer reviewer statement from .html - Curbside", function () {
-    //         var result = prodticket.getPeerReviewer(prodticketCC, config.programs.curbsideConsult);
-    //         expect(result).to.equalIgnoreSpaces(peerReviewerCC);
-    //     });
+        it("should return the program peer reviewer statement from .html - Curbside", function () {
+            var result = prodticket.getPeerReviewer(prodticketCC, config.programs.curbsideConsult);
+            expect(result).to.equalIgnoreSpaces(peerReviewerCC);
+        });
 
-    //     it("should return the program peer reviewer statement from .html - TownHall", function () {
-    //         var result = prodticket.getPeerReviewer(prodticketTH, config.programs.townHall);
-    //         expect(result).to.equalIgnoreSpaces(peerReviewerTH);
-    //     });
-    // });
+        it("should return the program peer reviewer statement from .html - TownHall", function () {
+            var result = prodticket.getPeerReviewer(prodticketTH, config.programs.townHall);
+            expect(result).to.equalIgnoreSpaces(peerReviewerTH);
+        });
+    });
 
-    // /**
-    // * SLIDES    
-    // */
-    // describe("prodticket.getSlides()", function () {
-    //     var slideComponentsSL = require('./input/slide-components-sl');
-    //     var slideComponentsCC = require('./input/slide-components-cc');
-    //     var slideComponentsFR = require('./input/slide-components-fr');
-    //     var slideComponentsTH = require('./input/slide-components-th');
+    /**
+    * SLIDES    
+    */
+    describe("prodticket.getSlides()", function () {
+        var slideComponentsSL = require('./input/slide-components-sl');
+        var slideComponentsCC = require('./input/slide-components-cc');
+        var slideComponentsFR = require('./input/slide-components-fr');
+        var slideComponentsTH = require('./input/slide-components-th');
 
-    //     it("should return an array of slide components from .html - Spotlight", function () {
-    //         var result = prodticket.getSlides(prodticketSL, config.programs.spotlight);
-    //         expect(result[0].articleID).to.equal(slideComponentsSL[0].articleID);
-    //         expect(result[0].componentNumber).to.equal(slideComponentsSL[0].componentNumber);
-    //         expect(result[0].slidePath).to.equal(slideComponentsSL[0].slidePath);
-    //         expect(result[0].rawSlides).to.equalIgnoreSpaces(slideComponentsSL[0].rawSlides);
-    //     });
+        it("should return an array of slide components from .html - Spotlight", function () {
+            var result = prodticket.getSlides(prodticketSL, config.programs.spotlight);
+            expect(result[0].articleID).to.equal(slideComponentsSL[0].articleID);
+            expect(result[0].componentNumber).to.equal(slideComponentsSL[0].componentNumber);
+            expect(result[0].slidePath).to.equal(slideComponentsSL[0].slidePath);
+            expect(result[0].rawSlides).to.equalIgnoreSpaces(slideComponentsSL[0].rawSlides);
+        });
 
-    //     it("should return an array of slide components from .html - Curbside", function () {
-    //         var result = prodticket.getSlides(prodticketCC, config.programs.curbsideConsult);
-    //         expect(result[0].articleID).to.equal(slideComponentsCC[0].articleID);
-    //         expect(result[0].componentNumber).to.equal(slideComponentsCC[0].componentNumber);
-    //         expect(result[0].slidePath).to.equal(slideComponentsCC[0].slidePath);
-    //         expect(result[0].rawSlides).to.equalIgnoreSpaces(slideComponentsCC[0].rawSlides);
-    //     });
+        it("should return an array of slide components from .html - Curbside", function () {
+            var result = prodticket.getSlides(prodticketCC, config.programs.curbsideConsult);
+            expect(result[0].articleID).to.equal(slideComponentsCC[0].articleID);
+            expect(result[0].componentNumber).to.equal(slideComponentsCC[0].componentNumber);
+            expect(result[0].slidePath).to.equal(slideComponentsCC[0].slidePath);
+            expect(result[0].rawSlides).to.equalIgnoreSpaces(slideComponentsCC[0].rawSlides);
+        });
 
-    //     it("should return an array of slide components from .html - First Response", function () {
-    //         var result = prodticket.getSlides(prodticketFR, config.programs.firstResponse);
-    //         for (var i = 0; i < slideComponentsFR.length; i++) {
-    //             expect(result[i].articleID).to.equal(slideComponentsFR[i].articleID);
-    //             expect(result[i].componentNumber).to.equal(slideComponentsFR[i].componentNumber);
-    //             expect(result[i].slidePath).to.equal(slideComponentsFR[i].slidePath);
-    //             expect(result[i].rawSlides).to.equalIgnoreSpaces(slideComponentsFR[i].rawSlides);
-    //         }
-    //         // expect(result).to.deep.equal(slideComponentsFR);
-    //     });
+        it("should return an array of slide components from .html - First Response", function () {
+            var result = prodticket.getSlides(prodticketFR, config.programs.firstResponse);
+            for (var i = 0; i < slideComponentsFR.length; i++) {
+                expect(result[i].articleID).to.equal(slideComponentsFR[i].articleID);
+                expect(result[i].componentNumber).to.equal(slideComponentsFR[i].componentNumber);
+                expect(result[i].slidePath).to.equal(slideComponentsFR[i].slidePath);
+                expect(result[i].rawSlides).to.equalIgnoreSpaces(slideComponentsFR[i].rawSlides);
+            }
+            // expect(result).to.deep.equal(slideComponentsFR);
+        });
 
-    //     it("should return an array of slide components from .html - TownHall", function () {
-    //         config.programs.townHall.articleID = "903975";
-    //         var result = prodticket.getSlides(prodticketTH_alt, config.programs.townHall);
-    //         expect(result[0].articleID).to.equal(slideComponentsTH[0].articleID);
-    //         expect(result[0].componentNumber).to.equal(slideComponentsTH[0].componentNumber);
-    //         expect(result[0].slidePath).to.equal(slideComponentsTH[0].slidePath);
-    //         expect(result[0].rawSlides).to.equalIgnoreSpaces(slideComponentsTH[0].rawSlides);      
-    //     });
-    // });
+        it("should return an array of slide components from .html - TownHall", function () {
+            config.programs.townHall.articleID = "903975";
+            var result = prodticket.getSlides(prodticketTH_alt, config.programs.townHall);
+            expect(result[0].articleID).to.equal(slideComponentsTH[0].articleID);
+            expect(result[0].componentNumber).to.equal(slideComponentsTH[0].componentNumber);
+            expect(result[0].slidePath).to.equal(slideComponentsTH[0].slidePath);
+            expect(result[0].rawSlides).to.equalIgnoreSpaces(slideComponentsTH[0].rawSlides);      
+        });
+    });
 
     // /**
     // * GOAL STATEMENT   
