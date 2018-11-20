@@ -413,9 +413,14 @@ describe('Prodticket Module Functions', function () {
      */
     describe("prodticket.getCreditStatement()", function () {
         var creditStatementTH = fs.readFileSync(__dirname + '/input/credit-statement-th.html').toString();
+        var creditStatementTH_alt = fs.readFileSync(__dirname + '/input/credit-statement-th-alt.html').toString();
+
         it("should return the program Credit Statement from .html - TownHall", function () {
-            var result = prodticket.getCreditStatement(prodticketTH, config.programs.townHall);
-            expect(result).to.equalIgnoreSpaces(creditStatementTH);
+            // var result = prodticket.getCreditStatement(prodticketTH, config.programs.townHall);
+            // expect(result).to.equalIgnoreSpaces(creditStatementTH);
+
+            var result_alt = prodticket.getCreditStatement(prodticketTH_alt, config.programs.townHall);
+            expect(result_alt).to.equalIgnoreSpaces(creditStatementTH_alt);
         });
     });
 

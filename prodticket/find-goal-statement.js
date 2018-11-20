@@ -44,7 +44,7 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     // textBlock = textBlock.replace(removeRegExp, '');
 
     var result = cleanHTML.singleLine(cleanHTML.onlyParagraphTags(textBlock)).trim();
-    console.log("TOWNHALL GOAL STATEMENT", result);
+    // console.log("TOWNHALL GOAL STATEMENT", result);
     return `${result}`;
 };
 
