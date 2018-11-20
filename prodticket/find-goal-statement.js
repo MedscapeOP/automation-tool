@@ -14,7 +14,7 @@ exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
 // Spotlight
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     var startRegExp = /<strong>Goal Statement.*/g;
-    var endRegExp = /<p>The goal of this activity.*/g;
+    var endRegExp = /<p>The goal(?:s){0,} of this activity.*/g;
     var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, true);
 
     // var removeRegExp = /<p>The goal of this activity.*/
@@ -34,5 +34,18 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
+// Town Hall
+exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+    var startRegExp = /<strong>Goal Statement.*/g;
+    var endRegExp = /<p>The goal(?:s){0,} of this activity.*/g;
+    var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, true);
+
+    // var removeRegExp = /<p>The goal of this activity.*/
+    // textBlock = textBlock.replace(removeRegExp, '');
+
+    var result = cleanHTML.singleLine(cleanHTML.onlyParagraphTags(textBlock)).trim();
+    console.log("TOWNHALL GOAL STATEMENT", result);
+    return `${result}`;
+};
 
 module.exports = exportObject;

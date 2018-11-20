@@ -264,7 +264,8 @@ describe('Prodticket Module Functions', function () {
         var goalStatementCB = fs.readFileSync(__dirname + '/input/goal-statement-cb.html').toString();
         var goalStatementSL = fs.readFileSync(__dirname + '/input/goal-statement-sl.html').toString();
         var goalStatementCC = fs.readFileSync(__dirname + '/input/goal-statement-cc.html').toString();
-        var goalStatementTH = fs.readFileSync(__dirname + '/input/goal-statement-th.html').toString();
+        var goalStatementTH_alt = fs.readFileSync(__dirname + '/input/goal-statement-th.html').toString();
+        var goalStatementTH = "<p>The goals of this activity are to increase HPV vaccine uptake and decrease HPV-related cancers in females and males.</p>"
 
         it("should return the program goal statement - Clinical Brief", function () {
             var result = prodticket.getGoalStatement(prodticketCB, config.programs.clinicalBrief);
@@ -282,40 +283,40 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the program goal statement from the .html - TownHall", function() {
-            var result = prodticket.getGoalStatement(prodticketTH_alt, config.programs.townHall);
+            var result = prodticket.getGoalStatement(prodticketTH, config.programs.townHall);
             expect(result).to.equalIgnoreSpaces(goalStatementTH);
         });
     });
 
-    // /**
-    // * TARGET AUDIENCE   
-    // */    
-    // describe("prodticket.getTargetAudience()", function () {
-    //     var targetAudienceCB = fs.readFileSync(__dirname + '/input/target-audience-cb.html').toString();
-    //     var targetAudienceSL = fs.readFileSync(__dirname + '/input/target-audience-sl.html').toString();
-    //     var targetAudienceCC = fs.readFileSync(__dirname + '/input/target-audience-cc.html').toString();
-    //     var targetAudienceTH = fs.readFileSync(__dirname + '/input/target-audience-th.html').toString();
+    /**
+    * TARGET AUDIENCE   
+    */    
+    describe("prodticket.getTargetAudience()", function () {
+        var targetAudienceCB = fs.readFileSync(__dirname + '/input/target-audience-cb.html').toString();
+        var targetAudienceSL = fs.readFileSync(__dirname + '/input/target-audience-sl.html').toString();
+        var targetAudienceCC = fs.readFileSync(__dirname + '/input/target-audience-cc.html').toString();
+        var targetAudienceTH = fs.readFileSync(__dirname + '/input/target-audience-th.html').toString();
 
-    //     it("should return the program target audience from .html - Clinical Brief", function () {
-    //         var result = prodticket.getTargetAudience(prodticketCB, config.programs.clinicalBrief);
-    //         expect(result).to.equalIgnoreSpaces(targetAudienceCB);
-    //     });
+        it("should return the program target audience from .html - Clinical Brief", function () {
+            var result = prodticket.getTargetAudience(prodticketCB, config.programs.clinicalBrief);
+            expect(result).to.equalIgnoreSpaces(targetAudienceCB);
+        });
 
-    //     it("should return the program target audience from .html - Spotlight", function () {
-    //         var result = prodticket.getTargetAudience(prodticketSL, config.programs.spotlight);
-    //         expect(result).to.equalIgnoreSpaces(targetAudienceSL);
-    //     });
+        it("should return the program target audience from .html - Spotlight", function () {
+            var result = prodticket.getTargetAudience(prodticketSL, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(targetAudienceSL);
+        });
 
-    //     it("should return the program target audience from .html - Curbside", function () {
-    //         var result = prodticket.getTargetAudience(prodticketCC, config.programs.spotlight);
-    //         expect(result).to.equalIgnoreSpaces(targetAudienceCC);
-    //     });
+        it("should return the program target audience from .html - Curbside", function () {
+            var result = prodticket.getTargetAudience(prodticketCC, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(targetAudienceCC);
+        });
 
-    //     it("should return the program target audience from .html - TownHall", function () {
-    //         var result = prodticket.getTargetAudience(prodticketTH_alt, config.programs.townHall);
-    //         expect(result).to.equalIgnoreSpaces(targetAudienceTH);
-    //     });
-    // });
+        it("should return the program target audience from .html - TownHall", function () {
+            var result = prodticket.getTargetAudience(prodticketTH_alt, config.programs.townHall);
+            expect(result).to.equalIgnoreSpaces(targetAudienceTH);
+        });
+    });
 
     // /**
     // * LEARNING OBJECTIVES   
