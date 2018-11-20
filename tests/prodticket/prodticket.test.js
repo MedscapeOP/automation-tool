@@ -416,24 +416,25 @@ describe('Prodticket Module Functions', function () {
         var creditStatementTH_alt = fs.readFileSync(__dirname + '/input/credit-statement-th-alt.html').toString();
 
         it("should return the program Credit Statement from .html - TownHall", function () {
-            // var result = prodticket.getCreditStatement(prodticketTH, config.programs.townHall);
-            // expect(result).to.equalIgnoreSpaces(creditStatementTH);
+            var result = prodticket.getCreditStatement(prodticketTH, config.programs.townHall);
+            expect(result).to.equalIgnoreSpaces(creditStatementTH);
 
             var result_alt = prodticket.getCreditStatement(prodticketTH_alt, config.programs.townHall);
             expect(result_alt).to.equalIgnoreSpaces(creditStatementTH_alt);
         });
     });
 
-    // /**
-    //  * SUPPORTER INFORMATION 
-    //  */
-    // describe("prodticket.getSupporter()", function () {
-    //     var supporterTH = fs.readFileSync(__dirname + '/input/supporter-th.html').toString();
-    //     it("should return the program Supporter name from .html - TownHall", function () {
-    //         var result = prodticket.getSupporterInfo(prodticketTH, config.programs.townHall);
-    //         expect(result).to.equalIgnoreSpaces(supporterTH);
-    //     });
-    // });
+    /**
+     * SUPPORTER INFORMATION 
+     */
+    describe("prodticket.getSupporter()", function () {
+        // var supporterTH = "<div>Merck & Co., Inc.</div>";
+        var supporterTH = "<p>Supported by an independent educational grant from Merck &amp; Co., Inc. </p>";
+        it("should return the program Supporter name from .html - TownHall", function () {
+            var result = prodticket.getSupporter(prodticketTH, config.programs.townHall);
+            expect(result).to.equalIgnoreSpaces(supporterTH);
+        });
+    });
 
     // /**
     //  * CREDITS AVAILABLE
