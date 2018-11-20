@@ -393,27 +393,31 @@ describe('Prodticket Module Functions', function () {
         });
     });
 
-    // /**
-    //  * TEASER
-    //  */
-    // describe("prodticket.getTeaser()", function () {
-    //     var teaserTH = fs.readFileSync(__dirname + '/input/teaser-th.html').toString();
-    //     it("should return the program Teaser from .html - TownHall", function () {
-    //         var result = prodticket.getTeaser(prodticketTH_alt, config.programs.townHall);
-    //         expect(result).to.equalIgnoreSpaces(teaserTH);
-    //     });
-    // });
+    /**
+     * TEASER
+     */
+    describe("prodticket.getTeaser()", function () {
+        var teaserTH = fs.readFileSync(__dirname + '/input/teaser-th.html').toString();
+        var teaserTH_alt = fs.readFileSync(__dirname + '/input/teaser-th-alt.html').toString();
+        it("should return the program Teaser from .html - TownHall", function () {
+            var result = prodticket.getTeaser(prodticketTH, config.programs.townHall);
+            expect(result).to.equalIgnoreSpaces(teaserTH);
+            
+            var result_alt = prodticket.getTeaser(prodticketTH_alt, config.programs.townHall);
+            expect(result_alt).to.equalIgnoreSpaces(teaserTH_alt);
+        });
+    });
 
-    // /**
-    //  * CREDIT STATEMENT 
-    //  */
-    // describe("prodticket.getCreditStatement()", function () {
-    //     var creditStatementTH = fs.readFileSync(__dirname + '/input/credit-statement-th.html').toString();
-    //     it("should return the program Credit Statement from .html - TownHall", function () {
-    //         var result = prodticket.getCreditStatement(prodticketTH, config.programs.townHall);
-    //         expect(result).to.equalIgnoreSpaces(creditStatementTH);
-    //     });
-    // });
+    /**
+     * CREDIT STATEMENT 
+     */
+    describe("prodticket.getCreditStatement()", function () {
+        var creditStatementTH = fs.readFileSync(__dirname + '/input/credit-statement-th.html').toString();
+        it("should return the program Credit Statement from .html - TownHall", function () {
+            var result = prodticket.getCreditStatement(prodticketTH, config.programs.townHall);
+            expect(result).to.equalIgnoreSpaces(creditStatementTH);
+        });
+    });
 
     // /**
     //  * SUPPORTER INFORMATION 
