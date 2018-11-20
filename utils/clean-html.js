@@ -440,6 +440,17 @@ function learningObjectives(textBlock, removeFluff=true) {
     return textBlock;
 }
 
+function associationDisclaimer(textBlock, removeFluff=true) {
+    if (removeFluff){
+        textBlock = removeTicketFluff(textBlock);
+    }    
+
+    var removeRegExp = /.*\(event description.*/g;
+    textBlock = textBlock.replace(removeRegExp, '');
+
+    return textBlock;
+}
+
 function insertEntityPlaceholders (xmlString) {
     var str = xmlString;
 
@@ -490,6 +501,7 @@ module.exports = {
     contributorAffiliations,
     contributorDisclosures,
     learningObjectives,
+    associationDisclaimer,
     insertEntityPlaceholders,
     cleanEntities
 }; 

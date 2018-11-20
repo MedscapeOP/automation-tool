@@ -376,16 +376,22 @@ describe('Prodticket Module Functions', function () {
         });
     });
 
-    // /**
-    // * ACTIVITY OVERVIEW 
-    // */
-    // describe("prodticket.getActivityOverview()", function () {
-    //     var activityOverviewTH = fs.readFileSync(__dirname + '/input/activity-overview-th.html').toString();
-    //     it("should return the program Activity Overview from .html - TownHall", function () {
-    //         var result = prodticket.getActivityOverview(prodticketTH_alt, config.programs.townHall);
-    //         expect(result).to.equalIgnoreSpaces(activityOverviewTH);
-    //     });
-    // });
+    /**
+    * ACTIVITY OVERVIEW 
+    */
+    describe("prodticket.getActivityOverview()", function () {
+        var activityOverviewTH = fs.readFileSync(__dirname + '/input/activity-overview-th.html').toString();
+        
+        var activityOverviewTH_alt = fs.readFileSync(__dirname + '/input/activity-overview-th-alt.html').toString();
+
+        it("should return the program Activity Overview from .html - TownHall", function () {
+            var result = prodticket.getActivityOverview(prodticketTH, config.programs.townHall);
+            expect(result).to.equalIgnoreSpaces(activityOverviewTH);
+
+            var result_alt = prodticket.getActivityOverview(prodticketTH_alt, config.programs.townHall);
+            expect(result_alt).to.equalIgnoreSpaces(activityOverviewTH_alt);
+        });
+    });
 
     // /**
     //  * TEASER

@@ -30,6 +30,15 @@ let findGoalStatement = require('./find-goal-statement');
 let findTargetAudience = require('./find-target-audience');
 let findLearningObjectives = require('./find-learning-objectives');
 let findComponents = require('./find-components');
+let findActivityOverview = require('./find-activity-overview');
+let findTeaser = require('./find-teaser');
+let findCreditStatement = require('./find-credit-statement');
+let findSupporter = require('./find-supporter');
+let findCreditsAvailable = require('./find-credits-available');
+let findLocationInfo = require('./find-location-info');
+let findDateTime = require('./find-date-time');
+let findProgramDetails = require('./find-program-details');
+let findAssociationDisclaimer = require('./find-association-disclaimer');
 
 function checkTicket(ticketHTML) {
     if (ticketHTML) {
@@ -143,8 +152,73 @@ function getCollectionPage(ticketHTML, program) {
 }
 
 function getComponents(ticketHTML, program) {
-    var components = findComponents[program.codeName](ticketHTML, program);
-    return components;
+    if (checkTicket(ticketHTML)) {
+        var components = findComponents[program.codeName](ticketHTML, program);
+        return components;
+    }
+}
+
+function getActivityOverview(ticketHTML, program) {
+    if (checkTicket(ticketHTML)) {
+        var rawActivityOverview = findActivityOverview[program.codeName](ticketHTML);
+        return rawActivityOverview;
+    } 
+}
+
+function getTeaser(ticketHTML, program) {
+    if (checkTicket(ticketHTML)) {
+        var rawTeaser = findTeaser[program.codeName](ticketHTML);
+        return rawTeaser;
+    } 
+}
+
+function getCreditStatement(ticketHTML, program) {
+    if (checkTicket(ticketHTML)) {
+        var rawCreditStatement = findCreditStatement[program.codeName](ticketHTML);
+        return rawCreditStatement;
+    } 
+}
+
+function getSupporter(ticketHTML, program) {
+    if (checkTicket(ticketHTML)) {
+        var rawSupporter = findSupporter[program.codeName](ticketHTML);
+        return rawSupporter;
+    } 
+}
+
+function getCreditsAvailable(ticketHTML, program) {
+    if (checkTicket(ticketHTML)) {
+        var rawCreditsAvailable = findCreditsAvailable[program.codeName](ticketHTML);
+        return rawCreditsAvailable;
+    } 
+}
+
+function getLocationInfo(ticketHTML, program) {
+    if (checkTicket(ticketHTML)) {
+        var rawLocationInfo = findLocationInfo[program.codeName](ticketHTML);
+        return rawLocationInfo;
+    } 
+}
+
+function getDateTime(ticketHTML, program) {
+    if (checkTicket(ticketHTML)) {
+        var rawDateTime = findDateTime[program.codeName](ticketHTML);
+        return rawDateTime;
+    } 
+}
+
+function getProgramDetails(ticketHTML, program) {
+    if (checkTicket(ticketHTML)) {
+        var rawProgramDetails = findProgramDetails[program.codeName](ticketHTML);
+        return rawProgramDetails;
+    } 
+}
+
+function getAssociationDisclaimer(ticketHTML, program) {
+    if (checkTicket(ticketHTML)) {
+        var rawDisclaimer = findAssociationDisclaimer[program.codeName](ticketHTML);
+        return rawDisclaimer;
+    } 
 }
 
 module.exports = {
@@ -159,5 +233,14 @@ module.exports = {
     getTargetAudience, 
     getLearningObjectives,
     getCollectionPage,
-    getComponents
+    getComponents, 
+    getActivityOverview,
+    getTeaser,
+    getCreditStatement,
+    getSupporter,
+    getCreditsAvailable,
+    getLocationInfo,
+    getDateTime,
+    getProgramDetails,
+    getAssociationDisclaimer
 }
