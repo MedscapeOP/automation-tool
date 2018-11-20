@@ -33,4 +33,12 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
     return "<ol>" + cleanHTML.singleLine(textBlock) + "</ol>";
 }
 
+
+// Town Hall  
+exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+    var {textBlock} = stringOps.getTextBlock(ticketHTML, "</a>References (for enduring version only)", "</html>");
+    textBlock = cleanHTML.references(textBlock).trim(); 
+    return "<ol>" + cleanHTML.singleLine(textBlock) + "</ol>";
+}
+
 module.exports = exportObject;
