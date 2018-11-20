@@ -157,35 +157,35 @@ describe('Prodticket Module Functions', function () {
         });
     });
 
-    // /**
-    // * REFERENCES     
-    // */
-    // describe("prodticket.getReferences()", function () {
-    //     var referencesCB = fs.readFileSync(__dirname + '/input/references-cb.html').toString();
-    //     var referencesSL = fs.readFileSync(__dirname + '/input/references-sl.html').toString();
-    //     var referencesCC = fs.readFileSync(__dirname + '/input/references-cc.html').toString();
-    //     var referencesTH = fs.readFileSync(__dirname + '/input/references-th.html').toString();
+    /**
+    * REFERENCES     
+    */
+    describe("prodticket.getReferences()", function () {
+        var referencesCB = fs.readFileSync(__dirname + '/input/references-cb.html').toString();
+        var referencesSL = fs.readFileSync(__dirname + '/input/references-sl.html').toString();
+        var referencesCC = fs.readFileSync(__dirname + '/input/references-cc.html').toString();
+        var referencesTH = fs.readFileSync(__dirname + '/input/references-th.html').toString();
 
-    //     it("should return the program references from the .html - Clinical Brief", function () {
-    //         var result = prodticket.getReferences(prodticketCB, config.programs.clinicalBrief);
-    //         expect(result).to.equalIgnoreSpaces(referencesCB);
-    //     });
+        it("should return the program references from the .html - Clinical Brief", function () {
+            var result = prodticket.getReferences(prodticketCB, config.programs.clinicalBrief);
+            expect(result).to.equalIgnoreSpaces(referencesCB);
+        });
 
-    //     it("should return the program references from the .html - Spotlight", function () {
-    //         var result = prodticket.getReferences(prodticketSL, config.programs.spotlight);
-    //         expect(result).to.equalIgnoreSpaces(referencesSL);
-    //     });
+        it("should return the program references from the .html - Spotlight", function () {
+            var result = prodticket.getReferences(prodticketSL, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(referencesSL);
+        });
 
-    //     it("should return the program references from the .html - Curbside", function () {
-    //         var result = prodticket.getReferences(prodticketCC, config.programs.curbsideConsult);
-    //         expect(result).to.equalIgnoreSpaces(referencesCC);
-    //     });
+        it("should return the program references from the .html - Curbside", function () {
+            var result = prodticket.getReferences(prodticketCC, config.programs.curbsideConsult);
+            expect(result).to.equalIgnoreSpaces(referencesCC);
+        });
 
-    //     it("should return the program references from the .html - TownHall", function () {
-    //         var result = prodticket.getReferences(prodticketTH_alt, config.programs.townHall);
-    //         expect(result).to.equalIgnoreSpaces(referencesTH);
-    //     });
-    // });
+        it("should return the program references from the .html - TownHall", function () {
+            var result = prodticket.getReferences(prodticketTH_alt, config.programs.townHall);
+            expect(result).to.equalIgnoreSpaces(referencesTH);
+        });
+    });
 
     // /**
     // * PEER REVIEWER     

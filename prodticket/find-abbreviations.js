@@ -24,4 +24,12 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
+exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+    var {textBlock: rawAbbreviations, label: abbrLabel} = stringOps.getTextBlock(ticketHTML, "Abbreviations", '<a name="Heading562"></a>Transcript');
+    // console.log(cleanHTML.abbreviations(rawAbbreviations));
+    // return "";
+    rawAbbreviations = cleanHTML.singleLine(cleanHTML.abbreviations(rawAbbreviations)).trim();
+    return '<p>' + stringOps.findLastAndReplace(rawAbbreviations, '<br/>', "") + '</p>';
+}
+
 module.exports = exportObject;
