@@ -295,7 +295,8 @@ describe('Prodticket Module Functions', function () {
         var targetAudienceCB = fs.readFileSync(__dirname + '/input/target-audience-cb.html').toString();
         var targetAudienceSL = fs.readFileSync(__dirname + '/input/target-audience-sl.html').toString();
         var targetAudienceCC = fs.readFileSync(__dirname + '/input/target-audience-cc.html').toString();
-        var targetAudienceTH = fs.readFileSync(__dirname + '/input/target-audience-th.html').toString();
+        var targetAudienceTH = "<p>This activity is intended for pediatricians, primary care physicians, and obstetricians/gynecologists.</p>";
+        var targetAudienceTH_alt = fs.readFileSync(__dirname + '/input/target-audience-th.html').toString();
 
         it("should return the program target audience from .html - Clinical Brief", function () {
             var result = prodticket.getTargetAudience(prodticketCB, config.programs.clinicalBrief);
@@ -313,7 +314,7 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the program target audience from .html - TownHall", function () {
-            var result = prodticket.getTargetAudience(prodticketTH_alt, config.programs.townHall);
+            var result = prodticket.getTargetAudience(prodticketTH, config.programs.townHall);
             expect(result).to.equalIgnoreSpaces(targetAudienceTH);
         });
     });

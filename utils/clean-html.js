@@ -36,7 +36,11 @@ function removeTicketFluff(str) {
     var selectAppropriateRegExp = /\(Select appropriate statement...\)/g;
     str = str.replace(selectAppropriateRegExp, "");
 
-    //Remove Click + to add another row
+    // Remove (use the applicable statement) - Target Audience TH
+    var applicableStatementRegExp = /\(use the applicable statement\)/g;
+    str = str.replace(applicableStatementRegExp, "");
+
+    // Remove Click + to add another row
     var addRowRegExp = /.*Click.*to.*/g;
     str = str.replace(addRowRegExp, "");
 
