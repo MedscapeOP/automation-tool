@@ -412,15 +412,15 @@ describe('Prodticket Module Functions', function () {
      * CREDIT STATEMENT 
      */
     describe("prodticket.getAccreditation()", function () {
-        var creditStatementTH = fs.readFileSync(__dirname + '/input/accreditation-statement-th.html').toString();
-        var creditStatementTH_alt = fs.readFileSync(__dirname + '/input/accreditation-statement-th-alt.html').toString();
+        var accreditationStatementTH = fs.readFileSync(__dirname + '/input/accreditation-statement-th.html').toString();
+        var accreditationStatementTH_alt = fs.readFileSync(__dirname + '/input/accreditation-statement-th-alt.html').toString();
 
         it("should return the program Credit Statement from .html - TownHall", function () {
             var result = prodticket.getAccreditation(prodticketTH, config.programs.townHall);
-            expect(result).to.equalIgnoreSpaces(creditStatementTH);
+            expect(result).to.equalIgnoreSpaces(accreditationStatementTH);
 
             var result_alt = prodticket.getAccreditation(prodticketTH_alt, config.programs.townHall);
-            expect(result_alt).to.equalIgnoreSpaces(creditStatementTH_alt);
+            expect(result_alt).to.equalIgnoreSpaces(accreditationStatementTH_alt);
         });
     });
 
@@ -436,16 +436,20 @@ describe('Prodticket Module Functions', function () {
         });
     });
 
-    // /**
-    //  * CREDITS AVAILABLE
-    //  */
-    // describe("prodticket.getCreditsAvailable()", function () {
-    //     var creditsAvailableTH = "0.75";
-    //     it("should return the program Credits Available from .html - TownHall", function () {
-    //         var result = prodticket.getTeaser(prodticketTH, config.programs.townHall);
-    //         expect(result).to.equalIgnoreSpaces(creditsAvailableTH);
-    //     });
-    // });
+    /**
+     * CREDITS AVAILABLE
+     */
+    describe("prodticket.getCreditsAvailable()", function () {
+        var creditsAvailableTH = "1.5";
+        var creditsAvailableTH_alt = "No Credit Available Section In Prodticket";
+        it("should return the program Credits Available from .html - TownHall", function () {
+            var result = prodticket.getCreditsAvailable(prodticketTH, config.programs.townHall);
+            expect(result).to.equalIgnoreSpaces(creditsAvailableTH);
+
+            var result = prodticket.getCreditsAvailable(prodticketTH_alt, config.programs.townHall);
+            expect(result).to.equalIgnoreSpaces(creditsAvailableTH_alt);
+        });
+    });
 
     // /**
     //  * LOCATION & MAP INFO

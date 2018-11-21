@@ -38,47 +38,14 @@ let titleRegexArray = [
     /.*Panelist.*/gi 
 ];
 
-
-function getNextRegex(ticketHTML, regexArray) {
-    var options = [];
-    var nextCredential = null;
-    for (var i = 0; i < regexArray.length; i++) {
-        nextCredential = {
-            index: ticketHTML.search(regexArray[i]),
-            symbol: regexArray[i],
-            isInString: function () {
-                return this.index != -1;
-            }
-        };
-        options.push(nextCredential);
-    }
-
-    // remove all options not found in string
-    _.pullAllBy(options, [{index: -1}], 'index');
-
-    var minimum = undefined;
-    for (var i = 0; i < options.length; i++) {
-        if (!minimum) {
-            minimum = options[i];
-        } else {
-            minimum = (minimum.index > options[i].index ? options[i] : minimum);
-        }
-    }
-    if (minimum) {
-        return minimum;
-    } else {
-        return -1;
-    }
-}
-
 function buildContributors(ticketHTML) {
     var contributors = [];
     var contributor = null;
     var disclosureStartRegExp = /(<p>Disclosure:.*)/gi; 
     var name, affiliations, disclosure;
 
-    var contribNameRegExp = getNextRegex(ticketHTML, credentialRegexArray);
-    var titleRegExp = getNextRegex(ticketHTML, titleRegexArray);
+    var contribNameRegExp = stringOps.getNextRegex(ticketHTML, credentialRegexArray);
+    var titleRegExp = stringOps.getNextRegex(ticketHTML, titleRegexArray);
     var title = "";
     var previousTitle = "";
     var previousTitleSymbol = null;
@@ -118,11 +85,11 @@ function buildContributors(ticketHTML) {
         ticketHTML = ticketHTML.substring(affiliations.endIndex);
 
         // Get next contributor name regex
-        contribNameRegExp = getNextRegex(ticketHTML, credentialRegexArray);
+        contribNameRegExp = stringOps.getNextRegex(ticketHTML, credentialRegexArray);
         // console.log("CONTRIB NAME REGEXP 2: ", contribNameRegExp);
 
         // Get next title regex 
-        titleRegExp = getNextRegex(ticketHTML, titleRegexArray);
+        titleRegExp = stringOps.getNextRegex(ticketHTML, titleRegexArray);
 
         // If there is another contributor
         var disclosureText = "";

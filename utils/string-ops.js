@@ -1,3 +1,5 @@
+const _ = require('lodash');
+
 let regexIndexOf = function(string, regex, startpos) {
     var indexOf = string.substring(startpos || 0).search(regex);
     return (indexOf >= 0) ? (indexOf + (startpos || 0)) : indexOf;
@@ -115,6 +117,44 @@ function getUsableRegExp (ticketHTML, regexpArray) {
     return regexp;
 }
 
+
+/**
+ * @description Selects, from an array, the regex that is first to match within a string. 
+ * @param {*} ticketHTML 
+ * @param {*} regexArray 
+ */
+function getNextRegex(ticketHTML, regexArray) {
+    var options = [];
+    var nextCredential = null;
+    for (var i = 0; i < regexArray.length; i++) {
+        nextCredential = {
+            index: ticketHTML.search(regexArray[i]),
+            symbol: regexArray[i],
+            isInString: function () {
+                return this.index != -1;
+            }
+        };
+        options.push(nextCredential);
+    }
+
+    // remove all options not found in string
+    _.pullAllBy(options, [{index: -1}], 'index');
+
+    var minimum = undefined;
+    for (var i = 0; i < options.length; i++) {
+        if (!minimum) {
+            minimum = options[i];
+        } else {
+            minimum = (minimum.index > options[i].index ? options[i] : minimum);
+        }
+    }
+    if (minimum) {
+        return minimum;
+    } else {
+        return -1;
+    }
+}
+
 // function isBlankOrWhiteSpace(str) {
 //     return (!str || str.length === 0 || !str.trim());
 // }
@@ -126,6 +166,7 @@ module.exports = {
     isBlankOrWhiteSpace,
     getTextBlock,
     regexIndexOf,
+    getNextRegex,
     removeFromRegexCapture,
     getUsableRegExp
 }
