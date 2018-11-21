@@ -24,7 +24,6 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     if (creditAmountLineRegExp != -1) {
         result = textBlock.match(creditAmountLineRegExp.symbol)[1];
         result = cleanHTML.plainText(result, removeFluff=false).trim();
-        console.log("RESULT: ", result);
         return result;
     } else {
         return "No Credit Available Section In Prodticket";

@@ -550,15 +550,15 @@ describe('Prodticket Module Functions', function () {
     //     });
     // });
 
-    // /**
-    //  * ASSOCIATION DISCLAIMER STATEMENT  
-    //  */
-    // describe("prodticket.getAssociationDisclaimer()", function () {
-    //     var associationDisclaimerTH = "<p>This is an example Association Disclaimer Statement if there is one it would be in this section of the prodticket.</p>";
-    //     it("should return the program Association Disclaimer Statement from .html - TownHall", function () {
-    //         var result = prodticket.getAssociationDisclaimer(prodticketTH, config.programs.townHall);
-    //         expect(result).to.equalIgnoreSpaces(associationDisclaimerTH);
-    //     });
-    // });
+    /**
+     * ASSOCIATION DISCLAIMER STATEMENT  
+     */
+    describe("prodticket.getAssociationDisclaimer()", function () {
+        var associationDisclaimerTH = "<p>This is an example Association Disclaimer Statement if there is one it would be in this section of the prodticket.</p>";
+        it("should return the program Association Disclaimer Statement from .html - TownHall", function () {
+            var result = prodticket.getAssociationDisclaimer(prodticketTH, config.programs.townHall);
+            expect(result).to.equalIgnoreSpaces(associationDisclaimerTH);
+        });
+    });
 });
 
