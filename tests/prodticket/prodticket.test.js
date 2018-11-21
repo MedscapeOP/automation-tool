@@ -411,15 +411,15 @@ describe('Prodticket Module Functions', function () {
     /**
      * CREDIT STATEMENT 
      */
-    describe("prodticket.getCreditStatement()", function () {
-        var creditStatementTH = fs.readFileSync(__dirname + '/input/credit-statement-th.html').toString();
-        var creditStatementTH_alt = fs.readFileSync(__dirname + '/input/credit-statement-th-alt.html').toString();
+    describe("prodticket.getAccreditation()", function () {
+        var creditStatementTH = fs.readFileSync(__dirname + '/input/accreditation-statement-th.html').toString();
+        var creditStatementTH_alt = fs.readFileSync(__dirname + '/input/accreditation-statement-th-alt.html').toString();
 
         it("should return the program Credit Statement from .html - TownHall", function () {
-            var result = prodticket.getCreditStatement(prodticketTH, config.programs.townHall);
+            var result = prodticket.getAccreditation(prodticketTH, config.programs.townHall);
             expect(result).to.equalIgnoreSpaces(creditStatementTH);
 
-            var result_alt = prodticket.getCreditStatement(prodticketTH_alt, config.programs.townHall);
+            var result_alt = prodticket.getAccreditation(prodticketTH_alt, config.programs.townHall);
             expect(result_alt).to.equalIgnoreSpaces(creditStatementTH_alt);
         });
     });

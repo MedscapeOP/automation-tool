@@ -32,7 +32,7 @@ let findLearningObjectives = require('./find-learning-objectives');
 let findComponents = require('./find-components');
 let findActivityOverview = require('./find-activity-overview');
 let findTeaser = require('./find-teaser');
-let findCreditStatement = require('./find-credit-statement');
+let findAccreditation = require('./find-accreditation-statement');
 let findSupporter = require('./find-supporter');
 let findCreditsAvailable = require('./find-credits-available');
 let findLocationInfo = require('./find-location-info');
@@ -172,9 +172,9 @@ function getTeaser(ticketHTML, program) {
     } 
 }
 
-function getCreditStatement(ticketHTML, program) {
+function getAccreditation(ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var rawCreditStatement = findCreditStatement[program.codeName](ticketHTML);
+        var rawCreditStatement = findAccreditation[program.codeName](ticketHTML);
         return rawCreditStatement;
     } 
 }
@@ -236,7 +236,7 @@ module.exports = {
     getComponents, 
     getActivityOverview,
     getTeaser,
-    getCreditStatement,
+    getAccreditation,
     getSupporter,
     getCreditsAvailable,
     getLocationInfo,
