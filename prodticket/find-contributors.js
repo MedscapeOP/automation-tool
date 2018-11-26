@@ -11,21 +11,6 @@ function Contributor(title, name, affiliation, disclosure) {
     }
 }
 
-RegExp.escape = function(string) {
-    return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
-};
-
-let credentialRegexArray = function () {
-    var result = [];
-    var string = "";
-    for (var i = 0; i < config.credentials.length; i++) {
-        string = RegExp.escape(config.credentials[i]);
-        result.push(new RegExp(`(.*${string}</p>)`, 'g'));
-        result.push(new RegExp(`(.*${string}</strong></p>)`, 'g'));
-    }
-    return result;
-}();
-
 let disclosureRegexArray = [
     /(<p>Disclosure:.*)/gi,
     /(Disclosure:.*)/gi
@@ -44,7 +29,7 @@ function buildContributors(ticketHTML) {
     var disclosureStartRegExp = /(<p>Disclosure:.*)/gi; 
     var name, affiliations, disclosure;
 
-    var contribNameRegExp = stringOps.getNextRegex(ticketHTML, credentialRegexArray);
+    var contribNameRegExp = stringOps.getNextRegex(ticketHTML, config.credentials.credentialRegexArray);
     var titleRegExp = stringOps.getNextRegex(ticketHTML, titleRegexArray);
     var title = "";
     var previousTitle = "";
@@ -85,7 +70,7 @@ function buildContributors(ticketHTML) {
         ticketHTML = ticketHTML.substring(affiliations.endIndex);
 
         // Get next contributor name regex
-        contribNameRegExp = stringOps.getNextRegex(ticketHTML, credentialRegexArray);
+        contribNameRegExp = stringOps.getNextRegex(ticketHTML, config.credentials.credentialRegexArray);
         // console.log("CONTRIB NAME REGEXP 2: ", contribNameRegExp);
 
         // Get next title regex 

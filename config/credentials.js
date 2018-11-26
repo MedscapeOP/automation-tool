@@ -1,4 +1,4 @@
-module.exports = [
+credentials = [
     'AACC',
     'AAP',
     'ABAI',
@@ -171,3 +171,23 @@ module.exports = [
     'SG',
     'VMD'
 ];
+
+RegExp.escape = function(string) {
+    return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
+};
+
+let credentialRegexArray = function () {
+    var result = [];
+    var string = "";
+    for (var i = 0; i < credentials.length; i++) {
+        string = RegExp.escape(credentials[i]);
+        result.push(new RegExp(`(.*${string}</p>)`, 'g'));
+        result.push(new RegExp(`(.*${string}</strong></p>)`, 'g'));
+    }
+    return result;
+}();
+
+module.exports = {
+    credentials,
+    credentialRegexArray
+}
