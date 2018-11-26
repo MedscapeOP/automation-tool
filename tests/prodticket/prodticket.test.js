@@ -19,6 +19,7 @@ describe('Prodticket Module Functions', function () {
     let prodticketFR;
     let prodticketTH;
     let prodticketTH_alt;
+    let prodticketTH_alt_2;
 
     beforeEach(function() {
         prodticketCB = fs.readFileSync(__dirname + '/input/prodticket-cb.html').toString();
@@ -27,6 +28,7 @@ describe('Prodticket Module Functions', function () {
         prodticketFR = fs.readFileSync(__dirname + '/input/prodticket-fr.html').toString();
         prodticketTH = fs.readFileSync(__dirname + '/input/prodticket-th.html').toString();
         prodticketTH_alt = fs.readFileSync(__dirname + '/input/prodticket-th-alt.html').toString();
+        prodticketTH_alt_2 = fs.readFileSync(__dirname + '/input/prodticket-th-alt-2.html').toString();
     });
 
     /**
@@ -475,7 +477,7 @@ describe('Prodticket Module Functions', function () {
     //     var venueTH = "International Convention Centre Sydney";
     //     var roomTH = "Room: Hall C4.4";
     //     it("should return the program Location Info from .html - TownHall", function () {
-    //         var result = prodticket.getTeaser(prodticketTH, config.programs.townHall);
+    //         var result = prodticket.getLocationInfo(prodticketTH, config.programs.townHall);
     //         expect(result.address).to.equalIgnoreSpaces(addressTH);
     //         expect(result.city).to.equalIgnoreSpaces(cityTH);
     //         expect(result.state).to.equalIgnoreSpaces(stateTH);
@@ -483,24 +485,59 @@ describe('Prodticket Module Functions', function () {
     //         expect(result.venue).to.equalIgnoreSpaces(venueTH);
     //         expect(result.room).to.equalIgnoreSpaces(roomTH);
     //     });
+
+
+    //     var addressTH_alt_2 = "401 West Pratt Street";
+    //     var cityTH_alt_2 = "Baltimore";
+    //     var stateTH_alt_2 = "MD";
+    //     var zipTH_alt_2 = "";
+    //     var venueTH_alt_2 = "Hilton Baltimore";
+    //     var roomTH_alt_2 = "Room: Key Ballroom";
+    //     it("should return the program Location Info from .html - TownHall", function () {
+    //         var result = prodticket.getLocationInfo(prodticketTH_alt_2, config.programs.townHall);
+    //         expect(result.address).to.equalIgnoreSpaces(addressTH_alt_2);
+    //         expect(result.city).to.equalIgnoreSpaces(cityTH_alt_2);
+    //         expect(result.state).to.equalIgnoreSpaces(stateTH_alt_2);
+    //         expect(result.zipcode).to.equalIgnoreSpaces(zipTH_alt_2);
+    //         expect(result.venue).to.equalIgnoreSpaces(venueTH_alt_2);
+    //         expect(result.room).to.equalIgnoreSpaces(roomTH_alt_2);
+    //     });
+
     // });
 
-    // /**
-    //  * DATE / TIME 
-    //  */
-    // describe("prodticket.getDateTime()", function () {
-    //     /* 
-    //      Date & Time section to get info 
-    //      return object with date and time as string properties 
-    //     */ 
-    //     var dateTH = "Wednesday, 3 October, 2018";
-    //     var timeTH = "13:00 &#8211; 14:30"
-    //     it("should return the program Date/Time from .html - TownHall", function () {
-    //         var result = prodticket.getDateTime(prodticketTH, config.programs.townHall);
-    //         expect(result.date).to.equalIgnoreSpaces(dateTH);
-    //         expect(result.time).to.equalIgnoreSpaces(timeTH);
-    //     });
-    // });
+    /**
+     * DATE / TIME 
+     */
+    describe("prodticket.getDateTime()", function () {
+        /* 
+         Date & Time section to get info 
+         return object with date and time as string properties 
+        */ 
+        var dateTH = "Wednesday, 3 October, 2018";
+        var timeTH = "13:00 &#8211; 14:30"
+        it("should return the program Date/Time from .html - TownHall", function () {
+            var result = prodticket.getDateTime(prodticketTH, config.programs.townHall);
+            expect(result.date).to.equalIgnoreSpaces(dateTH);
+            expect(result.time).to.equalIgnoreSpaces(timeTH);
+        });
+
+        var dateTH_alt = "September 7, 2018";
+        var timeTH_alt = "12:30 to 13:30";
+        it("should return the program Date/Time from .html - TownHall Alt 2", function () {
+            var result = prodticket.getDateTime(prodticketTH_alt, config.programs.townHall);
+            expect(result.date).to.equalIgnoreSpaces(dateTH_alt);
+            expect(result.time).to.equalIgnoreSpaces(timeTH_alt);
+        });
+
+        var dateTH_alt_2 = "Saturday, August 18, 2018";
+        var timeTH_alt_2 = "5:30 PM &#8211; 7:30 PM"
+        it("should return the program Date/Time from .html - TownHall Alt 2", function () {
+            var result = prodticket.getDateTime(prodticketTH_alt_2, config.programs.townHall);
+            expect(result.date).to.equalIgnoreSpaces(dateTH_alt_2);
+            expect(result.time).to.equalIgnoreSpaces(timeTH_alt_2);
+        });
+
+    });
 
     // /**
     //  * PROGRAM DETAILS 

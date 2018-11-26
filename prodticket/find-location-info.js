@@ -6,12 +6,19 @@ var exportObject = {};
 
 // Town Hall 
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
-    var startRegExp = /<strong>Upon completion of this activity.*/g;
-    var endRegExp = /<strong>Association Disclaimer Statement/g;
-    var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
+    var result = {};
+    // var startRegExp = /<\/a>Print\/Collateral\/Other information/g;
+    // var endRegExp = /<\/a>Design Information/g;
+    // var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, true);
 
-    textBlock = cleanHTML.learningObjectives(textBlock);
-    var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
+    // var index = stringOps.regexIndexOf(textBlock, /<p>Date:.*/g);
+    // index = stringOps.regexIndexOf(textBlock, /<p>Date:.*/g, index + 5);
+
+    // textBlock = textBlock.substring(index);
+    // result.address = stringOps.getTextBlock(textBlock, /<p>Location:/g, /<p>Room:/g, true, false).textBlock;
+    // console.log("Result: ", result);
+
+    // var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
     return result;
 };
 
