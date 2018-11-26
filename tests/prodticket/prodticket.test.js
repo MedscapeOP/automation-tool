@@ -539,53 +539,53 @@ describe('Prodticket Module Functions', function () {
 
     });
 
-    // /**
-    //  * PROGRAM DETAILS 
-    //  */
-    // describe("prodticket.getProgramDetails()", function () {
-    //     /*
-    //         <ul class="program-timeline">
-    //             <li class="program-schedule">
-    //                 <span>5:30 
-    //                     <span>AM</span>
-    //                 </span>
-    //             </li>
-    //             <li class="program-progress">
-    //                 <span>
-    //                     <span class="program-timepoint"></span>
-    //                     <span class="program-timebar"></span>
-    //                 </span>
-    //             </li>
-    //             <li class="program-info-wrap">
-    //                 <div class="program-info-title">Breakfast &amp; Registration</div>
-    //                 <div class="program-info-subtitle"></div>
-    //             </li>
-    //         </ul>
+    /**
+     * PROGRAM DETAILS 
+     */
+    describe("prodticket.getProgramDetails()", function () {
+        /*
+            <ul class="program-timeline">
+                <li class="program-schedule">
+                    <span>5:30 
+                        <span>AM</span>
+                    </span>
+                </li>
+                <li class="program-progress">
+                    <span>
+                        <span class="program-timepoint"></span>
+                        <span class="program-timebar"></span>
+                    </span>
+                </li>
+                <li class="program-info-wrap">
+                    <div class="program-info-title">Breakfast &amp; Registration</div>
+                    <div class="program-info-subtitle"></div>
+                </li>
+            </ul>
             
-    //         <div class="program-title">
-    //             <span>Program</span>
-    //             <span class="program-subtitle">Tuesday, May 2, 2017</span>
-    //         </div>
+            <div class="program-title">
+                <span>Program</span>
+                <span class="program-subtitle">Tuesday, May 2, 2017</span>
+            </div>
 
-    //         Should return object for program details: array of programTimelineObjects each representing info for the above markup.
-    //         // example timeline object 
-    //         programTimeline = {
-    //             schedule: "<span>5:30<span>AM</span></span>",
-    //             infoTitle: "Breakfast &amp; Registration",
-    //             infoSubtitle: ""                 
-    //         }
+            Should return object for program details: array of programTimelineObjects each representing info for the above markup.
+            // example timeline object 
+            programTimeline = {
+                schedule: "<span>5:30<span>AM</span></span>",
+                infoTitle: "Breakfast &amp; Registration",
+                infoSubtitle: ""                 
+            }
 
-    //     */ 
-    //     var programDetailsTH = require('./input/programDetails');
-    //     it("should return the Program Details from .html - TownHall", function () {
-    //         var result = prodticket.getProgramDetails(prodticketTH, config.programs.townHall);
-    //         for (var i = 0; i < programDetailsTH.length; i++) {
-    //             expect(result[i].schedule).to.equalIgnoreSpaces(programDetailsTH[i].schedule);
-    //             expect(result[i].infoTitle).to.equalIgnoreSpaces(programDetailsTH[i].infoTitle);
-    //             expect(result[i].infoSubtitle).to.equalIgnoreSpaces(programDetailsTH[i].infoSubtitle);
-    //         }
-    //     });
-    // });
+        */ 
+        var programDetailsTH = require('./input/program-details');
+        it("should return the Program Details from .html - TownHall", function () {
+            var result = prodticket.getProgramDetails(prodticketTH, config.programs.townHall);
+            for (var i = 0; i < programDetailsTH.length; i++) {
+                expect(result[i].schedule).to.equalIgnoreSpaces(programDetailsTH[i].schedule);
+                expect(result[i].infoTitle).to.equalIgnoreSpaces(programDetailsTH[i].infoTitle);
+                expect(result[i].infoSubtitle).to.equalIgnoreSpaces(programDetailsTH[i].infoSubtitle);
+            }
+        });
+    });
 
     /**
      * ASSOCIATION DISCLAIMER STATEMENT  
