@@ -581,11 +581,29 @@ describe('Prodticket Module Functions', function () {
         */ 
         var programDetailsTH = require('./input/program-details');
         it("should return the Program Details from .html - TownHall", function () {
-            var result = prodticket.getProgramDetails(prodticketTH_alt_2, config.programs.townHall);
+            var result = prodticket.getProgramDetails(prodticketTH, config.programs.townHall);
             for (var i = 0; i < programDetailsTH.length; i++) {
                 expect(result[i].schedule).to.equalIgnoreSpaces(programDetailsTH[i].schedule);
                 expect(result[i].infoTitle).to.equalIgnoreSpaces(programDetailsTH[i].infoTitle);
                 expect(result[i].infoSubtitle).to.equalIgnoreSpaces(programDetailsTH[i].infoSubtitle);
+            }
+        });
+        var programDetailsTH_alt = require('./input/program-details-alt');
+        it("should return the Program Details from .html - TownHall", function () {
+            var result = prodticket.getProgramDetails(prodticketTH_alt, config.programs.townHall);
+            for (var i = 0; i < programDetailsTH_alt.length; i++) {
+                expect(result[i].schedule).to.equalIgnoreSpaces(programDetailsTH_alt[i].schedule);
+                expect(result[i].infoTitle).to.equalIgnoreSpaces(programDetailsTH_alt[i].infoTitle);
+                expect(result[i].infoSubtitle).to.equalIgnoreSpaces(programDetailsTH_alt[i].infoSubtitle);
+            }
+        });
+        var programDetailsTH_alt_2 = require('./input/program-details-alt-2');
+        it("should return the Program Details from .html - TownHall", function () {
+            var result = prodticket.getProgramDetails(prodticketTH_alt_2, config.programs.townHall);
+            for (var i = 0; i < programDetailsTH_alt_2.length; i++) {
+                expect(result[i].schedule).to.equalIgnoreSpaces(programDetailsTH_alt_2[i].schedule);
+                expect(result[i].infoTitle).to.equalIgnoreSpaces(programDetailsTH_alt_2[i].infoTitle);
+                expect(result[i].infoSubtitle).to.equalIgnoreSpaces(programDetailsTH_alt_2[i].infoSubtitle);
             }
         });
     });

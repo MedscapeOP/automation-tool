@@ -1,9 +1,16 @@
 const config = require('../config');
 const {stringOps, cleanHTML} = require('../utils');
 const ProgramTimeline = require('../classes/program_timeline');
+const _ = require('lodash');
+
 
 var exportObject = {};
 
+var subtitleEdgeCases = [
+    /All Faculty.*/gi
+];
+
+let subtitleRegExpArray = _.concat(config.credentials.credentialRegexArray, subtitleEdgeCases);
 
 let timeRegExpArray = [
     /(10|11|12|[1-9]):[0-5][0-9]/g, 
@@ -58,10 +65,10 @@ function buildProgramDetails(prevWasSubtitle, remainingString, timelineObject, r
             - Use the type to determine where to place the value in result object 
         */
         if (nextLine.length >= 3) {
-            var hasCredentials = stringOps.getNextRegex(nextLine, config.credentials.credentialRegexArray);
+            var hasSubtitle = stringOps.getNextRegex(nextLine, subtitleRegExpArray);
             var hasTime = stringOps.regexIndexOf(nextLine, timeRegExpArray[0]);
             var hasTime2 = stringOps.regexIndexOf(nextLine, timeRegExpArray[1]);
-            if (hasCredentials != -1) {
+            if (hasSubtitle != -1) {
                 next.type = "subtitle";
             } else if (hasTime != -1 || hasTime2 != -1) {
                 next.type = "time";
@@ -75,10 +82,10 @@ function buildProgramDetails(prevWasSubtitle, remainingString, timelineObject, r
             - Use the type to determine where to place the value in result object 
         */
         if (currentLine.length >= 3) {
-            var hasCredentials = stringOps.getNextRegex(currentLine, config.credentials.credentialRegexArray);
+            var hasSubtitle = stringOps.getNextRegex(currentLine, subtitleRegExpArray);
             var hasTime = stringOps.regexIndexOf(currentLine, timeRegExpArray[0]);
             var hasTime2 = stringOps.regexIndexOf(currentLine, timeRegExpArray[1]);
-            if (hasCredentials != -1) {
+            if (hasSubtitle != -1) {
                 current.type = "subtitle";
             } else if (hasTime != -1 || hasTime2 != -1) {
                 current.type = "time";
@@ -94,10 +101,10 @@ function buildProgramDetails(prevWasSubtitle, remainingString, timelineObject, r
     else if ((stringOps.isBlankOrWhiteSpace(nextLine)) && !(stringOps.isBlankOrWhiteSpace(currentLine))) {  
         currentLine = currentLine.trimLeft();
         if (currentLine.length >= 3) {
-            var hasCredentials = stringOps.getNextRegex(currentLine, config.credentials.credentialRegexArray);
+            var hasSubtitle = stringOps.getNextRegex(currentLine, subtitleRegExpArray);
             var hasTime = stringOps.regexIndexOf(currentLine, timeRegExpArray[0]);
             var hasTime2 = stringOps.regexIndexOf(currentLine, timeRegExpArray[1]);
-            if (hasCredentials != -1) {
+            if (hasSubtitle != -1) {
                 current.type = "subtitle";
             } else if (hasTime != -1 || hasTime2 != -1) {
                 current.type = "time";
@@ -137,7 +144,7 @@ function buildProgramDetails(prevWasSubtitle, remainingString, timelineObject, r
                 - Pass along the working timelineObject - DONE
                 - prevWasSubtitle =>>> false - DONE       
             */
-            timelineObject.schedule = currentLine;
+            timelineObject.schedule = cleanHTML.programDetails(currentLine);
             return fn(false, remainingString, timelineObject, resultArray, buildProgramDetails);
         } else {
             /*
@@ -148,7 +155,7 @@ function buildProgramDetails(prevWasSubtitle, remainingString, timelineObject, r
                 - Pass along the working timelineObject - DONE
                 - prevWasSubtitle =>>> false -        
             */
-            timelineObject.schedule = currentLine;
+            timelineObject.schedule = cleanHTML.programDetails(currentLine);
             resultArray.push(timelineObject);
             timelineObject = new ProgramTimeline("", "", "").toObjectLiteral();
             return fn(false, remainingString, timelineObject, resultArray, buildProgramDetails);
@@ -164,7 +171,7 @@ function buildProgramDetails(prevWasSubtitle, remainingString, timelineObject, r
                 - Pass along result array to recursive call - DONE
                 - prevWasSubtitle =>>> true - DONE    
             */
-            timelineObject.infoSubtitle = currentLine + "\n";
+            timelineObject.infoSubtitle = cleanHTML.programDetails(currentLine) + " <br/> ";
             return fn(true, remainingString, timelineObject, resultArray, buildProgramDetails);
         } else if ((next.type == 'subtitle') && prevWasSubtitle) {
             /* 
@@ -174,7 +181,7 @@ function buildProgramDetails(prevWasSubtitle, remainingString, timelineObject, r
                     - Then append the currentLine to the Object's current subtitle - DONE  
                 - prevWasSubtitle =>>> true - DONE   
             */ 
-           timelineObject.infoSubtitle += currentLine + "\n";
+           timelineObject.infoSubtitle += cleanHTML.programDetails(currentLine) + " <br/> ";
            return fn(true, remainingString, timelineObject, resultArray, buildProgramDetails);
         } else if ((next.type != 'subtitle') && prevWasSubtitle) {
             /* 
@@ -189,7 +196,7 @@ function buildProgramDetails(prevWasSubtitle, remainingString, timelineObject, r
                 - prevWasSubtitle =>>> true - DONE
                 prevWasSubtitle, remainingString, timelineObject, resultArray, fn
             */ 
-            timelineObject.infoSubtitle += currentLine;
+            timelineObject.infoSubtitle += cleanHTML.programDetails(currentLine);
             resultArray.push(timelineObject);
             timelineObject = new ProgramTimeline("", "", "").toObjectLiteral();
             return fn(true, remainingString, timelineObject, resultArray, buildProgramDetails);
@@ -206,7 +213,7 @@ function buildProgramDetails(prevWasSubtitle, remainingString, timelineObject, r
                 - prevWasSubtitle =>>> true - 
                 prevWasSubtitle, remainingString, timelineObject, resultArray, fn
             */ 
-            timelineObject.infoSubtitle = currentLine;
+            timelineObject.infoSubtitle = cleanHTML.programDetails(currentLine);
             resultArray.push(timelineObject);
             timelineObject = new ProgramTimeline("", "", "").toObjectLiteral();
             return fn(true, remainingString, timelineObject, resultArray, buildProgramDetails);
@@ -223,7 +230,7 @@ function buildProgramDetails(prevWasSubtitle, remainingString, timelineObject, r
                 - Pass along timelineObject to recursive call - DONE
                 - prevWasSubtitle =>>> false - DONE
             */
-            timelineObject.infoTitle = currentLine;
+            timelineObject.infoTitle = cleanHTML.programDetails(currentLine);
             return fn(false, remainingString, timelineObject, resultArray, buildProgramDetails);
         } else {
             /* 
@@ -235,7 +242,7 @@ function buildProgramDetails(prevWasSubtitle, remainingString, timelineObject, r
                 - Create a new timelineObject and pass that along - DONE
                 - prevWasSubtitle =>>> false - DONE
             */
-           timelineObject.infoTitle = currentLine;
+           timelineObject.infoTitle = cleanHTML.programDetails(currentLine);
            resultArray.push(timelineObject);
            timelineObject = new ProgramTimeline("", "", "").toObjectLiteral();
            return fn(false, remainingString, timelineObject, resultArray, buildProgramDetails);
@@ -265,7 +272,7 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     if (dateRegExp != -1) { 
         textBlock = textBlock.replace(dateRegExp.symbol, "").replace(/.*&#8211;.*/gi, "");
         textBlock = cleanHTML.onlyParagraphTags(textBlock);
-        console.log(buildProgramDetails(false, textBlock, new ProgramTimeline("", "", ""), [], buildProgramDetails));
+        return buildProgramDetails(false, textBlock, new ProgramTimeline("", "", ""), [], buildProgramDetails);
     }
 
     var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();

@@ -15,8 +15,13 @@ module.exports = [
         infoSubtitle: ""                 
     },
     {
-        schedule: "13:35",
+        schedule: "13:15",
         infoTitle: "Spotlight on HPV-Related Cancer Prevention: Australia",
+        infoSubtitle: ""                 
+    },
+    {
+        schedule: "13:35",
+        infoTitle: "Spotlight on HPV-Related Cancer Prevention: Malaysia",
         infoSubtitle: ""                 
     },
     {

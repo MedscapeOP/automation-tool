@@ -379,6 +379,17 @@ function peerReviewer(string, removeFluff=true) {
     return clean;
 }
 
+function programDetails(string, removeFluff=true) {
+    var str = string;
+    if (removeFluff) {
+        str = removeTicketFluff(str);
+    }
+
+    str = plainText(str);
+    str = singleLine(str);
+    return str;
+}
+
 function contributorAffiliations(str) {
     var pRegExp = /<p>/g;
     var pCloseRegExp = /<\/p>/g;
@@ -498,6 +509,7 @@ module.exports = {
     abbreviations,
     references,
     peerReviewer,
+    programDetails,
     contributorAffiliations,
     contributorDisclosures,
     learningObjectives,
