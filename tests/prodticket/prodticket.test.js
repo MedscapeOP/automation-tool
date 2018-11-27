@@ -589,7 +589,7 @@ describe('Prodticket Module Functions', function () {
             }
         });
         var programDetailsTH_alt = require('./input/program-details-alt');
-        it("should return the Program Details from .html - TownHall", function () {
+        it("should return the Program Details from .html - TownHall ALT", function () {
             var result = prodticket.getProgramDetails(prodticketTH_alt, config.programs.townHall);
             for (var i = 0; i < programDetailsTH_alt.length; i++) {
                 expect(result[i].schedule).to.equalIgnoreSpaces(programDetailsTH_alt[i].schedule);
@@ -598,7 +598,7 @@ describe('Prodticket Module Functions', function () {
             }
         });
         var programDetailsTH_alt_2 = require('./input/program-details-alt-2');
-        it("should return the Program Details from .html - TownHall", function () {
+        it("should return the Program Details from .html - TownHall ALT2", function () {
             var result = prodticket.getProgramDetails(prodticketTH_alt_2, config.programs.townHall);
             for (var i = 0; i < programDetailsTH_alt_2.length; i++) {
                 expect(result[i].schedule).to.equalIgnoreSpaces(programDetailsTH_alt_2[i].schedule);
