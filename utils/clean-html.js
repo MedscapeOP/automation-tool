@@ -199,6 +199,16 @@ function slidesInitial (str) {
     var aTagRegExp = /<a name=".*"><\/a>/g;
     str = str.replace(aTagRegExp, "");
 
+    /* NEW REGEX */
+    // Remove bullet symbol from insert slide statement 
+    // var insertSlideRegExp6 = /&\#8226;\s+&lt;&lt;/g;
+    // str = str.replace(insertSlideRegExp6, "&lt;&lt;");
+
+    // var chapterRegExp = /Chapter Title:.*/g;
+    // str = str.replace(chapterRegExp, "&gt;&gt;</p>");
+
+    /* END NEW REGEX */
+
     // Insert Slide edge cases / Capitalization Edge Cases
     var insertSlideRegExp1 = new RegExp('&lt;&lt;.*slide&gt;&gt;', 'g');
     str = str.replace(insertSlideRegExp1, "&lt;&lt;insert slide");
@@ -242,6 +252,18 @@ function slidesFinal (str) {
     var headlineRegExp3 = new RegExp('(?:&lt;){1,}.*level 2.*(?:&gt;){1,}', 'g');
     str = str.replace(headlineRegExp3, "&lt;&lt;Level 2&gt;&gt;");
     
+
+    /* NEW REGEX */
+    // var strongRegExp3 = /&lt;&lt;Level 2&gt;<strong>&gt;/gi;
+    // str = str.replace(strongRegExp3, "<strong>&lt;&lt;Level 2&gt;&gt;");
+
+    // var strongRegExp4 = /<strong>&lt;&lt;<\/strong>Level 2&gt;&gt; <strong>/gi;
+    // str = str.replace(strongRegExp4, "<strong>&lt;&lt;Level 2&gt;&gt;");
+
+    // var strongRegExp5 = /&lt;&lt;Level 2&gt;&gt;\s+<strong>/g;
+    // str = str.replace(strongRegExp5, "<strong>&lt;&lt;Level 2&gt;&gt;")
+    /* END NEW REGEX */
+
     // var headlineRegExp4 = new RegExp('<strong>(?:&lt;){1,}Level 2(?:&gt;){1,}(?:\s){1,}</strong>(.*)</p>', 'g');
     // str = str.replace(headlineRegExp4, "<strong>&lt;&lt;Level 2&gt;&gt;$1</strong>");
 
