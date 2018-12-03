@@ -61,6 +61,12 @@ exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML, p
     return exportObject[config.programs.spotlight.codeName](ticketHTML, program);
 }
 
+// Video Lecture
+exportObject[config.programs.videoLecture.codeName] = function (ticketHTML, program) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML, program);
+}
+
+
 // First Response 
 exportObject[config.programs.firstResponse.codeName] = function (ticketHTML, program) {
     // while startIndex != -1;

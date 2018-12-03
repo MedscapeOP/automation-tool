@@ -25,6 +25,12 @@ exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML) {
     return "<ol>" + cleanHTML.singleLine(textBlock) + "</ol>";
 }
 
+// Video Lecture
+exportObject[config.programs.videoLecture.codeName] = function (ticketHTML) {
+    var {textBlock} = stringOps.getTextBlock(ticketHTML, "<strong>References", "</html>");
+    textBlock = cleanHTML.references(textBlock).trim(); 
+    return "<ol>" + cleanHTML.singleLine(textBlock) + "</ol>";
+}
 
 // First Response 
 exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {

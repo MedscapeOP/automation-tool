@@ -131,6 +131,10 @@ exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
+// Video Lecture 
+exportObject[config.programs.videoLecture.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+}
 
 // First Response
 exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
