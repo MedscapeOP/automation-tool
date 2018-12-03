@@ -4,7 +4,8 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon --exec mocha tests/**/*.test.js || exit 1"
+    "test": "nodemon --exec mocha tests/**/*.test.js || exit 1",
+    "slidetest": "nodemon --exec mocha tests/articles/article-utils.test.js || exit 1"
   },
   "author": "Brandon Antonelli",
   "license": "ISC",
