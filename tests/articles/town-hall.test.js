@@ -53,7 +53,7 @@ describe('Town Hall', function () {
     describe('#buildTownHallEnduring()', function () {
         it('should return complete XML string of Town Hall Enduring article', function () {
             program.hasCollectionPage = false;
-            program.hasPeerReviewer = true;
+            program.hasPeerReviewer = false;
             program.hasForYourPatient = false;
             program.hasLLA = false;
             // program.articleID = "902206";

@@ -12,6 +12,7 @@ const utils = require("../utils");
 const articleUtils = require('./article-utils');
 const {ProfArticle, TOCElement} = require("../classes");
 const prodticket = require('../prodticket');
+const snippets = require('../snippets');
 
 
 /* CLINICAL CONTEXT 
@@ -100,13 +101,13 @@ function buildClinicalBrief(ticket, program) {
 
 
     // Instantiate and Populate Article
-    var finalArticle = new ProfArticle("Article");
+    var finalArticle = new ProfArticle("Article", program.hasOUS);
     // Set article title (pass markup)
     finalArticle.titleText = title;
     // Set article byline (pass markup)
     finalArticle.contrbtrByline = byline;
-    // remove existing contrbtr_pre_content
-    finalArticle.contrbtrPreContent = null;
+    // set contrbtr_pre_content
+    finalArticle.contrbtrPreContent = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
           
     // Insert Main TOC Object & Insert References TOC Object 
     finalArticle.insertTOCElement(mainTOCInstance);

@@ -36,28 +36,7 @@ class ProfArticle extends XMLElement{
         this._contrbtr_pre_content = {
             "type": "element",
             "name": "contrbtr_pre_content",
-            "elements": [
-                {
-                    "type": "element",
-                    "name": "p",
-                    "elements": [
-                        {
-                            "type": "text",
-                            "text": "As an organization accredited by the ACCME, Medscape, LLC, requires everyone who is in a position to control the content of an education activity to disclose all relevant financial relationships with any commercial interest.  The ACCME defines \"relevant financial relationships\" as financial relationships in any amount, occurring within the past 12 months, including financial relationships of a spouse or life partner, that could create a conflict of interest."
-                        }
-                    ]
-                },
-                {
-                    "type": "element",
-                    "name": "p",
-                    "elements": [
-                        {
-                            "type": "text",
-                            "text": "Medscape, LLC, encourages Authors to identify investigational products or off-label uses of products regulated by the US Food and Drug Administration, at first mention and where appropriate in the content."
-                        }
-                    ]
-                }
-            ]
+            "elements": []
         };
         this._contrbtr_byline = {
             "type": "element",
@@ -385,7 +364,7 @@ class ProfArticle extends XMLElement{
     set contrbtrPreContent(newPreContentMarkup) {
         if (newPreContentMarkup) {
             var preContentObject = xmlOps.xmlStringToJS(newPreContentMarkup);
-            this._contrbtr_pre_content.elements = preContentObject.elements;
+            this._contrbtr_pre_content.elements = preContentObject.elements[0].elements;
         } else {
             this._contrbtr_pre_content.elements = [];
         }
@@ -402,8 +381,7 @@ class ProfArticle extends XMLElement{
 
     set contrbtrPostContent(newPostContentMarkup) {
         if (newPostContentMarkup) {
-            // Only need Peer Reviewer if NON-OUS 
-            console.log(newPostContentMarkup);             
+            // Only need Peer Reviewer if NON-OUS             
             var postContentObject = xmlOps.xmlStringToJS(newPostContentMarkup);
             this._contrbtr_post_content.elements = postContentObject.elements[0].elements;
         } else {

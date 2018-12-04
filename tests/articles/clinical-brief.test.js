@@ -68,6 +68,7 @@ describe('Clinical Brief', function () {
 
     describe('#buildClinicalBrief()', function () {
         it('should return complete XML string of Clinical Brief article', function () {
+            program.hasOUS = true;
             var result = clinicalBrief.buildClinicalBrief(prodTicket, program).toObjectLiteral();
             var differences = [
                 "contrbtr_pre_content shouldn't have anything - FIXED",

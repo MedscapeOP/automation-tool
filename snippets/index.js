@@ -1,4 +1,5 @@
 const inLanguage = require('./in-language');
+const preContent = require('./pre-content');
 const utils = require('../utils');
 
 function downloadablePDF (articleID, nameOfAddon, pdfFilename) {
@@ -125,5 +126,6 @@ module.exports = {
     downloadablePDF,
     forYourPatient,
     inLanguage,
+    preContent,
     tableOfContents
 };

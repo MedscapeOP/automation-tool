@@ -104,15 +104,15 @@ function buildTownHallEnduring(ticket, program) {
     
 
     // Build Main Article Object - Instantiate and Populate Article
-    var finalArticle = new ProfArticle("SlidePresentation");
+    var finalArticle = new ProfArticle("SlidePresentation", program.hasOUS);
     // Set article title (pass markup)
     finalArticle.titleText = title;
     // Set article byline (pass markup)
     finalArticle.contrbtrByline = byline;
-    // remove existing contrbtr_pre_content
-    finalArticle.contrbtrPreContent = null;
     // insert peer reviewer
     finalArticle.contrbtrPostContent = peerReviewer;
+    // set contrbtr_pre_content
+    finalArticle.contrbtrPreContent = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
     // insert collection page info - Banner image and Above title
     if (collectionPageInfo) {
         finalArticle.bannerImage = collectionPageInfo.bannerFileName;
@@ -148,6 +148,8 @@ function buildTownHallEnduring(ticket, program) {
 
         finalArticle._childElements[0]._childElements[0].insertSubsectionElement(forYourPatientSubsection); 
     }
+
+    // Insert 
     
     return finalArticle;
 };

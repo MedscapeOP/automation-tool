@@ -8,109 +8,8 @@
         <p>WebMD Global requires each individual who is in a position to control the content of one of its educational activities to disclose any relevant financial relationships occurring within the past 12 months that could create a conflict of interest.</p>
     </contrbtr_pre_content>
     <contrbtr_byline>
-        <p>Henri-Jean Aubin, MD, PhD; Peter Hajek, PhD; Philip Toennesen, MD, DMSc; Serena Tonstad, MD, PhD</p>
+        <p>Henri-Jean Aubin, MD, PhD; Peter Hajek, PhD; Serena Tonstad, MD, PhD</p>
     </contrbtr_byline>
-    <contrbtr_group>
-        <contrbtr_type_lbl>Authors</contrbtr_type_lbl>
-        <contrbtr_element chronicleid="0901c79180b0d2c7">
-            <contrbtr_nm>Henri-Jean Aubin, MD, PhD</contrbtr_nm>
-            <contrbtr_title>
-                <p>Professor
-                    <br/>University Paris-Sud
-                    <br/>Director of the Addiction Science Research Group in the INSERM 1018 Unit
-                    <br/>Villejuif, France
-                </p>
-            </contrbtr_title>
-            <contrbtr_bio/>
-            <contrbtr_disclsr>
-                <p>Disclosure: Henri-Jean Aubin, MD, PhD, has disclosed the following relevant financial relationships:
-                    <br/>Served as an advisor or consultant for: D&amp;A Pharma; Ethypharm; Lundbeck, Inc.; Pfizer Inc.
-                    <br/>Served as a speaker or a member of a speakers bureau for: Lundbeck, Inc.; Merck &amp; Co., Inc.;
-                    <br/>Novartis Pharmaceuticals Corporation; Pierre Fabre Sante; Pfizer Inc.
-                </p>
-            </contrbtr_disclsr>
-        </contrbtr_element>
-        <contrbtr_element chronicleid="0901c79180dd4f44">
-            <contrbtr_nm>Peter Hajek, PhD</contrbtr_nm>
-            <contrbtr_title>
-                <p>Professor of Clinical Psychology
-                    <br/>Queen Mary University of London
-                    <br/>London, United Kingdom
-                </p>
-            </contrbtr_title>
-            <contrbtr_bio/>
-            <contrbtr_disclsr>
-                <p>Disclosure: Peter Hajek, PhD, has disclosed the following relevant financial relationships:
-                    <br/>Served as an advisor or consultant for: Pfizer Inc
-                </p>
-            </contrbtr_disclsr>
-        </contrbtr_element>
-        <contrbtr_element chronicleid="0901c79180dd4f45">
-            <contrbtr_nm>Philip Toennesen, MD, DMSc</contrbtr_nm>
-            <contrbtr_title>
-                <p>Senior Consultant, Specialist in Pulmonary Medicine
-                    <br/>Expert in Sleep Disorders and Smoking Cessation
-                    <br/>Department of Sleep Disorders
-                    <br/>Rigshospitalet
-                    <br/>Copenhagen, Denmark
-                </p>
-            </contrbtr_title>
-            <contrbtr_bio/>
-            <contrbtr_disclsr>
-                <p>Disclosure: Philip Toennesen, MD, DMSc, has disclosed the following relevant financial relationships:
-                    <br/>Served as an advisor or consultant for: Fertim Pharma; Pfizer Inc.
-                    <br/>Served as a speaker or a member of a speakers bureau for: Fertim Pharma; Pfizer Inc.
-                </p>
-            </contrbtr_disclsr>
-        </contrbtr_element>
-        <contrbtr_element chronicleid="0901c79180d2b3b3">
-            <contrbtr_nm>Serena Tonstad, MD, PhD</contrbtr_nm>
-            <contrbtr_title>
-                <p>Professor
-                    <br/>Loma Linda University
-                    <br/>Loma Linda, California, United States
-                    <br/>Head Physician
-                    <br/>Oslo University Hospital
-                    <br/>Oslo, Norway
-                </p>
-            </contrbtr_title>
-            <contrbtr_bio/>
-            <contrbtr_disclsr>
-                <p>Disclosure: Serena Tonstad, MD, PhD, has disclosed the following relevant financial relationships:  
-                    <br/>
-                    Served as an advisor or consultant for: Pfizer Inc. 
-                    <br/>
-                    Served as a speaker or a member of a speakers bureau for: Pfizer Inc.
-                </p>
-            </contrbtr_disclsr>
-        </contrbtr_element>
-    </contrbtr_group>
-    <contrbtr_group>
-        <contrbtr_type_lbl>Editor</contrbtr_type_lbl>
-        <contrbtr_element>
-            <contrbtr_nm>Wilma Guerra, BA, ELS</contrbtr_nm>
-            <contrbtr_title>
-                <p>Scientific Director, WebMD Global, LLC</p>
-            </contrbtr_title>
-            <contrbtr_bio/>
-            <contrbtr_disclsr>
-                <p>Disclosure: Wilma Guerra, BA, ELS, has disclosed no relevant financial relationships.</p>
-            </contrbtr_disclsr>
-        </contrbtr_element>
-    </contrbtr_group>
-    <contrbtr_group>
-        <contrbtr_type_lbl>Content Reviewer</contrbtr_type_lbl>
-        <contrbtr_element>
-            <contrbtr_nm>Esther Nyarko, PharmD</contrbtr_nm>
-            <contrbtr_title>
-                <p>Associate CME Clinical Director</p>
-            </contrbtr_title>
-            <contrbtr_bio/>
-            <contrbtr_disclsr>
-                <p>Disclosure: Esther Nyarko, PharmD, has disclosed no relevant financial relationships.</p>
-            </contrbtr_disclsr>
-        </contrbtr_element>
-    </contrbtr_group>
     <contrbtr_bulk_info/>
     <contrbtr_post_content/>
     <supprtr_grant_group>
@@ -118,7 +17,7 @@
     </supprtr_grant_group>
     <body_label>Body</body_label>
     <toc_element>
-        <TOCLabel/>
+        <toc_label/>
         <toc_type>Default</toc_type>
         <sec_element>
             <sec_header/>
