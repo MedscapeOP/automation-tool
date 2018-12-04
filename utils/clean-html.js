@@ -252,6 +252,9 @@ function slidesFinal (str) {
     var headlineRegExp3 = new RegExp('(?:&lt;){1,}.*level 2.*(?:&gt;){1,}', 'g');
     str = str.replace(headlineRegExp3, "&lt;&lt;Level 2&gt;&gt;");
     
+    // Will remove unneeded text before "insert slide" statement - Fixes issues in buildSlides()
+    var insertSlideRegExp = /.*&lt;&lt;insert slide/g;
+    str = str.replace(insertSlideRegExp, "&lt;&lt;insert slide");
 
     /* NEW REGEX */
     // var strongRegExp3 = /&lt;&lt;Level 2&gt;<strong>&gt;/gi;

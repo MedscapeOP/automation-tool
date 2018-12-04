@@ -15,9 +15,15 @@ function getSlidesTOC (ticket, program) {
     var slidesComponent = prodticket.getSlides(ticket, program)[0];
 
     if (program.hasLLA) {
-        return articleUtils.buildSlidesTOC(slidesComponent, true, true, true);
+        return {
+            slidesTOC: articleUtils.buildSlidesTOC(slidesComponent, true, true, true),
+            audienceQATOC: articleUtils.buildAudienceQATOC(slidesComponent)
+        }
     }
-    return articleUtils.buildSlidesTOC(slidesComponent, false, false, true);
+    return {
+        slidesTOC: articleUtils.buildSlidesTOC(slidesComponent, false, false, true),
+        audienceQATOC: articleUtils.buildAudienceQATOC(slidesComponent)
+    }
 }
 
 
@@ -51,7 +57,7 @@ Main sections to include:
     6) BLANK RESULTS PAGE - COMPLETE
     7) ABBREVIATIONS - COMPLETE
     8) REFERENCES - COMPLETE 
-    9) AUDIENCE QNA SIDEBAR - TODO 
+    9) AUDIENCE QNA SIDEBAR - COMPLETE  
 */
 /* MASTER FUNCTION 
 -------------------------------------- */
@@ -67,7 +73,8 @@ function buildTownHallEnduring(ticket, program) {
     abbreviationsTOC,
     referencesTOC,
     slideDeckDiv,
-    forYourPatientMarkup;
+    forYourPatientMarkup,
+    audienceQATOC;
 
     title = prodticket.getTitle(ticket, program);
     byline = prodticket.getByline(ticket, program);
@@ -83,7 +90,10 @@ function buildTownHallEnduring(ticket, program) {
         blankResultsTOC = articleUtils.buildBlankTOC();
     }
 
-    slidesTOC = getSlidesTOC(ticket, program); 
+    var tocs = getSlidesTOC(ticket, program);
+    slidesTOC = tocs.slidesTOC;
+    audienceQATOC = tocs.audienceQATOC; 
+
     var abbreviationsMarkup = prodticket.getAbbreviations(ticket, program);
     abbreviationsTOC = articleUtils.buildAbbreviations(abbreviationsMarkup, program);
 
@@ -116,6 +126,7 @@ function buildTownHallEnduring(ticket, program) {
     finalArticle.insertTOCElement(blankResultsTOC);
     finalArticle.insertTOCElement(abbreviationsTOC);
     finalArticle.insertTOCElement(referencesTOC);
+    finalArticle.insertTOCElement(audienceQATOC);
 
     // Addons 
     if (program.hasForYourPatient) {
