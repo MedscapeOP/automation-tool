@@ -111,7 +111,11 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML, program)
     } else {
         var slideComponents = []; 
         var textBlockObject = stringOps.getTextBlock(ticketHTML, startSlideRegExp, endSlideRegExp, false); 
-        var slideComponent = new SlideComponent(program.articleID, null, textBlockObject.textBlock);
+
+        // Slide Component should have a component number set to 1 
+        // This will make slide path in this format: 000/000/000000_2 
+        var slideComponent = new SlideComponent(program.articleID, 1, textBlockObject.textBlock);
+
         slideComponents.push(slideComponent.toObjectLiteral());
         // console.log(JSON.stringify(slideComponents, undefined, 2));
         return slideComponents;

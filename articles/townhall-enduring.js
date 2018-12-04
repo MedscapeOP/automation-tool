@@ -1,25 +1,3 @@
-/*
-    Main algorithm 
-    - read in string file of prodticket
-        - write functions to grab each important piece of the ticket.
-        - plug in content programmatically via JS object properties. 
-    - Grabbing pieces of the prod ticket (DONE **** )
-        - get starting index of chunk using indexOf()
-        - get ending index 
-        - get substrings using indeces 
-        - clean the html 
-        - wrap the html 
-        - turn string into JS object 
-        - Take JS object and turn into xml
-        - Take xml and write to file. 
-    - Build Final XML file in one master function  
-        - This function calls other functions that build each 
-        section/subsection    
-            - use get...() functions previously defined to get subsections 
-        - Create instances of TOC elements as needed
-            - Insert subsections and sections as needed
-*/
-
 const _ = require("lodash");
 const utils = require("../utils");
 const articleUtils = require('./article-utils');
@@ -59,6 +37,8 @@ function getLLAPostTOC(ticket, program) {
 
 
 /*
+MAIN CCE: TITLE, CONTRIBUTOR PAGE INFO; TRANSCRIPT: SLIDES (TH USES DIFFERENT THUMBNAIL PATH - SEE NOTES); ABBREVIATIONS; REFERENCES; BACK MATTER; UPLOAD/LINK SLIDE DECK; AUDIENCE QNA SIDEBAR;
+
 Main sections to include: 
     1) TITLE - COMPLETE         
     2) CONTRIBUTOR PAGE INFO - COMPLETE 

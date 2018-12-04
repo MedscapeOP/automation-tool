@@ -1,8 +1,8 @@
 module.exports = [
     {
         articleID: "903975",
-        componentNumber: null, 
-        slidePath: "903/975",
+        componentNumber: 1, 
+        slidePath: "903/975/903975_2",
         rawSlides: `<p><strong>&lt;&lt;insert slide 1; Chapter title: Program Introduction; 00:00&gt;&gt;</strong></p>
 
         <p><strong>&lt;&lt;level 2&gt;&gt;</strong> <strong>The Big Debate: Pharmacologic vs Alternative Approaches in Smoking Cessation</strong></p>
