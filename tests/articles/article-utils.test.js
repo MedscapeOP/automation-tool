@@ -28,6 +28,8 @@ describe('Article Utilities', function () {
     let program = app.config.programs.spotlight;
     let prodTicketFr = fs.readFileSync(__dirname + '/input/article-utils/article-fr.html', 'utf8');
     let programFR = app.config.programs.firstResponse;
+    let prodticketTH = fs.readFileSync(__dirname + '/input/article-utils/article-th.html', 'utf8');
+    let programTH = app.config.programs.townHall;
     var completeBlankTOC; 
     var completeSlidesTOC;
     var completeSlidesTOC2;
@@ -40,6 +42,7 @@ describe('Article Utilities', function () {
     var completeReferences;
     var completeAbbreviations;
     var completeTableOfContents;
+    var completeAudienceQA; 
     
     beforeEach(function() {});
 
@@ -169,6 +172,18 @@ describe('Article Utilities', function () {
             result = utils.xmlOps.objectToXMLString(result);
             result = utils.cleanHTML.cleanEntities(result);
             expect(result).to.equalIgnoreSpaces(completeTableOfContents);
+        });
+    });
+
+    describe('buildAudienceQATOC()', function () {
+        completeAudienceQA = fs.readFileSync(__dirname + '/input/article-utils/audience-qa.xml').toString();
+
+        it('should return the Audience Q&A Sidebar TOC for TH Enduring articles', function () {
+            var slidesComponent = app.prodTicket.getSlides(prodticketTH, programTH)[0];
+            var result = articleUtils.buildAudienceQATOC(slidesComponent).toObjectLiteral();
+            result = utils.xmlOps.objectToXMLString(result);
+            result = utils.cleanHTML.cleanEntities(result);
+            expect(result).to.equalIgnoreSpaces(completeAudienceQA);
         });
     });
 });

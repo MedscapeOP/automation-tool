@@ -3,7 +3,7 @@ const prodticket = require('../prodticket');
 const snippets = require('../snippets');
 const utils = require("../utils");
 const buildSlides = require('./build-slides');
-const {TOCElement, SectionElement, SubsectionElement, SlideGroup} = require("../classes");
+const {TOCElement, SectionElement, SubsectionElement, SlideGroup, SlideComponent} = require("../classes");
 
 /* DONE */
 function buildSection(textBlock, label) {
@@ -231,6 +231,32 @@ function buildTableOfContentsTOC(componentsArray, program) {
     return tableOfContentsTOC;    
 } 
 
+function buildAudienceQATOC(slidesComponent) {
+    // - It just has an extra Sidebar, Audience Q&A where you need to embed video code video code is provided in media info in custom forms
+    // - Use a normal LLA-style video embed. 
+   // BUILD: Main TOC Element 
+
+   var newSlidesComponent = new SlideComponent(slidesComponent.articleID, 2, "").toObjectLiteral();
+
+   // BUILD: Main TOC 
+   var audienceQATOC = new TOCElement("Sidebar");
+   audienceQATOC.tocLabel = "Audience Q &amp; A";
+
+   // BUILD: Main Section Element 
+   var sectionElement = new SectionElement();
+   sectionElement.sectionHeader = "Audience Q &amp; A";
+
+   // BUILD: Main Subsection
+   var subsectionElement = new SubsectionElement(true, false, false);
+   subsectionElement.subsectionContent = utils.wrapSlideIntro(snippets.videoEmbed(newSlidesComponent));
+
+   // INSERT: Subsection
+   sectionElement.insertSubsectionElement(subsectionElement);
+
+   // INSERT: Main Section
+   audienceQATOC.insertSectionElement(sectionElement);
+   return audienceQATOC;
+}
 
 module.exports = {
     buildSection,
@@ -244,5 +270,6 @@ module.exports = {
     buildLLAPostTOC,
     buildReferences,
     buildAbbreviations,
-    buildTableOfContentsTOC
+    buildTableOfContentsTOC,
+    buildAudienceQATOC
 };
