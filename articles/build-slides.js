@@ -107,6 +107,7 @@ let buildSlidesXML = (substring, subsectionElement, slidePath = "XXX/XXX", count
         var slideContent = "";
         if (upcomingSlideSymbol != -1) {
             slideContent = substring.substring(0, upcomingSlideSymbol.index);
+            // Trim off any fluff up until the slide symbol 
             substring = substring.substring(upcomingSlideSymbol.index);
         } else {
             slideContent = substring;
@@ -133,7 +134,7 @@ let buildSlidesXML = (substring, subsectionElement, slidePath = "XXX/XXX", count
 
         // Create new Slide Group XML object and insert Slide Content as section text
         var slide_grp = new SlideGroup(slidePath, counter);
-        console.log("slideContent: ", slideContent);
+        // console.log("slideContent: ", slideContent);
         slide_grp.sectionText = (slideContent);
 
         // Push slide_grp onto subsection element 

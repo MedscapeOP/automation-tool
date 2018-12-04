@@ -225,9 +225,20 @@ function slidesInitial (str) {
     var insertSlideRegExp5 = /&lt;&lt;insert.*slide/gi;
     str = str.replace(insertSlideRegExp5, "&lt;&lt;insert slide");
 
+    // Handle this: <p><strong>&lt;&lt;insert Slide 59; 39:42&gt;&gt; </strong> <strong>&lt;&lt;level 2&gt;&gt; Conclusions</strong></p>
+    var headlineRegExp = /(<strong>(?:&lt;){1,}Level 2(?:&gt;){1,}.*)/gi;
+    str = str.replace(headlineRegExp, "\n\n$1");
+    
+
+    /* EXTRA CASES FOR FR SLIDES */
     // Remove Component statement
     var componentRegExp1 = /(?:&lt;){1,}Component \d.*/gi
     str = str.replace(componentRegExp1, "");
+
+    /* EXTRA CASES FOR TH SLIDES */
+    // &lt;&lt;Intra-activity question 1; 00:46&gt;&gt;  
+    var intraActivityRegExp = /.*(?:&lt;){1,}Intra-activity question.*/gi;
+    str = str.replace(intraActivityRegExp, "");
 
     return str;
 }
@@ -252,9 +263,21 @@ function slidesFinal (str) {
     var headlineRegExp3 = new RegExp('(?:&lt;){1,}.*level 2.*(?:&gt;){1,}', 'g');
     str = str.replace(headlineRegExp3, "&lt;&lt;Level 2&gt;&gt;");
     
+    var headlineRegExp4 = new RegExp('<strong>(?:&lt;){1,}Level 2(?:&gt;){1,}(?:\s){1,}</strong>(.*)</p>', 'g');
+    str = str.replace(headlineRegExp4, "<strong>&lt;&lt;Level 2&gt;&gt;$1</strong>");
+
+
     // Will remove unneeded text before "insert slide" statement - Fixes issues in buildSlides()
     var insertSlideRegExp = /.*&lt;&lt;insert slide/g;
     str = str.replace(insertSlideRegExp, "&lt;&lt;insert slide");
+
+    /* EXTRA CASES FOR TH SLIDES */
+    // console.log("STRING", str); 
+    // Remove level 1's 
+    var level1RegExp = /.*(?:&lt;){1,}level 1.*/gi; 
+    str = str.replace(level1RegExp, "");
+    
+
 
     /* NEW REGEX */
     // var strongRegExp3 = /&lt;&lt;Level 2&gt;<strong>&gt;/gi;
@@ -266,12 +289,8 @@ function slidesFinal (str) {
     // var strongRegExp5 = /&lt;&lt;Level 2&gt;&gt;\s+<strong>/g;
     // str = str.replace(strongRegExp5, "<strong>&lt;&lt;Level 2&gt;&gt;")
     /* END NEW REGEX */
-
-    // var headlineRegExp4 = new RegExp('<strong>(?:&lt;){1,}Level 2(?:&gt;){1,}(?:\s){1,}</strong>(.*)</p>', 'g');
-    // str = str.replace(headlineRegExp4, "<strong>&lt;&lt;Level 2&gt;&gt;$1</strong>");
-
-    // var headlineRegExp5 = new RegExp('<strong>(?:&lt;){1,}level 2(?:&gt;){1,}(?:\s){1,}</strong>(.*)</p>', 'g');
-    // str = str.replace(headlineRegExp5, "<strong>&lt;&lt;Level 2&gt;&gt;$1</strong>");
+    
+    
 
     // Remove End of Slides Fluff
     var endOfSlidesRegExp = /<em>Mandatory Insertion after Main CONTENT with abridged Transcripts:<\/em>/gi;
