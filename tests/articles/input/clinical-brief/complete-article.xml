@@ -10,23 +10,10 @@
   <contrbtr_byline>
     <p>News Author: Sue Hughes; CME Author: Laurie Barclay, MD</p>
   </contrbtr_byline>
-  <contrbtr_group>
-    <contrbtr_type_lbl>News Author</contrbtr_type_lbl>
-    <contrbtr_element chronicleid="0901c79180001bd6">
-      <contrbtr_nm>Sue Hughes</contrbtr_nm>
-      <contrbtr_title>
-        <p>Freelance News Editor, Medscape</p>
-      </contrbtr_title>
-      <contrbtr_bio/>
-      <contrbtr_disclsr>
-        <p>Disclosure: Sue Hughes has disclosed no relevant financial relationships.</p>
-      </contrbtr_disclsr>
-    </contrbtr_element>
-  </contrbtr_group>
   <contrbtr_bulk_info/>
   <contrbtr_post_content/>
   <supprtr_grant_group>
-    <supprtr_grant_attr>/webmd/professional_assets/medscape/images/grant_attribution/medscape.gif</supprtr_grant_attr>
+        <supprtr_grant_attr>/webmd/professional_assets/medscape/images/grant_attribution/daiichi-global-ieg-txt-2014.gif</supprtr_grant_attr>
   </supprtr_grant_group>
   <body_label>Body</body_label>
   <toc_element>
@@ -152,8 +139,7 @@
   </toc_element>
   <toc_element>
     <toc_label/>
-    <toc_type>References</toc_type>
-    <pg_footnotes/>
+    <toc_type>References</toc_type>    
     <sec_element>
       <sec_header/>
       <subsec_element>
@@ -167,23 +153,22 @@
         <qna_form/>
       </subsec_element>
     </sec_element>
+    <pg_footnotes/>
   </toc_element>
   <back_label>Back Matter</back_label>
-  <layer_grp>
-    <layer_img_sm/>
-    <layer_img_full/>
-    <layer_caption/>
-    <layer_label/>
-    <layer_alt_txt/>
-    <layer_table/>
-  </layer_grp>
   <ref_grp>
     <ref_item/>
   </ref_grp>
   <cpyrt_holder/>
   <cpyrt_ovrd/>
   <disclmr_ovrd/>
-  <bkmtr_front/>
+  <bkmtr_front>
+      <p>
+          <strong>Disclaimer</strong>
+      </p>
+      <p>The educational activity presented above may involve simulated case-based scenarios. The patients depicted in these scenarios are fictitious and no association with any actual patient is intended or should be inferred.</p>
+      <p>The material presented here does not necessarily reflect the views of Medscape, LLC, or companies that support educational programming on medscape.org. These materials may discuss therapeutic products that have not been approved by the US Food and Drug Administration and off-label uses of approved products. A qualified healthcare professional should be consulted before using any therapeutic product discussed. Readers should verify all information and data before treating patients or employing any therapies described in this educational activity.</p>
+  </bkmtr_front>
   <bkmtr_glossary/>
   <bkmtr_ack/>
   <bkmtr_discl/>

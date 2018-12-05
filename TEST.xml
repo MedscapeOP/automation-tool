@@ -1,14 +1,14 @@
-<prof_article_slide_presentation>
+<prof_article>
     <front_label>Front Matter</front_label>
     <above_title/>
     <title>
-        <p>The Big Debate: Pharmacologic vs Alternative Approaches in Smoking Cessation</p>
+        <p>Common Nonphysical Problems Seen After Stroke</p>
     </title>
     <contrbtr_pre_content>
         <p>WebMD Global requires each individual who is in a position to control the content of one of its educational activities to disclose any relevant financial relationships occurring within the past 12 months that could create a conflict of interest.</p>
     </contrbtr_pre_content>
     <contrbtr_byline>
-        <p>Henri-Jean Aubin, MD, PhD; Peter Hajek, PhD; Serena Tonstad, MD, PhD</p>
+        <p>News Author: Sue Hughes; CME Author: Laurie Barclay, MD</p>
     </contrbtr_byline>
     <contrbtr_bulk_info/>
     <contrbtr_post_content/>
@@ -20,969 +20,145 @@
         <toc_label/>
         <toc_type>Default</toc_type>
         <sec_element>
-            <sec_header/>
-            <subsec_element>
-                <subsec_header/>
-                <slide_intro/>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide1.png
-                    </sec_img>
-                    <sec_label>Slide 1.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> The Big Debate: Pharmacologic vs Alternative Approaches in Smoking Cessation</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 1.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide2.png
-                    </sec_img>
-                    <sec_label>Slide 2.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Program Agenda</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 2.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide3.png
-                    </sec_img>
-                    <sec_label>Slide 3.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> The Importance of a Complete Quit</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 3.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide4.png
-                    </sec_img>
-                    <sec_label>Slide 4.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Worldwide Leading Causes of Attributable Global Mortality
-                            <sup type="ref">[1]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 4.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide5.png
-                    </sec_img>
-                    <sec_label>Slide 5.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Smoking Leads to an 11-Year Loss of Life Span
-                            <sup type="ref">[2]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 5.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide6.png
-                    </sec_img>
-                    <sec_label>Slide 6.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Mortality and Morbidity Rates Associated With Smoking
-                            <sup type="ref">[2,3]</sup>
-                        </h3>
-                        <ul>
-                            <li>	The figure on the left shows that there is a monotonous dose effect relationship between cigarettes per day and all-cause mortality
-
-                                <ul>
-                                    <li>	This means that even low smoking rates are associated with an increased risk of mortality </li>
-                                </ul>
-                            </li>
-                            <li>	In the specific case of cardiovascular disease, most of the mortality risk is borne by low smoking rates, as seen in the curve on the right </li>
-                        </ul>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 6.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide7.png
-                    </sec_img>
-                    <sec_label>Slide 7.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Mortality and Morbidity Rates Associated With Smoking (cont)
-                            <sup type="ref">[2,4]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 7.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide8.png
-                    </sec_img>
-                    <sec_label>Slide 8.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> All-Cause Mortality Risk Reduction After Quitting Smoking
-                            <sup type="ref">[5]</sup>
-                        </h3>
-                        <ul>
-                            <li>	It is believed that complete quit is the safest and most effective way to reduce the all-cause mortality associated with smoking</li>
-                            <li>	It is also believed that the reduction of all-cause mortality stabilizes roughly 10 to 15 years after complete smoking cessation</li>
-                        </ul>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 8.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide9.png
-                    </sec_img>
-                    <sec_label>Slide 9.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Little Evidence of All-Cause Mortality Risk Reduction After Smoking Reduction
-                            <sup type="ref">[6-9]</sup>
-                        </h3>
-                        <ul>
-                            <li>	It is important to keep in mind that in all the studies shown on this slide, smoking reduction was not supported by any nicotine replacement use </li>
-                            <li>	Moreover, it is known that reduction of cigarettes per day does not reflect reduction of toxin exposure</li>
-                        </ul>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 9.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide10.png
-                    </sec_img>
-                    <sec_label>Slide 10.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Harm Reduction Concept: People Who Do Not Want to Give Up Tobacco or Nicotine Use Completely
-                            <sup type="ref">[10]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 10.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide11.png
-                    </sec_img>
-                    <sec_label>Slide 11.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3>Cigarette Smoking Causes the Most Harm
-                            <sup type="ref">[11]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 11.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide12.png
-                    </sec_img>
-                    <sec_label>Slide 12.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Conclusions</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 12.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide13.png
-                    </sec_img>
-                    <sec_label>Slide 13.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Pharmacologic Therapies for Smoking Cessation: The Evidence</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 13.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide14.png
-                    </sec_img>
-                    <sec_label>Slide 14.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Nicotine Replacement Therapy vs Control for Smoking Cessation
-                            <sup type="ref">[12]</sup>
-                        </h3>
-                        <ul>
-                            <li>	Nicotine replacement therapy is the oldest, most established, and most used therapy for smoking cessation</li>
-                            <li>	Based on the results of this analysis, the Cochrane Group collaborators stated that they will never do another meta-analysis of this type, because the evidence is so strong for nicotine replacement against placebo
-
-                                <ul>
-                                    <li>	Subgroup and other types of analyses may be conducted, for example, comparing nicotine replacement with e-cigarettes or other comparators, but the placebo comparison is firmly established at this time</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 14.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide15.png
-                    </sec_img>
-                    <sec_label>Slide 15.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> First-Line Drugs in Smoking Cessation: Meta-Analysis of Cochrane Register Efficacy Data
-                            <sup type="ref">[12-15]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 15.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide16.png
-                    </sec_img>
-                    <sec_label>Slide 16.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Efficacy of Varenicline: Phase 3 and 4 Studies (Weeks 9-12)
-                            <sup type="ref">[16-25]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 16.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide17.png
-                    </sec_img>
-                    <sec_label>Slide 17.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Efficacy of Varenicline: Phase 3 and 4 Studies (Weeks 9-52)
-                            <sup type="ref">[16,17,21-23,25]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 17.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide18.png
-                    </sec_img>
-                    <sec_label>Slide 18.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Quit Rates Flexible Quit Date Study
-                            <sup type="ref">[24]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 18.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide19.png
-                    </sec_img>
-                    <sec_label>Slide 19.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Varenicline Maintenance Study
-                            <sup type="ref">[26]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 19.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide20.png
-                    </sec_img>
-                    <sec_label>Slide 20.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Maintenance Treatment With Varenicline in Patients With Schizophrenia and Bipolar Disorder
-                            <sup type="ref">[27]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 20.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide21.png
-                    </sec_img>
-                    <sec_label>Slide 21.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> EAGLES: Continuous Abstinence Rates in Psychiatric and Nonpsychiatric Cohorts
-                            <sup type="ref">[28]</sup>
-                        </h3>
-                        <ul>
-                            <li>	This is the EAGLES study and included over 8000 subjects, both people with psychiatric disease and people without known psychiatric disease</li>
-                            <li>	The study was sponsored by both producers of varenicline and of bupropion and in collaboration with health authorities</li>
-                        </ul>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 21.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide22.png
-                    </sec_img>
-                    <sec_label>Slide 22.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Primary Endpoint for the EAGLES Study: Nonpsychiatric Adverse Events
-                            <sup type="ref">[28]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 22.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide23.png
-                    </sec_img>
-                    <sec_label>Slide 23.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Tolerability and Safety Issues
-                            <sup type="ref">[29]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 23.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide24.png
-                    </sec_img>
-                    <sec_label>Slide 24.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Physician Perspectives
-                            <sup type="ref">[30]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 24.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide25.png
-                    </sec_img>
-                    <sec_label>Slide 25.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3>Lack of Readiness to Use Pharmacologic Options (Smoker)</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 25.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide26.png
-                    </sec_img>
-                    <sec_label>Slide 26.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> E-Cigarettes and "Heat-Not-Burn" Devices: Is There a Role?</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 26.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide27.png
-                    </sec_img>
-                    <sec_label>Slide 27.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Current Controversy</h3>
-                        <ul>
-                            <li>	In my opinion, what we see in our field is this split in the attitude to e-cigarettes, which I believe is based on priority</li>
-                            <li>	If the priority is smoke-related death and disease, then there is a sort of pragmatic perspective in which alternative lower-risk nicotine devices may appear as promising to lower the total of death and disease from smoking</li>
-                            <li>	By contrast, the other view is the concern that providing nicotine in the less dangerous form still maintains and may even increase nicotine use in the population
-
-                                <ul>
-                                    <li>	Hence, safe nicotine devices are both a problem and a risk</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 27.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide28.png
-                    </sec_img>
-                    <sec_label>Slide 28.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Recent UK Reports Regarding the Use of E-Cigarettes
-                            <sup type="ref">[31-33]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 28.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide29.png
-                    </sec_img>
-                    <sec_label>Slide 29.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Conclusions of UK Reviews</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 29.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide30.png
-                    </sec_img>
-                    <sec_label>Slide 30.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> The Opposite View</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 30.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide31.png
-                    </sec_img>
-                    <sec_label>Slide 31.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Time Will Tell</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 31.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide32.png
-                    </sec_img>
-                    <sec_label>Slide 32.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> UK Experience So Far</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 32.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide33.png
-                    </sec_img>
-                    <sec_label>Slide 33.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> "Heat-Not-Burn" Products
-                            <sup type="ref">[34]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 33.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide34.png
-                    </sec_img>
-                    <sec_label>Slide 34.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Cigarette Sales Decline: Japan, 2014-2018</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 34.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide35.png
-                    </sec_img>
-                    <sec_label>Slide 35.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3>The DUO Study
-                            <sup type="ref">[35]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 35.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide36.png
-                    </sec_img>
-                    <sec_label>Slide 36.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Background
-                            <sup type="ref">[35]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 36.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide37.png
-                    </sec_img>
-                    <sec_label>Slide 37.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> DUO Study
-                            <sup type="ref">[35]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 37.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide38.png
-                    </sec_img>
-                    <sec_label>Slide 38.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Study Procedures
-                            <sup type="ref">[35]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 38.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide39.png
-                    </sec_img>
-                    <sec_label>Slide 39.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Are Dual Users Interested in Varenicline?
-                            <sup type="ref">[35]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 39.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide40.png
-                    </sec_img>
-                    <sec_label>Slide 40.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Did Those Wanting and Not Wanting Varenicline Differ?
-                            <sup type="ref">[35]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 40.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide41.png
-                    </sec_img>
-                    <sec_label>Slide 41.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Quitting Outcomes
-                            <sup type="ref">[35]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 41.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide42.png
-                    </sec_img>
-                    <sec_label>Slide 42.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Quitting Vaping, Smoking, and Both
-                            <sup type="ref">[35]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 42.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide43.png
-                    </sec_img>
-                    <sec_label>Slide 43.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Changes in Enjoyment of Smoking and Vaping
-                            <sup type="ref">[35]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 43.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide44.png
-                    </sec_img>
-                    <sec_label>Slide 44.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Conclusions
-                            <sup type="ref">[35]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 44.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide45.png
-                    </sec_img>
-                    <sec_label>Slide 45.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> What Do the Guidelines Say?</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 45.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide46.png
-                    </sec_img>
-                    <sec_label>Slide 46.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> WHO Framework Convention on Tobacco Control
-                            <sup type="ref">[36]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 46.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide47.png
-                    </sec_img>
-                    <sec_label>Slide 47.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> WHO Urges Restrictions on E-Cigarettes (2016)
-                            <sup type="ref">[37]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 47.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide48.png
-                    </sec_img>
-                    <sec_label>Slide 48.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Interventions to Reduce Harm From Continued Tobacco Use
-                            <sup type="ref">[10]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 48.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide49.png
-                    </sec_img>
-                    <sec_label>Slide 49.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> NICE 2018: 1.5 Advice on E-Cigarettes for Health and Social Care Workers in Primary and Community Settings
-                            <sup type="ref">[38]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 49.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide50.png
-                    </sec_img>
-                    <sec_label>Slide 50.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Clinical Guidelines for General Practice
-                            <sup type="ref">[39]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 50.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide51.png
-                    </sec_img>
-                    <sec_label>Slide 51.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Clinical Guidelines for General Practice (cont)
-                            <sup type="ref">[39]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 51.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide52.png
-                    </sec_img>
-                    <sec_label>Slide 52.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Clinical Guidelines for General Practice (cont)
-                            <sup type="ref">[39]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 52.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide53.png
-                    </sec_img>
-                    <sec_label>Slide 53.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Canadian Smoking Cessation Guideline Summary Statement
-                            <sup type="ref">[40]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 53.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide54.png
-                    </sec_img>
-                    <sec_label>Slide 54.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Canadian Smoking Cessation Guideline Summary Statement (cont)
-                            <sup type="ref">[40]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 54.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide55.png
-                    </sec_img>
-                    <sec_label>Slide 55.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Canadian Smoking Cessation Guideline Summary Statement (cont)
-                            <sup type="ref">[40]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 55.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide56.png
-                    </sec_img>
-                    <sec_label>Slide 56.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Medical Societies</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 56.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide57.png
-                    </sec_img>
-                    <sec_label>Slide 57.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> AHA Smoking Guidelines 2014</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 57.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide58.png
-                    </sec_img>
-                    <sec_label>Slide 58.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Position Statement of the Forum of International Respiratory Societies: E-Cigarettes
-                            <sup type="ref">[41]</sup>
-                        </h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 58.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide59.png
-                    </sec_img>
-                    <sec_label>Slide 59.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Conclusions</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 59.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img>
-                        <?dctmLink?>
-                        <?dctmEditor?>/webmd/professional_assets/medscape/images/content/article/903/975/903975_2/Slide60.png
-                    </sec_img>
-                    <sec_label>Slide 60.</sec_label>
-                    <sec_caption/>
-                    <sec_txt>
-                        <h3> Thank You</h3>
-                    </sec_txt>
-                    <sec_alt_txt>Slide 60.</sec_alt_txt>
-                    <qna_form/>
-                </slide_grp>
-                <slide_grp>
-                    <sec_img/>
-                    <sec_label/>
-                    <sec_caption/>
-                    <sec_txt>
-                        <em>This content has been condensed for improved clarity.</em>
-                    </sec_txt>
-                    <sec_alt_txt/>
-                    <qna_form/>
-                </slide_grp>
-            </subsec_element>
-        </sec_element>
-        <pg_footnotes/>
-    </toc_element>
-    <toc_element>
-        <toc_label>
-            <p>Abbreviations</p>
-        </toc_label>
-        <toc_type>Sidebar</toc_type>
-        <sec_element>
             <sec_header>
-                <p>Abbreviations</p>
+                <p>Clinical Context</p>
             </sec_header>
             <subsec_element>
                 <subsec_header/>
-                <slide_intro>
-                    <p>AE = adverse event
-                        <br/>Af = Africa
-                        <br/>AHA = American Heart Association
-                        <br/>CI = confidence interval
-                        <br/>COPD = chronic obstructive pulmonary disease
-                        <br/>CVD = cardiovascular disease
-                        <br/>EC = e-cigarettes
-                        <br/>FDA = US Food and Drug Administration
-                        <br/>FTND = Fagerström Test for Nicotine Dependence
-                        <br/>HR = hazard ratio
-                        <br/>HTN = hypertension
-                        <br/>Hx = history
-                        <br/>LatAm = Latin America
-                        <br/>MDD = major depressive disorder
-                        <br/>ME = Middle East
-                        <br/>MI = myocardial infarction
-                        <br/>NHS = National Health Service
-                        <br/>NRT = nicotine replacement therapy
-                        <br/>NS = not significant
-                        <br/>OTC = over the counter
-                        <br/>PRN = as needed
-                        <br/>RR = relative risk
-                        <br/>Rx = prescription
-                        <br/>SRNT = Society for Research on Nicotine and Tobacco
-                        <br/>SR = sustained release
-                        <br/>TQD = target quit date
-                        <br/>WHO = World Health Organization
+                <subsec_content>
+                    <p>For stroke victims, the outcomes that matter to clinicians are often not the outcomes that matter most to survivors. Based on
+previous research, there is a wide distribution of outcomes for patients with normal modified rankin scores (mRS) that pertain to physical function, fatigue, cognition and social function. It is important to understand the outcomes that are most meaningful to patients as it will help in identifying meaningful treatment and rehabilitation options for each patient. </p>
+                    <p>Recurrence, mortality, and disability are the outcomes most commonly measured in patients with ischemic stroke, but multiple nonphysical domains of health are also affected and are not specifically captured by measuring disability. These include social roles, fatigue, depression, anxiety, pain, cognition, physical function, and sleep disturbances, which may significantly reduce quality of life.</p>
+                    <p>The goals of this large observational cohort study by Katzan and colleagues in patients with ischemic stroke were to measure patient-reported health for 8 domains across levels of disability compared with each other and with the US general population, and to evaluate the association of demographic and clinical factors with patient-reported health, using the Patient-Reported Outcomes Measurement Information System (PROMIS). Among patients with a wide range of diseases and symptoms, PROMIS efficiently measures patient status for different domains of health along a continuous scale.</p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+        </sec_element>
+        <sec_element>
+            <sec_header>
+                <p>Study Synopsis and Perspective</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>A new study by Katzan and colleagues, highlights some of the more common nonphysical problems experienced by patients after they have an ischemic stroke, with some surprising
+findings.</p>
+                    <p>The study, which examined patient-reported information collected systematically at the Cleveland Clinic cerebrovascular clinic from 2015 to 2017, found that after physical function, the domains most affected in patients with ischemic stroke were satisfaction with social roles (eg, the ability to do domestic tasks, go out and socialize, and go to work) and executive function.</p>
+                    <p>"While we would all expect physical function to be impacted by stroke,
+satisfaction with social roles and executive function are not as well appreciated as being common problems after stroke. We actually found that these were much more common than anxiety and depression, which was quite surprising," lead author, Irene L. Katzan, MD, Cleveland Clinic, Cleveland, Ohio, told 
+                        <em>Medscape Medical News</em>.
                     </p>
-                </slide_intro>
+                    <p>"Even if patients don't have an obvious physical disability after a stroke -- so on the surface they appear normal -- they often
+suffer from these less obvious issues which can have a large effect on quality of life. While they may be able to get to the grocery store, they may have problems organizing a list or paying for their goods or they may feel too fatigued to go out at all," she said. </p>
+                    <p>"While many centers will systematically screen for depression after stroke, I don't think we routinely think about satisfaction with social roles and executive function as common problems for stroke patients," Dr Katzan added. "Our results suggest that we should. While there is no quick fix for these problems, we can provide suggestions on how to cope better maybe, in programs aimed at integrating people back into society again."</p>
+                    <p>The study was published online in 
+                        <em>Neurology</em> on March 28.
+                        <sup type="ref">[1]</sup>
+                    </p>
+                    <p>Dr Katzan explained that although it is well known that stroke affects lives in many different ways, usually patients are assessed by using limited scores that don't take account of multiple factors occurring together and how they interact with each other.</p>
+                    <p>"The main scale used to assess stroke patients -- the modified Rankin Scale (mRS) -- is quite a crude scale with only seven different categories and is heavily weighted towards mobility. It doesn't differentiate the impact of things like sleep, cognition, anxiety, and depression on day-to-day life."  </p>
+                    <p>For the current study, the researchers analyzed information from 1195 patients with stroke by using PROMIS, which captures patient responses for physical function, satisfaction with social roles, fatigue, anxiety, depression, pain interference, and sleep disturbance. Scores are calibrated to the US general population, which aids in the clinical interpretation of results.</p>
+                    <p>Additional information on executive function was derived from response to the Neuro-Quality of Life in Neurological Disorders (Neuro-QoL) executive function scale.</p>
+                    <p>The most affected domains were physical function (T score, 58.8), satisfaction with social roles (T score, 55.4), and executive function (T score, 53.4).</p>
+                    <p>PROMIS scores for all domains except depression and sleep disturbance were worse than in the general population; however, patients with an mRS score of zero (no symptoms) were not worse than the general population on any of the 8 domains measured.</p>
+                    <p>Disability, lower income, and female sex were associated with worse scores in multiple domains. Age was associated with worse physical function but lower anxiety, depression, and sleep disturbance.</p>
+                    <p>Patient-reported health worsened with increasing levels of disability in all domains, although to varying degrees.</p>
+                    <p>A graded response of worsening physical function, worsening executive function, and worsening satisfaction with social roles was correlated with the mRS and the National Institutes of Health Stroke Scale. Although fatigue, depression, pain, and anxiety had modest correlations and sleep disturbance had only a slight correlation with disability, scores remained relatively stable in patients with disability levels ranging from mild to severe (mRS score, 2-5).</p>
+                    <p>"Our findings that domains of health are differentially affected with increasing levels of disability support the value of assessing individual domains of health in stroke patients, regardless of stroke severity," the researchers said. </p>
+                    <p>"The results of this study, which represents one of the largest analyses
+of patient-reported outcomes after stroke collected as part of routine care, improve our understanding of the well-being of patients with ischemic stroke compared to the general population and bring attention to the importance of social roles and executive function for stroke survivors," they concluded.</p>
+                    <p>In
+an accompanying editorial, Mary G. George, MD, Centers for Disease Control and Prevention, Atlanta, Georgia, and Xingquan Zhao, MD, Beijing Institute for Brain Disorders, Beijing, China, said the study "sheds light on understanding how survivors of ischemic stroke differ from the general population across multiple health domains that can be useful in improving the clinician's understanding of patients' challenges and needs, as well as addressing outcomes that matter
+most to patients."
+                        <sup type="ref">[2]</sup>
+                    </p>
+                    <p>
+                        <em>The study had no targeted funding. Drs Katzan, George, and Zhao have disclosed no relevant financial relationships. Disclosures for coauthors appear in the paper.</em>
+                    </p>
+                    <p>
+                        <em> Neurology</em>. Published online March 28, 2018. 
+                    </p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+        </sec_element>
+        <sec_element>
+            <sec_header>
+                <p>Study Highlights</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <ul>
+                        <li>    The observational cohort for this study consisted of 1195 patients in a cerebrovascular clinic from February 17, 2015 to January 27, 2017.</li>
+                        <li>  Mean age was
+62±15 years; 81% were white; median modified Rankin Scale (mRS) score at the clinic visit was 1 (interquartile range, 0-2).</li>
+                        <li>    As part of their routine care, all these patients completed Neuro-QoL executive function and PROMIS scales of physical function, satisfaction with social roles, fatigue, anxiety, depression, pain interference, and sleep disturbance.</li>
+                        <li> The percentage of patients with scores meaningfully worse than the general population ranged
+from 28% for sleep disturbance to 63% for physical function. </li>
+                        <li>  Patients with higher mRS scores had worse PROMIS scores, but correlation varied, ranging from 
+                            <em>r</em> =0.16 for sleep disturbance to 
+                            <em>r</em> =0.52 for physical function. 
+                        </li>
+                        <li>    The most affected domains among patients with stroke
+were physical function (T score, 58.8), satisfaction with social roles (T score, 55.4), and executive function (T score, 53.4). </li>
+                        <li>       Correlations
+were modest for fatigue, depression, pain, and anxiety, which are likely affected by multiple psychosocial factors, including coping styles, social support,
+and economic burden.</li>
+                        <li>   For all domains except depression and sleep disturbance, PROMIS scores were worse than in the general population, but patients with mRS score of zero (no symptoms) were not worse than the general population on any reported domains.</li>
+                        <li>     Scores remained relatively stable in
+patients with disability levels ranging from mild to severe (mRS score, 2-5). </li>
+                        <li> Factors associated with worse scores in multiple domains were disability, lower income, and female sex. </li>
+                        <li>    Older age was associated with worse physical function but with lower scores for anxiety, depression, and sleep disturbance.</li>
+                        <li> Based on their findings, the investigators concluded that compared with the general US population, patients with ischemic stroke seen in ambulatory clinics reported worse function across multiple domains of health.</li>
+                        <li>      The symptom domains most often affected were physical function, satisfaction with social roles, and executive function whereas anxiety, depression, and sleep disturbance were less common in this cohort</li>
+                        <li>   At higher levels of disability, these symptoms were proportionately more common, with the correlation varying by symptom. </li>
+                        <li>  The emotional burden of stroke may be greater in younger patients because of greater societal demands related to work and social roles as family provider or parent.</li>
+                        <li>        The investigators suggested that their findings enhance understanding of the well-being of patients with ischemic stroke and highlight the importance of social roles and executive function for stroke survivors.</li>
+                        <li>       Although physical limitations are well recognized after stroke and are typically most often targeted by rehabilitation, social participation and cognitive functioning may not always be addressed or even recognized.</li>
+                        <li>      The mRS, which is most often used to evaluate disability after stroke, is heavily weighted toward mobility and does not incorporate disturbances in sleep, cognition, anxiety, and depression.    </li>
+                        <li>       Interventions to increase social participation, particularly those involving exercise, have been shown to be effective.</li>
+                        <li>     In contrast, cognitive impairment after stroke may not benefit from rehabilitation. </li>
+                        <li>   Still, social support programs and strategies that accommodate patients’ level of cognitive functioning may be helpful.</li>
+                        <li>     Stroke centers and clinicians caring for patients with stroke of all degrees
+of severity should assess for problems with social participation and cognitive functioning and other health domains and offer appropriate interventions, particularly as different domains of health are differentially affected with increasing levels of disability. </li>
+                        <li>     Although sleep disturbance was the least affected of the reported domains, more than half of patients with stroke are known to have sleep-disordered breathing, accompanied by worse functional status and increased mortality.</li>
+                        <li>  Lack of sleepiness and snoring reported by other patients with sleep-disordered breathing hinders screening patients
+with stroke for this condition and may partially explain why sleep disturbance was the least affected domain in this study.</li>
+                        <li>    This study is one of
+the largest analyses to date of patient-reported outcomes after stroke collected as part of routine care, which increases the generalizability of the findings.</li>
+                        <li>     Nonetheless, study limitations include lack of assessment of several other domains affected by stroke, including communication and other aspects of cognition; study cohort from a single institution with patients who predominantly had mild stroke; and possible selection bias. </li>
+                        <li>        An accompanying editorial noted differences in the health domain outcomes depending on the timing of measurement of outcome after stroke, suggesting a possible need to repeat assessments over time and to monitor outcomes that are most important to patients.</li>
+                    </ul>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+        </sec_element>
+        <sec_element>
+            <sec_header>
+                <p>Clinical Implications</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <ul>
+                        <li>       Compared with the general US population, patients with ischemic stroke seen in ambulatory clinics reported worse function across multiple domains of health, including certain nonphysical domains.</li>
+                        <li>      The findings enhance understanding of the well-being of patients with ischemic stroke and highlight the importance of social
+roles and executive function for stroke survivors.</li>
+                        <li>     Implications for the Healthcare Team: Although physical limitations are well recognized after stroke and are typically most often targeted by rehabilitation, social participation and cognitive functioning may not always be addressed or even recognized.</li>
+                    </ul>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+        </sec_element>
+        <sec_element>
+            <sec_header>
+                <p>CME Test</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content/>
+                <qna_form>3</qna_form>
             </subsec_element>
         </sec_element>
         <pg_footnotes/>
@@ -994,143 +170,17 @@
             <sec_header/>
             <subsec_element>
                 <subsec_header/>
-                <slide_intro>
+                <subsec_content>
                     <ol>
-                        <li>Lim SS, Vos T, Flaxman AD, et al. A comparative risk assessment of burden of disease and injury attributable to 67 risk factors and risk factor clusters in 21 regions, 1990-2010: a systematic analysis for the Global Burden of Disease Study 2010. 
-                            <em>Lancet. </em>2012;380:2224-2260.
+                        <li>Katzan IL, Thompson NR, Uchino K, Lapin B. The most affected health domains after ischemic stroke. 
+                            <em>Neurology</em>. 2018;90:e1364-e1371. http://n.neurology.org/content/early/2018/03/28/WNL.0000000000005327. Accessed March 29, 2018.
+
                         </li>
-                        <li>Pirie K, Peto R, Reeves GK, et al. The 21st century hazard of smoking and benefits of stopping: a prospective study of one million women in the UK. 
-                            <em>Lancet. </em>2013;381:133-141.
-                        </li>
-                        <li>Morris PB, Ference BA, Jahangir E, et al. Cardiovascular effects of exposure to cigarette smoke and electronic cigarettes: clinical perspectives from the Prevention of Cardiovascular Disease Section Leadership Council and Early Career Councils of the American College of Cardiology. 
-                            <em>J Am Coll Cardiol</em>. 2015;66:1378-1391.
-                        </li>
-                        <li>Hackshaw A, Morris JK, Boniface S, et al. Low cigarette consumption and risk of coronary heart disease and stroke: meta-analysis of 141 cohort studies in 55 study reports. 
-                            <em>BMJ</em>. 2018;360:j5855.
-                        </li>
-                        <li>Hu Y, Zong G, Liu G, et al. Smoking cessation, weight change, type 2 diabetes, and mortality. 
-                            <em>N Engl J Med. </em>2018;379:623-632. 
-                        </li>
-                        <li>Godtfredsen NS, Holst C, Prescott E, et al. Smoking reduction, smoking cessation, and mortality: a 16-year follow-up of 19.372 men and women from The Copenhagen Centre for Prospective Population Studies. 
-                            <em>Am J Epidemiol. </em>2002;156:994-1001. 
-                        </li>
-                        <li>Tverdal A, Bjartveit K. Health consequences of reduced dailt cigarette consumption. 
-                            <em>Tobacco Control. </em>2006;15:472-480.
-                        </li>
-                        <li>Gerber Y, Myers V, Goldbourt U. Smoking reduction at midlife and lifetime mortality risk in men: a prospective cohort study. 
-                            <em>Am J Epidemiol. </em>2012;175:1006-1012. 
-                        </li>
-                        <li>Hart C, Gruer L, Bauld L. Does smoking reduction in midlife reduce mortality risk? Results of 2 long-term prospective cohort studies of men and women in Scotland. 
-                            <em>Am J Epidemiol. </em>2013;178:770-779.
-                        </li>
-                        <li>Lindson-Hawley N, Hartmann-Boyce J, Fanshawe TR, et al. Interventions to reduce harm from continued tobacco use. 
-                            <em>Cochrane Database Syst Rev. </em>2016;10:Cd005231. 
-                        </li>
-                        <li>Abrams DB, Glasser AM, Pearson JL, et al. Harm minimization and tobacco control: reframing societal views of nicotine use to rapidly save lives. 
-                            <em>Annu Rev Public Health. </em>2018;39:193-213. 
-                        </li>
-                        <li>Hartmann-Boyce J, Chepkin SC, Ye W, et al. Nicotine replacement therapy versus control for smoking cessation (review). 
-                            <em>Cochrane Database Sys Rev. </em>2018;5:CD000146.
-                        </li>
-                        <li>Cahill K, Stevens S, Perera R, et al. Pharmacological interventions for smoking cessation: an overview and network meta-analysis. 
-                            <em>Cochrane Database Syst Rev. </em>2013;4:CD006103. 
-                        </li>
-                        <li>Cahill K, Stead LF, Lancaster T. Nicotine receptor partial agonists for smoking cessation. 
-                            <em>Cochrane Database Syst Rev. </em>2012;4. 
-                        </li>
-                        <li>Cahill K, Lindson-Hawley N, Thomas KH, et al. Nicotine receptor partial agonists for smoking cessation. 
-                            <em>Cochrane Database Syst Rev. </em>2016;5:CD006103
-                        </li>
-                        <li>Gonzales D, Rennard SI, Nides M, et al; for the Varenicline Phase 3 Study Group. Varenicline, an alpha4beta2 nicotinic acetylcholine receptor partial agonist, vs sustained-release bupropion and placebo for smoking cessation: a randomized controlled trial. 
-                            <em>JAMA</em>. 2006;296:47-55. 
-                        </li>
-                        <li>Jorenby DE, Hays JT, Rigotti NA, et al. Efficacy of varenicline, an alpha4beta2 nicotinic acetylcholine receptor partial agonist, vs placebo or sustained-release bupropion for smoking cessation: a randomized controlled trial. 
-                            <em>JAMA</em>. 2006;296:56-63. 
-                        </li>
-                        <li>Tsai ST, Cho HJ, Cheng HS, et al. A randomized, placebo-controlled trial of varenicline, a selective alpha4beta2 nicotinic acetylcholine receptor partial agonist, as a new therapy for smoking cessation in Asian smokers. 
-                            <em>Clin Ther.</em> 2007;29:1027-1039. 
-                        </li>
-                        <li>Wang C, Xiao D, Chan KP, et al. Varenicline for smoking cessation: a placebo-controlled, randomized study. 
-                            <em>Respirology</em> 2009;14:384-392. 
-                        </li>
-                        <li>Bolliger CT, Issa JS, Posadas-Valay R, et al. Effects of varenicline in adult smokers: a multinational, 24-week, randomized, double-blind, placebo-controlled study. 
-                            <em>Clin Ther. </em>2011;33:465-477. 
-                        </li>
-                        <li>Rigotti NA, Pipe AL, Benowitz NL, et al. Efficacy and safety of varenicline for smoking cessation in patients with cardiovascular disease: a randomized trial. 
-                            <em>Circulation. </em>2010; 121:221-229.
-                        </li>
-                        <li>Tashkin DP, Rennard S, Hays JT, et al. Effects of varenicline on smoking cessation in patients with mild to moderate COPD: a randomized controlled trial. 
-                            <em>Chest.</em> 2011;139:591-599. 
-                        </li>
-                        <li>Anthenelli RM, Morris C, Ramey TS, et al. Effects of varenicline on smoking cessation in adults with stably treated current or past major depression: a randomized trial. 
-                            <em>Ann Int Med</em> 2013;159:390-400. 
-                        </li>
-                        <li>Rennard S, Hughes J, Cinciripini PM, et al; Flexible Quit Date Study Group. A randomized placebo-controlled trial of varenicline for smoking cessation allowing flexible quit dates. 
-                            <em>Nic Tob Research</em> 2012;14:343-350.
-                        </li>
-                        <li>Gonzales D, Hajek P, Pliamm L, et al. Retreatment with varenicline for smoking cessation in smokers who have previously taken varenicline: a randomized, placebo-controlled trial. 
-                            <em>Clin Pharm Therap.</em> 2014;96:390-396.
-                        </li>
-                        <li>Tonstad S, Tønnesen P, Hajek P, et al; Varenicline Phase 3 Study Group. Effect of maintenance therapy with varenicline on smoking cessation: a randomized controlled trial. 
-                            <em>JAMA. </em>2006;296:64-71. 
-                        </li>
-                        <li>Evins E, Cather C, Pratt SA. Maintenance treatment with varenicline for smoking cessation in patients with schizophrenia and bipolar disorder: a randomized, clinical trial. 
-                            <em>JAMA. </em>2014;311:145-154.
-                        </li>
-                        <li>Anthenelli RM, Benowitz NL, West R, et al. Neuropsychiatric safety and efficacy of varenicline, bupropion, and nicotine patch in smokers with and without psychiatric disorders (EAGLES): a double-blind, randomised, placebo-controlled clinical trial. 
-                            <em>Lancet. </em>2016;387:2507-2520.
-                        </li>
-                        <li>Barboza JL, Patel R, Patel P, et al. An update on the pharmacotherapeutic interventions for smoking cessation. 
-                            <em>Expert Opin Pharmacother. </em>2016;17:1483-1496.
-                        </li>
-                        <li>Bartsch AL, Härter M, Niedrich J, et al. A systematic literature review of self-reported smoking cessation counseling by primary care physicians. 
-                            <em>PLoS One. </em>2016;11:e0168482.
-                        </li>
-                        <li>Royal College of Physicians. Nicotine without smoke: Tobacco harm reduction. April 2016. https://www.rcplondon.ac.uk/file/3563/download?token=Mu0K_ZR0. Accessed October 12, 2018.</li>
-                        <li>McNeill A, Brose LS, Calder R, et al. E-cigarettes: an evidence update. A report commissioned by Public Health England. 2015. https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/733022/Ecigarettes_an_evidence_update_A_report_commissioned_by_Public_Health_England_FINAL.pdf. Accessed October 12, 2018.</li>
-                        <li>McNeill A, Brose LS, Calder R, et al. Evidence review of e-cigarettes and heated tobacco products 2018. A report commissioned by Public Health England. 2018. https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/684963/Evidence_review_of_e-cigarettes_and_heated_tobacco_products_2018.pdf. Accessed October 12, 2018.</li>
-                        <li>Japan Tobacco Inc. Japanese Domestic Cigarette Sales Results for July 2018. August 17, 2018. https://www.jt.com/media/news/2018/pdf/20180817_02.pdf. Accessed October 12, 2018. </li>
-                        <li>Hajek P, Peerbux S, Philips-Waller A, et al. Interest in using varenicline and its effects in people who both smoke and vape. Poster presented at: Society for Research on Nicotine and Tobacco Europe 18
-                            <sup>th</sup> Annual Conference; September 6-8, 2018; Munich, Germany. Med-1.
-                        </li>
-                        <li>World Health Organization. 
-                            <em>WHO Framework Convention on Tobacco Control.</em> Geneva, Switzerland; World Health Organization; 2003.
-                        </li>
-                        <li>Gulland A, et al. WHO urges restrictions on e-cigarettes. 
-                            <em>BMJ </em>2016;355:i5991.
-                        </li>
-                        <li>National Institute for Health Care Excellence. Stop smoking interventions and services. NICE guideline NG92. March 28, 2018. nice.org.uk/guidance/ng92. Accessed October 12, 2018.</li>
-                        <li>Verbiest M, Brakema E, van der Kleij R, et al. National guidelines for smoking cessation in primary care: a literature review and evidence analysis. 
-                            <em>NPJ Prim Care Respir Med. </em>2017;27:2
-                        </li>
-                        <li>Canadian Action Network for the Advancement, Dissemination and Adoption of Practice-informed Tobacco Treatment (CAN-ADAPTT). Canadian Smoking Cessation Clinical Practice Guideline. 2011. https://www.peelregion.ca/health/professionals/events/pdf/2013/canadaptt-summary-statements.pdf. Accessed October 12, 2018. </li>
-                        <li>Schraufnagel DE, Blasi F, Drummond MB, et al; Forum of International Respiratory Societies. Electronic cigarettes. A position statement of the forum of international respiratory societies. 
-                            <em>Am J Respir Crit Care Med. </em>2014;190:611-618. 
+                        <li>George MG, Zhao X. Patient-reported outcomes after ischemic stroke as part of routine care. 
+                            <em>Neurology</em>. 2018;90:717-718. http://n.neurology.org/content/early/2018/03/28/WNL.0000000000005321. Accessed March 29, 2018. 
                         </li>
                     </ol>
-                </slide_intro>
-            </subsec_element>
-        </sec_element>
-        <pg_footnotes/>
-    </toc_element>
-    <toc_element>
-        <toc_label>
-            <p>Audience Q &amp; A</p>
-        </toc_label>
-        <toc_type>Sidebar</toc_type>
-        <sec_element>
-            <sec_header>
-                <p>Audience Q &amp; A</p>
-            </sec_header>
-            <subsec_element>
-                <subsec_header/>
-                <slide_intro>
-                    <div class="app-loading">
-                        <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/903975/903975_3.json" data-playertype="edu" id="cme-video-player">
-                &#160;
-            </div>
-                    </div>
-                </slide_intro>
+                </subsec_content>
             </subsec_element>
         </sec_element>
         <pg_footnotes/>
@@ -1149,7 +199,7 @@
             <strong>Disclaimer</strong>
         </p>
         <p>The educational activity presented above may involve simulated case-based scenarios. The patients depicted in these scenarios are fictitious and no association with any actual patient is intended or should be inferred.</p>
-        <p>The material presented here does not necessarily reflect the views of WebMD Global, LLC or companies that support educational programming on medscape.org. These materials may discuss therapeutic products that have not been approved by the European Medicines Agency for use in Europe and off-label uses of approved products. A qualified healthcare professional should be consulted before using any therapeutic product discussed. Readers should verify all information and data before treating patients or employing any therapies described in this educational activity.</p>
+        <p>The material presented here does not necessarily reflect the views of Medscape, LLC, or companies that support educational programming on medscape.org. These materials may discuss therapeutic products that have not been approved by the US Food and Drug Administration and off-label uses of approved products. A qualified healthcare professional should be consulted before using any therapeutic product discussed. Readers should verify all information and data before treating patients or employing any therapies described in this educational activity.</p>
     </bkmtr_front>
     <bkmtr_glossary/>
     <bkmtr_ack/>
@@ -1160,4 +210,4 @@
     <bkmtr_last/>
     <img_ttl_bkgrd/>
     <img_publ_logo/>
-</prof_article_slide_presentation>
+</prof_article>

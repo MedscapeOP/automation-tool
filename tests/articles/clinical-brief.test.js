@@ -78,7 +78,9 @@ describe('Clinical Brief', function () {
                 "contrbtr_groups not inserted - KNOWN ISSUE",
                 "supprtr_grant_attr not found or handled - KNOWN ISSUE"
             ]
-            utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/clinical-brief/finished-cb.xml");
+            // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/clinical-brief/finished-cb.xml");
+
+            result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result))
             
             // console.log("EVERYTHING PASSES EXCEPT THESE DIFFERENCES: ", differences);
             // var result = clinicalBrief.buildClinicalBrief(prodTicket, app.config.programs.clinicalBrief).toFinalXML();
