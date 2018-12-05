@@ -121,6 +121,10 @@ function buildSpotlight(ticket, program) {
     finalArticle.contrbtrPostContent = peerReviewer;
     // set contrbtr_pre_content
     finalArticle.contrbtrPreContent = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
+    // set copyright holder 
+    finalArticle.cpyrtHolder = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
+    // set backmatter front page 
+    finalArticle.bkmtrFront = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
     // insert collection page info - Banner image and Above title
     if (collectionPageInfo) {
         finalArticle.bannerImage = collectionPageInfo.bannerFileName;

@@ -56,6 +56,7 @@ describe('Town Hall', function () {
             program.hasPeerReviewer = false;
             program.hasForYourPatient = false;
             program.hasLLA = false;
+            program.hasOUS = true; 
             // program.articleID = "902206";
 
             var result = townHallEnduring.buildTownHallEnduring(prodTicket, program).toObjectLiteral();
@@ -67,7 +68,7 @@ describe('Town Hall', function () {
             // console.log("RESULT: ", result);
             // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
 
-            // expect(result).to.equalIgnoreSpaces(completeTownHallEnduring);
+            expect(result).to.equalIgnoreSpaces(completeTownHallEnduring);
         });
 
         // it('should return complete XML string of First Response article - with LLA', function () {

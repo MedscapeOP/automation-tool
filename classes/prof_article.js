@@ -107,18 +107,7 @@ class ProfArticle extends XMLElement{
         this._cpyrt_holder = {
             "type": "element",
             "name": "cpyrt_holder",
-            "elements": [
-                {
-                    "type": "element",
-                    "name": "p",
-                    "elements": [
-                        {
-                            "type": "text",
-                            "text": "Medscape, LLC"
-                        }
-                    ]
-                }
-            ]
+            "elements": []
         };
         this._cpyrt_ovrd = {
             "type": "element",
@@ -133,44 +122,7 @@ class ProfArticle extends XMLElement{
         this._bkmtr_front = {
             "type": "element",
             "name": "bkmtr_front",
-            "elements": [
-                {
-                    "type": "element",
-                    "name": "p",
-                    "elements": [
-                        {
-                            "type": "element",
-                            "name": "strong",
-                            "elements": [
-                                {
-                                    "type": "text",
-                                    "text": "Disclaimer"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "element",
-                    "name": "p",
-                    "elements": [
-                        {
-                            "type": "text",
-                            "text": "The educational activity presented above may involve simulated case-based scenarios. The patients depicted in these scenarios are fictitious and no association with any actual patient is intended or should be inferred."
-                        }
-                    ]
-                },
-                {
-                    "type": "element",
-                    "name": "p",
-                    "elements": [
-                        {
-                            "type": "text",
-                            "text": "The material presented here does not necessarily reflect the views of Medscape, LLC, or companies that support educational programming on medscape.org. These materials may discuss therapeutic products that have not been approved by the US Food and Drug Administration and off-label uses of approved products. A qualified healthcare professional should be consulted before using any therapeutic product discussed. Readers should verify all information and data before treating patients or employing any therapies described in this educational activity."
-                        }
-                    ]
-                }
-            ]
+            "elements": []
         };
         this._bkmtr_glossary = {
             "type": "element",
@@ -386,6 +338,40 @@ class ProfArticle extends XMLElement{
             this._contrbtr_post_content.elements = postContentObject.elements[0].elements;
         } else {
             this._contrbtr_post_content.elements = [];
+        }
+    }
+
+    get cpyrtHolder() {
+        if (this._cpyrt_holder.elements[0]) {
+            return xmlOps.objectToXMLString(this._cpyrt_holder);
+        } else {
+            return null; 
+        }
+    }
+
+    set cpyrtHolder(newCopyrightMarkup) {
+        if (newCopyrightMarkup) {
+            var cpyrtHolderObject = xmlOps.xmlStringToJS(newCopyrightMarkup);
+            this._cpyrt_holder.elements = cpyrtHolderObject.elements[0].elements;
+        } else {
+            this._cpyrt_holder.elements = [];
+        }
+    }
+
+    get bkmtrFront() {
+        if (this._bkmtr_front.elements[0]) {
+            return xmlOps.objectToXMLString(this._cpyrt_holder);
+        } else {
+            return null;
+        }
+    }
+
+    set bkmtrFront(newBackmatterMarkup) {
+        if (newBackmatterMarkup) {
+            var backmatterObject = xmlOps.xmlStringToJS(newBackmatterMarkup);
+            this._bkmtr_front.elements = backmatterObject.elements[0].elements;
+        } else {
+            this._bkmtr_front.elements = [];
         }
     }
 

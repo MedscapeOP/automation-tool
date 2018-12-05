@@ -62,6 +62,7 @@ Main sections to include:
 /* MASTER FUNCTION 
 -------------------------------------- */
 function buildTownHallEnduring(ticket, program) {
+    // <script type="text/javascript">var pfizFlag = "active";</script>
     var title, 
     byline, 
     peerReviewer, 
@@ -113,6 +114,11 @@ function buildTownHallEnduring(ticket, program) {
     finalArticle.contrbtrPostContent = peerReviewer;
     // set contrbtr_pre_content
     finalArticle.contrbtrPreContent = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
+    // set copyright holder 
+    finalArticle.cpyrtHolder = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
+    // set backmatter front page 
+    finalArticle.bkmtrFront = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
+
     // insert collection page info - Banner image and Above title
     if (collectionPageInfo) {
         finalArticle.bannerImage = collectionPageInfo.bannerFileName;
