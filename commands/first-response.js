@@ -1,5 +1,5 @@
 // ------------------------------------------------------------
-// COMMAND FOR GENERATING CLINICAL BRIEF XML 
+// COMMAND FOR GENERATING FIRST RESPONSE XML 
 // ------------------------------------------------------------
 
 
@@ -19,7 +19,7 @@ let actions = require('./actions');
 // VARS
 // ------------------------------------------------------------
 const firstResponseHelp = `
-Generates First Response XML code from R2Net html file.`;
+Generates First Response XML code from R2Net html file. Input directory: /first-response/article.html`;
 
 
 let inputFile = function () {

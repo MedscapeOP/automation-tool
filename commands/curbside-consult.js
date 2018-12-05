@@ -19,7 +19,7 @@ let actions = require('./actions');
 // VARS
 // ------------------------------------------------------------
 const curbsideHelp = `
-Generates Curbside Consult XML code from R2Net html file.`;
+Generates Curbside Consult XML code from R2Net html file. Input directory: /curbside/article.html`;
 
 
 let inputFile = function () {

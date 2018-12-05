@@ -1,5 +1,5 @@
 // ------------------------------------------------------------
-// COMMAND FOR GENERATING CLINICAL BRIEF XML 
+// COMMAND FOR GENERATING TOWNHALL ENDURING XML 
 // ------------------------------------------------------------
 
 
@@ -18,19 +18,19 @@ let actions = require('./actions');
 
 // VARS
 // ------------------------------------------------------------
-const briefHelp = `
-Generates Clinical Brief XML code from R2Net html file. Input directory: /brief/article.html`;
+const townHallEnduringHelp = `
+Generates TownHall Enduring XML code from R2Net html file. Input directory: /townhall-enduring/article.html`;
 
 
 let inputFile = function () {
-    return cliTools.getInputDirectory() + '/brief/article.html';
+    return cliTools.getInputDirectory() + '/townhall-enduring/article.html';
 }
 
 let outputFile = function () {
     return `${program.articleID}.xml`; // Make dynamic considering
 };  
 
-let program = config.programs.clinicalBrief;
+let program = config.programs.townHall;
 
 
 // BUILD FUNCTION LOGIC 
@@ -38,7 +38,7 @@ let program = config.programs.clinicalBrief;
 
 let buildFinalOutput = function (self) {
     var prodTicket = cliTools.readInputFile(inputFile());  
-    return articles.clinicalBrief.buildClinicalBrief(prodTicket, program);
+    return articles.townHallEnduring.buildTownHallEnduring(prodTicket, program);
 }
 
 
@@ -47,13 +47,12 @@ let buildFinalOutput = function (self) {
 module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
-    .command('generate brief <articleID>', briefHelp)
+    .command('generate townhall enduring <articleID>', townHallEnduringHelp)
     .types({string: ['_']})
-    .action(function(args, callback) {
+    .action(function(args, callback) {       
         program.articleID = args.articleID;        
-        vorpal.emit('client_prompt_submit', program);
-        var completionMessage = `${program.name} created successfully! Check your output folder for the file: ${chalk.cyan(outputFile())}`;
-        actions.completeGenerateAction(this, callback, buildFinalOutput, outputFile(), completionMessage);
+        let self = this;
+        actions.basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFile);
     });
     vorpal.on('client_prompt_submit', function (program){
         cliTools.resetProgram(program);

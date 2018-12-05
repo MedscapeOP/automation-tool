@@ -1,5 +1,5 @@
 // ------------------------------------------------------------
-// COMMAND FOR GENERATING CLINICAL BRIEF XML 
+// COMMAND FOR GENERATING VIDEO LECTURE XML 
 // ------------------------------------------------------------
 
 
@@ -19,7 +19,7 @@ let actions = require('./actions');
 // VARS
 // ------------------------------------------------------------
 const videoLectureHelp = `
-Generates Video Lecture XML code from R2Net html file.`;
+Generates Video Lecture XML code from R2Net html file. Input directory: video-lecture/article.html`;
 
 
 let inputFile = function () {

@@ -19,7 +19,7 @@ let actions = require('./actions');
 // VARS
 // ------------------------------------------------------------
 const spotlightHelp = `
-Generates Spotlight XML code from R2Net html file.`;
+Generates Spotlight XML code from R2Net html file. Input directory: /spotlight/article.html`;
 
 
 let inputFile = function () {
