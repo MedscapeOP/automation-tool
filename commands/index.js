@@ -13,7 +13,7 @@ const spotlight = require('./spotlight');
 const curbside = require('./curbside-consult');
 const videoLecture = require('./video-lecture');
 const firstResponse = require('./first-response');
-
+const townHallEnduring = require('./townhall-enduring');
 
 // Build commands function 
 let commands = function (vorpal) {
@@ -23,6 +23,7 @@ let commands = function (vorpal) {
     curbside(vorpal);
     videoLecture(vorpal);
     firstResponse(vorpal);
+    townHallEnduring(vorpal);
 }
 
 // ------------------------------------------------------------
