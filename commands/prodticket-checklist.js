@@ -1,5 +1,5 @@
 // ------------------------------------------------------------
-// COMMAND FOR GENERATING OVERALL CHECKLIST TEST FILE  
+// COMMAND FOR GENERATING OVERALL CHECKLIST FILE  
 // ------------------------------------------------------------
 
 // REQUIRES

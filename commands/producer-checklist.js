@@ -1,5 +1,5 @@
 // ------------------------------------------------------------
-// COMMAND FOR GENERATING SPOTLIGHT XML 
+// COMMAND FOR GENERATING PRODUCER CHECKLIST FILE 
 // ------------------------------------------------------------
 
 

@@ -71,6 +71,93 @@ Main sections to include:
     7) ABBREVIATIONS - COMPLETE
     8) REFERENCES - COMPLETE 
 */
+
+/* CHECKLIST FUNCTION  
+-------------------------------------- */
+function checklistSpotlight(ticket, program) {
+    var result = {
+        title: null, 
+        byline: null,
+        peerReviewer: null,
+        collectionPageInfo: null,
+        slides: null,
+        abbreviations: null,
+        references: null,
+        slideDeckDiv: null,
+        forYourPatientMarkup: null
+    };
+
+    result.title = prodticket.getTitle(ticket, program);
+    result.byline = prodticket.getByline(ticket, program);
+    if (program.hasPeerReviewer) {
+        result.peerReviewer = prodticket.getPeerReviewer(ticket, program);
+    } 
+    if (program.hasCollectionPage) {
+        result.collectionPageInfo = prodticket.getCollectionPage(ticket, program);
+    }
+
+    result.slides = prodticket.getSlides(ticket, program);
+    result.abbreviations = prodticket.getAbbreviations(ticket, program);
+
+    var referencesMarkup = prodticket.getReferences(ticket, program);
+    referencesTOC = articleUtils.buildReferences(referencesMarkup, program);
+
+    slideDeckDiv = snippets.downloadableSlides(program.articleID);
+    
+
+    // Build Main Article Object - Instantiate and Populate Article
+    var finalArticle = new ProfArticle("SlidePresentation", program.hasOUS);
+    // Set article title (pass markup)
+    finalArticle.titleText = title;
+    // Set article byline (pass markup)
+    finalArticle.contrbtrByline = byline;
+    // insert peer reviewer
+    finalArticle.contrbtrPostContent = peerReviewer;
+    // set contrbtr_pre_content
+    finalArticle.contrbtrPreContent = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
+    // set copyright holder 
+    finalArticle.cpyrtHolder = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
+    // set backmatter front page 
+    finalArticle.bkmtrFront = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
+    // insert collection page info - Banner image and Above title
+    if (collectionPageInfo) {
+        finalArticle.bannerImage = collectionPageInfo.bannerFileName;
+        finalArticle.insertAboveTitleCA(collectionPageInfo.title, collectionPageInfo.advancesFileName);
+    } 
+          
+    // Insert Main TOC Objects  
+    finalArticle.insertTOCElement(preAssessmentTOC);
+    finalArticle.insertTOCElement(slidesTOC);
+    finalArticle.insertTOCElement(postAssessmentTOC);
+    finalArticle.insertTOCElement(blankResultsTOC);
+    finalArticle.insertTOCElement(abbreviationsTOC);
+    finalArticle.insertTOCElement(referencesTOC);
+
+    // Addons 
+    if (program.hasForYourPatient) {
+        forYourPatientMarkup = snippets.forYourPatient(program.articleID, "For Your Patient", `${program.articleID}_ForYourPatient.pdf`);
+        // console.log("FINAL ARTICLE CHILD ELEMENTS: ", finalArticle._childElements[0]._childElements[0]);
+        var forYourPatientSubsection = new SubsectionElement(true, false, false);
+        
+        if (program.hasLLA) {
+            var slideGroup = new SlideGroup('', '', true, false);
+            slideGroup.sectionImage = null;
+            slideGroup.sectionLabel = null;
+            slideGroup.sectionAltText = null;
+            slideGroup.qnaForm = 3;
+            forYourPatientSubsection.insertSlideGroup(slideGroup);
+            finalArticle._childElements[0]._childElements[0]._childElements[0]._childElements = [];
+        }
+
+        forYourPatientSubsection.subsectionContent = utils.wrapSlideIntro(forYourPatientMarkup);
+
+        finalArticle._childElements[0]._childElements[0].insertSubsectionElement(forYourPatientSubsection); 
+    }
+    
+    return finalArticle;
+}
+
+
 /* MASTER FUNCTION 
 -------------------------------------- */
 function buildSpotlight(ticket, program) {
