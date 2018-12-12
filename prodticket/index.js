@@ -94,8 +94,12 @@ function getPeerReviewer (ticketHTML, program) {
 
 function getSlides (ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var slideComponents = findSlides[program.codeName](ticketHTML, program);
-        return slideComponents;
+        try {
+            var slideComponents = findSlides[program.codeName](ticketHTML, program);
+            return slideComponents;            
+        } catch (error) {
+            return error;
+        }
     }
 }
 

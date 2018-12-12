@@ -95,6 +95,14 @@ function checklistSpotlight(ticket, program) {
     if (program.hasCollectionPage) {
         result.collectionPageInfo = prodticket.getCollectionPage(ticket, program);
     }
+    /*
+    CHECKLIST PRINT FUNCTION 
+        For each property in result 
+            - If property.result is instance of Error 
+                - Make the output string = error.message 
+            - Else             
+                - Call the properties' print function (which uses the result). 
+    */
 
     result.slides = prodticket.getSlides(ticket, program);
     result.abbreviations = prodticket.getAbbreviations(ticket, program);
