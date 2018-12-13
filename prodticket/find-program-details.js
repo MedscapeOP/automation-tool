@@ -157,7 +157,7 @@ function buildProgramDetails(prevWasSubtitle, remainingString, timelineObject, r
             */
             timelineObject.schedule = cleanHTML.programDetails(currentLine);
             resultArray.push(timelineObject);
-            timelineObject = new ProgramTimeline("", "", "").toObjectLiteral();
+            timelineObject = new ProgramTimeline("", "", "");
             return fn(false, remainingString, timelineObject, resultArray, buildProgramDetails);
         }
     } else if (current.type == 'subtitle') {
@@ -198,7 +198,7 @@ function buildProgramDetails(prevWasSubtitle, remainingString, timelineObject, r
             */ 
             timelineObject.infoSubtitle += cleanHTML.programDetails(currentLine);
             resultArray.push(timelineObject);
-            timelineObject = new ProgramTimeline("", "", "").toObjectLiteral();
+            timelineObject = new ProgramTimeline("", "", "");
             return fn(true, remainingString, timelineObject, resultArray, buildProgramDetails);
         } else {
             /* 
@@ -215,7 +215,7 @@ function buildProgramDetails(prevWasSubtitle, remainingString, timelineObject, r
             */ 
             timelineObject.infoSubtitle = cleanHTML.programDetails(currentLine);
             resultArray.push(timelineObject);
-            timelineObject = new ProgramTimeline("", "", "").toObjectLiteral();
+            timelineObject = new ProgramTimeline("", "", "");
             return fn(true, remainingString, timelineObject, resultArray, buildProgramDetails);
         }
     } else if (current.type == 'title') {
@@ -244,7 +244,7 @@ function buildProgramDetails(prevWasSubtitle, remainingString, timelineObject, r
             */
            timelineObject.infoTitle = cleanHTML.programDetails(currentLine);
            resultArray.push(timelineObject);
-           timelineObject = new ProgramTimeline("", "", "").toObjectLiteral();
+           timelineObject = new ProgramTimeline("", "", "");
            return fn(false, remainingString, timelineObject, resultArray, buildProgramDetails);
         }
     } else {

@@ -12,7 +12,7 @@ Strategies:
       the properties in question.
     - THEORETICAL APPROACH: Use Symbols
 
-3) Set up functions outside of the class. (MAYBE THIS APPROACH)
+3) Set up functions outside of the class. (USING THIS APPROACH FIRST)
     - Upon construction just assign the proper function to be the print function 
     - The functions would just take in the object and work with it.
         EXAMPLE INTERFACE/USAGE: checklist.abbreviations.printFn(checklist.abbreviations);
@@ -28,7 +28,8 @@ function printStringProp(property) {
 }
 
 function printProgramDetails(programDetails) {
-    return JSON.stringify(programDetails, undefined, 2);
+    // return JSON.stringify(programDetails, undefined, 2);
+    return programDetails.result[0].toHTMLString();
 }
 
 function printContributors(contributors) {

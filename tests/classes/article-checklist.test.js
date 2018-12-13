@@ -6,7 +6,7 @@ chai.use(require('chai-string'));
 let expect = chai.expect;
 
 const app = require("../../commands");
-const { ArticleChecklist } = app.classes;
+const { ArticleChecklist, ProgramTimeline } = app.classes;
 
 describe('Article Checklist', function () {
     /*
@@ -53,7 +53,12 @@ describe('Article Checklist', function () {
     articleChecklist.activityOverview.result = activityOverview;
     articleChecklist.components.result = components;
     articleChecklist.slides.result = slideComponents;
-    articleChecklist.programDetails.result = programDetails;
+
+    var realProgramDetails = [];
+    for (var i = 0; i < programDetails.length; i++) {
+        realProgramDetails.push(new ProgramTimeline(programDetails[i].schedule, programDetails[i].infoTitle, programDetails[i].infoSubtitle));
+    }
+    articleChecklist.programDetails.result = realProgramDetails;
     articleChecklist.dateTime.result = dateTime;
     articleChecklist.contributors.result = contributors;
     beforeEach(function () {
@@ -82,40 +87,40 @@ describe('Article Checklist', function () {
         it('should return a readable string of Program Details', function () {
             var result = articleChecklist.programDetails.printFn(articleChecklist.programDetails);
             // console.log(result);
+
             expect(result).to.equalIgnoreSpaces(programDetailsPrint);
         });
     });
 
-    describe('printContributors()', function () {
-        it('should return a readable string of Contributors', function () {
-            var result = articleChecklist.contributors.printFn(articleChecklist.contributors);
-            // console.log(result);
-            expect(result).to.equalIgnoreSpaces(contributorsPrint);
-        });
-    });
+    // describe('printContributors()', function () {
+    //     it('should return a readable string of Contributors', function () {
+    //         var result = articleChecklist.contributors.printFn(articleChecklist.contributors);
+    //         // console.log(result);
+    //         expect(result).to.equalIgnoreSpaces(contributorsPrint);
+    //     });
+    // });
 
-    describe('printSlides()', function () {
-        it('should return a readable string of Slides Components', function () {
-            var result = articleChecklist.slides.printFn(articleChecklist.slides);
-            // console.log(result);
-            expect(result).to.equalIgnoreSpaces(slideComponentsPrint);
-        });
-    });
+    // describe('printSlides()', function () {
+    //     it('should return a readable string of Slides Components', function () {
+    //         var result = articleChecklist.slides.printFn(articleChecklist.slides);
+    //         // console.log(result);
+    //         expect(result).to.equalIgnoreSpaces(slideComponentsPrint);
+    //     });
+    // });
 
-    describe('printComponents()', function () {
-        it('should return a readable string of Program Components', function () {
-            var result = articleChecklist.components.printFn(articleChecklist.components);
-            // console.log(result);
-            expect(result).to.equalIgnoreSpaces(componentsPrint);
-        });
-    });
+    // describe('printComponents()', function () {
+    //     it('should return a readable string of Program Components', function () {
+    //         var result = articleChecklist.components.printFn(articleChecklist.components);
+    //         // console.log(result);
+    //         expect(result).to.equalIgnoreSpaces(componentsPrint);
+    //     }); 
+    // });
 
-    describe('printDateTime()', function () {
-        it('should return a readable string of article Date and Time', function () {
-            var result = articleChecklist.dateTime.printFn(articleChecklist.dateTime);
-            // console.log(result);
-            expect(result).to.equalIgnoreSpaces(dateTimePrint);
-        });
-    });
-
+    // describe('printDateTime()', function () {
+    //     it('should return a readable string of article Date and Time', function () {
+    //         var result = articleChecklist.dateTime.printFn(articleChecklist.dateTime);
+    //         // console.log(result);
+    //         expect(result).to.equalIgnoreSpaces(dateTimePrint);
+    //     });
+    // });
 });

@@ -6,7 +6,8 @@ const SubsectionElement = require('./subsec_element');
 const SlideGroup = require('./slide_grp');
 const SlideComponent = require('./slide_component');
 const Component = require('./component');
-const ArticleChecklist = require('./article-checklist');
+const ArticleChecklist = require('./article_checklist');
+const ProgramTimeline = require('./program_timeline');
 
 module.exports = {
     XMLElement,
@@ -17,5 +18,6 @@ module.exports = {
     SlideGroup,
     SlideComponent,
     Component,
-    ArticleChecklist
+    ArticleChecklist,
+    ProgramTimeline
 }

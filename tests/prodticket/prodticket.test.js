@@ -582,6 +582,7 @@ describe('Prodticket Module Functions', function () {
         var programDetailsTH = require('./input/program-details');
         it("should return the Program Details from .html - TownHall", function () {
             var result = prodticket.getProgramDetails(prodticketTH, config.programs.townHall);
+
             for (var i = 0; i < programDetailsTH.length; i++) {
                 expect(result[i].schedule).to.equalIgnoreSpaces(programDetailsTH[i].schedule);
                 expect(result[i].infoTitle).to.equalIgnoreSpaces(programDetailsTH[i].infoTitle);
