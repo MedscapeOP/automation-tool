@@ -517,7 +517,7 @@ describe('Prodticket Module Functions', function () {
          return object with date and time as string properties 
         */ 
         var dateTH = "Wednesday, 3 October, 2018";
-        var timeTH = "13:00 &#8211; 14:30"
+        var timeTH = "13:00 &#8211; 14:30";
         it("should return the program Date/Time from .html - TownHall", function () {
             var result = prodticket.getDateTime(prodticketTH, config.programs.townHall);
             expect(result.date).to.equalIgnoreSpaces(dateTH);

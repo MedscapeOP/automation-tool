@@ -20,14 +20,15 @@ Strategies:
 */
 function printStringProp(property) {
     return ` 
-    
+    -----------------------------------------
+    ${property.printName}
+    -----------------------------------------
+    ${property.result}
     `;
 }
 
 function printProgramDetails(programDetails) {
-    return `
-    
-    `;
+    return JSON.stringify(programDetails, undefined, 2);
 }
 
 function printContributors(contributors) {
@@ -74,7 +75,7 @@ class ArticleChecklist {
         this.components = {result: null, printFn: printComponents, printName: "ARTICLE COMPONENTS"}; // Special Print
         this.slides = {result: null , printFn: printSlides, printName: "SLIDES"}; // Special Print
         this.programDetails = {result: null , printFn: printProgramDetails, printName: "PROGRAM DETAILS"}; // Special Print
-        this.dateTime = {result: null, printFn: printDateTime, printName: "DATE AND TIME"}; // Special Print
+        this.dateTime = {result: null, printFn: printDateTime, printName: "EVENT DATE AND TIME"}; // Special Print
         this.contributors = {result: null, printFn: printContributors, printName: "CONTRIBUTOR DISCLOSURES AND AFFILIATIONS"}; // Special Print
     }
 

@@ -22,6 +22,10 @@ class ProgramTimeline {
             infoSubtitle 
         };     
     }
+
+    toHTMLString() {
+        return ``;
+    }
 }
 
 module.exports = ProgramTimeline;
