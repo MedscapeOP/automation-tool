@@ -31,7 +31,7 @@ class ProgramTimeline {
         // if it does substring it out
         // trim each substring
         var timeRegExp = /am|pm/gi;
-        var schedule = this.schedule;
+        var schedule = `<span>${this.schedule}</span>`;
         var timeIndex = stringOps.regexIndexOf(this.schedule, timeRegExp);
         if (timeIndex != -1) {
             var meridiem = this.schedule.substring(timeIndex, timeIndex + 2).trim();

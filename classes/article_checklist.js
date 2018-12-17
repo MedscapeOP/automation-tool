@@ -1,4 +1,7 @@
 const _ = require('lodash');
+const utils = require('../utils');
+const {stripIndent} = require('common-tags');
+
 /* 
 Strategies: 
 1) Use getters and setters to return properties. (MAYBE THIS APPROACH)
@@ -29,13 +32,43 @@ function printStringProp(property) {
 
 function printProgramDetails(programDetails) {
     // return JSON.stringify(programDetails, undefined, 2);
-    return programDetails.result[0].toHTMLString();
+    var resultString = ` 
+    -----------------------------------------
+    ${programDetails.printName}
+    -----------------------------------------
+    `;    
+    for (var i = 0; i < programDetails.result.length; i++) {
+        resultString += "\n" + programDetails.result[i].toHTMLString();
+    }
+    return resultString;
 }
 
 function printContributors(contributors) {
-    return `
-    
+    var resultString = stripIndent` 
+    -----------------------------------------
+    ${contributors.printName}
+    -----------------------------------------
     `;
+    resultString += "\n\n";  
+
+    var newString = "";
+    for (var i = 0; i < contributors.result.length; i++) {
+        var newString = stripIndent`
+        -- TITLE ${i+1} ---------------------
+        ${contributors.result[i].title}
+
+        -- NAME ${i+1} ---------------------
+        ${contributors.result[i].name}
+
+        -- AFFILIATION ${i+1} ---------------------
+        ${contributors.result[i].affiliation}
+
+        -- DISCLOSURE ${i+1} ---------------------
+        ${contributors.result[i].disclosure}
+        `;
+        resultString += newString + "\n\n\n";
+    }    
+    return utils.cleanHTML.cleanEntities(resultString);
 }
 
 function printSlides(slideComponents) {
@@ -73,11 +106,13 @@ class ArticleChecklist {
         this.targetAudience = {result: null , printFn: printStringProp, printName: "TARGET AUDIENCE"};
         this.teaser = {result: null , printFn: printStringProp, printName: "TEASER"};
         this.title = {result: null , printFn: printStringProp, printName: "TITLE"};
-        this.components = {result: null, printFn: printComponents, printName: "ARTICLE COMPONENTS"}; // Special Print
-        this.slides = {result: null , printFn: printSlides, printName: "SLIDES"}; // Special Print
-        this.programDetails = {result: null , printFn: printProgramDetails, printName: "PROGRAM DETAILS"}; // Special Print
-        this.dateTime = {result: null, printFn: printDateTime, printName: "EVENT DATE AND TIME"}; // Special Print
-        this.contributors = {result: null, printFn: printContributors, printName: "CONTRIBUTOR DISCLOSURES AND AFFILIATIONS"}; // Special Print
+
+        // SPECIAL PRINT FUNCTIONS 
+        this.components = {result: null, printFn: printComponents, printName: "ARTICLE COMPONENTS"};
+        this.slides = {result: null , printFn: printSlides, printName: "SLIDES"}; 
+        this.programDetails = {result: null , printFn: printProgramDetails, printName: "PROGRAM DETAILS"};
+        this.dateTime = {result: null, printFn: printDateTime, printName: "EVENT DATE AND TIME"}; 
+        this.contributors = {result: null, printFn: printContributors, printName: "CONTRIBUTOR DISCLOSURES AND AFFILIATIONS"}; 
     }
 
     //--------------------------------

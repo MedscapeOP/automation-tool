@@ -92,13 +92,13 @@ describe('Article Checklist', function () {
         });
     });
 
-    // describe('printContributors()', function () {
-    //     it('should return a readable string of Contributors', function () {
-    //         var result = articleChecklist.contributors.printFn(articleChecklist.contributors);
-    //         // console.log(result);
-    //         expect(result).to.equalIgnoreSpaces(contributorsPrint);
-    //     });
-    // });
+    describe('printContributors()', function () {
+        it('should return a readable string of Contributors', function () {
+            var result = articleChecklist.contributors.printFn(articleChecklist.contributors);
+            // console.log(result);
+            expect(result).to.equalIgnoreSpaces(contributorsPrint);
+        });
+    });
 
     // describe('printSlides()', function () {
     //     it('should return a readable string of Slides Components', function () {
