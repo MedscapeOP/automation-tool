@@ -198,10 +198,10 @@ class ArticleChecklist {
             // console.log("PROPS: ", this.ownProps);
             if (this[prop].result instanceof Error) {
                 // If instance of error insert error message and set .result to null
-                var error = result.properties[prop].result;                
+                var error = this[prop].result;                
                 result.printHTML += stripIndent` 
                 -----------------------------------------
-                ${result.properties[prop].printName}
+                ${this[prop].printName}
                 -----------------------------------------
                 `;
                 result.printHTML += "\n\n";  
