@@ -46,8 +46,7 @@ describe('Article Checklist', function () {
     var contributors = require('../prodticket/input/contributors-th');
     var contributorsPrint = fs.readFileSync(__dirname + '/input/contributors-print.html').toString();
 
-    var articleChecklist = null;
-    articleChecklist = new ArticleChecklist();
+    var articleChecklist = new ArticleChecklist();
     articleChecklist.abbreviations.result = abbreviations;
     articleChecklist.accreditationStatement.result = accreditationStatement;
     articleChecklist.activityOverview.result = activityOverview;
@@ -100,27 +99,27 @@ describe('Article Checklist', function () {
         });
     });
 
-    // describe('printSlides()', function () {
-    //     it('should return a readable string of Slides Components', function () {
-    //         var result = articleChecklist.slides.printFn(articleChecklist.slides);
-    //         // console.log(result);
-    //         expect(result).to.equalIgnoreSpaces(slideComponentsPrint);
-    //     });
-    // });
+    describe('printSlides()', function () {
+        it('should return a readable string of Slides Components', function () {
+            var result = articleChecklist.slides.printFn(articleChecklist.slides);
+            // console.log(result);
+            expect(result).to.equalIgnoreSpaces(slideComponentsPrint);
+        });
+    });
 
-    // describe('printComponents()', function () {
-    //     it('should return a readable string of Program Components', function () {
-    //         var result = articleChecklist.components.printFn(articleChecklist.components);
-    //         // console.log(result);
-    //         expect(result).to.equalIgnoreSpaces(componentsPrint);
-    //     }); 
-    // });
+    describe('printComponents()', function () {
+        it('should return a readable string of Program Components', function () {
+            var result = articleChecklist.components.printFn(articleChecklist.components);
+            // console.log(result);
+            expect(result).to.equalIgnoreSpaces(componentsPrint);
+        }); 
+    });
 
-    // describe('printDateTime()', function () {
-    //     it('should return a readable string of article Date and Time', function () {
-    //         var result = articleChecklist.dateTime.printFn(articleChecklist.dateTime);
-    //         // console.log(result);
-    //         expect(result).to.equalIgnoreSpaces(dateTimePrint);
-    //     });
-    // });
+    describe('printDateTime()', function () {
+        it('should return a readable string of article Date and Time', function () {
+            var result = articleChecklist.dateTime.printFn(articleChecklist.dateTime);
+            // console.log(result);
+            expect(result).to.equalIgnoreSpaces(dateTimePrint);
+        });
+    });
 });

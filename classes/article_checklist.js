@@ -3,23 +3,12 @@ const utils = require('../utils');
 const {stripIndent} = require('common-tags');
 
 /* 
-Strategies: 
-1) Use getters and setters to return properties. (MAYBE THIS APPROACH)
-    GETTERS:
-    - Assign a print function to the corresponding private member and return the updated object.
-    SETTERS: 
-    - Take in a new result and assign it to the corresponding properties.result member.
-
-2) Create static methods geared towards particular properties (NOT USING THIS APPROACH)
-    - To get this working we would need to dynamically determine which method is appropriate for 
-      the properties in question.
-    - THEORETICAL APPROACH: Use Symbols
-
-3) Set up functions outside of the class. (USING THIS APPROACH FIRST)
+Set up functions outside of the class. (USING THIS APPROACH FIRST)
     - Upon construction just assign the proper function to be the print function 
     - The functions would just take in the object and work with it.
         EXAMPLE INTERFACE/USAGE: checklist.abbreviations.printFn(checklist.abbreviations);
 
+This class is meant to be used to pretty-print prodticket information to an output text file.         
 */
 function printStringProp(property) {
     return ` 
@@ -53,7 +42,7 @@ function printContributors(contributors) {
 
     var newString = "";
     for (var i = 0; i < contributors.result.length; i++) {
-        var newString = stripIndent`
+        newString = stripIndent`
         -- TITLE ${i+1} ---------------------
         ${contributors.result[i].title}
 
@@ -72,21 +61,70 @@ function printContributors(contributors) {
 }
 
 function printSlides(slideComponents) {
-    return `
-    
+    var resultString = stripIndent` 
+    -----------------------------------------
+    ${slideComponents.printName}
+    -----------------------------------------
     `;
+    resultString += "\n\n";  
+
+    var newString = "";
+    for (var i = 0; i < slideComponents.result.length; i++) {
+        newString = stripIndent`
+        -- COMPONENT ${i+1} SLIDES ---------------------
+        ${utils.cleanHTML.slidesFinal(utils.cleanHTML.slidesInitial(slideComponents.result[i].rawSlides))}
+        `;
+        resultString += newString + "\n\n\n";
+    }    
+    // return utils.cleanHTML.cleanEntities(resultString);
+    return resultString;
 }
 
 function printComponents(components) {
-    return `
-    
+    var resultString = stripIndent` 
+    -----------------------------------------
+    ${components.printName}
+    -----------------------------------------
     `;
+    resultString += "\n\n";  
+
+    var newString = "";
+    for (var i = 0; i < components.result.length; i++) {
+        newString = stripIndent`
+        -- COMPONENT ${i+1} ---------------------
+        ${components.result[i].title}
+
+        -- TEASER ${i+1} ---------------------
+        ${components.result[i].teaser}
+
+        -- BYLINE ${i+1} ---------------------
+        ${components.result[i].byline}
+
+        -- CONTENT TYPE ${i+1} ---------------------
+        ${components.result[i].contentType}
+        `;
+        resultString += newString + "\n\n\n";
+    }    
+    return resultString;
 }
 
 function printDateTime(dateTime) {
-    return `
-    
+    var resultString = stripIndent` 
+    -----------------------------------------
+    ${dateTime.printName}
+    -----------------------------------------
     `;
+    resultString += "\n\n";  
+
+    var newString = stripIndent`
+    -- DATE ---------------------
+    ${dateTime.result.date}
+
+    -- TIME ---------------------
+    ${dateTime.result.time}
+    `;
+    resultString += newString + "\n\n\n";  
+    return (resultString);
 } 
 
 class ArticleChecklist {
