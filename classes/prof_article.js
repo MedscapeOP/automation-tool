@@ -59,18 +59,7 @@ class ProfArticle extends XMLElement{
         this._supprtr_grant_group = {
             "type": "element",
             "name": "supprtr_grant_group",
-            "elements": [
-                {
-                    "type": "element",
-                    "name": "supprtr_grant_attr",
-                    "elements": [
-                        {
-                            "type": "text",
-                            "text": "/webmd/professional_assets/medscape/images/grant_attribution/daiichi-global-ieg-txt-2014.gif"
-                        }
-                    ]
-                }
-            ]
+            "elements": []
         };
         this._body_label = {
             "type": "element",
@@ -340,6 +329,33 @@ class ProfArticle extends XMLElement{
             this._contrbtr_post_content.elements = [];
         }
     }
+
+    get supprtrGrantGroup() {
+        if (this._supprtr_grant_group.elements[0]) {
+            return xmlOps.objectToXMLString(this._supprtr_grant_group);
+        } else {
+            return null;
+        }
+    }
+
+    set supprtrGrantGroup(newSupporterMarkup) {
+        if (newSupporterMarkup) {
+            var supporterObjects = xmlOps.xmlStringToJS(newSupporterMarkup);
+            this._supprtr_grant_group.elements = supporterObjects.elements;
+        } else {
+            this._supprtr_grant_group.elements = [];
+        }
+    }
+    // {
+    //     "type": "element",
+    //     "name": "supprtr_grant_attr",
+    //     "elements": [
+    //         {
+    //             "type": "text",
+    //             "text": "/webmd/professional_assets/medscape/images/grant_attribution/daiichi-global-ieg-txt-2014.gif"
+    //         }
+    //     ]
+    // }
 
     get cpyrtHolder() {
         if (this._cpyrt_holder.elements[0]) {

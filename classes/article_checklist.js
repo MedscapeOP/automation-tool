@@ -127,6 +127,7 @@ function printDateTime(dateTime) {
     return (resultString);
 } 
 
+
 class ArticleChecklist {
     constructor() {
         this.abbreviations = {result: null, printFn: printStringProp, printName: "ABBREVIATIONS"};
@@ -134,7 +135,9 @@ class ArticleChecklist {
         this.activityOverview = {result: null, printFn: printStringProp, printName: "ACTIVITY OVERVIEW"};
         this.associationDisclaimer = {result: null, printFn: printStringProp, printName: "ASSOCIATION DISCLAIMER STATEMENT"};
         this.byline = {result: null, printFn: printStringProp, printName: "CONTRIBUTOR BYLINE"};
+        this.collectionPageInfo = {result: null, printFn: printStringProp, printName: "COLLECTION PAGE INFO"};
         this.creditsAvailable = {result: null, printFn: printStringProp, printName: "CREDITS AVAILABLE"};
+        this.downloadableSlides = {result: null, printFn: printStringProp, printName: "DOWNLOADABLE SLIDES SNIPPET"}
         this.goalStatement = {result: null, printFn: printStringProp, printName: "GOAL STATEMENT"};
         this.learningObjectives = {result: null, printFn: printStringProp, printName: "LEARNING OBJECTIVES"};
         this.locationInfo = {result: null , printFn: printStringProp, printName: "LOCATION INFORMATION"};
@@ -157,11 +160,55 @@ class ArticleChecklist {
     // COMPUTED PROPERTIES  
     //-------------------------------- 
 
-
     //--------------------------------
     // METHODS 
     //-------------------------------- 
+    print() {
+        /* 
+        This should return an object literal that contains properties from the ArticleChecklist instance. 
+        - The properties to include are determined by:  
+            - checking if the property is an instance of Error. 
+        - If so: 
+            - insert the error message 
+            - set .result to null 
+        - The object should also contain the formatted HTML string for the checklist file. 
+        */
+        var result = {
+            printHTML: "",
+            properties: {}
+        };
+        var prop = null; 
+        for (var i = 0; i < checklistProperties.length; i++) {
+            prop = checklistProperties[i];
+            // Add Property to result object 
+            result.properties[prop] = this[prop];
+
+            if (result.properties[prop].result instanceof Error) {
+                // If instance of error insert error message and set .result to null
+                var error = result.properties[prop].result;                
+                result.printHTML += stripIndent` 
+                -----------------------------------------
+                ${result.properties[prop].printName}
+                -----------------------------------------
+                `;
+                result.printHTML += "\n\n";  
+            
+                var newString = stripIndent`
+                -- ERROR ---------------------
+                ${error.message}
+                `;
+                result.printHTML += newString + "\n\n\n";                
+                // Set result of property to be null 
+                result.properties[prop].result = null;
+            } else {
+                result.printHTML += result.properties[prop].printFn(result.properties[prop]);
+            }
+        }
+        return result;
+    }
 }
+
+const checklistProperties = Object.getOwnPropertyNames(ArticleChecklist.prototype);
 
 module.exports = ArticleChecklist;
 

@@ -23,7 +23,7 @@
 const _ = require("lodash");
 const utils = require("../utils");
 const articleUtils = require('./article-utils');
-const {ProfArticle, TOCElement, SectionElement, SubsectionElement, SlideGroup} = require("../classes");
+const {ProfArticle, TOCElement, SectionElement, SubsectionElement, SlideGroup, ArticleChecklist} = require("../classes");
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
 
@@ -75,25 +75,26 @@ Main sections to include:
 /* CHECKLIST FUNCTION  
 -------------------------------------- */
 function checklistSpotlight(ticket, program) {
-    var result = {
-        title: null, 
-        byline: null,
-        peerReviewer: null,
-        collectionPageInfo: null,
-        slides: null,
-        abbreviations: null,
-        references: null,
-        slideDeckDiv: null,
-        forYourPatientMarkup: null
-    };
+    // var result = {
+    //     title: null, 
+    //     byline: null,
+    //     peerReviewer: null,
+    //     collectionPageInfo: null,
+    //     slides: null,
+    //     abbreviations: null,
+    //     references: null,
+    //     slideDeckDiv: null,
+    //     forYourPatientMarkup: null
+    // };
+    var checklist = new ArticleChecklist();
 
-    result.title = prodticket.getTitle(ticket, program);
-    result.byline = prodticket.getByline(ticket, program);
+    checklist.title.result = prodticket.getTitle(ticket, program);
+    checklist.byline.result = prodticket.getByline(ticket, program);
     if (program.hasPeerReviewer) {
-        result.peerReviewer = prodticket.getPeerReviewer(ticket, program);
+        checklist.peerReviewer.result = prodticket.getPeerReviewer(ticket, program);
     } 
     if (program.hasCollectionPage) {
-        result.collectionPageInfo = prodticket.getCollectionPage(ticket, program);
+        checklist.collectionPageInfo.result = prodticket.getCollectionPage(ticket, program);
     }
     /*
     CHECKLIST PRINT FUNCTION 
@@ -104,11 +105,10 @@ function checklistSpotlight(ticket, program) {
                 - Call the properties' print function (which uses the result). 
     */
 
-    result.slides = prodticket.getSlides(ticket, program);
-    result.abbreviations = prodticket.getAbbreviations(ticket, program);
+    checklist.slides.result = prodticket.getSlides(ticket, program);
+    checklist.abbreviations.result = prodticket.getAbbreviations(ticket, program);
 
-    var referencesMarkup = prodticket.getReferences(ticket, program);
-    referencesTOC = articleUtils.buildReferences(referencesMarkup, program);
+    checklist.references.result = prodticket.getReferences(ticket, program);
 
     slideDeckDiv = snippets.downloadableSlides(program.articleID);
     
