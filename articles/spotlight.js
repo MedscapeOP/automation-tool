@@ -90,6 +90,10 @@ function checklistSpotlight(ticket, program) {
 
     checklist.title.result = prodticket.getTitle(ticket, program);
     checklist.byline.result = prodticket.getByline(ticket, program);
+    checklist.learningObjectives.result = prodticket.getLearningObjectives(ticket, program);
+    checklist.goalStatement.result = prodticket.getGoalStatement(ticket, program);
+    checklist.targetAudience.result = prodticket.getTargetAudience(ticket, program);
+
     if (program.hasPeerReviewer) {
         checklist.peerReviewer.result = prodticket.getPeerReviewer(ticket, program);
     } 
@@ -107,62 +111,17 @@ function checklistSpotlight(ticket, program) {
 
     checklist.slides.result = prodticket.getSlides(ticket, program);
     checklist.abbreviations.result = prodticket.getAbbreviations(ticket, program);
-
     checklist.references.result = prodticket.getReferences(ticket, program);
-
-    slideDeckDiv = snippets.downloadableSlides(program.articleID);
+    checklist.downloadableSlides.result = snippets.downloadableSlides(program.articleID);
     
-
-    // Build Main Article Object - Instantiate and Populate Article
-    var finalArticle = new ProfArticle("SlidePresentation", program.hasOUS);
-    // Set article title (pass markup)
-    finalArticle.titleText = title;
-    // Set article byline (pass markup)
-    finalArticle.contrbtrByline = byline;
-    // insert peer reviewer
-    finalArticle.contrbtrPostContent = peerReviewer;
     // set contrbtr_pre_content
-    finalArticle.contrbtrPreContent = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
+    checklist.contrbtrPreContent.result = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
     // set copyright holder 
-    finalArticle.cpyrtHolder = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
+    checklist.cpyrtHolder.result = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
     // set backmatter front page 
-    finalArticle.bkmtrFront = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
-    // insert collection page info - Banner image and Above title
-    if (collectionPageInfo) {
-        finalArticle.bannerImage = collectionPageInfo.bannerFileName;
-        finalArticle.insertAboveTitleCA(collectionPageInfo.title, collectionPageInfo.advancesFileName);
-    } 
-          
-    // Insert Main TOC Objects  
-    finalArticle.insertTOCElement(preAssessmentTOC);
-    finalArticle.insertTOCElement(slidesTOC);
-    finalArticle.insertTOCElement(postAssessmentTOC);
-    finalArticle.insertTOCElement(blankResultsTOC);
-    finalArticle.insertTOCElement(abbreviationsTOC);
-    finalArticle.insertTOCElement(referencesTOC);
+    checklist.bkmtrFront.result = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
 
-    // Addons 
-    if (program.hasForYourPatient) {
-        forYourPatientMarkup = snippets.forYourPatient(program.articleID, "For Your Patient", `${program.articleID}_ForYourPatient.pdf`);
-        // console.log("FINAL ARTICLE CHILD ELEMENTS: ", finalArticle._childElements[0]._childElements[0]);
-        var forYourPatientSubsection = new SubsectionElement(true, false, false);
-        
-        if (program.hasLLA) {
-            var slideGroup = new SlideGroup('', '', true, false);
-            slideGroup.sectionImage = null;
-            slideGroup.sectionLabel = null;
-            slideGroup.sectionAltText = null;
-            slideGroup.qnaForm = 3;
-            forYourPatientSubsection.insertSlideGroup(slideGroup);
-            finalArticle._childElements[0]._childElements[0]._childElements[0]._childElements = [];
-        }
-
-        forYourPatientSubsection.subsectionContent = utils.wrapSlideIntro(forYourPatientMarkup);
-
-        finalArticle._childElements[0]._childElements[0].insertSubsectionElement(forYourPatientSubsection); 
-    }
-    
-    return finalArticle;
+    return checklist.print();
 }
 
 

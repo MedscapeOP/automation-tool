@@ -122,4 +122,11 @@ describe('Article Checklist', function () {
             expect(result).to.equalIgnoreSpaces(dateTimePrint);
         });
     });
+
+    describe('.print()', function () {
+        it('should return complete HTML string of ArticleChecklist properties', function () {
+            var result = articleChecklist.print();
+            fs.writeFileSync(__dirname + '/output/checklist.html', result.printHTML);
+        });
+    });
 });

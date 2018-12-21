@@ -11,17 +11,17 @@ Set up functions outside of the class. (USING THIS APPROACH FIRST)
 This class is meant to be used to pretty-print prodticket information to an output text file.         
 */
 function printStringProp(property) {
-    return ` 
+    return stripIndent`
     -----------------------------------------
     ${property.printName}
     -----------------------------------------
     ${property.result}
-    `;
+    ` + "\n\n\n\n\n";
 }
 
 function printProgramDetails(programDetails) {
     // return JSON.stringify(programDetails, undefined, 2);
-    var resultString = ` 
+    var resultString = stripIndent` 
     -----------------------------------------
     ${programDetails.printName}
     -----------------------------------------
@@ -29,7 +29,7 @@ function printProgramDetails(programDetails) {
     for (var i = 0; i < programDetails.result.length; i++) {
         resultString += "\n" + programDetails.result[i].toHTMLString();
     }
-    return resultString;
+    return resultString + "\n\n\n\n\n";
 }
 
 function printContributors(contributors) {
@@ -55,9 +55,13 @@ function printContributors(contributors) {
         -- DISCLOSURE ${i+1} ---------------------
         ${contributors.result[i].disclosure}
         `;
-        resultString += newString + "\n\n\n";
+        if (i == contributors.result.length - 1) {
+            resultString += newString;
+        } else {
+            resultString += newString + "\n\n\n";
+        }
     }    
-    return utils.cleanHTML.cleanEntities(resultString);
+    return utils.cleanHTML.cleanEntities(resultString) + "\n\n\n\n\n";
 }
 
 function printSlides(slideComponents) {
@@ -74,7 +78,7 @@ function printSlides(slideComponents) {
         -- COMPONENT ${i+1} SLIDES ---------------------
         ${utils.cleanHTML.slidesFinal(utils.cleanHTML.slidesInitial(slideComponents.result[i].rawSlides))}
         `;
-        resultString += newString + "\n\n\n";
+        resultString += newString + "\n\n\n\n\n";
     }    
     // return utils.cleanHTML.cleanEntities(resultString);
     return resultString;
@@ -103,9 +107,13 @@ function printComponents(components) {
         -- CONTENT TYPE ${i+1} ---------------------
         ${components.result[i].contentType}
         `;
-        resultString += newString + "\n\n\n";
+        if (i == components.result.length - 1) {
+            resultString += newString;
+        } else {
+            resultString += newString + "\n\n";
+        }
     }    
-    return resultString;
+    return resultString + "\n\n\n\n\n";
 }
 
 function printDateTime(dateTime) {
@@ -123,7 +131,7 @@ function printDateTime(dateTime) {
     -- TIME ---------------------
     ${dateTime.result.time}
     `;
-    resultString += newString + "\n\n\n";  
+    resultString += newString + "\n\n\n\n\n";  
     return (resultString);
 } 
 
@@ -134,8 +142,11 @@ class ArticleChecklist {
         this.accreditationStatement = {result: null, printFn: printStringProp, printName: "ACCREDITATION STATEMENT"};
         this.activityOverview = {result: null, printFn: printStringProp, printName: "ACTIVITY OVERVIEW"};
         this.associationDisclaimer = {result: null, printFn: printStringProp, printName: "ASSOCIATION DISCLAIMER STATEMENT"};
+        this.bkmtrFront = {result: null, printFn: printStringProp, printName: "BACK MATTER FRONT PAGE"};
         this.byline = {result: null, printFn: printStringProp, printName: "CONTRIBUTOR BYLINE"};
         this.collectionPageInfo = {result: null, printFn: printStringProp, printName: "COLLECTION PAGE INFO"};
+        this.contrbtrPreContent = {result: null, printFn: printStringProp, printName: "CONTENT ABOVE CONTRIBUTORS"};
+        this.cpyrtHolder = {result: null, printFn: printStringProp, printName: "COPYRIGHT HOLDER"};
         this.creditsAvailable = {result: null, printFn: printStringProp, printName: "CREDITS AVAILABLE"};
         this.downloadableSlides = {result: null, printFn: printStringProp, printName: "DOWNLOADABLE SLIDES SNIPPET"}
         this.goalStatement = {result: null, printFn: printStringProp, printName: "GOAL STATEMENT"};
@@ -159,6 +170,9 @@ class ArticleChecklist {
     //--------------------------------
     // COMPUTED PROPERTIES  
     //-------------------------------- 
+    get ownProps() {
+        return Object.getOwnPropertyNames(this);
+    }
 
     //--------------------------------
     // METHODS 
@@ -177,13 +191,12 @@ class ArticleChecklist {
             printHTML: "",
             properties: {}
         };
-        var prop = null; 
-        for (var i = 0; i < checklistProperties.length; i++) {
-            prop = checklistProperties[i];
-            // Add Property to result object 
-            result.properties[prop] = this[prop];
-
-            if (result.properties[prop].result instanceof Error) {
+        var prop = null;
+        var propertyNames = this.ownProps;
+        for (var i = 0; i < propertyNames.length; i++) {
+            prop = propertyNames[i];
+            // console.log("PROPS: ", this.ownProps);
+            if (this[prop].result instanceof Error) {
                 // If instance of error insert error message and set .result to null
                 var error = result.properties[prop].result;                
                 result.printHTML += stripIndent` 
@@ -197,18 +210,24 @@ class ArticleChecklist {
                 -- ERROR ---------------------
                 ${error.message}
                 `;
-                result.printHTML += newString + "\n\n\n";                
+                result.printHTML += newString + "\n\n\n";
+                // Add Property to result object 
+                result.properties[prop] = this[prop];                
                 // Set result of property to be null 
                 result.properties[prop].result = null;
+            } else if (this[prop].result !== null) {
+                // Add Property to result object                 
+                result.printHTML += this[prop].printFn(this[prop]);
+                result.properties[prop] = this[prop];
             } else {
-                result.printHTML += result.properties[prop].printFn(result.properties[prop]);
+                continue;
             }
         }
         return result;
     }
 }
 
-const checklistProperties = Object.getOwnPropertyNames(ArticleChecklist.prototype);
+// const propertyNames = Object.getOwnPropertyNames(ArticleChecklist.prototype);
 
 module.exports = ArticleChecklist;
 
