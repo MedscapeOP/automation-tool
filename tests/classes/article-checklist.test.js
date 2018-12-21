@@ -129,5 +129,10 @@ describe('Article Checklist', function () {
             var result = articleChecklist.print();
             fs.writeFileSync(__dirname + '/output/checklist.html', result.printHTML);
         });
+        
+        it('should return an object of properties to include in final XML', function () {
+            var result = articleChecklist.print();
+            // console.log("PROPERTIES: ", result.properties);            
+        });
     });
 });

@@ -214,11 +214,14 @@ class ArticleChecklist {
                 // Add Property to result object 
                 result.properties[prop] = this[prop];                
                 // Set result of property to be null 
-                result.properties[prop].result = null;
+                result.properties[prop] = null;
+                // console.log(result.properties[prop]);
+                // console.log("RESULT: ", result.properties);
             } else if (this[prop].result !== null) {
                 // Add Property to result object                 
                 result.printHTML += this[prop].printFn(this[prop]);
                 result.properties[prop] = this[prop];
+                console.log("PROPS: ", result.properties);
             } else {
                 continue;
             }
