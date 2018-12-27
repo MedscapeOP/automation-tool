@@ -45,7 +45,7 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML, program
     var endSlideRegExp = stringOps.getUsableRegExp(ticketHTML, endSlideMatches);
 
     if (!startSlideRegExp || !endSlideRegExp) {
-        throw new Error("Regexp is not found in the prodticket");
+        throw new Error("No slides found in the prodticket");
     } else {
         var slideComponents = []; 
         var textBlockObject = stringOps.getTextBlock(ticketHTML, startSlideRegExp, endSlideRegExp, false); 
@@ -87,7 +87,7 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML, pro
     // console.log("START REGEXP: ", startSlideRegExp);
     // console.log("END REGEXP: ", endSlideRegExp);
     if (!startSlideRegExp || !endSlideRegExp) {
-        throw new Error("Regexp is not found in the prodticket");
+        throw new Error("No slides found in the prodticket");
     } else {
         var slideComponents = [];
         var slideComponent = null;
@@ -111,7 +111,7 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML, program)
     var endSlideRegExp = stringOps.getUsableRegExp(ticketHTML, endSlideMatches);
 
     if (!startSlideRegExp || !endSlideRegExp) {
-        throw new Error("Regexp is not found in the prodticket");
+        throw new Error("No slides found in the prodticket");
     } else {
         var slideComponents = []; 
         var textBlockObject = stringOps.getTextBlock(ticketHTML, startSlideRegExp, endSlideRegExp, false); 

@@ -18,8 +18,12 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     // var removeRegExp = /<p>The goal of this activity.*/
     // textBlock = textBlock.replace(removeRegExp, '');
 
-    var result = cleanHTML.singleLine(cleanHTML.onlyParagraphTags(textBlock)).trim();
-    return `${result}`;
+    if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+        throw new Error("No target audience statement found in the prodticket");
+    } else {  
+        var result = cleanHTML.singleLine(cleanHTML.onlyParagraphTags(textBlock)).trim();
+        return `${result}`;
+    }
 };
 
 
@@ -46,13 +50,18 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     var endRegExp = /<strong>Goal Statement.*/g;
     var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
 
-    // var removeRegExp = /<p>The goal of this activity.*/
-    // textBlock = textBlock.replace(removeRegExp, '');
-    // (use the applicable statement)
-    var result = cleanHTML.singleLine(cleanHTML.onlyParagraphTags(textBlock)).trim();
-    
-    result = result.replace(/For OUS activities:/g, "");
-    return `${result}`;
+
+    if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+        throw new Error("No target audience statement found in the prodticket");
+    } else {  
+        // var removeRegExp = /<p>The goal of this activity.*/
+        // textBlock = textBlock.replace(removeRegExp, '');
+        // (use the applicable statement)
+        var result = cleanHTML.singleLine(cleanHTML.onlyParagraphTags(textBlock)).trim();
+        
+        result = result.replace(/For OUS activities:/g, "");
+        return `${result}`;
+    }
 };
 
 module.exports = exportObject;

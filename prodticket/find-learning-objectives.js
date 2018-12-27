@@ -16,14 +16,13 @@ exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
     var endRegExp = /.*<strong>Clinical Context.*/g;
     var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
 
-    textBlock = cleanHTML.learningObjectives(textBlock);
-    // var result = cleanHTML.unorderedList(textBlock, false);
-    // result = `
-    // <p>Upon completion of this activity, participants will be able to:</p> 
-    // ${result} 
-    // `;
-    var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
-    return result;
+    if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+        throw new Error("No learning objectives found in the prodticket");
+    } else {  
+        textBlock = cleanHTML.learningObjectives(textBlock);
+        var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
+        return result;
+    }    
 };
 
 // Spotlight
@@ -32,9 +31,13 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     var endRegExp = /.*Questions \(Evaluations.*/g;
     var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
 
-    textBlock = cleanHTML.learningObjectives(textBlock);
-    var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
-    return result;
+    if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+        throw new Error("No learning objectives found in the prodticket");
+    } else {  
+        textBlock = cleanHTML.learningObjectives(textBlock);
+        var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
+        return result;
+    }  
 };
 
 
@@ -60,9 +63,13 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     var endRegExp = /<strong>Association Disclaimer Statement/g;
     var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
 
-    textBlock = cleanHTML.learningObjectives(textBlock);
-    var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
-    return result;
+    if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+        throw new Error("No learning objectives found in the prodticket");
+    } else {  
+        textBlock = cleanHTML.learningObjectives(textBlock);
+        var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
+        return result;
+    }  
 };
 
 

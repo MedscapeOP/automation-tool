@@ -20,6 +20,7 @@ describe('Prodticket Module Functions', function () {
     let prodticketTH;
     let prodticketTH_alt;
     let prodticketTH_alt_2;
+    let prodticketFail;
 
     beforeEach(function() {
         prodticketCB = fs.readFileSync(__dirname + '/input/prodticket-cb.html').toString();
@@ -29,6 +30,7 @@ describe('Prodticket Module Functions', function () {
         prodticketTH = fs.readFileSync(__dirname + '/input/prodticket-th.html').toString();
         prodticketTH_alt = fs.readFileSync(__dirname + '/input/prodticket-th-alt.html').toString();
         prodticketTH_alt_2 = fs.readFileSync(__dirname + '/input/prodticket-th-alt-2.html').toString();
+        prodticketFail = fs.readFileSync(__dirname + '/input/prodticket-fail.html').toString();
     });
 
     /**
@@ -55,6 +57,14 @@ describe('Prodticket Module Functions', function () {
             // expect(result).to.equal("Preventing HPV-Related Disease: From Global Perspectives to Local Solutions");
             expect(result).to.equal("The Big Debate: Pharmacologic vs Alternative Approaches in Smoking Cessation");
         });
+
+        it("should throw error with message for missing title", function () {
+            try {
+                var result = prodticket.getTitle(prodticketFail, config.programs.townHall);
+            } catch (error) {
+                expect(error.message).to.equal("No title found in the prodticket");
+            }
+        });        
     });
 
     /**
@@ -84,6 +94,14 @@ describe('Prodticket Module Functions', function () {
 
             expect(result).to.equal("<p>Henri-Jean Aubin, MD, PhD; Peter Hajek, PhD; Serena Tonstad, MD, PhD</p>");
         });
+
+        it("should throw error with message for missing byline", function () {
+            try {
+                var result = prodticket.getByline(prodticketFail, config.programs.townHall);
+            } catch (error) {
+                expect(error.message).to.equal("No byline found in the prodticket");
+            }
+        });  
     });
 
     /**
@@ -136,6 +154,14 @@ describe('Prodticket Module Functions', function () {
                 expect(result[i].disclosure).to.equalIgnoreSpaces(contributorsTH[i].disclosure);
             }
         });
+
+        it("should throw error with message for missing contributors", function () {
+            try {
+                var result = prodticket.getContributors(prodticketFail, config.programs.townHall);
+            } catch (error) {
+                expect(error.message).to.equal("No contributors found in the Speakers section of the prodticket");
+            }
+        });  
     });
 
     /**
@@ -160,6 +186,15 @@ describe('Prodticket Module Functions', function () {
             var result = prodticket.getAbbreviations(prodticketTH_alt, config.programs.townHall);
             expect(result).to.equal(abbreviationsTH);
         });
+
+        it("should throw error with message for missing abbreviations", function () {
+            try {
+                var result = prodticket.getAbbreviations(prodticketFail, config.programs.townHall);
+            } catch (error) {
+                expect(error.message).to.equal("No abbreviations found in the prodticket");
+            }
+        });  
+        
     });
 
     /**

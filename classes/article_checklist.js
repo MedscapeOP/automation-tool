@@ -221,7 +221,7 @@ class ArticleChecklist {
                 // Add Property to result object                 
                 result.printHTML += this[prop].printFn(this[prop]);
                 result.properties[prop] = this[prop];
-                console.log("PROPS: ", result.properties);
+                // console.log("PROPS: ", result.properties);
             } else {
                 continue;
             }

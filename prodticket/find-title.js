@@ -14,33 +14,38 @@ var exportObject = {};
 // Clinical Brief 
 exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
     var {textBlock} = stringOps.getTextBlock(ticketHTML, "Activity Title", "Content Information");
-    return cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim();
+    if (stringOps.isBlankOrWhiteSpace(textBlock) || stringOps.isEmptyString(textBlock)) {
+        throw new Error("No title found in the prodticket")
+    } else {
+        return cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim();
+    }
 }
 
 
 // Spotlight 
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     var {textBlock} = stringOps.getTextBlock(ticketHTML, "Title: &#953;", "Teaser: &#953;");
-    return cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim();
+    if (stringOps.isBlankOrWhiteSpace(textBlock) || stringOps.isEmptyString(textBlock)) {
+        throw new Error("No title found in the prodticket")
+    } else {
+        return cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim();
+    }
 }
 
 
 // Curbside Consult
 exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML) {
-    var {textBlock} = stringOps.getTextBlock(ticketHTML, "Title: &#953;", "Teaser: &#953;");
-    return cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim();
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
 // Video Lecture  
 exportObject[config.programs.videoLecture.codeName] = function (ticketHTML) {
-    var {textBlock} = stringOps.getTextBlock(ticketHTML, "Title: &#953;", "Teaser: &#953;");
-    return cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim();
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
 // First Response
 exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
-    var {textBlock} = stringOps.getTextBlock(ticketHTML, "Title: &#953;", "Teaser: &#953;");
-    return cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim();
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
 // Town Hall
@@ -49,11 +54,13 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     var {textBlock: subtitle} = stringOps.getTextBlock(ticketHTML, "Title + subtitle = 80 characters max, inc. spaces*</strong>", "<strong>Teaser", true, false);
     title = cleanHTML.singleLine(cleanHTML.plainText(title)).trim();
     subtitle = cleanHTML.singleLine(cleanHTML.plainText(subtitle)).trim();
-    if (subtitle.length > 2) {
-        return `${title}: ${subtitle}`;
-    } else {
+    if (stringOps.isEmptyString(title)) {
+        throw new Error("No title found in the prodticket");
+    } else if (stringOps.isEmptyString(subtitle)) {
         return `${title}`;
-    }
+    } else {
+        return `${title}: ${subtitle}`;
+    } 
 }
 
 module.exports = exportObject;

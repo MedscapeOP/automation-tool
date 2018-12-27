@@ -147,10 +147,14 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
 
     var {textBlock: contributorBlock} = stringOps.getTextBlock(speakerBlock, "Disclosure: Clyde W. Yancy, MD, MSc, has disclosed the following relevant financial relationships:</p>", "<strong>Program Details", true, false);
 
-    // console.log("CONTRIBUTOR BLOCK: ", contributorBlock);
-    // return JSON.stringify(buildContributors(contributorBlock), undefined, 2);
-    return buildContributors(contributorBlock);
-    // return "<p>" + cleanHTML.singleLine(cleanHTML.plainText(byline)).trim() + "</p>";
+    if (stringOps.isBlankOrWhiteSpace(contributorBlock) || stringOps.isEmptyString(contributorBlock) || contributorBlock.length < 10) {
+        throw new Error("No contributors found in the Speakers section of the prodticket");
+    } else {
+        // console.log("CONTRIBUTOR BLOCK: ", contributorBlock);
+        // return JSON.stringify(buildContributors(contributorBlock), undefined, 2);
+        return buildContributors(contributorBlock);
+        // return "<p>" + cleanHTML.singleLine(cleanHTML.plainText(byline)).trim() + "</p>";
+    }
 }
 
 module.exports = exportObject;

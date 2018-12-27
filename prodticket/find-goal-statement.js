@@ -17,11 +17,15 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     var endRegExp = /<p>The goal(?:s){0,} of this activity.*/g;
     var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, true);
 
-    // var removeRegExp = /<p>The goal of this activity.*/
-    // textBlock = textBlock.replace(removeRegExp, '');
+    if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+        throw new Error("No goal statement found in the prodticket");
+    } else {  
+        // var removeRegExp = /<p>The goal of this activity.*/
+        // textBlock = textBlock.replace(removeRegExp, '');
 
-    var result = cleanHTML.singleLine(cleanHTML.onlyParagraphTags(textBlock)).trim();
-    return `${result}`;
+        var result = cleanHTML.singleLine(cleanHTML.onlyParagraphTags(textBlock)).trim();
+        return `${result}`;
+    }
 };
 
 // Curbside
@@ -47,10 +51,12 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
 
     // var removeRegExp = /<p>The goal of this activity.*/
     // textBlock = textBlock.replace(removeRegExp, '');
-
-    var result = cleanHTML.singleLine(cleanHTML.onlyParagraphTags(textBlock)).trim();
-    // console.log("TOWNHALL GOAL STATEMENT", result);
-    return `${result}`;
+    if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+        throw new Error("No goal statement found in the prodticket");
+    } else {  
+        var result = cleanHTML.singleLine(cleanHTML.onlyParagraphTags(textBlock)).trim();
+        return `${result}`;
+    }
 };
 
 module.exports = exportObject;

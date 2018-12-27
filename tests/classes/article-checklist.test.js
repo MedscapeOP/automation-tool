@@ -9,15 +9,6 @@ const app = require("../../commands");
 const { ArticleChecklist, ProgramTimeline } = app.classes;
 
 describe('Article Checklist', function () {
-    /*
-    Main sections to test: 
-      1) Clinical Context 
-      2) Synopsis and Perspective 
-      3) Study Highlights
-      4) Clinical Implications 
-      5) Contributor Byline 
-      6) 
-    */
 
     var abbreviations = fs.readFileSync(__dirname + '/../prodticket/input/abbreviations-cc.html').toString();
     var abbreviationsPrint = fs.readFileSync(__dirname + '/input/abbreviations-print.html').toString();

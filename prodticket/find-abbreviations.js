@@ -14,8 +14,12 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     var {textBlock: rawAbbreviations, label: abbrLabel} = stringOps.getTextBlock(ticketHTML, "Abbreviations", "Additional Resources");
     // console.log(cleanHTML.abbreviations(rawAbbreviations));
     // return "";
-    rawAbbreviations = cleanHTML.singleLine(cleanHTML.abbreviations(rawAbbreviations)).trim();
-    return '<p>' + stringOps.findLastAndReplace(rawAbbreviations, '<br/>', "") + '</p>';
+    if (stringOps.isEmptyString(rawAbbreviations) || stringOps.isBlankOrWhiteSpace(rawAbbreviations) || rawAbbreviations.length < 5) {
+        throw new Error("No abbreviations found in the prodticket");
+    } else {
+        rawAbbreviations = cleanHTML.singleLine(cleanHTML.abbreviations(rawAbbreviations)).trim();
+        return '<p>' + stringOps.findLastAndReplace(rawAbbreviations, '<br/>', "") + '</p>';        
+    }
 }
 
 // Curbside
@@ -38,8 +42,12 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     var {textBlock: rawAbbreviations, label: abbrLabel} = stringOps.getTextBlock(ticketHTML, "Abbreviations", '<a name="Heading562"></a>Transcript');
     // console.log(cleanHTML.abbreviations(rawAbbreviations));
     // return "";
-    rawAbbreviations = cleanHTML.singleLine(cleanHTML.abbreviations(rawAbbreviations)).trim();
-    return '<p>' + stringOps.findLastAndReplace(rawAbbreviations, '<br/>', "") + '</p>';
+    if (stringOps.isEmptyString(rawAbbreviations) || stringOps.isBlankOrWhiteSpace(rawAbbreviations) || rawAbbreviations.length < 5) {
+        throw new Error("No abbreviations found in the prodticket");
+    } else {
+        rawAbbreviations = cleanHTML.singleLine(cleanHTML.abbreviations(rawAbbreviations)).trim();
+        return '<p>' + stringOps.findLastAndReplace(rawAbbreviations, '<br/>', "") + '</p>';        
+    }
 }
 
 module.exports = exportObject;
