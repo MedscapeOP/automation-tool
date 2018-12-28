@@ -10,9 +10,13 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     var endRegExp = /<\/a>Registration\/Overview/g;
     var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
 
-    textBlock = cleanHTML.associationDisclaimer(textBlock);
-    var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
-    return result;
+    if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+        throw new Error("No activity overview found in the prodticket");
+    } else {  
+        textBlock = cleanHTML.associationDisclaimer(textBlock);
+        var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
+        return result;
+    }
 };
 
 

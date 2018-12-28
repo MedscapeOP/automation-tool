@@ -267,16 +267,20 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
 
     textBlock = stringOps.getTextBlock(textBlock, /<p>Question &amp; Answer/g, endRegExp, true, false).textBlock;
     
-    var dateRegExp = stringOps.getNextRegex(textBlock, config.dates.monthsRegexArray);
-    
-    if (dateRegExp != -1) { 
-        textBlock = textBlock.replace(dateRegExp.symbol, "").replace(/.*&#8211;.*/gi, "");
-        textBlock = cleanHTML.onlyParagraphTags(textBlock);
-        return buildProgramDetails(false, textBlock, new ProgramTimeline("", "", ""), [], buildProgramDetails);
-    }
+    if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+        throw new Error("No program details found in the prodticket");
+    } else {  
+        var dateRegExp = stringOps.getNextRegex(textBlock, config.dates.monthsRegexArray);
+        
+        if (dateRegExp != -1) { 
+            textBlock = textBlock.replace(dateRegExp.symbol, "").replace(/.*&#8211;.*/gi, "");
+            textBlock = cleanHTML.onlyParagraphTags(textBlock);
+            return buildProgramDetails(false, textBlock, new ProgramTimeline("", "", ""), [], buildProgramDetails);
+        }
 
-    var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
-    return result;
+        var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
+        return result;
+    }
 };
 
 

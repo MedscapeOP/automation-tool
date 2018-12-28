@@ -10,9 +10,13 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     var endRegExp = /<\/a>Right-side Content<\/h2>/g;
     var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
 
-    textBlock = textBlock.replace(/\(e.g., Disclaimer:.*/g, "");
-    var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
-    return result;
+    if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+        throw new Error("No association disclaimer found in the prodticket");
+    } else {  
+        textBlock = textBlock.replace(/\(e.g., Disclaimer:.*/g, "");
+        var result = cleanHTML.onlyParagraphTags(textBlock, removeFluff=false).trim();
+        return result;
+    }
 };
 
 

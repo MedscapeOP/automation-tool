@@ -49,10 +49,16 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML, program
     } else {
         var slideComponents = []; 
         var textBlockObject = stringOps.getTextBlock(ticketHTML, startSlideRegExp, endSlideRegExp, false); 
-        var slideComponent = new SlideComponent(program.articleID, null, textBlockObject.textBlock);
-        slideComponents.push(slideComponent.toObjectLiteral());
-        // console.log(JSON.stringify(slideComponents, undefined, 2));
-        return slideComponents;
+        var textBlock = textBlockObject.textBlock;
+
+        if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+            throw new Error("No slides found in the prodticket");
+        } else {
+            var slideComponent = new SlideComponent(program.articleID, null, textBlockObject.textBlock);
+            slideComponents.push(slideComponent.toObjectLiteral());
+            // console.log(JSON.stringify(slideComponents, undefined, 2));
+            return slideComponents;
+        }
     }    
 }
 
@@ -91,16 +97,23 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML, pro
     } else {
         var slideComponents = [];
         var slideComponent = null;
-        var textBlockObject = stringOps.getTextBlock(ticketHTML, startSlideRegExp, endSlideRegExp, false, true);    
-        for (var i = 0; textBlockObject.endIndex != -1; i++) {         
-            slideComponent = new SlideComponent(program.articleID, i + 1, textBlockObject.textBlock);
-            slideComponents.push(slideComponent.toObjectLiteral());
-            ticketHTML = ticketHTML.substring(textBlockObject.endIndex);
-            textBlockObject = stringOps.getTextBlock(ticketHTML, startSlideRegExp, endSlideRegExp, false, true);
-            // console.log(JSON.stringify(textBlockObject, undefined, 2));
+        var textBlockObject = stringOps.getTextBlock(ticketHTML, startSlideRegExp, endSlideRegExp, false, true);  
+        
+        var textBlock = textBlockObject.textBlock;
+    
+        if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+            throw new Error("No slides found in the prodticket");
+        } else {
+            for (var i = 0; textBlockObject.endIndex != -1; i++) {         
+                slideComponent = new SlideComponent(program.articleID, i + 1, textBlockObject.textBlock);
+                slideComponents.push(slideComponent.toObjectLiteral());
+                ticketHTML = ticketHTML.substring(textBlockObject.endIndex);
+                textBlockObject = stringOps.getTextBlock(ticketHTML, startSlideRegExp, endSlideRegExp, false, true);
+                // console.log(JSON.stringify(textBlockObject, undefined, 2));
+            }
+            // console.log(slideComponents);
+            return slideComponents;
         }
-        // console.log(slideComponents);
-        return slideComponents;
     }
 }
 
@@ -116,13 +129,19 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML, program)
         var slideComponents = []; 
         var textBlockObject = stringOps.getTextBlock(ticketHTML, startSlideRegExp, endSlideRegExp, false); 
 
-        // Slide Component should have a component number set to 1 
-        // This will make slide path in this format: 000/000/000000_2 
-        var slideComponent = new SlideComponent(program.articleID, 1, textBlockObject.textBlock);
+        var textBlock = textBlockObject.textBlock;
 
-        slideComponents.push(slideComponent.toObjectLiteral());
-        // console.log(JSON.stringify(slideComponents, undefined, 2));
-        return slideComponents;
+        if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+            throw new Error("No slides found in the prodticket");
+        } else {
+            // Slide Component should have a component number set to 1 
+            // This will make slide path in this format: 000/000/000000_2 
+            var slideComponent = new SlideComponent(program.articleID, 1, textBlockObject.textBlock);
+    
+            slideComponents.push(slideComponent.toObjectLiteral());
+            // console.log(JSON.stringify(slideComponents, undefined, 2));
+            return slideComponents;
+        }
     }    
 }
 

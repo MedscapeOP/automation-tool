@@ -75,17 +75,9 @@ Main sections to include:
 /* CHECKLIST FUNCTION  
 -------------------------------------- */
 function checklistSpotlight(ticket, program) {
-    // var result = {
-    //     title: null, 
-    //     byline: null,
-    //     peerReviewer: null,
-    //     collectionPageInfo: null,
-    //     slides: null,
-    //     abbreviations: null,
-    //     references: null,
-    //     slideDeckDiv: null,
-    //     forYourPatientMarkup: null
-    // };
+    /*
+    Implement checklist...() functions. These should try to call the required prodticket get functions and assign the results to an ArticleChecklist instance. If an error is thrown set properties[prop].result to null. After finding results, call the instance's print method and output result.printHTML into .html file. Lastly, return the result.properties object that stores the results of these calls.  
+    */
     var checklist = new ArticleChecklist();
 
     checklist.title.result = prodticket.getTitle(ticket, program);

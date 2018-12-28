@@ -50,45 +50,67 @@ function checkTicket(ticketHTML) {
 
 function getTitle (ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var rawTitle = findTitle[program.codeName](ticketHTML);
-        return rawTitle;
-    } else {
-        return "TITLE IS BAD";
+        try {
+            var rawTitle = findTitle[program.codeName](ticketHTML);
+            return rawTitle;            
+        } catch (error) {
+            return error;
+        }
     }
 }
 
 function getByline (ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var rawByline = findByline[program.codeName](ticketHTML);
-        return rawByline;
+        try {
+            var rawByline = findByline[program.codeName](ticketHTML);
+            return rawByline;
+        } catch (error) {
+            return error;
+        }
     }
 }
 
 function getContributors(ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var rawContributors = findContributors[program.codeName](ticketHTML);
-        return rawContributors;
+        try {
+            var rawContributors = findContributors[program.codeName](ticketHTML);
+            return rawContributors;
+        } catch (error) {
+            return error; 
+        }
     }
 }
 
 function getReferences (ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var rawReferences = findReferences[program.codeName](ticketHTML);
-        return rawReferences;
+        try {
+            var rawReferences = findReferences[program.codeName](ticketHTML);
+            return rawReferences;
+        } catch (error) {
+            return error; 
+        }
     }    
 }
 
 function getAbbreviations (ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var rawAbbreviations = findAbbreviations[program.codeName](ticketHTML);
-        return rawAbbreviations;
+        try {
+            var rawAbbreviations = findAbbreviations[program.codeName](ticketHTML);
+            return rawAbbreviations;
+        } catch (error) {
+            return error; 
+        }
     }   
 }
 
 function getPeerReviewer (ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var rawPeerReviewer = findPeerReviewer[program.codeName](ticketHTML);
-        return `<div>${rawPeerReviewer}</div>`;
+        try {
+            var rawPeerReviewer = findPeerReviewer[program.codeName](ticketHTML);
+            return `<div>${rawPeerReviewer}</div>`;
+        } catch (error) {
+            return error; 
+        }
     }    
 }
 
@@ -105,22 +127,34 @@ function getSlides (ticketHTML, program) {
 
 function getGoalStatement (ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var goalStatement = findGoalStatement[program.codeName](ticketHTML, program);
-        return goalStatement;
+        try {
+            var goalStatement = findGoalStatement[program.codeName](ticketHTML, program);
+            return goalStatement;            
+        } catch (error) {
+            return error;
+        }
     }    
 }
 
 function getTargetAudience(ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var targetAudience = findTargetAudience[program.codeName](ticketHTML, program);
-        return targetAudience;
+        try {
+            var targetAudience = findTargetAudience[program.codeName](ticketHTML, program);
+            return targetAudience;
+        } catch (error) {
+            return error; 
+        }
     }
 }
 
 function getLearningObjectives(ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var learningObjectives = findLearningObjectives[program.codeName](ticketHTML, program);
-        return learningObjectives;
+        try {
+            var learningObjectives = findLearningObjectives[program.codeName](ticketHTML, program);
+            return learningObjectives;
+        } catch (error) {
+            return error;
+        }
     }
 }
 
@@ -157,71 +191,111 @@ function getCollectionPage(ticketHTML, program) {
 
 function getComponents(ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var components = findComponents[program.codeName](ticketHTML, program);
-        return components;
+        try {
+            var components = findComponents[program.codeName](ticketHTML, program);
+            return components;
+        } catch (error) {
+            return error;
+        }
     }
 }
 
 function getActivityOverview(ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var rawActivityOverview = findActivityOverview[program.codeName](ticketHTML);
-        return rawActivityOverview;
+        try {
+            var rawActivityOverview = findActivityOverview[program.codeName](ticketHTML);
+            return rawActivityOverview;
+        } catch (error) {
+            return error;
+        }
     } 
 }
 
 function getTeaser(ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var rawTeaser = findTeaser[program.codeName](ticketHTML);
-        return rawTeaser;
+        try {            
+            var rawTeaser = findTeaser[program.codeName](ticketHTML);
+            return rawTeaser;
+        } catch (error) {
+            return error;
+        }
     } 
 }
 
 function getAccreditation(ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var rawCreditStatement = findAccreditation[program.codeName](ticketHTML);
-        return rawCreditStatement;
+        try {
+            var rawCreditStatement = findAccreditation[program.codeName](ticketHTML);
+            return rawCreditStatement;
+        } catch (error) {
+            return error; 
+        }
     } 
 }
 
 function getSupporter(ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var rawSupporter = findSupporter[program.codeName](ticketHTML);
-        return rawSupporter;
+        try {
+            var rawSupporter = findSupporter[program.codeName](ticketHTML);
+            return rawSupporter;
+        } catch (error) {
+            return error;
+        }
     } 
 }
 
 function getCreditsAvailable(ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var rawCreditsAvailable = findCreditsAvailable[program.codeName](ticketHTML);
-        return rawCreditsAvailable;
+        try {
+            var rawCreditsAvailable = findCreditsAvailable[program.codeName](ticketHTML);
+            return rawCreditsAvailable;
+        } catch (error) {
+            return error;
+        }
     } 
 }
 
 function getLocationInfo(ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var rawLocationInfo = findLocationInfo[program.codeName](ticketHTML);
-        return rawLocationInfo;
+        try {
+            var rawLocationInfo = findLocationInfo[program.codeName](ticketHTML);
+            return rawLocationInfo;
+        } catch (error) {
+            return error;
+        }
     } 
 }
 
 function getDateTime(ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var rawDateTime = findDateTime[program.codeName](ticketHTML);
-        return rawDateTime;
+        try {
+            var rawDateTime = findDateTime[program.codeName](ticketHTML);
+            return rawDateTime;
+        } catch (error) {
+            return error;
+        }
     } 
 }
 
 function getProgramDetails(ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var rawProgramDetails = findProgramDetails[program.codeName](ticketHTML);
-        return rawProgramDetails;
+        try {
+            var rawProgramDetails = findProgramDetails[program.codeName](ticketHTML);
+            return rawProgramDetails;
+        } catch (error) {
+            return error;
+        }
     } 
 }
 
 function getAssociationDisclaimer(ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
-        var rawDisclaimer = findAssociationDisclaimer[program.codeName](ticketHTML);
-        return rawDisclaimer;
+        try {
+            var rawDisclaimer = findAssociationDisclaimer[program.codeName](ticketHTML);
+            return rawDisclaimer;
+        } catch (error) {
+            return error;
+        }
     } 
 }
 
