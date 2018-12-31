@@ -76,41 +76,58 @@ Main sections to include:
 -------------------------------------- */
 function checklistSpotlight(ticket, program) {
     /*
+    var result = {
+        title: null, 
+        byline: null,
+        learningObjectives: null,
+        goalStatement: null,
+        targetAudience: null,
+        contributors: null, 
+        peerReviewer: null,
+        collectionPageInfo: null,
+        slides: null,
+        abbreviations: null,
+        references: null,
+        downloadableSlideDeck: null,
+        contrbtrPreContent: null,
+        cpyrtHolder: null,
+        bkmtrFront: null 
+    };
     Implement checklist...() functions. These should try to call the required prodticket get functions and assign the results to an ArticleChecklist instance. If an error is thrown set properties[prop].result to null. After finding results, call the instance's print method and output result.printHTML into .html file. Lastly, return the result.properties object that stores the results of these calls.  
     */
     var checklist = new ArticleChecklist();
-
+    // TITLE 
     checklist.title.result = prodticket.getTitle(ticket, program);
+    // BYLINE
     checklist.byline.result = prodticket.getByline(ticket, program);
+    // LEARNING OBJECTIVES
     checklist.learningObjectives.result = prodticket.getLearningObjectives(ticket, program);
+    // GOAL STATEMENT
     checklist.goalStatement.result = prodticket.getGoalStatement(ticket, program);
+    // TARGET AUDIENCE 
     checklist.targetAudience.result = prodticket.getTargetAudience(ticket, program);
-
+    // PEER REVIEWER 
     if (program.hasPeerReviewer) {
-        checklist.peerReviewer.result = prodticket.getPeerReviewer(ticket, program);
+        checklist.peerReviewer.result = prodticket.getPeerReviewer(ticket, program);        
     } 
+    // COLLECTION PAGE 
     if (program.hasCollectionPage) {
         checklist.collectionPageInfo.result = prodticket.getCollectionPage(ticket, program);
     }
-    /*
-    CHECKLIST PRINT FUNCTION 
-        For each property in result 
-            - If property.result is instance of Error 
-                - Make the output string = error.message 
-            - Else             
-                - Call the properties' print function (which uses the result). 
-    */
-
+    // SLIDES 
     checklist.slides.result = prodticket.getSlides(ticket, program);
+    // ABBREVIATIONS
     checklist.abbreviations.result = prodticket.getAbbreviations(ticket, program);
+    // REFERENCES
     checklist.references.result = prodticket.getReferences(ticket, program);
+    // DOWNLOADABLE SLIDES 
     checklist.downloadableSlides.result = snippets.downloadableSlides(program.articleID);
     
-    // set contrbtr_pre_content
+    // CONTRIBUTOR PRE CONTENT (CONTENT ABOVE CONTRIBS)
     checklist.contrbtrPreContent.result = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
-    // set copyright holder 
+    // COPYRIGHT HOLDER 
     checklist.cpyrtHolder.result = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
-    // set backmatter front page 
+    // BACKMATTER FRONT PAGE      
     checklist.bkmtrFront.result = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
 
     return checklist.print();
@@ -132,6 +149,8 @@ function buildSpotlight(ticket, program) {
     referencesTOC,
     slideDeckDiv,
     forYourPatientMarkup;
+
+    var checklistResult = checklistSpotlight(ticket, program);
 
     title = prodticket.getTitle(ticket, program);
     byline = prodticket.getByline(ticket, program);
@@ -206,7 +225,10 @@ function buildSpotlight(ticket, program) {
         finalArticle._childElements[0]._childElements[0].insertSubsectionElement(forYourPatientSubsection); 
     }
     
-    return finalArticle;
+    return {
+        finishedArticleObject: finalArticle,
+        checklistHTML: checklistResult.printHTML  
+    };
 };
 
 module.exports = {

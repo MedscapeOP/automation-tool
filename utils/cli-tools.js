@@ -75,7 +75,6 @@ function writeOutputFile(filename, data, self, completionMessage, callback) {
     });
 };
 
-
 function readInputFile(filepath) {
     try {
         return fs.readFileSync(filepath, 'utf8');

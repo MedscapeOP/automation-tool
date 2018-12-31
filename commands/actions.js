@@ -11,10 +11,10 @@ let callbacks = require('./callbacks');
  * @param  {} self
  * @param  {} callback
  * @param  {} functionOrArticle
- * @param  {} outputFile
+ * @param  {} outputFiles
  * @param  {} completionMessage
  */
-function completeGenerateAction(self, callback, functionOrArticle, outputFile, completionMessage) {
+function completeGenerateAction(self, callback, functionOrArticle, checklistHTML, outputFiles, completionMessages) {
     try {
         // Build final output function from the command module
         if (functionOrArticle instanceof ProfArticle) {
@@ -23,10 +23,14 @@ function completeGenerateAction(self, callback, functionOrArticle, outputFile, c
             var finishedArticleObject = functionOrArticle(self);
         }
         // Convert to XML from JS 
-        var result = utils.xmlOps.objectToXMLString(finishedArticleObject.toObjectLiteral());
-        result = utils.cleanHTML.cleanEntities(result);
-        // Write the output file 
-        utils.cliTools.writeOutputFile(outputFile, result, self, completionMessage, callback);
+        var resultXML = utils.xmlOps.objectToXMLString(finishedArticleObject.toObjectLiteral());
+        resultXML = utils.cleanHTML.cleanEntities(resultXML);
+        
+        // Write the output XML 
+        utils.cliTools.writeOutputFile(outputFiles.xmlFile, resultXML, self, completionMessages.xmlFile, callback);
+
+        // Write the output Checklist 
+        utils.cliTools.writeOutputFile(outputFiles.checklist, checklistHTML, self, completionMessages.checklist, callback);
     } catch (error) {
         self.log(error);
         callback(); 
@@ -44,7 +48,7 @@ function completeGenerateAction(self, callback, functionOrArticle, outputFile, c
  * @param  {} buildFinalOutput
  * @param  {} outputFile
  */
-function basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFile) {
+function basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles) {
 
     // Has LLA? 
     prompts.llaPrompt(self)
@@ -72,11 +76,14 @@ function basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOu
         // Build Final Output
         return callbacks.promiseCallback(self, callback, program, answers, "hasForYourPatient", buildFinalOutput);
     })
-    .then((finishedArticleObject) => {
+    .then((buildResult) => {
         self.log(program);
         vorpal.emit('client_prompt_submit', program);
-        var completionMessage = `${program.name} created successfully! Check your output folder for the file: ${chalk.cyan(outputFile())}`;
-        completeGenerateAction(self, callback, finishedArticleObject, outputFile(), completionMessage);   
+        var completionMessages = {};
+        completionMessages.xmlFile = `${program.name} XML created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().xmlFile)}`;
+        completionMessages.checklist = `${program.name} Checklist created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().checklist)}`;
+
+        completeGenerateAction(self, callback, buildResult.finishedArticleObject, buildResult.checklistHTML, outputFiles(), completionMessages);   
     }) 
     .catch((err) => {
         self.log(err);
