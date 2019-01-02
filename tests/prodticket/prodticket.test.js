@@ -111,20 +111,38 @@ describe('Prodticket Module Functions', function () {
         var contributorsSL = require("./input/contributors-sl");
         var contributorsTH = require("./input/contributors-th");
         var contributorsTH_alt = require("./input/contributors-th-alt");
-        // it("should return the program contributors from the .html - Spotlight", function () {
-        //     var result = prodticket.getContributors(prodticketSL, config.programs.spotlight);
-        //     expect(result).to.equal("<p>Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP; Alok A. Khorana, MD; Jeffrey I. Weitz, MD, FRCP</p>");
-        // });
+        it("should return the program contributors from the .html - Spotlight", function () {
+            var result = prodticket.getContributors(prodticketSL, config.programs.spotlight);
+
+            // fs.writeFileSync(__dirname + '/output/contributors.json', JSON.stringify(result, undefined, 2), function(err) {
+            //     if(err) {
+            //         return console.log(err);
+            //     } else {
+            //         return;
+            //     }
+            // });
+
+            for (var i = 0; i < contributorsSL.length; i++) {
+                expect(result[i].title).to.equalIgnoreSpaces(contributorsSL[i].title);
+                expect(result[i].name).to.equalIgnoreSpaces(contributorsSL[i].name);
+                expect(result[i].affiliation).to.equalIgnoreSpaces(contributorsSL[i].affiliation);
+                expect(result[i].disclosure).to.equalIgnoreSpaces(contributorsSL[i].disclosure);
+            }
+        });
 
         // it("should return the program contributors from the .html - Curbside", function () {
         //     var result = prodticket.getContributors(prodticketCC, config.programs.curbsideConsult);
-        //     expect(result).to.equal("<p>Jeffrey I. Weitz, MD, FRCP(C); Alok A. Khorana, MD</p>");
+
+        //     for (var i = 0; i < contributorsCC.length; i++) {
+        //         expect(result[i].title).to.equalIgnoreSpaces(contributorsCC[i].title);
+        //         expect(result[i].name).to.equalIgnoreSpaces(contributorsCC[i].name);
+        //         expect(result[i].affiliation).to.equalIgnoreSpaces(contributorsCC[i].affiliation);
+        //         expect(result[i].disclosure).to.equalIgnoreSpaces(contributorsCC[i].disclosure);
+        //     }
         // });
 
         it("should return the program contributors from the .html - TownHall", function () {
             var result = prodticket.getContributors(prodticketTH_alt, config.programs.townHall);
-
-            // console.log("RESULT: ", result);
 
             for (var i = 0; i < contributorsTH_alt.length; i++) {
                 expect(result[i].title).to.equalIgnoreSpaces(contributorsTH_alt[i].title);
@@ -136,15 +154,6 @@ describe('Prodticket Module Functions', function () {
 
         it("should return the program contributors (With Titles) from the .html - TownHall", function () {
             var result = prodticket.getContributors(prodticketTH, config.programs.townHall);
-
-            // fs.writeFileSync(__dirname + '/output/contributors.json', JSON.stringify(result, undefined, 2), function(err) {
-            //     if(err) {
-            //         return console.log(err);
-            //     } else {
-            //         return;
-            //     }
-            // });
-            // console.log("RESULT: ", result);
 
             for (var i = 0; i < contributorsTH.length; i++) {
                 expect(result[i].title).to.equalIgnoreSpaces(contributorsTH[i].title);

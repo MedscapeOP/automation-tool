@@ -20,7 +20,10 @@ let titleRegexArray = [
     /.*Co-Moderator.*/gi,
     /.*Moderator.*/gi,
     /.*Faculty.*/gi,
-    /.*Panelist.*/gi 
+    /.*Panelist.*/gi,
+    /.*Anticoagulation Management Steering Committee.*/gi,
+    /.*Vascular Protection Steering Committee.*/gi, 
+    /.*Steering Committee.*/gi
 ];
 
 function buildContributors(ticketHTML) {
@@ -122,7 +125,18 @@ exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
 
 // Spotlight
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
-    return "";
+    var {textBlock: disclosureBlock} = stringOps.getTextBlock(ticketHTML, "<strong>Disclosures", '<strong>Additional Planners/Reviewers', true, true);
+
+    var {textBlock: contributorBlock} = stringOps.getTextBlock(disclosureBlock, /<table border=".*/g, /<\/table>/g, true, false);
+
+    if (stringOps.isBlankOrWhiteSpace(contributorBlock) || stringOps.isEmptyString(contributorBlock) || contributorBlock.length < 10) {
+        throw new Error("No contributors found in the Speakers section of the prodticket");
+    } else {
+        // console.log("CONTRIBUTOR BLOCK: ", contributorBlock);
+        // return JSON.stringify(buildContributors(contributorBlock), undefined, 2);
+        return buildContributors(contributorBlock);
+        // return "<p>" + cleanHTML.singleLine(cleanHTML.plainText(byline)).trim() + "</p>";
+    }
 }
 
 

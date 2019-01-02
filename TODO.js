@@ -1,6 +1,7 @@
 /*
 TODO:
 - Use properties from checklist to determine elements to build in buildSpotlight()
+    - DONE 
 - Create findContributors for spotlight and clinical brief
 - Update other build functions to have the same structure as spotlight.
 - Fix errors in Learning Objective print and Collection page print.

@@ -63,20 +63,24 @@ function buildSlidesTOC(slidesComponent, videoEmbed=false, eduImpactSubsection=f
 
     // BUILD: Main Slides Subsection
     var subsectionElement = new SubsectionElement(true, false, false);
-    if (slidesComponent != null) {
-        var slidesSubsection = buildSlides(slidesComponent.rawSlides, subsectionElement, slidesComponent.slidePath);        
-    } else {
+    if ((typeof slidesComponent === 'string')) {
         var slidesSubsection = subsectionElement;
+    } else {
+        var slidesSubsection = buildSlides(slidesComponent.rawSlides, subsectionElement, slidesComponent.slidePath);        
     }
 
     // console.log("SLIDES SUBSECTION: ", slidesSubsection.toObjectLiteral().elements[0].elements[3].elements[3].elements);
 
     // Insert Video Embed - If necessary 
     if (videoEmbed) {
-        slidesSubsection.subsectionContent = utils.wrapSlideIntro(snippets.videoEmbed(slidesComponent));
+        if ((typeof slidesComponent === 'number') || (typeof slidesComponent === 'string')) {
+            slidesSubsection.subsectionContent = utils.wrapSlideIntro(snippets.videoEmbed(null, slidesComponent));
+        } else {
+            slidesSubsection.subsectionContent = utils.wrapSlideIntro(snippets.videoEmbed(slidesComponent));
+        }
     } 
 
-    if (isLastComponent) {
+    if (isLastComponent && typeof slidesComponent == 'object') {
         var lastSlideGroup = new SlideGroup(slidesComponent.slidePath, "undefined");
         lastSlideGroup.sectionImage = null;
         lastSlideGroup.sectionLabel = null;

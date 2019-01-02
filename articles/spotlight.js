@@ -31,10 +31,13 @@ const snippets = require('../snippets');
 /* SLIDES / MAIN CONTENT 
 -------------------------------------- */
 function getSlidesTOC (slidesComponents, program) {
-    // Get Slide Component from prodticket.getSlides.
+    // Assign slideComponent 
+        // If slideComponents is truthy grab the first element in array 
+        // If slideComponents is falsy assign the articleID 
+        // buildSlidesTOC is able to use articleID instead 
+    var slidesComponent = (slidesComponents ? slidesComponents[0] : program.articleID);
     // Check if LLA 
     // If LLA build slides with Video embed AND Edu Impact challenge 
-    var slidesComponent = (slidesComponents ? slidesComponents[0] : null);
     if (program.hasLLA) {
         return articleUtils.buildSlidesTOC(slidesComponent, true, true, true);
     }
@@ -105,6 +108,8 @@ function checklistSpotlight(ticket, program) {
     checklist.goalStatement.result = prodticket.getGoalStatement(ticket, program);
     // TARGET AUDIENCE 
     checklist.targetAudience.result = prodticket.getTargetAudience(ticket, program);
+    // CONTRIBUTORS
+    checklist.contributors.result = prodticket.getContributors(ticket, program);
     // PEER REVIEWER 
     if (program.hasPeerReviewer) {
         checklist.peerReviewer.result = prodticket.getPeerReviewer(ticket, program);        
@@ -151,15 +156,15 @@ function buildSpotlight(ticket, program) {
     var checklistResult = checklistSpotlight(ticket, program);
 
     // title = prodticket.getTitle(ticket, program);
-    title = (checklistResult.properties.title ? checklistResult.properties.title: "");
+    title = (checklistResult.properties.title ? checklistResult.properties.title.result : "");
     
     // byline = prodticket.getByline(ticket, program);
-    byline = (checklistResult.properties.byline ? checklistResult.properties.byline: "");
+    byline = (checklistResult.properties.byline ? checklistResult.properties.byline.result : "");
     
     // if (program.hasPeerReviewer) {
     //     peerReviewer = prodticket.getPeerReviewer(ticket, program);
     // } 
-    peerReviewer = (checklistResult.properties.peerReviewer ? checklistResult.properties.peerReviewer: "");
+    peerReviewer = (checklistResult.properties.peerReviewer ? checklistResult.properties.peerReviewer.result : "");
 
 
     if (program.hasLLA) {
@@ -168,12 +173,12 @@ function buildSpotlight(ticket, program) {
         blankResultsTOC = articleUtils.buildBlankTOC();
     }
 
-    slidesTOC = getSlidesTOC(checklistResult.properties.slides, program); 
+    slidesTOC = getSlidesTOC(checklistResult.properties.slides.result, program); 
 
-    var abbreviationsMarkup = (checklistResult.properties.abbreviations ? checklistResult.properties.abbreviations : "");
+    var abbreviationsMarkup = (checklistResult.properties.abbreviations ? checklistResult.properties.abbreviations.result : "");
     abbreviationsTOC = articleUtils.buildAbbreviations(abbreviationsMarkup, program);
 
-    var referencesMarkup = (checklistResult.properties.references ? checklistResult.properties.references : "");
+    var referencesMarkup = (checklistResult.properties.references ? checklistResult.properties.references.result : "");
     referencesTOC = articleUtils.buildReferences(referencesMarkup, program);
     
     // Build Main Article Object - Instantiate and Populate Article
@@ -185,14 +190,14 @@ function buildSpotlight(ticket, program) {
     // insert peer reviewer
     finalArticle.contrbtrPostContent = peerReviewer;
     // set contrbtr_pre_content
-    finalArticle.contrbtrPreContent = checklistResult.properties.contrbtrPreContent;
+    finalArticle.contrbtrPreContent = checklistResult.properties.contrbtrPreContent.result;
     // set copyright holder 
-    finalArticle.cpyrtHolder = checklistResult.properties.cpyrtHolder;
+    finalArticle.cpyrtHolder = checklistResult.properties.cpyrtHolder.result;
     // set backmatter front page 
-    finalArticle.bkmtrFront = checklistResult.properties.bkmtrFront;
-    
+    finalArticle.bkmtrFront = checklistResult.properties.bkmtrFront.result;
+
     // insert collection page info - Banner image and Above title
-    collectionPageInfo = (checklistResult.properties.collectionPageInfo);
+    collectionPageInfo = (checklistResult.properties.collectionPageInfo ? checklistResult.properties.collectionPageInfo.result : null);
     if (collectionPageInfo) {
         finalArticle.bannerImage = collectionPageInfo.bannerFileName;
         finalArticle.insertAboveTitleCA(collectionPageInfo.title, collectionPageInfo.advancesFileName);
@@ -223,7 +228,6 @@ function buildSpotlight(ticket, program) {
         }
 
         forYourPatientSubsection.subsectionContent = utils.wrapSlideIntro(forYourPatientMarkup);
-
         finalArticle._childElements[0]._childElements[0].insertSubsectionElement(forYourPatientSubsection); 
     }
     

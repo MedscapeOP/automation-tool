@@ -54,9 +54,13 @@ describe('Spotlight', function () {
     
     describe('#getSlidesTOC()', function () {
         it('should return slides TOC', function () {
+            var checklist = new app.classes.ArticleChecklist();
+            checklist.slides.result = app.prodTicket.getSlides(prodTicket, program);
+            var checklistResult = checklist.print();
+
             program.hasLLA = false;
 
-            var result = spotlight.getSlidesTOC(prodTicket, program).toObjectLiteral();
+            var result = spotlight.getSlidesTOC(checklistResult.properties.slides.result, program).toObjectLiteral();
 
             result = utils.xmlOps.objectToXMLString(result);
             result = utils.cleanHTML.cleanEntities(result);
@@ -65,9 +69,15 @@ describe('Spotlight', function () {
         });
 
         it('should return slides TOC with Embed and Impact Challenge - if program.hasLLA', function () {
+            var checklist = new app.classes.ArticleChecklist();
+            checklist.slides.result = app.prodTicket.getSlides(prodTicket, program);
+            var checklistResult = checklist.print();
+
             program.hasLLA = true;
 
-            var result = spotlight.getSlidesTOC(prodTicket, program).toObjectLiteral();
+            console.log("SLIDES: ", checklistResult.properties.slides.result);
+
+            var result = spotlight.getSlidesTOC(checklistResult.properties.slides.result, program).toObjectLiteral();
             
             result = utils.xmlOps.objectToXMLString(result);
             result = utils.cleanHTML.cleanEntities(result);
@@ -97,7 +107,7 @@ describe('Spotlight', function () {
             program.hasLLA = true;
             // program.articleID = "897160";
 
-            var result = spotlight.buildSpotlight(prodTicket, program).toObjectLiteral();
+            var result = spotlight.buildSpotlight(prodTicket, program).finishedArticleObject.toObjectLiteral();
 
             // console.log("RESULT: ", JSON.stringify(result, undefined, 2));
 
