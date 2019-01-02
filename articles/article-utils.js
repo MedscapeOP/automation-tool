@@ -63,7 +63,11 @@ function buildSlidesTOC(slidesComponent, videoEmbed=false, eduImpactSubsection=f
 
     // BUILD: Main Slides Subsection
     var subsectionElement = new SubsectionElement(true, false, false);
-    var slidesSubsection = buildSlides(slidesComponent.rawSlides, subsectionElement, slidesComponent.slidePath);
+    if (slidesComponent != null) {
+        var slidesSubsection = buildSlides(slidesComponent.rawSlides, subsectionElement, slidesComponent.slidePath);        
+    } else {
+        var slidesSubsection = subsectionElement;
+    }
 
     // console.log("SLIDES SUBSECTION: ", slidesSubsection.toObjectLiteral().elements[0].elements[3].elements[3].elements);
 

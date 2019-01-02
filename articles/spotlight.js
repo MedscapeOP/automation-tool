@@ -30,12 +30,11 @@ const snippets = require('../snippets');
 
 /* SLIDES / MAIN CONTENT 
 -------------------------------------- */
-function getSlidesTOC (ticket, program) {
+function getSlidesTOC (slidesComponents, program) {
     // Get Slide Component from prodticket.getSlides.
     // Check if LLA 
     // If LLA build slides with Video embed AND Edu Impact challenge 
-    var slidesComponent = prodticket.getSlides(ticket, program)[0];
-
+    var slidesComponent = (slidesComponents ? slidesComponents[0] : null);
     if (program.hasLLA) {
         return articleUtils.buildSlidesTOC(slidesComponent, true, true, true);
     }
@@ -147,35 +146,36 @@ function buildSpotlight(ticket, program) {
     blankResultsTOC, 
     abbreviationsTOC,
     referencesTOC,
-    slideDeckDiv,
     forYourPatientMarkup;
 
     var checklistResult = checklistSpotlight(ticket, program);
 
-    title = prodticket.getTitle(ticket, program);
-    byline = prodticket.getByline(ticket, program);
-    if (program.hasPeerReviewer) {
-        peerReviewer = prodticket.getPeerReviewer(ticket, program);
-    } 
-    if (program.hasCollectionPage) {
-        collectionPageInfo = prodticket.getCollectionPage(ticket, program);
-    }
+    // title = prodticket.getTitle(ticket, program);
+    title = (checklistResult.properties.title ? checklistResult.properties.title: "");
+    
+    // byline = prodticket.getByline(ticket, program);
+    byline = (checklistResult.properties.byline ? checklistResult.properties.byline: "");
+    
+    // if (program.hasPeerReviewer) {
+    //     peerReviewer = prodticket.getPeerReviewer(ticket, program);
+    // } 
+    peerReviewer = (checklistResult.properties.peerReviewer ? checklistResult.properties.peerReviewer: "");
+
+
     if (program.hasLLA) {
         preAssessmentTOC = getLLAPreTOC(ticket, program);
         postAssessmentTOC = getLLAPostTOC(ticket, program);
         blankResultsTOC = articleUtils.buildBlankTOC();
     }
 
-    slidesTOC = getSlidesTOC(ticket, program); 
-    var abbreviationsMarkup = prodticket.getAbbreviations(ticket, program);
+    slidesTOC = getSlidesTOC(checklistResult.properties.slides, program); 
+
+    var abbreviationsMarkup = (checklistResult.properties.abbreviations ? checklistResult.properties.abbreviations : "");
     abbreviationsTOC = articleUtils.buildAbbreviations(abbreviationsMarkup, program);
 
-    var referencesMarkup = prodticket.getReferences(ticket, program);
+    var referencesMarkup = (checklistResult.properties.references ? checklistResult.properties.references : "");
     referencesTOC = articleUtils.buildReferences(referencesMarkup, program);
-
-    slideDeckDiv = snippets.downloadableSlides(program.articleID);
     
-
     // Build Main Article Object - Instantiate and Populate Article
     var finalArticle = new ProfArticle("SlidePresentation", program.hasOUS);
     // Set article title (pass markup)
@@ -185,12 +185,14 @@ function buildSpotlight(ticket, program) {
     // insert peer reviewer
     finalArticle.contrbtrPostContent = peerReviewer;
     // set contrbtr_pre_content
-    finalArticle.contrbtrPreContent = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
+    finalArticle.contrbtrPreContent = checklistResult.properties.contrbtrPreContent;
     // set copyright holder 
-    finalArticle.cpyrtHolder = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
+    finalArticle.cpyrtHolder = checklistResult.properties.cpyrtHolder;
     // set backmatter front page 
-    finalArticle.bkmtrFront = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
+    finalArticle.bkmtrFront = checklistResult.properties.bkmtrFront;
+    
     // insert collection page info - Banner image and Above title
+    collectionPageInfo = (checklistResult.properties.collectionPageInfo);
     if (collectionPageInfo) {
         finalArticle.bannerImage = collectionPageInfo.bannerFileName;
         finalArticle.insertAboveTitleCA(collectionPageInfo.title, collectionPageInfo.advancesFileName);

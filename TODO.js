@@ -1,10 +1,10 @@
 /*
-TODO: Strategy for Handling missing info / not finding info in prodticket 
-- prodticket function runs
-    - checklist function runs and uses results of what is found
-    - checklist function could then return an array of components to include in the build function 
-        - This makes sense because if the checklist deems it "Not found" we shouldn't try to build the corresponding TOC element. 
-- basically we need a better interface between actually building XML and scanning for text in prodticket. 
+TODO:
+- Use properties from checklist to determine elements to build in buildSpotlight()
+- Create findContributors for spotlight and clinical brief
+- Update other build functions to have the same structure as spotlight.
+- Fix errors in Learning Objective print and Collection page print.
+    - Apply cleaning functions to checklist object properties so that output is formatted.
 */ 
 
 /* 
