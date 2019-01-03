@@ -130,16 +130,17 @@ describe('Prodticket Module Functions', function () {
             }
         });
 
-        // it("should return the program contributors from the .html - Curbside", function () {
-        //     var result = prodticket.getContributors(prodticketCC, config.programs.curbsideConsult);
+        it("should return the program contributors from the .html - Curbside", function () {
+            var result = prodticket.getContributors(prodticketCC, config.programs.curbsideConsult);
+            console.log("RESULT CURBSIDE: ", result);
 
-        //     for (var i = 0; i < contributorsCC.length; i++) {
-        //         expect(result[i].title).to.equalIgnoreSpaces(contributorsCC[i].title);
-        //         expect(result[i].name).to.equalIgnoreSpaces(contributorsCC[i].name);
-        //         expect(result[i].affiliation).to.equalIgnoreSpaces(contributorsCC[i].affiliation);
-        //         expect(result[i].disclosure).to.equalIgnoreSpaces(contributorsCC[i].disclosure);
-        //     }
-        // });
+            for (var i = 0; i < contributorsCC.length; i++) {
+                expect(result[i].title).to.equalIgnoreSpaces(contributorsCC[i].title);
+                expect(result[i].name).to.equalIgnoreSpaces(contributorsCC[i].name);
+                expect(result[i].affiliation).to.equalIgnoreSpaces(contributorsCC[i].affiliation);
+                expect(result[i].disclosure).to.equalIgnoreSpaces(contributorsCC[i].disclosure);
+            }
+        });
 
         it("should return the program contributors from the .html - TownHall", function () {
             var result = prodticket.getContributors(prodticketTH_alt, config.programs.townHall);

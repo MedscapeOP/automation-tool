@@ -1,15 +1,14 @@
 const _ = require("lodash");
 const utils = require("../utils");
 const articleUtils = require('./article-utils');
-const {ProfArticle, TOCElement, SectionElement, SubsectionElement, SlideGroup} = require("../classes");
+const {ProfArticle, TOCElement, SectionElement, SubsectionElement, SlideGroup, ArticleChecklist} = require("../classes");
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
 
 
 /* TABLE OF CONTENTS TOC   
 -------------------------------------- */
-function getTableOfContentsTOC(ticket, program) {
-    var componentsArray = prodticket.getComponents(ticket, program);
+function getTableOfContentsTOC(componentsArray, program) {
     return articleUtils.buildTableOfContentsTOC(componentsArray, program);
 }
 
@@ -23,9 +22,7 @@ function getTableOfContentsTOC(ticket, program) {
  * @param {*} ticket 
  * @param {*} program 
  */
-function getSlidesTOCs (ticket, program) {
-    var slidesComponents = prodticket.getSlides(ticket, program);
-
+function getSlidesTOCs (slidesComponents, program) {
     var slideTOCs = [];
     
     var hasEduImpact = program.hasLLA;
@@ -43,8 +40,7 @@ function getSlidesTOCs (ticket, program) {
 
 /* LLA PRE TOC   
 -------------------------------------- */
-function getLLAPreSection(ticket, program) {
-    var goalStatementMarkup = prodticket.getGoalStatement(ticket, program);
+function getLLAPreSection(goalStatementMarkup, program) {
     return articleUtils.buildEduImpactPreSection(3, goalStatementMarkup);
 }
 
@@ -69,51 +65,96 @@ Main sections to include:
     7) ABBREVIATIONS - COMPLETE
     8) REFERENCES - COMPLETE 
 */
+/* CHECKLIST FUNCTION  
+-------------------------------------- */
+function checklistFirstResponse(ticket, program) {
+    var checklist = new ArticleChecklist();
+    // TITLE 
+    checklist.title.result = prodticket.getTitle(ticket, program);
+    // BYLINE
+    checklist.byline.result = prodticket.getByline(ticket, program);
+    // LEARNING OBJECTIVES
+    checklist.learningObjectives.result = prodticket.getLearningObjectives(ticket, program);
+    // GOAL STATEMENT
+    checklist.goalStatement.result = prodticket.getGoalStatement(ticket, program);
+    // TARGET AUDIENCE 
+    checklist.targetAudience.result = prodticket.getTargetAudience(ticket, program);
+    // CONTRIBUTORS
+    checklist.contributors.result = prodticket.getContributors(ticket, program);
+    // PEER REVIEWER 
+    if (program.hasPeerReviewer) {
+        checklist.peerReviewer.result = prodticket.getPeerReviewer(ticket, program);        
+    } 
+    // COLLECTION PAGE 
+    if (program.hasCollectionPage) {
+        checklist.collectionPageInfo.result = prodticket.getCollectionPage(ticket, program);
+    }
+    // COMPONENTS 
+    checklist.components.result = prodticket.getComponents(ticket, program);
+    // SLIDES 
+    checklist.slides.result = prodticket.getSlides(ticket, program);
+    // ABBREVIATIONS
+    checklist.abbreviations.result = prodticket.getAbbreviations(ticket, program);
+    // REFERENCES
+    checklist.references.result = prodticket.getReferences(ticket, program);
+    // DOWNLOADABLE SLIDES 
+    checklist.downloadableSlides.result = snippets.downloadableSlides(program.articleID);
+    
+    // CONTRIBUTOR PRE CONTENT (CONTENT ABOVE CONTRIBS)
+    checklist.contrbtrPreContent.result = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
+    // COPYRIGHT HOLDER 
+    checklist.cpyrtHolder.result = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
+    // BACKMATTER FRONT PAGE      
+    checklist.bkmtrFront.result = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
+
+    return checklist.print();
+}
+
+
+
 /* MASTER FUNCTION 
 -------------------------------------- */
 function buildFirstResponse(ticket, program) {
     var title, 
     byline, 
     peerReviewer, 
-    collectionPageInfo, 
+    collectionPageInfo,
+    componentsArray, 
     tableOfContentsTOC,
     slidesTOCs, 
     postAssessmentTOC, 
     blankResultsTOC, 
     abbreviationsTOC,
     referencesTOC,
-    slideDeckDiv,
     forYourPatientMarkup;
 
-    title = prodticket.getTitle(ticket, program);
-    byline = prodticket.getByline(ticket, program);
-    
-    
-    // BUILD TOCs 
-    tableOfContentsTOC = getTableOfContentsTOC(ticket, program);
+    var checklistResult = checklistFirstResponse(ticket, program);
 
-    if (program.hasPeerReviewer) {
-        peerReviewer = prodticket.getPeerReviewer(ticket, program);
-    } 
-    if (program.hasCollectionPage) {
-        collectionPageInfo = prodticket.getCollectionPage(ticket, program);
-    }
+    title = (checklistResult.properties.title ? checklistResult.properties.title.result : "");
+    byline = (checklistResult.properties.byline ? checklistResult.properties.byline.result : "");
+    
+    componentsArray = (checklistResult.properties.components ? checklistResult.properties.components.result : []);
+    // BUILD TOCs 
+    tableOfContentsTOC = getTableOfContentsTOC(componentsArray, program);
+
+    // if (program.hasPeerReviewer) {
+    //     peerReviewer = prodticket.getPeerReviewer(ticket, program);
+    // }
+    peerReviewer = (checklistResult.properties.peerReviewer ? checklistResult.properties.peerReviewer.result : "");
+
     if (program.hasLLA) {
-        tableOfContentsTOC.insertSectionElement(getLLAPreSection(ticket, program));
+        tableOfContentsTOC.insertSectionElement(getLLAPreSection(checklistResult.properties.goalStatement.result, program));
         postAssessmentTOC = getLLAPostTOC(ticket, program);
         blankResultsTOC = articleUtils.buildBlankTOC();
     }
 
+    slidesTOCs = getSlidesTOCs(checklistResult.properties.slides.result, program);
 
-    slidesTOCs = getSlidesTOCs(ticket, program); 
-    var abbreviationsMarkup = prodticket.getAbbreviations(ticket, program);
+    var abbreviationsMarkup = (checklistResult.properties.abbreviations ? checklistResult.properties.abbreviations.result : "");
     abbreviationsTOC = articleUtils.buildAbbreviations(abbreviationsMarkup, program);
 
-    var referencesMarkup = prodticket.getReferences(ticket, program);
+    var referencesMarkup = (checklistResult.properties.references ? checklistResult.properties.references.result : "");
     referencesTOC = articleUtils.buildReferences(referencesMarkup, program);
-
-    slideDeckDiv = snippets.downloadableSlides(program.articleID);
-    
 
     // Build Main Article Object - Instantiate and Populate Article
     var finalArticle = new ProfArticle("SlidePresentation", program.hasOUS);
@@ -124,12 +165,14 @@ function buildFirstResponse(ticket, program) {
     // insert peer reviewer
     finalArticle.contrbtrPostContent = peerReviewer;
     // set contrbtr_pre_content
-    finalArticle.contrbtrPreContent = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
+    finalArticle.contrbtrPreContent = checklistResult.properties.contrbtrPreContent.result;
     // set copyright holder 
-    finalArticle.cpyrtHolder = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
+    finalArticle.cpyrtHolder = checklistResult.properties.cpyrtHolder.result;
     // set backmatter front page 
-    finalArticle.bkmtrFront = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
+    finalArticle.bkmtrFront = checklistResult.properties.bkmtrFront.result;
+
     // insert collection page info - Banner image and Above title
+    collectionPageInfo = (checklistResult.properties.collectionPageInfo ? checklistResult.properties.collectionPageInfo.result : null);
     if (collectionPageInfo) {
         finalArticle.bannerImage = collectionPageInfo.bannerFileName;
         finalArticle.insertAboveTitleCA(collectionPageInfo.title, collectionPageInfo.advancesFileName);
@@ -170,7 +213,10 @@ function buildFirstResponse(ticket, program) {
         finalArticle._childElements[0]._childElements[0].insertSubsectionElement(forYourPatientSubsection); 
     }
     
-    return finalArticle;
+    return {
+        finishedArticleObject: finalArticle,
+        checklistHTML: checklistResult.printHTML  
+    };
 };
 
 module.exports = {

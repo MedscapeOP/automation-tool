@@ -59,7 +59,7 @@ function buildContributors(ticketHTML) {
         //     console.log("CONTRIB NAME REGEXP: ", (contribNameRegExp));
         //     console.log("TICKET AT NULL: ", ticketHTML);
         // }
-        // console.log("CONTRIB NAME REGEXP: ", ticketHTML.match(contribNameRegExp));
+        console.log("CONTRIB NAME REGEXP: ", ticketHTML.match(contribNameRegExp));
         name = ticketHTML.match(contribNameRegExp)[0];
         affiliations = stringOps.getTextBlock(ticketHTML, new RegExp(RegExp.escape(name), 'g'), disclosureStartRegExp);
         // ***** DEBUGGING *****

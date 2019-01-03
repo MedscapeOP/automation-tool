@@ -24,9 +24,14 @@ function getClinicalContext(ticket) {
         "Clinical Context", 
         "Study Synopsis"
     );
-    textBlock = utils.wrapSubsectionContent(textBlock, utils.cleanHTML.paragraph);
-    // build the actual section element
-    return articleUtils.buildSection(textBlock, label);
+
+    if (stringOps.isBlankOrWhiteSpace(textBlock) || stringOps.isEmptyString(textBlock)) {
+        return new Error("Clinical Context not found in the prodticket");
+    } else {
+        textBlock = utils.wrapSubsectionContent(textBlock, utils.cleanHTML.paragraph);
+        // build the actual section element
+        return articleUtils.buildSection(textBlock, label);
+    }
 }
 
 
@@ -39,9 +44,13 @@ function getSynopsisAndPerspective(ticket) {
         "Study Synopsis and Perspective", 
         "Study Highlights"
     );
-    textBlock = utils.wrapSubsectionContent(textBlock, utils.cleanHTML.paragraph);
-    // build the actual section element
-    return articleUtils.buildSection(textBlock, label);
+    if (stringOps.isBlankOrWhiteSpace(textBlock) || stringOps.isEmptyString(textBlock)) {
+        return new Error("Synopsis and Perspective not found in the prodticket");
+    } else {
+        textBlock = utils.wrapSubsectionContent(textBlock, utils.cleanHTML.paragraph);
+        // build the actual section element
+        return articleUtils.buildSection(textBlock, label);
+    }
 }
 
 
@@ -53,8 +62,12 @@ function getStudyHighlights (ticket) {
         "Study Highlights",
         "Clinical Implications"
     );
-    textBlock = utils.wrapSubsectionContent(textBlock, utils.cleanHTML.unorderedList);
-    return articleUtils.buildSection(textBlock, label);
+    if (stringOps.isBlankOrWhiteSpace(textBlock) || stringOps.isEmptyString(textBlock)) {
+        return new Error("Study Highlights not found in the prodticket");
+    } else {
+        textBlock = utils.wrapSubsectionContent(textBlock, utils.cleanHTML.unorderedList);
+        return articleUtils.buildSection(textBlock, label);
+    }
 }
 
 
@@ -66,8 +79,56 @@ function getClinicalImplications(ticket) {
         "Clinical Implications",
         "CME Post Test Questions"
     );
-    textBlock = utils.wrapSubsectionContent(textBlock, utils.cleanHTML.unorderedList);
-    return articleUtils.buildSection(textBlock, label);
+    if (stringOps.isBlankOrWhiteSpace(textBlock) || stringOps.isEmptyString(textBlock)) {
+        return new Error("Clinical Implications not found in the prodticket");
+    } else {
+        textBlock = utils.wrapSubsectionContent(textBlock, utils.cleanHTML.unorderedList);
+        return articleUtils.buildSection(textBlock, label);
+    }
+}
+
+
+/* CHECKLIST FUNCTION  
+-------------------------------------- */
+function checklistClinicalBrief(ticket, program) {
+    var checklist = new ArticleChecklist();
+    // TITLE 
+    checklist.title.result = prodticket.getTitle(ticket, program);
+    // BYLINE
+    checklist.byline.result = prodticket.getByline(ticket, program);
+    // LEARNING OBJECTIVES
+    checklist.learningObjectives.result = prodticket.getLearningObjectives(ticket, program);
+    // GOAL STATEMENT
+    checklist.goalStatement.result = prodticket.getGoalStatement(ticket, program);
+    // TARGET AUDIENCE 
+    checklist.targetAudience.result = prodticket.getTargetAudience(ticket, program);
+    // CONTRIBUTORS
+    checklist.contributors.result = prodticket.getContributors(ticket, program);
+    // PEER REVIEWER 
+    if (program.hasPeerReviewer) {
+        checklist.peerReviewer.result = prodticket.getPeerReviewer(ticket, program);        
+    } 
+    // COLLECTION PAGE 
+    if (program.hasCollectionPage) {
+        checklist.collectionPageInfo.result = prodticket.getCollectionPage(ticket, program);
+    }
+    // SLIDES 
+    checklist.slides.result = prodticket.getSlides(ticket, program);
+    // ABBREVIATIONS
+    checklist.abbreviations.result = prodticket.getAbbreviations(ticket, program);
+    // REFERENCES
+    checklist.references.result = prodticket.getReferences(ticket, program);
+    // DOWNLOADABLE SLIDES 
+    checklist.downloadableSlides.result = snippets.downloadableSlides(program.articleID);
+    
+    // CONTRIBUTOR PRE CONTENT (CONTENT ABOVE CONTRIBS)
+    checklist.contrbtrPreContent.result = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
+    // COPYRIGHT HOLDER 
+    checklist.cpyrtHolder.result = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
+    // BACKMATTER FRONT PAGE      
+    checklist.bkmtrFront.result = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
+
+    return checklist.print();
 }
 
 

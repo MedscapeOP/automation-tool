@@ -47,8 +47,8 @@ function getSlidesTOC (slidesComponents, program) {
 
 /* LLA PRE TOC   
 -------------------------------------- */
-function getLLAPreTOC(ticket, program) {
-    var goalStatementMarkup = prodticket.getGoalStatement(ticket, program);
+function getLLAPreTOC(goalStatementMarkup, program) {
+    // var goalStatementMarkup = prodticket.getGoalStatement(ticket, program);
     return articleUtils.buildLLAPreTOC(goalStatementMarkup);
 }
 
@@ -168,7 +168,7 @@ function buildSpotlight(ticket, program) {
 
 
     if (program.hasLLA) {
-        preAssessmentTOC = getLLAPreTOC(ticket, program);
+        preAssessmentTOC = getLLAPreTOC(checklistResult.properties.goalStatement.result, program);
         postAssessmentTOC = getLLAPostTOC(ticket, program);
         blankResultsTOC = articleUtils.buildBlankTOC();
     }

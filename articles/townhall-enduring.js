@@ -1,18 +1,18 @@
 const _ = require("lodash");
 const utils = require("../utils");
 const articleUtils = require('./article-utils');
-const {ProfArticle, TOCElement, SectionElement, SubsectionElement, SlideGroup} = require("../classes");
+const {ProfArticle, TOCElement, SectionElement, SubsectionElement, SlideGroup, ArticleChecklist} = require("../classes");
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
 
 
 /* SLIDES / MAIN CONTENT 
 -------------------------------------- */
-function getSlidesTOC (ticket, program) {
+function getSlidesTOC (slidesComponents, program) {
     // Get Slide Component from prodticket.getSlides.
     // Check if LLA 
     // If LLA build slides with Video embed AND Edu Impact challenge 
-    var slidesComponent = prodticket.getSlides(ticket, program)[0];
+    var slidesComponent = (slidesComponents ? slidesComponents[0] : program.articleID);
 
     if (program.hasLLA) {
         return {
@@ -29,8 +29,8 @@ function getSlidesTOC (ticket, program) {
 
 /* LLA PRE TOC   
 -------------------------------------- */
-function getLLAPreTOC(ticket, program) {
-    var goalStatementMarkup = prodticket.getGoalStatement(ticket, program);
+function getLLAPreTOC(goalStatementMarkup, program) {
+    // var goalStatementMarkup = prodticket.getGoalStatement(ticket, program);
     return articleUtils.buildLLAPreTOC(goalStatementMarkup);
 }
 
@@ -59,6 +59,51 @@ Main sections to include:
     8) REFERENCES - COMPLETE 
     9) AUDIENCE QNA SIDEBAR - COMPLETE  
 */
+/* CHECKLIST FUNCTION  
+-------------------------------------- */
+function checklistTownHallEnduring(ticket, program) {
+    var checklist = new ArticleChecklist();
+    // TITLE 
+    checklist.title.result = prodticket.getTitle(ticket, program);
+    // BYLINE
+    checklist.byline.result = prodticket.getByline(ticket, program);
+    // LEARNING OBJECTIVES
+    checklist.learningObjectives.result = prodticket.getLearningObjectives(ticket, program);
+    // GOAL STATEMENT
+    checklist.goalStatement.result = prodticket.getGoalStatement(ticket, program);
+    // TARGET AUDIENCE 
+    checklist.targetAudience.result = prodticket.getTargetAudience(ticket, program);
+    // CONTRIBUTORS
+    checklist.contributors.result = prodticket.getContributors(ticket, program);
+    // PEER REVIEWER 
+    if (program.hasPeerReviewer) {
+        checklist.peerReviewer.result = prodticket.getPeerReviewer(ticket, program);        
+    } 
+    // COLLECTION PAGE 
+    if (program.hasCollectionPage) {
+        checklist.collectionPageInfo.result = prodticket.getCollectionPage(ticket, program);
+    }
+    // SLIDES 
+    checklist.slides.result = prodticket.getSlides(ticket, program);
+    // ABBREVIATIONS
+    checklist.abbreviations.result = prodticket.getAbbreviations(ticket, program);
+    // REFERENCES
+    checklist.references.result = prodticket.getReferences(ticket, program);
+    // DOWNLOADABLE SLIDES 
+    checklist.downloadableSlides.result = snippets.downloadableSlides(program.articleID);
+    
+    // CONTRIBUTOR PRE CONTENT (CONTENT ABOVE CONTRIBS)
+    checklist.contrbtrPreContent.result = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
+    // COPYRIGHT HOLDER 
+    checklist.cpyrtHolder.result = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
+    // BACKMATTER FRONT PAGE      
+    checklist.bkmtrFront.result = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
+
+    return checklist.print();
+}
+
+
+
 /* MASTER FUNCTION 
 -------------------------------------- */
 function buildTownHallEnduring(ticket, program) {
@@ -73,35 +118,31 @@ function buildTownHallEnduring(ticket, program) {
     blankResultsTOC, 
     abbreviationsTOC,
     referencesTOC,
-    slideDeckDiv,
     forYourPatientMarkup,
     audienceQATOC;
 
-    title = prodticket.getTitle(ticket, program);
-    byline = prodticket.getByline(ticket, program);
-    if (program.hasPeerReviewer) {
-        peerReviewer = prodticket.getPeerReviewer(ticket, program);
-    } 
-    if (program.hasCollectionPage) {
-        collectionPageInfo = prodticket.getCollectionPage(ticket, program);
-    }
+    var checklistResult = checklistTownHallEnduring(ticket, program);
+
+    title = (checklistResult.properties.title ? checklistResult.properties.title.result : "");
+    byline = (checklistResult.properties.byline ? checklistResult.properties.byline.result : "");
+
+    peerReviewer = (checklistResult.properties.peerReviewer ? checklistResult.properties.peerReviewer.result : "");
+
     if (program.hasLLA) {
-        preAssessmentTOC = getLLAPreTOC(ticket, program);
+        preAssessmentTOC = getLLAPreTOC(checklistResult.properties.goalStatement.result, program);
         postAssessmentTOC = getLLAPostTOC(ticket, program);
         blankResultsTOC = articleUtils.buildBlankTOC();
     }
 
-    var tocs = getSlidesTOC(ticket, program);
+    var tocs = getSlidesTOC(checklistResult.properties.slides.result, program);
     slidesTOC = tocs.slidesTOC;
     audienceQATOC = tocs.audienceQATOC; 
 
-    var abbreviationsMarkup = prodticket.getAbbreviations(ticket, program);
+    var abbreviationsMarkup = (checklistResult.properties.abbreviations ? checklistResult.properties.abbreviations.result : "");
     abbreviationsTOC = articleUtils.buildAbbreviations(abbreviationsMarkup, program);
 
-    var referencesMarkup = prodticket.getReferences(ticket, program);
+    var referencesMarkup = (checklistResult.properties.references ? checklistResult.properties.references.result : "");
     referencesTOC = articleUtils.buildReferences(referencesMarkup, program);
-
-    slideDeckDiv = snippets.downloadableSlides(program.articleID);
     
 
     // Build Main Article Object - Instantiate and Populate Article
@@ -113,13 +154,14 @@ function buildTownHallEnduring(ticket, program) {
     // insert peer reviewer
     finalArticle.contrbtrPostContent = peerReviewer;
     // set contrbtr_pre_content
-    finalArticle.contrbtrPreContent = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
+    finalArticle.contrbtrPreContent = checklistResult.properties.contrbtrPreContent.result;
     // set copyright holder 
-    finalArticle.cpyrtHolder = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
+    finalArticle.cpyrtHolder = checklistResult.properties.cpyrtHolder.result;
     // set backmatter front page 
-    finalArticle.bkmtrFront = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
+    finalArticle.bkmtrFront = checklistResult.properties.bkmtrFront.result;
 
     // insert collection page info - Banner image and Above title
+    collectionPageInfo = (checklistResult.properties.collectionPageInfo ? checklistResult.properties.collectionPageInfo.result : null);
     if (collectionPageInfo) {
         finalArticle.bannerImage = collectionPageInfo.bannerFileName;
         finalArticle.insertAboveTitleCA(collectionPageInfo.title, collectionPageInfo.advancesFileName);
@@ -155,9 +197,10 @@ function buildTownHallEnduring(ticket, program) {
         finalArticle._childElements[0]._childElements[0].insertSubsectionElement(forYourPatientSubsection); 
     }
 
-    // Insert 
-    
-    return finalArticle;
+    return {
+        finishedArticleObject: finalArticle,
+        checklistHTML: checklistResult.printHTML  
+    };
 };
 
 module.exports = {

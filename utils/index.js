@@ -6,6 +6,7 @@ const cleanHTML = require('./clean-html');
 const pathBuilder = require('./path-builder');
 const formatLearningObjectives = require('./format-learning-objectives');
 const cliTools = require('./cli-tools');
+const printFunctions = require('./print-functions');
 
 function trimObjectText(xmlJSObject) {
     /*
@@ -57,6 +58,7 @@ module.exports = {
     formatLearningObjectives,
     trimObjectText,
     cleanHTML,
+    printFunctions,
     wrapSubsectionContent,
     wrapSlideIntro
 };
