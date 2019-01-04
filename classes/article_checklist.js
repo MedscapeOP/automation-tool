@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const utils = require('../utils');
 const printFunctions = utils.printFunctions;
-
+const {stripIndent} = require('common-tags');
 
 class ArticleChecklist {
     constructor() {

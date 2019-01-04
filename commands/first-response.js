@@ -26,9 +26,12 @@ let inputFile = function () {
     return cliTools.getInputDirectory() + '/first-response/article.html';
 }
 
-let outputFile = function () {
-    return `${program.articleID}.xml`; // Make dynamic considering
-};  
+let outputFiles = function () {
+    return {
+        xmlFile: `${program.articleID}.xml`,
+        checklist: `${program.articleID}_checklist.html`
+    };
+}; 
 
 let program = config.programs.firstResponse;
 
@@ -60,7 +63,7 @@ module.exports = function (vorpal) {
         // this.log("RAW ARTICLE ID: ", args.articleID);
         program.articleID = args.articleID;        
         let self = this;
-        actions.basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFile);
+        actions.basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles);
     });
     vorpal.on('client_prompt_submit', function (program){
         cliTools.resetProgram(program);
