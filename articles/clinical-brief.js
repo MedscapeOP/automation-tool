@@ -9,6 +9,7 @@ Make Ability to Do Variations of Headlines
 
 const _ = require("lodash");
 const utils = require("../utils");
+const stringOps = utils.stringOps;
 const articleUtils = require('./article-utils');
 const {ProfArticle, TOCElement, BriefChecklist} = require("../classes");
 const prodticket = require('../prodticket');
@@ -149,19 +150,21 @@ function checklistClinicalBrief(ticket, program) {
 /* MASTER FUNCTIONS 
 -------------------------------------- */
 function buildClinicalBrief(ticket, program) {
-    var clinicalContext, synopsisAndPerspective, studyHighlights, clinicalImplications, references, title, byline;
+    var clinicalContext, synopsisAndPerspective, studyHighlights, clinicalImplications, cmeTest, references, title, byline;
     
+    var checklistResult = checklistClinicalBrief(ticket, program);
+
     // Clinical Brief Sections
-    clinicalContext = getClinicalContext(ticket);
-    synopsisAndPerspective = getSynopsisAndPerspective(ticket);
-    studyHighlights = getStudyHighlights(ticket);
-    clinicalImplications = getClinicalImplications(ticket);
+    clinicalContext = (checklistResult.properties.clinicalContext ? checklistResult.properties.clinicalContext.result : "");
+    synopsisAndPerspective = (checklistResult.properties.synopsisAndPerspective ? checklistResult.properties.synopsisAndPerspective.result : "");
+    studyHighlights = (checklistResult.properties.studyHighlights ? checklistResult.properties.studyHighlights.result : "");
+    clinicalImplications = (checklistResult.properties.clinicalImplications ? checklistResult.properties.clinicalImplications.result : "");
     cmeTest = articleUtils.buildCMETestSection(3, "CME Test");
 
     // Universal Info (Markup Strings)
-    references = prodticket.getReferences(ticket, program);
-    title = prodticket.getTitle(ticket, program);
-    byline = prodticket.getByline(ticket, program);
+    references = (checklistResult.properties.references ? checklistResult.properties.references.result : "");
+    title = (checklistResult.properties.title ? checklistResult.properties.title.result : "");
+    byline = (checklistResult.properties.byline ? checklistResult.properties.byline.result : "");
  
     // Build Main TOC - Insert Brief Sections & Insert CME Test Section 
     var mainTOCInstance = new TOCElement();
@@ -182,16 +185,20 @@ function buildClinicalBrief(ticket, program) {
     // Set article byline (pass markup)
     finalArticle.contrbtrByline = byline;
     // set contrbtr_pre_content
-    finalArticle.contrbtrPreContent = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
+    finalArticle.contrbtrPreContent = checklistResult.properties.contrbtrPreContent.result;
     // set copyright holder 
-    finalArticle.cpyrtHolder = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
+    finalArticle.cpyrtHolder = checklistResult.properties.cpyrtHolder.result;
     // set backmatter front page 
-    finalArticle.bkmtrFront = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
+    finalArticle.bkmtrFront = checklistResult.properties.bkmtrFront.result;
           
     // Insert Main TOC Object & Insert References TOC Object 
     finalArticle.insertTOCElement(mainTOCInstance);
     finalArticle.insertTOCElement(referencesTOC);
-    return finalArticle;
+    
+    return {
+        finishedArticleObject: finalArticle,
+        checklistHTML: checklistResult.printHTML  
+    };
 };
 
 module.exports = {

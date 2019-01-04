@@ -20,7 +20,7 @@ function completeGenerateAction(self, callback, functionOrArticle, checklistHTML
         if (functionOrArticle instanceof ProfArticle) {
             var finishedArticleObject = functionOrArticle;
         } else {
-            var finishedArticleObject = functionOrArticle(self);
+            var {finishedArticleObject, checklistHTML} = functionOrArticle(self);
         }
         // Convert to XML from JS 
         var resultXML = utils.xmlOps.objectToXMLString(finishedArticleObject.toObjectLiteral());

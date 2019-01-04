@@ -1,6 +1,7 @@
 const _ = require('lodash');
 const utils = require('../utils');
 const printFunctions = utils.printFunctions;
+const ArticleChecklist = require('./article_checklist');
 
 
 class TownHallEnduringChecklist extends ArticleChecklist {

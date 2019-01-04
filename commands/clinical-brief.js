@@ -26,8 +26,11 @@ let inputFile = function () {
     return cliTools.getInputDirectory() + '/brief/article.html';
 }
 
-let outputFile = function () {
-    return `${program.articleID}.xml`; // Make dynamic considering
+let outputFiles = function () {
+    return {
+        xmlFile: `${program.articleID}.xml`,
+        checklist: `${program.articleID}_checklist.html`
+    };
 };  
 
 let program = config.programs.clinicalBrief;
@@ -52,8 +55,10 @@ module.exports = function (vorpal) {
     .action(function(args, callback) {
         program.articleID = args.articleID;        
         vorpal.emit('client_prompt_submit', program);
-        var completionMessage = `${program.name} created successfully! Check your output folder for the file: ${chalk.cyan(outputFile())}`;
-        actions.completeGenerateAction(this, callback, buildFinalOutput, outputFile(), completionMessage);
+        var completionMessages = {};
+        completionMessages.xmlFile = `${program.name} XML created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().xmlFile)}`;
+        completionMessages.checklist = `${program.name} Checklist created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().checklist)}`;
+        actions.completeGenerateAction(this, callback, buildFinalOutput, "", outputFiles(), completionMessages);
     });
     vorpal.on('client_prompt_submit', function (program){
         cliTools.resetProgram(program);
