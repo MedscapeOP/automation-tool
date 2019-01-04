@@ -10,7 +10,7 @@ Make Ability to Do Variations of Headlines
 const _ = require("lodash");
 const utils = require("../utils");
 const articleUtils = require('./article-utils');
-const {ProfArticle, TOCElement} = require("../classes");
+const {ProfArticle, TOCElement, BriefChecklist} = require("../classes");
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
 
@@ -91,42 +91,56 @@ function getClinicalImplications(ticket) {
 /* CHECKLIST FUNCTION  
 -------------------------------------- */
 function checklistClinicalBrief(ticket, program) {
-    var checklist = new ArticleChecklist();
-    // TITLE 
-    checklist.title.result = prodticket.getTitle(ticket, program);
+    var checklist = new BriefChecklist();
+    // BACKMATTER FRONT PAGE      
+    checklist.bkmtrFront.result = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
+    
     // BYLINE
     checklist.byline.result = prodticket.getByline(ticket, program);
-    // LEARNING OBJECTIVES
-    checklist.learningObjectives.result = prodticket.getLearningObjectives(ticket, program);
-    // GOAL STATEMENT
-    checklist.goalStatement.result = prodticket.getGoalStatement(ticket, program);
-    // TARGET AUDIENCE 
-    checklist.targetAudience.result = prodticket.getTargetAudience(ticket, program);
-    // CONTRIBUTORS
-    checklist.contributors.result = prodticket.getContributors(ticket, program);
-    // PEER REVIEWER 
-    if (program.hasPeerReviewer) {
-        checklist.peerReviewer.result = prodticket.getPeerReviewer(ticket, program);        
-    } 
+    
     // COLLECTION PAGE 
     if (program.hasCollectionPage) {
         checklist.collectionPageInfo.result = prodticket.getCollectionPage(ticket, program);
     }
-    // SLIDES 
-    checklist.slides.result = prodticket.getSlides(ticket, program);
-    // ABBREVIATIONS
-    checklist.abbreviations.result = prodticket.getAbbreviations(ticket, program);
-    // REFERENCES
-    checklist.references.result = prodticket.getReferences(ticket, program);
-    // DOWNLOADABLE SLIDES 
-    checklist.downloadableSlides.result = snippets.downloadableSlides(program.articleID);
     
     // CONTRIBUTOR PRE CONTENT (CONTENT ABOVE CONTRIBS)
     checklist.contrbtrPreContent.result = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
+    
     // COPYRIGHT HOLDER 
     checklist.cpyrtHolder.result = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
-    // BACKMATTER FRONT PAGE      
-    checklist.bkmtrFront.result = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
+    
+    // GOAL STATEMENT
+    checklist.goalStatement.result = prodticket.getGoalStatement(ticket, program);
+    
+    // LEARNING OBJECTIVES
+    checklist.learningObjectives.result = prodticket.getLearningObjectives(ticket, program);
+    
+    // REFERENCES
+    checklist.references.result = prodticket.getReferences(ticket, program);
+    
+    // SUPPORTER
+    // <<<<<<<< PLACEHOLDER >>>>>>>>>
+    
+    // TEASER
+    // <<<<<<<< PLACEHOLDER >>>>>>>>> 
+    
+    // TARGET AUDIENCE 
+    checklist.targetAudience.result = prodticket.getTargetAudience(ticket, program);
+    
+    // TITLE 
+    checklist.title.result = prodticket.getTitle(ticket, program);
+
+    // CLINICAL CONTEXT
+    checklist.clinicalContext.result = getClinicalContext(ticket);
+
+    // SYNOPSIS AND PERSPECTIVE 
+    checklist.synopsisAndPerspective.result = getSynopsisAndPerspective(ticket);
+
+    // STUDY HIGHLIGHTS 
+    checklist.studyHighlights.result = getStudyHighlights(ticket);
+
+    // CLINICAL IMPLICATIONS 
+    checklist.clinicalImplications.result = getClinicalImplications(ticket);
 
     return checklist.print();
 }

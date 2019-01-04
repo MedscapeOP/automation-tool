@@ -23,7 +23,7 @@
 const _ = require("lodash");
 const utils = require("../utils");
 const articleUtils = require('./article-utils');
-const {ProfArticle, TOCElement, SectionElement, SubsectionElement, SlideGroup, ArticleChecklist} = require("../classes");
+const {ProfArticle, TOCElement, SectionElement, SubsectionElement, SlideGroup, SpotlightChecklist} = require("../classes");
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
 
@@ -97,42 +97,65 @@ function checklistSpotlight(ticket, program) {
     };
     Implement checklist...() functions. These should try to call the required prodticket get functions and assign the results to an ArticleChecklist instance. If an error is thrown set properties[prop].result to null. After finding results, call the instance's print method and output result.printHTML into .html file. Lastly, return the result.properties object that stores the results of these calls.  
     */
-    var checklist = new ArticleChecklist();
-    // TITLE 
-    checklist.title.result = prodticket.getTitle(ticket, program);
+    var checklist = new SpotlightChecklist();
+
+    // ABBREVIATIONS
+    checklist.abbreviations.result = prodticket.getAbbreviations(ticket, program);
+    
+    // BACKMATTER FRONT PAGE      
+    checklist.bkmtrFront.result = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
+
     // BYLINE
     checklist.byline.result = prodticket.getByline(ticket, program);
-    // LEARNING OBJECTIVES
-    checklist.learningObjectives.result = prodticket.getLearningObjectives(ticket, program);
-    // GOAL STATEMENT
-    checklist.goalStatement.result = prodticket.getGoalStatement(ticket, program);
-    // TARGET AUDIENCE 
-    checklist.targetAudience.result = prodticket.getTargetAudience(ticket, program);
-    // CONTRIBUTORS
-    checklist.contributors.result = prodticket.getContributors(ticket, program);
-    // PEER REVIEWER 
-    if (program.hasPeerReviewer) {
-        checklist.peerReviewer.result = prodticket.getPeerReviewer(ticket, program);        
-    } 
+
     // COLLECTION PAGE 
     if (program.hasCollectionPage) {
         checklist.collectionPageInfo.result = prodticket.getCollectionPage(ticket, program);
     }
-    // SLIDES 
-    checklist.slides.result = prodticket.getSlides(ticket, program);
-    // ABBREVIATIONS
-    checklist.abbreviations.result = prodticket.getAbbreviations(ticket, program);
-    // REFERENCES
-    checklist.references.result = prodticket.getReferences(ticket, program);
-    // DOWNLOADABLE SLIDES 
-    checklist.downloadableSlides.result = snippets.downloadableSlides(program.articleID);
-    
+
     // CONTRIBUTOR PRE CONTENT (CONTENT ABOVE CONTRIBS)
     checklist.contrbtrPreContent.result = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
+
     // COPYRIGHT HOLDER 
     checklist.cpyrtHolder.result = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
-    // BACKMATTER FRONT PAGE      
-    checklist.bkmtrFront.result = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
+
+    // CREDITS AVAILABLE 
+    // <<<<<<<< PLACEHOLDER >>>>>>>>>
+
+    // DOWNLOADABLE SLIDES 
+    checklist.downloadableSlides.result = snippets.downloadableSlides(program.articleID);
+
+    // GOAL STATEMENT
+    checklist.goalStatement.result = prodticket.getGoalStatement(ticket, program);
+    
+    // LEARNING OBJECTIVES
+    checklist.learningObjectives.result = prodticket.getLearningObjectives(ticket, program);
+
+    // PEER REVIEWER 
+    if (program.hasPeerReviewer) {
+        checklist.peerReviewer.result = prodticket.getPeerReviewer(ticket, program);
+    } 
+
+    // REFERENCES
+    checklist.references.result = prodticket.getReferences(ticket, program);
+
+    // SUPPORTER
+    // <<<<<<<< PLACEHOLDER >>>>>>>>>
+
+    // TARGET AUDIENCE 
+    checklist.targetAudience.result = prodticket.getTargetAudience(ticket, program);
+    
+    // TEASER
+    // <<<<<<<< PLACEHOLDER >>>>>>>>>
+
+    // TITLE 
+    checklist.title.result = prodticket.getTitle(ticket, program);
+
+    // SLIDES 
+    checklist.slides.result = prodticket.getSlides(ticket, program);
+    
+    // CONTRIBUTORS
+    checklist.contributors.result = prodticket.getContributors(ticket, program);
 
     return checklist.print();
 }
