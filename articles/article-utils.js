@@ -118,6 +118,7 @@ function buildEduImpactPreSection (qnaFormNumber, goalStatementMarkup) {
 
     // Insert goal statement + "before you begin..."
     var subsection = new SubsectionElement(true, false, false);
+
     subsection.subsectionContent =  utils.wrapSubsectionContent(`${goalStatementMarkup}<p>Before you begin this activity, please assess your clinical knowledge by completing this brief survey. Answering these questions again after the activity will allow you to see what you learned and to compare your answers with those of your peers.</p>`);
 
     // Insert "Educational Impact Challenge" header 

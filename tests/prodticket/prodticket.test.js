@@ -132,7 +132,7 @@ describe('Prodticket Module Functions', function () {
 
         it("should return the program contributors from the .html - Curbside", function () {
             var result = prodticket.getContributors(prodticketCC, config.programs.curbsideConsult);
-            console.log("RESULT CURBSIDE: ", result);
+            // console.log("RESULT CURBSIDE: ", result);
 
             for (var i = 0; i < contributorsCC.length; i++) {
                 expect(result[i].title).to.equalIgnoreSpaces(contributorsCC[i].title);

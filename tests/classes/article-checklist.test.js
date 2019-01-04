@@ -6,7 +6,7 @@ chai.use(require('chai-string'));
 let expect = chai.expect;
 
 const app = require("../../commands");
-const { ArticleChecklist, ProgramTimeline } = app.classes;
+const { ArticleChecklist, ProgramTimeline, TownHallEnduringChecklist } = app.classes;
 
 describe('Article Checklist', function () {
 
@@ -52,8 +52,9 @@ describe('Article Checklist', function () {
     articleChecklist.programDetails.result = realProgramDetails;
     articleChecklist.dateTime.result = dateTime;
     articleChecklist.contributors.result = contributors;
-    beforeEach(function () {
 
+    var townHallChecklist = new TownHallEnduringChecklist();
+    beforeEach(function () {
     });
 
     describe('printStringProp()', function () {

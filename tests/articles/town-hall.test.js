@@ -59,7 +59,7 @@ describe('Town Hall', function () {
             program.hasOUS = true; 
             // program.articleID = "902206";
 
-            var result = townHallEnduring.buildTownHallEnduring(prodTicket, program).toObjectLiteral();
+            var result = townHallEnduring.buildTownHallEnduring(prodTicket, program).finishedArticleObject.toObjectLiteral();
 
             result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
 

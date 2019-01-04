@@ -1,15 +1,19 @@
 /*
-TODO:
-- Use properties from checklist to determine elements to build in buildSpotlight()
-    - DONE 
-- Create findContributors for spotlight and clinical brief
-- Update other build functions to have the same structure as spotlight.
-- Fix errors in Learning Objective print and Collection page print.
+TODO Future/Lower Priority:
+- Fix errors in Learning Objective print and Collection page print. 
     - Apply cleaning functions to checklist object properties so that output is formatted.
+
+- Handle Edge cases in build slides - **** NO SOLUTION YET **** 
+    - Update cleaning functions to cover the following:  
+    - case where <<Level 2>> is NOT bolded
+    - case where <<insert slide has a bullet symbol next to it
+
+- Quiet Failing test for prodticket.getContributors() 
+    - Mainly look at the Curbside Consult. 
 */ 
 
 /* 
-TODO / STRATEGY: Producer Checklist  
+TODO NOW: Producer/Properties Checklist  
     - Given a program (configured by user input)
     - Output a text file with all relevant information 
         - Create a build...Checklist() function for each program that will simply output the raw markup that needs to be put into D2
@@ -39,14 +43,3 @@ TODO / STRATEGY: Producer Checklist
             - hasOUS, hasLLA, etc.
             - Checklist function will automatically run when you call build...() function   
 */
-
-/*
-TODO 
-- Update config with new town hall objects - DONE
-- Update prodticket modules with new config objects - DONE 
-- Update prodticket test suite with new config objects - DONE
-- Handle Edge cases in build slides - **** NO SOLUTION YET **** 
-    - Update cleaning functions to cover the following:  
-    - case where <<Level 2>> is NOT bolded
-    - case where <<insert slide has a bullet symbol next to it
-*/ 

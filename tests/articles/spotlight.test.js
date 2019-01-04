@@ -37,7 +37,7 @@ describe('Spotlight', function () {
     var completeSlidesTOCLLA;
     var completeLLAPreTOC;
     beforeEach(function() {
-        prodTicket = fs.readFileSync(__dirname + '/input/spotlight/article.html', 'utf8');
+        prodTicket = fs.readFileSync(__dirname + '/input/spotlight/article.html').toString();
         // completeClinicalContext = utils.xmlOps.objectToXMLString(require('./input/clinical-context'));
 
         completeSpotlight = fs.readFileSync(__dirname + '/input/spotlight/spotlight.xml').toString();
@@ -54,7 +54,7 @@ describe('Spotlight', function () {
     
     describe('#getSlidesTOC()', function () {
         it('should return slides TOC', function () {
-            var checklist = new app.classes.ArticleChecklist();
+            var checklist = new app.classes.SpotlightChecklist();
             checklist.slides.result = app.prodTicket.getSlides(prodTicket, program);
             var checklistResult = checklist.print();
 
@@ -69,13 +69,13 @@ describe('Spotlight', function () {
         });
 
         it('should return slides TOC with Embed and Impact Challenge - if program.hasLLA', function () {
-            var checklist = new app.classes.ArticleChecklist();
+            var checklist = new app.classes.SpotlightChecklist();
             checklist.slides.result = app.prodTicket.getSlides(prodTicket, program);
             var checklistResult = checklist.print();
 
             program.hasLLA = true;
 
-            console.log("SLIDES: ", checklistResult.properties.slides.result);
+            // console.log("SLIDES: ", checklistResult.properties.slides.result);
 
             var result = spotlight.getSlidesTOC(checklistResult.properties.slides.result, program).toObjectLiteral();
             
@@ -88,9 +88,13 @@ describe('Spotlight', function () {
 
     describe('#getLLAPreTOC()', function () {
         it('should return LLA Pre TOC with program goal statement', function () {
+            var checklist = new app.classes.SpotlightChecklist();
+            checklist.goalStatement.result = app.prodTicket.getGoalStatement(prodTicket, program);
+            var checklistResult = checklist.print();
+
             program.hasLLA = true;
 
-            var result = spotlight.getLLAPreTOC(prodTicket, program).toObjectLiteral();
+            var result = spotlight.getLLAPreTOC(checklistResult.properties.goalStatement.result, program).toObjectLiteral();
 
             result = utils.xmlOps.objectToXMLString(result);
             result = utils.cleanHTML.cleanEntities(result);

@@ -69,7 +69,7 @@ describe('Clinical Brief', function () {
     describe('#buildClinicalBrief()', function () {
         it('should return complete XML string of Clinical Brief article', function () {
             program.hasOUS = true;
-            var result = clinicalBrief.buildClinicalBrief(prodTicket, program).toObjectLiteral();
+            var result = clinicalBrief.buildClinicalBrief(prodTicket, program).finishedArticleObject.toObjectLiteral();
             var differences = [
                 "contrbtr_pre_content shouldn't have anything - FIXED",
                 "contrbtr_post_content shouldn't have peer reviewer automatically - FIXED",

@@ -55,7 +55,11 @@ describe('First Response', function () {
         it('should return slides TOC', function () {
             program.hasLLA = false;
 
-            var slideTOCs= firstResponse.getSlidesTOCs(prodTicket, program);
+            var checklist = new app.classes.FirstResponseChecklist();
+            checklist.slides.result = app.prodTicket.getSlides(prodTicket, program);
+            var checklistResult = checklist.print();
+
+            var slideTOCs= firstResponse.getSlidesTOCs(checklistResult.properties.slides.result, program);
             var result = "";
             var currentTOC = null;
 
@@ -91,7 +95,7 @@ describe('First Response', function () {
             program.hasLLA = false;
             // program.articleID = "897160";
 
-            var result = firstResponse.buildFirstResponse(prodTicket, program).toObjectLiteral();
+            var result = firstResponse.buildFirstResponse(prodTicket, program).finishedArticleObject.toObjectLiteral();
 
             // console.log("RESULT: ", JSON.stringify(result, undefined, 2));
 
@@ -117,7 +121,7 @@ describe('First Response', function () {
             program.hasLLA = true;
             // program.articleID = "897160";
 
-            var result = firstResponse.buildFirstResponse(prodTicket, program).toObjectLiteral();
+            var result = firstResponse.buildFirstResponse(prodTicket, program).finishedArticleObject.toObjectLiteral();
 
             // console.log("RESULT: ", JSON.stringify(result, undefined, 2));
 
