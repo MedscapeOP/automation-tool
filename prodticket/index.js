@@ -39,6 +39,8 @@ let findLocationInfo = require('./find-location-info');
 let findDateTime = require('./find-date-time');
 let findProgramDetails = require('./find-program-details');
 let findAssociationDisclaimer = require('./find-association-disclaimer');
+let findProductName = require('./find-product-name');
+let findProjectId = require('./find-project-id');
 
 function checkTicket(ticketHTML) {
     if (ticketHTML) {
@@ -299,6 +301,28 @@ function getAssociationDisclaimer(ticketHTML, program) {
     } 
 }
 
+function getProductType(ticketHTML, program) {
+    if (checkTicket(ticketHTML)) {
+        try {
+            var rawProductName = findProductName[program.codeName](ticketHTML);
+            return rawProductName;
+        } catch (error) {
+            return error; 
+        }
+    }
+}
+
+function getProjectId(ticketHTML, program) {
+    if (checkTicket(ticketHTML)) {
+        try {
+            var rawProjectId = findProjectId[program.codeName](ticketHTML);
+            return rawProjectId;
+        } catch (error) {
+            return error;
+        }
+    }
+}
+
 module.exports = {
     getTitle,
     getByline,
@@ -320,5 +344,7 @@ module.exports = {
     getLocationInfo,
     getDateTime,
     getProgramDetails,
-    getAssociationDisclaimer
+    getAssociationDisclaimer,
+    getProductType,
+    getProjectId
 }

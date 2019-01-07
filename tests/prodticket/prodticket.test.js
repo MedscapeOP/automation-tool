@@ -765,5 +765,81 @@ describe('Prodticket Module Functions', function () {
             expect(result.message).to.equal("No association disclaimer found in the prodticket"); 
         });
     });
+
+    /**
+     * ACTIVITY SF#(s) - PROJECT ID    
+     */
+    describe("prodticket.getProjectId()", function () {
+        // var projectIdCB = fs.readFileSync(__dirname + '/input/learning-objectives-cb.html').toString();
+        var projectIdSL = "239054.29";
+        var projectIdCC = "239054-50";
+        var projectIdFR = "259139.01";
+        // var projectIdTH = fs.readFileSync(__dirname + '/input/learning-objectives-th.html').toString();
+        
+
+        /* NO SF# For CB and TH Prodtickets */
+        // it("should return Project ID from the prodticket .html - Clinical Brief", function () {
+        //     var result = prodticket.getProjectId(prodticketCB, config.programs.clinicalBrief);
+        //     expect(result).to.equalIgnoreSpaces(projectIdCB); 
+        // });
+
+        it("should return Project ID from the prodticket .html - Spotlight", function () {
+            var result = prodticket.getProjectId(prodticketSL, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(projectIdSL); 
+        });
+
+        it("should return Project ID from the prodticket .html - Curbside", function () {
+            var result = prodticket.getProjectId(prodticketCC, config.programs.curbsideConsult);
+            expect(result).to.equalIgnoreSpaces(projectIdCC); 
+        });
+
+        it("should return Project ID from the prodticket .html - First Response", function () {
+            var result = prodticket.getProjectId(prodticketFR, config.programs.firstResponse);
+            expect(result).to.equalIgnoreSpaces(projectIdFR);
+        });
+
+        // it("should return Project ID from the prodticket .html - TownHall", function () {
+        //     var result = prodticket.getProjectId(prodticketTH, config.programs.townHall);
+        //     expect(result).to.equalIgnoreSpaces(projectIdTH); 
+        // });
+    });
+
+    /**
+     * PRODUCT NAME / PRODUCT TYPE    
+     */
+    describe("prodticket.getProductType()", function () {
+        // var productTypeCB = fs.readFileSync(__dirname + '/input/learning-objectives-cb.html').toString();
+        var productTypeSL = "Spotlight";
+        var productTypeCC = "Curbside Consult";
+        var productTypeFR = "First Response";
+        // var productTypeTH = fs.readFileSync(__dirname + '/input/learning-objectives-th.html').toString(); 
+
+        /* No Product Type for CB and TH Prodtickets */
+        // it("should return Product Type from the prodticket .html - Clinical Brief", function () {
+        //     var result = prodticket.getProductType(prodticketCB, config.programs.clinicalBrief);
+        //     expect(result).to.equalIgnoreSpaces(productTypeCB); 
+        // });
+
+        it("should return Product Type from the prodticket .html - Spotlight", function () {
+            var result = prodticket.getProductType(prodticketSL, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(productTypeSL); 
+        });
+
+        it("should return Product Type from the prodticket .html - Curbside", function () {
+            var result = prodticket.getProductType(prodticketCC, config.programs.curbsideConsult);
+            expect(result).to.equalIgnoreSpaces(productTypeCC); 
+        });
+
+        it("should return Product Type from the prodticket .html - First Response", function () {
+            var result = prodticket.getProductType(prodticketFR, config.programs.firstResponse);
+            expect(result).to.equalIgnoreSpaces(productTypeFR);
+        });
+
+        // it("should return Product Type from the prodticket .html - TownHall", function () {
+        //     var result = prodticket.getProductType(prodticketTH, config.programs.townHall);
+        //     expect(result).to.equalIgnoreSpaces(productTypeTH); 
+        // });
+    });
+
 });
 
