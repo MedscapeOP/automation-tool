@@ -578,7 +578,27 @@ describe('Prodticket Module Functions', function () {
      */
     describe("prodticket.getSupporter()", function () {
         // var supporterTH = "<div>Merck & Co., Inc.</div>";
+        // var supporterCB = "<p>Supported by an independent educational grant from Merck &amp; Co., Inc. </p>";
+        var supporterSL = "Bayer AG";
+        var supporterCC = "Bayer AG";        
+        var supporterFR = "TEVA, Teva Global";
         var supporterTH = "<p>Supported by an independent educational grant from Merck &amp; Co., Inc. </p>";
+        
+        it("should return the program Supporter name from .html - Spotlight", function () {
+            var result = prodticket.getSupporter(prodticketSL, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(supporterSL);
+        });
+
+        it("should return the program Supporter name from .html - Curbside", function () {
+            var result = prodticket.getSupporter(prodticketCC, config.programs.curbsideConsult);
+            expect(result).to.equalIgnoreSpaces(supporterCC);
+        });
+
+        it("should return the program Supporter name from .html - First Response", function () {
+            var result = prodticket.getSupporter(prodticketFR, config.programs.firstResponse);
+            expect(result).to.equalIgnoreSpaces(supporterFR);
+        });
+
         it("should return the program Supporter name from .html - TownHall", function () {
             var result = prodticket.getSupporter(prodticketTH, config.programs.townHall);
             expect(result).to.equalIgnoreSpaces(supporterTH);

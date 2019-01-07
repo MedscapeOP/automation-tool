@@ -5,22 +5,14 @@ var exportObject = {};
 
 // Clinical Brief 
 exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
-    var {textBlock} = stringOps.getTextBlock(ticketHTML, "<strong>CME Teaser", "<strong>Target Audience");
-
-    textBlock = textBlock.replace(/\(.*\)/g, "");
-
-    if (stringOps.isBlankOrWhiteSpace(textBlock) || stringOps.isEmptyString(textBlock)) {
-        throw new Error("No teaser found in the prodticket")
-    } else {
-        return cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim();
-    }
+    throw new Error("No teaser found in the prodticket");
 }
 
 // Spotlight 
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
-    var {textBlock} = stringOps.getTextBlock(ticketHTML, "Teaser: &#953;", "Faculty/Author(s) Byline(s): &#953;");
+    var {textBlock} = stringOps.getTextBlock(ticketHTML, "<strong>Supporter(s):", "<strong>Partner (s):");
     if (stringOps.isBlankOrWhiteSpace(textBlock) || stringOps.isEmptyString(textBlock)) {
-        throw new Error("No teaser found in the prodticket")
+        throw new Error("No teaser found in the prodticket");
     } else {
         return cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim();
     }

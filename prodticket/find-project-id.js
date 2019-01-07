@@ -5,7 +5,7 @@ var exportObject = {};
 
 // Clinical Brief
 exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
-    return '';
+    throw new Error("No SF# found in the prodticket");
 }
 
 // Spotlight
@@ -37,7 +37,7 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
 
 // Town Hall  
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
-    return '';
+    throw new Error("No SF# found in the prodticket");
 }
 
 module.exports = exportObject;
