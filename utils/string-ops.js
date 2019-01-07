@@ -5,6 +5,12 @@ let regexIndexOf = function(string, regex, startpos) {
     return (indexOf >= 0) ? (indexOf + (startpos || 0)) : indexOf;
 }
 
+/**
+ * @description takes a <string> and removes all matches of <removeRegex> from the first match of <regex>
+ * @param {*} string 
+ * @param {*} regex 
+ * @param {*} removeRegex 
+ */
 function removeFromRegexCapture(string, regex, removeRegex) {
     // Must take in non-global regexp   
     // if (regex.global) {

@@ -510,8 +510,28 @@ describe('Prodticket Module Functions', function () {
      * TEASER
      */
     describe("prodticket.getTeaser()", function () {
+        var teaserCB = fs.readFileSync(__dirname + '/input/teaser-cb.html').toString();
+        var teaserCC = fs.readFileSync(__dirname + '/input/teaser-cc.html').toString();
+        var teaserSL = fs.readFileSync(__dirname + '/input/teaser-sl.html').toString();
         var teaserTH = fs.readFileSync(__dirname + '/input/teaser-th.html').toString();
         var teaserTH_alt = fs.readFileSync(__dirname + '/input/teaser-th-alt.html').toString();
+
+        
+        it("should return the program Teaser from .html - Clinical Brief", function () {
+            var result = prodticket.getTeaser(prodticketCB, config.programs.clinicalBrief);
+            expect(result).to.equalIgnoreSpaces(teaserCB);
+        });
+
+        it("should return the program Teaser from .html - Curbside", function () {
+            var result = prodticket.getTeaser(prodticketCC, config.programs.curbsideConsult);
+            expect(result).to.equalIgnoreSpaces(teaserCC);
+        });
+
+        it("should return the program Teaser from .html - Spotlight", function () {
+            var result = prodticket.getTeaser(prodticketSL, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(teaserSL);
+        });
+
         it("should return the program Teaser from .html - TownHall", function () {
             var result = prodticket.getTeaser(prodticketTH, config.programs.townHall);
             expect(result).to.equalIgnoreSpaces(teaserTH);
