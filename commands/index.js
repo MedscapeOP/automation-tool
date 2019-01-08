@@ -14,6 +14,7 @@ const curbside = require('./curbside-consult');
 const videoLecture = require('./video-lecture');
 const firstResponse = require('./first-response');
 const townHallEnduring = require('./townhall-enduring');
+const propertiesChecklist = require('./properties-checklist');
 
 // Build commands function 
 let commands = function (vorpal) {
@@ -24,6 +25,7 @@ let commands = function (vorpal) {
     videoLecture(vorpal);
     firstResponse(vorpal);
     townHallEnduring(vorpal);
+    propertiesChecklist(vorpal);
 }
 
 // ------------------------------------------------------------

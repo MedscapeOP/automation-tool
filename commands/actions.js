@@ -1,5 +1,5 @@
 const utils = require('../utils');
-const {ProfArticle} = require('../classes');
+const {ProfArticle, ArticleChecklist} = require('../classes');
 let prompts = require('./prompts');
 let callbacks = require('./callbacks');
 
@@ -19,18 +19,24 @@ function completeGenerateAction(self, callback, functionOrArticle, checklistHTML
         // Build final output function from the command module
         if (functionOrArticle instanceof ProfArticle) {
             var finishedArticleObject = functionOrArticle;
+        } else if (functionOrArticle instanceof ArticleChecklist) {
+            var finishedArticleObject = functionOrArticle;
         } else {
             var {finishedArticleObject, checklistHTML} = functionOrArticle(self);
         }
-        // Convert to XML from JS 
-        var resultXML = utils.xmlOps.objectToXMLString(finishedArticleObject.toObjectLiteral());
-        resultXML = utils.cleanHTML.cleanEntities(resultXML);
         
-        // Write the output XML 
-        utils.cliTools.writeOutputFile(outputFiles.xmlFile, resultXML, self, completionMessages.xmlFile, callback);
+        // Write the output XML
+        if (outputFiles.xmlFile) {
+            // Convert to XML from JS 
+            var resultXML = utils.xmlOps.objectToXMLString(finishedArticleObject.toObjectLiteral());
+            resultXML = utils.cleanHTML.cleanEntities(resultXML);
+            utils.cliTools.writeOutputFile(outputFiles.xmlFile, resultXML, self, completionMessages.xmlFile, callback);
+        } 
 
-        // Write the output Checklist 
-        utils.cliTools.writeOutputFile(outputFiles.checklist, checklistHTML, self, completionMessages.checklist, callback);
+        // Write the output Checklist
+        if (outputFiles.checklist) {
+            utils.cliTools.writeOutputFile(outputFiles.checklist, checklistHTML, self, completionMessages.checklist, callback);
+        } 
     } catch (error) {
         self.log(error);
         callback(); 
@@ -91,7 +97,48 @@ function basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOu
     });
 }
 
+function checklistAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles, programNames) {
+
+    // Has LLA? 
+    prompts.productTypePrompt(self, programNames)
+    .then((answers) => {
+        // Has OUS?
+        return callbacks.promiseCallback(self, callback, program, answers, "productType", prompts.qnaPrompt);
+    })
+    .then((answers) => {
+        // Has Peer Reviewer?
+        return callbacks.promiseCallback(self, callback, program, answers, "qna", prompts.bucketCollectionPrompt);
+    })
+    .then((answers) => {
+        // Has Collection Page?
+        return callbacks.delimitedAnswerCallback(self, callback, program, answers, "bucketCollection", prompts.primaryCollectionPrompt);
+    })
+    .then((answers) => {
+        // Has Downloadable Slide Deck?
+        return callbacks.delimitedAnswerCallback(self, callback, program, answers, "primaryCollection", prompts.publicationPrompt);
+    })
+    .then((answers) => {
+        // Has For Your Patient PDF?
+        return callbacks.promiseCallback(self, callback, program, answers, "publication", buildFinalOutput);
+    })
+    .then((buildResult) => {
+        self.log(program);
+        vorpal.emit('client_prompt_submit', program);
+        var completionMessages = {};
+        completionMessages.xmlFile = ``;
+        completionMessages.checklist = `${program.name} Checklist created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().checklist)}`;
+
+        completeGenerateAction(self, callback, buildResult.finishedArticleObject, buildResult.checklistHTML, outputFiles(), completionMessages);   
+    }) 
+    .catch((err) => {
+        self.log(err);
+        callback();
+    });
+}
+
+
 module.exports = {
     completeGenerateAction,
-    basicArticleAction
+    basicArticleAction,
+    checklistAction
 }

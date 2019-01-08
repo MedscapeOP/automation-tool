@@ -50,6 +50,47 @@ let forYourPatientPrompt = function (self) {
     }); 
 };
 
+let productTypePrompt = function (self, programNames) { 
+    return self.prompt({
+        type: 'list',
+        name: 'productType',
+        message: `Choose the product type?`,
+        choices: programNames
+    }); 
+};
+
+let qnaPrompt = function (self) { 
+    return self.prompt({
+        type: 'input',
+        name: 'qna',
+        message: `Enter the questionnaire ID:`
+    }); 
+};
+
+let bucketCollectionPrompt = function (self) {
+    return self.prompt({
+        type: 'input',
+        name: 'bucketCollection',
+        message: 'Enter the bucket collection:'
+    });
+};
+
+let primaryCollectionPrompt = function (self) {
+    return self.prompt({
+        type: 'input',
+        name: 'primaryCollection',
+        message: 'Enter the primary collection:'
+    });
+};
+
+let publicationPrompt = function (self) {
+    return self.prompt({
+        type: 'input',
+        name: 'publication',
+        message: "Fill Publication (None for Pat Ed, Medscape, specialty. No bots for OUS):"
+    });
+};
+
 
 module.exports = {
     llaPrompt,
@@ -57,5 +98,10 @@ module.exports = {
     peerReviewerPrompt,
     collectionPagePrompt,
     slideDeckPrompt,
-    forYourPatientPrompt
+    forYourPatientPrompt,
+    productTypePrompt,
+    qnaPrompt,
+    bucketCollectionPrompt,
+    primaryCollectionPrompt,
+    publicationPrompt
 }

@@ -80,8 +80,18 @@ let programs = {
         hasSlideDeck: false, 
         hasForYourPatient: false, 
         hasInLanguage: false 
-    }
+    },
 };
+
+let propertiesChecklist = {
+    name: "Checklist for Producer D2 Properties",
+    articleID: "",
+    codeName: null,
+    questionnaire: null,
+    bucketCollections: [],
+    primaryCollections: [],
+    publication: null 
+}
 
 let addOns = {    
     forYourPatient: false, 
@@ -93,5 +103,6 @@ module.exports = {
     addOns,
     languages,
     credentials,
-    dates
+    dates,
+    propertiesChecklist
 };

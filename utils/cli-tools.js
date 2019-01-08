@@ -94,6 +94,9 @@ function resetProgram(program) {
         currentKey = keys[i];
         if (typeof(program[currentKey]) == typeof(true)) {  
             program[currentKey] = false;
+        }
+        if (Array.isArray(program[currentKey])) {
+            program[currentKey] = [];
         }        
     }
 }
