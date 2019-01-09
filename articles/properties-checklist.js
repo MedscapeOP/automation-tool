@@ -56,7 +56,7 @@ function getChecklist(ticket, program) {
 function buildChecklist(checklist, program) {
     checklist.questionnaire.result = program.questionnaire;
     checklist.bucketCollections.result = program.bucketCollections;
-    checklist.primaryCollections.result = program.primaryCollections;
+    checklist.primaryCollection.result = program.primaryCollection;
     checklist.publication.result = program.publication;
     var checklistResult = checklist.print();
     

@@ -62,7 +62,7 @@ let productTypePrompt = function (self, programNames) {
 let qnaPrompt = function (self) { 
     return self.prompt({
         type: 'input',
-        name: 'qna',
+        name: 'questionnaire',
         message: `Enter the questionnaire ID:`
     }); 
 };
@@ -70,8 +70,8 @@ let qnaPrompt = function (self) {
 let bucketCollectionPrompt = function (self) {
     return self.prompt({
         type: 'input',
-        name: 'bucketCollection',
-        message: 'Enter the bucket collection:'
+        name: 'bucketCollections',
+        message: 'Enter bucket collections (comma delimited):'
     });
 };
 

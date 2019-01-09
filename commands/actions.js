@@ -114,11 +114,11 @@ function checklistAction(vorpal, self, callback, chalk, program, buildFinalOutpu
     })
     .then((answers) => {
         // Has Collection Page?
-        return callbacks.delimitedAnswerCallback(self, callback, program, answers, "bucketCollection", prompts.primaryCollectionPrompt);
+        return callbacks.delimitedAnswerCallback(self, callback, program, answers, "bucketCollections", prompts.primaryCollectionPrompt);
     })
     .then((answers) => {
         // Has Downloadable Slide Deck?
-        return callbacks.delimitedAnswerCallback(self, callback, program, answers, "primaryCollection", prompts.publicationPrompt);
+        return callbacks.promiseCallback(self, callback, program, answers, "primaryCollection", prompts.publicationPrompt);
     })
     .then((answers) => {
         // Has For Your Patient PDF?

@@ -15,7 +15,7 @@ class PropertiesChecklist extends ArticleChecklist{
         this.productName = {result: null, printFn: printFunctions.printStringProp, printName: "PRODUCT NAME"};
         this.projectId = {result: null, printFn: printFunctions.printStringProp, printName: "PROJECT ID"};
         this.bucketCollections = {result: null, printFn: printFunctions.printStringProp, printName: "BUCKET COLLECTIONS"};
-        this.primaryCollections = {result: null, printFn: printFunctions.printStringProp, printName: "PRIMARY COLLECTIONS"};
+        this.primaryCollection = {result: null, printFn: printFunctions.printStringProp, printName: "PRIMARY COLLECTIONS"};
         this.supporter = {result: null, printFn: printFunctions.printStringProp, printName: "SUPPORTER"};
         this.publication = {result: null, printFn: printFunctions.printStringProp, printName: "PUBLICATION"};
     }

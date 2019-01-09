@@ -89,8 +89,8 @@ let propertiesChecklist = {
     articleID: "",
     codeName: null,
     questionnaire: null,
-    bucketCollection: [],
-    primaryCollection: [],
+    bucketCollections: [],
+    primaryCollection: null,
     publication: null 
 }
 
