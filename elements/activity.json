@@ -1,0 +1,595 @@
+{
+  "elements": [
+    {
+      "type": "element",
+      "name": "prof_activity",
+      "elements": [
+        {
+          "type": "element",
+          "name": "title",
+          "elements": [
+            {
+              "type": "text",
+              "text": "Obesity Paradox: Promotes Tumors but Boosts Immunotherapy?"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "objectives",
+          "elements": [
+            {
+              "type": "element",
+              "name": "p",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "Upon completion of this activity, participants will be able to:"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "ul",
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "li",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "Evaluate the association of obesity with immune activity and tumor progression, based on animal models and clinical studies"
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "li",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "Asses the clinical implications of the association of obesity with immune activity and tumor progression, based on animal models and clinical studies"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "goal",
+          "elements": [
+            {
+              "type": "element",
+              "name": "p",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "The goal of this activity is to provide medical news to primary care clinicians and other healthcare professionals in order to enhance patient care."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "tgt_aud",
+          "elements": [
+            {
+              "type": "element",
+              "name": "p",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "This article is intended for hematologists/oncologists, internists, nurses, pharmacists, and other members of the healthcare team who treat and manage patients with cancer."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "credit_instr",
+          "elements": [
+            {
+              "type": "element",
+              "name": "p",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "There are no fees for participating in or receiving credit for this online educational activity. For information on applicability and acceptance of continuing education credit for this activity, please consult your professional licensing board.\r\n            "
+                },
+                {
+                  "type": "element",
+                  "name": "br",
+                  "elements": []
+                },
+                {
+                  "type": "element",
+                  "name": "br",
+                  "elements": []
+                },
+                {
+                  "type": "text",
+                  "text": "\r\n            This activity is designed to be completed within the time designated on the title page; physicians should claim only those credits that reflect the time actually spent in the activity. To successfully earn credit, participants must complete the activity online during the valid credit period that is noted on the title page. To receive \r\n            "
+                },
+                {
+                  "type": "element",
+                  "name": "em",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "AMA PRA Category 1 Credit&trade;"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ", you must receive a minimum score of 70% on the post-test.\r\n            "
+                },
+                {
+                  "type": "element",
+                  "name": "br",
+                  "elements": []
+                },
+                {
+                  "type": "element",
+                  "name": "br",
+                  "elements": []
+                },
+                {
+                  "type": "text",
+                  "text": "\r\n            Follow these steps to earn CME/CE credit*: \r\n        "
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "ol",
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "li",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "Read the target audience, learning objectives, and author disclosures."
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "li",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "Study the educational content online or printed out."
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "li",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "Online, choose the best answer to each test question. To receive a certificate, you must receive a passing score as designated at the top of the test. We encourage you to complete the Activity Evaluation to provide feedback for future programming."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "p",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "You may now view or print the certificate from your CME/CE Tracker. You may print the certificate but you cannot alter it. Credits will be tallied in your CME/CE Tracker and archived for 6 years; at any point within this time period you can print out the tally as well as the certificates from the CME/CE Tracker.\r\n            "
+                },
+                {
+                  "type": "element",
+                  "name": "br",
+                  "elements": []
+                },
+                {
+                  "type": "element",
+                  "name": "br",
+                  "elements": []
+                },
+                {
+                  "type": "text",
+                  "text": "\r\n        *The credit that you receive is based on your user profile.\r\n        "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "hardware_reqs",
+          "elements": [
+            {
+              "type": "element",
+              "name": "p",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "To access activities, users will need:"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "ul",
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "li",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "A computer with an Internet connection."
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "li",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "Internet Explorer 8.x or higher, the latest versions of Firefox or Safari, or any other W3C standards compliant browser."
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "li",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "a",
+                      "attributes": {
+                        "href": "http://get.adobe.com/flashplayer/"
+                      },
+                      "elements": [
+                        {
+                          "type": "text",
+                          "text": "Adobe Flash Player"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": " and/or an HTML5 capable browser may be required for video or audio playback.\r\n            "
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "li",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "Occasionally other additional software may be required such as \r\n                "
+                    },
+                    {
+                      "type": "element",
+                      "name": "a",
+                      "attributes": {
+                        "href": "http://office.microsoft.com/en-us/powerpoint/"
+                      },
+                      "elements": [
+                        {
+                          "type": "text",
+                          "text": "PowerPoint"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": " or \r\n                "
+                    },
+                    {
+                      "type": "element",
+                      "name": "a",
+                      "attributes": {
+                        "href": "http://get.adobe.com/reader/"
+                      },
+                      "elements": [
+                        {
+                          "type": "text",
+                          "text": "Adobe Acrobat Reader"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "text": ".\r\n            "
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "clinical_context",
+          "elements": []
+        },
+        {
+          "type": "element",
+          "name": "highlights",
+          "elements": []
+        },
+        {
+          "type": "element",
+          "name": "pearls_practice",
+          "elements": []
+        },
+        {
+          "type": "element",
+          "name": "addl_credit_amt",
+          "elements": []
+        },
+        {
+          "type": "element",
+          "name": "misc_prov_stmt",
+          "elements": [
+            {
+              "type": "element",
+              "name": "p",
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "img",
+                  "attributes": {
+                    "alt": "Medscape",
+                    "src": "/webmd/professional_assets/medscape/images/provider/medscape1.150x34.gif"
+                  },
+                  "elements": []
+                },
+                {
+                  "type": "element",
+                  "name": "br",
+                  "elements": []
+                },
+                {
+                  "type": "element",
+                  "name": "img",
+                  "attributes": {
+                    "alt": "Interprofessional Continuing Education",
+                    "src": "/webmd/professional_assets/medscape/images/provider/interprofessional-continuing-education.jpg?interpolation=lanczos-none&resize=150:96"
+                  },
+                  "elements": []
+                },
+                {
+                  "type": "element",
+                  "name": "br",
+                  "elements": []
+                },
+                {
+                  "type": "text",
+                  "text": "In support of improving patient care, Medscape, LLC is jointly accredited by the Accreditation Council for Continuing Medical Education (ACCME), the Accreditation Council for Pharmacy Education (ACPE), and the American Nurses Credentialing Center (ANCC), to provide continuing education for the healthcare team.\r\n        "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "addl_credit_avail",
+          "elements": [
+            {
+              "type": "element",
+              "name": "p",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "All other healthcare professionals completing continuing education credit for this activity will be issued a certificate of participation.\r\n            "
+                },
+                {
+                  "type": "element",
+                  "name": "br",
+                  "elements": []
+                },
+                {
+                  "type": "element",
+                  "name": "br",
+                  "elements": []
+                },
+                {
+                  "type": "text",
+                  "text": "\r\n            Physicians should claim only the credit commensurate with the extent of their participation in the activity.\r\n        "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "sec_element",
+          "elements": [
+            {
+              "type": "element",
+              "name": "sec_header",
+              "elements": []
+            },
+            {
+              "type": "element",
+              "name": "subsec_element",
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "subsec_header",
+                  "elements": []
+                },
+                {
+                  "type": "element",
+                  "name": "subsec_content",
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "contrbtr_group",
+          "elements": [
+            {
+              "type": "element",
+              "name": "contrbtr_type_lbl",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "CME Author(s)"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "contrbtr_element",
+              "attributes": {
+                "chronicleid": "0901c791800019c8"
+              },
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "contrbtr_nm",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "Laurie Barclay, MD"
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "contrbtr_title",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "p",
+                      "elements": [
+                        {
+                          "type": "text",
+                          "text": "Freelance writer and reviewer, Medscape, LLC"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "contrbtr_bio",
+                  "elements": []
+                },
+                {
+                  "type": "element",
+                  "name": "contrbtr_disclsr",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "p",
+                      "elements": [
+                        {
+                          "type": "text",
+                          "text": "Disclosure: Laurie Barclay, MD, has disclosed the following relevant financial relationships:\r\n                    "
+                        },
+                        {
+                          "type": "element",
+                          "name": "br",
+                          "elements": []
+                        },
+                        {
+                          "type": "text",
+                          "text": "\r\n                    Owns stock, stock options, or bonds from: Pfizer\r\n                "
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "contrbtr_group",
+          "elements": [
+            {
+              "type": "element",
+              "name": "contrbtr_type_lbl",
+              "elements": [
+                {
+                  "type": "text",
+                  "text": "CME Reviewer(s)"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "contrbtr_element",
+              "attributes": {
+                "chronicleid": "0901c79180d496f2"
+              },
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "contrbtr_nm",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "Esther Nyarko, PharmD"
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "contrbtr_title",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "p",
+                      "elements": [
+                        {
+                          "type": "text",
+                          "text": "Associate CME Clinical Director, Medscape, LLC"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "contrbtr_bio",
+                  "elements": []
+                },
+                {
+                  "type": "element",
+                  "name": "contrbtr_disclsr",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "p",
+                      "elements": [
+                        {
+                          "type": "text",
+                          "text": "Disclosure: Esther Nyarko, PharmD, has disclosed no relevant financial relationships."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

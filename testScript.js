@@ -18,6 +18,6 @@
 var utils = require('./utils');
 var fs = require('fs');
 
-var articleObject = utils.xmlOps.xmlFileToJS(__dirname + "/elements/toc_element.xml");
+var articleObject = utils.xmlOps.xmlFileToJS(__dirname + "/elements/activity_complete_cb.xml");
 
-fs.writeFileSync("./elements/toc_element.json", JSON.stringify(articleObject, undefined, 2));
+fs.writeFileSync("./elements/activity.json", JSON.stringify(articleObject, undefined, 2));
