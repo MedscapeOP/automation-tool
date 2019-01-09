@@ -2,6 +2,7 @@ const utils = require('../utils');
 const {ProfArticle, ArticleChecklist} = require('../classes');
 let prompts = require('./prompts');
 let callbacks = require('./callbacks');
+const _ = require('lodash');
 
 // ------------------------------------------------------------
 // ACTION TEMPLATES   
@@ -97,16 +98,18 @@ function basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOu
     });
 }
 
-function checklistAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles, programNames) {
+function checklistAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles, programOptions) {
 
     // Has LLA? 
-    prompts.productTypePrompt(self, programNames)
+    prompts.productTypePrompt(self, _.keys(programOptions))
     .then((answers) => {
         // Has OUS?
+
         return callbacks.promiseCallback(self, callback, program, answers, "productType", prompts.qnaPrompt);
     })
     .then((answers) => {
         // Has Peer Reviewer?
+        program.codeName = programOptions[program.productType];
         return callbacks.promiseCallback(self, callback, program, answers, "qna", prompts.bucketCollectionPrompt);
     })
     .then((answers) => {

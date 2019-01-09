@@ -54,10 +54,10 @@ function getChecklist(ticket, program) {
 /* MASTER FUNCTION 
 -------------------------------------- */
 function buildChecklist(checklist, program) {
-    checklist.questionnaire = program.questionnaire;
-    checklist.bucketCollections = program.bucketCollections;
-    checklist.primaryCollections = program.primaryCollections;
-    checklist.publication = program.publication;
+    checklist.questionnaire.result = program.questionnaire;
+    checklist.bucketCollections.result = program.bucketCollections;
+    checklist.primaryCollections.result = program.primaryCollections;
+    checklist.publication.result = program.publication;
     var checklistResult = checklist.print();
     
     return {

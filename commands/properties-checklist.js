@@ -33,16 +33,23 @@ let outputFiles = function () {
     };
 };  
 
-let programOptions = []; 
-_.forEach(config.programs, function (value, key) {
-    programOptions.push(value.name);
+
+let programOptions = _.mapKeys(config.programs, function (value, key) {
+    return value.name;
 });
+
+programOptions = _.mapValues(programOptions, function (o){
+    return o.codeName;
+});
+
+// Make names be the keys --> Map keys 
+// then set value of key to be codeName --> Map values
+
 let program = config.propertiesChecklist;
 
 
 // BUILD FUNCTION LOGIC 
 // ------------------------------------------------------------
-
 let buildFinalOutput = function (self) {
     var prodTicket = cliTools.readInputFile(inputFile());  
     var checklist = articles.propertiesChecklist.getChecklist(prodTicket, program);
@@ -65,7 +72,6 @@ module.exports = function (vorpal) {
         // this.log("RAW ARTICLE ID: ", args.articleID);
         program.articleID = args.articleID;        
         let self = this;
-        this.log(programOptions);
         actions.checklistAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles, programOptions);
     });
     vorpal.on('client_prompt_submit', function (program){

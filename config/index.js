@@ -85,11 +85,12 @@ let programs = {
 
 let propertiesChecklist = {
     name: "Checklist for Producer D2 Properties",
+    codeName: "townHall",
     articleID: "",
     codeName: null,
     questionnaire: null,
-    bucketCollections: [],
-    primaryCollections: [],
+    bucketCollection: [],
+    primaryCollection: [],
     publication: null 
 }
 
