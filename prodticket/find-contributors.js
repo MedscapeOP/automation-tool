@@ -22,9 +22,10 @@ let titleRegexArray = [
     /.*Faculty.*/gi,
     /.*Panelist.*/gi,
     /.*Anticoagulation Management Steering Committee.*/gi,
-    /.*Vascular Protection Steering Committee.*/gi, 
-    /.*Steering Committee.*/gi
+    /.*Vascular Protection Steering Committee.*/gi 
+    // /.*Steering Committee.*/gi
 ];
+/* TODO: Look into why anticoag regex isn't working. */
 
 function buildContributors(ticketHTML) {
     var contributors = [];
@@ -34,11 +35,31 @@ function buildContributors(ticketHTML) {
 
     var contribNameRegExp = stringOps.getNextRegex(ticketHTML, config.credentials.credentialRegexArray);
     var titleRegExp = stringOps.getNextRegex(ticketHTML, titleRegexArray);
+    var testSubstring = "";
+    var titleRegExp2 = null;
     var title = "";
     var previousTitle = "";
     var previousTitleSymbol = null;
     while (contribNameRegExp != -1) {
         if (titleRegExp != -1) {
+            testSubstring = ticketHTML.substring(titleRegExp.index + 20);
+            titleRegExp2 = stringOps.getNextRegex(testSubstring, titleRegexArray);
+
+            if (titleRegExp2 != -1) {
+                // Handle case where there are two valid titles back to back. 
+                // In this case we want to use the second title (ignoring the first)
+                // get index of regex2 in ticket 
+                // compare that index with contribNameRegExp.index
+                // If it is less than (comes before) -> titleRegExp = titleRegExp2;
+                console.log("COMMITTEE INDEX: ", stringOps.regexIndexOf(ticketHTML, /.*Anticoagulation Management Steering Committee.*/gi));
+                console.log("TITLE 1: ", titleRegExp);
+                console.log("TITLE 2: ", titleRegExp2);
+                var regexIndex = stringOps.regexIndexOf(ticketHTML, titleRegExp2.symbol, titleRegExp.index + 1);
+                if (regexIndex < contribNameRegExp.index) {
+                    titleRegExp = titleRegExp2;
+                }
+            }
+            
             if ((previousTitleSymbol == titleRegExp.symbol) && (titleRegExp.index < contribNameRegExp.index)) {
                 title = previousTitle;
             }
@@ -59,10 +80,7 @@ function buildContributors(ticketHTML) {
         //     console.log("CONTRIB NAME REGEXP: ", (contribNameRegExp));
         //     console.log("TICKET AT NULL: ", ticketHTML);
         // }
-        console.log("CONTRIB NAME REGEXP: ", ticketHTML.match(contribNameRegExp));
         name = ticketHTML.match(contribNameRegExp)[0];
-
-        console.log("NAME: ", name);
 
         affiliations = stringOps.getTextBlock(ticketHTML, new RegExp(RegExp.escape(name), 'g'), disclosureStartRegExp);
         // ***** DEBUGGING *****
@@ -70,22 +88,22 @@ function buildContributors(ticketHTML) {
         //     console.log("AFFILIATION NAME: ", name);
         //     console.log("TICKET AFFILIATION: ", ticketHTML);
         // }
-        console.log("AFFILIATIONS: ", affiliations);
+        // console.log("AFFILIATIONS: ", affiliations);
 
         var affiliationsText = cleanHTML.onlyParagraphTags(affiliations.textBlock);
         
         // Chop off beginning of ticket;
         ticketHTML = ticketHTML.substring(affiliations.endIndex);
 
-        console.log("TICKET HTML: ", ticketHTML);
+        // console.log("TICKET HTML: ", ticketHTML);
 
         // Get next contributor name regex
         contribNameRegExp = stringOps.getNextRegex(ticketHTML, config.credentials.credentialRegexArray);
-        console.log("CONTRIB NAME REGEXP 2: ", contribNameRegExp);
+        // console.log("CONTRIB NAME REGEXP 2: ", contribNameRegExp);
 
         // Get next title regex 
         titleRegExp = stringOps.getNextRegex(ticketHTML, titleRegexArray);
-        console.log("TITLE REGEXP: ", titleRegExp);
+        // console.log("TITLE REGEXP: ", titleRegExp);
 
         // If there is another contributor
         var disclosureText = "";
@@ -159,15 +177,17 @@ exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
 
 // Spotlight
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
-    var {textBlock: disclosureBlock} = stringOps.getTextBlock(ticketHTML, "<strong>Disclosures", '<strong>Additional Planners/Reviewers', true, true);
+    var {textBlock: disclosureBlock} = stringOps.getTextBlock(ticketHTML, "<strong>Disclosures", '<strong>SD/Editor/Writer', true, true);
 
     var {textBlock: contributorBlock} = stringOps.getTextBlock(disclosureBlock, /<table border=".*/g, /<\/table>/g, true, false);
-
+    
     if (stringOps.isBlankOrWhiteSpace(contributorBlock) || stringOps.isEmptyString(contributorBlock) || contributorBlock.length < 10) {
         throw new Error("No contributors found in the Speakers section of the prodticket");
     } else {
         // console.log("CONTRIBUTOR BLOCK: ", contributorBlock);
         // return JSON.stringify(buildContributors(contributorBlock), undefined, 2);
+
+        contributorBlock = cleanHTML.contributorFluff(contributorBlock);
         return buildContributors(contributorBlock);
         // return "<p>" + cleanHTML.singleLine(cleanHTML.plainText(byline)).trim() + "</p>";
     }

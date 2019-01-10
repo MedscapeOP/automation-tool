@@ -461,6 +461,33 @@ function contributorDisclosures(str) {
     return string.replace(/<p>|<\/p>/g, "");
 }
 
+function contributorFluff(str) {
+    /* 
+    USE THIS FUNCTION IN FIND CONTRIBUTORS: 
+        - After the main contributor text block is found clean it up with 
+          this function
+        Find Notes to AME: section 
+        Use getTextblock and substring from start index to end index 
+    */
+    // var block = stringOps.getTextBlock(str, /.*Notes to AME:.*/g, /.*SD\/Editor\/Writer.*/g);
+
+    // str = str.substring(0, block.startIndex) + str.substring(block.endIndex);
+
+    var index = stringOps.regexIndexOf(str, /.*Notes to AME:.*/g);
+
+    if (index != -1) {
+        str = str.substring(0, index);    
+    }
+
+    var membersRegExp = /.*Members:.*/g;
+    str = str.replace(membersRegExp, "");
+
+    var chairRegExp = /.*Chair:.*/g;
+    str = str.replace(chairRegExp, "");
+
+    return str;
+}
+
 function learningObjectives(textBlock, removeFluff=true) {
     if (removeFluff){
         textBlock = removeTicketFluff(textBlock);
@@ -556,6 +583,7 @@ module.exports = {
     programDetails,
     contributorAffiliations,
     contributorDisclosures,
+    contributorFluff,
     learningObjectives,
     associationDisclaimer,
     insertEntityPlaceholders,
