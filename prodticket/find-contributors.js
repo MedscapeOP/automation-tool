@@ -61,38 +61,72 @@ function buildContributors(ticketHTML) {
         // }
         console.log("CONTRIB NAME REGEXP: ", ticketHTML.match(contribNameRegExp));
         name = ticketHTML.match(contribNameRegExp)[0];
+
+        console.log("NAME: ", name);
+
         affiliations = stringOps.getTextBlock(ticketHTML, new RegExp(RegExp.escape(name), 'g'), disclosureStartRegExp);
         // ***** DEBUGGING *****
         // if (affiliations.startIndex == -1) {
         //     console.log("AFFILIATION NAME: ", name);
         //     console.log("TICKET AFFILIATION: ", ticketHTML);
         // }
+        console.log("AFFILIATIONS: ", affiliations);
+
         var affiliationsText = cleanHTML.onlyParagraphTags(affiliations.textBlock);
         
         // Chop off beginning of ticket;
         ticketHTML = ticketHTML.substring(affiliations.endIndex);
 
+        console.log("TICKET HTML: ", ticketHTML);
+
         // Get next contributor name regex
         contribNameRegExp = stringOps.getNextRegex(ticketHTML, config.credentials.credentialRegexArray);
-        // console.log("CONTRIB NAME REGEXP 2: ", contribNameRegExp);
+        console.log("CONTRIB NAME REGEXP 2: ", contribNameRegExp);
 
         // Get next title regex 
         titleRegExp = stringOps.getNextRegex(ticketHTML, titleRegexArray);
+        console.log("TITLE REGEXP: ", titleRegExp);
 
         // If there is another contributor
         var disclosureText = "";
-        if (titleRegExp != -1) {
-            // Get Disclosure textblock 
+
+        if ((titleRegExp != -1) && (contribNameRegExp != -1)) {
+            /* 
+                If Title is before contrib name 
+                    get the textblock from the next disclosure statement up until the next title 
+                If the Contrib name is before the next title 
+                    get the textblock from the next disclosure statement up until the next contrib name
+            */
+            if (titleRegExp.index < contribNameRegExp.index) {
+                disclosure = stringOps.getTextBlock(ticketHTML, disclosureStartRegExp, titleRegExp.symbol, false, false);
+                disclosureText = disclosure.textBlock;
+                ticketHTML = ticketHTML.substring(disclosure.endIndex);
+            } else {
+                // Get Disclosure textblock 
+                disclosure = stringOps.getTextBlock(ticketHTML, disclosureStartRegExp, contribNameRegExp.symbol, false, false);
+                disclosureText = disclosure.textBlock;
+                ticketHTML = ticketHTML.substring(disclosure.endIndex);
+            }
+        } else if (titleRegExp != -1) {
+            // Get Disclosure textblock
+            /* 
+                TITLE IS NEXT: get the textblock from the next disclosure statement up until the next title            
+            */ 
             disclosure = stringOps.getTextBlock(ticketHTML, disclosureStartRegExp, titleRegExp.symbol, false, false);
             disclosureText = disclosure.textBlock;
             ticketHTML = ticketHTML.substring(disclosure.endIndex);
-        }
-        else if (contribNameRegExp != -1) {
+        } else if (contribNameRegExp != -1) {
             // Get Disclosure textblock 
+            /* 
+                NO TITLES CONTRIB IS NEXT: get the textblock from the next disclosure statement up until the next title            
+            */ 
             disclosure = stringOps.getTextBlock(ticketHTML, disclosureStartRegExp, contribNameRegExp.symbol, false, false);
             disclosureText = disclosure.textBlock;
             ticketHTML = ticketHTML.substring(disclosure.endIndex);
         } else {
+            /* 
+                NO MORE CONTRIBUTORS: just get the current disclosure  
+            */
             var index = stringOps.regexIndexOf(ticketHTML, disclosureStartRegExp);
             disclosureText = ticketHTML.substring(index);
             ticketHTML = "";
