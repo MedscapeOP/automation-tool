@@ -77,7 +77,7 @@ module.exports = [
         title: "Anticoagulation Management Steering Committee",
         name: "Gilles Montalescot, MD, PhD",
         affiliation: `
-        Professor of Cardiology, Institut de Cardiologie, H--AMPERSAND--ocirc;pital la Piti--AMPERSAND--eacute;-Salp--AMPERSAND--ecirc;tri--AMPERSAND--egrave;re, Paris, France
+        \r\n\r\nProfessor of Cardiology, Institut de Cardiologie, Hôpital la Pitié-Salpêtrière, Paris, France\r\n\r\n
         `,
         disclosure: `
         Disclosure: Gilles Montalescot, MD, PhD, has disclosed the following relevant financial relationships:

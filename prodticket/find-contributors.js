@@ -19,11 +19,13 @@ let disclosureRegexArray = [
 let titleRegexArray = [
     /.*Co-Moderator.*/gi,
     /.*Moderator.*/gi,
-    /.*Faculty.*/gi,
+    /<strong>Faculty<\/strong>/gi,
+    /<strong>\s+Faculty\s+<\/strong>/gi,
     /.*Panelist.*/gi,
     /.*Anticoagulation Management Steering Committee.*/gi,
-    /.*Vascular Protection Steering Committee.*/gi 
-    // /.*Steering Committee.*/gi
+    /.*Vascular Protection Steering Committee.*/gi,
+    /.*<strong>Steering Committee<\/strong>.*/gi,
+    /.*<strong>\s+Steering Committee\s+<\/strong>.*/gi
 ];
 /* TODO: Look into why anticoag regex isn't working. */
 
@@ -41,25 +43,7 @@ function buildContributors(ticketHTML) {
     var previousTitle = "";
     var previousTitleSymbol = null;
     while (contribNameRegExp != -1) {
-        if (titleRegExp != -1) {
-            testSubstring = ticketHTML.substring(titleRegExp.index + 20);
-            titleRegExp2 = stringOps.getNextRegex(testSubstring, titleRegexArray);
-
-            if (titleRegExp2 != -1) {
-                // Handle case where there are two valid titles back to back. 
-                // In this case we want to use the second title (ignoring the first)
-                // get index of regex2 in ticket 
-                // compare that index with contribNameRegExp.index
-                // If it is less than (comes before) -> titleRegExp = titleRegExp2;
-                console.log("COMMITTEE INDEX: ", stringOps.regexIndexOf(ticketHTML, /.*Anticoagulation Management Steering Committee.*/gi));
-                console.log("TITLE 1: ", titleRegExp);
-                console.log("TITLE 2: ", titleRegExp2);
-                var regexIndex = stringOps.regexIndexOf(ticketHTML, titleRegExp2.symbol, titleRegExp.index + 1);
-                if (regexIndex < contribNameRegExp.index) {
-                    titleRegExp = titleRegExp2;
-                }
-            }
-            
+        if (titleRegExp != -1) {            
             if ((previousTitleSymbol == titleRegExp.symbol) && (titleRegExp.index < contribNameRegExp.index)) {
                 title = previousTitle;
             }
@@ -115,9 +99,31 @@ function buildContributors(ticketHTML) {
                 If the Contrib name is before the next title 
                     get the textblock from the next disclosure statement up until the next contrib name
             */
+            testSubstring = ticketHTML.substring(titleRegExp.index + 20);
+            titleRegExp2 = stringOps.getNextRegex(testSubstring, titleRegexArray);
+            var titleCutoffRegExp = titleRegExp;
+            if (titleRegExp2 != -1) {
+                // Handle case where there are two valid titles back to back. 
+                // In this case we want to use the second title (ignoring the first)
+                // get index of regex2 in ticket 
+                // compare that index with contribNameRegExp.index
+                // If it is less than (comes before) -> titleRegExp = titleRegExp2;
+                // console.log("COMMITTEE INDEX: ", stringOps.regexIndexOf(ticketHTML, /.*Anticoagulation Management Steering Committee.*/gi));
+                var regexIndex = stringOps.regexIndexOf(ticketHTML, titleRegExp2.symbol, titleRegExp.index + 1);
+                // console.log("REGEX INDEX: ", regexIndex);                    
+                // console.log("TITLE 1: ", titleRegExp);
+                // console.log("TITLE 2: ", titleRegExp2);
+                // console.log("CONTRIB NAME REGEXP: ", contribNameRegExp);
+                if (regexIndex < contribNameRegExp.index) {
+                    // ticketHTML = ticketHTML.replace(titleRegExp.symbol, "");
+                    titleRegExp = titleRegExp2;
+                    // ticketHTML = ticketHTML.substring(regexIndex);
+                }
+            }
             if (titleRegExp.index < contribNameRegExp.index) {
-                disclosure = stringOps.getTextBlock(ticketHTML, disclosureStartRegExp, titleRegExp.symbol, false, false);
+                disclosure = stringOps.getTextBlock(ticketHTML, disclosureStartRegExp, titleCutoffRegExp.symbol, false, false);
                 disclosureText = disclosure.textBlock;
+                // console.log("DISCLOSURE BLOCK: ", disclosureText);
                 ticketHTML = ticketHTML.substring(disclosure.endIndex);
             } else {
                 // Get Disclosure textblock 
@@ -163,7 +169,7 @@ function buildContributors(ticketHTML) {
         };
         contributors.push(contributor);
     }
-
+    console.log("CONTRIBUTORS FINISHED: ");
     return contributors;
 }
 
@@ -220,6 +226,7 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     } else {
         // console.log("CONTRIBUTOR BLOCK: ", contributorBlock);
         // return JSON.stringify(buildContributors(contributorBlock), undefined, 2);
+        contributorBlock = cleanHTML.contributorFluff(contributorBlock);
         return buildContributors(contributorBlock);
         // return "<p>" + cleanHTML.singleLine(cleanHTML.plainText(byline)).trim() + "</p>";
     }

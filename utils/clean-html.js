@@ -485,6 +485,10 @@ function contributorFluff(str) {
     var chairRegExp = /.*Chair:.*/g;
     str = str.replace(chairRegExp, "");
 
+    var facultyInfoRegExp = /.*Faculty Information and Disclosure Statements.*/gi;
+    
+    str = str.replace(facultyInfoRegExp, "");
+
     return str;
 }
 
