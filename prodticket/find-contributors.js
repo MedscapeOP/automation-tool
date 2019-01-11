@@ -169,7 +169,6 @@ function buildContributors(ticketHTML) {
         };
         contributors.push(contributor);
     }
-    console.log("CONTRIBUTORS FINISHED: ");
     return contributors;
 }
 

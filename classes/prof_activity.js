@@ -4,7 +4,7 @@ const xmlOps = require('../utils/index').xmlOps;
 const TOCElement = require('./toc_element');
 
 class ProfActivity extends XMLElement{
-    constructor(hasOUS = false) {
+    constructor(activityTitle, hasOUS = false) {
         super("prof_activity", false, false, 12);
 
         this.hasOUS = hasOUS;
@@ -12,7 +12,12 @@ class ProfActivity extends XMLElement{
         this._title = {
             "type": "element",
             "name": "title",
-            "elements": []
+            "elements": [
+                {
+                    "type": "text",
+                    "text": `${activityTitle}`
+                }
+            ]
         };
         this._objectives = {
             "type": "element",
@@ -91,47 +96,94 @@ class ProfActivity extends XMLElement{
     //--------------------------------
     // COMPUTED PROPERTIES 
     //-------------------------------- 
-    get titleText() {
-        if (this._title.elements[0]) {
-            return this._title.elements[0].elements[0].text;
-        } else {
-            return null;
-        }        
-    }
-
-    set titleText(newTitle) {
-        // Extraordinary Cases of VTE Prevention in Patient with Cancer
-        var titleObject = {
-            "type": "element",
-            "name": "p",
-            "elements": [
-                {
-                    "type": "text",
-                    "text": `${newTitle}`
-                }
-            ]
-        };
-        this._title.elements[0] = titleObject; 
-    }
-
+    // Activity Title  
     get title() {
-        if (this._title.elements[0]) {
-            return xmlOps.objectToXMLString(this._title);
+        return this._contrbtr_nm.elements[0].text;
+    }
+
+    set title(newTitle) {
+        this._contrbtr_nm.elements[0].text = newTitle;
+    }
+
+    // Learning Objectives 
+    get learningObjectives() {
+        if (this._objectives.elements.length > 0) {
+            return xmlOps.objectToXMLString(this._objectives);
         } else {
             return null;
         }  
     }
 
-    set title(newTitleMarkup) {
-        if (newTitleMarkup) {
-            var titleObject = xmlOps.xmlStringToJS(newTitleMarkup);
-            this._title.elements = titleObject.elements;
+    set learningObjectives(newLearningObjectivesMarkup) {
+        // THIS SHOULDN'T BE WRAPPED IN a <p> 
+        if (newLearningObjectivesMarkup) {
+            // Only need Peer Reviewer if NON-OUS             
+            var learningObjectivesObject = xmlOps.xmlStringToJS(newLearningObjectivesMarkup);
+            this._objectives.elements = learningObjectivesObject.elements[0].elements;
         } else {
-            this._title.elements = [];
+            this._contrbtr_post_content.elements = [];
         }
     }
 
-    get tocElements() {
+    // Goal Statement  
+    get goalStatement() {
+        // basic paragraph text field 
+        this.getParagraphTextField("_sectionHeader");
+    }
+
+    set goalStatement(goalStatement) {
+        // basic paragraph text field 
+        this.setParagraphTextField("_sectionHeader", goalStatement);
+    }
+
+    // Target Audience 
+    get targetAudience() {
+        // basic paragraph text field 
+    }
+
+    set targetAudience(newTargetAudience) {
+        // basic paragraph text field 
+    }
+
+    // Credit Instructions 
+    get creditInstructions() {
+        // markup field (no <p> wrapper)
+
+    } 
+
+    set creditInstructions(newCreditInstructionsMarkup) {
+        // markup field (no <p> wrapper)
+
+    }
+
+    // Hardware Requirements 
+    get hardwareRequirements() {
+        // markup field (no <p> wrapper)
+    }
+
+    set hardwareRequirements(newHardwareRequirementsMarkup) {
+        // markup field (no <p> wrapper)
+    }
+
+    // Misc Provider Statement 
+    get miscProviderStatement() {
+        // markup field w/ wrapper 
+    }
+
+    set miscProviderStatement(newProviderStatementMarkup) {
+        // markup field w/ wrapper
+    }
+
+    // Additional Credit Available 
+    get additionalCreditAvailable() {
+        // markup field w/ wrapper
+    }
+
+    set additionalCreditAvailable(newAdditionalCreditMarkup) {
+        // markup field w/ wrapper
+    }
+
+    get sectionElements() {
         return this.childElements;
     }
 

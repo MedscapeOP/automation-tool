@@ -1,5 +1,5 @@
 var _ = require("lodash");
-
+const xmlOps = require('../utils/index').xmlOps;
 /*
     CONSTRUCTOR:
     - initialize _elements
@@ -129,6 +129,7 @@ class XMLElement {
         return object;
     }
 
+    // FIELDS THAT ONLY HAVE TEXT WRAPPED IN A PARAGRAPH TAG  
     getParagraphTextField(propName) {
         return this[propName].elements[0].elements[0].text || "";
     }
@@ -153,6 +154,82 @@ class XMLElement {
         } else {
             this[propName].elements = []; 
         }       
+    }
+
+    // FIELDS THAT ONLY HAVE TEXT 
+    getTextField(propName) {
+        if (this[propName].elements.length > 0) {
+            return this[propName].elements[0].text;
+        } else {
+            return null;
+        }
+    }
+
+    setTextField(propName, newText) {
+        if ((this[propName].elements.length > 0) && newText) {
+            this[propName].elements[0].text = newText;
+        } else if (newText) {
+            this[propName].elements = [
+                {
+                    "type": "text",
+                    "text": `${newText}`
+                }
+            ];
+        } else {
+            this[propName].elements = [];
+        }
+    }
+
+    // FIELDS THAT ARE NOT SINGLE PARENT HTML MARKUP  
+    getMarkupField(propName) {
+        if (this[propName].elements[0]) {
+            return xmlOps.objectToXMLString(this[propName]);
+        } else {
+            return null; 
+        }
+    }
+
+    /**
+     * @description 
+     * Takes in wrapped markup and unwraps it. Then inserts the contents as the elements of the field specified.
+     * @param {*} propName 
+     * @param {*} newMarkup - newMarkup should come in wrapped using a wrapper utility 
+     */
+    setMarkupField(propName, newMarkup) {  
+        if (newMarkup) {
+            // Only need Peer Reviewer if NON-OUS             
+            var markupObject = xmlOps.xmlStringToJS(newMarkup);
+            this[propName].elements = markupObject.elements[0].elements;
+        } else {
+            this[propName].elements = [];
+        }
+    }
+
+    // FIELDS THAT ARE SINGLE PARENT HTML MARKUP
+    getWrappedMarkupField(propName) {
+        if (this[propName].elements[0]) {
+            return xmlOps.objectToXMLString(this[propName]);
+        } else {
+            return null;
+        }          
+    }
+
+    /**
+     * @description 
+     * Takes in wrapped markup and replaces the elements of the field specified.
+     * @param {*} propName 
+     * @param {*} newMarkup - newMarkup should come in wrapped using a wrapper utility 
+    */
+    setWrappedMarkupField(propName, newMarkup) {
+       if (newMarkup) {
+            var newMarkupObject = xmlOps.xmlStringToJS(newMarkup);
+            var content = newMarkupObject.elements[0].elements;
+            for (var i = 0; i < content.length; i++) {
+                this[propName].elements.push(content[i]);
+            }
+        } else {
+            this[propName].elements = [];
+        }
     }
 }
 
