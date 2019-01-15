@@ -36,11 +36,11 @@ class TOCElement extends XMLElement{
     }
 
     get tocType() {    
-        return this._type.elements[0].text;
+        return this.getTextField("_type");
     }
 
     set tocType(newType) {
-        this._type.elements[0].text = newType;
+        this.setTextField("_type", newType);
     }
 
     get sectionElements() {

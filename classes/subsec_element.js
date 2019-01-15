@@ -41,44 +41,22 @@ class SubsectionElement extends XMLElement {
 
     get subsectionContent() {
         if (this._hasSlides) {
-            if (this._slideIntro.elements[0]) {
-                return xmlOps.objectToXMLString(this._slideIntro);
-            } else {
-                return null;
-            }  
+            return this.getMarkupField("_slideIntro");
         } else {
-            if (this._subsectionContent.elements[0]) {
-                return xmlOps.objectToXMLString(this._subsectionContent);
-            } else {
-                return null;
-            }
+            // if (this._subsectionContent.elements[0]) {
+            //     return xmlOps.objectToXMLString(this._subsectionContent);
+            // } else {
+            //     return null;
+            // }
+            return this.getMarkupField("_subsectionContent");
         }
     }
 
     set subsectionContent(subsectionContent) {
-        /* 
-            - Pushes the new subsec_content onto the elements array of the subsection
-        */
-        if (subsectionContent) {
-            var subsectionContentObject = xmlOps.xmlStringToJS(subsectionContent);
-            var content = subsectionContentObject.elements[0].elements; 
-            if (this._hasSlides) {
-                for (var i = 0; i < content.length; i++) {
-                    this._slideIntro.elements.push(content[i]);
-                }
-            }
-            else {
-                for (var i = 0; i < content.length; i++) {
-                    this._subsectionContent.elements = content;
-                }
-            }   
+        if (this._hasSlides) {
+            this.setMarkupField("_slideIntro", subsectionContent);   
         } else {
-            if (this._hasSlides) {
-                this._slideIntro.elements = [];
-            }
-            else {
-                this._subsectionContent.elements = [];
-            }
+            this.setMarkupField("_subsectionContent", subsectionContent);
         }
     }
 

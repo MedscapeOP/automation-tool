@@ -98,37 +98,34 @@ class ProfActivity extends XMLElement{
     //-------------------------------- 
     // Activity Title  
     get title() {
-        return this._contrbtr_nm.elements[0].text;
+        return this.getTextField("_contrbtr_nm");
     }
 
     set title(newTitle) {
-        this._contrbtr_nm.elements[0].text = newTitle;
+        this.setTextField("_contrbtr_nm", newTitle);
     }
 
     // Learning Objectives 
     get learningObjectives() {
-        if (this._objectives.elements.length > 0) {
-            return xmlOps.objectToXMLString(this._objectives);
-        } else {
-            return null;
-        }  
+        return this.getMarkupField("_objectives");
     }
 
     set learningObjectives(newLearningObjectivesMarkup) {
         // THIS SHOULDN'T BE WRAPPED IN a <p> 
-        if (newLearningObjectivesMarkup) {
-            // Only need Peer Reviewer if NON-OUS             
-            var learningObjectivesObject = xmlOps.xmlStringToJS(newLearningObjectivesMarkup);
-            this._objectives.elements = learningObjectivesObject.elements[0].elements;
-        } else {
-            this._contrbtr_post_content.elements = [];
-        }
+        this.setMarkupField("_contrbtr_post_content", newLearningObjectivesMarkup);
+        // if (newLearningObjectivesMarkup) {
+        //     // Only need Peer Reviewer if NON-OUS             
+        //     var learningObjectivesObject = xmlOps.xmlStringToJS(newLearningObjectivesMarkup);
+        //     this._objectives.elements = learningObjectivesObject.elements[0].elements;
+        // } else {
+        //     this._contrbtr_post_content.elements = [];
+        // }
     }
 
     // Goal Statement  
     get goalStatement() {
         // basic paragraph text field 
-        this.getParagraphTextField("_sectionHeader");
+        return this.getParagraphTextField("_sectionHeader");
     }
 
     set goalStatement(goalStatement) {
@@ -139,48 +136,56 @@ class ProfActivity extends XMLElement{
     // Target Audience 
     get targetAudience() {
         // basic paragraph text field 
+        return this.getParagraphTextField("_tgt_aud");
     }
 
     set targetAudience(newTargetAudience) {
         // basic paragraph text field 
+        this.setParagraphTextField("_tgt_aud", newTargetAudience);
     }
 
     // Credit Instructions 
     get creditInstructions() {
         // markup field (no <p> wrapper)
-
+        return this.getMarkupField("_credit_instr");
     } 
 
     set creditInstructions(newCreditInstructionsMarkup) {
         // markup field (no <p> wrapper)
-
+        this.setMarkupField("_credit_instr", newCreditInstructionsMarkup);
     }
 
     // Hardware Requirements 
     get hardwareRequirements() {
         // markup field (no <p> wrapper)
+        return this.getMarkupField("_hardware_reqs");
     }
 
     set hardwareRequirements(newHardwareRequirementsMarkup) {
         // markup field (no <p> wrapper)
+        this.setMarkupField("_hardware_reqs", newHardwareRequirementsMarkup);
     }
 
     // Misc Provider Statement 
     get miscProviderStatement() {
         // markup field w/ wrapper 
+        return this.getWrappedMarkupField("_misc_prov_stmt");
     }
 
     set miscProviderStatement(newProviderStatementMarkup) {
         // markup field w/ wrapper
+        this.setWrappedMarkupField("_misc_prov_stmt", newProviderStatementMarkup);
     }
 
     // Additional Credit Available 
     get additionalCreditAvailable() {
         // markup field w/ wrapper
+        return this.getWrappedMarkupField("_addl_credit_avail");
     }
 
     set additionalCreditAvailable(newAdditionalCreditMarkup) {
         // markup field w/ wrapper
+        this.setWrappedMarkupField("_addl_credit_avail", newAdditionalCreditMarkup);
     }
 
     get sectionElements() {

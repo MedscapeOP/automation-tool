@@ -20,11 +20,11 @@ class ContributorGroup extends XMLElement {
     }
 
     get contrbtrTypeLbl() {
-        return this._contrbtrTypeLbl.elements[0].text;
+        return this.getTextField("_contrbtrTypeLbl");
     }
 
     set contrbtrTypeLbl(newContributorLabel) {
-        this._contrbtrTypeLbl.elements[0].text = newContributorLabel;
+        this.setTextField("_contrbtrTypeLbl", newContributorLabel);
     }
 
     insertContributorElement(contributorElement) {

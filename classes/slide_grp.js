@@ -75,11 +75,7 @@ class SlideGroup extends XMLElement {
     }
 
     get sectionImage() {
-        if (this._sectionImage.elements.length >= 1) {  
-            return xmlOps.objectToXMLString(this._sectionImage);
-        } else {
-            return null;
-        }
+        return this.getMarkupField("_sectionImage");
     }
 
     set sectionImage(newImagePath) {
@@ -107,74 +103,52 @@ class SlideGroup extends XMLElement {
 
     // Section Label Props - DONE
     get sectionLabel() {
-        if (this._sectionLabel.elements.length > 0) {
-            return this._sectionLabel.elements[0].text;
-        } else {
-            return null;
-        }
+        return this.getTextField("_sectionLabel");
     }
 
     set sectionLabel(newLabel) {
-        if ((this._sectionLabel.elements.length > 0) && newLabel) {
-            this._sectionLabel.elements[0].text = newLabel;
-        } else if (newLabel) {
-            this._sectionLabel.elements = [
-                {
-                    "type": "text",
-                    "text": `${newLabel}`
-                }
-            ];
-        } else {
-            this._sectionLabel.elements = [];
-        }
+        // if ((this._sectionLabel.elements.length > 0) && newLabel) {
+        //     this._sectionLabel.elements[0].text = newLabel;
+        // } else if (newLabel) {
+        //     this._sectionLabel.elements = [
+        //         {
+        //             "type": "text",
+        //             "text": `${newLabel}`
+        //         }
+        //     ];
+        // } else {
+        //     this._sectionLabel.elements = [];
+        // }
+        this.setTextField("_sectionLabel", newLabel);
     }
 
     // Section Caption Props - TODO
     
     // Section Text Props
     get sectionText() {
-        if (this._sectionText.elements.length > 0) {
-            return xmlOps.objectToXMLString(this._sectionText);
-        } else {
-            return null;
-        }  
+        return this.getMarkupField("_sectionText");
     }
 
     set sectionText(sectionText) {
+        this.setMarkupField("_sectionText", sectionText);
         // Remove already existing section text
-        this._sectionText.elements = [];
-        if (sectionText) {
-            var sectionTextObject = xmlOps.xmlStringToJS(sectionText);
-            var content = sectionTextObject.elements[0].elements;       
-            for (var i = 0; i < content.length; i++) {
-                this._sectionText.elements.push(content[i]);
-            }
-        }
-        // this.insertSectionText(sectionText);
+        // this._sectionText.elements = [];
+        // if (sectionText) {
+        //     var sectionTextObject = xmlOps.xmlStringToJS(sectionText);
+        //     var content = sectionTextObject.elements[0].elements;       
+        //     for (var i = 0; i < content.length; i++) {
+        //         this._sectionText.elements.push(content[i]);
+        //     }
+        // }
     }
 
     // Section Alt-Text Props
     get sectionAltText() {
-        if (this._sectionAltText.elements.length > 0) {
-            return this._sectionAltText.elements[0].text;
-        } else {
-            return null;
-        }
+        return this.getTextField("_sectionAltText");
     }
 
     set sectionAltText(newAltText) {
-        if ((this._sectionAltText.elements.length > 0) && newAltText) {
-            this._sectionAltText.elements[0].text = newAltText;
-        } else if (newAltText) {
-            this._sectionAltText.elements = [
-                {
-                    "type": "text",
-                    "text": `${newAltText}`
-                }
-            ];
-        } else {
-            this._sectionAltText.elements = [];
-        }
+        this.setTextField("_sectionAltText", newAltText);
     }
 }
 

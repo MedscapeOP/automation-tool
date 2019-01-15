@@ -41,51 +41,47 @@ class ContributorElement extends XMLElement {
 
     // Contributor Name Props
     get contrbtrNm() {
-        return this._contrbtr_nm.elements[0].text;
+        return this.getTextField("_contrbtr_nm");
     }
 
     set contrbtrNm(newContributorName) {
-        this._contrbtr_nm.elements[0].text = newContributorName;
+        this.setTextField("_contrbtr_nm", newContributorName);
     }
     
     // Contributor Title Props
     get contrbtrTitle() {
-        if (this._contrbtr_title.elements.length > 0) {
-            return xmlOps.objectToXMLString(this._contrbtr_title);
-        } else {
-            return null;
-        }  
+        return this.getWrappedMarkupField("_contrbtr_title");
     }
 
     set contrbtrTitle(contributorTitle) {
+        // console.log("CONTRIBUTOR TITLE: ", contributorTitle);
         // Remove already existing section text
-        this._contrbtr_title.elements = [];
-        if (contributorTitle) {
-            var contributorTitleObject = xmlOps.xmlStringToJS(contributorTitle);
-            // var content = contributorTitleObject.elements[0].elements;       
-            // for (var i = 0; i < content.length; i++) {
-            //     this._sectionText.elements.push(content[i]);
-            // }
-            this._contrbtr_title.elements.push(contributorTitleObject.elements[0]);
-        }
+        // this._contrbtr_title.elements = [];
+        // if (contributorTitle) {
+        //     var contributorTitleObject = xmlOps.xmlStringToJS(contributorTitle);
+        //     // var content = contributorTitleObject.elements[0].elements;       
+        //     // for (var i = 0; i < content.length; i++) {
+        //     //     this._sectionText.elements.push(content[i]);
+        //     // }
+        //     this._contrbtr_title.elements.push(contributorTitleObject.elements[0]);
+        // }
+        this.setWrappedMarkupField("_contrbtr_title", contributorTitle);
     }
 
     // Contributor Disclosure Props
     get contrbtrDisclsr() {
-        if (this._contrbtr_disclsr.elements.length > 0) {
-            return xmlOps.objectToXMLString(this._contrbtr_disclsr);
-        } else {
-            return null;
-        }  
+        return this.getWrappedMarkupField("_contrbtr_disclsr");
     }
 
     set contrbtrDisclsr(contributorDisclosure) {
+         
         // Remove already existing section text
-        this._contrbtr_disclsr.elements = [];
-        if (contributorTitle) {
-            var contributorDisclosureObject = xmlOps.xmlStringToJS(contributorDisclosure);
-            this._contrbtr_disclsr.elements.push(contributorDisclosureObject.elements[0]);
-        }
+        // this._contrbtr_disclsr.elements = [];
+        // if (contributorTitle) {
+        //     var contributorDisclosureObject = xmlOps.xmlStringToJS(contributorDisclosure);
+        //     this._contrbtr_disclsr.elements.push(contributorDisclosureObject.elements[0]);
+        // }
+        this.setWrappedMarkupField("_contrbtr_disclsr", contributorDisclosure)
     }
 }
 

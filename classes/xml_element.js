@@ -182,7 +182,7 @@ class XMLElement {
 
     // FIELDS THAT ARE NOT SINGLE PARENT HTML MARKUP  
     getMarkupField(propName) {
-        if (this[propName].elements[0]) {
+        if (this[propName].elements.length > 0) {
             return xmlOps.objectToXMLString(this[propName]);
         } else {
             return null; 
@@ -195,9 +195,9 @@ class XMLElement {
      * @param {*} propName 
      * @param {*} newMarkup - newMarkup should come in wrapped using a wrapper utility 
      */
+    
     setMarkupField(propName, newMarkup) {  
-        if (newMarkup) {
-            // Only need Peer Reviewer if NON-OUS             
+        if (newMarkup) {          
             var markupObject = xmlOps.xmlStringToJS(newMarkup);
             this[propName].elements = markupObject.elements[0].elements;
         } else {
