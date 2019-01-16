@@ -131,7 +131,11 @@ class XMLElement {
 
     // FIELDS THAT ONLY HAVE TEXT WRAPPED IN A PARAGRAPH TAG  
     getParagraphTextField(propName) {
-        return this[propName].elements[0].elements[0].text || "";
+        if (this[propName].elements[0]) {
+            return this[propName].elements[0].elements[0].text;
+        } else {
+            return null;
+        }       
     }
 
     setParagraphTextField(propName, newText) {

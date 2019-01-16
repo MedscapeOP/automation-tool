@@ -214,204 +214,87 @@ class ProfArticle extends XMLElement{
     // COMPUTED PROPERTIES 
     //-------------------------------- 
     get titleText() {
-        if (this._title.elements[0]) {
-            return this._title.elements[0].elements[0].text;
-        } else {
-            return null;
-        }        
+        return this.getParagraphTextField("_title");        
     }
 
     set titleText(newTitle) {
         // Extraordinary Cases of VTE Prevention in Patient with Cancer
-        var titleObject = {
-            "type": "element",
-            "name": "p",
-            "elements": [
-                {
-                    "type": "text",
-                    "text": `${newTitle}`
-                }
-            ]
-        };
-        this._title.elements[0] = titleObject; 
+        this.setParagraphTextField("_title", newTitle);
     }
 
     get title() {
-        if (this._title.elements[0]) {
-            return xmlOps.objectToXMLString(this._title);
-        } else {
-            return null;
-        }  
+        return this.getMarkupField("_title");
     }
 
     set title(newTitleMarkup) {
-        if (newTitleMarkup) {
-            var titleObject = xmlOps.xmlStringToJS(newTitleMarkup);
-            this._title.elements = titleObject.elements;
-        } else {
-            this._title.elements = [];
-        }
+        this.setMarkupField("_title", newTitleMarkup);
     }
 
     get contrbtrBylineText() {
-        if (this._contrbtr_byline.elements[0]) {
-            return this._contrbtr_byline.elements[0].elements[0].text;
-        } else {
-            return null;
-        }        
+        return this.getParagraphTextField("_contrbtr_byline");
     }
 
     set contrbtrBylineText(newByline) {
         // Extraordinary Cases of VTE Prevention in Patient with Cancer
-        var bylineObject = {
-            "type": "element",
-            "name": "p",
-            "elements": [
-                {
-                    "type": "text",
-                    "text": `${newByline}`
-                }
-            ]
-        };
-        this._contrbtr_byline.elements[0] = bylineObject; 
+        this.setParagraphTextField("_contrbtr_byline", newByline);
     }
 
     get contrbtrByline() {
-        if (this._contrbtr_byline.elements[0]) {
-            return xmlOps.objectToXMLString(this._contrbtr_byline);
-        } else {
-            return null;
-        }  
+        return this.getMarkupField("_contrbtr_byline");
     }
 
     set contrbtrByline(newBylineMarkup) {
-        if (newBylineMarkup) {
-            var bylineObject = xmlOps.xmlStringToJS(newBylineMarkup);
-            this._contrbtr_byline.elements = bylineObject.elements;
-        } else {
-            this._contrbtr_byline.elements = [];
-        }
+        this.setMarkupField("_contrbtr_byline", newBylineMarkup);
     }
 
     // AKA Content Above Contributors 
     get contrbtrPreContent() {
-        if (this._contrbtr_pre_content.elements[0]) {
-            return xmlOps.objectToXMLString(this._contrbtr_pre_content);
-        } else {
-            return null; 
-        }
+        return this.getMarkupField("_contrbtr_pre_content");
     }
     
     set contrbtrPreContent(newPreContentMarkup) {
-        if (newPreContentMarkup) {
-            var preContentObject = xmlOps.xmlStringToJS(newPreContentMarkup);
-            this._contrbtr_pre_content.elements = preContentObject.elements[0].elements;
-        } else {
-            this._contrbtr_pre_content.elements = [];
-        }
+        this.setMarkupField("_contrbtr_pre_content", newPreContentMarkup);
     }
 
     // AKA Content Below Contributors 
     get contrbtrPostContent() {
-        if (this._contrbtr_post_content.elements[0]) {
-            return xmlOps.objectToXMLString(this._contrbtr_post_content);
-        } else {
-            return null; 
-        }
+        return this.getMarkupField("_contrbtr_post_content");
     }
 
     set contrbtrPostContent(newPostContentMarkup) {
-        if (newPostContentMarkup) {
-            // Only need Peer Reviewer if NON-OUS             
-            var postContentObject = xmlOps.xmlStringToJS(newPostContentMarkup);
-            this._contrbtr_post_content.elements = postContentObject.elements[0].elements;
-        } else {
-            this._contrbtr_post_content.elements = [];
-        }
+        this.setMarkupField("_contrbtr_post_content", newPostContentMarkup);
     }
 
-    get supprtrGrantGroup() {
-        if (this._supprtr_grant_group.elements[0]) {
-            return xmlOps.objectToXMLString(this._supprtr_grant_group);
-        } else {
-            return null;
-        }
+    get supprtrGrantGroup() {        
+        return this.getMarkupField("_supprtr_grant_group");
     }
 
     set supprtrGrantGroup(newSupporterMarkup) {
-        if (newSupporterMarkup) {
-            var supporterObjects = xmlOps.xmlStringToJS(newSupporterMarkup);
-            this._supprtr_grant_group.elements = supporterObjects.elements;
-        } else {
-            this._supprtr_grant_group.elements = [];
-        }
+        this.setMarkupField("_supprtr_grant_group", newSupporterMarkup);
     }
-    // {
-    //     "type": "element",
-    //     "name": "supprtr_grant_attr",
-    //     "elements": [
-    //         {
-    //             "type": "text",
-    //             "text": "/webmd/professional_assets/medscape/images/grant_attribution/daiichi-global-ieg-txt-2014.gif"
-    //         }
-    //     ]
-    // }
 
     get cpyrtHolder() {
-        if (this._cpyrt_holder.elements[0]) {
-            return xmlOps.objectToXMLString(this._cpyrt_holder);
-        } else {
-            return null; 
-        }
+        return this.getMarkupField("_cpyrt_holder"); 
     }
 
     set cpyrtHolder(newCopyrightMarkup) {
-        if (newCopyrightMarkup) {
-            var cpyrtHolderObject = xmlOps.xmlStringToJS(newCopyrightMarkup);
-            this._cpyrt_holder.elements = cpyrtHolderObject.elements[0].elements;
-        } else {
-            this._cpyrt_holder.elements = [];
-        }
+        this.setMarkupField("_cpyrt_holder", newCopyrightMarkup);
     }
 
     get bkmtrFront() {
-        if (this._bkmtr_front.elements[0]) {
-            return xmlOps.objectToXMLString(this._cpyrt_holder);
-        } else {
-            return null;
-        }
+        return this.getMarkupField("_cpyrt_holder");
     }
 
     set bkmtrFront(newBackmatterMarkup) {
-        if (newBackmatterMarkup) {
-            var backmatterObject = xmlOps.xmlStringToJS(newBackmatterMarkup);
-            this._bkmtr_front.elements = backmatterObject.elements[0].elements;
-        } else {
-            this._bkmtr_front.elements = [];
-        }
+        this.setMarkupField("_cpyrt_holder", newBackmatterMarkup);    
     }
 
     get bannerImage() {
-        // {
-        //     "type": "text",
-        //     "text": "/webmd/professional_assets/medscape/images/title_background/banner-evolving-anticoagulation-2017.jpg"
-        // }
-        if (this._img_ttl_bkgrd.elements[0]) {  
-            return this._img_ttl_bkgrd.elements[0].text;
-        } else {
-            return null; 
-        }
+        return this.getTextField("_img_ttl_bkgrd");
     }
 
     set bannerImage(advancesBannerFileName) {
-        if (advancesBannerFileName) {
-            this._img_ttl_bkgrd.elements[0] = {
-                "type": "text",
-                "text": `/webmd/professional_assets/medscape/images/title_background/${advancesBannerFileName}`
-            };
-        } else {
-            this._img_ttl_bkgrd.elements = [];
-        }
+        this.setTextField("_img_ttl_bkgrd", advancesBannerFileName);
     }
 
     get tocElements() {
@@ -423,11 +306,7 @@ class ProfArticle extends XMLElement{
     //-------------------------------- 
 
     get aboveTitle() {
-        if (this._above_title.elements[0]) {
-            return xmlOps.objectToXMLString(this._above_title);
-        } else {
-            return null;
-        }          
+        return this.getMarkupField("_above_title");
     }
 
     insertAboveTitleCA (advancesTitle, advancesFileName) {
