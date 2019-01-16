@@ -213,38 +213,22 @@ class ProfArticle extends XMLElement{
     //--------------------------------
     // COMPUTED PROPERTIES 
     //-------------------------------- 
-    get titleText() {
+    get title() {
         return this.getParagraphTextField("_title");        
     }
 
-    set titleText(newTitle) {
+    set title(newTitle) {
         // Extraordinary Cases of VTE Prevention in Patient with Cancer
         this.setParagraphTextField("_title", newTitle);
     }
 
-    get title() {
-        return this.getMarkupField("_title");
-    }
-
-    set title(newTitleMarkup) {
-        this.setMarkupField("_title", newTitleMarkup);
-    }
-
-    get contrbtrBylineText() {
+    get contrbtrByline() {
         return this.getParagraphTextField("_contrbtr_byline");
     }
 
-    set contrbtrBylineText(newByline) {
+    set contrbtrByline(newByline) {
         // Extraordinary Cases of VTE Prevention in Patient with Cancer
         this.setParagraphTextField("_contrbtr_byline", newByline);
-    }
-
-    get contrbtrByline() {
-        return this.getMarkupField("_contrbtr_byline");
-    }
-
-    set contrbtrByline(newBylineMarkup) {
-        this.setMarkupField("_contrbtr_byline", newBylineMarkup);
     }
 
     // AKA Content Above Contributors 
@@ -282,11 +266,11 @@ class ProfArticle extends XMLElement{
     }
 
     get bkmtrFront() {
-        return this.getMarkupField("_cpyrt_holder");
+        return this.getMarkupField("_bkmtr_front");
     }
 
     set bkmtrFront(newBackmatterMarkup) {
-        this.setMarkupField("_cpyrt_holder", newBackmatterMarkup);    
+        this.setMarkupField("_bkmtr_front", newBackmatterMarkup);    
     }
 
     get bannerImage() {
@@ -294,7 +278,8 @@ class ProfArticle extends XMLElement{
     }
 
     set bannerImage(advancesBannerFileName) {
-        this.setTextField("_img_ttl_bkgrd", advancesBannerFileName);
+        var filePath = `/webmd/professional_assets/medscape/images/title_background/${advancesBannerFileName}`;
+        this.setTextField("_img_ttl_bkgrd", filePath);
     }
 
     get tocElements() {

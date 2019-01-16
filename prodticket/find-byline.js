@@ -19,7 +19,7 @@ exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
     } else if (stringOps.isEmptyString(cmeAuthor)) {
         throw new Error("No CME Author found in the prodticket");
     } else {
-        return `<p>${newsAuthorLabel}: ${newsAuthor}; ${cmeAuthorLabel}: ${cmeAuthor}</p>`;
+        return `${newsAuthorLabel}: ${newsAuthor}; ${cmeAuthorLabel}: ${cmeAuthor}`;
     }
 }
 
@@ -31,7 +31,7 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     if (stringOps.isBlankOrWhiteSpace(textBlock) || stringOps.isEmptyString(textBlock)) {
         throw new Error("No byline found in the prodticket");
     } else {
-        return "<p>" + cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim() + "</p>";
+        return cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim();
     }
 }
 
@@ -58,7 +58,7 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     if (stringOps.isBlankOrWhiteSpace(byline) || stringOps.isEmptyString(byline)) {
         throw new Error("No byline found in the prodticket");
     } else {
-        return "<p>" + cleanHTML.singleLine(cleanHTML.plainText(byline)).trim() + "</p>";
+        return cleanHTML.singleLine(cleanHTML.plainText(byline)).trim();
     }
 }
 

@@ -73,17 +73,17 @@ describe('Prodticket Module Functions', function () {
     describe("prodticket.getByline()", function () {
         it("should return the program byline from the .html - Clinical Brief", function () {
             var result = prodticket.getByline(prodticketCB, config.programs.clinicalBrief);
-            expect(result).to.equal("<p>News Author: Sue Hughes; CME Author: Laurie Barclay, MD</p>");
+            expect(result).to.equal("News Author: Sue Hughes; CME Author: Laurie Barclay, MD");
         });
 
         it("should return the program byline from the .html - Spotlight", function () {
             var result = prodticket.getByline(prodticketSL, config.programs.spotlight);
-            expect(result).to.equal("<p>Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP; Alok A. Khorana, MD; Jeffrey I. Weitz, MD, FRCP</p>");
+            expect(result).to.equal("Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP; Alok A. Khorana, MD; Jeffrey I. Weitz, MD, FRCP");
         });
 
         it("should return the program byline from the .html - Curbside", function () {
             var result = prodticket.getByline(prodticketCC, config.programs.curbsideConsult);
-            expect(result).to.equal("<p>Jeffrey I. Weitz, MD, FRCP(C); Alok A. Khorana, MD</p>");
+            expect(result).to.equal("Jeffrey I. Weitz, MD, FRCP(C); Alok A. Khorana, MD");
         });
 
         it("should return the program byline from the .html - TownHall", function () {
@@ -92,7 +92,7 @@ describe('Prodticket Module Functions', function () {
 
             // expect(result).to.equal("<p>Byline not found in the prodticket!</p>");
 
-            expect(result).to.equal("<p>Henri-Jean Aubin, MD, PhD; Peter Hajek, PhD; Serena Tonstad, MD, PhD</p>");
+            expect(result).to.equal("Henri-Jean Aubin, MD, PhD; Peter Hajek, PhD; Serena Tonstad, MD, PhD");
         });
 
         it("should return error object with message for missing byline", function () {
@@ -112,7 +112,7 @@ describe('Prodticket Module Functions', function () {
         var contributorsSL = require("./input/contributors-sl");
         var contributorsTH = require("./input/contributors-th");
         var contributorsTH_alt = require("./input/contributors-th-alt");
-        it("should return the program contributors from the .html - Spotlight", function () {
+        it("should return the program contributors from the .html - Spotlight", function (done) {
             var result = prodticket.getContributors(prodticketSL, config.programs.spotlight);
 
             // fs.writeFileSync(__dirname + '/output/contributors.json', JSON.stringify(result, undefined, 2), function(err) {
@@ -129,9 +129,10 @@ describe('Prodticket Module Functions', function () {
                 expect(result[i].affiliation).to.equalIgnoreSpaces(contributorsSL[i].affiliation);
                 expect(result[i].disclosure).to.equalIgnoreSpaces(contributorsSL[i].disclosure);
             }
+            done()
         });
 
-        it("should return the program contributors from the .html - Curbside", function () {
+        it("should return the program contributors from the .html - Curbside", function (done) {
             var result = prodticket.getContributors(prodticketCC, config.programs.curbsideConsult);
             // console.log("RESULT CURBSIDE: ", result);
 
@@ -149,6 +150,7 @@ describe('Prodticket Module Functions', function () {
                 expect(result[i].affiliation).to.equalIgnoreSpaces(contributorsCC[i].affiliation);
                 expect(result[i].disclosure).to.equalIgnoreSpaces(contributorsCC[i].disclosure);
             }
+            done()
         });
 
         it("should return the program contributors from the .html - TownHall", function () {

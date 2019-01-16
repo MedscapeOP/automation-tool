@@ -15,6 +15,8 @@ const TownHallEnduringChecklist = require('./townhall_enduring_checklist');
 const TownHallRegChecklist = require('./townhall_reg_checklist');
 const PropertiesChecklist = require('./properties_checklist');
 const ProgramTimeline = require('./program_timeline');
+const ContributorGroup = require('./contrbtr_group');
+const ContributorElement = require('./contrbtr_element');
 
 module.exports = {
     XMLElement,
@@ -33,5 +35,7 @@ module.exports = {
     TownHallEnduringChecklist,
     TownHallRegChecklist,
     PropertiesChecklist,
-    ProgramTimeline
+    ProgramTimeline,
+    ContributorGroup,
+    ContributorElement
 }

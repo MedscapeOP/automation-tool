@@ -37,43 +37,26 @@ describe('Prof Article Element', function () {
     });
 
     /* TEST GETTERS AND SETTERS FOR TITLE */
-    describe('#get/set .titleText', function () {
-        it('should set and get title text and return null if no title', function () {
-            expect(profArticleInstance.titleText).to.equal(null);
-
-            profArticleInstance.titleText = "Extraordinary Cases of VTE Prevention in Patient with Cancer";
-
-            expect(profArticleInstance.titleText).to.equal('Extraordinary Cases of VTE Prevention in Patient with Cancer');
-        });
-    });
-
     describe('#get/set .title', function () {
         it('should set and get title markup and return null if no title', function (done) {
-            profArticleInstance.title = "<p>Extraordinary Cases of VTE Prevention in Patient with Cancer</p>";
+            profArticleInstance.title = null;
+            profArticleInstance.title = "Extraordinary Cases of VTE Prevention in Patient with Cancer";
 
             // console.log(JSON.stringify(profArticleInstance.toObjectLiteral(), undefined, 2));
-            expect(profArticleInstance.title).to.equal('<p>Extraordinary Cases of VTE Prevention in Patient with Cancer</p>');
+            expect(profArticleInstance.title).to.equal('Extraordinary Cases of VTE Prevention in Patient with Cancer');
             done();
         });
     });
 
     /* TEST GETTERS AND SETTERS FOR BYLINE */
-    describe('#get/set .contrbtrBylineText', function () {
-        it('should set and get contributor byline text and return null if not set', function () {
-            expect(profArticleInstance.contrbtrBylineText).to.equal(null);
-
-            profArticleInstance.contrbtrBylineText = "Mark A. Crowther, MD; Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP";
-
-            expect(profArticleInstance.contrbtrBylineText).to.equal('Mark A. Crowther, MD; Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP');
-        });
-    });
-
     describe('#get/set .contrbtrByline', function () {
         it('should set and get byline markup and return null if no byline', function (done) {
-            profArticleInstance.contrbtrByline = "<p>Mark A. Crowther, MD; Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP</p>";
+            expect(profArticleInstance.contrbtrByline).to.equal(null);
 
-            expect(profArticleInstance.contrbtrByline).to.equal('<p>Mark A. Crowther, MD; Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP</p>');
-            done();
+            profArticleInstance.contrbtrByline = "Mark A. Crowther, MD; Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP";
+
+            expect(profArticleInstance.contrbtrByline).to.equal('Mark A. Crowther, MD; Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP');
+            done();         
         });
     });
 

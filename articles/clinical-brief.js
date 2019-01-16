@@ -180,9 +180,9 @@ function buildClinicalBrief(ticket, program) {
 
     // Instantiate and Populate Article
     var finalArticle = new ProfArticle("Article", program.hasOUS);
-    // Set article title (pass markup)
-    finalArticle.titleText = title;
-    // Set article byline (pass markup)
+    // Set article title (pass text)
+    finalArticle.title = title;
+    // Set article byline (pass text)
     finalArticle.contrbtrByline = byline;
     // set contrbtr_pre_content
     finalArticle.contrbtrPreContent = checklistResult.properties.contrbtrPreContent.result;

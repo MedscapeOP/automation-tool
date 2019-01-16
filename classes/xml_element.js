@@ -163,7 +163,11 @@ class XMLElement {
     // FIELDS THAT ONLY HAVE TEXT 
     getTextField(propName) {
         if (this[propName].elements.length > 0) {
-            return this[propName].elements[0].text;
+            if (this[propName].elements[0].text) {
+                return this[propName].elements[0].text;
+            } else {
+                return null;
+            }
         } else {
             return null;
         }
