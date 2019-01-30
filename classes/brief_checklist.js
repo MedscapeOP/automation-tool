@@ -17,7 +17,7 @@ class BriefChecklist extends ArticleChecklist{
         this.goalStatement = {result: null, printFn: printFunctions.printStringProp, printName: "GOAL STATEMENT"};
         this.learningObjectives = {result: null, printFn: printFunctions.printStringProp, printName: "LEARNING OBJECTIVES"};       
         this.references = {result: null , printFn: printFunctions.printStringProp, printName: "REFERENCES"};
-        this.supporter = {result: null , printFn: printFunctions.printStringProp, printName: "SUPPORTER"};
+        this.supporterGrantAttr = {result: null , printFn: printFunctions.printStringProp, printName: "GRANT ATTRIBUTIONS"};
         this.teaser = {result: null , printFn: printFunctions.printStringProp, printName: "CME TEASER"};
         this.targetAudience = {result: null , printFn: printFunctions.printStringProp, printName: "TARGET AUDIENCE"};
         this.title = {result: null , printFn: printFunctions.printStringProp, printName: "ACTIVITY TITLE"};

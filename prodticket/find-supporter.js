@@ -5,7 +5,7 @@ var exportObject = {};
 
 // Clinical Brief 
 exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
-    throw new Error("No teaser found in the prodticket");
+    throw new Error("Clinical Brief uses default medscape.gif for grant attribution");
 }
 
 // Spotlight 

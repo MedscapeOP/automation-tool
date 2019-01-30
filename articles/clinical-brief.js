@@ -119,9 +119,6 @@ function checklistClinicalBrief(ticket, program) {
     // REFERENCES
     checklist.references.result = prodticket.getReferences(ticket, program);
     
-    // SUPPORTER
-    // <<<<<<<< PLACEHOLDER >>>>>>>>>
-    
     // TEASER
     // <<<<<<<< PLACEHOLDER >>>>>>>>> 
     
@@ -190,6 +187,7 @@ function buildClinicalBrief(ticket, program) {
     finalArticle.cpyrtHolder = checklistResult.properties.cpyrtHolder.result;
     // set backmatter front page 
     finalArticle.bkmtrFront = checklistResult.properties.bkmtrFront.result;
+    finalArticle.insertSupporterGrantAttr(null); // passing null defaults to medscape.gif 
           
     // Insert Main TOC Object & Insert References TOC Object 
     finalArticle.insertTOCElement(mainTOCInstance);

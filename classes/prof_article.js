@@ -328,6 +328,25 @@ class ProfArticle extends XMLElement{
         // this._elements.push(secElement.toObjectLiteral().elements[0]);
         this._contrbtr_groups.push(contrbtrGroup.toObjectLiteral().elements[0]);
     }
+    insertSupporterGrantAttr(imageFilename) {
+        if (!imageFilename) {
+            imageFilename = `medscape.gif`;
+        }
+        // var supprtrGrantAttr = `
+        // <supprtr_grant_attr>/webmd/professional_assets/medscape/images/grant_attribution/${imageFilename}</supprtr_grant_attr>
+        // `;
+        var supprtrGrantAttrObject = {
+            "type": "element",
+            "name": "supprtr_grant_attr",
+            "elements": [
+                {
+                    "type": "text",
+                    "text": `/webmd/professional_assets/medscape/images/grant_attribution/${imageFilename}`
+                }
+            ]
+        };
+        this._supprtr_grant_group.elements.push(supprtrGrantAttrObject);
+    }
     insertLayerGroup(layerGrp) {
         /* 
             - Pushes the new layer_grp element onto the this._layer_grps array
