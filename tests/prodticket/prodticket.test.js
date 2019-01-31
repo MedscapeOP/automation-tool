@@ -107,7 +107,7 @@ describe('Prodticket Module Functions', function () {
     * CONTRIBUTORS     
     */
     describe("prodticket.getContributors()", function () {
-        this.timeout(5000);
+        this.timeout(7000);
         var contributorsCC = require("./input/contributors-cc");
         var contributorsSL = require("./input/contributors-sl");
         var contributorsTH = require("./input/contributors-th");

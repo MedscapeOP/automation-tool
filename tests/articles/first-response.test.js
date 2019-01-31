@@ -89,7 +89,8 @@ describe('First Response', function () {
     });
 
     describe('#buildFirstResponse()', function () {
-        it('should return complete XML string of First Response article', function () {
+        it('should return complete XML string of First Response article', function (done) {
+            this.timeout(5000);
             program.hasCollectionPage = false;
             program.hasPeerReviewer = true;
             program.hasForYourPatient = false;
@@ -112,9 +113,11 @@ describe('First Response', function () {
             // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
 
             // expect(result).to.equalIgnoreSpaces(completeFirstResponse)
+            done();
         });
 
-        it('should return complete XML string of First Response article - with LLA', function () {
+        it('should return complete XML string of First Response article - with LLA', function (done) {
+            this.timeout(5000);
             program.hasCollectionPage = false;
             program.hasPeerReviewer = true;
             // Tested and working with For your patient
@@ -138,6 +141,7 @@ describe('First Response', function () {
             // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
 
             // expect(result).to.equalIgnoreSpaces(completeFirstResponseLLA);
+            done();
         });
     });
 });

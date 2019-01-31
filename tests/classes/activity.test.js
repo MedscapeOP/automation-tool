@@ -90,9 +90,9 @@ describe('Prof Activity Element', function () {
 
             profActivityInstance.insertContributorGroup(contrbtrGroupAuthors);
 
-            var activityXML = utils.xmlOps.objectToXMLString(profActivityInstance.toObjectLiteral());
+            var activityXML = profActivityInstance.toFinalXML();
 
-            // fs.writeFileSync(__dirname + '/output/finished-activity.xml', activityXML);
+            fs.writeFileSync(__dirname + '/output/finished-activity.xml', activityXML);
             done();
         });
     });
