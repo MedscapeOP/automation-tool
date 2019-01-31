@@ -1,117 +1,99 @@
-// const fs = require('fs');
-// const _ = require("lodash");
-// const expect = require('chai').expect;
+const fs = require('fs');
+const _ = require("lodash");
+const expect = require('chai').expect;
 
-// const app = require('../../commands');
-// const ProfArticle = app.classes.ProfArticle;
-// const TOCElement = app.classes.TOCElement;
-// const utils = app.utils;
-
-
-// describe('Prof Article Element', function () {
-//     /*
-//     Main sections to test: 
-//     - Test elements getter 
-//     */
-//    var profArticleInstance; 
-//     beforeEach(function() {
-//         // fs.readFileSync(__dirname + '/input/article.html', 'utf8');
-//         // sectionText = require('./input/section_text'); 
-//         // completeProfArticle = require('./input/slide_group');
-//         profArticleInstance = new ProfArticle();
-//     });
-    
-//     describe('.elements', function () {
-//         it('should flatten sub-arrays into the main elements array', function (done) {
-//             var tocInstance1 = new TOCElement("TOC1");
-//             var tocInstance2 = new TOCElement("TOC2");
-//             var tocInstance3 = new TOCElement("TOC3");
-//             profArticleInstance.insertTOCElement(tocInstance1);
-//             profArticleInstance.insertTOCElement(tocInstance2);
-//             profArticleInstance.insertTOCElement(tocInstance3);
-
-//             // console.log("ELEMENTS: ", profArticleInstance.elements);
-//             // expect(profArticleInstance.toObjectLiteral()).to.deep.equal(completeProfArticle);
-//             done();
-//         });
-//     });
-
-//     /* TEST GETTERS AND SETTERS FOR TITLE */
-//     describe('#get/set .titleText', function () {
-//         it('should set and get title text and return null if no title', function () {
-//             expect(profArticleInstance.titleText).to.equal(null);
-
-//             profArticleInstance.titleText = "Extraordinary Cases of VTE Prevention in Patient with Cancer";
-
-//             expect(profArticleInstance.titleText).to.equal('Extraordinary Cases of VTE Prevention in Patient with Cancer');
-//         });
-//     });
-
-//     describe('#get/set .title', function () {
-//         it('should set and get title markup and return null if no title', function (done) {
-//             profArticleInstance.title = "<p>Extraordinary Cases of VTE Prevention in Patient with Cancer</p>";
-
-//             // console.log(JSON.stringify(profArticleInstance.toObjectLiteral(), undefined, 2));
-//             expect(profArticleInstance.title).to.equal('<p>Extraordinary Cases of VTE Prevention in Patient with Cancer</p>');
-//             done();
-//         });
-//     });
-
-//     /* TEST GETTERS AND SETTERS FOR BYLINE */
-//     describe('#get/set .contrbtrBylineText', function () {
-//         it('should set and get contributor byline text and return null if not set', function () {
-//             expect(profArticleInstance.contrbtrBylineText).to.equal(null);
-
-//             profArticleInstance.contrbtrBylineText = "Mark A. Crowther, MD; Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP";
-
-//             expect(profArticleInstance.contrbtrBylineText).to.equal('Mark A. Crowther, MD; Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP');
-//         });
-//     });
-
-//     describe('#get/set .contrbtrByline', function () {
-//         it('should set and get byline markup and return null if no byline', function (done) {
-//             profArticleInstance.contrbtrByline = "<p>Mark A. Crowther, MD; Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP</p>";
-
-//             expect(profArticleInstance.contrbtrByline).to.equal('<p>Mark A. Crowther, MD; Lord Ajay K. Kakkar, MD, PhD, FRCS, FRCP</p>');
-//             done();
-//         });
-//     });
+const app = require('../../commands');
+const {ProfActivity, ContributorGroup} = app.classes;
+const TOCElement = app.classes.TOCElement;
+const utils = app.utils;
 
 
-//     /* TEST GETTERS AND SETTERS FOR CONTRIBUTOR POST CONTENT (PEER REVIEWER) */
-//     describe('#get/set .contrbtrPostContent', function () {
-//         it('should set and get post content markup and return null if no peer reviewer', function (done) {
-//             profArticleInstance.contrbtrPostContent = "<div><h3>Peer Reviewer</h3><p>Reviewer Disclosure<br/>Served as a consultant for: Abbot; Heartware ; Medtronic; Thoratec;</p></div>";
+describe('Prof Activity Element', function () {
+    var learningObjectives = fs.readFileSync(__dirname + '/../utils/input/formatted-objectives-cc.html', 'utf8');
 
-//             expect(profArticleInstance.contrbtrPostContent).to.equal('<h3>Peer Reviewer</h3><p>Reviewer Disclosure<br/>Served as a consultant for: Abbot; Heartware ; Medtronic; Thoratec;</p>');
-//             done();
-//         });
-//     });
+    var creditInstructions = fs.readFileSync(__dirname + '/../snippets/input/credit-instructions-cb.html', 'utf8');
 
+    var contrbtrGroupEditors = new ContributorGroup("Editors");
 
-//     /* TEST GETTERS AND SETTERS FOR BANNER IMAGE (PEER REVIEWER) */
-//     describe('#get/set .bannerImage', function () {
-//         it('should set and get bannerImage by inputting filename and return null if no image set', function (done) {
-//             profArticleInstance.bannerImage = "banner-evolving-anticoagulation-2017.jpg";
+    var contrbtrGroupAuthors = new ContributorGroup("CME Authors");
 
-//             // console.log("BANNER IMAGE: ", profArticleInstance.bannerImage);
-//             // expect(profArticleInstance.bannerImage).to.equal('/webmd/professional_assets/medscape/images/title_background/banner-evolving-anticoagulation-2017.jpg?interpolation=lanczos-none&resize=1240:600');
-//             expect(profArticleInstance.bannerImage).to.equal('/webmd/professional_assets/medscape/images/title_background/banner-evolving-anticoagulation-2017.jpg');
-//             done();
-//         });
-//     });
+    var profActivityInstance; 
+    beforeEach(function() {        
+        // sectionText = require('./input/section_text'); 
+        // completeProfArticle = require('./input/slide_group');
+        profActivityInstance = new ProfActivity();
+    });
 
-
-//     /* TEST INSERT METHODS */
-//     describe('#insertAboveTitleCA() && .aboveTitle', function () {
-//         it('should insert above_title in CA format, and getter should return XML string of above_title', function (done) {
+    /* TEST GETTERS AND SETTERS FOR TITLE */
+    describe('#get/set .title', function () {
+        it('should set and get title and return null if field is set to falsy value', function () {
+            profActivityInstance.title = "Extraordinary Cases of VTE Prevention in Patient with Cancer";
+            expect(profActivityInstance.title).to.equal('Extraordinary Cases of VTE Prevention in Patient with Cancer');
             
-//             profArticleInstance.insertAboveTitleCA('Evolving Anticoagulation in AF and VTE', 'evolving-anticoagulation');
+            profActivityInstance.title = undefined;
+            expect(profActivityInstance.title).to.equal(null);
+            
+        });
+    });
 
-//             // console.log("ABOVE TITLE", profArticleInstance.aboveTitle);
-//             // console.log("ELEMENTS: ", profArticleInstance.elements);
-//             expect(profArticleInstance.aboveTitle).to.equal('<p><a href="/sites/advances/evolving-anticoagulation">Evolving Anticoagulation in AF and VTE</a></p>');
-//             done();
-//         });
-//     });
-// });
+    /* TEST GETTERS AND SETTERS FOR LEARNING OBJECTIVES */
+    describe('#get/set .learningObjectives', function () {
+        it('should set and get learning objective markup and return null if none are set', function (done) {
+            profActivityInstance.learningObjectives = learningObjectives;
+
+            // console.log(JSON.stringify(profActivityInstance.toObjectLiteral(), undefined, 2));
+            expect(profActivityInstance.learningObjectives).to.equalIgnoreSpaces(learningObjectives);
+            done();
+        });
+    });
+
+    /* TEST GETTERS AND SETTERS FOR GOAL STATEMENT */
+    describe('#get/set .goalStatement', function () {
+        it('should set and get goal statement and return null if set to falsy - text field', function () {
+            profActivityInstance.goalStatement = "The goal of this activity is to improve physician education regarding the role of pharmacologic and nonpharmacologic approaches when managing patients who wish to stop smoking tobacco.";
+            
+            expect(profActivityInstance.goalStatement).to.equalIgnoreSpaces('The goal of this activity is to improve physician education regarding the role of pharmacologic and nonpharmacologic approaches when managing patients who wish to stop smoking tobacco.');
+            
+            profActivityInstance.goalStatement = null;
+
+            expect(profActivityInstance.goalStatement).to.equal(null);
+        });
+    });
+
+    describe('#get/set .targetAudience', function () {
+        it('should set and get target audience markup and return null if set to falsy - Text field', function (done) {
+
+            profActivityInstance.targetAudience = "This activity is intended for cardiologists, hematology and oncology specialists, and primary care physicians.";
+
+            expect(profActivityInstance.targetAudience).to.equal('This activity is intended for cardiologists, hematology and oncology specialists, and primary care physicians.');
+            done();
+        });
+    });
+
+
+    /* TEST GETTERS AND SETTERS FOR CONTRIBUTOR POST CONTENT (PEER REVIEWER) */
+    describe('#get/set .creditInstructions', function () {
+        it('should set and get credit instructions markup and return null if set to falsy value', function (done) {
+            profActivityInstance.creditInstructions = `<div>${creditInstructions}</div>`;
+
+            expect(profActivityInstance.creditInstructions).to.equalIgnoreSpaces(creditInstructions);
+            done();
+        });
+    });
+
+
+    /* TEST INSERT METHODS */
+    describe('#insertContributorGroup()', function () {
+        it('should insert contributor groups into activity', function (done) {
+            
+            profActivityInstance.insertContributorGroup(contrbtrGroupEditors);
+
+            profActivityInstance.insertContributorGroup(contrbtrGroupAuthors);
+
+            var activityXML = utils.xmlOps.objectToXMLString(profActivityInstance.toObjectLiteral());
+
+            // fs.writeFileSync(__dirname + '/output/finished-activity.xml', activityXML);
+            done();
+        });
+    });
+});

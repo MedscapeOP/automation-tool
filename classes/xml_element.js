@@ -139,20 +139,22 @@ class XMLElement {
     }
 
     setParagraphTextField(propName, newText) {
-        newText = newText + "";
-        if (newText.length > 0) {
-            if (this[propName].elements[0]) {
-                this[propName].elements[0].elements[0].text = newText;
-            } else {            
-                this[propName].elements[0] = {
-                    "type": "element",
-                    "name": "p",
-                    "elements": [
-                        {
-                            "type": "text",
-                            "text": newText
-                        }
-                    ]
+        if (newText) {
+            newText = newText + "";
+            if (newText.length > 0) {
+                if (this[propName].elements[0]) {
+                    this[propName].elements[0].elements[0].text = newText;
+                } else {            
+                    this[propName].elements[0] = {
+                        "type": "element",
+                        "name": "p",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": newText
+                            }
+                        ]
+                    }
                 }
             }
         } else {
@@ -231,10 +233,11 @@ class XMLElement {
     setWrappedMarkupField(propName, newMarkup) {
        if (newMarkup) {
             var newMarkupObject = xmlOps.xmlStringToJS(newMarkup);
-            var content = newMarkupObject.elements[0].elements;
-            for (var i = 0; i < content.length; i++) {
-                this[propName].elements.push(content[i]);
-            }
+            // var content = newMarkupObject.elements[0].elements;
+            // for (var i = 0; i < content.length; i++) {
+            //     this[propName].elements.push(content[i]);
+            // }
+            this[propName].elements = newMarkupObject.elements;
         } else {
             this[propName].elements = [];
         }

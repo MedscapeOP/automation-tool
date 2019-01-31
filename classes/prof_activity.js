@@ -98,21 +98,21 @@ class ProfActivity extends XMLElement{
     //-------------------------------- 
     // Activity Title  
     get title() {
-        return this.getTextField("_contrbtr_nm");
+        return this.getTextField("_title");
     }
 
     set title(newTitle) {
-        this.setTextField("_contrbtr_nm", newTitle);
+        this.setTextField("_title", newTitle);
     }
 
     // Learning Objectives 
     get learningObjectives() {
-        return this.getMarkupField("_objectives");
+        return this.getWrappedMarkupField("_objectives");
     }
 
     set learningObjectives(newLearningObjectivesMarkup) {
         // THIS SHOULDN'T BE WRAPPED IN a <p> 
-        this.setMarkupField("_contrbtr_post_content", newLearningObjectivesMarkup);
+        this.setWrappedMarkupField("_objectives", newLearningObjectivesMarkup);
         // if (newLearningObjectivesMarkup) {
         //     // Only need Peer Reviewer if NON-OUS             
         //     var learningObjectivesObject = xmlOps.xmlStringToJS(newLearningObjectivesMarkup);
@@ -125,12 +125,12 @@ class ProfActivity extends XMLElement{
     // Goal Statement  
     get goalStatement() {
         // basic paragraph text field 
-        return this.getParagraphTextField("_sectionHeader");
+        return this.getParagraphTextField("_goal");
     }
 
     set goalStatement(goalStatement) {
         // basic paragraph text field 
-        this.setParagraphTextField("_sectionHeader", goalStatement);
+        this.setParagraphTextField("_goal", goalStatement);
     }
 
     // Target Audience 

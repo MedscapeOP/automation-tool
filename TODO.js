@@ -13,10 +13,11 @@ TODO Future/Lower Priority:
 */ 
 
 /* 
-TODO NOW: Add Default Grant Attribution badge for Clinical Briefs
+TODO NOW: Add Default Grant Attribution badge for Clinical Briefs - DONE 
 - Create Prof Article insert function 
     - Function should be similar to insertContributor where 
       the element being inserted is just one of many pushed onto an array. 
+      
 TODO NOW: Activity XML generation  
 - Set up test suites 
 - Create necessary prodticket functions 
