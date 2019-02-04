@@ -17,7 +17,7 @@ class ContributorElement extends XMLElement {
         };
         this._contrbtr_title = {
             "type": "element",
-            "name": "sec_img",
+            "name": "contrbtr_title",
             "elements": []
         };
         this._contrbtr_bio = {

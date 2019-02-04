@@ -22,7 +22,8 @@ describe('Contributor Group & Contributor Element', function () {
             var contributor = contributors[0];
             var contributorElementInstance = new ContributorElement();
             contributorElementInstance.contrbtrNm = contributor.name;
-            contributorElementInstance.contrbtrTitle = contributor.title;
+            contributorElementInstance.contrbtrTitle = contributor.affiliation;
+            // console.log("CONTRIBUTOR TITLE", contributor.title);
             contributorElementInstance.contrbtrDisclsr = contributor.disclosure;
 
             var result = utils.xmlOps.objectToXMLString(contributorElementInstance.toObjectLiteral());
@@ -57,58 +58,50 @@ describe('Contributor Group & Contributor Element', function () {
 
     describe('New Contributor Group', function () {
         it('Should set up a new Contributor Group with label and push Contributors as needed', function () {
+            var contributor = contributors[0];
+            var contributorElementInstance = new ContributorElement();
+            contributorElementInstance.contrbtrNm = contributor.name;
+            contributorElementInstance.contrbtrTitle = contributor.affiliation;
+            // console.log("CONTRIBUTOR TITLE", contributor.title);
+            contributorElementInstance.contrbtrDisclsr = contributor.disclosure;
+            
             var contributorGroupInstance = new ContributorGroup();
             expect(contributorGroupInstance.contrbtrTypeLbl).to.equal(null);
 
             contributorGroupInstance.contrbtrTypeLbl = "Presenters";
 
+            contributorGroupInstance.insertContributorElement(contributorElementInstance);
+
+            var result = utils.xmlOps.objectToXMLString(contributorGroupInstance.toObjectLiteral());
+
             expect(result).to.equalIgnoreSpaces(`
             <contrbtr_group>
-                    <contrbtr_type_lbl>Presenters</contrbtr_type_lbl>
-                    <contrbtr_element>
-                        <contrbtr_nm>Joseph J. Lillo, DO, CPI</contrbtr_nm>
-                        <contrbtr_title>
-                            <p>Assistant Professor
-                                <br/>Family Medicine
-                                <br/>Midwestern University College of Osteopathic Medicine
-                                <br/>Glendale, Arizona
-                            </p>
-                        </contrbtr_title>
-                        <contrbtr_bio/>
-                        <contrbtr_disclsr>
-                            <p>Disclosure: Joseph Lillo, DO, CPI, has disclosed the following relevant financial relationships:
-                                <br/>Served as a speaker or a member of a speakers bureau for: Amarin Corporation plc; Amgen Inc.; Kowa Company Ltd.
-                                <br/>
-                                <br/>Dr Lillo does not intend to discuss off-label uses of drugs, mechanical devices, biologics, or diagnostics approved by the FDA for use in the United States.
-                                <br/>
-                                <br/>Dr Lillo does not intend to discuss investigational drugs, mechanical devices, biologics, or diagnostics not approved by the FDA for use in the United States.
-                            </p>
-                        </contrbtr_disclsr>
-                    </contrbtr_element>
-                    <contrbtr_element>
-                        <contrbtr_nm>Michael E. Cobble, MD</contrbtr_nm>
-                        <contrbtr_title>
-                            <p>Adjunct Faculty
-                                <br/>University of Utah
-                                <br/>Director
-                                <br/>Canyons Medical
-                                <br/>Salt Lake City, Utah
-                            </p>
-                        </contrbtr_title>
-                        <contrbtr_bio/>
-                        <contrbtr_disclsr>
-                            <p>Disclosure: Michael Cobble, MD, has disclosed the following relevant financial relationships:
-                                <br/>Served as an advisor or consultant for: Kowa Company Ltd.
-                                <br/>Served as a speaker or a member of a speakers bureau for: Amarin Corporation plc; Amgen Inc.; AstraZeneca Pharmaceuticals LP; Kowa Company Ltd.; Sanofi
-                                <br/>Received grants for clinical research from: Johnson &amp; Johnson Pharmaceutical Research &amp; Development, L.L.C.
-                                <br/>
-                                <br/>Dr Cobble does not intend to discuss off-label uses of drugs, mechanical devices, biologics, or diagnostics approved by the FDA for use in the United States.
-                                <br/>
-                                <br/>Dr Cobble does not intend to discuss investigational drugs, mechanical devices, biologics, or diagnostics not approved by the FDA for use in the United States.
-                            </p>
-                        </contrbtr_disclsr>
-                    </contrbtr_element>
-                </contrbtr_group>`);
+                <contrbtr_type_lbl>Presenters</contrbtr_type_lbl>
+                <contrbtr_element>
+                    <contrbtr_nm>Jeffrey I. Weitz, MD, FRCP(C)</contrbtr_nm>
+                    <contrbtr_title>
+                        <p>        
+                            Professor of Medicine
+                            <br/>
+                            McMaster University
+                            <br/>
+                            Hamilton, Ontario, Canada
+                        </p>
+                    </contrbtr_title>
+                    <contrbtr_bio/>
+                    <contrbtr_disclsr>
+                        <p>
+                            Disclosure: Jeffrey I. Weitz, MD, FRCP(C), has disclosed the following relevant financial relationships: 
+
+                            <br/>Served as an advisor or consultant for: Bayer AG; Bristol-Myers Squibb Company; Boehringer Ingelheim Pharmaceuticals, Inc.; Daiichi Sankyo, Inc.; Ionis Pharmaceuticals, Inc.; Janssen Pharmaceuticals; Merck --AMPERSAND--amp; Co., Inc.; Novartis Pharmaceuticals Corporation; Pfizer Inc.; Portola Pharmaceuticals, Inc.
+                            
+                            <br/><br/>Dr Weitz does not intend to discuss off-label uses of drugs, mechanical devices, biologics, or diagnostics approved by the FDA for use in the United States.
+                            
+                            <br/><br/>Dr Weitz does not intend to discuss investigational drugs, mechanical devices, biologics, or diagnostics not approved by the FDA for use in the United States.
+                        </p>
+                    </contrbtr_disclsr>
+                </contrbtr_element>
+            </contrbtr_group>`);
         });
     });
 });
