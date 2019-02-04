@@ -65,7 +65,7 @@ class ContributorElement extends XMLElement {
         //     // }
         //     this._contrbtr_title.elements.push(contributorTitleObject.elements[0]);
         // }
-        this.setWrappedMarkupField("_contrbtr_title", contributorTitle);
+        this.setWrappedMarkupField("_contrbtr_title", `<p>${contributorTitle}</p>`);
     }
 
     // Contributor Disclosure Props
@@ -81,7 +81,7 @@ class ContributorElement extends XMLElement {
         //     var contributorDisclosureObject = xmlOps.xmlStringToJS(contributorDisclosure);
         //     this._contrbtr_disclsr.elements.push(contributorDisclosureObject.elements[0]);
         // }
-        this.setWrappedMarkupField("_contrbtr_disclsr", contributorDisclosure)
+        this.setWrappedMarkupField("_contrbtr_disclsr", `<p>${contributorDisclosure}</p>`);
     }
 }
 
