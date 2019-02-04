@@ -11,7 +11,7 @@ const _ = require("lodash");
 const utils = require("../utils");
 const stringOps = utils.stringOps;
 const articleUtils = require('./article-utils');
-const {ProfArticle, TOCElement, BriefChecklist} = require("../classes");
+const {ProfArticle, TOCElement, BriefChecklist, ProfActivity} = require("../classes");
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
 
@@ -86,6 +86,23 @@ function getClinicalImplications(ticket) {
         textBlock = utils.wrapSubsectionContent(textBlock, utils.cleanHTML.unorderedList);
         return articleUtils.buildSection(textBlock, label);
     }
+}
+
+/* ACTIVITY FUNCTION  
+-------------------------------------- */
+function activityClinicalBrief(program, title, targetAudience, learningObjectives) {
+    var activityInstance = new ProfActivity(title, program.hasOUS);
+    activityInstance.targetAudience = targetAudience; // Text field
+    activityInstance.learningObjectives = learningObjectives // wrapped markup
+    activityInstance.goalStatement = snippets.activity.goalStatementCB();
+    
+    activityInstance.miscProviderStatement = snippets.activity.medscapeProviderStatement(program);
+
+    activityInstance.creditInstructions = snippets.activity.instructionsForCredit(program);
+
+    activityInstance.hardwareRequirements = snippets.activity.hardwareRequirements();
+
+    activityInstance.additionalCreditAvailable = snippets.activity.additionalCreditAvailable();
 }
 
 

@@ -1,3 +1,4 @@
+const activity = require('./activity');
 const inLanguage = require('./in-language');
 const preContent = require('./pre-content');
 const copyrightHolder = require('./copyright-holder');
@@ -131,5 +132,6 @@ module.exports = {
     preContent,
     copyrightHolder,
     backmatter,
-    tableOfContents
+    tableOfContents,
+    activity
 };

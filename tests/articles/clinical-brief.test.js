@@ -17,7 +17,6 @@ describe('Clinical Brief', function () {
       3) Study Highlights
       4) Clinical Implications 
       5) Contributor Byline 
-      6) 
     */
 
     var prodTicket;
