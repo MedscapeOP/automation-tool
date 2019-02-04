@@ -13,8 +13,11 @@ Common Entities / Things to remove:
 function removeTicketFluff(str) {
     // Remove this from Prod ticket (Insert text)
     // var insertRegExp = new RegExp('(Insert.*)', 'g');
-    var insertRegExp = /\(Insert.*\)/gi;
+    var insertRegExp = /\(Insert.*\)\./gi;
     str = str.replace(insertRegExp, "");
+
+    var insertRegExp2 = /\(Insert.*\)/gi;
+    str = str.replace(insertRegExp2, "");
 
     // var insertRegExp2 = /\(insert.*\)/g;
     // str = str.replace(insertRegExp2, "");
