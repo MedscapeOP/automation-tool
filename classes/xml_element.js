@@ -19,11 +19,12 @@ const xmlOps = require('../utils/index').xmlOps;
 */
 
 class XMLElement {
-    constructor(xmlTagName, hasQnaForm, hasFootnotes, childElementIndex = null, xmlType = "element") {
+    constructor(xmlTagName, hasQnaForm, hasFootnotes, childElementIndex = null, attributes = null, xmlType = "element") {
         this.hasQnaForm = hasQnaForm;
         this.hasFootnotes = hasFootnotes;
         this._xmlTagName = xmlTagName;
         this._xmlType = xmlType;
+        this._attributes = attributes;
         this._elements = [];
         this._childElementIndex = childElementIndex;
         this._childElements = [];
@@ -125,7 +126,10 @@ class XMLElement {
                     elements: selfElements
                 }    
             ]
-        }        
+        } 
+        if (this._attributes) {
+            object.elements[0].attributes = this._attributes;
+        }       
         return object;
     }
 

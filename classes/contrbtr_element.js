@@ -3,8 +3,14 @@ const XMLElement = require("./xml_element");
 const xmlOps = require('../utils/xml-ops');
 
 class ContributorElement extends XMLElement {
-    constructor(contributorName = "", hasQnaForm = false, hasFootnotes = false) {
-        super("contrbtr_element", hasQnaForm, hasFootnotes);
+    constructor(contributorName = "", hasQnaForm = false, hasFootnotes = false, chronicleid = null) {
+        if (chronicleid) {
+            super("contrbtr_element", hasQnaForm, hasFootnotes, null, {
+                "chronicleid": chronicleid
+            });
+        } else {
+            super("contrbtr_element", hasQnaForm, hasFootnotes);
+        }
         this._contrbtr_nm = {
             "type": "element",
             "name": "contrbtr_nm",
