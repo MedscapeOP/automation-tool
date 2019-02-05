@@ -41,6 +41,7 @@ let findProgramDetails = require('./find-program-details');
 let findAssociationDisclaimer = require('./find-association-disclaimer');
 let findProductName = require('./find-product-name');
 let findProjectId = require('./find-project-id');
+let findCMEReviewers = require('./find-cme-reviewers');
 
 function checkTicket(ticketHTML) {
     if (ticketHTML) {
@@ -77,6 +78,17 @@ function getContributors(ticketHTML, program) {
         try {
             var rawContributors = findContributors[program.codeName](ticketHTML);
             return rawContributors;
+        } catch (error) {
+            return error; 
+        }
+    }
+}
+
+function getCMEReviewers(ticketHTML, program) {
+    if (checkTicket(ticketHTML)) {
+        try {
+            var rawReviewers = findCMEReviewers[program.codeName](ticketHTML);
+            return rawReviewers;
         } catch (error) {
             return error; 
         }
@@ -327,6 +339,7 @@ module.exports = {
     getTitle,
     getByline,
     getContributors,
+    getCMEReviewers,
     getReferences,
     getAbbreviations,
     getPeerReviewer,
