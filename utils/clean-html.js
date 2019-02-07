@@ -495,6 +495,26 @@ function contributorFluff(str) {
     return str;
 }
 
+function cmeReviewerFluff(str) {
+    /* 
+    USE THIS FUNCTION IN FIND CME REVIEWERS: 
+        - After the main reviewer text block is found clean it up with 
+          this function
+        Find Notes to AME: section 
+        Use getTextblock and substring from start index to end index 
+    */
+    // var block = stringOps.getTextBlock(str, /.*Notes to AME:.*/g, /.*SD\/Editor\/Writer.*/g);
+
+    // str = str.substring(0, block.startIndex) + str.substring(block.endIndex);
+    var selectRegExp = /.*Select the appropriate CME reviewer.*/g;
+    str = str.replace(selectRegExp, "");
+
+    var pleaseDeleteRegExp = /.*\*\*\*Please delete the unneeded CME reviewer.*/g;
+    str = str.replace(pleaseDeleteRegExp, "");
+
+    return str;
+}
+
 function learningObjectives(textBlock, removeFluff=true) {
     if (removeFluff){
         textBlock = removeTicketFluff(textBlock);
@@ -591,6 +611,7 @@ module.exports = {
     contributorAffiliations,
     contributorDisclosures,
     contributorFluff,
+    cmeReviewerFluff,
     learningObjectives,
     associationDisclaimer,
     insertEntityPlaceholders,

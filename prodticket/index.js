@@ -87,7 +87,7 @@ function getContributors(ticketHTML, program) {
 function getCMEReviewers(ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
         try {
-            var rawReviewers = findCMEReviewers[program.codeName](ticketHTML);
+            var rawReviewers = findCMEReviewers[program.codeName](ticketHTML, program);
             return rawReviewers;
         } catch (error) {
             return error; 

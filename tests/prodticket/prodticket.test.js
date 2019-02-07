@@ -196,13 +196,14 @@ describe('Prodticket Module Functions', function () {
         
         // it("should return the program CME Reviewers from the .html - Clinical Brief", function (done) {
         //     var result = prodticket.getCMEReviewers(prodticketCB, config.programs.clinicalBrief);
-        //     for (var i = 0; i < reviewersCB.length; i++) {
-        //         expect(result[i].title).to.equalIgnoreSpaces(reviewersCB[i].title);
-        //         expect(result[i].name).to.equalIgnoreSpaces(reviewersCB[i].name);
-        //         expect(result[i].affiliation).to.equalIgnoreSpaces(reviewersCB[i].affiliation);
-        //         expect(result[i].disclosure).to.equalIgnoreSpaces(reviewersCB[i].disclosure);
-        //         expect(result[i].chronicleid).to.equalIgnoreSpaces(reviewersCB[i].chronicleid);
-        //     }
+        //     // for (var i = 0; i < reviewersCB.length; i++) {
+        //     //     expect(result[i].title).to.equalIgnoreSpaces(reviewersCB[i].title);
+        //     //     expect(result[i].name).to.equalIgnoreSpaces(reviewersCB[i].name);
+        //     //     expect(result[i].affiliation).to.equalIgnoreSpaces(reviewersCB[i].affiliation);
+        //     //     expect(result[i].disclosure).to.equalIgnoreSpaces(reviewersCB[i].disclosure);
+        //     //     expect(result[i].chronicleid).to.equalIgnoreSpaces(reviewersCB[i].chronicleid);
+        //     // }
+        //     console.log("RESULT CME REVIEWERS: ", result);
         //     done();
         // });
 
@@ -221,13 +222,14 @@ describe('Prodticket Module Functions', function () {
 
         // it("should return the program CME Reviewers from the .html - Town Hall", function (done) {
         //     var result = prodticket.getCMEReviewers(prodticketTH, config.programs.townHall);
-        //     for (var i = 0; i < reviewersTH.length; i++) {
-        //         expect(result[i].title).to.equalIgnoreSpaces(reviewersTH[i].title);
-        //         expect(result[i].name).to.equalIgnoreSpaces(reviewersTH[i].name);
-        //         expect(result[i].affiliation).to.equalIgnoreSpaces(reviewersTH[i].affiliation);
-        //         expect(result[i].disclosure).to.equalIgnoreSpaces(reviewersTH[i].disclosure);
-        //         expect(result[i].chronicleid).to.equalIgnoreSpaces(reviewersTH[i].chronicleid);
-        //     }
+        //     // for (var i = 0; i < reviewersTH.length; i++) {
+        //     //     expect(result[i].title).to.equalIgnoreSpaces(reviewersTH[i].title);
+        //     //     expect(result[i].name).to.equalIgnoreSpaces(reviewersTH[i].name);
+        //     //     expect(result[i].affiliation).to.equalIgnoreSpaces(reviewersTH[i].affiliation);
+        //     //     expect(result[i].disclosure).to.equalIgnoreSpaces(reviewersTH[i].disclosure);
+        //     //     expect(result[i].chronicleid).to.equalIgnoreSpaces(reviewersTH[i].chronicleid);
+        //     // }
+        //     console.log("RESULT CME REVIEWERS: ", result);
         //     done();
         // });
 
@@ -245,7 +247,7 @@ describe('Prodticket Module Functions', function () {
 
         it("should return error object with message for missing CME reviewers", function () {
         
-            var result = prodticket.getContributors(prodticketFail, config.programs.townHall);
+            var result = prodticket.getCMEReviewers(prodticketFail, config.programs.townHall);
         
             expect(result.message).to.equal("No CME reviewers found in the prodticket");
         
