@@ -16,6 +16,7 @@ let titleRegexArray = [
     /<strong>CME Author.*/gi,
     /<strong>CME Reviewer.*/gi,
     /<strong>Content Reviewer.*/gi,
+    /<strong>CME\/Content Reviewer/gi,
     /<strong>Nurse Planner.*/gi,
     /<strong>CE Reviewer.*/gi,
     /<\/a>Editor\/CME Reviewer\/Nurse Planner.*/gi,
@@ -23,6 +24,7 @@ let titleRegexArray = [
     /<\/a>CME Author.*/gi,
     /<\/a>CME Reviewer.*/gi,
     /<\/a>Content Reviewer.*/gi,
+    /<\/a>CME\/Content Reviewer/gi,
     /<\/a>Nurse Planner.*/gi,
     /<\/a>CE Reviewer.*/gi,
     /.*Editor\/CME Reviewer\/Nurse Planner.*/gi,
@@ -205,7 +207,7 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML, program)
     if (stringOps.isBlankOrWhiteSpace(cmeReviewerBlock) || stringOps.isEmptyString(cmeReviewerBlock) || cmeReviewerBlock.length < 10) {
         throw new Error("No CME reviewers found in the prodticket");
     } else {
-        // console.log("CME REVIEWER BLOCK: ", cmeReviewerBlock);
+        console.log("CME REVIEWER BLOCK: ", cmeReviewerBlock);
 
         cmeReviewerBlock = cleanHTML.cmeReviewerFluff(cmeReviewerBlock);
         return buildCMEReviewers(cmeReviewerBlock, program);
