@@ -11,57 +11,53 @@ let disclosureRegexArray = [
 ];
 
 let titleRegexArray = [
+    /<strong>Editor\/CME Reviewer\/Nurse Planner.*/gi,
+    /<strong>CE Reviewer \/ Nurse Planner.*/gi,
+    /<strong>CME Author.*/gi,
+    /<strong>CME Reviewer.*/gi,
+    /<strong>Content Reviewer.*/gi,
+    /<strong>Nurse Planner.*/gi,
+    /<strong>CE Reviewer.*/gi,
+    /<\/a>Editor\/CME Reviewer\/Nurse Planner.*/gi,
+    /<\/a>CE Reviewer \/ Nurse Planner.*/gi,
+    /<\/a>CME Author.*/gi,
+    /<\/a>CME Reviewer.*/gi,
+    /<\/a>Content Reviewer.*/gi,
+    /<\/a>Nurse Planner.*/gi,
+    /<\/a>CE Reviewer.*/gi,
     /.*Editor\/CME Reviewer\/Nurse Planner.*/gi,
-    /.*CE Reviewer \/ Nurse Planner.*/gi,
-    /.*CME Author.*/gi,
-    /.*CME Reviewer.*/gi,
-    /.*Content Reviewer.*/gi,
-    /.*Nurse Planner.*/gi,
-    /.*CE Reviewer.*/gi
+    /.*CE Reviewer \/ Nurse Planner.*/gi
 ];
 
 
-/* 
+function getAllMatchesInOrder(textBlock, regexArray)  {
+    // Create a utility function that returns an array of all of the titles
+    var resultArray = [];
+    var substring = textBlock.slice();
+    var foundMatch = null;
+    var searchStartIndex = 0;
+    var matchLength = 0;
+    while (substring) {
+        // console.log("SUBSTRING: ", substring);
+        foundMatch = stringOps.getNextRegex(substring, regexArray);        
+        // console.log("FOUND MATCH: ", foundMatch);
+        if (!foundMatch.isInString) {
+            substring = null;
+        } else {
+            matchLength = substring.match(foundMatch.symbol)[0].length;
+            searchStartIndex = (textBlock.length - substring.length) + foundMatch.index + matchLength; // foundMatch.symbol.toString().length + 1;    
+            substring = textBlock.substring(searchStartIndex);
+            resultArray.push({
+                symbol: foundMatch.symbol,
+                index: searchStartIndex - matchLength
+            });
+            // console.log("INDEX CHOP: ", textBlock.substring(searchStartIndex, searchStartIndex + 20));
+            // console.log("INDEX CHOP: ", textBlock.substring(39, 261));
+        }
+    }
+    return resultArray;
+}
 
-OLD ALGO 
-    - Take the text block and program as params
-    - use the program to set the proper CME object info from the config.   
-    - Find the First Title in the text block 
-    --- LOOP while (title) ---
-        - Find the Next Title 
-        - If Next Title   
-            - Select the block of text from the First Title to the Next title
-                - Take the substring from first title to the next title 
-            - Search the substring For the ContribNames 
-                - Loop through the cmeReviewers object 
-                - var index = substring.search(new RegExp(reviewer.name)); 
-                - if (index -1)
-                    - continue 
-                - else 
-                    - Update the reviewer.title property with the current title symbol.              
-        - Else (no next title)
-            - Search the substring For the ContribNames 
-                - Same as algorithm above
-        - title = nextTitle
-
-NEW ALGO: 
-    - Take the text block in as param 
-    - Create a utility function that returns an array of all of the titles 
-    - loop through the array of titles
-        - if the title index + 1 != array.length
-            - grab title 1, grab title 2 
-            - get a textblock between title 1 and 2 
-                - Search the substring For the ContribNames 
-                    - Loop through the cmeReviewers object 
-                    - var index = substring.search(new RegExp(reviewer.name)); 
-                    - if (index -1)
-                        - continue 
-                    - else 
-                        - Update the reviewer.title property with the current title symbol.   
-        - if the title index + 1 == array.length
-            - Just use the title to the end as the block 
-
-*/
 function buildCMEReviewers(cmeReviewerBlock, program) {
     var reviewersResult = [];
 
@@ -72,73 +68,82 @@ function buildCMEReviewers(cmeReviewerBlock, program) {
     }
 
     // Get the first title. 
-    var title = stringOps.getNextRegex(cmeReviewerBlock, titleRegexArray);
+    var title = null;
     var nextTitle = null;
     var testSubstring = "";
-    while (title != -1) {
-        // Find the Next Title  
-        testSubstring = cmeReviewerBlock.substring(title.index + 10);
-        nextTitle = stringOps.getNextRegex(testSubstring, titleRegexArray);
-        // console.log("TEST SUBSTRING 1: ", testSubstring);
-        
-        // If Next Title  
-        if (nextTitle != -1) {
-            console.log("CME REVIEWER BLOCK: ", cmeReviewerBlock);
-            nextTitle.index = stringOps.regexIndexOf(cmeReviewerBlock, nextTitle.symbol);
-            console.log("TITLE SYMBOL: ", title.symbol);
-            console.log("TITLE INDEX: ", title.index);
-            console.log("NEXT TITLE SYMBOL: ", nextTitle.symbol);
-            console.log("NEXT TITLE INDEX: ", nextTitle.index);
+    // Search the substring For the ContribNames
+    var index = 0;
+    var reviewer = null;
+    var nameRegExp = null; 
 
-            // Substring should be block of text from the First Title to the Next title
+    /*
+    - Take the text block in as param 
+    - Create a utility function that returns an array of all of the titles - DONE
+    */
+    var titleMatchArray = getAllMatchesInOrder(cmeReviewerBlock, titleRegexArray);
+
+    // Loop through the array of titleMatches 
+    for (var i = 0; i < titleMatchArray.length; i++) {
+        title = titleMatchArray[i];
+        /* 
+        - if the title index + 1 !> array.length
+            - set title 2 
+            - get a textblock between title 1 and 2 
+        */
+        if ((i + 1) <= titleMatchArray.length - 1) {
+            nextTitle = titleMatchArray[i + 1];
+            // console.log("NEXT TITLE: ", nextTitle);
             testSubstring = cmeReviewerBlock.substring(title.index, nextTitle.index);
-            // Cut off the beginning of the block 
-            // Block should start where the next title begins  
-            cmeReviewerBlock = cmeReviewerBlock.substring(nextTitle.index); stringOps.getTextBlock(cmeReviewerBlock, )
-            // console.log("TEST SUBSTRING 2 A: ", testSubstring);
         } else {
-            // otherwise just make substring be the remainder of the block 
-            testSubstring = cmeReviewerBlock;
-            // console.log("TEST SUBSTRING 2 B: ", testSubstring);
+            /* 
+            - Otherwise 
+            - get remainder of textblock starting at title index 
+            */
+            nextTitle = null;
+            testSubstring = cmeReviewerBlock.substring(title.index);
+            // console.log("TITLE: ", title);
+            // console.log("TEST SUBSTRING: ", testSubstring);
         }
-        // Search the substring For the ContribNames
-        var index = -1;
-        var reviewer = null;
-        var nameRegExp = null; 
-        for (var i = 0; i < reviewersArray.length; i++) {
-            reviewer = reviewersArray[i];
+        /* 
+        - Search the substring For the ContribNames 
+            - Loop through the cmeReviewers object 
+            - var index = substring.search(new RegExp(reviewer.name)); 
+            - if (index -1)
+                - continue 
+            - else 
+                - Update the reviewer.title property with the current title symbol.   
+        */
+        var nameSearch = null;
+        var rawTitle = null;
+        for (var x = 0; x < reviewersArray.length; x++) {
+            reviewer = reviewersArray[x];
             // console.log("name regexp: ", nameRegExp);
-            console.log("TEST SUBSTRING 3: ", testSubstring);
-            console.log("REVIEWER: ", reviewer);
-            index = testSubstring.indexOf(reviewer.name);
+            nameSearch = reviewer.name.substring(0, reviewer.name.indexOf(','));
+            index = testSubstring.indexOf(nameSearch);
             if (index != -1) {
                 // If there is an index then the contributor should now be associated with the current title 
                 // Update the reviewer.title property with the current title symbol. 
-                console.log("TITLE SYMBOL: ", title.symbol);
-                console.log("REVIEWER MATCH: ", testSubstring.match(title.symbol));
-                reviewer.title = testSubstring.match(title.symbol)[0];
+                rawTitle = testSubstring.match(title.symbol)[0];
+                reviewer.title = cleanHTML.plainText(cleanHTML.removeEntities(rawTitle)).trim();
                 reviewersResult.push(reviewer);
             }
         } 
-        title = nextTitle;
     }
-    return reviewersResult;    
+    return reviewersResult; 
 }
 
 var exportObject = {};
 
 // Clinical Brief
 exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML, program) {
-    var {textBlock: cmeReviewerBlock} = stringOps.getTextBlock(ticketHTML, "CME Author", "CME ID#</strong>", false, false);
+    var {textBlock: cmeReviewerBlock} = stringOps.getTextBlock(ticketHTML, /.*CME Author.*/g, /CME ID#<\/strong>/g, false, false);
     if (stringOps.isBlankOrWhiteSpace(cmeReviewerBlock) || stringOps.isEmptyString(cmeReviewerBlock) || cmeReviewerBlock.length < 10) {
         throw new Error("No CME reviewers found in the prodticket");
     } else {
-        // console.log("CONTRIBUTOR BLOCK: ", contributorBlock);
-        // return JSON.stringify(buildContributors(contributorBlock), undefined, 2);
+        // console.log("CME REVIEWER BLOCK: ", cmeReviewerBlock);
 
         cmeReviewerBlock = cleanHTML.cmeReviewerFluff(cmeReviewerBlock);
         return buildCMEReviewers(cmeReviewerBlock, program);
-        // return "<p>" + cleanHTML.singleLine(cleanHTML.plainText(byline)).trim() + "</p>";
     }
 }
 
@@ -161,12 +166,10 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML, program
     if (stringOps.isBlankOrWhiteSpace(cmeReviewerBlock) || stringOps.isEmptyString(cmeReviewerBlock) || cmeReviewerBlock.length < 10) {
         throw new Error("No CME reviewers found in the prodticket");
     } else {
-        // console.log("CONTRIBUTOR BLOCK: ", contributorBlock);
-        // return JSON.stringify(buildContributors(contributorBlock), undefined, 2);
+        // console.log("CME REVIEWER BLOCK: ", cmeReviewerBlock);
 
         cmeReviewerBlock = cleanHTML.cmeReviewerFluff(cmeReviewerBlock);
         return buildCMEReviewers(cmeReviewerBlock, program);
-        // return "<p>" + cleanHTML.singleLine(cleanHTML.plainText(byline)).trim() + "</p>";
     }
 }
 
@@ -202,12 +205,10 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML, program)
     if (stringOps.isBlankOrWhiteSpace(cmeReviewerBlock) || stringOps.isEmptyString(cmeReviewerBlock) || cmeReviewerBlock.length < 10) {
         throw new Error("No CME reviewers found in the prodticket");
     } else {
-        // console.log("CONTRIBUTOR BLOCK: ", contributorBlock);
-        // return JSON.stringify(buildContributors(contributorBlock), undefined, 2);
+        // console.log("CME REVIEWER BLOCK: ", cmeReviewerBlock);
 
         cmeReviewerBlock = cleanHTML.cmeReviewerFluff(cmeReviewerBlock);
         return buildCMEReviewers(cmeReviewerBlock, program);
-        // return "<p>" + cleanHTML.singleLine(cleanHTML.plainText(byline)).trim() + "</p>";
     }
 }
 

@@ -560,6 +560,12 @@ function associationDisclaimer(textBlock, removeFluff=true) {
     return textBlock;
 }
 
+function removeEntities(xmlString) {
+    var entityRegexp = new RegExp('&(#?[0-9]+);', 'g');
+    str = xmlString.replace(entityRegexp, '');
+    return str;
+}
+
 function insertEntityPlaceholders (xmlString) {
     var str = xmlString;
 
@@ -614,6 +620,7 @@ module.exports = {
     cmeReviewerFluff,
     learningObjectives,
     associationDisclaimer,
+    removeEntities,
     insertEntityPlaceholders,
     cleanEntities
 }; 

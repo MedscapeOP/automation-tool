@@ -194,29 +194,29 @@ describe('Prodticket Module Functions', function () {
         var reviewersTH = require("./input/cme-reviewers-th");
         var reviewersTH_alt = require("./input/cme-reviewers-th-alt");
         
-        // it("should return the program CME Reviewers from the .html - Clinical Brief", function (done) {
-        //     var result = prodticket.getCMEReviewers(prodticketCB, config.programs.clinicalBrief);
-        //     // for (var i = 0; i < reviewersCB.length; i++) {
-        //     //     expect(result[i].title).to.equalIgnoreSpaces(reviewersCB[i].title);
-        //     //     expect(result[i].name).to.equalIgnoreSpaces(reviewersCB[i].name);
-        //     //     expect(result[i].affiliation).to.equalIgnoreSpaces(reviewersCB[i].affiliation);
-        //     //     expect(result[i].disclosure).to.equalIgnoreSpaces(reviewersCB[i].disclosure);
-        //     //     expect(result[i].chronicleid).to.equalIgnoreSpaces(reviewersCB[i].chronicleid);
-        //     // }
-        //     console.log("RESULT CME REVIEWERS: ", result);
-        //     done();
-        // });
+        it("should return the program CME Reviewers from the .html - Clinical Brief", function (done) {
+            var result = prodticket.getCMEReviewers(prodticketCB, config.programs.clinicalBrief);
+            // for (var i = 0; i < reviewersCB.length; i++) {
+            //     expect(result[i].title).to.equalIgnoreSpaces(reviewersCB[i].title);
+            //     expect(result[i].name).to.equalIgnoreSpaces(reviewersCB[i].name);
+            //     expect(result[i].affiliation).to.equalIgnoreSpaces(reviewersCB[i].affiliation);
+            //     expect(result[i].disclosure).to.equalIgnoreSpaces(reviewersCB[i].disclosure);
+            //     expect(result[i].chronicleid).to.equalIgnoreSpaces(reviewersCB[i].chronicleid);
+            // }
+            console.log("RESULT CME REVIEWERS: ", result);
+            done();
+        });
 
         it("should return the program CME Reviewers from the .html - Curbside Consult", function (done) {
             var result = prodticket.getCMEReviewers(prodticketCC, config.programs.curbsideConsult);
-            // for (var i = 0; i < reviewersCC.length; i++) {
-            //     expect(result[i].title).to.equalIgnoreSpaces(reviewersCC[i].title);
-            //     expect(result[i].name).to.equalIgnoreSpaces(reviewersCC[i].name);
-            //     expect(result[i].affiliation).to.equalIgnoreSpaces(reviewersCC[i].affiliation);
-            //     expect(result[i].disclosure).to.equalIgnoreSpaces(reviewersCC[i].disclosure);
-            //     expect(result[i].chronicleid).to.equalIgnoreSpaces(reviewersCC[i].chronicleid);
-            // }
-            console.log("RESULT CME REVIEWERS: ", result);
+            for (var i = 0; i < reviewersCC.length; i++) {
+                expect(result[i].title).to.equalIgnoreSpaces(reviewersCC[i].title);
+                expect(result[i].name).to.equalIgnoreSpaces(reviewersCC[i].name);
+                expect(result[i].affiliation).to.equalIgnoreSpaces(reviewersCC[i].affiliation);
+                expect(result[i].disclosure).to.equalIgnoreSpaces(reviewersCC[i].disclosure);
+                expect(result[i].chronicleid).to.equalIgnoreSpaces(reviewersCC[i].chronicleid);
+            }
+            // console.log("RESULT CME REVIEWERS: ", result);
             done();
         });
 
