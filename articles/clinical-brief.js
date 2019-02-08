@@ -93,7 +93,9 @@ function getClinicalImplications(ticket) {
 function activityClinicalBrief(program, title, targetAudience, learningObjectives) {
     var activityInstance = new ProfActivity(title, program.hasOUS);
     activityInstance.targetAudience = targetAudience; // Text field
-    activityInstance.learningObjectives = learningObjectives // wrapped markup
+
+    console.log("LEARNING OBJECTIVES:", learningObjectives);
+    // activityInstance.learningObjectives = learningObjectives // wrapped markup
     activityInstance.goalStatement = snippets.activity.goalStatementCB();
     
     activityInstance.miscProviderStatement = snippets.activity.medscapeProviderStatement(program);
@@ -103,6 +105,8 @@ function activityClinicalBrief(program, title, targetAudience, learningObjective
     activityInstance.hardwareRequirements = snippets.activity.hardwareRequirements();
 
     activityInstance.additionalCreditAvailable = snippets.activity.additionalCreditAvailable();
+    
+    return activityInstance.toFinalXML();
 }
 
 
@@ -164,9 +168,9 @@ function checklistClinicalBrief(ticket, program) {
 /* MASTER FUNCTIONS 
 -------------------------------------- */
 function buildClinicalBrief(ticket, program) {
-    var clinicalContext, synopsisAndPerspective, studyHighlights, clinicalImplications, cmeTest, references, title, byline;
+    var clinicalContext, synopsisAndPerspective, studyHighlights, clinicalImplications, cmeTest, references, title, byline, targetAudience, learningObjectives;
     
-    var checklistResult = checklistClinicalBrief(ticket, program);
+    var checklistResult = checklistClinicalBrief(ticket, program);    
 
     // Clinical Brief Sections
     clinicalContext = (checklistResult.properties.clinicalContext ? checklistResult.properties.clinicalContext.result : "");
@@ -179,6 +183,13 @@ function buildClinicalBrief(ticket, program) {
     references = (checklistResult.properties.references ? checklistResult.properties.references.result : "");
     title = (checklistResult.properties.title ? checklistResult.properties.title.result : "");
     byline = (checklistResult.properties.byline ? checklistResult.properties.byline.result : "");
+
+    // Build Activity  
+    targetAudience = (checklistResult.properties.targetAudience ? checklistResult.properties.targetAudience.result : "");
+
+    learningObjectives = (checklistResult.properties.learningObjectives ? checklistResult.properties.learningObjectives.result : "");
+
+    var activityXML = activityClinicalBrief(program, title, targetAudience, learningObjectives);
  
     // Build Main TOC - Insert Brief Sections & Insert CME Test Section 
     var mainTOCInstance = new TOCElement();
@@ -209,10 +220,14 @@ function buildClinicalBrief(ticket, program) {
     // Insert Main TOC Object & Insert References TOC Object 
     finalArticle.insertTOCElement(mainTOCInstance);
     finalArticle.insertTOCElement(referencesTOC);
+
+
+    var activityXML = activityClinicalBrief(program, title, targetAudience, learningObjectives);
     
     return {
         finishedArticleObject: finalArticle,
-        checklistHTML: checklistResult.printHTML  
+        checklistHTML: checklistResult.printHTML,
+        activityXML: activityXML  
     };
 };
 

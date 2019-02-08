@@ -1,5 +1,5 @@
 const utils = require('../utils');
-const {ProfArticle, ArticleChecklist} = require('../classes');
+const {ProfArticle, ArticleChecklist, ProfActivity} = require('../classes');
 let prompts = require('./prompts');
 let callbacks = require('./callbacks');
 const _ = require('lodash');
@@ -15,15 +15,18 @@ const _ = require('lodash');
  * @param  {} outputFiles
  * @param  {} completionMessage
  */
-function completeGenerateAction(self, callback, functionOrArticle, checklistHTML, outputFiles, completionMessages) {
+function completeGenerateAction(self, callback, functionOrArticle, checklistHTML, activityXML, outputFiles, completionMessages) {
     try {
         // Build final output function from the command module
         if (functionOrArticle instanceof ProfArticle) {
             var finishedArticleObject = functionOrArticle;
         } else if (functionOrArticle instanceof ArticleChecklist) {
             var finishedArticleObject = functionOrArticle;
+        } else if (functionOrArticle instanceof ProfActivity) {
+            var finishedArticleObject = functionOrArticle;
         } else {
-            var {finishedArticleObject, checklistHTML} = functionOrArticle(self);
+            // CASE FOR CLINICAL BRIEF COMMAND 
+            var {finishedArticleObject, checklistHTML, activityXML} = functionOrArticle(self);
         }
         
         // Write the output XML
@@ -38,6 +41,11 @@ function completeGenerateAction(self, callback, functionOrArticle, checklistHTML
         if (outputFiles.checklist) {
             utils.cliTools.writeOutputFile(outputFiles.checklist, checklistHTML, self, completionMessages.checklist, callback);
         } 
+
+        // Write the output Activity 
+        if (outputFiles.activity) {
+            utils.cliTools.writeOutputFile(outputFiles.activity, activityXML, self, completionMessages.activity, callback);
+        }
     } catch (error) {
         self.log(error);
         callback(); 
@@ -89,8 +97,9 @@ function basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOu
         var completionMessages = {};
         completionMessages.xmlFile = `${program.name} XML created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().xmlFile)}`;
         completionMessages.checklist = `${program.name} Checklist created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().checklist)}`;
+        completionMessages.activity = `${program.name} Activity created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().activity)}`;
 
-        completeGenerateAction(self, callback, buildResult.finishedArticleObject, buildResult.checklistHTML, outputFiles(), completionMessages);   
+        completeGenerateAction(self, callback, buildResult.finishedArticleObject, buildResult.checklistHTML, buildResult.activityXML, outputFiles(), completionMessages);   
     }) 
     .catch((err) => {
         self.log(err);

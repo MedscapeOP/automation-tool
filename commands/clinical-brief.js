@@ -29,7 +29,8 @@ let inputFile = function () {
 let outputFiles = function () {
     return {
         xmlFile: `${program.articleID}.xml`,
-        checklist: `${program.articleID}_checklist.html`
+        checklist: `${program.articleID}_checklist.html`,
+        activity: `${program.articleID}_activity.xml`
     };
 };  
 
@@ -58,7 +59,7 @@ module.exports = function (vorpal) {
         var completionMessages = {};
         completionMessages.xmlFile = `${program.name} XML created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().xmlFile)}`;
         completionMessages.checklist = `${program.name} Checklist created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().checklist)}`;
-        actions.completeGenerateAction(this, callback, buildFinalOutput, "", outputFiles(), completionMessages);
+        actions.completeGenerateAction(this, callback, buildFinalOutput, "", "", outputFiles(), completionMessages);
     });
     vorpal.on('client_prompt_submit', function (program){
         cliTools.resetProgram(program);
