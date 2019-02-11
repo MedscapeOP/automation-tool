@@ -135,7 +135,7 @@ function checklistClinicalBrief(ticket, program) {
     checklist.goalStatement.result = prodticket.getGoalStatement(ticket, program);
     
     // LEARNING OBJECTIVES
-    checklist.learningObjectives.result = prodticket.getLearningObjectives(ticket, program);
+    checklist.learningObjectives.result = prodticket.getLearningObjectives(ticket, program); 
     
     // REFERENCES
     checklist.references.result = prodticket.getReferences(ticket, program);

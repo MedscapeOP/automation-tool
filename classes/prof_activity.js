@@ -136,12 +136,12 @@ class ProfActivity extends XMLElement{
     // Target Audience 
     get targetAudience() {
         // basic paragraph text field 
-        return this.getParagraphTextField("_tgt_aud");
+        return this.getWrappedMarkupField("_tgt_aud");
     }
 
     set targetAudience(newTargetAudience) {
         // basic paragraph text field 
-        this.setParagraphTextField("_tgt_aud", newTargetAudience);
+        this.setWrappedMarkupField("_tgt_aud", newTargetAudience);
     }
 
     // Credit Instructions 

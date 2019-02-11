@@ -40,20 +40,27 @@ function printContributors(contributors) {
     resultString += "\n\n";  
 
     var newString = "";
+    var title = "";
+    var name = "";
+    var affiliation = "";
+    var disclosure = "";
     for (var i = 0; i < contributors.result.length; i++) {
-        newString = stripIndent`
+        title = stripIndent`
         -- TITLE ${i+1} ---------------------
-        ${contributors.result[i].title}
-
+        ${contributors.result[i].title}` + "\n\n";
+        
+        name = stripIndent`
         -- NAME ${i+1} ---------------------
-        ${contributors.result[i].name}
+        ${contributors.result[i].name}` + "\n\n";
 
+        affiliation = stripIndent`
         -- AFFILIATION ${i+1} ---------------------
-        ${contributors.result[i].affiliation}
+        ${contributors.result[i].affiliation.trim()}` + "\n\n"; 
+        
+        disclosure = stripIndent`
+        -- DISCLOSURE ${i+1} ---------------------` + "\n" + stripIndent`${contributors.result[i].disclosure}`;
 
-        -- DISCLOSURE ${i+1} ---------------------
-        ${contributors.result[i].disclosure}
-        `;
+        newString = title  + name + affiliation + disclosure;
         if (i == contributors.result.length - 1) {
             resultString += newString;
         } else {
@@ -92,20 +99,28 @@ function printComponents(components) {
     resultString += "\n\n";  
 
     var newString = "";
+    var component = "";
+    var teaser = "";
+    var byline = "";
+    var contentType = "";
     for (var i = 0; i < components.result.length; i++) {
-        newString = stripIndent`
+        component = stripIndent`
         -- COMPONENT ${i+1} ---------------------
-        ${components.result[i].title}
-
+        ${components.result[i].title}` + "\n\n"; 
+        
+        teaser = stripIndent`
         -- TEASER ${i+1} ---------------------
-        ${components.result[i].teaser}
-
+        ${components.result[i].teaser}` + "\n\n"; 
+        
+        byline = stripIndent`
         -- BYLINE ${i+1} ---------------------
-        ${components.result[i].byline}
-
+        ${components.result[i].byline}` + "\n\n"; 
+        
+        contentType = stripIndent`
         -- CONTENT TYPE ${i+1} ---------------------
-        ${components.result[i].contentType}
-        `;
+        ${components.result[i].contentType}` + "\n\n";
+
+        newString = component + teaser + byline + contentType;
         if (i == components.result.length - 1) {
             resultString += newString;
         } else {
@@ -123,14 +138,15 @@ function printDateTime(dateTime) {
     `;
     resultString += "\n\n";  
 
-    var newString = stripIndent`
+    var date = stripIndent`
     -- DATE ---------------------
-    ${dateTime.result.date}
+    ${dateTime.result.date}` + "\n\n";
 
+    var time = stripIndent`
     -- TIME ---------------------
-    ${dateTime.result.time}
-    `;
-    resultString += newString + "\n\n\n\n\n";  
+    ${dateTime.result.time}`;
+
+    resultString += date + time + "\n\n\n\n\n";  
     return (resultString);
 } 
 
