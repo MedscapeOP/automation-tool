@@ -1,4 +1,6 @@
 const cleanHTML = require('./clean-html');
+const xmlOps = require('./xml-ops');
+const formatLearningObjectives = require('./format-learning-objectives');
 const {stripIndent} = require('common-tags');
 
 /* 
@@ -16,6 +18,47 @@ function printStringProp(property) {
     -----------------------------------------
     ${property.result}
     ` + "\n\n\n\n\n";
+}
+
+function printJSONProp(property) {
+    var formattedJSON = JSON.stringify(property.result, undefined, 2);
+    var resultString = stripIndent`
+    -----------------------------------------
+    ${property.printName}
+    -----------------------------------------
+    `;
+    resultString += "\n";  
+
+    var newString = stripIndent`
+    ${formattedJSON}
+    ` + "\n\n\n\n\n";
+
+    return resultString + newString;
+/*
+{
+    type: "Clinical Advances", 
+    url: "https://www.medscape.org/sites/advances/anticoagulation-thrombosis",
+    title: "Clinical Advances in Anticoagulation Management and Vascular Protection",
+    bannerFileName: "33543-collection-header.png",
+    advancesFileName: "anticoagulation-thrombosis" 
+};
+*/
+}
+
+function printXMLProp(property) {
+    var xml = xmlOps.objectToXMLString(property.result.toObjectLiteral());
+    var resultString = stripIndent`
+    -----------------------------------------
+    ${property.printName}
+    -----------------------------------------
+    `;
+    resultString += "\n";  
+
+    var newString = stripIndent`
+    ${xml}
+    ` + "\n\n\n\n\n";
+
+    return resultString + newString;
 }
 
 function printProgramDetails(programDetails) {
@@ -150,11 +193,31 @@ function printDateTime(dateTime) {
     return (resultString);
 } 
 
+function printLearningObjectives(learningObjectives) {
+    var formattedObjectives = formatLearningObjectives(learningObjectives.result);
+
+    var resultString = stripIndent`
+    -----------------------------------------
+    ${learningObjectives.printName}
+    -----------------------------------------
+    `;
+    resultString += "\n";  
+
+    var newString = stripIndent`
+    ${formattedObjectives}
+    ` + "\n\n\n\n\n";
+
+    return resultString + newString;
+}
+
 module.exports = {
     printStringProp,
+    printJSONProp,
+    printXMLProp,
     printProgramDetails,
     printContributors,
     printSlides,
     printComponents,
-    printDateTime
+    printDateTime,
+    printLearningObjectives
 }

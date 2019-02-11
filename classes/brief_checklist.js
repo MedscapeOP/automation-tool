@@ -10,23 +10,23 @@ class BriefChecklist extends ArticleChecklist{
         
         this.bkmtrFront = {result: null, printFn: printFunctions.printStringProp, printName: "BACK MATTER FRONT PAGE"};
         this.byline = {result: null, printFn: printFunctions.printStringProp, printName: "CONTRIBUTOR BYLINE"};
-        this.collectionPageInfo = {result: null, printFn: printFunctions.printStringProp, printName: "COLLECTION PAGE INFO"};
+        this.collectionPageInfo = {result: null, printFn: printFunctions.printJSONProp, printName: "COLLECTION PAGE INFO"};
         this.contrbtrPreContent = {result: null, printFn: printFunctions.printStringProp, printName: "CONTENT ABOVE CONTRIBUTORS"};
         this.cpyrtHolder = {result: null, printFn: printFunctions.printStringProp, printName: "COPYRIGHT HOLDER"};
         // this.creditsAvailable = {result: null, printFn: printFunctions.printStringProp, printName: "CREDITS AVAILABLE"};
         this.goalStatement = {result: null, printFn: printFunctions.printStringProp, printName: "GOAL STATEMENT"};
-        this.learningObjectives = {result: null, printFn: printFunctions.printStringProp, printName: "LEARNING OBJECTIVES"};       
+        this.learningObjectives = {result: null, printFn: printFunctions.printLearningObjectives, printName: "LEARNING OBJECTIVES"};       
         this.references = {result: null , printFn: printFunctions.printStringProp, printName: "REFERENCES"};
         this.supporterGrantAttr = {result: null , printFn: printFunctions.printStringProp, printName: "GRANT ATTRIBUTIONS"};
         this.teaser = {result: null , printFn: printFunctions.printStringProp, printName: "CME TEASER"};
         this.targetAudience = {result: null , printFn: printFunctions.printStringProp, printName: "TARGET AUDIENCE"};
         this.title = {result: null , printFn: printFunctions.printStringProp, printName: "ACTIVITY TITLE"};
 
-        // SPECIAL SECTIONS  
-        this.clinicalContext = {result: null, printFn: printFunctions.printStringProp, printName: "CLINICAL CONTEXT"};
-        this.synopsisAndPerspective = {result: null, printFn: printFunctions.printStringProp, printName: "STUDY SYNOPSIS AND PERSPECTIVE"};
-        this.studyHighlights = {result: null, printFn: printFunctions.printStringProp, printName: "STUDY HIGHLIGHTS"};
-        this.clinicalImplications = {result: null, printFn: printFunctions.printStringProp, printName: "CLINICAL IMPLICATIONS"};
+        // SPECIAL SECTIONS (XML)  
+        this.clinicalContext = {result: null, printFn: printFunctions.printXMLProp, printName: "CLINICAL CONTEXT"};
+        this.synopsisAndPerspective = {result: null, printFn: printFunctions.printXMLProp, printName: "STUDY SYNOPSIS AND PERSPECTIVE"};
+        this.studyHighlights = {result: null, printFn: printFunctions.printXMLProp, printName: "STUDY HIGHLIGHTS"};
+        this.clinicalImplications = {result: null, printFn: printFunctions.printXMLProp, printName: "CLINICAL IMPLICATIONS"};
     }
 
     //--------------------------------

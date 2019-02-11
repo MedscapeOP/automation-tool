@@ -14,7 +14,7 @@ class TownHallRegChecklist extends ArticleChecklist {
         this.creditsAvailable = {result: null, printFn: printFunctions.printStringProp, printName: "CREDITS AVAILABLE"};
         this.downloadableSlides = {result: null, printFn: printFunctions.printStringProp, printName: "DOWNLOADABLE SLIDES SNIPPET"}
         this.goalStatement = {result: null, printFn: printFunctions.printStringProp, printName: "GOAL STATEMENT"};
-        this.learningObjectives = {result: null, printFn: printFunctions.printStringProp, printName: "LEARNING OBJECTIVES"};
+        this.learningObjectives = {result: null, printFn: printFunctions.printLearningObjectives, printName: "LEARNING OBJECTIVES"};
         this.locationInfo = {result: null , printFn: printFunctions.printStringProp, printName: "LOCATION INFORMATION"};        
         this.supporter = {result: null , printFn: printFunctions.printStringProp, printName: "SUPPORTER"};
         this.targetAudience = {result: null , printFn: printFunctions.printStringProp, printName: "TARGET AUDIENCE"};
