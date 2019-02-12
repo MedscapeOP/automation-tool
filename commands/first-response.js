@@ -28,8 +28,9 @@ let inputFile = function () {
 
 let outputFiles = function () {
     return {
-        xmlFile: `${program.articleID}.xml`,
-        checklist: `${program.articleID}_checklist.html`
+        xmlFile: `${program.articleID}/${program.articleID}.xml`,
+        checklist: `${program.articleID}/${program.articleID}_checklist.html`,
+        activity: `${program.articleID}/${program.articleID}_activity.xml`
     };
 }; 
 

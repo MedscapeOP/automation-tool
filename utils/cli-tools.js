@@ -28,7 +28,7 @@ function getInputDirectory () {
 function getOutputDirectory () {
     // process.cwd() returns the directory from which you ran Node process 
     var currentDir = process.cwd();
-    return path.join(currentDir, 'output');
+    return path.join(currentDir, 'output/');
 } 
 
 function headlineTextFlag(headlineText) {
@@ -57,7 +57,7 @@ function writeOutputFile(filename, data, self, completionMessage, callback) {
     var pathToFile = path.join(getOutputDirectory(), filename);
     fs.ensureDir(getOutputDirectory())
     .then(() => {
-        fs.writeFile(pathToFile, data, (err) => {
+        fs.outputFile(pathToFile, data, (err) => {
             if (err) {
                 throw err;
             } else {
