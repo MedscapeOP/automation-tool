@@ -63,9 +63,9 @@ describe('Prof Activity Element', function () {
     describe('#get/set .targetAudience', function () {
         it('should set and get target audience markup and return null if set to falsy - Text field', function (done) {
 
-            profActivityInstance.targetAudience = "This activity is intended for cardiologists, hematology and oncology specialists, and primary care physicians.";
+            profActivityInstance.targetAudience = "<p>This activity is intended for cardiologists, hematology and oncology specialists, and primary care physicians.</p>";
 
-            expect(profActivityInstance.targetAudience).to.equal('This activity is intended for cardiologists, hematology and oncology specialists, and primary care physicians.');
+            expect(profActivityInstance.targetAudience).to.equal('<p>This activity is intended for cardiologists, hematology and oncology specialists, and primary care physicians.</p>');
             done();
         });
     });
