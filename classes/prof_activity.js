@@ -107,12 +107,12 @@ class ProfActivity extends XMLElement{
 
     // Learning Objectives 
     get learningObjectives() {
-        return this.getWrappedMarkupField("_objectives");
+        return this.getMarkupField("_objectives");
     }
 
     set learningObjectives(newLearningObjectivesMarkup) {
         // THIS SHOULDN'T BE WRAPPED IN a <p> 
-        this.setWrappedMarkupField("_objectives", newLearningObjectivesMarkup);
+        this.setMarkupField("_objectives", newLearningObjectivesMarkup);
         // if (newLearningObjectivesMarkup) {
         //     // Only need Peer Reviewer if NON-OUS             
         //     var learningObjectivesObject = xmlOps.xmlStringToJS(newLearningObjectivesMarkup);

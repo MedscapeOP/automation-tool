@@ -94,8 +94,10 @@ function activityClinicalBrief(program, title, targetAudience, learningObjective
     var activityInstance = new ProfActivity(title, program.hasOUS);
     activityInstance.targetAudience = targetAudience; // Text field
 
-    console.log("LEARNING OBJECTIVES:", learningObjectives);
-    // activityInstance.learningObjectives = learningObjectives // wrapped markup
+    
+    learningObjectives = `<p><p>Upon completion of this activity, participants will be able to:</p>` + learningObjectives + "</p>";
+
+    activityInstance.learningObjectives =  learningObjectives; // unwrapped markup
     activityInstance.goalStatement = snippets.activity.goalStatementCB();
     
     activityInstance.miscProviderStatement = snippets.activity.medscapeProviderStatement(program);
@@ -188,6 +190,8 @@ function buildClinicalBrief(ticket, program) {
     targetAudience = (checklistResult.properties.targetAudience ? checklistResult.properties.targetAudience.result : "");
 
     learningObjectives = (checklistResult.properties.learningObjectives ? checklistResult.properties.learningObjectives.result : "");
+
+    learningObjectives = utils.formatLearningObjectives(learningObjectives);
 
     var activityXML = activityClinicalBrief(program, title, targetAudience, learningObjectives);
  
