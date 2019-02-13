@@ -19,6 +19,7 @@ let disclosureRegexArray = [
 let titleRegexArray = [
     /.*Co-Moderator.*/gi,
     /.*Moderator.*/gi,
+    /<p>Faculty<\/p>/gi,
     /<strong>Faculty<\/strong>/gi,
     /<strong>\s+Faculty\s+<\/strong>/gi,
     /.*Panelist.*/gi,
