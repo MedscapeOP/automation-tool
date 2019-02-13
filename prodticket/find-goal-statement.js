@@ -1,6 +1,12 @@
 const config = require('../config');
 const {stringOps, cleanHTML} = require('../utils');
 
+
+let goalRegexArray = [
+    /<p>The goal(?:s){0,} of this activity.*/g,
+    /<p>The aim(?:s){0,} of this activity.*/g
+];
+
 var exportObject = {};
 
 // Clinical Brief
@@ -14,17 +20,23 @@ exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
 // Spotlight
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     var startRegExp = /<strong>Goal Statement.*/g;
-    var endRegExp = /<p>The goal(?:s){0,} of this activity.*/g;
-    var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, true);
+    var endRegExp = stringOps.getNextRegex(ticketHTML, goalRegexArray);
 
-    if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+    if (endRegExp != -1) {
+        endRegExp = endRegExp.symbol; 
+        var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, true);
+    
+        if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+            throw new Error("No goal statement found in the prodticket");
+        } else {  
+            // var removeRegExp = /<p>The goal of this activity.*/
+            // textBlock = textBlock.replace(removeRegExp, '');
+    
+            var result = cleanHTML.singleLine(cleanHTML.onlyParagraphTags(textBlock)).trim();
+            return `${result}`;
+        }
+    } else {
         throw new Error("No goal statement found in the prodticket");
-    } else {  
-        // var removeRegExp = /<p>The goal of this activity.*/
-        // textBlock = textBlock.replace(removeRegExp, '');
-
-        var result = cleanHTML.singleLine(cleanHTML.onlyParagraphTags(textBlock)).trim();
-        return `${result}`;
     }
 };
 
@@ -46,16 +58,23 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
 // Town Hall
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     var startRegExp = /<strong>Goal Statement.*/g;
-    var endRegExp = /<p>The goal(?:s){0,} of this activity.*/g;
-    var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, true);
+    var endRegExp = stringOps.getNextRegex(ticketHTML, goalRegexArray);
 
-    // var removeRegExp = /<p>The goal of this activity.*/
-    // textBlock = textBlock.replace(removeRegExp, '');
-    if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+    if (endRegExp != -1) {
+        endRegExp = endRegExp.symbol; 
+        var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, true);
+    
+        if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+            throw new Error("No goal statement found in the prodticket");
+        } else {  
+            // var removeRegExp = /<p>The goal of this activity.*/
+            // textBlock = textBlock.replace(removeRegExp, '');
+    
+            var result = cleanHTML.singleLine(cleanHTML.onlyParagraphTags(textBlock)).trim();
+            return `${result}`;
+        }
+    } else {
         throw new Error("No goal statement found in the prodticket");
-    } else {  
-        var result = cleanHTML.singleLine(cleanHTML.onlyParagraphTags(textBlock)).trim();
-        return `${result}`;
     }
 };
 
