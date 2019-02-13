@@ -186,5 +186,15 @@ describe('Article Utilities', function () {
             expect(result).to.equalIgnoreSpaces(completeAudienceQA);
         });
     });
+
+    describe('buildContributorGroups()', function () {
+        var cmeReviewers = require('../prodticket/input/cme-reviewers-cc');
+        var contributorGroups = articleUtils.buildContributorGroups(cmeReviewers);
+        var result = [];
+        for (var i = 0; i < contributorGroups.length; i++) {
+            result.push(contributorGroups[i].toObjectLiteral());
+        }
+        console.log("BUILD CONTRIBUTORS RESULT: ", contributorGroups.length);
+    });
 });
 

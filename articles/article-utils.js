@@ -3,7 +3,7 @@ const prodticket = require('../prodticket');
 const snippets = require('../snippets');
 const utils = require("../utils");
 const buildSlides = require('./build-slides');
-const {TOCElement, SectionElement, SubsectionElement, SlideGroup, SlideComponent} = require("../classes");
+const {TOCElement, SectionElement, SubsectionElement, SlideGroup, SlideComponent, ContributorGroup, ContributorElement} = require("../classes");
 
 /* DONE */
 function buildSection(textBlock, label) {
@@ -267,6 +267,47 @@ function buildAudienceQATOC(slidesComponent) {
    return audienceQATOC;
 }
 
+/**
+ * @description Returns an array of ContributorGroup instances.
+ * @param {*} contributors 
+ */
+function buildContributorGroups(contributors) {
+    var contributorGroups = [];
+    var currentTitle = null;
+    var currentContributorGroup = null;
+    var contributor = null;
+    var contributorElement = null;
+    for (var i = 0; i < contributors.length; i++) {
+        contributor = contributors[i];
+        if (!currentTitle || (currentTitle != contributor.title)) {
+            // case where you create a new contributor group
+            // set the current title
+            currentTitle = contributor.title;
+            if (currentContributorGroup) {
+                // not the first group --> push the old contributor group 
+                contributorGroups.push(currentContributorGroup);
+            }
+            // instantiate a new contributor group
+            currentContributorGroup = new ContributorGroup(currentTitle);
+        }
+        // Create a new contributor element
+        if (contributor.chronicleid) {
+            contributorElement = new ContributorElement("", false, false, contributor.chronicleid);    
+        } else {
+            contributorElement = new ContributorElement();
+        }   
+
+        // Fill out the properties of the element
+        contributorElement.contrbtrNm = contributor.name;
+        contributorElement.contrbtrTitle = contributor.affiliation;
+        contributorElement.contrbtrDisclsr = contributor.disclosure;
+        
+        // push the element onto the current contributor group. 
+        currentContributorGroup.insertContributorElement(contributorElement);
+    }
+    return contributorGroups;
+}
+
 module.exports = {
     buildSection,
     buildCMETestSection,
@@ -280,5 +321,6 @@ module.exports = {
     buildReferences,
     buildAbbreviations,
     buildTableOfContentsTOC,
-    buildAudienceQATOC
+    buildAudienceQATOC,
+    buildContributorGroups
 };

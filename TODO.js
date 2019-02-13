@@ -19,13 +19,14 @@ TODO NOW: Add Default Grant Attribution badge for Clinical Briefs - DONE
       the element being inserted is just one of many pushed onto an array. 
       
 TODO NOW: Activity XML generation  
-- Set up test suites
-    - prodticket.test.js --> test building array of objects 
-    - contrbtr_group.test.js --> test chronicleid addition 
-- Create necessary prodticket functions
-    - findCMEReviewers - 
+- Set up test suites - DONE 
+    - prodticket.test.js --> test building array of objects - DONE 
+    - contrbtr_group.test.js --> test chronicleid addition - DONE 
+- Create necessary prodticket functions - DONE
+    - findCMEReviewers - DONE
 - Put together small db of CME reviewer info and cme author info  - DONE 
     - Set up chronicle ID's for this - DONE 
         - Do we need them? What purpose do they serve? 
-        - Maybe we can have built in chronicle IDs if they are static 
+        - Maybe we can have built in chronicle IDs if they are static
+- buildContributors function 
 */
