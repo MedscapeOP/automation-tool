@@ -94,7 +94,6 @@ function activityClinicalBrief(program, title, targetAudience, learningObjective
     var activityInstance = new ProfActivity(title, program.hasOUS);
     activityInstance.targetAudience = targetAudience; // Text field
 
-    
     learningObjectives = `<p><p>Upon completion of this activity, participants will be able to:</p>` + learningObjectives + "</p>";
 
     activityInstance.learningObjectives =  learningObjectives; // unwrapped markup

@@ -9,7 +9,7 @@ const utils = app.utils;
 
 
 describe('Prof Activity Element', function () {
-    var learningObjectives = fs.readFileSync(__dirname + '/../utils/input/formatted-objectives-cc.html', 'utf8');
+    var learningObjectives = '<p><p>Upon completion of this activity, participants will:</p>' + fs.readFileSync(__dirname + '/../utils/input/formatted-objectives-cc.html', 'utf8') + '</p>';
 
     var creditInstructions = fs.readFileSync(__dirname + '/../snippets/input/credit-instructions-cb.html', 'utf8');
 
@@ -42,7 +42,18 @@ describe('Prof Activity Element', function () {
             profActivityInstance.learningObjectives = learningObjectives;
 
             // console.log(JSON.stringify(profActivityInstance.toObjectLiteral(), undefined, 2));
-            expect(profActivityInstance.learningObjectives).to.equalIgnoreSpaces(learningObjectives);
+            expect(profActivityInstance.learningObjectives).to.equalIgnoreSpaces(`
+            <p>Upon completion of this activity, participants will:</p>
+            <ul>
+                <li>Have increased knowledge regarding the
+                    <ul>
+                        <li>Current and emerging approaches to primary prevention of VTE in patients with cancer</li>
+                        <li>Guideline recommendations on treatment of VTE in patients with cancer</li>
+                        <li>Latest non-vitamin K antagonist oral anticoagulant (NOAC) data on treatment of VTE in patients with cancer</li>
+                    </ul>
+                </li>
+            </ul>
+            `);
             done();
         });
     });
