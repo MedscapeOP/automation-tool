@@ -22,6 +22,9 @@ class BriefChecklist extends ArticleChecklist{
         this.targetAudience = {result: null , printFn: printFunctions.printStringProp, printName: "TARGET AUDIENCE"};
         this.title = {result: null , printFn: printFunctions.printStringProp, printName: "ACTIVITY TITLE"};
 
+        // SPECIAL SECTIONS (JSON)
+        this.cmeReviewers = {result: null, printFn: printFunctions.printContributors, printName: "CME REVIEWER DISCLOSURES"}; 
+
         // SPECIAL SECTIONS (XML)  
         this.clinicalContext = {result: null, printFn: printFunctions.printXMLProp, printName: "CLINICAL CONTEXT"};
         this.synopsisAndPerspective = {result: null, printFn: printFunctions.printXMLProp, printName: "STUDY SYNOPSIS AND PERSPECTIVE"};

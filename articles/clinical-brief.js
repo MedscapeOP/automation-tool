@@ -90,7 +90,7 @@ function getClinicalImplications(ticket) {
 
 /* ACTIVITY FUNCTION  
 -------------------------------------- */
-function activityClinicalBrief(program, title, targetAudience, learningObjectives) {
+function activityClinicalBrief(program, title, targetAudience, learningObjectives, cmeReviewers) {
     var activityInstance = new ProfActivity(title, program.hasOUS);
     activityInstance.targetAudience = targetAudience; // Text field
 
@@ -106,7 +106,13 @@ function activityClinicalBrief(program, title, targetAudience, learningObjective
     activityInstance.hardwareRequirements = snippets.activity.hardwareRequirements();
 
     activityInstance.additionalCreditAvailable = snippets.activity.additionalCreditAvailable();
-    
+
+    var contributorGroups = articleUtils.buildContributorGroups(cmeReviewers);
+
+    for (var i = 0; i < contributorGroups.length; i++) {       
+        activityInstance.insertContributorGroup(contributorGroups[i]);
+    }
+
     return activityInstance.toFinalXML();
 }
 
@@ -150,6 +156,9 @@ function checklistClinicalBrief(ticket, program) {
     // TITLE 
     checklist.title.result = prodticket.getTitle(ticket, program);
 
+    // CME REVIEWERS 
+    checklist.cmeReviewers.result = prodticket.getCMEReviewers(ticket, program);
+
     // CLINICAL CONTEXT
     checklist.clinicalContext.result = getClinicalContext(ticket);
 
@@ -169,7 +178,7 @@ function checklistClinicalBrief(ticket, program) {
 /* MASTER FUNCTIONS 
 -------------------------------------- */
 function buildClinicalBrief(ticket, program) {
-    var clinicalContext, synopsisAndPerspective, studyHighlights, clinicalImplications, cmeTest, references, title, byline, targetAudience, learningObjectives;
+    var clinicalContext, synopsisAndPerspective, studyHighlights, clinicalImplications, cmeTest, references, title, byline, targetAudience, learningObjectives, cmeReviewers;
     
     var checklistResult = checklistClinicalBrief(ticket, program);    
 
@@ -192,7 +201,7 @@ function buildClinicalBrief(ticket, program) {
 
     learningObjectives = utils.formatLearningObjectives(learningObjectives);
 
-    var activityXML = activityClinicalBrief(program, title, targetAudience, learningObjectives);
+    cmeReviewers = (checklistResult.properties.cmeReviewers ? checklistResult.properties.cmeReviewers.result : "");
  
     // Build Main TOC - Insert Brief Sections & Insert CME Test Section 
     var mainTOCInstance = new TOCElement();
@@ -225,7 +234,7 @@ function buildClinicalBrief(ticket, program) {
     finalArticle.insertTOCElement(referencesTOC);
 
 
-    var activityXML = activityClinicalBrief(program, title, targetAudience, learningObjectives);
+    var activityXML = activityClinicalBrief(program, title, targetAudience, learningObjectives, cmeReviewers);
     
     return {
         finishedArticleObject: finalArticle,
