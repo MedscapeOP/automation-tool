@@ -29,6 +29,7 @@ describe('Article Utilities', function () {
     let prodTicketFr = fs.readFileSync(__dirname + '/input/article-utils/article-fr.html', 'utf8');
     let programFR = app.config.programs.firstResponse;
     let prodticketTH = fs.readFileSync(__dirname + '/input/article-utils/article-th.html', 'utf8');
+    let completeContributorGroups = fs.readFileSync(__dirname + '/input/article-utils/contrbtr-groups.xml', 'utf8'); 
     let programTH = app.config.programs.townHall;
     var completeBlankTOC; 
     var completeSlidesTOC;
@@ -190,11 +191,13 @@ describe('Article Utilities', function () {
     describe('buildContributorGroups()', function () {
         var cmeReviewers = require('../prodticket/input/cme-reviewers-cc');
         var contributorGroups = articleUtils.buildContributorGroups(cmeReviewers);
-        var result = [];
+        var result = "";
         for (var i = 0; i < contributorGroups.length; i++) {
-            result.push(contributorGroups[i].toObjectLiteral());
+            result = result + utils.xmlOps.objectToXMLString(contributorGroups[i].toObjectLiteral()) + "\n\n";
         }
-        console.log("BUILD CONTRIBUTORS RESULT: ", contributorGroups.length);
+        
+        // console.log("BUILD CONTRIBUTORS RESULT: ", result);
+        expect(result).to.equalIgnoreSpaces(completeContributorGroups);
     });
 });
 

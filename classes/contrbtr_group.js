@@ -29,7 +29,7 @@ class ContributorGroup extends XMLElement {
 
     insertContributorElement(contributorElement) {
         /* 
-            - Pushes the new slide_grp onto the elements array of the subsection
+            - Pushes the new contributor group onto the elements array of the subsection
         */
         if ((contributorElement) && (contributorElement instanceof ContributorElement)) {
             this.insertChildElement(contributorElement);

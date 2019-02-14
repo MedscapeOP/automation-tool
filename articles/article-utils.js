@@ -286,9 +286,11 @@ function buildContributorGroups(contributors) {
             if (currentContributorGroup) {
                 // not the first group --> push the old contributor group 
                 contributorGroups.push(currentContributorGroup);
+                // console.log("PUSH CONTRIB GROUP: ");
             }
             // instantiate a new contributor group
             currentContributorGroup = new ContributorGroup(currentTitle);
+            // console.log("INSTANTIATE CONTRIB GROUP: ");
         }
         // Create a new contributor element
         if (contributor.chronicleid) {
@@ -302,8 +304,12 @@ function buildContributorGroups(contributors) {
         contributorElement.contrbtrTitle = contributor.affiliation;
         contributorElement.contrbtrDisclsr = contributor.disclosure;
         
-        // push the element onto the current contributor group. 
+        // push the element onto the current contributor group.
+        // console.log("CONTRIBUTOR ELEMENT PUSH: ", contributorElement); 
         currentContributorGroup.insertContributorElement(contributorElement);
+        if (i + 1 >= contributors.length) {
+            contributorGroups.push(currentContributorGroup);
+        }
     }
     return contributorGroups;
 }

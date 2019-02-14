@@ -207,7 +207,7 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML, program)
     if (stringOps.isBlankOrWhiteSpace(cmeReviewerBlock) || stringOps.isEmptyString(cmeReviewerBlock) || cmeReviewerBlock.length < 10) {
         throw new Error("No CME reviewers found in the prodticket");
     } else {
-        console.log("CME REVIEWER BLOCK: ", cmeReviewerBlock);
+        // console.log("CME REVIEWER BLOCK: ", cmeReviewerBlock);
 
         cmeReviewerBlock = cleanHTML.cmeReviewerFluff(cmeReviewerBlock);
         return buildCMEReviewers(cmeReviewerBlock, program);
