@@ -140,7 +140,7 @@ function checklistAction(vorpal, self, callback, chalk, program, buildFinalOutpu
         completionMessages.xmlFile = ``;
         completionMessages.checklist = `${program.name} Checklist created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().checklist)}`;
 
-        completeGenerateAction(self, callback, buildResult.finishedArticleObject, buildResult.checklistHTML, outputFiles(), completionMessages);   
+        completeGenerateAction(self, callback, buildResult.finishedArticleObject, buildResult.checklistHTML, "", outputFiles(), completionMessages);   
     }) 
     .catch((err) => {
         self.log(err);
