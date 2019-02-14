@@ -52,13 +52,25 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
 }
 
 // Town Hall
+var townHallStartRegExps = [
+    /\(Names and degrees only, separated by semicolons\)/g,
+    /<strong>Faculty Byline/g,
+    /Faculty Byline.*/g
+];
+
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
-    var {textBlock: byline} = stringOps.getTextBlock(ticketHTML, "\(Names and degrees only, separated by semicolons\)", '<strong>Location/map info', true, false);
-    
-    if (stringOps.isBlankOrWhiteSpace(byline) || stringOps.isEmptyString(byline)) {
-        throw new Error("No byline found in the prodticket");
+    var startRegExp = stringOps.getNextRegex(ticketHTML, townHallStartRegExps);
+    var endRegExp = /<strong>Location\/map info/g;
+    if (startRegExp != -1) {
+        var {textBlock: byline} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
+        
+        if (stringOps.isBlankOrWhiteSpace(byline) || stringOps.isEmptyString(byline)) {
+            throw new Error("No byline found in the prodticket");
+        } else {
+            return cleanHTML.singleLine(cleanHTML.plainText(byline)).trim();
+        }
     } else {
-        return cleanHTML.singleLine(cleanHTML.plainText(byline)).trim();
+        throw new Error("No byline found in the prodticket");
     }
 }
 

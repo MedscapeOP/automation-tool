@@ -19,6 +19,14 @@ let titleRegexArray = [
     /<strong>CME\/Content Reviewer/gi,
     /<strong>Nurse Planner.*/gi,
     /<strong>CE Reviewer.*/gi,
+    /<p>Editor\/CME Reviewer\/Nurse Planner.*/gi,
+    /<p>CE Reviewer \/ Nurse Planner.*/gi,
+    /<p>CME Author.*/gi,
+    /<p>CME Reviewer.*/gi,
+    /<p>Content Reviewer.*/gi,
+    /<p>CME\/Content Reviewer/gi,
+    /<p>Nurse Planner.*/gi,
+    /<p>CE Reviewer.*/gi,
     /<\/a>Editor\/CME Reviewer\/Nurse Planner.*/gi,
     /<\/a>CE Reviewer \/ Nurse Planner.*/gi,
     /<\/a>CME Author.*/gi,
@@ -62,7 +70,7 @@ function getAllMatchesInOrder(textBlock, regexArray)  {
 
 function buildCMEReviewers(cmeReviewerBlock, program) {
     var reviewersResult = [];
-
+    
     if (program.hasOUS) {
         var reviewersArray = cmeReviewers.ous;
     } else {
@@ -131,6 +139,8 @@ function buildCMEReviewers(cmeReviewerBlock, program) {
             }
         } 
     }
+
+    // console.log("REVIEWERS RESULT: ", reviewersResult);
     return reviewersResult; 
 }
 
@@ -163,7 +173,7 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML, program
 
     var {textBlock: cmeReviewerBlock} = stringOps.getTextBlock(additionalReviewerBlock, /<table border=".*/g, endRegExp, true, false);
     
-    // console.log("CME REVIEWER BLOCK: ", cmeReviewerBlock); --> OKAY 
+    // console.log("CME REVIEWER BLOCK: ", cmeReviewerBlock); // --> OKAY 
 
     if (stringOps.isBlankOrWhiteSpace(cmeReviewerBlock) || stringOps.isEmptyString(cmeReviewerBlock) || cmeReviewerBlock.length < 10) {
         throw new Error("No CME reviewers found in the prodticket");

@@ -39,7 +39,7 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
 
 // TownHall 
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
-    var {textBlock: rawAbbreviations, label: abbrLabel} = stringOps.getTextBlock(ticketHTML, "Abbreviations", '<a name="Heading562"></a>Transcript');
+    var {textBlock: rawAbbreviations, label: abbrLabel} = stringOps.getTextBlock(ticketHTML, /Abbreviations/g, /<a name=".*"><\/a>Transcript/g);
     // console.log(cleanHTML.abbreviations(rawAbbreviations));
     // return "";
     if (stringOps.isEmptyString(rawAbbreviations) || stringOps.isBlankOrWhiteSpace(rawAbbreviations) || rawAbbreviations.length < 5) {

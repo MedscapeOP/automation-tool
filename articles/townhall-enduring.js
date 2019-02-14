@@ -1,7 +1,7 @@
 const _ = require("lodash");
 const utils = require("../utils");
 const articleUtils = require('./article-utils');
-const {ProfArticle, TOCElement, SectionElement, SubsectionElement, SlideGroup, TownHallEnduringChecklist} = require("../classes");
+const {ProfArticle, ProfActivity, TOCElement, SectionElement, SubsectionElement, SlideGroup, TownHallEnduringChecklist} = require("../classes");
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
 
@@ -41,24 +41,35 @@ function getLLAPostTOC(ticket, program) {
     return articleUtils.buildLLAPostTOC();
 }
 
+/* ACTIVITY FUNCTION  
+-------------------------------------- */
+function activityTownHallEnduring(program, title, targetAudience, goalStatement, learningObjectives, cmeReviewers) {
+    var activityInstance = new ProfActivity(title, program.hasOUS);
+    activityInstance.targetAudience = targetAudience; // Text field
 
-/*
-MAIN CCE: TITLE, CONTRIBUTOR PAGE INFO; TRANSCRIPT: SLIDES (TH USES DIFFERENT THUMBNAIL PATH - SEE NOTES); ABBREVIATIONS; REFERENCES; BACK MATTER; UPLOAD/LINK SLIDE DECK; AUDIENCE QNA SIDEBAR;
+    learningObjectives = `<p><p>Upon completion of this activity, participants will:</p>` + learningObjectives + "</p>";
 
-Main sections to include: 
-    1) TITLE - COMPLETE         
-    2) CONTRIBUTOR PAGE INFO - COMPLETE 
-        - BYLINE: 
-        - CONTRIBUTOR POST CONTENT / Peer Reviewer:             
-    3) BANNER - INCOMPLETE    
-    4) SLIDES CONTENT - COMPLETE  
-        - CHECK SLIDE PATH - COMPLETE 
-    5) PRE/POST ASSESSMENT - COMPLETE
-    6) BLANK RESULTS PAGE - COMPLETE
-    7) ABBREVIATIONS - COMPLETE
-    8) REFERENCES - COMPLETE 
-    9) AUDIENCE QNA SIDEBAR - COMPLETE  
-*/
+    activityInstance.learningObjectives =  learningObjectives; // unwrapped markup
+    activityInstance.goalStatement = utils.cleanHTML.plainText(goalStatement);
+    
+    activityInstance.miscProviderStatement = snippets.activity.medscapeProviderStatement(program);
+
+    activityInstance.creditInstructions = snippets.activity.instructionsForCredit(program);
+
+    activityInstance.hardwareRequirements = snippets.activity.hardwareRequirements();
+
+    activityInstance.additionalCreditAvailable = snippets.activity.additionalCreditAvailable();
+
+    var contributorGroups = articleUtils.buildContributorGroups(cmeReviewers);
+
+    for (var i = 0; i < contributorGroups.length; i++) {       
+        activityInstance.insertContributorGroup(contributorGroups[i]);
+    }
+
+    return activityInstance.toFinalXML();
+}
+
+
 /* CHECKLIST FUNCTION  
 -------------------------------------- */
 function checklistTownHallEnduring(ticket, program) {
@@ -145,7 +156,11 @@ function buildTownHallEnduring(ticket, program) {
     abbreviationsTOC,
     referencesTOC,
     forYourPatientMarkup,
-    audienceQATOC;
+    audienceQATOC,
+    targetAudience, 
+    goalStatement,
+    learningObjectives,
+    cmeReviewers;
 
     var checklistResult = checklistTownHallEnduring(ticket, program);
 
@@ -154,8 +169,16 @@ function buildTownHallEnduring(ticket, program) {
 
     peerReviewer = (checklistResult.properties.peerReviewer ? checklistResult.properties.peerReviewer.result : "");
 
+    targetAudience = (checklistResult.properties.targetAudience ? checklistResult.properties.targetAudience.result : "");
+
+    goalStatement = (checklistResult.properties.goalStatement ? checklistResult.properties.goalStatement.result : "");
+
+    learningObjectives = (checklistResult.properties.learningObjectives ? checklistResult.properties.learningObjectives.result : "");
+
+    learningObjectives = utils.formatLearningObjectives(learningObjectives);    
+
     if (program.hasLLA) {
-        preAssessmentTOC = getLLAPreTOC(checklistResult.properties.goalStatement.result, program);
+        preAssessmentTOC = getLLAPreTOC(goalStatement, program);
         postAssessmentTOC = getLLAPostTOC(ticket, program);
         blankResultsTOC = articleUtils.buildBlankTOC();
     }
@@ -192,6 +215,8 @@ function buildTownHallEnduring(ticket, program) {
         finalArticle.bannerImage = collectionPageInfo.bannerFileName;
         finalArticle.insertAboveTitleCA(collectionPageInfo.title, collectionPageInfo.advancesFileName);
     } 
+
+    cmeReviewers = (checklistResult.properties.cmeReviewers ? checklistResult.properties.cmeReviewers.result : "");
           
     // Insert Main TOC Objects  
     finalArticle.insertTOCElement(preAssessmentTOC);
@@ -223,9 +248,12 @@ function buildTownHallEnduring(ticket, program) {
         finalArticle._childElements[0]._childElements[0].insertSubsectionElement(forYourPatientSubsection); 
     }
 
+    var activityXML = activityTownHallEnduring(program, title, targetAudience, goalStatement, learningObjectives, cmeReviewers);
+
     return {
         finishedArticleObject: finalArticle,
-        checklistHTML: checklistResult.printHTML  
+        checklistHTML: checklistResult.printHTML,
+        activityXML: activityXML  
     };
 };
 
