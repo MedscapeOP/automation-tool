@@ -29,6 +29,8 @@ class FirstResponseChecklist extends ArticleChecklist {
         this.components = {result: null, printFn: printFunctions.printComponents, printName: "ARTICLE COMPONENTS"};
         this.slides = {result: null , printFn: printFunctions.printSlides, printName: "SLIDES"}; 
         this.contributors = {result: null, printFn: printFunctions.printContributors, printName: "CONTRIBUTOR DISCLOSURES AND AFFILIATIONS"}; 
+        this.cmeReviewers = {result: null, printFn: printFunctions.printContributors, printName: "CME REVIEWER DISCLOSURES"};     
+
     }
 
     //--------------------------------

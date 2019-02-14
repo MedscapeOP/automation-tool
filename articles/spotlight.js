@@ -23,7 +23,7 @@
 const _ = require("lodash");
 const utils = require("../utils");
 const articleUtils = require('./article-utils');
-const {ProfArticle, TOCElement, SectionElement, SubsectionElement, SlideGroup, SpotlightChecklist} = require("../classes");
+const {ProfArticle, ProfActivity, TOCElement, SectionElement, SubsectionElement, SlideGroup, SpotlightChecklist} = require("../classes");
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
 
@@ -60,19 +60,34 @@ function getLLAPostTOC(ticket, program) {
 }
 
 
-/*
-Main sections to include: 
-    1) TITLE - COMPLETE         
-    2) CONTRIBUTOR PAGE INFO - COMPLETE 
-        - BYLINE: 
-        - CONTRIBUTOR POST CONTENT / Peer Reviewer:             
-    3) BANNER - INCOMPLETE    
-    4) SLIDES CONTENT - COMPLETE  
-    5) PRE/POST ASSESSMENT - COMPLETE
-    6) BLANK RESULTS PAGE - COMPLETE
-    7) ABBREVIATIONS - COMPLETE
-    8) REFERENCES - COMPLETE 
-*/
+/* ACTIVITY FUNCTION  
+-------------------------------------- */
+function activitySpotlight(program, title, targetAudience, goalStatement, learningObjectives, cmeReviewers) {
+    var activityInstance = new ProfActivity(title, program.hasOUS);
+    activityInstance.targetAudience = targetAudience; // Text field
+
+    learningObjectives = `<p><p>Upon completion of this activity, participants will:</p>` + learningObjectives + "</p>";
+
+    activityInstance.learningObjectives =  learningObjectives; // unwrapped markup
+    activityInstance.goalStatement = goalStatement;
+    
+    activityInstance.miscProviderStatement = snippets.activity.medscapeProviderStatement(program);
+
+    activityInstance.creditInstructions = snippets.activity.instructionsForCredit(program);
+
+    activityInstance.hardwareRequirements = snippets.activity.hardwareRequirements();
+
+    activityInstance.additionalCreditAvailable = snippets.activity.additionalCreditAvailable();
+
+    var contributorGroups = articleUtils.buildContributorGroups(cmeReviewers);
+
+    for (var i = 0; i < contributorGroups.length; i++) {       
+        activityInstance.insertContributorGroup(contributorGroups[i]);
+    }
+
+    return activityInstance.toFinalXML();
+}
+
 
 /* CHECKLIST FUNCTION  
 -------------------------------------- */
@@ -157,6 +172,9 @@ function checklistSpotlight(ticket, program) {
     // CONTRIBUTORS
     checklist.contributors.result = prodticket.getContributors(ticket, program);
 
+    // CME REVIEWERS 
+    checklist.cmeReviewers.result = prodticket.getCMEReviewers(ticket, program);
+
     return checklist.print();
 }
 
@@ -174,7 +192,11 @@ function buildSpotlight(ticket, program) {
     blankResultsTOC, 
     abbreviationsTOC,
     referencesTOC,
-    forYourPatientMarkup;
+    forYourPatientMarkup,
+    targetAudience, 
+    goalStatement,
+    learningObjectives,
+    cmeReviewers;
 
     var checklistResult = checklistSpotlight(ticket, program);
 
@@ -189,9 +211,16 @@ function buildSpotlight(ticket, program) {
     // } 
     peerReviewer = (checklistResult.properties.peerReviewer ? checklistResult.properties.peerReviewer.result : "");
 
+    targetAudience = (checklistResult.properties.targetAudience ? checklistResult.properties.targetAudience.result : "");
+
+    goalStatement = (checklistResult.properties.goalStatement ? checklistResult.properties.goalStatement.result : "");
+
+    learningObjectives = (checklistResult.properties.learningObjectives ? checklistResult.properties.learningObjectives.result : "");
+
+    learningObjectives = utils.formatLearningObjectives(learningObjectives);
 
     if (program.hasLLA) {
-        preAssessmentTOC = getLLAPreTOC(checklistResult.properties.goalStatement.result, program);
+        preAssessmentTOC = getLLAPreTOC(goalStatement, program);
         postAssessmentTOC = getLLAPostTOC(ticket, program);
         blankResultsTOC = articleUtils.buildBlankTOC();
     }
@@ -225,6 +254,8 @@ function buildSpotlight(ticket, program) {
         finalArticle.bannerImage = collectionPageInfo.bannerFileName;
         finalArticle.insertAboveTitleCA(collectionPageInfo.title, collectionPageInfo.advancesFileName);
     } 
+
+    cmeReviewers = (checklistResult.properties.cmeReviewers ? checklistResult.properties.cmeReviewers.result : "");
           
     // Insert Main TOC Objects  
     finalArticle.insertTOCElement(preAssessmentTOC);
@@ -254,9 +285,12 @@ function buildSpotlight(ticket, program) {
         finalArticle._childElements[0]._childElements[0].insertSubsectionElement(forYourPatientSubsection); 
     }
     
+    var activityXML = activitySpotlight(program, title, targetAudience, goalStatement, learningObjectives, cmeReviewers);
+
     return {
         finishedArticleObject: finalArticle,
-        checklistHTML: checklistResult.printHTML  
+        checklistHTML: checklistResult.printHTML,
+        activityXML: activityXML   
     };
 };
 

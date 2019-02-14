@@ -122,6 +122,9 @@ function checklistTownHallEnduring(ticket, program) {
     // CONTRIBUTORS
     checklist.contributors.result = prodticket.getContributors(ticket, program);
 
+    // CME REVIEWERS 
+    checklist.cmeReviewers.result = prodticket.getCMEReviewers(ticket, program);
+
     return checklist.print();
 }
 

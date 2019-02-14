@@ -26,8 +26,9 @@ class SpotlightChecklist extends ArticleChecklist {
         this.title = {result: null , printFn: printFunctions.printStringProp, printName: "TITLE"};
 
         // SPECIAL PRINT FUNCTIONS 
-        this.slides = {result: null , printFn: printFunctions.printSlides, printName: "SLIDES"}; 
+        this.slides = {result: null , printFn: printFunctions.printSlides, printName: "SLIDES"};                 
         this.contributors = {result: null, printFn: printFunctions.printContributors, printName: "CONTRIBUTOR DISCLOSURES AND AFFILIATIONS"}; 
+        this.cmeReviewers = {result: null, printFn: printFunctions.printContributors, printName: "CME REVIEWER DISCLOSURES"};     
     }
 
     //--------------------------------
