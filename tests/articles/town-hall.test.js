@@ -50,52 +50,52 @@ describe('Town Hall', function () {
 
     });
 
-    // describe('#buildTownHallEnduring()', function () {
-    //     it('should return complete XML string of Town Hall Enduring article', function () {
-    //         program.hasCollectionPage = false;
-    //         program.hasPeerReviewer = false;
-    //         program.hasForYourPatient = false;
-    //         program.hasLLA = false;
-    //         program.hasOUS = true; 
-    //         // program.articleID = "902206";
+    describe('#buildTownHallEnduring()', function () {
+        it('should return complete XML string of Town Hall Enduring article', function () {
+            program.hasCollectionPage = false;
+            program.hasPeerReviewer = false;
+            program.hasForYourPatient = false;
+            program.hasLLA = false;
+            program.hasOUS = true; 
+            // program.articleID = "902206";
 
-    //         var result = townHallEnduring.buildTownHallEnduring(prodTicket, program).finishedArticleObject.toObjectLiteral();
+            var result = townHallEnduring.buildTownHallEnduring(prodTicket, program).finishedArticleObject.toObjectLiteral();
 
-    //         result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
+            result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
 
-    //         fs.writeFileSync(__dirname + '/output/town-hall/finished-th.xml', result);
+            fs.writeFileSync(__dirname + '/output/town-hall/finished-th.xml', result);
 
-    //         // console.log("RESULT: ", result);
-    //         // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
+            // console.log("RESULT: ", result);
+            // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
 
-    //         expect(result).to.equalIgnoreSpaces(completeTownHallEnduring);
-    //     });
+            expect(result).to.equalIgnoreSpaces(completeTownHallEnduring);
+        });
 
-    //     // it('should return complete XML string of First Response article - with LLA', function () {
-    //     //     program.hasCollectionPage = false;
-    //     //     program.hasPeerReviewer = true;
-    //     //     // Tested and working with For your patient
-    //     //     program.hasForYourPatient = false;
-    //     //     program.hasLLA = true;
-    //     //     // program.articleID = "897160";
+        // it('should return complete XML string of First Response article - with LLA', function () {
+        //     program.hasCollectionPage = false;
+        //     program.hasPeerReviewer = true;
+        //     // Tested and working with For your patient
+        //     program.hasForYourPatient = false;
+        //     program.hasLLA = true;
+        //     // program.articleID = "897160";
 
-    //     //     var result = firstResponse.buildFirstResponse(prodTicket, program).toObjectLiteral();
+        //     var result = firstResponse.buildFirstResponse(prodTicket, program).toObjectLiteral();
 
-    //     //     // console.log("RESULT: ", JSON.stringify(result, undefined, 2));
+        //     // console.log("RESULT: ", JSON.stringify(result, undefined, 2));
 
-    //     //     var differences = [                
-    //     //     ];
+        //     var differences = [                
+        //     ];
 
-    //     //     result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
-    //     //     // result = utils.xmlOps.objectToXMLString(result);
+        //     result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
+        //     // result = utils.xmlOps.objectToXMLString(result);
 
-    //     //     fs.writeFileSync(__dirname + '/output/first-response/finished-fr.xml', result);
+        //     fs.writeFileSync(__dirname + '/output/first-response/finished-fr.xml', result);
 
-    //     //     // console.log("RESULT: ", result);
-    //     //     // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
+        //     // console.log("RESULT: ", result);
+        //     // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
 
-    //     //     expect(result).to.equalIgnoreSpaces(completeTownHallReg);
-    //     // });
-    // });
+        //     expect(result).to.equalIgnoreSpaces(completeTownHallReg);
+        // });
+    });
 });
 

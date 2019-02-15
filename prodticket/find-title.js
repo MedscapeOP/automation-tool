@@ -48,20 +48,54 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
+
+// Town Hall
+var townHallTitleRegExps = [
+    /<strong>Title:/g,
+    /<p>Title:/g,
+    /.*Title.*/g
+];
+
+var townHallEndTitleRegExps = [
+    /<strong>Subtitle:/g,
+    /<p>Subtitle:/g,
+    /.*Subtitle.*/g
+];
+
+var townHallSubtitleRegExps = [
+    /<strong>\*Title \+ subtitle.*/g
+]
+
+var townHallEndSubtitleRegExps = [
+    /<strong>Teaser/g
+];
 // Town Hall
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
-    var {textBlock: title} = stringOps.getTextBlock(ticketHTML, "<strong>Title:", "<strong>Subtitle:", true, false);
-    var {textBlock: subtitle} = stringOps.getTextBlock(ticketHTML, "Title + subtitle = 80 characters max, inc. spaces*</strong>", "<strong>Teaser", true, false);
-    title = cleanHTML.singleLine(cleanHTML.plainText(title)).trim();
-    subtitle = cleanHTML.singleLine(cleanHTML.plainText(subtitle)).trim();
-    console.log("TEXTBLOCK TITLE: ", title);
-    if (stringOps.isEmptyString(title)) {
-        throw new Error("No title found in the prodticket");
-    } else if (stringOps.isEmptyString(subtitle)) {
-        return `${title}`;
+    var startRegExp = stringOps.getUsableRegExp(ticketHTML, townHallTitleRegExps);
+    var endRegExp = stringOps.getUsableRegExp(ticketHTML, townHallEndTitleRegExps);
+    // console.log("START REGEXP:", startRegExp);
+    // console.log("END REGEXP:", endRegExp);
+
+    if (startRegExp && endRegExp) {
+        var {textBlock: title} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
+
+        startRegExp = stringOps.getUsableRegExp(ticketHTML, townHallSubtitleRegExps);
+        endRegExp = stringOps.getUsableRegExp(ticketHTML, townHallEndSubtitleRegExps);
+
+        var {textBlock: subtitle} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
+
+        title = cleanHTML.singleLine(cleanHTML.plainText(title)).trim();
+        subtitle = cleanHTML.singleLine(cleanHTML.plainText(subtitle)).trim();
+        if (stringOps.isEmptyString(title)) {
+            throw new Error("No title found in the prodticket");
+        } else if (stringOps.isEmptyString(subtitle)) {
+            return `${title}`;
+        } else {
+            return `${title}: ${subtitle}`;
+        } 
     } else {
-        return `${title}: ${subtitle}`;
-    } 
+        throw new Error("No title found in the prodticket");
+    }
 }
 
 module.exports = exportObject;
