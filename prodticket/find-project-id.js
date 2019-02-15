@@ -37,7 +37,7 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
 
 // Town Hall  
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
-    throw new Error("No SF# found in the prodticket");
+    throw new Error("No SF# in TownHall prodticket");
 }
 
 module.exports = exportObject;
