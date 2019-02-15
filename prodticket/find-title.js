@@ -54,6 +54,7 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     var {textBlock: subtitle} = stringOps.getTextBlock(ticketHTML, "Title + subtitle = 80 characters max, inc. spaces*</strong>", "<strong>Teaser", true, false);
     title = cleanHTML.singleLine(cleanHTML.plainText(title)).trim();
     subtitle = cleanHTML.singleLine(cleanHTML.plainText(subtitle)).trim();
+    console.log("TEXTBLOCK TITLE: ", title);
     if (stringOps.isEmptyString(title)) {
         throw new Error("No title found in the prodticket");
     } else if (stringOps.isEmptyString(subtitle)) {

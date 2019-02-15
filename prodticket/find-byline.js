@@ -55,11 +55,12 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
 var townHallStartRegExps = [
     /\(Names and degrees only, separated by semicolons\)/g,
     /<strong>Faculty Byline/g,
-    /Faculty Byline.*/g
+    /Faculty Byline.*/g,
+    /<strong>Faculty\/Author\(s\)/g
 ];
 
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
-    var startRegExp = stringOps.getNextRegex(ticketHTML, townHallStartRegExps);
+    var startRegExp = stringOps.getUsableRegExp(ticketHTML, townHallStartRegExps);
     var endRegExp = /<strong>Location\/map info/g;
     if (startRegExp != -1) {
         var {textBlock: byline} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
