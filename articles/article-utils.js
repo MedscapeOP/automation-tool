@@ -210,6 +210,7 @@ function buildAbbreviations(abbreviationsMarkup, program) {
     return abbreviationsTOC;
 }
 
+/* DONE */
 function buildTableOfContentsTOC(componentsArray, program) {
     // BUILD: Main TOC Element 
     var tableOfContentsTOC = new TOCElement();
@@ -240,6 +241,7 @@ function buildTableOfContentsTOC(componentsArray, program) {
     return tableOfContentsTOC;    
 } 
 
+/* DONE */
 function buildAudienceQATOC(slidesComponent) {
     // - It just has an extra Sidebar, Audience Q&A where you need to embed video code video code is provided in media info in custom forms
     // - Use a normal LLA-style video embed. 
@@ -313,7 +315,7 @@ function buildContributorGroups(contributors) {
     }
     return contributorGroups;
 }
-
+ 
 module.exports = {
     buildSection,
     buildCMETestSection,

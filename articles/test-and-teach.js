@@ -6,23 +6,27 @@ const prodticket = require('../prodticket');
 const snippets = require('../snippets');
 
 
-/* SLIDES / MAIN CONTENT 
+/* MAIN CONTENT 
 -------------------------------------- */
-function getSlidesTOC (slidesComponents, program) {
+function buildContentTOC (articleComponent) {
+    return new TOCElement();
+}
+
+function getMainContentTOCs (articleComponents, program) {
+
+/* 
+TT_Transcript: CREATE QUESTION TOC ELEMENTS (1 FOR: EACH QUESTION FORM); CREATE SUBSECTIONS FOR TEXT BLOCKS; CREATE SUBSECTIONS FOR TABLES AND FIGURES; POST ASSESSMENT; BLANK RESULTS PAGE; ABBREVIATIONS; REFERENCES; BACK MATTER; INSERT FIGURES; INSERT PATIENT CASE IMAGES; FORMAT AND INSERT HTML TABLES;
+*/
     // Get Slide Component from prodticket.getSlides.
     // Check if LLA 
     // If LLA build slides with Video embed AND Edu Impact challenge 
-    var slidesComponent = (slidesComponents ? slidesComponents[0] : program.articleID);
-
-    if (program.hasLLA) {
-        return {
-            slidesTOC: articleUtils.buildSlidesTOC(slidesComponent, true, true, true),
-            audienceQATOC: articleUtils.buildAudienceQATOC(slidesComponent)
-        }
+    var mainTOCs = [];
+    for (var i = 0; i < articleComponents.length; i++) {
+        mainTOCs.push(buildContentTOC(articleComponents[i]));
     }
+
     return {
-        slidesTOC: articleUtils.buildSlidesTOC(slidesComponent, false, false, true),
-        audienceQATOC: articleUtils.buildAudienceQATOC(slidesComponent)
+        mainTOCs: mainTOCs
     }
 }
 
@@ -258,7 +262,7 @@ function buildTestAndTeach(ticket, program) {
 };
 
 module.exports = {
-    getSlidesTOC,
+    getMainContentTOCs,
     getLLAPreTOC,
     getLLAPostTOC,
     buildTestAndTeach
