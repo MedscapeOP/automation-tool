@@ -135,5 +135,30 @@ describe('Utility Functions', function () {
             });
         });
     });
+
+    describe('utils.stringOps.getAllBlocksInOrder()', function () {
+        it('should remove a regex string ONLY within a specified regex match', function () {
+            var h3RegExp = new RegExp('<h3>(.*)</h3>', 'g');
+            var strongRegExp = new RegExp('<strong>|</strong>', 'g');            
+            var testString = `
+                <h3><strong>Stuff</strong></h3>
+                <strong>MORE</strong>
+                Other
+                <h3><strong>Stuff</strong></h3>
+            `;
+            var completeString = `
+                <h3>Stuff</h3>
+                <strong>MORE</strong>
+                Other
+                <h3>Stuff</h3>
+            `;
+            var result = utils.stringOps.removeFromRegexCapture(
+                testString,
+                h3RegExp,
+                strongRegExp
+            );
+            expect(result).equalIgnoreSpaces(completeString);
+        });
+    });
 });
 

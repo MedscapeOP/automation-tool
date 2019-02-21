@@ -5,18 +5,113 @@ const {ProfArticle, ProfActivity, TOCElement, SectionElement, SubsectionElement,
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
 
+/* 
+Practice Article - 896014
+*/
 
 /* MAIN CONTENT 
 -------------------------------------- */
 function buildContentTOC (articleComponent) {
 /* 
-Algorithm Ideas 
-- Find all level 1s in order 
-- Find all Questions in order 
-- Find all... 
-- After finding map indexes of each thing to what it is 
-- 
+Algorithm Ideas
 
+PRODTICKET FUNCTION: 
+- Find all level 1s in order 
+    - Look for: <<Level 1>>
+- Find all level 2s in order 
+    - Look for: <<Level 2>> 
+- Find all Questions in order 
+    - Start: QUESTION
+    - End: at Next heading () 
+    - Goal of this function would be to determine page
+- Find all Tables in order 
+    - Start: <<insert table (/d)>>
+    - End: <<end table (/d)>>
+- Find Figures 
+    - Look for <<insert figure (/d)>>
+
+- Main process is finding all relevant textblocks in order 
+    - Need a new stringOps function --> getAllBlocksInOrder(textblock, startRegExpArray, endRegExpArray)
+
+- Split total document into separate pages - each page object should include its QNA form # (if it has one).
+    - tocElements = [];
+    - For each page - Find all components in order 
+        - tocInstance = new TOCElement(); 
+        - currentSection = null; 
+        - Flatten all component arrays into one 
+        - order the component array by its index value
+        - For each component in the array 
+            - switch (component.type) 
+                - case "level 1":
+                    // Case where there is a new section
+                    // Insert the current section and create a new one. 
+                    - if currentSection
+                        - tocInstance.insertSection(currentSection);
+                    - currentSection = buildLevel1Section() 
+                        - Function should test if level 1 text contains either "case 1" or "case 2"
+                        - This should be the determining factor for if there is a Case image or not.                                                        
+                - case "level 2": 
+                    - buildLevel2Subsection
+                    - if !currentSection 
+                        - currentSection = create Section 
+                    - insert level2Subsection into section 
+                - case "table": 
+                    - buildTableSubsection
+                    - If !currentSection
+                        - currentSection = create Section 
+                    - insert tableSubsection into section 
+                - case "figure":
+                    - buildFigureSubsection 
+                    - If !currentSection 
+                        - currentSection = create Section 
+                    - insert figureSubsection into section 
+            if (lastComponent) {
+                tocInstance.insertSection(currentSection);
+            }
+        
+ALTERNATE ALGORITHM: 
+nextRegex = 0;
+currentTOC = null; 
+currentSection = null; 
+- Loop through (while nextRegex != -1)
+if (nextRegex == 0) {
+    - nextRegex = getNextRegex();
+    - type = getRegexType(nextRegex);   
+    - call getTextBlock() from the beginning up until the nextRegex
+        - Pass the function an array of all possible regex. 
+} else {
+    - Use nextRegex as the startRegex for getTextBlock();
+    - type = getRegexType(nextRegex);
+    - nextRegex = getNextRegex();
+        - Pass the function an array of all possible regex.
+    - call getTextBlock(startRegex, nextRegex) 
+}
+- if (type == "level 1"):
+    // Case where there is a new section
+    // Insert the current section and create a new one. 
+    - if currentSection
+        - tocInstance.insertSection(currentSection);
+    - currentSection = buildLevel1Section() 
+        - Function should test if level 1 text contains either "case 1" or "case 2"
+        - This should be the determining factor for if there is a Case image or not.                                                        
+- else if (type == "level 2"): 
+    - buildLevel2Subsection
+    - if !currentSection 
+        - currentSection = create Section 
+    - insert level2Subsection into section 
+- else if (type == "table"): 
+    - buildTableSubsection
+    - If !currentSection
+        - currentSection = create Section 
+    - insert tableSubsection into section 
+- else if (type == "figure"):
+    - buildFigureSubsection 
+    - If !currentSection 
+        - currentSection = create Section 
+    - insert figureSubsection into section 
+- else if (type == "question"): 
+    - create a new TOC 
+    - 
 */
     return new TOCElement();
 }

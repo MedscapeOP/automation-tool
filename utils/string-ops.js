@@ -103,6 +103,34 @@ function getTextBlock(str, startText, endText, stripStart = true, includeEnd = f
     }
 }
 
+function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray) {
+    // Create a utility function that returns an array of all of the titles
+    var resultArray = [];
+    var substring = textBlock.slice();
+    var foundMatch = null;
+    var searchStartIndex = 0;
+    var matchLength = 0;
+    while (substring) {
+        // console.log("SUBSTRING: ", substring);
+        foundMatch = getNextRegex(substring, regexArray);        
+        // console.log("FOUND MATCH: ", foundMatch);
+        if (!foundMatch.isInString) {
+            substring = null;
+        } else {
+            matchLength = substring.match(foundMatch.symbol)[0].length;
+            searchStartIndex = (textBlock.length - substring.length) + foundMatch.index + matchLength; // foundMatch.symbol.toString().length + 1;    
+            substring = textBlock.substring(searchStartIndex);
+            resultArray.push({
+                symbol: foundMatch.symbol,
+                index: searchStartIndex - matchLength
+            });
+            // console.log("INDEX CHOP: ", textBlock.substring(searchStartIndex, searchStartIndex + 20));
+            // console.log("INDEX CHOP: ", textBlock.substring(39, 261));
+        }
+    }
+    return resultArray;
+}
+
 /**
  * @description Return the first matching regular expression from an array of regular expressions. 
  * - This regex returned would be the first possible match from within the string (ticketHTML). 
@@ -203,6 +231,7 @@ module.exports = {
     isEmptyString,
     isBlankOrWhiteSpace,
     getTextBlock,
+    getAllBlocksInOrder,
     regexIndexOf,
     getNextRegex,
     removeFromRegexCapture,
