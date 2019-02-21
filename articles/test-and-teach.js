@@ -9,10 +9,19 @@ const snippets = require('../snippets');
 /* MAIN CONTENT 
 -------------------------------------- */
 function buildContentTOC (articleComponent) {
+/* 
+Algorithm Ideas 
+- Find all level 1s in order 
+- Find all Questions in order 
+- Find all... 
+- After finding map indexes of each thing to what it is 
+- 
+
+*/
     return new TOCElement();
 }
 
-function getMainContentTOCs (articleComponents, program) {
+function getMainContentTOCs (articleContent, program) {
 
 /* 
 TT_Transcript: CREATE QUESTION TOC ELEMENTS (1 FOR: EACH QUESTION FORM); CREATE SUBSECTIONS FOR TEXT BLOCKS; CREATE SUBSECTIONS FOR TABLES AND FIGURES; POST ASSESSMENT; BLANK RESULTS PAGE; ABBREVIATIONS; REFERENCES; BACK MATTER; INSERT FIGURES; INSERT PATIENT CASE IMAGES; FORMAT AND INSERT HTML TABLES;
@@ -187,7 +196,8 @@ function buildTestAndTeach(ticket, program) {
         blankResultsTOC = articleUtils.buildBlankTOC();
     }
 
-    var tocs = getSlidesTOC(checklistResult.properties.slides.result, program);
+    var tocs = getMainContentTOCs(checklistResult.properties.articleContent.result, program);
+
     slidesTOC = tocs.slidesTOC;
     audienceQATOC = tocs.audienceQATOC; 
 

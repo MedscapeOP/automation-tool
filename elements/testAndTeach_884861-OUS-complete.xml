@@ -1,0 +1,1361 @@
+<prof_article>
+    <front_label>Front Matter</front_label>
+    <above_title>
+        <p>
+            <a href="https://www.medscape.org/sites/advances/cdk4-6-inhibition-breast-cancer">CLINICAL ADVANCES IN CDK 4 and 6 Inhibition in Breast Cancer</a>
+        </p>
+    </above_title>
+    <title>
+        <p>Managing the Patient With Advanced HR-Positive, HER2-Negative Breast Cancer</p>
+    </title>
+    <contrbtr_pre_content>
+        <p>WebMD Global requires each individual who is in a position to control the content of one of its educational activities to disclose any relevant financial relationships occurring within the past 12 months that could create a conflict of interest.</p>
+    </contrbtr_pre_content>
+    <contrbtr_byline>
+        <p>Angelo DiLeo, MD, PhD</p>
+    </contrbtr_byline>
+    <contrbtr_group>
+        <contrbtr_type_lbl>Faculty</contrbtr_type_lbl>
+        <contrbtr_element chronicleid="0901c79180d6985f">
+            <contrbtr_nm>Angelo DiLeo, MD, PhD</contrbtr_nm>
+            <contrbtr_title>
+                <p>Head 
+                    <br/>
+Sandro Pitigliani Medical Oncology Department 
+                    <br/>
+Hospital of Prato
+                    <br/>
+Prato, Italy
+                </p>
+            </contrbtr_title>
+            <contrbtr_bio/>
+            <contrbtr_disclsr>
+                <p>Disclosure: Angelo DiLeo, MD, PhD, has disclosed the following relevant financial relationships:
+                    <br/>
+Served as an advisor or consultant for: AstraZeneca Pharmaceuticals LP; Bayer HealthCare; Celgene Corporation; Daiichi Sankyo, Inc.; Eisai Inc.; Genomic Health; Ipsen; Lilly; Novartis Pharmaceuticals Corporation; Pfizer Inc.; Pierre Fabre; Puma Biotechnology; Roche
+                    <br/>
+Received grants for clinical research from: AstraZeneca Pharmaceuticals LP; Novartis Pharmaceuticals Corporation; Pfizer Inc.
+                </p>
+            </contrbtr_disclsr>
+        </contrbtr_element>
+    </contrbtr_group>
+    <contrbtr_group>
+        <contrbtr_type_lbl>Steering Committee</contrbtr_type_lbl>
+        <contrbtr_element>
+            <contrbtr_nm>Giuseppe Curigliano, MD, PhD</contrbtr_nm>
+            <contrbtr_title>
+                <p>Professor 
+                    <br/>
+University of Milano 
+                    <br/>
+Head 
+                    <br/>
+European Institute of Oncology Milan, Italy
+                </p>
+            </contrbtr_title>
+            <contrbtr_bio/>
+            <contrbtr_disclsr>
+                <p>Disclosure: Giuseppe Curigliano, MD, PhD, has disclosed the following relevant financial relationships:  
+                    <br/>
+Served as an advisor or consultant for: Novartis Pharmaceuticals Corporation; Pfizer Inc.; Roche   
+                    <br/>
+Served as a speaker or a member of a speakers bureau for: Pfizer Inc.; Roche
+                </p>
+            </contrbtr_disclsr>
+        </contrbtr_element>
+        <contrbtr_element>
+            <contrbtr_nm>V&amp;#233;ronique Dieras, MD</contrbtr_nm>
+            <contrbtr_title>
+                <p>Centre Eugene Marquis 
+                    <br/>
+Unicancer UCBG 
+                    <br/>
+Rennes, France
+                </p>
+            </contrbtr_title>
+            <contrbtr_bio/>
+            <contrbtr_disclsr>
+                <p>Disclosure: Véronique Dieras, MD, has disclosed the following relevant financial relationships:  
+                    <br/>
+Served as an advisor or consultant for: AbbVie Inc.; Genentech, Inc.; Lilly; Novartis Pharmaceuticals Corporation; Pfizer Inc; Roche  
+                    <br/>
+Served as a speaker or a member of a speakers bureau for: Novartis Pharmaceuticals Corporation; Pfizer Inc.; Roche
+                </p>
+            </contrbtr_disclsr>
+        </contrbtr_element>
+        <contrbtr_element>
+            <contrbtr_nm>Guy Jerusalem, MD, PhD</contrbtr_nm>
+            <contrbtr_title>
+                <p>Head 
+                    <br/>
+Medical Oncology 
+                    <br/>
+CHU Sart Tilman Liège 
+                    <br/>
+Professor of Medical Oncology 
+                    <br/>
+Liège University 
+                    <br/>
+Liège, Belgium
+                </p>
+            </contrbtr_title>
+            <contrbtr_bio/>
+            <contrbtr_disclsr>
+                <p>Disclosure: Guy Jerusalem, MD, PhD, has disclosed the following relevant financial relationships:  
+                    <br/>
+Served as an advisor or consultant for: Amgen Inc.; Bristol-Myers Squibb Company; Celgene Corporation; Lilly; Novartis Pharmaceuticals Corporation; Pfizer Inc.; Puma Biotechnology; Roche  
+                    <br/>
+Served as a speaker or a member of a speakers bureau for: Celgene Corporation; Lilly; Novartis Pharmaceuticals Corporation; Pfizer Inc.; Roche  
+                    <br/>
+Received grants for clinical research from: Amgen Inc.; Bristol-Myers Squibb Company; Novartis Pharmaceuticals Corporation; Roche
+                </p>
+            </contrbtr_disclsr>
+        </contrbtr_element>
+        <contrbtr_element>
+            <contrbtr_nm>Sibylle&amp;#160;Loibl,&amp;#160;MD, PhD</contrbtr_nm>
+            <contrbtr_title>
+                <p>Chair 
+                    <br/>
+German Breast Group 
+                    <br/>
+Sana Kliniken Offenbach 
+                    <br/>
+Breast Cancer Center 
+                    <br/>
+Associate Professor 
+                    <br/>
+University Frankfurt am Main Frankfurt, Germany
+                </p>
+            </contrbtr_title>
+            <contrbtr_bio/>
+            <contrbtr_disclsr>
+                <p>Disclosure: Sibylle Loibl, MD, PhD, has disclosed the following relevant financial relationships:  
+                    <br/>
+Received grants for clinical research from: Amgen Inc.; AstraZeneca; Celgene Corporation; Novartis Pharmaceuticals Corporation; Pfizer Inc.; Roche; Teva Europe
+                </p>
+            </contrbtr_disclsr>
+        </contrbtr_element>
+        <contrbtr_element>
+            <contrbtr_nm>Peter Schmid, MD, PhD</contrbtr_nm>
+            <contrbtr_title>
+                <p>Professor 
+                    <br/>
+Centre for Experimental Cancer Medicine 
+                    <br/>
+St. Bartholomew Hospital 
+                    <br/>
+Chair of Cancer Medicine and Honorary Consultant in Medical Oncology Barts Cancer Institute Queen Mary University London London, United Kingdom
+                </p>
+            </contrbtr_title>
+            <contrbtr_bio/>
+            <contrbtr_disclsr>
+                <p>Disclosure: Peter Schmid, MD, PhD, has disclosed the following relevant financial relationships:  
+                    <br/>
+Served as an advisor or consultant for: Bayer HealthCare; Boehringer Ingelheim Pharmaceuticals, Inc.; Celgene Corporation; Eisai Co., Ltd; Pfizer Inc; Puma Biotechnology
+                </p>
+            </contrbtr_disclsr>
+        </contrbtr_element>
+    </contrbtr_group>
+    <contrbtr_group>
+        <contrbtr_type_lbl>Editors</contrbtr_type_lbl>
+        <contrbtr_element>
+            <contrbtr_nm>Deborah Middleton, MS</contrbtr_nm>
+            <contrbtr_title>
+                <p>Scientific Director, WebMD Global, LLC</p>
+            </contrbtr_title>
+            <contrbtr_bio/>
+            <contrbtr_disclsr>
+                <p>Disclosure: Deborah Middleton, MS, has disclosed no relevant financial relationships.</p>
+            </contrbtr_disclsr>
+        </contrbtr_element>
+        <contrbtr_element>
+            <contrbtr_nm>Racquel N. Cooper, PhD</contrbtr_nm>
+            <contrbtr_title>
+                <p>Medical Writer &amp; Translator</p>
+            </contrbtr_title>
+            <contrbtr_bio/>
+            <contrbtr_disclsr>
+                <p>Disclosure: Racquel N. Cooper, PhD, has disclosed no relevant financial relationships.</p>
+            </contrbtr_disclsr>
+        </contrbtr_element>
+    </contrbtr_group>
+    <contrbtr_bulk_info/>
+    <contrbtr_post_content/>
+    <supprtr_grant_group>
+        <supprtr_grant_attr>/webmd/professional_assets/medscape/images/grant_attribution/lilly.ies.gif</supprtr_grant_attr>
+    </supprtr_grant_group>
+    <body_label>Body</body_label>
+    <toc_element>
+        <toc_label/>
+        <toc_type>Default</toc_type>
+        <sec_element>
+            <sec_header/>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>The following cases are modeled on the interactive grand rounds approach. The questions within the activity are designed to test your current knowledge. After each question, you will be able to see whether you answered correctly and read evidence-based information that supports the most appropriate answer choice. The questions are designed to challenge you; you will not be penalized for answering the questions incorrectly. At the end of the activity, there will be a short post-test assessment based on the material presented.</p>
+                </subsec_content>
+                <qna_form>3</qna_form>
+            </subsec_element>
+        </sec_element>
+        <pg_footnotes/>
+    </toc_element>
+    <toc_element>
+        <toc_label/>
+        <toc_type>Default</toc_type>
+        <pg_footnotes/>
+        <sec_element>
+            <sec_header>
+                <p>Clinical Case 1: Patient History</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <table align="left" border="1" bordercolor="#b3b3b3" cellpadding="3" cellspacing="0" style="margin-right: 20px;">
+                        <tbody>
+                            <tr>
+                                <td align="center">
+                                    <img alt="" border="0" src="/webmd/professional_assets/medscape/images/content/article/884/861/884861-patient1.jpg?interpolation=lanczos-none&amp;resize=200:150" width="200"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Jane, a 64-year-old postmenopausal woman, was diagnosed with infiltrating ductal carcinoma (IDC) 8 years ago. The tumor was staged as pT2N+ 2/25 M0 at the time of diagnosis and was strongly hormone receptor (HR) positive but human epidermal growth factor receptor (HER2) negative. She underwent a lumpectomy and external radiation therapy followed by adjuvant letrozole for 5 years. Jane completed adjuvant therapy about 2 years ago, and during follow-up testing, you observe increased serum levels of the cancer antigen 15-3 (CA 15-3) tumor marker.</p>
+                    <p>Further biological examinations are ordered. Computed tomography (CT) scan reveals the presence of multiple liver lesions. No other disease sites outside the liver are found during additional workup with positron emission tomography (Figure 1).</p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header>
+                    <p>
+                        <strong>Figure 1. Pre-Treatment CT scan.</strong>
+                    </p>
+                </subsec_header>
+                <subsec_content>
+                    <p>
+                        <img border="1" src="professional_assets/medscape/images/content/article/884/861/884861-fig1.jpg"/>
+                    </p>
+                    <blockquote>Pre-treatment CT-scan. Image courtesy of Angelo DiLeo, MD, PhD</blockquote>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>Laboratory tests show that liver enzymes are within the normal range, so liver function was preserved. Biopsy analysis confirms that the metastasis has the same biologic profile as the primary tumor treated nearly 15 years ago. Despite her liver lesions, Jane is asymptomatic and her Eastern Cooperative Oncology Group (ECOG) performance status is 0. She is an active, relatively healthy woman with no comorbidities.</p>
+                    <p>Given this information and considering Jane's long remission period after endocrine adjuvant therapy, you decide to initiate first-line therapy.</p>
+                </subsec_content>
+                <qna_form>4</qna_form>
+            </subsec_element>
+        </sec_element>
+    </toc_element>
+    <toc_element>
+        <toc_label/>
+        <toc_type>Default</toc_type>
+        <pg_footnotes/>
+        <sec_element>
+            <sec_header>
+                <p>First-Line Treatment in Postmenopausal Patients With Advanced Breast Cancer</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>Advances in treatment for women with advanced breast cancer have led to improvements in survival. Although the condition remains incurable, treatment goals focus on stabilizing disease, prolonging life, and maintaining patient quality of life. HR-positive subtypes constitute between 70% and 80% of breast cancers, and an increasing number of effective endocrine therapies are available. Although practice guidelines provide important recommendations and principles for treatment selection, the choice of specific agents from among existing options should be customized to the individual based on patient and disease characteristics, as well as the nature and duration of response to previous treatments.
+                        <sup>[1-4]</sup>
+                    </p>
+                    <p>Current international guidelines from the National Comprehensive Cancer Network (NCCN), the European School of Oncology and European Society of Medical Oncology (ESO-ESMO), and recent recommendations by the American Society of Clinical Oncology (ASCO) endorse chemotherapy only for visceral crisis or progression following multiple lines of endocrine therapy.
+                        <sup>[5-7]</sup> Visceral crisis is defined as severe organ dysfunction as assessed by signs and symptoms, laboratory studies, and rapid progression of disease. Visceral crisis is not the mere presence of visceral metastases but implies important visceral compromise leading to a clinical indication for a more rapidly efficacious therapy, particularly since another treatment option at progression will probably not be possible.
+                        <sup>[7]</sup>
+                    </p>
+                    <p>Jane does not have an immediately life-threatening disease nor has she previously received multiple lines of endocrine therapy. Chemotherapy is therefore not an option.</p>
+                    <p>Advances in our understanding of cancer progression, estrogen-mediated signaling, and cell cycle dysregulation have led to the recent development of new therapies. Selective cyclin-dependent kinase (CDK) 4/6 inhibitors have been shown to improve progression-free survival (PFS) in patients with HR-positive/HER2-negative advanced breast cancer and are becoming standard-of-care treatment for this patient population.
+                        <sup>[4]</sup>
+                    </p>
+                    <p>To date, three CDK 4/6 inhibitors -- palbociclib, ribociclib, and abemaciclib -- have been approved by the US Food and Drug Administration (FDA) for the treatment of endocrine-sensitive HR-positive/HER2-negative advanced or metastatic breast cancer.
+                        <sup>[8-12]</sup> Palbociclib and ribociclib have also been granted approval by the European Medicines Agency (EMA) for this indication.
+                        <sup>[13,14]</sup> Guidelines issued by the NCCN and ASCO now incorporate the use of CDK 4/6 inhibitors into their recommendations.
+                        <sup>[5,6]</sup> ESMO has yet to update its Clinical Practice Guidelines for patients with primary breast cancer.
+                    </p>
+                    <p>The benefit of CDK 4/6 inhibitors in combination with aromatase inhibitors (AIs) as an effective first-line option in patients with metastatic HR-positive/HER2-negative breast cancer was first demonstrated in the phase 2 clinical trial PALOMA-1 and was later confirmed in the phase 3 trial PALOMA-2.
+                        <sup>[15,16]</sup> PALOMA-1 enrolled 165 postmenopausal women with HR-positive/HER2-negative metastatic/advanced breast cancer who had not received prior systemic treatment for their advanced disease. It compared palbociclib in combination with letrozole to letrozole alone as a first–line therapy. The combination significantly prolonged median PFS compared with letrozole alone (20.2 vs 10.2 months; hazard ratio =0.488; 
+                        <em>P </em>=.0004).
+                        <sup>[15]</sup> The follow-up phase 3 study, PALOMA-2, enrolled a similar population of 666 patients and compared palbociclib in combination with letrozole to letrozole + placebo.
+                        <sup>[16]</sup> The combination resulted in a significant improvement in PFS (hazard ratio =0.58; 
+                        <em>P </em>&lt;.001); median PFS was 24.8 months compared with 14.5 months for those who were treated with letrozole + placebo.
+                        <sup>[16 </sup>Among the CDK 4/6 inhibitors, palbociclib has been the most investigated in clinical trials in combination with endocrine therapy for the treatment of advanced HR-positive/HER2-negative breast cancer in postmenopausal women.
+                        <sup>[9,17,18]</sup>
+                    </p>
+                    <p>In March 2017, the FDA approved ribociclib in combination with letrozole for first-line treatment in postmenopausal women with HR-positive/HER2-negative recurrent or metastatic breast cancer who had received no prior systemic therapy for advanced disease.
+                        <sup>[10]</sup> The approval was based on the findings of the phase 3 MONALEESA-2 trial.
+                        <sup>[19,20]</sup> Patients (N=668) were randomly assigned in a 1:1 ratio to receive either ribociclib + letrozole or placebo + letrozole. The primary endpoint was the 24-month PFS rate. After 18 months, PFS duration was significantly longer among patients receiving ribociclib + letrozole than among those receiving placebo + letrozole (63 vs 42.2 months; hazard ratio =0.56; 
+                        <em>P </em>=3.29×10
+                        <sup>−6</sup>). The trial was stopped early because the combination therapy met the primary endpoint of significantly extending PFS vs letrozole alone at the preplanned interim analysis.
+                        <sup>[19,20]</sup>
+                    </p>
+                    <p>In February 2018 the FDA approved the use of abemaciclib in combination with an AI based on the results of the phase 3 MONARCH 3 trial, which compared abemaciclib to placebo in combination with either anastrozole or letrozole in postmenopausal patients with advanced HR-positive/HER2-negative breast cancer who had received no previous systemic therapies.
+                        <sup>[21]</sup> The trial enrolled 493 patients, and the primary objective was investigator-assessed PFS. Addition of abemaciclib to anastrozole or letrozole significantly prolonged PFS with an observed hazard ratio of 0.54 (95% CI: 0.41, 0.72; 
+                        <em>P </em>=.000021), while the median PFS was not reached in the abemaciclib arm at interim analysis against 14.7 months in the placebo arm.
+                    </p>
+                    <p>At the recent American Association for Cancer Research (AACR) annual meeting, the MONARCH 3 results from the preplanned final PFS analysis were presented.
+                        <sup>[22]</sup> Abemaciclib in combination with either anastrozole or letrozole significantly extended PFS (hazard ratio =0.540; 95% CI: 0.418, 0.698; 
+                        <em>P</em> =.000002; median abemaciclib arm, 28.18 months vs placebo arm, 14.76 months). PFS was improved across all subgroups. For patients with measurable disease, the objective response rate (ORR) was 61.0% in the abemaciclib arm and 45.5% in the placebo arm (
+                        <em>P</em> =.003), and the clinical benefit rate (CBR) was 79.0% in the abemaciclib arm and 69.7% in the placebo arm (
+                        <em>P</em> =.037). The median duration of response was 27.39 months in the abemaciclib arm compared with 17.46 months in the placebo arm.
+                        <sup>[22]</sup>
+                    </p>
+                    <p>Interestingly, results from the MONARCH 3 exploratory subgroup analyses suggested that while all patients benefited from the addition of abemaciclib to endocrine therapy, patients with indicators of poor prognosis, such as liver metastasis, progesterone receptor (PR)-negative tumors, or high-grade tumors, had greater benefit from the addition of abemaciclib.
+                        <sup>[23]</sup> Using the updated MONARCH 3 data, PFS and ORR (in patients with measurable disease) were examined within these prognostic subgroups.
+                        <sup>[24]</sup> While all subpopulations benefited from the addition of abemaciclib to endocrine therapy regardless of prognosis, patients with these 3 prognostic factors received substantial benefit from abemaciclib, as evidenced by PFS hazard ratios ranging from 0.4 to 0.5, and differential improvement in ORR typically &gt;30%. Furthermore, subpopulation treatment effect pattern plot (STEPP) analysis of treatment-free interval (TFI) (on the MONARCH 3 patients who had received adjuvant endocrine therapy) demonstrated that patients who had a shorter TFI had a worse prognosis and received relatively greater benefit from abemaciclib in combination with either anastrozole or letrozole than did patients with a longer TFI. Patients with bone-only disease or a long TFI also received benefit from abemaciclib, but to a relatively lesser extent (hazard ratio ranging from approximately 0.6 to 0.8).
+                        <sup>[24]</sup>
+                    </p>
+                    <p>The single-agent activity of abemaciclib was investigated in the phase 2 MONARCH 1 study in women who had received multiple lines of therapy.
+                        <sup>[25]</sup> Preliminary results from this study, which enrolled 132 patients who were previously treated with 1 or 2 regimens of chemotherapy in the metastatic setting, showed that abemaciclib induced tumor response in 19% of patients, with a CBR (stable or responding disease) of 42% and median PFS of 5.7 months.
+                        <sup>[25]</sup> Based on these results, abemaciclib was approved by the FDA for use as monotherapy for women with progressive disease after endocrine therapy and chemotherapy. This therapy therefore is not an appropriate option for Jane, who remains endocrine sensitive.
+                        <sup>[11]</sup> Furthermore, she has not received any prior chemotherapy regimens and does not have visceral crisis.
+                    </p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+        </sec_element>
+        <sec_element>
+            <sec_header>
+                <p>Clinical Case 1, Continued: First-Line Therapy With Palbociclib Plus Letrozole</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>Based on Jane's history and clinical findings, she agrees to begin combination therapy of palbociclib + letrozole administered on the following dosing schedule: Letrozole 2.5 mg once daily, given continuously, and palbociclib 125 mg once daily for 21 consecutive days followed by 7 days off treatment, to comprise a complete cycle of 28 days. You explain the benefits of her treatment regimen as well as potential adverse events (AEs) and their management.</p>
+                </subsec_content>
+                <qna_form>5</qna_form>
+            </subsec_element>
+        </sec_element>
+    </toc_element>
+    <toc_element>
+        <toc_label/>
+        <toc_type>Default</toc_type>
+        <pg_footnotes/>
+        <sec_element>
+            <sec_header>
+                <p>Importance of Monitoring Treatment-Related Neutropenia in Patients Taking a CDK 4/6 Inhibitor</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>Hematologic AEs are common with CDK 4/6 inhibitors and are believed to be related to the mode of action.
+                        <sup>[4]</sup> In general, most hematologic abnormalities seen with CDK 4/6 inhibitors can be adequately managed with standard supportive care.
+                        <sup>[26-28]</sup>
+                    </p>
+                    <p>The following aspects related to CDK 4/6-induced neutropenia should be taken into consideration:</p>
+                    <ol>
+                        <li>The neutropenia associated with CDK 4/6 inhibitors differs from that associated with chemotherapy in that it is rapidly reversible and generally resolves within 7 days; it is also less severe than chemotherapy-induced neutropenia.
+                            <sup>[29,30]</sup> Malumbres and colleagues
+                            <sup>[31]</sup> investigated the mechanism of hematologic toxicity induced by palbociclib. Using human bone marrow mononuclear cells, they demonstrated that palbociclib-induced bone marrow suppression occurred through cycle arrest with no apoptosis at clinically relevant concentrations, and the cells resumed proliferation following palbociclib withdrawal, thereby demonstrating pharmacologic quiescence. In contrast, exposure of the same cells to chemotherapeutic agents resulted in apoptotic cell death.
+                            <sup>[31]</sup> Consequently, palbociclib and ribociclib are dosed intermittently to accommodate a break for hematological recovery. Due to a lower rate of neutropenia, abemaciclib is dosed continuously.
+                        </li>
+                        <li>While neutropenia is a common adverse event, CDK 4/6 inhibitors are associated with low rates of infection and febrile neutropenia (0% in PALOMA-1, 0.6% in PALOMA-3, 1.5% in MONALEESA-2, and 0% in MONARCH 3).
+                            <sup>[15,20,21,32]</sup>
+                        </li>
+                        <li>Grade 3/4 neutropenia has a median duration of around 7 days and is typically resolved by withholding the drug until the blood count has recovered.
+                            <sup>[33]</sup>
+                        </li>
+                        <li>Neutropenia is proportional to exposure and often decreases with subsequent cycles, suggesting a lack of cumulative toxicity and highlighting the efficacy of early dose reductions when indicated.
+                            <sup>[30]</sup>
+                        </li>
+                    </ol>
+                    <p>Physicians should educate patients to promptly report any episodes of fever, monitor patients for signs and symptoms of infection, and treat patients when medically appropriate. An absolute neutrophil count (ANC) of ≥1000/mm
+                        <sup>3</sup> and platelet counts of ≥50,000/mm
+                        <sup>3</sup> are recommended for patients receiving palbociclib.
+                        <sup>[26]</sup>
+                    </p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+        </sec_element>
+        <sec_element>
+            <sec_header>
+                <p>Clinical Case 1, Continued: Monitoring for Treatment-Related Neutropenia</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>As recommended, during the first 2 months of therapy, Jane's ANC is analyzed once every 2 weeks. Indeed, on day 14, 2 weeks after initiating therapy, you observe a substantial drop in ANC to 515/mm
+                        <sup>3</sup>. She is afebrile and has no symptoms suggesting the presence of a concomitant infection. According to standard recommendations, and given Jane's uncomplicated neutropenia, you withhold treatment at day 15. She recovers after 1 week and resumes treatment at the same dose on day 1 of the second cycle. On day 15 of the second cycle, Jane experiences a second episode of severe neutropenia (ANC 400/mm
+                        <sup>3</sup>, grade 4), again without fever or infection.
+                    </p>
+                </subsec_content>
+                <qna_form>6</qna_form>
+            </subsec_element>
+        </sec_element>
+    </toc_element>
+    <toc_element>
+        <toc_label/>
+        <toc_type>Default</toc_type>
+        <pg_footnotes/>
+        <sec_element>
+            <sec_header>
+                <p>Managing Neutropenia Associated With Palbociclib</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>Neutropenia is the most frequent grade 3/4 AE reported in the clinical trials of the 3 currently approved CDK 4/6 inhibitors.
+                        <sup>[26-28]</sup> It is observed to a lesser extent with abemaciclib than with palbociclib and ribociclib.
+                        <sup> [26-28]</sup> Toxicity data from the palbociclib pivotal clinical trials demonstrate that more than one third of patients treated with palbociclib may require a dose reduction (40% in PALOMA-1; 36% in PALOMA-2; 34% in PALOMA-3) due to neutropenia.
+                        <sup>[15,16,32,34] </sup>Most instances of neutropenia associated with CDK 4/6 inhibitor therapy resolve rapidly and are managed with dose interruptions, reductions, or discontinuation.
+                        <sup> [26-28]</sup> The management of palbociclib- and ribociclib-induced neutropenia is outlined in Figure 2.
+                        <sup>[30]</sup>
+                    </p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header>
+                    <p>
+                        <strong>Figure. 2 Management of Palbociclib- and Ribociclib-Related Neutropenia
+                            <sup>[30]</sup>
+                        </strong>
+                    </p>
+                </subsec_header>
+                <subsec_content>
+                    <p>
+                        <img border="1" src="professional_assets/medscape/images/content/article/884/861/884861-fig2.jpg"/>
+                    </p>
+                    <blockquote>Management of neutropenia.
+                        <br/>ANC = absolute neutrophil count; CBC = complete blood count.
+                        <br/>Spring LM, Zangardi ML, Moy B, Bardia A. Clinical management of potential toxicities and drug interactions related to cyclin-dependent kinase 4/6 inhibitors in breast cancer: practical considerations and recommendations. 
+                        <em>Oncologist</em>. 2017;22:1039-1048. Reproduced with permission of ALPHAMED Press in the format Post on the Internet via Copyright Clearance Center.
+                    </blockquote>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>CBC with differential should be monitored for all patients receiving CDK 4/6 inhibitors. The onset of neutropenia is typically about 15 days after the first dose; therefore, a CBC with differential should be obtained at baseline and every 2 weeks for the first 2 cycles. For palbociclib, it is then recommended that CBC be checked prior to each 28-day cycle and as clinically indicated. Palbociclib and ribociclib should be held at an ANC &lt;1000/mm
+                        <sup>3</sup> (grade 3) on the first day of each cycle.
+                        <sup>[26,27]</sup>
+                    </p>
+                    <p>Neutropenia is considered to be complicated if it is associated with a documented infection or fever (typically ≥38.6°C [100.5F]). Retreatment with palbociclib or ribociclib following treatment interruption for neutropenia has generally been initiated when the ANC is &gt;1000/mm
+                        <sup>3</sup> with no fever. In PALOMA-3, if a patient was already receiving palbociclib 75 mg daily and required another dose reduction, switching to a 2 weeks on, 2 weeks off schedule at the 75 mg daily dosage could be used.
+                        <sup>[26,32]</sup> For grade 3 (&lt;50,000/mm
+                        <sup>3</sup> to 25,000/mm
+                        <sup>3</sup>) and grade 4 (&lt;25,000 mm
+                        <sup>3</sup>) thrombocytopenia, treatment was held until recovery to 50,000/mm
+                        <sup>3</sup> and resumed at 1 dose level lower.
+                        <sup> [26,32]</sup>
+                    </p>
+                    <p>In the case of uncomplicated grade 3 neutropenia (ANC &lt;1000/mm
+                        <sup>3</sup> to 500/mm
+                        <sup>3</sup>) plus fever ≥38.6°C and/or infection or grade 4 neutropenia (ANC &lt;500/mm
+                        <sup>3</sup>) (Common Terminology Criteria for Adverse Events [CTCAE] criteria), palbociclib should be withheld until the patient achieves recovery to grade ≤2.
+                        <sup>[26]</sup> Appropriate follow-up assessments should be done. After recovery to grade ≤2, a dose reduction of palbociclib is recommended based on individual safety.
+                        <sup>[26]</sup>
+                    </p>
+                    <p>The choice of CDK 4/6 inhibitor is largely based on physician preference but may be influenced by the clinical situation. For example, abemaciclib may be more appropriate for a patient who lives far from the hospital and in whom an intensive ANC follow-up would not be required, such as for palbociclib or ribociclib. Furthermore, clinically concerning characteristics such as liver metastases, PR-negative tumors, and high-grade tumors may influence choice, since subgroup analysis from MONARCH 2 and 3 has indicated that patients with these characteristics derive greater benefit from abemaciclib than those without.</p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+        </sec_element>
+        <sec_element>
+            <sec_header>
+                <p>Clinical Case 1: Conclusion</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>At Jane's follow-up appointment 1 week later, the CBC shows recovery of neutropenia to grade 2. She tells you that she feels well, and on day 1 of the third cycle, you resume treatment with palbociclib at a reduced dose of 100 mg. </p>
+                    <p>After 3 months of therapy, a CT scan reveals clear tumor shrinkage of the multiple metastatic lesions in the liver (Figure 3). There is also a significant decrease in the CA 15-3 tumor marker from 125 U/mL to 18U/mL.</p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header>
+                    <p>
+                        <strong>Figure 3. Post-Treatment CT scan.</strong>
+                    </p>
+                </subsec_header>
+                <subsec_content>
+                    <p>
+                        <img border="1" src="professional_assets/medscape/images/content/article/884/861/884861-fig3.jpg"/>
+                    </p>
+                    <blockquote>Post-treatment CT-scan. Image courtesy of Angelo DiLeo, MD, PhD</blockquote>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>After nearly 6 months of treatment, Jane is considered to have a good partial response to combination therapy with letrozole and palbociclib. You decide to maintain the reduced dose of palbociclib. You do not observe any other significant episodes of neutropenia or other AEs, and you have scheduled a second CT scan to assess response evaluation at the end of the sixth month of therapy.</p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+        </sec_element>
+        <sec_element>
+            <sec_header>
+                <p>Clinical Case 2: Patient History</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <table align="left" border="1" bordercolor="#b3b3b3" cellpadding="3" cellspacing="0" style="margin-right: 20px;">
+                        <tbody>
+                            <tr>
+                                <td align="center">
+                                    <img alt="" border="0" src="/webmd/professional_assets/medscape/images/content/article/884/861/884861-patient2.jpg?interpolation=lanczos-none&amp;resize=200:150" width="200"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Sara, a 44-year-old premenopausal patient, was recently referred to your hospital. Her medical history indicated that she was operated on for IDC of the left breast 3 years and 10 months ago (pT1c p N+ 2/20 M0). Immunohistochemical staining revealed estrogen receptor (ER)-positive 75%, PR-positive 10%, and HER2-negative breast cancer. At that time, she underwent a mastectomy followed by adjuvant chemotherapy, radiation therapy, and adjuvant endocrine therapy with goserelin + tamoxifen. She continued routine follow-up visits with regular breast imaging. Two years after her initial diagnosis, she complained of increasing pain in the lumbar region. Management with ibuprofen did not improve the pain.</p>
+                    <p>A CT scan revealed evidence of metastases in the supraclavicular lymph nodes and several bone lesions (Figure 4).</p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header>
+                    <p>
+                        <strong>Figure 4. Pre-Treatment CT scan.</strong>
+                    </p>
+                </subsec_header>
+                <subsec_content>
+                    <p>
+                        <img border="1" src="professional_assets/medscape/images/content/article/884/861/884861-fig4.jpg"/>
+                    </p>
+                    <blockquote>Pre-treatment CT-scan. Image courtesy of Angelo DiLeo, MD, PhD</blockquote>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>As a next step, you discuss with Sara the initial options for managing the disease progression.</p>
+                </subsec_content>
+                <qna_form>7</qna_form>
+            </subsec_element>
+        </sec_element>
+    </toc_element>
+    <toc_element>
+        <toc_label/>
+        <toc_type>Default</toc_type>
+        <pg_footnotes/>
+        <sec_element>
+            <sec_header>
+                <p>First-Line Treatment in Premenopausal Patients With HR-Positive Advanced Breast Cancer</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>Until recently, all clinically important trials of endocrine therapy for advanced breast cancer included only postmenopausal women or, less commonly, premenopausal women rendered postmenopausal at the time of study entry. In January 2018, ribociclib received US FDA Breakthrough Therapy designation for initial endocrine-based treatment of pre- or perimenopausal women with HR-positive/HER2-negative advanced or metastatic breast cancer in combination with tamoxifen or AI. All treatment combinations also included goserelin.
+                        <sup>[35]</sup> This Breakthrough Therapy designation is based on positive results of the phase 3 MONALEESA-7 trial, demonstrating that ribociclib in combination with tamoxifen or an AI as initial endocrine-based therapy significantly prolonged PFS compared with endocrine therapy alone (median PFS 23.8 months [95% CI: 19.2 months-not reached] vs 13.0 months [95% CI: 11.0, 16.4 months]; hazard ratio =0.553; 95% CI: 0.441, 0.694; 
+                        <em>P </em>&lt;.0001).
+                        <sup>[36]</sup>
+                    </p>
+                    <p>It is recommended that premenopausal women begin ovarian suppression; thereafter, treatment parallels that of postmenopausal women.
+                        <sup>[5-7]</sup>
+                    </p>
+                    <p>In premenopausal women for whom endocrine therapy is chosen, the preferred first-line therapy is ovarian suppression/ablation combined with additional endocrine therapy.
+                        <sup>[5-7]</sup> For these patients, the additional endocrine agent can be an AI or tamoxifen, according to type and duration of prior adjuvant endocrine therapy, but the use of an AI absolutely mandates the use of ovarian suppression/ablation.
+                        <sup>[5-7] </sup>Indeed, AIs do not suppress estrogen production in premenopausal women since the main source of estrogen is ovarian production rather than peripheral conversion.
+                        <sup>[37]</sup>
+                    </p>
+                    <p>Therefore, single-agent endocrine therapy with anastrozole is not a suitable option for Sara.</p>
+                    <p>Treatment recommendations for HR-positive metastatic breast cancer should be based on type of adjuvant treatment, disease-free interval, organ function, and extent of disease at the time of recurrence.
+                        <sup>[5]</sup> As recommended by global guidelines, endocrine treatment constitutes the therapeutic backbone for patients who are HR-positive/HER2-negative, unless there is visceral crisis or suspected or known endocrine resistance.
+                        <sup>[5-7]</sup> Since endocrine therapy is generally less toxic than chemotherapy, it is preferable for most patients with HR-positive disease to begin treatment with endocrine therapy, reserving chemotherapy for patients with rapid disease progression or visceral crisis.
+                        <sup>[5,6,38]</sup> The ESMO guidelines state that endocrine therapy and chemotherapy should not be given concomitantly.
+                        <sup>[38]</sup> Therefore, fulvestrant + capecitabine is not an option for Sara.
+                    </p>
+                    <p>Premenopausal women who develop metastatic disease while receiving adjuvant tamoxifen or within 12 months of treatment should be treated with ovarian suppression and an AI. Ovarian suppression should be continued during subsequent hormone therapies. Patient choice and clear discussion of options and treatment goals are critical.
+                        <sup>[5-7]</sup>
+                    </p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+        </sec_element>
+        <sec_element>
+            <sec_header>
+                <p>Clinical Case 2, Continued: First-Line Therapy With Anastrozole Plus Ovarian Suppression</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>Following a detailed discussion about the risks and benefits of the proposed treatment, Sara agrees to begin first-line therapy with monthly subcutaneous injections of goserelin 3.6 mg (already ongoing as adjuvant therapy), in association with anastrozole at a daily dose of 1 mg. Three months after starting the treatment, there is a clear reduction in the size of the supraclavicular lymph nodes and an improvement in bone pain. The disease has been well controlled for about 10 months when a follow-up CT scan reveals evidence of tumor progression -- new lytic lesions in the bone, enlarged supraclavicular nodes, and a single liver metastasis. At that point, you decide to stop the ongoing treatment.</p>
+                </subsec_content>
+                <qna_form>8</qna_form>
+            </subsec_element>
+        </sec_element>
+    </toc_element>
+    <toc_element>
+        <toc_label/>
+        <toc_type>Default</toc_type>
+        <pg_footnotes/>
+        <sec_element>
+            <sec_header>
+                <p>Mechanisms of Endocrine Resistance in HR-Positive Advanced Breast Cancer</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>HR-positive breast cancer is the most frequent breast cancer subtype, representing approximately 70% of all diagnosed breast cancers: Therapies that target estrogen synthesis or ER function, such as AIs and selective estrogen receptor modulators (SERMs), constitute its therapeutic cornerstone and have contributed to improved survival in metastatic breast cancer.
+                        <sup>[39,40]</sup> Despite these advances, the presence of de novo (present before the treatment) or acquired (developed during therapy) resistance to endocrine therapies remains a major clinical challenge. Therefore, there is a clear need to enhance treatment of HR-positive breast cancers and identify novel approaches to treating endocrine therapy-resistant cancers.
+                        <sup>[41-47]</sup>
+                    </p>
+                    <p>Mutations in the 
+                        <em>ESR1</em> gene, which encodes ERα (the estrogen receptor expressed in about 70% of breast cancer cells) have emerged as another mechanism of resistance to endocrine therapy in metastatic breast cancer. 
+                        <em>ESR1</em> mutations are relatively rare in newly diagnosed, treatment-naive breast cancer (&lt;7% mutation rates in primary tumor) and are hardly ever the cause of primary resistance. However, they appear to be frequently acquired in hormone-resistant metastatic breast cancer (15% to 55%).
+                        <sup>[45,48]</sup> These mutations cluster in the ligand-binding domain (LBD) of the receptor that results in ligand-independent ER activity. Resistance to AIs and, to a lesser degree, SERMs and selective estrogen receptor degraders (SERDs) develops as a result of this mutation.
+                        <sup>[37,42,45,47-49]</sup>
+                    </p>
+                    <p>Development of endocrine resistance has been linked to overexpression or amplification of a number of genes in growth factor pathways, including those mediated by HER2, human epidermal growth receptor-3, epidermal growth factor receptor, fibroblast growth factor receptor-1, and insulin-like growth factor receptor-1.
+                        <sup>[37,42,44,47,50]</sup> These growth factor receptor pathways signal along the PI3K/Akt/mTOR growth and survival pathway. Aberrant activation of the PI3K/Akt/mTOR pathway, a key pathway axis in the signaling network, is associated with ligand-independent ER activation and subsequent activation of downstream pathways without traditional binding or regulation of estrogen. The frequency of this mutation in HR-positive metastatic breast cancer is around 30% to 40%; most of these are activating or gain-of-function mutations.
+                        <sup>[37,42,44,47,50]</sup>
+                    </p>
+                    <p>The cyclin D1 and CDK 4/6 complex pathway regulates cell cycle progression from G1 phase to S phase by phosphorylation and inactivation of Rb.
+                        <sup>[47,48]</sup> Cyclin D1 gene amplifications and/or protein overexpression have been shown to predict poor clinical outcome in a subset of patients with HR-positive breast cancers.
+                        <sup>[47,48]</sup> Antiestrogen-induced growth arrest in HR-positive breast cancer cells is accompanied by decreased cyclin D1 expression, whereas the emergence of endocrine resistance is associated with persistent cyclin D1 expression and Rb phosphorylation. This pathway is now considered a very important mechanism of resistance to antiestrogen therapy, especially in luminal B tumor subtypes.
+                        <sup>[37,42,45,47,48,51,52]</sup>
+                    </p>
+                    <p>De novo and acquired resistance remain a major challenge for women with breast cancer who are receiving endocrine therapy. Therefore, sequential combination of targeted endocrine therapy is preferred in these patients, and the ever-increasing understanding of resistance mechanisms may better inform the selection of future therapy.
+                        <sup>[5,47,53]</sup>
+                    </p>
+                    <p>Figure 5 highlights the clinical manifestations of resistance in the neoadjuvant and adjuvant settings, emphasizing the clinical need to accurately identify high-risk patients, and provides an overview of some of the best-described resistance mechanisms, potential treatments, and therapeutic strategies currently under investigation to combat resistance.
+                        <sup>[51]</sup>
+                    </p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header>
+                    <p>
+                        <strong>Figure 5. Summary of Resistance in Breast Cancer
+                            <sup>[51]</sup>
+                        </strong>
+                    </p>
+                </subsec_header>
+                <subsec_content>
+                    <p>
+                        <img alt="" border="1" src="professional_assets/medscape/images/content/article/884/861/884861-fig5.jpg"/>
+                    </p>
+                    <blockquote>Mechanisms of breast cancer resistance.
+                        <br/>
+EGFR = epidermal growth factor receptor; NFκB = nuclear factor kappa B.
+                        <br/>
+J. M. Dixon, “Endocrine Resistance in Breast Cancer,” New Journal of Science, vol. 2014, Article ID 390618, 27 pages, 2014. doi:10.1155/2014/390618.
+                    </blockquote>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+        </sec_element>
+        <sec_element>
+            <sec_header>
+                <p>Clinical Case 2, Continued: Resistance to First-Line Endocrine Therapy</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>Considering that Sara experienced disease progression while receiving endocrine therapy, and given the high-risk disease features, you discuss second-line treatment options with your peers.</p>
+                </subsec_content>
+                <qna_form>9</qna_form>
+            </subsec_element>
+        </sec_element>
+    </toc_element>
+    <toc_element>
+        <toc_label/>
+        <toc_type>Default</toc_type>
+        <pg_footnotes/>
+        <sec_element>
+            <sec_header>
+                <p>Treatment Beyond the First Line in HR-Positive Breast Cancer</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>When patients fail to respond or stop responding to a given line of endocrine therapy, an important consideration is whether to proceed with another line of endocrine therapy or move to chemotherapy. For women who progress after 2 lines of endocrine therapy, prior treatment response, tumor burden, and individual preferences should all factor into this decision.
+                        <sup>[7,46]</sup> Guidelines recommend up to 3 lines of endocrine therapy before considering cytotoxic chemotherapy.
+                        <sup>[5,6,46]</sup> Furthermore, chemotherapy is only indicated in the event of visceral crisis.
+                        <sup>[6,7]</sup> In addition to her young age, Sara has only had 1 line of endocrine therapy and does not have visceral crisis, so chemotherapy is not an appropriate option for her.
+                    </p>
+                    <p>While the combination of everolimus + exemestane has also shown favorable improvements in PFS, as demonstrated in the BOLERO-2 trial, it is associated with an increased incidence of toxicity. Furthermore, eligibility criteria included patients who had progression or recurrence after having received a nonsteroidal AI.
+                        <sup>[54]</sup> Considering the potential occurrence of side effects due to mTOR inhibition, this may not be the preferred option for Sara.
+                    </p>
+                    <p>The combination of a CDK 4/6 inhibitor + fulvestrant is a preferred option for patients with HR-positive/HER2-negative metastatic breast cancer who have already received prior endocrine treatment and who did not receive a CDK 4/6 inhibitor in the first line, regardless of menopausal state.
+                        <sup>[55]</sup>
+                    </p>
+                    <p>The phase 3 MONARCH 2 study compared the combination of abemaciclib + fulvestrant to fulvestrant alone in patients with HR-positive/HER2-negative advanced breast cancer, who had progressed on endocrine therapy. The primary endpoint was investigator-assessed PFS. The results showed a statistically significant increase in investigator-assessed median PFS (the primary endpoint) of 7.1 months (16.4 vs 9.3 months) in patients who received fulvestrant + abemaciclib over fulvestrant + placebo (hazard ratio =0.553; 95% CI: 0.449, 0.681; 
+                        <em>P</em> =.001) (Figure 6).
+                        <sup>[56]</sup>
+                    </p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header>
+                    <p>
+                        <strong>Figure 6. Kaplan-Meier Plots of Progression-Free Survival of Investigator-Assessed Review of Intent-to-Treat Population
+                            <sup>[56]</sup>
+                        </strong>
+                    </p>
+                </subsec_header>
+                <subsec_content>
+                    <p>
+                        <img border="1" src="professional_assets/medscape/images/content/article/884/861/884861-fig6.jpg"/>
+                    </p>
+                    <blockquote>MONARCH-2 trial: progression-free survival.
+                        <br/>Sledge GW Jr, Toi M, Neven P, et al. MONARCH 2: Abemaciclib in Combination With Fulvestrant in Women With HR+/HER2- Advanced Breast Cancer Who Had Progressed While Receiving Endocrine Therapy. J Clin Oncol. 2017;35:2875-2884. Reprinted with permission. ©2017 American Society of Clinical Oncology. All rights reserved.
+                    </blockquote>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>The ORR in patients with measurable disease was 48.1% (95% CI: 42.6, 53.6) in the abemaciclib + fulvestrant group vs 21.3% (95% CI: 15.1, 27.6) in the group receiving fulvestrant alone (
+                        <em>P </em>=.001). The median duration of response was not reached in the abemaciclib + fulvestrant group at the time of the analysis.
+                        <sup>[28,56]</sup> In light of these results, on September 28, 2017, the FDA granted approval for abemaciclib in combination with fulvestrant in patients with HR-positive/HER2-negative advanced/metastatic breast cancer who progressed following endocrine therapy.
+                        <sup>[11] </sup>Approval has not yet been granted outside the United States. Interestingly, results from the MONARCH 2 and 3 exploratory subgroup analyses suggest that patients with indicators of poor prognosis, such as liver metastasis or high-grade tumors, may indeed receive greater benefit from the addition of abemaciclib to endocrine therapy.
+                        <sup>[24,57]</sup>
+                    </p>
+                    <p>In November 2016, palbociclib received FDA approval for use in combination therapy with fulvestrant based on data from PALOMA-3.
+                        <sup>[32,34,58]</sup> This multicenter, double-blind, randomized, phase 3 trial assessed the safety and efficacy of palbociclib in combination with fulvestrant as second-line therapy for women (of any menopausal status) with HR-positive/HER2-negative advanced breast cancer after failure to respond on endocrine therapy. The trial showed a statistically significant increase in median PFS of 4.9 months (9.5 vs 4.6 months) in patients who received fulvestrant + palbociclib over fulvestrant + placebo (hazard ratio =0.46, 95% CI: 0.36, 0.59; 
+                        <em>P</em> &lt;.0001).
+                        <sup> [32,34,58]</sup>
+                    </p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+        </sec_element>
+        <sec_element>
+            <sec_header>
+                <p>Clinical Case 2, Continued: Second-Line Treatment With Abemaciclib Plus Fulvestrant</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>You provide Sara with details about combination treatment with abemaciclib + fulvestrant and she agrees to begin the regimen, in addition to continued ovarian suppression with goserelin. The dosage of abemaciclib is 150 mg twice daily on a continuous schedule, and the dosage of fulvestrant is 500 mg on days 1 and 15 of the first 28-day cycle and on day 1 of subsequent cycles. Sara responds well to therapy, but on the sixth day following treatment initiation, she develops grade 2 diarrhea.</p>
+                </subsec_content>
+                <qna_form>10</qna_form>
+            </subsec_element>
+        </sec_element>
+    </toc_element>
+    <toc_element>
+        <toc_label/>
+        <toc_type>Default</toc_type>
+        <pg_footnotes/>
+        <sec_element>
+            <sec_header>
+                <p>Managing Diarrhea Following Treatment With Abemaciclib</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>The safety profile of abemaciclib administered in combination with fulvestrant was broadly consistent with that reported for other CDK 4/6 inhibitors, with the exception of diarrhea.
+                        <sup>[26-28]</sup> Most diarrhea was of low grade, occurred early in the first treatment cycle, and was managed with dose adjustment and standard antidiarrheal medication.
+                    </p>
+                    <p>In the MONARCH 2 trial, grade 1 or 2 diarrhea occurred in 322 patients (73.0%) in the abemaciclib arm and 54 (24.2%) in the control arm. In contrast, grade 3 diarrhea was less frequent (N=59 [13.4%] vs N=1 [0.4%] in the abemaciclib and control arms, respectively). In the abemaciclib arm, diarrhea events typically occurred in the first treatment cycle (median onset of diarrhea was 6 days). In most cases, diarrhea was effectively managed using antidiarrheal medications and with dose adjustments. In the abemaciclib arm, 14.5% of patients who experienced an initial grade 2 diarrhea event and 1.1% of patients who experienced an initial grade 3 diarrhea event also experienced a recurrence at the same or a higher grade. The majority (70.1%) of patients in the abemaciclib arm with diarrhea did not require treatment modification (ie, dose interruption, reduction, or discontinuation); however, 2.9% of patients discontinued abemaciclib because of diarrhea.
+                        <sup>[28,56]</sup>
+                    </p>
+                    <p>The recommended dose modifications and management of diarrhea are provided in Tables 1 and 2. Abemaciclib should be discontinued for patients who are unable to tolerate 50 mg twice daily.
+                        <sup>[28]</sup>
+                    </p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header>
+                    <p>
+                        <strong>Table 1. Abemaciclib Dose Modification and Management of Diarrhea</strong>
+                        <sup>[28]</sup>
+                    </p>
+                </subsec_header>
+                <subsec_content>
+                    <table class="inline_data_table">
+                        <tbody>
+                            <tr valign="top">
+                                <td colspan="2">At the first sign of loose stools, start treatment with antidiarrheal agents and increase intake of oral fluids.</td>
+                            </tr>
+                            <tr valign="top">
+                                <th>CTCAE Grade</th>
+                                <th>Abemaciclib Dose Modifications</th>
+                            </tr>
+                            <tr valign="top">
+                                <td>Grade 1</td>
+                                <td>No dose modification is required.</td>
+                            </tr>
+                            <tr valign="top">
+                                <td>Grade 2</td>
+                                <td>If toxicity does not resolve within 24 hours to grade ≤1, suspend dose until resolution. No dose reduction             is required.</td>
+                            </tr>
+                            <tr valign="top">
+                                <td>Grade 2 that persists or recurs after resuming the same dose despite maximal supportive measures</td>
+                                <td>Suspend dose until toxicity resolves to grade ≤1. Resume at             
+                                    <em>next lower dose.</em>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>Grade 3 or 4 or requires hospitalization</td>
+                                <td>Suspend dose until toxicity resolved to grade ≤1. Resume at             
+                                    <em>next lower dose.</em>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <blockquote> CTCAE = Common Terminology Criteria for Adverse Events.     
+                        <br/>
+Abemaciclib dose modifications for managing diarrhea. VERZENIO® (abemaciclib) Prescribing Information 2017.
+                    </blockquote>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header>
+                    <p>
+                        <strong>Table 2. Abemaciclib Dose Modification for Adverse Reactions</strong>
+                        <sup>[28]</sup>
+                    </p>
+                </subsec_header>
+                <subsec_content>
+                    <table class="inline_data_table">
+                        <tbody>
+                            <tr valign="top">
+                                <th>Dose Level</th>
+                                <th>Abemaciclib Dose in Combination With Fulvestrant</th>
+                                <th>Abemaciclib Dose for Monotherapy</th>
+                            </tr>
+                            <tr valign="top">
+                                <td>Recommended starting dose</td>
+                                <td>150 mg twice daily</td>
+                                <td>200 mg twice daily</td>
+                            </tr>
+                            <tr valign="top">
+                                <td>First dose reduction</td>
+                                <td>100 mg twice daily</td>
+                                <td>150 mg twice daily</td>
+                            </tr>
+                            <tr valign="top">
+                                <td>Second dose reduction</td>
+                                <td>50 mg twice daily</td>
+                                <td>100 mg twice daily</td>
+                            </tr>
+                            <tr valign="top">
+                                <td>Third dose reduction</td>
+                                <td>not applicable</td>
+                                <td>50 mg twice daily</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <blockquote>Abemaciclib dose modification for adverse reactions. VERZENIO® (abemaciclib) Prescribing Information 2017.</blockquote>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>In patients receiving abemaciclib + fulvestrant in MONARCH 2 (N=441 analyzed, with a median duration of treatment of 12 months), the most common (20%) AEs of any grade were diarrhea (86% of patients), fatigue (46%), neutropenia (46%), nausea (45%), infection (43%), abdominal pain (35%), anemia (29%), leucopenia (28%), decreased appetite (27%), vomiting (26%), and headache (20%), all occurring in numerically more abemaciclib + fulvestrant than placebo + fulvestrant recipients (Table 3).
+                        <sup>[56]</sup>  Adverse events led to dose reductions in 43% of patients (≥5% were due to diarrhea and neutropenia) and permanent treatment discontinuation was reported in 9% of patients (diarrhea in 1% and fatigue in 0.7%). Deaths during treatment or during the 30-day follow-up were reported in 4% of patients.
+                        <sup>[28]</sup>
+                    </p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header>
+                    <p>
+                        <strong>Table 3. Treatment-Emergent Adverse Events With Abemaciclib</strong>
+                        <sup>[56]</sup>
+                    </p>
+                </subsec_header>
+                <subsec_content>
+                    <table class="inline_data_table">
+                        <tbody>
+                            <tr valign="top">
+                                <th></th>
+                                <th colspan="3">Abemaciclib + Fulvestrant (n=441)</th>
+                                <th colspan="3">Placebo + Fulvestrant (n=223)</th>
+                            </tr>
+                            <tr valign="top">
+                                <th>≥20% in Either Arm, n (%)</th>
+                                <th>All</th>
+                                <th>G3</th>
+                                <th>G4</th>
+                                <th>All</th>
+                                <th>G3</th>
+                                <th>G4</th>
+                            </tr>
+                            <tr valign="top">
+                                <td>Any</td>
+                                <td>435 (98.6)</td>
+                                <td>241 (54.6)</td>
+                                <td>26 (5.9)</td>
+                                <td>199 (89.2)</td>
+                                <td>46 (20.6)</td>
+                                <td>5 (2.2)</td>
+                            </tr>
+                            <tr valign="top">
+                                <td>Diarrhea*</td>
+                                <td>381 (86.4)</td>
+                                <td>59 (13.4)</td>
+                                <td>0</td>
+                                <td>55 (24.7)</td>
+                                <td>1 (0.4)</td>
+                                <td>0</td>
+                            </tr>
+                            <tr valign="top">
+                                <td>Neutropenia†</td>
+                                <td>203 (46.0)</td>
+                                <td>104 (23.6)</td>
+                                <td>13 (2.9)</td>
+                                <td>9 (4.0)</td>
+                                <td>3 (1.3)</td>
+                                <td>1 (0.4)</td>
+                            </tr>
+                            <tr valign="top">
+                                <td>Nausea</td>
+                                <td>199 (45.1)</td>
+                                <td>12 (2.7)</td>
+                                <td>-</td>
+                                <td>51 (22.9)</td>
+                                <td>2 (0.9)</td>
+                                <td>-</td>
+                            </tr>
+                            <tr valign="top">
+                                <td>Fatigue</td>
+                                <td>176 (39.9)</td>
+                                <td>12 (2.7)</td>
+                                <td>-</td>
+                                <td>60 (26.9)</td>
+                                <td>1 (0.4)</td>
+                                <td>-</td>
+                            </tr>
+                            <tr valign="top">
+                                <td>Abdominal pain</td>
+                                <td>156 (35.4)</td>
+                                <td>11 (2.5)</td>
+                                <td>-</td>
+                                <td>35 (15.7)</td>
+                                <td>2 (0.9)</td>
+                                <td>-</td>
+                            </tr>
+                            <tr valign="top">
+                                <td>Anemia</td>
+                                <td>128 (29.0)</td>
+                                <td>31 (7.0)</td>
+                                <td>1 (0.2)</td>
+                                <td>8 (3.6)</td>
+                                <td>2 (0.9)</td>
+                                <td>0</td>
+                            </tr>
+                            <tr valign="top">
+                                <td>Leukopenia</td>
+                                <td>125 (28.3)</td>
+                                <td>38 (8.6)</td>
+                                <td>1 (0.2)</td>
+                                <td>4 (1.8)</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr valign="top">
+                                <td>Decreased appetite</td>
+                                <td>117 (26.5)</td>
+                                <td>5 (1.1)</td>
+                                <td>0</td>
+                                <td>27 (12.1)</td>
+                                <td>1 (0.4)</td>
+                                <td>0</td>
+                            </tr>
+                            <tr valign="top">
+                                <td>Vomiting</td>
+                                <td>114 (25.9)</td>
+                                <td>4 (0.9)</td>
+                                <td>0</td>
+                                <td>23 (10.3)</td>
+                                <td>4 (1.8)</td>
+                                <td>0</td>
+                            </tr>
+                            <tr valign="top">
+                                <td>Headache</td>
+                                <td>89 (20.2)</td>
+                                <td>3 (0.7)</td>
+                                <td>-</td>
+                                <td>34 (15.2)</td>
+                                <td>1 (0.4)</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <blockquote>         *Grade 2 diarrhea: abemaciclib + fulvestrant, n=140 (31.7%); placebo + fulvestrant, n=11 (4.9%).         
+                        <br/>
+†Febrile neutropenia was uncommon (6 patients in the abemaciclib arm [1 incorrectly coded; 1 post-chemotherapy]) and was not associated with severe infection. 
+                    </blockquote>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+        </sec_element>
+        <sec_element>
+            <sec_header>
+                <p>Clinical Case 2: Conclusion</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>You withhold treatment with abemaciclib for 5 days and prescribe loperamide for Sara's episodes of diarrhea, which resolves after 5 days. To avoid future episodes, you decide to resume abemaciclib at the next lower dose, 100 mg. Sara is now in her third month of therapy and has not experienced any additional episodes of diarrhea. Neutropenia was observed but did not require any temporary discontinuation or dose reduction. A CT scan of the thorax and abdomen reveals that Sara is responding well to therapy (Figure 7).</p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header>
+                    <p>
+                        <strong>Figure 7. Post-Treatment CT scan.</strong>
+                    </p>
+                </subsec_header>
+                <subsec_content>
+                    <p>
+                        <img border="1" src="professional_assets/medscape/images/content/article/884/861/884861-fig7.jpg"/>
+                    </p>
+                    <blockquote>Post-treatment CT-scan. Image courtesy of Angelo DiLeo, MD, PhD</blockquote>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>The supraclavicular nodes have either completely disappeared or there is fibrosis in the tumor bed, bone lesions have become blastic once again, and bone pain has clearly improved, while the liver metastasis has shrunk markedly and liver function remains normal.</p>
+                    <p>Sara is well and will continue the same treatment regimen over the next 3 months with regular follow-up visits for physical examinations and laboratory tests.</p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+            <subsec_element>
+                <subsec_header>
+                    <p>Educational Impact Challenge</p>
+                </subsec_header>
+                <subsec_content>
+                    <p>What did you learn from this activity? Please click on the "Next" button to proceed to a brief survey to see how your knowledge improved after the education. You can also see how your answers compare with those of your peers.</p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+        </sec_element>
+    </toc_element>
+    <toc_element>
+        <toc_label/>
+        <toc_type>Default</toc_type>
+        <pg_footnotes/>
+        <sec_element>
+            <sec_header>
+                <p>Educational Impact Challenge</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content/>
+                <qna_form>11</qna_form>
+            </subsec_element>
+        </sec_element>
+    </toc_element>
+    <toc_element>
+        <toc_label/>
+        <toc_type>Default</toc_type>
+        <pg_footnotes/>
+        <sec_element>
+            <sec_header/>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content/>
+                <qna_form/>
+            </subsec_element>
+        </sec_element>
+    </toc_element>
+    <toc_element>
+        <toc_label>
+            <p>Abbreviations</p>
+        </toc_label>
+        <toc_type>Sidebar</toc_type>
+        <pg_footnotes/>
+        <sec_element>
+            <sec_header>
+                <p>Abbreviations</p>
+            </sec_header>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <p>AACR = American Association for Cancer Research
+                        <br/>
+AE = adverse event
+                        <br/>
+AI = aromatase inhibitor
+                        <br/>
+Akt = protein kinase B
+                        <br/>
+ANC = absolute neutrophil count
+                        <br/>
+ASCO = American Society of Clinical Oncology
+                        <br/>
+CA 15-3 = cancer antigen 15-3
+                        <br/>
+CBC = complete blood count
+                        <br/>
+CBR = clinical benefit rate
+                        <br/>
+CDK = cyclin-dependent kinase
+                        <br/>
+CT = computed tomography
+                        <br/>
+CTCAE = Common Terminology Criteria for Adverse Events 
+                        <br/>
+ECOG = Eastern Cooperative Oncology Group
+                        <br/>
+EGFR = epidermal growth factor receptor
+                        <br/>
+EMA = European Medicines Agency
+                        <br/>
+ER = estrogen receptor
+                        <br/>
+ESMO = European Society of Medical Oncology
+                        <br/>
+ESO = European School of Oncology
+                        <br/>
+FDA = Food and Drug Administration
+                        <br/>
+HER2 = human epidermal growth factor receptor
+                        <br/>
+HR = hormone receptor 
+                        <br/>
+IDC = infiltrating ductal carcinoma 
+                        <br/>
+LBD = ligand-binding domain
+                        <br/>
+mTOR = mechanistic (mammalian) target of rapamycin
+                        <br/>
+NCCN = National Comprehensive Cancer Network
+                        <br/>
+ORR = objective response rate
+                        <br/>
+PFS = progression free survival
+                        <br/>
+PR = progesterone receptor
+                        <br/>
+PI3K = phosphatidylinositol 3-kinase
+                        <br/>
+Rb = retinoblastoma 
+                        <br/>
+SERD = selective estrogen receptor degrader
+                        <br/>
+SERM = selective estrogen receptor modulators
+                        <br/>
+STEPP = subpopulation treatment effect pattern plot
+                        <br/>
+TFI = treatment-free interval
+                    </p>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+        </sec_element>
+    </toc_element>
+    <toc_element>
+        <toc_label/>
+        <toc_type>References</toc_type>
+        <pg_footnotes/>
+        <sec_element>
+            <sec_header/>
+            <subsec_element>
+                <subsec_header/>
+                <subsec_content>
+                    <ol>
+                        <li>Cancer Genome Atlas Network. Comprehensive molecular portraits of human breast tumours. 
+                            <em>Nature</em>. 2012;490:61-70.
+                        </li>
+                        <li>Robert NJ, Denduluri N. Patient case lessons: endocrine management of advanced breast cancer. 
+                            <em>Clin Breast Cancer</em>. 2017. doi: 10.1016/j.clbc.2017.05.014. [Epub ahead of print]
+                        </li>
+                        <li>Brufsky AM. Long-term management of patients with hormone receptor-positive metastatic breast cancer: concepts for sequential and combination endocrine-based therapies. 
+                            <em>Cancer Treat Rev</em>. 2017;59:22-32.
+                        </li>
+                        <li>Sammons SL, Topping DL, Blackwell KL. HR+, HER2- advanced breast cancer and CDK4/6 inhibitors: mode of action, clinical activity, and safety profiles. 
+                            <em>Curr Cancer Drug Targets</em>. 2017;17:637-649.
+                        </li>
+                        <li>Rugo HS, Rumble RB, Macrae E, et al. Endocrine therapy for hormone receptor-positive metastatic breast cancer: American Society of Clinical Oncology guideline. 
+                            <em>J Clin Oncol</em>. 2016;34:3069-3103.
+                        </li>
+                        <li>NCCN Clinical Practice Guidelines in Oncology (NCCN Guidelines®). Breast cancer. Version 1.2018. https://www.nccn.org/professionals/physician_gls/pdf/breast.pdf. Accessed March 2018.</li>
+                        <li>Cardoso F, Costa A, Senkus E, et al. 3rd ESO-ESMO International Consensus Guidelines for Advanced Breast Cancer (ABC 3). 
+                            <em>Ann Oncol</em>. 2017;28:16-33.
+                        </li>
+                        <li>Witzel I, Müller V. The role of CDK 4/6 inhibitors in breast cancer treatment. 
+                            <em>Breast Care</em>. 2016;11:165-166.
+                        </li>
+                        <li>U.S. Food and Drug Administration. Palbociclib (IBRANCE capsules). Updated February 22, 2016. http://www.fda.gov/drugs/informationondrugs/approveddrugs/ucm487080.htm. Accessed March 2018.</li>
+                        <li>U.S. Food and Drug Administration. Ribociclib (Kisqali). Updated March 14, 2017. http://
+                            <a href="http://www.fda.gov/drugs/informationondrugs/approveddrugs/ucm546438.htm">www.fda.gov/drugs/informationondrugs/approveddrugs/ucm546438.htm</a>. Accessed March 2018.
+                        </li>
+                        <li>U.S. Food and Drug Administration. FDA approves abemaciclib for HR-positive, HER2-negative breast cancer. Updated September 28, 2017. http://
+                            <a href="http://www.fda.gov/Drugs/InformationOnDrugs/ApprovedDrugs/ucm578081.htm">www.fda.gov/Drugs/InformationOnDrugs/ApprovedDrugs/ucm578081.htm</a>. Accessed March 2018.
+                        </li>
+                        <li>U.S. Food and Drug Administration. FDA approves abemaciclib as initial therapy for HR-positive, HER2-negative metastatic breast cancer. Updated February 26, 2018. http://
+                            <a href="http://www.fda.gov/Drugs/InformationOnDrugs/ApprovedDrugs/ucm598404.htm">www.fda.gov/Drugs/InformationOnDrugs/ApprovedDrugs/ucm598404.htm</a>. Accessed March 2018.
+                        </li>
+                        <li>Ibrance® (palbociclib) receives approval in European Union for the treatment of women with HR+/HER2- metastatic breast cancer. 
+                            <a href="https://www.pfizer.com/news/press-release/press-release-detail/ibrance_palbociclib_receives_approval_in_european_union_for_the_treatment_of_women_with_hr_her2_metastatic_breast_cancer">https://www.pfizer.com/news/press-release/press-release-detail/ibrance_palbociclib_receives_approval_in_european_union_for_the_treatment_of_women_with_hr_her2_metastatic_breast_cancer</a>. Accessed March 2018.
+                        </li>
+                        <li>Novartis Kisqali® (ribociclib) receives EU approval as first-line treatment for HR+/HER2- locally advanced or metastatic breast cancer in combination with any aromatase inhibitor. 
+                            <a href="https://novartis.gcs-web.com/Novartis-Kisqali-ribociclib-receives-EU-approval-as-first-line-treatment-for-HR%25252B/HER2">https://novartis.gcs-web.com/Novartis-Kisqali-ribociclib-receives-EU-approval-as-first-line-treatment-for-HR%25252B/HER2</a>. Accessed March 2018.
+                        </li>
+                        <li>Finn RS, Crown JP, Lang I, et al. The cyclin-dependent kinase 4/6 inhibitor palbociclib in combination with letrozole versus letrozole alone as first-line treatment of oestrogen receptor-positive, HER2-negative, advanced breast cancer (PALOMA-1/TRIO-18): a randomised phase 2 study. 
+                            <em>Lancet Oncol</em>. 2015;16:25-35.
+                        </li>
+                        <li>Finn RS, Martin M, Rugo HS, et al. Palbociclib and letrozole in advanced breast cancer. 
+                            <em>N Engl J Med</em>. 2016;375:1925-1936.
+                        </li>
+                        <li>Beaver JA, Amiri-Kordestani L, Charlab R, et al. FDA approval: palbociclib for the treatment of postmenopausal patients with estrogen  eeceptor-positive, HER2-negative metastatic breast cancer. 
+                            <em>Clin Cancer Res</em>. 2015;21:4760-6.
+                        </li>
+                        <li>Lallemand L, Duhoux F. CDK 4/6 inhibitors in the treatment of advanced breast cancer. 
+                            <em>Belg J Med Oncol</em>. 2017;11:234-241.
+                        </li>
+                        <li>Hortobagyi GN, Stemmer SM, Burris HA, et al. Ribociclib as first-line therapy for HR-positive, advanced breast cancer. 
+                            <em>N Engl J Med</em>. 2016;375:1738-1748.
+                        </li>
+                        <li>Hortobagyi GN, Stemmer SM, Burris HA, et al. Updated results from MONALEESA-2, a phase 3 trial of first-line ribociclib + letrozole in hormone receptor-positive (HR+), HER2-negative (HER2-), advanced breast cancer (ABC). 
+                            <em>J Clin Oncol</em>. 2017;35(suppl). Abstract 1038.
+                        </li>
+                        <li>Goetz MP, Toi M, Campone M, et al. MONARCH 3: abemaciclib as initial therapy for advanced breast cancer. 
+                            <em>J Clin Oncol</em>. 2017;35:3638-3646.
+                        </li>
+                        <li>Goetz MP, et al. MONARCH 3: Abemaciclib as initial therapy for patients with HR+, HER2-advanced breast cancer - Results from the preplanned final PFS analysis. Presented at: American Association for Cancer Research Annual Meeting; April 14-18, 2018; Chicago. Abstract CT040.</li>
+                        <li>Goetz MP, O’Shaughnessy J, Sledge GW Jr, et al. The benefit of abemaciclib in prognostic subgroups: An exploratory analysis of combined data from the MONARCH 2 and 3 studies. Presented at: San Antonio Breast Cancer Symposium; December 5-9, 2017: San Antonio, Texas. Abstract GS6-02.</li>
+                        <li>O'Shaughnessy J, Goetz MP, Sledge GW, et al. The benefit of abemaciclib in prognostic subgroups: An update to the pooled analysis of MONARCH 2 and 3. Presented at: American Association for Cancer Research Annual Meeting; April 14-18, 2018; Chicago. Abstract CT099/20.</li>
+                        <li>Dickler MN, Tolaney SM, Rugo HS, et al. MONARCH 1, A phase II study of abemaciclib, a CDK4 and CDK6 inhibitor, as a single agent, in patients with refractory HR+/HER2- metastatic breast cancer. 
+                            <em>Clin Cancer Res</em>. 2017;23:5218-5224.
+                        </li>
+                        <li>IBRANCE® (palbociclib) Prescribing Information. New York. NY: Pfizer Inc, 2015. https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/207103s004lbl.pdf. Accessed April 2018.</li>
+                        <li>KISQALI® (ribociclib) Prescribing Information. East Hanover, NJ: Novartis Pharmaceuticals Corporation; 2017. https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/209092s000lbl.pdf. Accessed April 2018.</li>
+                        <li>VERZENIO® (abemaciclib) Prescribing Information. September 2017. Indianapolis, IN: Eli Lilly and Company. https://www.accessdata.fda.gov/drugsatfda_docs/label/2018/208855s000lbl.pdf. Accessed April 2018.</li>
+                        <li>Asghar U, Witkiewicz AK, Turner NC, et al. The history and future of targeting cyclin-dependent kinases in cancer therapy. 
+                            <em>Nat Rev Drug Discov</em>. 2015;14:130-146.
+                        </li>
+                        <li>Spring LM, Zangardi ML, Moy B, Bardia A. Clinical management of potential toxicities and drug interactions related to cyclin-dependent kinase 4/6 inhibitors in breast cancer: practical considerations and recommendations. 
+                            <em>Oncologist</em>. 2017;22:1039-1048.
+                        </li>
+                        <li>Malumbres M, Sotillo R, Santamarıa D et al. Mammalian cells cycle without the D-type cyclindependent kinases Cdk4 and Cdk6. 
+                            <em>Cell.</em> 2004;118:493-504.
+                        </li>
+                        <li>Cristofanilli M, Turner NC, Bondarenko I, et al. Fulvestrant plus palbociclib versus fulvestrant plus placebo for treatment of hormone-receptor-positive, HER2-negative metastatic breast cancer that progressed on previous endocrine therapy (PALOMA-3): final analysis of the multicentre, double-blind, phase 3 randomised controlled trial. 
+                            <em>Lancet Oncol</em>. 2016;17:425-439.
+                        </li>
+                        <li>Hu MG, Deshpande A, Enos M, et al. A requirement for cyclin-dependent kinase 6 in thymocyte development and tumorigenesis. 
+                            <em>Cancer Res</em>. 2009;69:810-818.
+                        </li>
+                        <li>Verma S, Bartlett CH, Schnell P, et al. Palbociclib in combination with fulvestrant in women with hormone receptor-positive/HER2-negative advanced metastatic breast cancer: detailed safety analysis from a multicenter, randomized, placebo-controlled, phase III study (PALOMA-3). 
+                            <em>Oncologist</em>. 2016;21:1165-1175.
+                        </li>
+                        <li>Novartis Kisqali® received FDA Breakthrough Therapy designation for initial endocrine-based treatment in premenopausal women with HR+/HER2- advanced breast cancer 
+                            <a href="https://www.novartis.com/news/media-releases/novartis-kisqalir-received-fda-breakthrough-therapy-designation-initial-endocrine-based-treatment-premenopausal-women-hrher2-advanced-breast-cancer">https://www.novartis.com/news/media-releases/novartis-kisqalir-received-fda-breakthrough-therapy-designation-initial-endocrine-based-treatment-premenopausal-women-hrher2-advanced-breast-cancer</a>. Accessed April 2018.
+                        </li>
+                        <li>
+                            <em>T</em>ripathy D, Sohn J, Im S-A
+                            <em>, et al.</em>
+                            <strong/>First-line ribociclib vs placebo with goserelin and tamoxifen or a non-steroidal aromatase inhibitor in premenopausal women with hormone receptor-positive, HER2-negative advanced breast cancer: Results from the randomized phase III MONALEESA-7 trial
+                            <strong>. </strong>Presented at: San Antonio Breast Cancer Symposium; December 5-9, 2017: San Antonio, Texas. Abstract GS2-05.
+                        </li>
+                        <li>Salkeni MA, Hall SJ. Metastatic breast cancer: endocrine therapy landscape reshaped. 
+                            <em>Avicenna J Med</em>. 2017;7:144-152.
+                        </li>
+                        <li>Senkus E, Kyriakides S, Ohno S, et al; ESMO Guidelines Committee. Primary breast cancer: ESMO Clinical Practice Guidelines for diagnosis, treatment and follow-up. 
+                            <em>Ann Oncol</em>. 2015;26(suppl 5):v8-v30.
+                        </li>
+                        <li>Andre F, Slimane K, Bachelot T, et al. Breast cancer with synchronous metastases: trends in survival during a 14-year period. 
+                            <em>J Clin Oncol</em>. 2004;22:3302-3308.
+                        </li>
+                        <li>Sini V, Cinieri S, Conte P, et al. Endocrine therapy in post-menopausal women with metastatic breast cancer: from literature and guidelines to clinical practice. 
+                            <em>Crit Rev Oncol Hematol</em>. 2016;100:57-68.
+                        </li>
+                        <li>Di Leo A, Curigliano G, Diéras V, et al. New approaches for improving outcomes in breast cancer in Europe. 
+                            <em>Breast</em>. 2015;24:321-330.
+                        </li>
+                        <li>Murphy CG, Dickler MN. Endocrine resistance in hormone-responsive breast cancer: mechanisms and therapeutic strategies. 
+                            <em>Endocr Relat Cancer</em>. 2016;23:R337-R352.
+                        </li>
+                        <li>Araki K, Miyoshi Y. Mechanism of resistance to endocrine therapy in breast cancer: the important role of PI3K/Akt/mTOR in estrogen receptor-positive, HER2-negative breast cancer. 
+                            <em>Breast Cancer</em>. 2017. doi: 10.1007/s12282-017-0812-x. [Epub ahead of print]
+                        </li>
+                        <li>Kaklamani VG, Gradishar WJ. Endocrine therapy in the current management of postmenopausal estrogen receptor-positive metastatic breast cancer. 
+                            <em>Oncologist</em>. 2017;22:507-517.
+                        </li>
+                        <li>Gyanchandani R, Kota KJ, Jonnalagadda AR, et al. Detection of ESR1 mutations in circulating cell-free DNA from patients with metastatic breast cancer treated with palbociclib and letrozole. 
+                            <em>Oncotarget</em>. 2016;8:66901-66911.
+                        </li>
+                        <li>Ma CX, Dickler M. Treatment approach to metastatic hormone receptor-positive, HER2-negative breast cancer: endocrine therapy. UpToDate. 
+                            <a href="https://www.uptodate.com/contents/treatment-approach-to-metastatic-hormone-receptor-positive-her2-negative-breast-cancer-endocrine-therapy/print">https://www.uptodate.com/contents/treatment-approach-to-metastatic-hormone-receptor-positive-her2-negative-breast-cancer-endocrine-therapy/print</a>. Accessed April 2017.
+                        </li>
+                        <li>Brufsky AM, Dickler MN. Estrogen receptor-positive breast cancer: exploiting signaling pathways implicated in endocrine resistance. 
+                            <em>Oncologist</em>. 2018;23:1-12.
+                        </li>
+                        <li>Matikas A, Foukakis T, Bergh J. Tackling endocrine resistance in ER-positive HER2-negative advanced breast cancer: a tale of imprecision medicine. 
+                            <em>Crit Rev Oncol Hematol</em>. 2017;114:91-101.
+                        </li>
+                        <li>Jeselsohn R, Buchwalter G, De Angelis C, Brown M, Schiff R. ESR1 mutations--a mechanism for acquired endocrine resistance in breast cancer. 
+                            <em>Nat Rev Clin Oncol</em>. 2015;12:573-583.
+                        </li>
+                        <li>Miller TW, Balko JM, Arteaga CL. Phosphatidylinositol 3-kinase and antiestrogen resistance in breast cancer. 
+                            <em>J Clin Oncol</em>. 2011;29:4452-4461.
+                        </li>
+                        <li>Dixon JM. Endocrine resistance in breast cancer. 
+                            <em>New J Sci</em>. 2014;2014:1-27.
+                        </li>
+                        <li>Guarducci C, Bonechi M, Boccalini G, et al. Mechanisms of resistance to CDK4/6 inhibitors in breast cancer and potential biomarkers of response. 
+                            <em>Breast Care</em>. 2017;12:304-308.
+                        </li>
+                        <li>Osborne CK, Schiff R. Mechanisms of endocrine resistance in breast cancer. 
+                            <em>Annu Rev Med</em>. 2011;62:233-247.
+                        </li>
+                        <li>Piccart M, Hortobagyi GN, Campone M, et al. Everolimus plus exemestane for hormone-receptor-positive, human epidermal growth factor receptor-2-negative advanced breast cancer: overall survival results from BOLERO-2. 
+                            <em>Ann Oncol</em>. 2014;25:2357–2362.
+                        </li>
+                        <li>Harbeck N, Lüftner D, Marschner N, et al.  ABC4 consensus: assessment by a German group of experts. 
+                            <em>Breast Care</em>. 2018;13:48-58.
+                        </li>
+                        <li>Sledge GW Jr, Toi M, Neven P, et al. MONARCH 2: abemaciclib in combination with fulvestrant in women with HR+/HER2- advanced breast cancer who had progressed while receiving endocrine therapy. 
+                            <em>J Clin Oncol</em>. 2017;35:2875-2884.
+                        </li>
+                        <li>Di Leo A, Toi M, Campone M, et al. MONARCH 3: abemaciclib as initial therapy for patients with HR+/HER2- advanced breast cancer. 
+                            <em>Ann Oncol</em>. 2017;28(suppl 5):v605-v649.
+                        </li>
+                        <li>Turner NC, Ro J, André F, et al. Palbociclib in hormone-receptor-positive advanced breast cancer. 
+                            <em>N Engl J Med</em>. 2015;373:209-219.
+                        </li>
+                    </ol>
+                </subsec_content>
+                <qna_form/>
+            </subsec_element>
+        </sec_element>
+    </toc_element>
+    <back_label>Back Matter</back_label>
+    <layer_grp>
+        <layer_img_sm/>
+        <layer_img_full/>
+        <layer_caption/>
+        <layer_label/>
+        <layer_alt_txt/>
+        <layer_table/>
+    </layer_grp>
+    <ref_grp>
+        <ref_item/>
+    </ref_grp>
+    <cpyrt_holder>
+        <p>WebMD Global, LLC</p>
+    </cpyrt_holder>
+    <cpyrt_ovrd/>
+    <disclmr_ovrd/>
+    <bkmtr_front>
+        <p>
+            <strong>Disclaimer</strong>
+        </p>
+        <p>The educational activity presented above may involve simulated case-based scenarios. The patients depicted in these scenarios are fictitious and no association with any actual patient is intended or should be inferred.</p>
+        <p>The material presented here does not necessarily reflect the views of WebMD Global, LLC or companies that support educational programming on medscape.org. These materials may discuss therapeutic products that have not been approved by the European Medicines Agency for use in Europe and off-label uses of approved products. A qualified healthcare professional should be consulted before using any therapeutic product discussed. Readers should verify all information and data before treating patients or employing any therapies described in this educational activity.</p>
+    </bkmtr_front>
+    <bkmtr_glossary/>
+    <bkmtr_ack/>
+    <bkmtr_discl/>
+    <bkmtr_funding/>
+    <bkmtr_reprnt_addr/>
+    <bkmtr_abbr_notes/>
+    <bkmtr_last/>
+    <img_ttl_bkgrd>/webmd/professional_assets/medscape/images/title_background/banner-cdk-inhibition-breast-cancer.jpg</img_ttl_bkgrd>
+    <img_publ_logo/>
+</prof_article>
