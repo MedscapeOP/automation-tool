@@ -16,6 +16,8 @@ describe('Utility Functions', function () {
     var slidesInitialComplete = fs.readFileSync(__dirname + '/input/slides-initial-complete.html', 'utf8').toString();
     var slidesFinalComplete = fs.readFileSync(__dirname + '/input/slides-final-complete.html', 'utf8').toString();
 
+    var testAndTeachTicket = fs.readFileSync(__dirname + '/../prodticket/input/prodticket-tt-902362.html').toString();
+
     beforeEach(function() {
         // prodTicket = fs.readFileSync(__dirname + '/input/article.html', 'utf8');
         xmlJSObject = require('./input/xml-js-object');
@@ -137,27 +139,53 @@ describe('Utility Functions', function () {
     });
 
     describe('utils.stringOps.getAllBlocksInOrder()', function () {
-        it('should remove a regex string ONLY within a specified regex match', function () {
-            var h3RegExp = new RegExp('<h3>(.*)</h3>', 'g');
-            var strongRegExp = new RegExp('<strong>|</strong>', 'g');            
-            var testString = `
-                <h3><strong>Stuff</strong></h3>
-                <strong>MORE</strong>
-                Other
-                <h3><strong>Stuff</strong></h3>
-            `;
-            var completeString = `
-                <h3>Stuff</h3>
-                <strong>MORE</strong>
-                Other
-                <h3>Stuff</h3>
-            `;
-            var result = utils.stringOps.removeFromRegexCapture(
-                testString,
-                h3RegExp,
-                strongRegExp
-            );
-            expect(result).equalIgnoreSpaces(completeString);
+        it('should get all matching substrings of text using arrays of regular expressions', function () {
+            var startRegexps = [
+                /<strong>Content/g,
+                /(?:&lt;){1,}level 1(?:&gt;){1,}.*Case \d:/gi,
+                /&lt;&lt;level 1&gt;&gt;.*Case \d:/gi,
+                /level 2&gt;&gt;.*Discussion/gi
+            ];
+
+            var endRegexps = [
+                /(?:<strong>){0,}Answer Explanation (?:&#953;){0,}:.*/g,
+                /.*Answer Explanation:.*/g,
+                /(?:&lt;){1,}level 1(?:&gt;){1,}.*Case \d:/gi,
+                /&lt;&lt;level 1&gt;&gt;.*Case \d:/gi
+            ];
+            /* 
+            TYPES OF BLOCKS 
+            CONTENT --> Question (Include end)
+
+            discussion --> Question (Include end)
+
+            discussion --> New Case (Include end)
+
+            New Case --> Question (Include end)
+            */
+
+            /* 
+            Get all text blocks algorithm 
+            - substring = textblock.slice();
+            - startReg = getNextRegex(textblock, startArray)
+            - if (startReg != -1): 
+                - substring = textblock.substring(startReg.index);
+            - endReg = getNextRegex(substring, endArray);
+            - if (endReg != -1): 
+                - getTextBlock(substring, startReg, endReg, false, true);
+            */
+            var {textBlock} = utils.stringOps.getTextBlock(testAndTeachTicket, /<strong>Content/g, /<strong>Abbreviations/g, false, true);
+
+            var result = utils.stringOps.getAllBlocksInOrder(textBlock, startRegexps, endRegexps);
+
+            console.log("RESULT: ", result);
+
+            var resultString = "";
+            for(var i = 0; i < result.length; i++) {
+                resultString += "\n\n\n-----------SECTION " + i + result[i].textBlock;
+            }
+            fs.writeFileSync(__dirname + '/output/get-all-blocks.html', resultString);
+            // expect(result).equalIgnoreSpaces(completeString);
         });
     });
 });

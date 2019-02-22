@@ -107,26 +107,40 @@ function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray) {
     // Create a utility function that returns an array of all of the titles
     var resultArray = [];
     var substring = textBlock.slice();
-    var foundMatch = null;
-    var searchStartIndex = 0;
-    var matchLength = 0;
+    var startRegex = null;
+    var endRegex = null;
+    var currentBlock = null;
     while (substring) {
         // console.log("SUBSTRING: ", substring);
-        foundMatch = getNextRegex(substring, regexArray);        
-        // console.log("FOUND MATCH: ", foundMatch);
-        if (!foundMatch.isInString) {
+        startRegex = getNextRegex(substring, startRegExpArray);        
+        console.log("START REGEX: ", startRegex);
+        if (startRegex == -1) {
             substring = null;
+            continue;
+        }   
+        endRegex = getNextRegex(substring, endRegExpArray);
+        console.log("END REGEX: ", endRegex);
+
+        if (endRegex != -1) {
+            // if (startRegex.symbol == endRegex.symbol) {
+            //     console.log("FIRST AND SECOND EQUAL")
+            //     continue;
+            // }
+            currentBlock = getTextBlock(substring, startRegex.symbol, endRegex.symbol, false, true);
+            // if (!isBlankOrWhiteSpace(currentBlock.textBlock) && !isEmptyString(currentBlock.textBlock)) {
+            //     resultArray.push(currentBlock);
+            // }            
+            substring = substring.substring(currentBlock.endIndex + 1);
         } else {
-            matchLength = substring.match(foundMatch.symbol)[0].length;
-            searchStartIndex = (textBlock.length - substring.length) + foundMatch.index + matchLength; // foundMatch.symbol.toString().length + 1;    
-            substring = textBlock.substring(searchStartIndex);
-            resultArray.push({
-                symbol: foundMatch.symbol,
-                index: searchStartIndex - matchLength
-            });
-            // console.log("INDEX CHOP: ", textBlock.substring(searchStartIndex, searchStartIndex + 20));
-            // console.log("INDEX CHOP: ", textBlock.substring(39, 261));
+            currentBlock = {
+                label: substring.match(startRegex.symbol)[0], 
+                textBlock: substring.substring(startRegex.index), 
+                startIndex: startRegex.index, 
+                endIndex: null
+            };
+            substring = null;
         }
+        resultArray.push(currentBlock);
     }
     return resultArray;
 }

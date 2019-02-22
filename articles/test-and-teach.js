@@ -68,55 +68,11 @@ PRODTICKET FUNCTION:
             if (lastComponent) {
                 tocInstance.insertSection(currentSection);
             }
-        
-ALTERNATE ALGORITHM: 
-nextRegex = 0;
-currentTOC = null; 
-currentSection = null; 
-- Loop through (while nextRegex != -1)
-if (nextRegex == 0) {
-    - nextRegex = getNextRegex();
-    - type = getRegexType(nextRegex);   
-    - call getTextBlock() from the beginning up until the nextRegex
-        - Pass the function an array of all possible regex. 
-} else {
-    - Use nextRegex as the startRegex for getTextBlock();
-    - type = getRegexType(nextRegex);
-    - nextRegex = getNextRegex();
-        - Pass the function an array of all possible regex.
-    - call getTextBlock(startRegex, nextRegex) 
-}
-- if (type == "level 1"):
-    // Case where there is a new section
-    // Insert the current section and create a new one. 
-    - if currentSection
-        - tocInstance.insertSection(currentSection);
-    - currentSection = buildLevel1Section() 
-        - Function should test if level 1 text contains either "case 1" or "case 2"
-        - This should be the determining factor for if there is a Case image or not.                                                        
-- else if (type == "level 2"): 
-    - buildLevel2Subsection
-    - if !currentSection 
-        - currentSection = create Section 
-    - insert level2Subsection into section 
-- else if (type == "table"): 
-    - buildTableSubsection
-    - If !currentSection
-        - currentSection = create Section 
-    - insert tableSubsection into section 
-- else if (type == "figure"):
-    - buildFigureSubsection 
-    - If !currentSection 
-        - currentSection = create Section 
-    - insert figureSubsection into section 
-- else if (type == "question"): 
-    - create a new TOC 
-    - 
 */
     return new TOCElement();
 }
 
-function getMainContentTOCs (articleContent, program) {
+function getMainContent(articleContent, program) {
 
 /* 
 TT_Transcript: CREATE QUESTION TOC ELEMENTS (1 FOR: EACH QUESTION FORM); CREATE SUBSECTIONS FOR TEXT BLOCKS; CREATE SUBSECTIONS FOR TABLES AND FIGURES; POST ASSESSMENT; BLANK RESULTS PAGE; ABBREVIATIONS; REFERENCES; BACK MATTER; INSERT FIGURES; INSERT PATIENT CASE IMAGES; FORMAT AND INSERT HTML TABLES;
@@ -291,7 +247,7 @@ function buildTestAndTeach(ticket, program) {
         blankResultsTOC = articleUtils.buildBlankTOC();
     }
 
-    var tocs = getMainContentTOCs(checklistResult.properties.articleContent.result, program);
+    var tocs = getMainContent(checklistResult.properties.articleContent.result, program);
 
     slidesTOC = tocs.slidesTOC;
     audienceQATOC = tocs.audienceQATOC; 
@@ -367,7 +323,7 @@ function buildTestAndTeach(ticket, program) {
 };
 
 module.exports = {
-    getMainContentTOCs,
+    getMainContent,
     getLLAPreTOC,
     getLLAPostTOC,
     buildTestAndTeach
