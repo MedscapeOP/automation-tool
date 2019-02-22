@@ -108,8 +108,11 @@ function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray) {
     var resultArray = [];
     var substring = textBlock.slice();
     var startRegex = null;
+    var prevLabel = null;
     var endRegex = null;
     var currentBlock = null;
+    var testnum = 0;
+    // while (testnum < 2) {
     while (substring) {
         // console.log("SUBSTRING: ", substring);
         startRegex = getNextRegex(substring, startRegExpArray);        
@@ -120,8 +123,22 @@ function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray) {
         }   
         endRegex = getNextRegex(substring, endRegExpArray);
         console.log("END REGEX: ", endRegex);
-
-        if (endRegex != -1) {
+        // console.log("SUBSTRING: ", substring.substring(0, 4000));
+        if (endRegex.index < startRegex.index) {
+            currentBlock = {
+                label: prevLabel, 
+                textBlock: substring.substring(0, endRegex.index), 
+                startIndex: 0, 
+                endIndex: endRegex.index
+            };
+            substring = substring.substring(currentBlock.endIndex + 1);
+            if (currentBlock.textBlock.length > 50) {
+                // QUICK FIX TO PROBLEM OF EMPTY SECTIONS 
+                resultArray.push(currentBlock);
+            }
+            console.log("SPECIAL TEXT BLOCK: ", currentBlock.textBlock);
+            // substring = substring.substring(endRegex.index + 1);
+        } else if (endRegex != -1) {
             // if (startRegex.symbol == endRegex.symbol) {
             //     console.log("FIRST AND SECOND EQUAL")
             //     continue;
@@ -129,8 +146,11 @@ function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray) {
             currentBlock = getTextBlock(substring, startRegex.symbol, endRegex.symbol, false, true);
             // if (!isBlankOrWhiteSpace(currentBlock.textBlock) && !isEmptyString(currentBlock.textBlock)) {
             //     resultArray.push(currentBlock);
-            // }            
+            // }
+            prevLabel = currentBlock.label;            
             substring = substring.substring(currentBlock.endIndex + 1);
+            // console.log("SPECIAL TEXT BLOCK 2: ", currentBlock.textBlock);
+            resultArray.push(currentBlock);
         } else {
             currentBlock = {
                 label: substring.match(startRegex.symbol)[0], 
@@ -139,8 +159,9 @@ function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray) {
                 endIndex: null
             };
             substring = null;
-        }
-        resultArray.push(currentBlock);
+            resultArray.push(currentBlock);
+        }        
+        // testnum++;
     }
     return resultArray;
 }
