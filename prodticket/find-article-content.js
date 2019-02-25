@@ -55,9 +55,7 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
 exportObject[config.programs.testAndTeach.codeName] = function (ticketHTML) {
 
     var startRegExp = stringOps.getNextRegex(ticketHTML, contentRegexArray);
-    var endRegExp = stringOps.getNextRegex(ticketHTML, endContentRegexArray);
-
-    console.log("START REGEX: ", startRegExp);
+    var endRegExp = stringOps.getNextRegex(ticketHTML, endContentRegexArray);    
 
     if (endRegExp != -1 && startRegExp != -1) {
         startRegExp = startRegExp.symbol;

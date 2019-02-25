@@ -256,9 +256,80 @@ function getAllMatchesInOrder(textBlock, regexArray)  {
     }
     return resultArray;
 }
-// function isBlankOrWhiteSpace(str) {
-//     return (!str || str.length === 0 || !str.trim());
+
+/**
+ * @description Creates substrings using the supplied array of breakpoints. 
+ * - Uses getAllMatches
+ * @param {*} breakRegexArray 
+ */
+// function sliceAtBreakpoints(textBlock, breakRegexArray) {
+//     /*
+//         Use getAllMatches for a regex array and then sort by index. 
+//         Then loop through and substring using the indices.  
+//     */
+//     var allMatches = getAllMatchesInOrder(textBlock, breakRegexArray);
+// //    _.orderBy(allMatches);
+
+//     var result = [];
+
+//     var substring = "";
+//     var currentMatch = null;
+//     var currentSymbol = null;
+//     var startIndex = 0;
+//     for (var i = 0; i < allMatches.length; i++) {
+//         currentMatch = allMatches[i];
+//         if (currentMatch.symbol == currentSymbol) {
+//             // MATCHING PREVIOUS SYMBOL
+//             if (i == allMatches.length - 1) {
+//                 substring = textBlock.substring(startIndex);
+//             } else {
+//                 continue;
+//             }
+//         } else {
+//             // NOT MATCHING 
+//             if (currentSymbol) {
+//                 substring = textBlock.substring(startIndex, currentMatch.index);
+//                 result.push(substring);
+//             } 
+//             startIndex = currentMatch.index;
+//             currentSymbol = currentMatch.symbol;
+//             if (i == allMatches.length - 1) {
+//                 substring = textBlock.substring(startIndex);
+//                 result.push(substring);
+//                 continue;
+//             }
+//         }
+//     }
+//     return result;
 // }
+
+function sliceAtBreakpoints(textBlock, breakRegexArray) {
+    /*
+        Use getAllMatches for a regex array and then sort by index. 
+        Then loop through and substring using the indices.  
+    */
+    var allMatches = getAllMatchesInOrder(textBlock, breakRegexArray);
+//    _.orderBy(allMatches);
+
+    var result = [];
+
+    var substring = "";
+    var currentMatch = null;
+    var nextMatch = null;
+    var currentSymbol = null;
+    for (var i = 0; i < allMatches.length; i++) {
+        currentMatch = allMatches[i];
+        if (i == allMatches.length - 1) {
+            substring = textBlock.substring(currentMatch.index);
+        } else {
+            nextMatch = allMatches[i + 1];
+            substring = textBlock.substring(currentMatch.index, nextMatch.index);
+        }
+        result.push(substring);
+    }
+    return result;
+}
+
 
 module.exports = {
     findLastAndReplace,
@@ -271,5 +342,6 @@ module.exports = {
     getNextRegex,
     removeFromRegexCapture,
     getUsableRegExp,
-    getAllMatchesInOrder
+    getAllMatchesInOrder,
+    sliceAtBreakpoints
 }

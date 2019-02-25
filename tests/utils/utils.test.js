@@ -179,5 +179,31 @@ describe('Utility Functions', function () {
             // expect(result).equalIgnoreSpaces(completeString);
         });
     });
+
+    describe('utils.stringOps.sliceAtBreakpoints()', function () {
+        it('should create substrings using the supplied array of breakpoints.', function () {
+            var breakpoints = [
+                /(?:&lt;){1,}level 1(?:&gt;){1,}.*Case \d:.*/gi,
+                /&lt;&lt;level 1&gt;&gt;.*Case \d:.*/gi,
+                /<strong>Question.*/gi
+            ];
+            /* 
+                POSSIBLE BREAKPOINTS  
+                --> Question Start
+                --> Question End (Answer Explanation) 
+                --> New Case                 
+            */
+            var {textBlock} = utils.stringOps.getTextBlock(testAndTeachTicket, /<strong>Content/g, /<strong>Abbreviations/g, false, true);
+
+            var result = utils.stringOps.sliceAtBreakpoints(textBlock, breakpoints);
+
+            var resultString = "";
+            for(var i = 0; i < result.length; i++) {
+                resultString += "\n\n\n-----------BREAK # " + (i+1) + " " + result[i];
+            }
+            fs.writeFileSync(__dirname + '/output/slice-at-breakpoints.html', resultString);
+            // expect(result).equalIgnoreSpaces(completeString);
+        });
+    });
 });
 
