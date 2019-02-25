@@ -21,6 +21,7 @@ describe('Prodticket Module Functions', function () {
     let prodticketTH_alt;
     let prodticketTH_alt_2;
     let prodticketFail;
+    let prodticketTT_902362;
 
     beforeEach(function() {
         prodticketCB = fs.readFileSync(__dirname + '/input/prodticket-cb.html').toString();
@@ -30,6 +31,7 @@ describe('Prodticket Module Functions', function () {
         prodticketTH = fs.readFileSync(__dirname + '/input/prodticket-th.html').toString();
         prodticketTH_alt = fs.readFileSync(__dirname + '/input/prodticket-th-alt.html').toString();
         prodticketTH_alt_2 = fs.readFileSync(__dirname + '/input/prodticket-th-alt-2.html').toString();
+        prodticketTT_902362 = fs.readFileSync(__dirname + '/input/prodticket-tt-902362.html').toString();
         prodticketFail = fs.readFileSync(__dirname + '/input/prodticket-fail.html').toString();
     });
 
@@ -964,5 +966,17 @@ describe('Prodticket Module Functions', function () {
         // });
     });
 
+    /**
+     * ARTICLE CONTENT    
+     */
+    describe("prodticket.getArticleContent()", function () {
+        var articleContentTT = fs.readFileSync(__dirname + '/input/article-content-tt.html').toString();
+
+        it("should return article content from the prodticket .html - Test and Teach", function () {
+            var result = prodticket.getArticleContent(prodticketTT_902362, config.programs.testAndTeach);
+            // fs.writeFileSync(__dirname + '/output/article-content-tt.html', result);
+            expect(result).to.equalIgnoreSpaces(articleContentTT);
+        });
+    });
 });
 

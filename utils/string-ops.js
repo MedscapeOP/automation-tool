@@ -116,13 +116,13 @@ function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray) {
     while (substring) {
         // console.log("SUBSTRING: ", substring);
         startRegex = getNextRegex(substring, startRegExpArray);        
-        console.log("START REGEX: ", startRegex);
+        // console.log("START REGEX: ", startRegex);
         if (startRegex == -1) {
             substring = null;
             continue;
         }   
         endRegex = getNextRegex(substring, endRegExpArray);
-        console.log("END REGEX: ", endRegex);
+        // console.log("END REGEX: ", endRegex);
         // console.log("SUBSTRING: ", substring.substring(0, 4000));
         if (endRegex.index < startRegex.index) {
             currentBlock = {
@@ -136,7 +136,7 @@ function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray) {
                 // QUICK FIX TO PROBLEM OF EMPTY SECTIONS 
                 resultArray.push(currentBlock);
             }
-            console.log("SPECIAL TEXT BLOCK: ", currentBlock.textBlock);
+            // console.log("SPECIAL TEXT BLOCK: ", currentBlock.textBlock);
             // substring = substring.substring(endRegex.index + 1);
         } else if (endRegex != -1) {
             // if (startRegex.symbol == endRegex.symbol) {

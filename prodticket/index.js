@@ -42,6 +42,7 @@ let findAssociationDisclaimer = require('./find-association-disclaimer');
 let findProductName = require('./find-product-name');
 let findProjectId = require('./find-project-id');
 let findCMEReviewers = require('./find-cme-reviewers');
+let findArticleContent = require('./find-article-content');
 
 function checkTicket(ticketHTML) {
     if (ticketHTML) {
@@ -335,6 +336,17 @@ function getProjectId(ticketHTML, program) {
     }
 }
 
+function getArticleContent(ticketHTML, program) {
+    if (checkTicket(ticketHTML)) {
+        try {   
+            var rawContent = findArticleContent[program.codeName](ticketHTML);
+            return rawContent;
+        } catch (error) {
+            return error;
+        }
+    }
+}
+
 module.exports = {
     getTitle,
     getByline,
@@ -359,5 +371,6 @@ module.exports = {
     getProgramDetails,
     getAssociationDisclaimer,
     getProductType,
-    getProjectId
+    getProjectId,
+    getArticleContent
 }

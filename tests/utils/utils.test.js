@@ -165,17 +165,6 @@ describe('Utility Functions', function () {
 
             New Case --> Question (Include end)
             */
-
-            /* 
-            Get all text blocks algorithm 
-            - substring = textblock.slice();
-            - startReg = getNextRegex(textblock, startArray)
-            - if (startReg != -1): 
-                - substring = textblock.substring(startReg.index);
-            - endReg = getNextRegex(substring, endArray);
-            - if (endReg != -1): 
-                - getTextBlock(substring, startReg, endReg, false, true);
-            */
             var {textBlock} = utils.stringOps.getTextBlock(testAndTeachTicket, /<strong>Content/g, /<strong>Abbreviations/g, false, true);
 
             var result = utils.stringOps.getAllBlocksInOrder(textBlock, startRegexps, endRegexps);

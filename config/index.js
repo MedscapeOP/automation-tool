@@ -82,6 +82,19 @@ let programs = {
         hasForYourPatient: false, 
         hasInLanguage: false 
     },
+    testAndTeach: {
+        name: "Test and Teach",
+        codeName: "testAndTeach",
+        profArticleType: "Article",
+        articleID: "902362",
+        hasLLA: false,
+        hasOUS: false, 
+        hasPeerReviewer: false, 
+        hasCollectionPage: false,
+        hasSlideDeck: false, 
+        hasForYourPatient: false, 
+        hasInLanguage: false 
+    }
 };
 
 let propertiesChecklist = {
