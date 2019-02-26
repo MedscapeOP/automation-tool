@@ -156,14 +156,14 @@ describe('Utility Functions', function () {
                 /&lt;&lt;level 1&gt;&gt;.*Case \d:.*/gi
             ];
             /* 
-            TYPES OF BLOCKS 
-            CONTENT --> Question (Include end)
+                TYPES OF BLOCKS 
+                CONTENT --> Question (Include end)
 
-            discussion --> Question (Include end)
+                discussion --> Question (Include end)
 
-            discussion --> New Case (Include end)
+                discussion --> New Case (Include end)
 
-            New Case --> Question (Include end)
+                New Case --> Question (Include end)
             */
             var {textBlock} = utils.stringOps.getTextBlock(testAndTeachTicket, /<strong>Content/g, /<strong>Abbreviations/g, false, true);
 
@@ -185,7 +185,8 @@ describe('Utility Functions', function () {
             var breakpoints = [
                 /(?:&lt;){1,}level 1(?:&gt;){1,}.*Case \d:.*/gi,
                 /&lt;&lt;level 1&gt;&gt;.*Case \d:.*/gi,
-                /<strong>Question.*/gi
+                /(?:<strong>){0,}Answer Explanation (?:&#953;){0,}:.*/g,
+                /.*Answer Explanation:.*/g,
             ];
             /* 
                 POSSIBLE BREAKPOINTS  

@@ -103,7 +103,7 @@ function getTextBlock(str, startText, endText, stripStart = true, includeEnd = f
     }
 }
 
-function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray) {
+function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray, stripStart=false, includeEnd=true) {
     // Create a utility function that returns an array of all of the titles
     var resultArray = [];
     var substring = textBlock.slice();
@@ -143,7 +143,7 @@ function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray) {
             //     console.log("FIRST AND SECOND EQUAL")
             //     continue;
             // }
-            currentBlock = getTextBlock(substring, startRegex.symbol, endRegex.symbol, false, true);
+            currentBlock = getTextBlock(substring, startRegex.symbol, endRegex.symbol, stripStart, includeEnd);
             // if (!isBlankOrWhiteSpace(currentBlock.textBlock) && !isEmptyString(currentBlock.textBlock)) {
             //     resultArray.push(currentBlock);
             // }
@@ -248,7 +248,8 @@ function getAllMatchesInOrder(textBlock, regexArray)  {
             substring = textBlock.substring(searchStartIndex);
             resultArray.push({
                 symbol: foundMatch.symbol,
-                index: searchStartIndex - matchLength
+                index: searchStartIndex - matchLength,
+                matchLength: matchLength
             });
             // console.log("INDEX CHOP: ", textBlock.substring(searchStartIndex, searchStartIndex + 20));
             // console.log("INDEX CHOP: ", textBlock.substring(39, 261));
@@ -320,10 +321,10 @@ function sliceAtBreakpoints(textBlock, breakRegexArray) {
     for (var i = 0; i < allMatches.length; i++) {
         currentMatch = allMatches[i];
         if (i == allMatches.length - 1) {
-            substring = textBlock.substring(currentMatch.index);
+            substring = textBlock.substring(currentMatch.index + currentMatch.matchLength);
         } else {
             nextMatch = allMatches[i + 1];
-            substring = textBlock.substring(currentMatch.index, nextMatch.index);
+            substring = textBlock.substring(currentMatch.index + currentMatch.matchLength, nextMatch.index);
         }
         result.push(substring);
     }

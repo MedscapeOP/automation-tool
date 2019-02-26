@@ -9,13 +9,39 @@ const snippets = require('../snippets');
 Practice Article - 896014
 */
 
+/* GET CONTENT COMPONENTS 
+-------------------------------------- */
+function getTables(contentBlockHTML, program) {
+
+}
+
+function getFigures(contentBlockHTML, program) {
+
+}
+
+function getLevelOnes(contentBlockHTML, program) {
+
+}
+
+function getLevelTwos(contentBlockHTML, program) {
+
+}
+
+function getQNANumber (contentBlockHTML, program) {
+
+}
+
+function getContentComponents(ticketHTML, program) {
+
+}
+
 /* MAIN CONTENT 
 -------------------------------------- */
 function buildContentTOC (articleComponent) {
 /* 
 Algorithm Ideas
 
-PRODTICKET FUNCTION: 
+UTILITY FUNCTION: 
 - Find all level 1s in order 
     - Look for: <<Level 1>>
 - Find all level 2s in order 
@@ -324,7 +350,12 @@ function buildTestAndTeach(ticket, program) {
 
 module.exports = {
     getMainContent,
-    getLLAPreTOC,
-    getLLAPostTOC,
+    getTables,
+    getFigures,
+    getLevelOnes,
+    getLevelTwos,
+    getQNANumber,
+    getContentComponents,
     buildTestAndTeach
 }
+
