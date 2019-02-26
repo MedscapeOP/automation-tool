@@ -7,7 +7,7 @@ let expect = chai.expect;
 
 const app = require('../../commands');
 const utils = app.utils;
-const spotlight = app.articles.spotlight;
+const testAndTeach = app.articles.testAndTeach;
 
 describe('Test And Teach', function () {
  
@@ -46,12 +46,13 @@ describe('Test And Teach', function () {
         });
     });
 
-    describe('#getTables()', function () {
-        it('should return objects with the contentBlock\'s tables', function () {
-            var tables = require('./input/test-and-teach/tables');
-            var contentBlock = contentBlock1;
-        });
-    });
+    // describe('#getTables()', function () {
+    //     it('should return objects with the contentBlock\'s tables', function () {
+    //         var tables = require('./input/test-and-teach/tables');
+    //         var contentBlock = contentBlock1;
+    //         var result = testAndTeach.getTables(contentBlock, program);
+    //     });
+    // });
 
     // describe('#getFigures()', function () {
     //     it('should return objects with the contentBlock\'s figures', function () {
@@ -62,11 +63,13 @@ describe('Test And Teach', function () {
         it('should return objects with the contentBlock\'s level 1 markup', function () {
             var levelOnes = require('./input/test-and-teach/levelOnes-1');
             var contentBlock = contentBlock2;
+            var result = testAndTeach.getLevelOnes(contentBlock, program);
         });
 
         it('should return objects with the contentBlock\'s level 1 markup - 2', function () {
             var levelOnes = require('./input/test-and-teach/levelOnes-2');
             var contentBlock = contentBlock3;
+            var result = testAndTeach.getLevelOnes(contentBlock, program);
         });
     });
 
@@ -74,11 +77,13 @@ describe('Test And Teach', function () {
         it('should return objects with the contentBlock\'s level 2 markup', function () {
             var levelTwos = require('./input/test-and-teach/levelTwos-1');
             var contentBlock = contentBlock2;
+            var result = testAndTeach.getLevelTwos(contentBlock, program);
         });
 
         it('should return objects with the contentBlock\'s level 2 markup', function () {
             var levelTwos = require('./input/test-and-teach/levelTwos-2');
             var contentBlock = contentBlock3;
+            var result = testAndTeach.getLevelTwos(contentBlock, program);
         });
     });
 
