@@ -20,11 +20,77 @@ function getFigures(contentBlockHTML, program) {
 }
 
 function getLevelOnes(contentBlockHTML, program) {
+/*
+    create regex array of possible matches for start and end
+    call getAllTextBlocks
+    add levelOne to the type of each object in the result  
+*/
+    var startRegexps = [
+        /(?:&lt;){1,}level 1(?:&gt;){1,}.*/gi,
+        /&lt;&lt;level 1&gt;&gt;.*/gi
+    ];
 
+    var endRegexps = [ 
+        /<strong>Y\/N<\/strong>/g,
+        // /(?:&lt;){1,}level 2(?:&gt;){1,}.*/gi,
+        /&lt;&lt;level 2&gt;&gt;.*/gi,
+        // /level 2&gt;&gt;.*Discussion/gi,
+        /.*Table \d\..*/g
+    ];
+
+    var blocks = utils.stringOps.getAllBlocksInOrder(contentBlockHTML, startRegexps, endRegexps, true, false);
+
+    _.remove(blocks, function (block) {
+        var testString = utils.cleanHTML.onlyParagraphTags(block.textBlock);
+        if (testString.length < 30) {
+            return true;
+        } else {
+            block.type = "levelOne";
+            block.label = block.label.replace(/(?:&lt;){1,}level 1(?:&gt;){1,}/g, "");
+            block.label = utils.cleanHTML.plainText(block.label).trim();
+            block.textBlock = utils.cleanHTML.paragraph(block.textBlock);
+            return false;
+        }
+    });
+
+    return blocks;
 }
 
 function getLevelTwos(contentBlockHTML, program) {
+/*
+    create regex array of possible matches for start and end
+    call getAllTextBlocks
+    add levelOne to the type of each object in the result  
+*/
+    var startRegexps = [
+        /(?:&lt;){1,}level 2(?:&gt;){1,}.*/gi,
+        /&lt;&lt;level 2&gt;&gt;.*/gi
+    ];
 
+    var endRegexps = [ 
+        /<strong>Y\/N<\/strong>/g,
+        /(?:&lt;){1,}insert figure \d+(?:&gt;){1,}.*/gi,
+        /(?:&lt;){1,}level 1(?:&gt;){1,}.*/gi,
+        /&lt;&lt;level 1&gt;&gt;.*/gi,
+        /.*Table \d\..*/g
+    ];
+
+    var blocks = utils.stringOps.getAllBlocksInOrder(contentBlockHTML, startRegexps, endRegexps, true, false);
+
+    _.remove(blocks, function (block) {
+        var testString = utils.cleanHTML.onlyParagraphTags(block.textBlock);
+        if (testString.length < 30) {
+            return true;
+        } else {
+            block.type = "levelTwo";
+            block.label = block.label.replace(/(?:&lt;){1,}level 1(?:&gt;){1,}/g, "");
+            block.label = utils.cleanHTML.plainText(block.label).trim();
+            block.textBlock = utils.cleanHTML.paragraph(block.textBlock);
+            return false;
+        }
+    });
+    
+    return blocks;
 }
 
 function getQNANumber (contentBlockHTML, program) {

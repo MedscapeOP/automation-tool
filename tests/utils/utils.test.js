@@ -138,47 +138,47 @@ describe('Utility Functions', function () {
         });
     });
 
-    describe('utils.stringOps.getAllBlocksInOrder()', function () {
-        it('should get all matching substrings of text using arrays of regular expressions', function () {
-            var startRegexps = [
-                /<strong>Content/g,
-                // /(?:&lt;){1,}level 1(?:&gt;){1,}.*Case \d:.*/gi,
-                /&lt;&lt;level 1&gt;&gt;.*Case \d:.*/gi,
-                /.*Case \d Conclusion<\/strong>/gi,
-                /level 2&gt;&gt;.*Discussion/gi
-            ];
+    // describe('utils.stringOps.getAllBlocksInOrder()', function () {
+    //     it('should get all matching substrings of text using arrays of regular expressions', function () {
+    //         var startRegexps = [
+    //             /<strong>Content/g,
+    //             // /(?:&lt;){1,}level 1(?:&gt;){1,}.*Case \d:.*/gi,
+    //             /&lt;&lt;level 1&gt;&gt;.*Case \d:.*/gi,
+    //             /.*Case \d Conclusion<\/strong>/gi,
+    //             /level 2&gt;&gt;.*Discussion/gi
+    //         ];
 
-            var endRegexps = [
-                /(?:<strong>){0,}Answer Explanation (?:&#953;){0,}:.*/g,
-                /.*Answer Explanation:.*/g,
-                // /.*Case \d Conclusion<\/strong>/gi,
-                /(?:&lt;){1,}level 1(?:&gt;){1,}.*Case \d:.*/gi,
-                /&lt;&lt;level 1&gt;&gt;.*Case \d:.*/gi
-            ];
-            /* 
-                TYPES OF BLOCKS 
-                CONTENT --> Question (Include end)
+    //         var endRegexps = [
+    //             /(?:<strong>){0,}Answer Explanation (?:&#953;){0,}:.*/g,
+    //             /.*Answer Explanation:.*/g,
+    //             // /.*Case \d Conclusion<\/strong>/gi,
+    //             /(?:&lt;){1,}level 1(?:&gt;){1,}.*Case \d:.*/gi,
+    //             /&lt;&lt;level 1&gt;&gt;.*Case \d:.*/gi
+    //         ];
+    //         /* 
+    //             TYPES OF BLOCKS 
+    //             CONTENT --> Question (Include end)
 
-                discussion --> Question (Include end)
+    //             discussion --> Question (Include end)
 
-                discussion --> New Case (Include end)
+    //             discussion --> New Case (Include end)
 
-                New Case --> Question (Include end)
-            */
-            var {textBlock} = utils.stringOps.getTextBlock(testAndTeachTicket, /<strong>Content/g, /<strong>Abbreviations/g, false, true);
+    //             New Case --> Question (Include end)
+    //         */
+    //         var {textBlock} = utils.stringOps.getTextBlock(testAndTeachTicket, /<strong>Content/g, /<strong>Abbreviations/g, false, true);
 
-            var result = utils.stringOps.getAllBlocksInOrder(textBlock, startRegexps, endRegexps);
+    //         var result = utils.stringOps.getAllBlocksInOrder(textBlock, startRegexps, endRegexps);
 
-            // console.log("RESULT: ", result);
+    //         // console.log("RESULT: ", result);
 
-            var resultString = "";
-            for(var i = 0; i < result.length; i++) {
-                resultString += "\n\n\n-----------TOC ELEMENT # " + (i+1) + " " + result[i].textBlock;
-            }
-            fs.writeFileSync(__dirname + '/output/get-all-blocks.html', resultString);
-            // expect(result).equalIgnoreSpaces(completeString);
-        });
-    });
+    //         var resultString = "";
+    //         for(var i = 0; i < result.length; i++) {
+    //             resultString += "\n\n\n-----------TOC ELEMENT # " + (i+1) + " " + result[i].textBlock;
+    //         }
+    //         fs.writeFileSync(__dirname + '/output/get-all-blocks.html', resultString);
+    //         // expect(result).equalIgnoreSpaces(completeString);
+    //     });
+    // });
 
     describe('utils.stringOps.sliceAtBreakpoints()', function () {
         it('should create substrings using the supplied array of breakpoints.', function () {

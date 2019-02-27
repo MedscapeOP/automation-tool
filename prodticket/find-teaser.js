@@ -49,7 +49,7 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     var endRegExp = /<strong>Location\/map info:/g;
     var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
 
-    console.log("TEXT BLOCK TEASER: ", textBlock);
+    // console.log("TEXT BLOCK TEASER: ", textBlock);
 
     if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
         throw new Error("No teaser info found in the prodticket");

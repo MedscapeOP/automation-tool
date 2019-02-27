@@ -39,7 +39,7 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     var endRegExp = /<strong>Supporter badge/g;
     var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
     
-    console.log("TEXTBLOCK SUPPORTER: ", textBlock);
+    // console.log("TEXTBLOCK SUPPORTER: ", textBlock);
     if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
         throw new Error("No supporter info found in the prodticket");
     } else {  
