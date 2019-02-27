@@ -56,11 +56,11 @@ function getLevelOnes(contentBlockHTML, program) {
     return blocks;
 }
 
-function getLevelTwos(contentBlockHTML, program) {
+function getContentBlockObjects(contentBlockHTML, program) {
 /*
-    create regex array of possible matches for start and end
-    call getAllTextBlocks
-    add levelOne to the type of each object in the result  
+    Will call this get sections and subsection objects. 
+    Level 2 is the most simple construct so we don't need to "look"
+    - Instead we should look for everything else and call those     functions inside here. 
 */
     var startRegexps = [
         /(?:&lt;){1,}level 2(?:&gt;){1,}.*/gi,
@@ -69,10 +69,12 @@ function getLevelTwos(contentBlockHTML, program) {
 
     var endRegexps = [ 
         /<strong>Y\/N<\/strong>/g,
-        /(?:&lt;){1,}insert figure \d+(?:&gt;){1,}.*/gi,
+        // /(?:&lt;){1,}insert figure \d+(?:&gt;){1,}.*/gi,
         /(?:&lt;){1,}level 1(?:&gt;){1,}.*/gi,
         /&lt;&lt;level 1&gt;&gt;.*/gi,
-        /.*Table \d\..*/g
+        // /(?:&lt;){1,}level 2(?:&gt;){1,}.*/gi,
+        // /&lt;&lt;level 2&gt;&gt;.*/gi
+        // /.*Table \d\..*/g
     ];
 
     var blocks = utils.stringOps.getAllBlocksInOrder(contentBlockHTML, startRegexps, endRegexps, true, false);
@@ -83,7 +85,7 @@ function getLevelTwos(contentBlockHTML, program) {
             return true;
         } else {
             block.type = "levelTwo";
-            block.label = block.label.replace(/(?:&lt;){1,}level 1(?:&gt;){1,}/g, "");
+            block.label = block.label.replace(/(?:&lt;){1,}level 2(?:&gt;){1,}/g, "");
             block.label = utils.cleanHTML.plainText(block.label).trim();
             block.textBlock = utils.cleanHTML.paragraph(block.textBlock);
             return false;
@@ -97,7 +99,7 @@ function getQNANumber (contentBlockHTML, program) {
 
 }
 
-function getContentComponents(ticketHTML, program) {
+function getContentBlocks(ticketHTML, program) {
 
 }
 
@@ -419,9 +421,9 @@ module.exports = {
     getTables,
     getFigures,
     getLevelOnes,
-    getLevelTwos,
+    getContentBlockObjects,
     getQNANumber,
-    getContentComponents,
+    getContentBlocks,
     buildTestAndTeach
 }
 
