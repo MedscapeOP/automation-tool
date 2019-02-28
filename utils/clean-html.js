@@ -601,6 +601,12 @@ function cleanEntities (xmlString) {
     return clean;
 }
 
+function tableCleanup(htmlString) {
+    var str = htmlString.slice();
+
+    return str;
+}
+
 module.exports = {
     removeTicketFluff,
     singleLine,
@@ -622,5 +628,6 @@ module.exports = {
     associationDisclaimer,
     removeEntities,
     insertEntityPlaceholders,
-    cleanEntities
+    cleanEntities,
+    tableCleanup
 }; 

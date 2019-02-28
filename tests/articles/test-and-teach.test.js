@@ -57,13 +57,14 @@ describe('Test And Teach', function () {
         });
     });
 
-    // describe('#getTables()', function () {
-    //     it('should return objects with the contentBlock\'s tables', function () {
-    //         var tables = require('./input/test-and-teach/tables');
-    //         var contentBlock = contentBlock1;
-    //         var result = testAndTeach.getTables(contentBlock, program);
-    //     });
-    // });
+    describe('#getTables()', function () {
+        it('should return objects with the contentBlock\'s tables', function () {
+            var tables = require('./input/test-and-teach/tables');
+            var contentBlock = contentBlock1;
+            var result = testAndTeach.getTables(contentBlock, program);
+            console.log("TABLES RESULT: ", result);
+        });
+    });
 
     // describe('#getFigures()', function () {
     //     it('should return objects with the contentBlock\'s figures', function () {
@@ -75,12 +76,12 @@ describe('Test And Teach', function () {
             var levelOnes = require('./input/test-and-teach/levelOnes-1');
             var contentBlock = contentBlock2;
             var result = testAndTeach.getLevelOnes(contentBlock, program);
-            console.log("RESULT LVL 1: ", result);   
-            // for (var i = 0; i < result.length; i++) {
-            //     expect(result[i].label).to.equalIgnoreSpaces(levelOnes[i].label);
-            //     expect(result[i].textBlock).to.equalIgnoreSpaces(levelOnes[i].textBlock);
-            //     expect(result[i].type).to.equalIgnoreSpaces(levelOnes[i].type);
-            // }    
+            // console.log("RESULT LVL 1: ", result);   
+            for (var i = 0; i < result.length; i++) {
+                expect(result[i].label).to.equalIgnoreSpaces(levelOnes[i].label);
+                expect(result[i].textBlock).to.equalIgnoreSpaces(levelOnes[i].textBlock);
+                expect(result[i].type).to.equalIgnoreSpaces(levelOnes[i].type);
+            }    
         });
 
         it('should return objects with the contentBlock\'s level 1 markup - 2', function () {

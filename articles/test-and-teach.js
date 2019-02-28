@@ -12,7 +12,24 @@ Practice Article - 896014
 /* GET CONTENT COMPONENTS 
 -------------------------------------- */
 function getTables(contentBlockHTML, program) {
+    var startRegexps = [
+        /.*Table \d+\..*/gi
+    ];
 
+    var endRegexps = [
+        /(?:&lt;){1,}end table.*(?:&gt;){1,}.*/gi
+    ]
+    /* 
+        POSSIBLE BREAKPOINTS  
+        --> Question Start
+        --> Question End (Answer Explanation) 
+        --> New Case                 
+    */
+    var tables = utils.stringOps.getAllBlocksInOrder(contentBlockHTML, startRegexps, endRegexps, false, true);
+
+    var result = utils.cleanHTML.tableCleanup(tables);
+
+    return result;
 }
 
 function getFigures(contentBlockHTML, program) {
@@ -100,7 +117,23 @@ function getQNANumber (contentBlockHTML, program) {
 }
 
 function getContentBlocks(ticketHTML, program) {
+    var breakpoints = [
+        /(?:&lt;){1,}level 1(?:&gt;){1,}.*Case \d:.*/gi,
+        /&lt;&lt;level 1&gt;&gt;.*Case \d:.*/gi,
+        /(?:<strong>){0,}Answer Explanation (?:&#953;){0,}:.*/g,
+        /.*Answer Explanation:.*/g,
+    ];
+    /* 
+        POSSIBLE BREAKPOINTS  
+        --> Question Start
+        --> Question End (Answer Explanation) 
+        --> New Case                 
+    */
+    var {textBlock} = utils.stringOps.getTextBlock(ticketHTML, /<strong>Content/g, /<strong>Abbreviations/g, false, true);
 
+    var result = utils.stringOps.sliceAtBreakpoints(textBlock, breakpoints);
+
+    return result;
 }
 
 /* MAIN CONTENT 
