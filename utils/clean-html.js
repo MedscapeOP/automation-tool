@@ -135,13 +135,13 @@ function singleLine(string) {
     return string.replace(lineBreakRegExp, "");
 }
 
-function paragraph(string, removeFluff=true) {
+function paragraph(string, removeFluff=true, allowedTags=['p','em','strong','sup','sub']) {
     var str = string;
     if (removeFluff) {
         str = removeTicketFluff(str);
     }
     var options =   {
-        allowedTags: [ 'p', 'em', 'strong', 'sup', 'sub' ],
+        allowedTags: allowedTags,
         allowedAttributes: {
           'sup': ["type"],
         },

@@ -71,10 +71,19 @@ describe('Test And Teach', function () {
         });
     });
 
-    // describe('#getFigures()', function () {
-    //     it('should return objects with the contentBlock\'s figures', function () {
-    //     });
-    // });
+    describe('#getFigures()', function () {
+        it('should return objects with the contentBlock\'s figures', function () {
+            var figures = require('./input/test-and-teach/figures');
+            var contentBlock = contentBlock2;
+            var result = testAndTeach.getFigures(contentBlock, program);
+            console.log("FIGURES RESULT: ", result);
+            for (var i = 0; i < result.length; i++) {
+                expect(result[i].label).to.equalIgnoreSpaces(figures[i].label);
+                expect(result[i].type).to.equalIgnoreSpaces(figures[i].type);
+                expect(result[i].textBlock).to.equalIgnoreSpaces(figures[i].textBlock);
+            } 
+        });
+    });
 
     describe('#getLevelOnes()', function () {
         it('should return objects with the contentBlock\'s level 1 markup', function () {

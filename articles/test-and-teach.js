@@ -19,24 +19,36 @@ function getTables(contentBlockHTML, program) {
     var endRegexps = [
         /(?:&lt;){1,}end table.*(?:&gt;){1,}.*/gi
     ]
-    /* 
-        POSSIBLE BREAKPOINTS  
-        --> Question Start
-        --> Question End (Answer Explanation) 
-        --> New Case                 
-    */
+
     var tables = utils.stringOps.getAllBlocksInOrder(contentBlockHTML, startRegexps, endRegexps, false, true);
 
     for (var i = 0; i < tables.length; i++) {
         tables[i].textBlock = utils.cleanHTML.tableCleanup(tables[i].textBlock);
-        tables[i].label = utils.cleanHTML.plainText(tables[i].label);
+        tables[i].label = utils.cleanHTML.paragraph(tables[i].label, false, ['sup']);
         tables[i].type = "table";
     } 
     return tables;
 }
 
 function getFigures(contentBlockHTML, program) {
+    var startRegexps = [
+        /(?:&lt;){1,}insert figure \d.*(?:&gt;){1,}.*/gi
+    ];
 
+    var endRegexps = [
+        /.*Figure \d\..*/g
+    ];
+
+    /* 
+        Instead of grabbing the title from the label (as normal), we have to use the textblock to generate the label. 
+    */
+    var figures = utils.stringOps.getAllBlocksInOrder(contentBlockHTML, startRegexps, endRegexps, true, true);
+
+    for (var i = 0; i < figures.length; i++) {
+        figures[i].label = utils.cleanHTML.paragraph(figures[i].textBlock, false, ['sup']);
+        figures[i].type = "figure";
+    } 
+    return figures;
 }
 
 function getLevelOnes(contentBlockHTML, program) {
