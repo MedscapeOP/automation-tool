@@ -27,9 +27,12 @@ function getTables(contentBlockHTML, program) {
     */
     var tables = utils.stringOps.getAllBlocksInOrder(contentBlockHTML, startRegexps, endRegexps, false, true);
 
-    var result = utils.cleanHTML.tableCleanup(tables);
-
-    return result;
+    for (var i = 0; i < tables.length; i++) {
+        tables[i].textBlock = utils.cleanHTML.tableCleanup(tables[i].textBlock);
+        tables[i].label = utils.cleanHTML.plainText(tables[i].label);
+        tables[i].type = "table";
+    } 
+    return tables;
 }
 
 function getFigures(contentBlockHTML, program) {

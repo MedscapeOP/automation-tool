@@ -62,7 +62,12 @@ describe('Test And Teach', function () {
             var tables = require('./input/test-and-teach/tables');
             var contentBlock = contentBlock1;
             var result = testAndTeach.getTables(contentBlock, program);
-            console.log("TABLES RESULT: ", result);
+            // console.log("TABLES RESULT: ", result);
+            for (var i = 0; i < result.length; i++) {
+                expect(result[i].label).to.equalIgnoreSpaces(tables[i].label);
+                expect(result[i].type).to.equalIgnoreSpaces(tables[i].type);
+                expect(result[i].textBlock).to.equalIgnoreSpaces(tables[i].textBlock);
+            } 
         });
     });
 
