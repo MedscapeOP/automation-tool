@@ -93,6 +93,17 @@ function getContentBlockObjects(contentBlockHTML, program) {
     Will call this get sections and subsection objects. 
     Level 2 is the most simple construct so we don't need to "look"
     - Instead we should look for everything else and call those     functions inside here. 
+
+Paragraph Regex: (?:<p>(?!<strong>)(?!<a)(?!&#9633;).*</p>){1,}
+
+    - IDEA:
+        - Find each component type.
+        - Loop through results of each 
+            - remove the textblock from the temp string
+            - Use string.search or string.replace --> No indices   
+        - After looping through and breaking down the temp string
+            - What should remain are the blocks of plain paragraph tags.  
+
 */
     var startRegexps = [
         /(?:&lt;){1,}level 2(?:&gt;){1,}.*/gi,
@@ -101,7 +112,7 @@ function getContentBlockObjects(contentBlockHTML, program) {
 
     var endRegexps = [ 
         /<strong>Y\/N<\/strong>/g,
-        // /(?:&lt;){1,}insert figure \d+(?:&gt;){1,}.*/gi,
+        /(?:&lt;){1,}insert figure \d+(?:&gt;){1,}.*/gi,
         /(?:&lt;){1,}level 1(?:&gt;){1,}.*/gi,
         /&lt;&lt;level 1&gt;&gt;.*/gi,
         // /(?:&lt;){1,}level 2(?:&gt;){1,}.*/gi,

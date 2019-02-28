@@ -43,6 +43,7 @@ describe('Test And Teach', function () {
 
     });
     
+    /* DONE */
     describe('#getContentBlocks()', function () {
         it('should return array of content blocks (markup separated at each Question / new case)', function () {
             /*
@@ -57,6 +58,7 @@ describe('Test And Teach', function () {
         });
     });
 
+    /* DONE */
     describe('#getTables()', function () {
         it('should return objects with the contentBlock\'s tables', function () {
             var tables = require('./input/test-and-teach/tables');
@@ -71,6 +73,7 @@ describe('Test And Teach', function () {
         });
     });
 
+    /* DONE */
     describe('#getFigures()', function () {
         it('should return objects with the contentBlock\'s figures', function () {
             var figures = require('./input/test-and-teach/figures');
@@ -85,6 +88,7 @@ describe('Test And Teach', function () {
         });
     });
 
+    /* DONE */
     describe('#getLevelOnes()', function () {
         it('should return objects with the contentBlock\'s level 1 markup', function () {
             var levelOnes = require('./input/test-and-teach/levelOnes-1');
