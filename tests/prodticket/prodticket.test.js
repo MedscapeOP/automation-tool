@@ -109,7 +109,7 @@ describe('Prodticket Module Functions', function () {
     * CONTRIBUTORS     
     */
     describe("prodticket.getContributors()", function () {
-        this.timeout(7000);
+        this.timeout(10000);
         var contributorsCC = require("./input/contributors-cc");
         var contributorsSL = require("./input/contributors-sl");
         var contributorsTH = require("./input/contributors-th");
@@ -152,7 +152,7 @@ describe('Prodticket Module Functions', function () {
                 expect(result[i].affiliation).to.equalIgnoreSpaces(contributorsCC[i].affiliation);
                 expect(result[i].disclosure).to.equalIgnoreSpaces(contributorsCC[i].disclosure);
             }
-            done()
+            done();
         });
 
         it("should return the program contributors from the .html - TownHall", function () {

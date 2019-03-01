@@ -91,7 +91,7 @@ describe('Test And Teach', function () {
     /* DONE */
     describe('#getLevelOnes()', function () {
         it('should return objects with the contentBlock\'s level 1 markup', function () {
-            var levelOnes = require('./input/test-and-teach/levelOnes-1');
+            var levelOnes = require('./input/test-and-teach/level-ones-1');
             var contentBlock = contentBlock2;
             var result = testAndTeach.getLevelOnes(contentBlock, program);
             // console.log("RESULT LVL 1: ", result);   
@@ -103,7 +103,7 @@ describe('Test And Teach', function () {
         });
 
         it('should return objects with the contentBlock\'s level 1 markup - 2', function () {
-            var levelOnes = require('./input/test-and-teach/levelOnes-2');
+            var levelOnes = require('./input/test-and-teach/level-ones-2');
             var contentBlock = contentBlock3;
             var result = testAndTeach.getLevelOnes(contentBlock, program);
             for (var i = 0; i < result.length; i++) {
@@ -114,28 +114,26 @@ describe('Test And Teach', function () {
         });
     });
 
+    describe('#getLevelTwos()', function () {
+        it('should return array of objects with properties set for level 1s, level 2s, tables, figures, and QnA #s', function () {
+            var levelTwos = require('./input/test-and-teach/level-twos');
+            var contentBlock = contentBlock3;
+            var result = testAndTeach.getLevelTwos(contentBlock, program);
+            console.log("RESULT LVL2: ", result);
+            for (var i = 0; i < result.length; i++) {
+                expect(result[i].label).to.equalIgnoreSpaces(levelTwos[i].label);
+                expect(result[i].textBlock).to.equalIgnoreSpaces(levelTwos[i].textBlock);
+                expect(result[i].type).to.equalIgnoreSpaces(levelTwos[i].type);
+            }    
+        });
+    });
+
     describe('#getContentBlockObjects()', function () {
         it('should return array of objects with properties set for level 1s, level 2s, tables, figures, and QnA #s', function () {
-            var levelTwos = require('./input/test-and-teach/levelTwos-1');
+            var levelTwos = require('./input/test-and-teach/content-block');
             var contentBlock = contentBlockTest;
             var result = testAndTeach.getContentBlockObjects(contentBlock, program);
-            console.log("RESULT LVL2: ", result);
-            // for (var i = 0; i < result.length; i++) {
-            //     expect(result[i].label).to.equalIgnoreSpaces(levelTwos[i].label);
-            //     expect(result[i].textBlock).to.equalIgnoreSpaces(levelTwos[i].textBlock);
-            //     expect(result[i].type).to.equalIgnoreSpaces(levelTwos[i].type);
-            // }    
-        });
-
-        it('should return array of objects with properties set for level 1s, level 2s, tables, figures, and QnA #s', function () {
-            var levelTwos = require('./input/test-and-teach/levelTwos-2');
-            var contentBlock = contentBlock3;
-            var result = testAndTeach.getContentBlockObjects(contentBlock, program);
-            // for (var i = 0; i < result.length; i++) {
-            //     expect(result[i].label).to.equalIgnoreSpaces(levelTwos[i].label);
-            //     expect(result[i].textBlock).to.equalIgnoreSpaces(levelTwos[i].textBlock);
-            //     expect(result[i].type).to.equalIgnoreSpaces(levelTwos[i].type);
-            // }    
+            console.log("RESULT CONTENT BLOCK: ", result);
         });
     });
 
