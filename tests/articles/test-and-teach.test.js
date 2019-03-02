@@ -119,7 +119,7 @@ describe('Test And Teach', function () {
             var levelTwos = require('./input/test-and-teach/level-twos');
             var contentBlock = contentBlock3;
             var result = testAndTeach.getLevelTwos(contentBlock, program);
-            console.log("RESULT LVL2: ", result);
+            // console.log("RESULT LVL2: ", result);
             for (var i = 0; i < result.length; i++) {
                 expect(result[i].label).to.equalIgnoreSpaces(levelTwos[i].label);
                 expect(result[i].textBlock).to.equalIgnoreSpaces(levelTwos[i].textBlock);

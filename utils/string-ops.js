@@ -124,7 +124,7 @@ function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray, stripS
         endRegex = getNextRegex(substring, endRegExpArray);
         // console.log("END REGEX: ", endRegex);
         // console.log("SUBSTRING: ", substring.substring(0, 4000));
-        if (endRegex.index < startRegex.index) {
+        if (endRegex.index < startRegex.index && (_.indexOf(startRegExpArray, endRegex.symbol) != -1)) {
             currentBlock = {
                 label: prevLabel, 
                 textBlock: substring.substring(0, endRegex.index), 
@@ -138,6 +138,9 @@ function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray, stripS
             }
             // console.log("SPECIAL TEXT BLOCK: ", currentBlock.textBlock);
             // substring = substring.substring(endRegex.index + 1);
+        } else if (endRegex.index < startRegex.index) {
+            // If the startArray doesn't contain endRegex (when it comes first), then we should chop and skip. 
+            substring = substring.substring(startRegex.index);
         } else if (endRegex != -1) {
             // if (startRegex.symbol == endRegex.symbol) {
             //     console.log("FIRST AND SECOND EQUAL")

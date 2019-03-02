@@ -32,22 +32,37 @@ function getTables(contentBlockHTML, program) {
 
 function getFigures(contentBlockHTML, program) {
     var startRegexps = [
-        /(?:&lt;){1,}insert figure \d.*(?:&gt;){1,}.*/gi
+        /.*Figure \d\..*/g
+        // /(?:&lt;){1,}insert figure \d.*(?:&gt;){1,}.*/gi
     ];
 
     var endRegexps = [
-        /.*Figure \d\..*/g
+        /.*(?:&lt;){1,}level 2(?:&gt;){1,}.*/gi,
+        /.*&lt;&lt;level 2&gt;&gt;.*/gi,
+        /.*<strong>Y\/N<\/strong>/g,
+        // /(?:&lt;){1,}insert figure \d+(?:&gt;){1,}.*/gi,
+        /.*(?:&lt;){1,}level 1(?:&gt;){1,}.*/gi,
+        /.*&lt;&lt;level 1&gt;&gt;.*/gi,
+        // /.*Figure \d\..*/g
     ];
 
     /* 
         Instead of grabbing the title from the label (as normal), we have to use the textblock to generate the label. 
     */
-    var figures = utils.stringOps.getAllBlocksInOrder(contentBlockHTML, startRegexps, endRegexps, true, true);
+    var figures = utils.stringOps.getAllBlocksInOrder(contentBlockHTML, startRegexps, endRegexps, true, false);
+
+    // console.log("FIGURES BEFORE CLEAN: ", figures);
 
     for (var i = 0; i < figures.length; i++) {
-        figures[i].label = utils.cleanHTML.paragraph(figures[i].textBlock, false, ['sup']);
+        var textBlock = figures[i].textBlock;
+        figures[i].label = utils.cleanHTML.paragraph(figures[i].label, false, ['sup']);
+        textBlock = textBlock.replace(/.*<img .*/g, 'IMAGE---PLACEHOLDER');
+        // console.log("FIGURES BLOCK AFTER REPLACE: ", textBlock);
+        textBlock = utils.cleanHTML.paragraph(textBlock);
+        figures[i].textBlock = textBlock.replace(/IMAGE---PLACEHOLDER/g, '<img alt="REPLACE THIS IMAGE WITH FIGURE">');
         figures[i].type = "figure";
     } 
+
     return figures;
 }
 
@@ -71,6 +86,8 @@ function getLevelOnes(contentBlockHTML, program) {
     ];
 
     var blocks = utils.stringOps.getAllBlocksInOrder(contentBlockHTML, startRegexps, endRegexps, true, false);
+
+    // console.log("LEVEL ONES BEFORE CLEAN: ", blocks);
 
     _.remove(blocks, function (block) {
         var testString = utils.cleanHTML.onlyParagraphTags(block.textBlock);
@@ -114,13 +131,13 @@ function getLevelTwos(contentBlockHTML, program) {
     _.remove(blocks, function (block) {
         var testString = utils.cleanHTML.onlyParagraphTags(block.textBlock);
         if (testString.length < 30) {
-            console.log("RETURNING TRUE: ")
+            // console.log("RETURNING TRUE: ")
             return true;
         } else {
             block.type = "levelTwo";
             block.label = block.label.replace(/(?:&lt;){1,}level 2(?:&gt;){1,}/g, "");
             block.label = utils.cleanHTML.plainText(block.label).trim();
-            console.log("BLOCK BEFORE CLEAN: ", block.textBlock);
+            // console.log("BLOCK BEFORE CLEAN: ", block.textBlock);
             block.textBlock = utils.cleanHTML.paragraph(block.textBlock);
             return false;
         }

@@ -90,12 +90,14 @@ function supEdgeCases (str) {
 
     var supRegExp2 = new RegExp('</strong>\\s{0,}</sup>', 'g');
     str = str.replace(supRegExp2, "</sup></strong>");
-
+    
     var supRegExp3 = new RegExp('<sup>\\s{0,}\\[', 'g');
     str = str.replace(supRegExp3, "<sup>[");
-
-    var supRegExp3 = new RegExp('<sup>.*\\[', 'g');
-    str = str.replace(supRegExp3, "<sup>[");
+    
+    // Don't need this edge case - broke test and teach figures 
+    // var supRegExp3 = new RegExp('<sup>.*\\[', 'g');
+    // str = str.replace(supRegExp3, "<sup>[");
+    // console.log("AFTER REGEX 3", str);
     return str;
 }
 
@@ -143,7 +145,7 @@ function paragraph(string, removeFluff=true, allowedTags=['p','em','strong','sup
     var options =   {
         allowedTags: allowedTags,
         allowedAttributes: {
-          'sup': ["type"],
+          'sup': ["type"]
         },
         allowedClasses: {},
         exclusiveFilter: function(frame) {
@@ -609,6 +611,7 @@ function tableCleanup(htmlString) {
 
 module.exports = {
     removeTicketFluff,
+    supEdgeCases,
     singleLine,
     plainText,
     onlyParagraphTags,
