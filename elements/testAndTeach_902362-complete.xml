@@ -81,16 +81,16 @@
         <subsec_header/>
         <subsec_content>
           <table align="left" border="1" bordercolor="#b3b3b3" cellpadding="3" cellspacing="0" style="margin-right: 20px;">
-    <tbody>
-        <tr>
-            <td align="center">
-                  <img alt="" border="0" src="/webmd/professional_assets/medscape/images/content/article/902/362/902362-patient1.jpg?interpolation=lanczos-none&amp;resize=200:150" width="200"/>
-                </td>
-        </tr>
-    </tbody>
-</table>
+              <tbody>
+                  <tr>
+                      <td align="center">
+                        <img alt="" border="0" src="/webmd/professional_assets/medscape/images/content/article/902/362/902362-patient1.jpg?interpolation=lanczos-none&amp;resize=200:150" width="200"/>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
 
-<p style="min-height: 230px;">Jason is a 37-year-old male with progressively worsening lower back pain. Thinking back, Jason remembers that even in his late teens he had some sporadic back pain. He first sought treatment for his back pain at the age of 25. There was no injury or identifiable factor or event associated with the pain. At that time, he began treatment with ibuprofen 400 mg taken every 6 hours. This provided him with significant symptom relief. However, after about 5 years, he developed intolerable gastrointestinal (GI) side effects. He switched to naproxen 220 mg BID. This provided relief for a time, but now he reports that it does not adequately control his pain. Jason says that his back pain is worse in the morning and is somewhat relieved after he gets up and moves around. In addition, he says that the pain often disrupts his sleep about 3 or 4 hours into the night. He has sought chiropractic treatment as well as physical therapy for the back pain, but neither resulted in lasting symptom relief (Tables 1 and 2).</p>
+          <p style="min-height: 230px;">Jason is a 37-year-old male with progressively worsening lower back pain. Thinking back, Jason remembers that even in his late teens he had some sporadic back pain. He first sought treatment for his back pain at the age of 25. There was no injury or identifiable factor or event associated with the pain. At that time, he began treatment with ibuprofen 400 mg taken every 6 hours. This provided him with significant symptom relief. However, after about 5 years, he developed intolerable gastrointestinal (GI) side effects. He switched to naproxen 220 mg BID. This provided relief for a time, but now he reports that it does not adequately control his pain. Jason says that his back pain is worse in the morning and is somewhat relieved after he gets up and moves around. In addition, he says that the pain often disrupts his sleep about 3 or 4 hours into the night. He has sought chiropractic treatment as well as physical therapy for the back pain, but neither resulted in lasting symptom relief (Tables 1 and 2).</p>
         </subsec_content>
         <qna_form/>
       </subsec_element>
@@ -102,102 +102,102 @@
         </subsec_header>
         <subsec_content>
           <table class="inline_data_table">
-    <tbody>
-        <tr valign="top">
-            <th>History</th>
-            <th>Findings</th>
-        </tr>
-        <tr valign="top">
-            <td>Medical</td>
-            <td>
-            <ul>
-                <li>He is sexually active with multiple partners, both men and women, and has a history of dysuria</li>
-                <li>Three past episodes of uveitis that were treated by an ophthalmologist</li>
-                <li>Past episode of left foot plantar fasciitis that was treated by a podiatrist
-                <ul>
-                    <li>Currently has left-sided Achilles tendonitis, diagnosed by his primary care physician</li>
-                </ul>
-                </li>
-            </ul>
-            </td>
-        </tr>
-        <tr valign="top">
-            <td>Medications</td>
-            <td>Naproxen 220 mg BID</td>
-        </tr>
-        <tr valign="top">
-            <td>Allergies</td>
-            <td>NKDA</td>
-        </tr>
-        <tr valign="top">
-            <td>Surgical</td>
-            <td>None</td>
-        </tr>
-        <tr valign="top">
-            <td>Family</td>
-            <td>Mother: 65, alive<br/>
-                  <br/>Father: 68, alive<br/>
-                  <br/>No siblings</td>
-        </tr>
-        <tr valign="top">
-            <td>Social</td>
-            <td>Single<br/>
-                  <br/>Alcohol: social (3-5 beers per week)<br/>
-                  <br/>Tobacco: none<br/>
-                  <br/>Illicit drugs: none</td>
-        </tr>
-        <tr valign="top">
-            <th>Physical Examination</th>
-            <th>Findings</th>
-        </tr>
-        <tr valign="top">
-            <td>Vital signs</td>
-            <td>BP 128/84 mm Hg; pulse rate 75/min, regular; respirations 12/min; temperature 98.7⁰F; O<sub>2</sub> saturation 95%, BMI 28 kg/m<sup>2</sup>
-                </td>
-        </tr>
-        <tr valign="top">
-            <td>General</td>
-            <td>In no acute distress</td>
-        </tr>
-        <tr valign="top">
-            <td>Skin</td>
-            <td>Normal, no evidence of psoriasis</td>
-        </tr>
-        <tr valign="top">
-            <td>HEENT</td>
-            <td>Normal</td>
-        </tr>
-        <tr valign="top">
-            <td>Pulmonary</td>
-            <td>Normal breath sounds bilaterally, no adventitious sounds</td>
-        </tr>
-        <tr valign="top">
-            <td>Heart</td>
-            <td>Heart sounds normal, no murmur</td>
-        </tr>
-        <tr valign="top">
-            <td>Abdomen</td>
-            <td>Nontender, no organomegaly</td>
-        </tr>
-        <tr valign="top">
-            <td>Musculoskeletal</td>
-            <td>
-            <ul>
-                <li>Peripheral joints: no synovitis or tenderness</li>
-                <li>Tenderness over bilateral sacroiliac joints</li>
-                <li>Schober's test: 4 cm</li>
-                <li>Chest expansion: 1.5 cm</li>
-                <li>Tenderness on L plantar fascia insertion on L calcaneum on palpation</li>
-                <li>Tenderness and swelling at the insertion of the L Achilles tendon</li>
-            </ul>
-            </td>
-        </tr>
-        <tr valign="top">
-            <td>Neurological</td>
-            <td>No focal deficit</td>
-        </tr>
-    </tbody>
-</table>
+              <tbody>
+                  <tr valign="top">
+                      <th>History</th>
+                      <th>Findings</th>
+                  </tr>
+                  <tr valign="top">
+                      <td>Medical</td>
+                      <td>
+                      <ul>
+                          <li>He is sexually active with multiple partners, both men and women, and has a history of dysuria</li>
+                          <li>Three past episodes of uveitis that were treated by an ophthalmologist</li>
+                          <li>Past episode of left foot plantar fasciitis that was treated by a podiatrist
+                          <ul>
+                              <li>Currently has left-sided Achilles tendonitis, diagnosed by his primary care physician</li>
+                          </ul>
+                          </li>
+                      </ul>
+                      </td>
+                  </tr>
+                  <tr valign="top">
+                      <td>Medications</td>
+                      <td>Naproxen 220 mg BID</td>
+                  </tr>
+                  <tr valign="top">
+                      <td>Allergies</td>
+                      <td>NKDA</td>
+                  </tr>
+                  <tr valign="top">
+                      <td>Surgical</td>
+                      <td>None</td>
+                  </tr>
+                  <tr valign="top">
+                      <td>Family</td>
+                      <td>Mother: 65, alive<br/>
+                            <br/>Father: 68, alive<br/>
+                            <br/>No siblings</td>
+                  </tr>
+                  <tr valign="top">
+                      <td>Social</td>
+                      <td>Single<br/>
+                            <br/>Alcohol: social (3-5 beers per week)<br/>
+                            <br/>Tobacco: none<br/>
+                            <br/>Illicit drugs: none</td>
+                  </tr>
+                  <tr valign="top">
+                      <th>Physical Examination</th>
+                      <th>Findings</th>
+                  </tr>
+                  <tr valign="top">
+                      <td>Vital signs</td>
+                      <td>BP 128/84 mm Hg; pulse rate 75/min, regular; respirations 12/min; temperature 98.7⁰F; O<sub>2</sub> saturation 95%, BMI 28 kg/m<sup>2</sup>
+                          </td>
+                  </tr>
+                  <tr valign="top">
+                      <td>General</td>
+                      <td>In no acute distress</td>
+                  </tr>
+                  <tr valign="top">
+                      <td>Skin</td>
+                      <td>Normal, no evidence of psoriasis</td>
+                  </tr>
+                  <tr valign="top">
+                      <td>HEENT</td>
+                      <td>Normal</td>
+                  </tr>
+                  <tr valign="top">
+                      <td>Pulmonary</td>
+                      <td>Normal breath sounds bilaterally, no adventitious sounds</td>
+                  </tr>
+                  <tr valign="top">
+                      <td>Heart</td>
+                      <td>Heart sounds normal, no murmur</td>
+                  </tr>
+                  <tr valign="top">
+                      <td>Abdomen</td>
+                      <td>Nontender, no organomegaly</td>
+                  </tr>
+                  <tr valign="top">
+                      <td>Musculoskeletal</td>
+                      <td>
+                      <ul>
+                          <li>Peripheral joints: no synovitis or tenderness</li>
+                          <li>Tenderness over bilateral sacroiliac joints</li>
+                          <li>Schober's test: 4 cm</li>
+                          <li>Chest expansion: 1.5 cm</li>
+                          <li>Tenderness on L plantar fascia insertion on L calcaneum on palpation</li>
+                          <li>Tenderness and swelling at the insertion of the L Achilles tendon</li>
+                      </ul>
+                      </td>
+                  </tr>
+                  <tr valign="top">
+                      <td>Neurological</td>
+                      <td>No focal deficit</td>
+                  </tr>
+              </tbody>
+          </table>  
 
 <blockquote>BMI = body mass index; BP = blood pressure; HEENT = head, eyes, ears, neck, throat; NKDA = no known drug allergies.</blockquote>
         </subsec_content>

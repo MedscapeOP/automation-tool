@@ -35,7 +35,12 @@ describe('Test And Teach', function () {
 
         contentBlock3 = fs.readFileSync(__dirname + '/input/test-and-teach/content-block-3.html').toString();
 
+        contentBlockXML = fs.readFileSync(__dirname + '/input/test-and-teach/content-block.xml').toString();
+
         contentBlockTest = fs.readFileSync(__dirname + '/input/test-and-teach/content-block-test.html').toString();
+
+        contentBlockTestXML = fs.readFileSync(__dirname + '/input/test-and-teach/content-block-test.xml').toString();
+
 
         completeTestAndTeach = fs.readFileSync(__dirname + '/input/test-and-teach/test-and-teach-902362.xml').toString();
 
@@ -130,7 +135,7 @@ describe('Test And Teach', function () {
 
     describe('#getContentBlockObjects()', function () {
         it('should return array of objects with properties set for level 1s, level 2s, tables, figures, and QnA #s', function () {
-            var levelTwos = require('./input/test-and-teach/content-block');
+            var levelTwos = require('./input/test-and-teach/content-block-test');
             var contentBlock = contentBlockTest;
             var result = testAndTeach.getContentBlockObjects(contentBlock, program);
             // console.log("RESULT CONTENT BLOCK: ", result);
@@ -149,7 +154,12 @@ describe('Test And Teach', function () {
     
     describe("buildContentTOC", function () {
         it('should take in raw content block string and return TOC element', function () {
-
+            var blockObjects = require('./input/test-and-teach/content-block-test');
+            var contentBlockXML = contentBlockTestXML;
+            var result = testAndTeach.buildContentTOC(blockObjects, program).toObjectLiteral();
+            result = utils.xmlOps.objectToXMLString(result);
+            fs.writeFileSync(__dirname + '/output/test-and-teach/content-toc.xml', result);
+            expect(result).to.equalIgnoreSpaces(contentBlockXML);
         });
     });
 });

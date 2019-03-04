@@ -207,7 +207,7 @@ function getContentBlocks(ticketHTML, program) {
 
 /* MAIN CONTENT 
 -------------------------------------- */
-function buildContentTOC (contentBlockObjects) {
+function buildContentTOC (contentBlockObjects, program) {
 /* 
 Algorithm Ideas
     - tocElements = [];
@@ -513,6 +513,7 @@ module.exports = {
     getContentBlockObjects,
     getQNANumber,
     getContentBlocks,
+    buildContentTOC,
     buildTestAndTeach
 }
 
