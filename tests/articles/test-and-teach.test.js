@@ -133,13 +133,24 @@ describe('Test And Teach', function () {
             var levelTwos = require('./input/test-and-teach/content-block');
             var contentBlock = contentBlockTest;
             var result = testAndTeach.getContentBlockObjects(contentBlock, program);
-            console.log("RESULT CONTENT BLOCK: ", result);
+            // console.log("RESULT CONTENT BLOCK: ", result);
+            for (var i = 0; i < result.length; i++) {
+                expect(result[i].label).to.equalIgnoreSpaces(levelTwos[i].label);
+                expect(result[i].textBlock).to.equalIgnoreSpaces(levelTwos[i].textBlock);
+                expect(result[i].type).to.equalIgnoreSpaces(levelTwos[i].type);
+            }  
         });
     });
 
     describe('#getQNANumber()', function () {
         it('should return QNA form number for the contentBlock', function () {
         });
-    });    
+    }); 
+    
+    describe("buildContentTOC", function () {
+        it('should take in raw content block string and return TOC element', function () {
+
+        });
+    });
 });
 

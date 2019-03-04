@@ -148,40 +148,33 @@ function getLevelTwos(contentBlockHTML, program) {
 
 function getContentBlockObjects(contentBlockHTML, program) {
     /*
+    UTILITY FUNCTION: 
+    - Find all level 1s in order 
+        - Look for: <<Level 1>>
+    - Find all level 2s in order 
+        - Look for: <<Level 2>> 
+    - Find all Questions in order 
+        - Start: QUESTION
+        - End: at Next heading () 
+        - Goal of this function would be to determine page
+    - Find all Tables in order 
+        - Start: <<insert table (/d)>>
+        - End: <<end table (/d)>>
+    - Find Figures 
+        - Look for <<insert figure (/d)>>
+
+    - Main process is finding all relevant textblocks in order 
+        - Need a new stringOps function --> getAllBlocksInOrder(textblock, startRegExpArray, endRegExpArray)
+
     - Flatten all component arrays into one 
     - order the component array by its index value
-    
     Paragraph Regex: (?:<p>(?!<strong>)(?!<a)(?!&#9633;).*</p>){1,}
-    
-        - IDEA:
-            - Find each component type.
-            - Loop through results of each 
-                - remove the textblock from the temp string
-                - Use string.search or string.replace --> No indices   
-            - After looping through and breaking down the temp string
-                - What should remain are the blocks of plain paragraph tags.  
     */
     var tables, figures, levelOnes, levelTwos;
     tables = getTables(contentBlockHTML, program);
     figures = getFigures(contentBlockHTML, program);
     levelOnes = getLevelOnes(contentBlockHTML, program);
     levelTwos = getLevelTwos(contentBlockHTML, program);
-
-    // for (var i = 0; i < tables.length; i++) {
-    //     var currentTable = tables[i].textBlock;
-    //     console.log("TABLE: ", currentTable);
-    //     for (var o = 0; o < levelTwos.length; o++) {
-    //         levelTwos[o].textBlock = levelTwos[o].textBlock.replace(currentTable, "");
-    //         console.log("LEVEL 2: ", levelTwos[o].textBlock);
-    //     }
-    // }
-
-    // for (var i = 0; i < figures.length; i++) {
-    //     var currentFigure = figures[i].textBlock;
-    //     for (var o = 0; o < levelTwos.length; o++) {
-    //         levelTwos[o].textBlock = levelTwos[o].textBlock.replace(currentFigure, "");
-    //     }
-    // }
 
     var components = [tables, figures, levelOnes, levelTwos];
     return _.sortBy(_.flatten(components), [function(o) { return o.startIndex; }]);    
@@ -214,70 +207,55 @@ function getContentBlocks(ticketHTML, program) {
 
 /* MAIN CONTENT 
 -------------------------------------- */
-function buildContentTOC (articleComponent) {
+function buildContentTOC (contentBlockObjects) {
 /* 
 Algorithm Ideas
-
-UTILITY FUNCTION: 
-- Find all level 1s in order 
-    - Look for: <<Level 1>>
-- Find all level 2s in order 
-    - Look for: <<Level 2>> 
-- Find all Questions in order 
-    - Start: QUESTION
-    - End: at Next heading () 
-    - Goal of this function would be to determine page
-- Find all Tables in order 
-    - Start: <<insert table (/d)>>
-    - End: <<end table (/d)>>
-- Find Figures 
-    - Look for <<insert figure (/d)>>
-
-- Main process is finding all relevant textblocks in order 
-    - Need a new stringOps function --> getAllBlocksInOrder(textblock, startRegExpArray, endRegExpArray)
-
-- Split total document into separate pages - each page object should include its QNA form # (if it has one).
     - tocElements = [];
-    - For each page - Find all components in order 
-        - tocInstance = new TOCElement(); 
-        - currentSection = null; 
-        - getContentBlockObjects():
-            - Flatten all component arrays into one 
-            - order the component array by its index value
-        - For each component in the array 
-            - switch (component.type) 
-                - case "level 1":
-                    // Case where there is a new section
-                    // Insert the current section and create a new one. 
-                    - if currentSection
-                        - tocInstance.insertSection(currentSection);
-                    - currentSection = buildLevel1Section() 
-                        - Function should test if level 1 text contains either "case 1" or "case 2"
-                        - This should be the determining factor for if there is a Case image or not.                                                        
-                - case "level 2": 
-                    - buildLevel2Subsection
-                    - if !currentSection 
-                        - currentSection = create Section 
-                    - insert level2Subsection into section 
-                - case "table": 
-                    - buildTableSubsection
-                    - If !currentSection
-                        - currentSection = create Section 
-                    - insert tableSubsection into section 
-                - case "figure":
-                    - buildFigureSubsection 
-                    - If !currentSection 
-                        - currentSection = create Section 
-                    - insert figureSubsection into section 
-            if (lastComponent) {
-                tocInstance.insertSection(currentSection);
-            }
+    - For each page / content block, get all of its corresponding content block objects  
+        - contentBlockObjects = use getContentBlockObjects() 
+    - tocInstance = new TOCElement(); 
+    - currentSection = null; 
+    - For each component in the contentBlockObjects 
+        - switch (component.type) 
+            - case "level 1":
+                // Case where there is a new section
+                // Insert the current section and create a new one. 
+                - if currentSection
+                    - tocInstance.insertSection(currentSection);
+                - currentSection = buildLevel1Section() 
+                    - Function should test if level 1 text contains either "case 1" or "case 2"
+                    - This should be the determining factor for if there is a Case image or not.                                                        
+            - case "level 2": 
+                - buildLevel2Subsection
+                - if !currentSection 
+                    - currentSection = create Section 
+                - insert level2Subsection into section 
+            - case "table": 
+                - buildTableSubsection
+                - If !currentSection
+                    - currentSection = create Section 
+                - insert tableSubsection into section 
+            - case "figure":
+                - buildFigureSubsection 
+                - If !currentSection 
+                    - currentSection = create Section 
+                - insert figureSubsection into section 
+        if (lastComponent) {
+            tocInstance.insertSection(currentSection);
+        }
 */
-    return new TOCElement();
+return new TOCElement();
 }
 
 function getMainContent(articleContent, program) {
+/* 
+Algorithm Ideas
+- Split total document into separate pages - each page object should include its QNA form # (if it has one) - use getContentBlocks()
+- For each page create a TOCElement 
+    - Use buildContentTOC
+    - If 
 
+*/
 /* 
 TT_Transcript: CREATE QUESTION TOC ELEMENTS (1 FOR: EACH QUESTION FORM); CREATE SUBSECTIONS FOR TEXT BLOCKS; CREATE SUBSECTIONS FOR TABLES AND FIGURES; POST ASSESSMENT; BLANK RESULTS PAGE; ABBREVIATIONS; REFERENCES; BACK MATTER; INSERT FIGURES; INSERT PATIENT CASE IMAGES; FORMAT AND INSERT HTML TABLES;
 */
