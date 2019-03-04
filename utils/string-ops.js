@@ -131,6 +131,8 @@ function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray, stripS
                 startIndex: 0, 
                 endIndex: endRegex.index
             };
+            // console.log("IF BLOCK INDEX", textBlock.indexOf(currentBlock.textBlock));
+            currentBlock.startIndex = textBlock.indexOf(currentBlock.textBlock);
             substring = substring.substring(currentBlock.endIndex + 1);
             if (currentBlock.textBlock.length > 50) {
                 // QUICK FIX TO PROBLEM OF EMPTY SECTIONS 
@@ -147,6 +149,8 @@ function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray, stripS
             //     continue;
             // }
             currentBlock = getTextBlock(substring, startRegex.symbol, endRegex.symbol, stripStart, includeEnd);
+
+            currentBlock.startIndex = textBlock.indexOf(currentBlock.textBlock);
             // if (!isBlankOrWhiteSpace(currentBlock.textBlock) && !isEmptyString(currentBlock.textBlock)) {
             //     resultArray.push(currentBlock);
             // }
@@ -159,8 +163,10 @@ function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray, stripS
                 label: substring.match(startRegex.symbol)[0], 
                 textBlock: substring.substring(startRegex.index), 
                 startIndex: startRegex.index, 
-                endIndex: null
+                endIndex: null,
             };
+            currentBlock.startIndex = textBlock.indexOf(currentBlock.textBlock);
+            // console.log("ELSE BLOCK INDEX", textBlock.indexOf(currentBlock.textBlock));
             substring = null;
             resultArray.push(currentBlock);
         }        

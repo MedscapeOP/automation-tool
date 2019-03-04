@@ -113,7 +113,8 @@ function getLevelTwos(contentBlockHTML, program) {
 */
     var startRegexps = [
         /(?:&lt;){1,}level 2(?:&gt;){1,}.*/gi,
-        /&lt;&lt;level 2&gt;&gt;.*/gi
+        /&lt;&lt;level 2&gt;&gt;.*/gi,
+        /(?:&lt;){1,}end table.*(?:&gt;){1,}.*/gi
     ];
 
     var endRegexps = [ 
@@ -123,7 +124,7 @@ function getLevelTwos(contentBlockHTML, program) {
         /&lt;&lt;level 1&gt;&gt;.*/gi,
         // /(?:&lt;){1,}level 2(?:&gt;){1,}.*/gi,
         // /&lt;&lt;level 2&gt;&gt;.*/gi
-        // /.*Table \d\..*/g
+        /.*Table \d\..*/g
     ];
 
     var blocks = utils.stringOps.getAllBlocksInOrder(contentBlockHTML, startRegexps, endRegexps, true, false);
@@ -147,9 +148,8 @@ function getLevelTwos(contentBlockHTML, program) {
 
 function getContentBlockObjects(contentBlockHTML, program) {
     /*
-        Will call this get sections and subsection objects. 
-        Level 2 is the most simple construct so we don't need to "look"
-        - Instead we should look for everything else and call those     functions inside here. 
+    - Flatten all component arrays into one 
+    - order the component array by its index value
     
     Paragraph Regex: (?:<p>(?!<strong>)(?!<a)(?!&#9633;).*</p>){1,}
     
@@ -160,9 +160,32 @@ function getContentBlockObjects(contentBlockHTML, program) {
                 - Use string.search or string.replace --> No indices   
             - After looping through and breaking down the temp string
                 - What should remain are the blocks of plain paragraph tags.  
-    
     */
+    var tables, figures, levelOnes, levelTwos;
+    tables = getTables(contentBlockHTML, program);
+    figures = getFigures(contentBlockHTML, program);
+    levelOnes = getLevelOnes(contentBlockHTML, program);
+    levelTwos = getLevelTwos(contentBlockHTML, program);
 
+    // for (var i = 0; i < tables.length; i++) {
+    //     var currentTable = tables[i].textBlock;
+    //     console.log("TABLE: ", currentTable);
+    //     for (var o = 0; o < levelTwos.length; o++) {
+    //         levelTwos[o].textBlock = levelTwos[o].textBlock.replace(currentTable, "");
+    //         console.log("LEVEL 2: ", levelTwos[o].textBlock);
+    //     }
+    // }
+
+    // for (var i = 0; i < figures.length; i++) {
+    //     var currentFigure = figures[i].textBlock;
+    //     for (var o = 0; o < levelTwos.length; o++) {
+    //         levelTwos[o].textBlock = levelTwos[o].textBlock.replace(currentFigure, "");
+    //     }
+    // }
+
+    var components = [tables, figures, levelOnes, levelTwos];
+    return _.sortBy(_.flatten(components), [function(o) { return o.startIndex; }]);    
+    // return levelTwos;
 }
 
 function getQNANumber (contentBlockHTML, program) {
@@ -218,8 +241,9 @@ UTILITY FUNCTION:
     - For each page - Find all components in order 
         - tocInstance = new TOCElement(); 
         - currentSection = null; 
-        - Flatten all component arrays into one 
-        - order the component array by its index value
+        - getContentBlockObjects():
+            - Flatten all component arrays into one 
+            - order the component array by its index value
         - For each component in the array 
             - switch (component.type) 
                 - case "level 1":
