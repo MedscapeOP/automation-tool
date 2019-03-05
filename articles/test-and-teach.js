@@ -146,46 +146,50 @@ function getLevelTwos(contentBlockHTML, program) {
     return blocks;
 }
 
-function getContentBlockObjects(contentBlockHTML, program) {
+function getContentBlockComponents(contentBlockObject, program) {
     /*
     UTILITY FUNCTION: 
-    - Find all level 1s in order 
-        - Look for: <<Level 1>>
-    - Find all level 2s in order 
-        - Look for: <<Level 2>> 
-    - Find all Questions in order 
-        - Start: QUESTION
-        - End: at Next heading () 
-        - Goal of this function would be to determine page
-    - Find all Tables in order 
-        - Start: <<insert table (/d)>>
-        - End: <<end table (/d)>>
-    - Find Figures 
-        - Look for <<insert figure (/d)>>
-
-    - Main process is finding all relevant textblocks in order 
-        - Need a new stringOps function --> getAllBlocksInOrder(textblock, startRegExpArray, endRegExpArray)
-
+    - Find all level 1s in order - Look for: <<Level 1>>
+    - Find all level 2s in order - Look for: <<Level 2>> 
+    - Find all Tables in order - Start: <<insert table (/d)>> - End: <<end table (/d)>>
+    - Find Figures - Look for <<insert figure (/d)>>
     - Flatten all component arrays into one 
     - order the component array by its index value
-    Paragraph Regex: (?:<p>(?!<strong>)(?!<a)(?!&#9633;).*</p>){1,}
-    */
+        string: strings[i],
+        qnaNumber: null
+    */ 
     var tables, figures, levelOnes, levelTwos;
-    tables = getTables(contentBlockHTML, program);
-    figures = getFigures(contentBlockHTML, program);
-    levelOnes = getLevelOnes(contentBlockHTML, program);
-    levelTwos = getLevelTwos(contentBlockHTML, program);
+    tables = getTables(contentBlockObject.string, program);
+    figures = getFigures(contentBlockObject.string, program);
+    levelOnes = getLevelOnes(contentBlockObject.string, program);
+    levelTwos = getLevelTwos(contentBlockObject.string, program);
 
-    var components = [tables, figures, levelOnes, levelTwos];
-    return _.sortBy(_.flatten(components), [function(o) { return o.startIndex; }]);    
-    // return levelTwos;
+    var components = [tables, figures, levelOnes, levelTwos];     
+    return {
+        objects: _.sortBy(_.flatten(components), [function(o) { return o.startIndex; }]),
+        qnaNumber: contentBlockObject.qnaNumber
+    };    
 }
 
-function getQNANumber (contentBlockHTML, program) {
+function hasQNANumber (contentBlockHTML) {
+/*
+- Search to see if the contentBlockHTML contains a Question 
+- If it does return true
+*/
+    var questionRegexArray = [
+        /.*Question \d.*/gi,
+        /.*Answer choices &\#953;.*/gi
+    ];
 
+    var nextRegex = utils.stringOps.getNextRegex(contentBlockHTML, questionRegexArray);
+
+    if (nextRegex != -1) {
+        return true;
+    }
+    return false;
 }
 
-function getContentBlocks(ticketHTML, program) {
+function getContentBlockObjects(ticketHTML, program) {
     var breakpoints = [
         /(?:&lt;){1,}level 1(?:&gt;){1,}.*Case \d:.*/gi,
         /&lt;&lt;level 1&gt;&gt;.*Case \d:.*/gi,
@@ -200,14 +204,27 @@ function getContentBlocks(ticketHTML, program) {
     */
     var {textBlock} = utils.stringOps.getTextBlock(ticketHTML, /<strong>Content/g, /<strong>Abbreviations/g, false, true);
 
-    var result = utils.stringOps.sliceAtBreakpoints(textBlock, breakpoints);
-
+    var result = [];
+    var strings = utils.stringOps.sliceAtBreakpoints(textBlock, breakpoints);
+    var currentBlock = null;
+    var qnaNumber = 3;
+    for (var i = 0; i < strings.length; i++) {
+        currentBlock = {
+            string: strings[i],
+            qnaNumber: null
+        };
+        if (hasQNANumber(currentString)) {
+            currentBlock.qnaNumber = qnaNumber;
+            qnaNumber++;
+        }
+        result.push(currentBlock);
+    }
     return result;
 }
 
 /* MAIN CONTENT 
 -------------------------------------- */
-function buildContentTOC (contentBlockObjects, program) {
+function buildContentTOC (contentBlockComponents, program) {
 /* 
 Algorithm Ideas
     - tocElements = [];
@@ -510,9 +527,9 @@ module.exports = {
     getFigures,
     getLevelOnes,
     getLevelTwos,
+    getContentBlockComponents,
     getContentBlockObjects,
-    getQNANumber,
-    getContentBlocks,
+    hasQNANumber,
     buildContentTOC,
     buildTestAndTeach
 }

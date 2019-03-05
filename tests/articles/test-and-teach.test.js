@@ -41,7 +41,6 @@ describe('Test And Teach', function () {
 
         contentBlockTestXML = fs.readFileSync(__dirname + '/input/test-and-teach/content-block-test.xml').toString();
 
-
         completeTestAndTeach = fs.readFileSync(__dirname + '/input/test-and-teach/test-and-teach-902362.xml').toString();
 
         program = app.config.programs.testAndTeach;
@@ -49,17 +48,9 @@ describe('Test And Teach', function () {
     });
     
     /* DONE */
-    describe('#getContentBlocks()', function () {
+    describe('#getContentBlockObjects()', function () {
         it('should return array of content blocks (markup separated at each Question / new case)', function () {
-            /*
-            CALL ORDER: 
-            - buildTestAndTeach ()
-                - getContentBlocks(ticket) --> contentBlocks 
-                - getContentBlockObjects(contentBlocks[i]); --> contentBlockObjects
-                    - getTables, getFigures, getLevelOnes
-                - Loop through contentBlockObjects to build XML object 
-            */ 
-            var components = require('./input/test-and-teach/content-components-902362');
+            // Works
         });
     });
 
@@ -133,24 +124,25 @@ describe('Test And Teach', function () {
         });
     });
 
-    describe('#getContentBlockObjects()', function () {
+    describe('#getContentBlockComponents()', function () {
         it('should return array of objects with properties set for level 1s, level 2s, tables, figures, and QnA #s', function () {
-            var levelTwos = require('./input/test-and-teach/content-block-test');
-            var contentBlock = contentBlockTest;
-            var result = testAndTeach.getContentBlockObjects(contentBlock, program);
+            var contentBlockComponents = require('./input/test-and-teach/content-block-test').objects;
+            var contentBlock = {
+                string: contentBlockTest,
+                qnaNumber: null
+            };
+            var result = testAndTeach.getContentBlockComponents(contentBlock, program);
+            var qnaNumber = result.qnaNumber;
+            result = result.objects;
             // console.log("RESULT CONTENT BLOCK: ", result);
             for (var i = 0; i < result.length; i++) {
-                expect(result[i].label).to.equalIgnoreSpaces(levelTwos[i].label);
-                expect(result[i].textBlock).to.equalIgnoreSpaces(levelTwos[i].textBlock);
-                expect(result[i].type).to.equalIgnoreSpaces(levelTwos[i].type);
+                expect(result[i].label).to.equalIgnoreSpaces(contentBlockComponents[i].label);
+                expect(result[i].textBlock).to.equalIgnoreSpaces(contentBlockComponents[i].textBlock);
+                expect(result[i].type).to.equalIgnoreSpaces(contentBlockComponents[i].type);
             }  
+            expect(qnaNumber).to.equal(null);
         });
     });
-
-    describe('#getQNANumber()', function () {
-        it('should return QNA form number for the contentBlock', function () {
-        });
-    }); 
     
     describe("buildContentTOC", function () {
         it('should take in raw content block string and return TOC element', function () {
