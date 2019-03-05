@@ -224,12 +224,27 @@ function getContentBlockObjects(ticketHTML, program) {
 
 /* MAIN CONTENT 
 -------------------------------------- */
-function buildContentTOC (contentBlockComponents, program) {
+function buildTableSubsection () {
+
+}
+
+function buildFigureSubsection () {
+
+}
+
+function buildLevel1Section () {
+/*
+- Function should test if level 1 text contains either "case 1" or "case 2"
+- This should be the determining factor for if there is a Case image or not. 
+*/
+}
+
+function buildLevel2Subsection () {
+
+}
+
 /* 
-Algorithm Ideas
-    - tocElements = [];
-    - For each page / content block, get all of its corresponding content block objects  
-        - contentBlockObjects = use getContentBlockObjects() 
+Algorithm Ideas 
     - tocInstance = new TOCElement(); 
     - currentSection = null; 
     - For each component in the contentBlockObjects 
@@ -239,9 +254,9 @@ Algorithm Ideas
                 // Insert the current section and create a new one. 
                 - if currentSection
                     - tocInstance.insertSection(currentSection);
-                - currentSection = buildLevel1Section() 
+                - currentSection = buildLevel1Section()
                     - Function should test if level 1 text contains either "case 1" or "case 2"
-                    - This should be the determining factor for if there is a Case image or not.                                                        
+                    - This should be the determining factor for if there is a Case image or not.                    
             - case "level 2": 
                 - buildLevel2Subsection
                 - if !currentSection 
@@ -261,7 +276,46 @@ Algorithm Ideas
             tocInstance.insertSection(currentSection);
         }
 */
-return new TOCElement();
+function buildContentTOC (contentBlockComponents, program) {
+    var components = contentBlockComponents.objects;
+    var tocInstance = new TOCElement(); 
+    var currentSection = null;
+    var currentSubsection = null;
+    for (var i = 0; i < components.length; i++) {
+        switch (components[i].type) {
+            case "levelOne":
+            /* 
+                // Case where there is a new section
+                // Insert the current section and create a new one. 
+            */
+                if (currentSection) {
+                    tocInstance.insertSectionElement(currentSection);
+                } 
+                var levelOne = buildLevel1Section(components[i]);
+                currentSection = levelOne.sectionElement;
+                currentSubsection = levelOne.subsectionElement;
+                break;
+            case "figure":
+                currentSubsection = buildFigureSubsection(components[i]);
+                break;
+            case "table":
+                currentSubsection = buildTableSubsection(components[i]);
+                break;
+            default: 
+                currentSubsection = buildLevel2Subsection(components[i]);
+                break;
+        }
+        if (!currentSection) {
+            currentSection = new SectionElement();
+        }
+        currentSection.insertSubsectionElement(currentSubsection);  
+
+        if (i + 1 == components.length) {
+            tocInstance.insertSection(currentSection);
+        }  
+    } 
+              
+    return tocInstance;
 }
 
 function getMainContent(articleContent, program) {
