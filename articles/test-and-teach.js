@@ -59,7 +59,7 @@ function getFigures(contentBlockHTML, program) {
         textBlock = textBlock.replace(/.*<img .*/g, 'IMAGE---PLACEHOLDER');
         // console.log("FIGURES BLOCK AFTER REPLACE: ", textBlock);
         textBlock = utils.cleanHTML.paragraph(textBlock);
-        figures[i].textBlock = textBlock.replace(/IMAGE---PLACEHOLDER/g, '<img alt="REPLACE THIS IMAGE WITH FIGURE">');
+        figures[i].textBlock = textBlock.replace(/IMAGE---PLACEHOLDER/g, '<img alt="REPLACE THIS IMAGE WITH FIGURE" />');
         figures[i].type = "figure";
     } 
 
@@ -224,23 +224,29 @@ function getContentBlockObjects(ticketHTML, program) {
 
 /* MAIN CONTENT 
 -------------------------------------- */
-function buildTableSubsection () {
-
+function buildTableSubsection (componentObject) {
+    componentObject.label = `<p><strong>${componentObject.label}</strong></p>`;
+    return buildLevel2Subsection(componentObject);
 }
 
-function buildFigureSubsection () {
-
+function buildFigureSubsection (componentObject) {
+    componentObject.label = `<p><strong>${componentObject.label}</strong></p>`;
+    return buildLevel2Subsection(componentObject);
 }
 
-function buildLevel1Section () {
+function buildLevel1Section (componentObject) {
 /*
 - Function should test if level 1 text contains either "case 1" or "case 2"
 - This should be the determining factor for if there is a Case image or not. 
 */
+    return new SectionElement();
 }
 
-function buildLevel2Subsection () {
-
+function buildLevel2Subsection (componentObject) {
+    var levelTwoSubsection = new SubsectionElement();
+    levelTwoSubsection.subsectionContent = utils.wrapSubsectionContent(componentObject.textBlock);
+    levelTwoSubsection.subsectionHeader = componentObject.label;
+    return levelTwoSubsection;
 }
 
 /* 
@@ -311,7 +317,7 @@ function buildContentTOC (contentBlockComponents, program) {
         currentSection.insertSubsectionElement(currentSubsection);  
 
         if (i + 1 == components.length) {
-            tocInstance.insertSection(currentSection);
+            tocInstance.insertSectionElement(currentSection);
         }  
     } 
               

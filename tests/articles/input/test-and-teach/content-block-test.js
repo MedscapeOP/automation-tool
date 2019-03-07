@@ -13,7 +13,7 @@ module.exports = {
         {
             type:"figure",
             textBlock: `
-            <img alt="REPLACE THIS IMAGE WITH FIGURE">
+            <img alt="REPLACE THIS IMAGE WITH FIGURE" />
     
             <p>An evolving understanding of the concept of axSpA has led to a differentiation between nonradiographic axSpA (nr-axSpA) and radiographic axSpA. These 2 terms are distinguished by the degree of sacroiliitis assessed by conventional radiography. Radiographic axSpA, or AS, can be diagnosed only when there is definitive evidence of sacroiliitis on plain radiographs of the sacroiliac.<sup type="ref">[2]</sup></p>
             

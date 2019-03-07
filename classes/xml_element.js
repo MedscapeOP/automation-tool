@@ -211,7 +211,8 @@ class XMLElement {
      */
     
     setMarkupField(propName, newMarkup) {  
-        if (newMarkup) {          
+        if (newMarkup) {
+            console.log("NEW MARKUP: ", newMarkup);          
             var markupObject = xmlOps.xmlStringToJS(newMarkup);
             this[propName].elements = markupObject.elements[0].elements;
         } else {
