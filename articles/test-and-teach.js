@@ -24,6 +24,7 @@ function getTables(contentBlockHTML, program) {
 
     for (var i = 0; i < tables.length; i++) {
         tables[i].textBlock = utils.cleanHTML.tableCleanup(tables[i].textBlock);
+        tables[i].textBlock = utils.cleanHTML.insertEntityPlaceholders(tables[i].textBlock);
         tables[i].label = utils.cleanHTML.paragraph(tables[i].label, false, ['sup']);
         tables[i].type = "table";
     } 
@@ -239,45 +240,52 @@ function buildLevel1Section (componentObject) {
 - Function should test if level 1 text contains either "case 1" or "case 2"
 - This should be the determining factor for if there is a Case image or not. 
 */
-    return new SectionElement();
+    var levelOneSection = new SectionElement();
+    levelOneSection.sectionHeader = componentObject.label;
+    
+    var removeRegex =  /.*(?:&lt;){1,}level 1(?:&gt;){1,}.*/gi;
+    componentObject.textBlock = componentObject.textBlock.replace(removeRegex, "");
+
+    var levelOneSubsection = new SubsectionElement();
+    levelOneSubsection.subsectionContent = utils.wrapSubsectionContent(componentObject.textBlock);
+
+    return {
+        sectionElement: levelOneSection,
+        subsectionElement: levelOneSubsection
+    };
 }
 
 function buildLevel2Subsection (componentObject) {
     var levelTwoSubsection = new SubsectionElement();
     levelTwoSubsection.subsectionContent = utils.wrapSubsectionContent(componentObject.textBlock);
-    levelTwoSubsection.subsectionHeader = componentObject.label;
+    if (componentObject.type == "table" || componentObject.type == "figure") {
+        levelTwoSubsection.subsectionHeaderMarkup = componentObject.label;
+    } else {        
+        var removeRegex = /(?:&lt;){1,}end table.*(?:&gt;){1,}/gi;
+        levelTwoSubsection.subsectionHeader = componentObject.label.replace(removeRegex, "").trim();
+    }
     return levelTwoSubsection;
 }
 
 /* 
-Algorithm Ideas 
+Psuedocode/Algorithm
     - tocInstance = new TOCElement(); 
     - currentSection = null; 
     - For each component in the contentBlockObjects 
         - switch (component.type) 
             - case "level 1":
                 // Case where there is a new section
-                // Insert the current section and create a new one. 
-                - if currentSection
-                    - tocInstance.insertSection(currentSection);
-                - currentSection = buildLevel1Section()
-                    - Function should test if level 1 text contains either "case 1" or "case 2"
-                    - This should be the determining factor for if there is a Case image or not.                    
+                // Insert the current section and create a new one
             - case "level 2": 
-                - buildLevel2Subsection
-                - if !currentSection 
-                    - currentSection = create Section 
-                - insert level2Subsection into section 
+                // buildLevel2Subsection()
             - case "table": 
-                - buildTableSubsection
-                - If !currentSection
-                    - currentSection = create Section 
-                - insert tableSubsection into section 
-            - case "figure":
+                // buildTableSubsection()
+                - case "figure":
                 - buildFigureSubsection 
                 - If !currentSection 
-                    - currentSection = create Section 
+                - currentSection = create Section 
                 - insert figureSubsection into section 
+        - insert created subsection into current section 
         if (lastComponent) {
             tocInstance.insertSection(currentSection);
         }
@@ -294,6 +302,7 @@ function buildContentTOC (contentBlockComponents, program) {
                 // Case where there is a new section
                 // Insert the current section and create a new one. 
             */
+                // console.log("LEVEL ONE SWITCH COMPONENT: ", components[i]);
                 if (currentSection) {
                     tocInstance.insertSectionElement(currentSection);
                 } 
@@ -306,6 +315,7 @@ function buildContentTOC (contentBlockComponents, program) {
                 break;
             case "table":
                 currentSubsection = buildTableSubsection(components[i]);
+                // console.log("TABLE SUBSECTION: ", utils.xmlOps.objectToXMLString(currentSubsection.toObjectLiteral()));
                 break;
             default: 
                 currentSubsection = buildLevel2Subsection(components[i]);
@@ -314,11 +324,17 @@ function buildContentTOC (contentBlockComponents, program) {
         if (!currentSection) {
             currentSection = new SectionElement();
         }
-        currentSection.insertSubsectionElement(currentSubsection);  
-
+      
         if (i + 1 == components.length) {
+            if (contentBlockComponents.qnaNumber) {
+                // currentSection.childElements[childElements.length - 1].qnaForm = contentBlockComponents.qnaNumber;
+                currentSubsection.qnaForm = contentBlockComponents.qnaNumber;
+                currentSection.insertSubsectionElement(currentSubsection);
+            } 
             tocInstance.insertSectionElement(currentSection);
-        }  
+        } else {
+            currentSection.insertSubsectionElement(currentSubsection);
+        }
     } 
               
     return tocInstance;

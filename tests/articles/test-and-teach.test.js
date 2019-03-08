@@ -64,7 +64,7 @@ describe('Test And Teach', function () {
             for (var i = 0; i < result.length; i++) {
                 expect(result[i].label).to.equalIgnoreSpaces(tables[i].label);
                 expect(result[i].type).to.equalIgnoreSpaces(tables[i].type);
-                expect(result[i].textBlock).to.equalIgnoreSpaces(tables[i].textBlock);
+                expect(utils.cleanHTML.cleanEntities(result[i].textBlock)).to.equalIgnoreSpaces(tables[i].textBlock);
             } 
         });
     });
@@ -137,7 +137,7 @@ describe('Test And Teach', function () {
             // console.log("RESULT CONTENT BLOCK: ", result);
             for (var i = 0; i < result.length; i++) {
                 expect(result[i].label).to.equalIgnoreSpaces(contentBlockComponents[i].label);
-                expect(result[i].textBlock).to.equalIgnoreSpaces(contentBlockComponents[i].textBlock);
+                expect(utils.cleanHTML.cleanEntities(result[i].textBlock)).to.equalIgnoreSpaces(contentBlockComponents[i].textBlock);
                 expect(result[i].type).to.equalIgnoreSpaces(contentBlockComponents[i].type);
             }  
             expect(qnaNumber).to.equal(null);
@@ -150,6 +150,7 @@ describe('Test And Teach', function () {
             var contentBlockXML = contentBlockTestXML;
             var result = testAndTeach.buildContentTOC(blockObjects, program).toObjectLiteral();
             result = utils.xmlOps.objectToXMLString(result);
+            result = utils.cleanHTML.cleanEntities(result);
             fs.writeFileSync(__dirname + '/output/test-and-teach/content-toc.xml', result);
             expect(result).to.equalIgnoreSpaces(contentBlockXML);
         });

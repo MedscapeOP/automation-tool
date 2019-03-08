@@ -603,10 +603,24 @@ function cleanEntities (xmlString) {
     return clean;
 }
 
-function tableCleanup(htmlString) {
+function tableCleanup(htmlString, removeFluff=false) {
     var str = htmlString.slice();
-
-    return str;
+    if (removeFluff) {
+        str = removeTicketFluff(str);
+    }
+    var options = {
+        allowedTags: [ 'p', 'br', 'em', 'strong', 'sup', 'sub', 'table', 'td', 'tr', 'th'],
+        allowedAttributes: [],
+        parser: {
+            decodeEntities: false
+        },
+        exclusiveFilter: function(frame) {
+            // return frame.tag === 'a' && !frame.text.trim();
+            return !frame.text.trim();
+        }
+    }
+    var clean = sanitizeHtml(str, options);
+    return clean;
 }
 
 module.exports = {

@@ -50,7 +50,7 @@ module.exports = {
         {
             type: "table",
             textBlock: `<p><strong>Table 3. Phase 3 Trials of TNF Inhibitors Currently Approved for AS and Under Investigation for the Treatment of nr-AxSpA</strong></p>
-    
+
             <p><strong>Study Name</strong></p>
             
             <p><strong>Study Drug</strong></p>
@@ -129,7 +129,7 @@ module.exports = {
             
             <p>16 weeks double blind</p>
             
-            <p> </p>
+            
             
             <p>Active nr-axSpA (BASDAI &#8805;4 and total back pain &#8805;4 on a VAS 0-10 cm)  </p>
             
@@ -145,7 +145,8 @@ module.exports = {
             
             <p>ASAS20 at week 16: 71% vs 40%</p>
             
-            <p>&lt;&lt;CAPTION&gt;&gt;ASAS20 = Assessment in SpondyloArthritis international Society 20%; ASAS40 = Assessment in SpondyloArthritis international Society 40%; SC = subcutaneous; VAS = visual analog scale. </p>
+            <p>&lt;&lt;CAPTION&gt;&gt;ASAS20 = Assessment in SpondyloArthritis international Society 20%;
+            ASAS40 = Assessment in SpondyloArthritis international Society 40%; SC = subcutaneous; VAS = visual analog scale. </p>
             
             <p><strong>&lt;&lt;end table 3&gt;&gt;</strong></p>`,
             label: "Table 3. Phase 3 Trials of TNF Inhibitors Currently Approved for AS and Under Investigation for the Treatment of nr-AxSpA",
@@ -171,7 +172,7 @@ module.exports = {
             endIndex: 0
         }
     ],
-    qnaNumber: null
+    qnaNumber: 3
 };
 
 // Content block test

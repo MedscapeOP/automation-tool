@@ -39,6 +39,14 @@ class SubsectionElement extends XMLElement {
         this.setParagraphTextField("_subsectionHeader", newHeader);
     }
 
+    get subsectionHeaderMarkup() {
+        return this.getMarkupField("_subsectionHeader");
+    }
+
+    set subsectionHeaderMarkup(newHeaderMarkup) {
+        this.setWrappedMarkupField("_subsectionHeader", newHeaderMarkup);
+    }
+
     get subsectionContent() {
         if (this._hasSlides) {
             return this.getMarkupField("_slideIntro");
