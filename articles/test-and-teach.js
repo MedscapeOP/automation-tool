@@ -267,30 +267,30 @@ function buildLevel2Subsection (componentObject) {
     return levelTwoSubsection;
 }
 
-/* 
-Psuedocode/Algorithm
-    - tocInstance = new TOCElement(); 
-    - currentSection = null; 
-    - For each component in the contentBlockObjects 
-        - switch (component.type) 
-            - case "level 1":
-                // Case where there is a new section
-                // Insert the current section and create a new one
-            - case "level 2": 
-                // buildLevel2Subsection()
-            - case "table": 
-                // buildTableSubsection()
-                - case "figure":
-                - buildFigureSubsection 
-                - If !currentSection 
-                - currentSection = create Section 
-                - insert figureSubsection into section 
-        - insert created subsection into current section 
-        if (lastComponent) {
-            tocInstance.insertSection(currentSection);
-        }
-*/
 function buildContentTOC (contentBlockComponents, program) {
+    /* 
+        Psuedocode/Algorithm
+            - tocInstance = new TOCElement(); 
+            - currentSection = null; 
+            - For each component in the contentBlockObjects 
+                - switch (component.type) 
+                    - case "level 1":
+                        // Case where there is a new section
+                        // Insert the current section and create a new one
+                    - case "level 2": 
+                        // buildLevel2Subsection()
+                    - case "table": 
+                        // buildTableSubsection()
+                        - case "figure":
+                        - buildFigureSubsection 
+                        - If !currentSection 
+                        - currentSection = create Section 
+                        - insert figureSubsection into section 
+                - insert created subsection into current section 
+                if (lastComponent) {
+                    tocInstance.insertSection(currentSection);
+                }
+    */
     var components = contentBlockComponents.objects;
     var tocInstance = new TOCElement(); 
     var currentSection = null;
@@ -340,15 +340,15 @@ function buildContentTOC (contentBlockComponents, program) {
     return tocInstance;
 }
 
-function getMainContent(articleContent, program) {
-/* 
-Algorithm Ideas
-- Split total document into separate pages - each page object should include its QNA form # (if it has one) - use getContentBlocks()
-- For each page create a TOCElement 
-    - Use buildContentTOC
-    - If 
+function getMainContentTOCs(articleContent, program) {
+    /* 
+    Algorithm Ideas
+    - Split total document into separate pages - each page object should include its QNA form # (if it has one) - use getContentBlocks()
+    - For each page create a TOCElement 
+        - Use buildContentTOC
+        - If 
 
-*/
+    */
 /* 
 TT_Transcript: CREATE QUESTION TOC ELEMENTS (1 FOR: EACH QUESTION FORM); CREATE SUBSECTIONS FOR TEXT BLOCKS; CREATE SUBSECTIONS FOR TABLES AND FIGURES; POST ASSESSMENT; BLANK RESULTS PAGE; ABBREVIATIONS; REFERENCES; BACK MATTER; INSERT FIGURES; INSERT PATIENT CASE IMAGES; FORMAT AND INSERT HTML TABLES;
 */
@@ -466,8 +466,8 @@ function checklistTestAndTeach(ticket, program) {
     // TITLE 
     checklist.title.result = prodticket.getTitle(ticket, program);
     
-    // SLIDES 
-    checklist.slides.result = prodticket.getSlides(ticket, program);
+    // SLIDES ---> No Slides necessary for this one.  
+    // checklist.slides.result = prodticket.getSlides(ticket, program);
  
     // CONTRIBUTORS
     checklist.contributors.result = prodticket.getContributors(ticket, program);
@@ -522,10 +522,10 @@ function buildTestAndTeach(ticket, program) {
         blankResultsTOC = articleUtils.buildBlankTOC();
     }
 
-    var tocs = getMainContent(checklistResult.properties.articleContent.result, program);
+    var tocs = getMainContentTOCs(checklistResult.properties.articleContent.result, program);
 
-    slidesTOC = tocs.slidesTOC;
-    audienceQATOC = tocs.audienceQATOC; 
+    // slidesTOC = tocs.slidesTOC;
+    // audienceQATOC = tocs.audienceQATOC; 
 
     var abbreviationsMarkup = (checklistResult.properties.abbreviations ? checklistResult.properties.abbreviations.result : "");
     abbreviationsTOC = articleUtils.buildAbbreviations(abbreviationsMarkup, program);
@@ -598,7 +598,7 @@ function buildTestAndTeach(ticket, program) {
 };
 
 module.exports = {
-    getMainContent,
+    getMainContentTOCs,
     getTables,
     getFigures,
     getLevelOnes,

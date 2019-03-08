@@ -25,7 +25,10 @@ describe('Test And Teach', function () {
     var contentBlock1;
     var contentBlock2;
     var contentBlock3;
-    var contentBlockTest; 
+    var contentBlockXML;
+    var contentBlockTest;
+    var contentBlockTestXML; 
+    var mainContentTOCs;
     beforeEach(function() {
         prodTicket = fs.readFileSync(__dirname + '/input/test-and-teach/article-902362.html').toString();
 
@@ -43,6 +46,7 @@ describe('Test And Teach', function () {
 
         completeTestAndTeach = fs.readFileSync(__dirname + '/input/test-and-teach/test-and-teach-902362.xml').toString();
 
+        mainContentTOCs = fs.readFileSync(__dirname + '/input/test-and-teach/main-content-tocs.xml');
         program = app.config.programs.testAndTeach;
 
     });
@@ -144,7 +148,7 @@ describe('Test And Teach', function () {
         });
     });
     
-    describe("buildContentTOC", function () {
+    describe("#buildContentTOC()", function () {
         it('should take in raw content block string and return TOC element', function () {
             var blockObjects = require('./input/test-and-teach/content-block-test');
             var contentBlockXML = contentBlockTestXML;
@@ -153,6 +157,21 @@ describe('Test And Teach', function () {
             result = utils.cleanHTML.cleanEntities(result);
             fs.writeFileSync(__dirname + '/output/test-and-teach/content-toc.xml', result);
             expect(result).to.equalIgnoreSpaces(contentBlockXML);
+        });
+    });
+
+    describe("#getMainContentTOCs()", function () {
+        it("should return TOCs from main content section of prodticket - (no PostAssessment, Blank, Abbreviations, etc.)", function () {
+            var ticketHTMl = prodTicket;
+            var contentBlockXML = mainContentTOCs;
+            var result = testAndTeach.getMainContentTOCs(prodTicket, program);
+            var resultString = "";
+            for (var i = 0; i < result.length; i++) {
+                resultString += utils.xmlOps.objectToXMLString(result[i].toObjectLiteral());
+            }
+            resultString = utils.cleanHTML.cleanEntities(resultString);
+            fs.writeFileSync(__dirname + '/output/test-and-teach/main-content-tocs.xml', resultString);
+            // expect(result).to.equalIgnoreSpaces(contentBlockXML);
         });
     });
 });
