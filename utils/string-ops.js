@@ -313,27 +313,41 @@ function getAllMatchesInOrder(textBlock, regexArray)  {
 //     return result;
 // }
 
-function sliceAtBreakpoints(textBlock, breakRegexArray) {
+function sliceAtBreakpoints(textBlock, breakpointArray) {
     /*
         Use getAllMatches for a regex array and then sort by index. 
         Then loop through and substring using the indices.  
     */
+    var breakRegexArray = _.flatMap(breakpointArray, function (o) {
+        return [o.symbol];
+    });
     var allMatches = getAllMatchesInOrder(textBlock, breakRegexArray);
-//    _.orderBy(allMatches);
+    
+    var inclusiveArray = _.compact(_.flatMap(breakpointArray, function (o) {
+        if (o.inclusive) {
+            return [o.symbol];
+        }
+    }));
+    // console.log("New Breakpoints: ", inclusiveArray);
 
     var result = [];
-
     var substring = "";
     var currentMatch = null;
     var nextMatch = null;
-    var currentSymbol = null;
+    var startIndex = null;
     for (var i = 0; i < allMatches.length; i++) {
         currentMatch = allMatches[i];
+        if (_.indexOf(inclusiveArray, currentMatch.symbol) == -1) {
+            // If not in inclusive array make index not include the matching string. 
+            startIndex = currentMatch.index + currentMatch.matchLength;
+        } else {
+            startIndex = currentMatch.index;
+        }
         if (i == allMatches.length - 1) {
-            substring = textBlock.substring(currentMatch.index + currentMatch.matchLength);
+            substring = textBlock.substring(startIndex);
         } else {
             nextMatch = allMatches[i + 1];
-            substring = textBlock.substring(currentMatch.index + currentMatch.matchLength, nextMatch.index);
+            substring = textBlock.substring(startIndex, nextMatch.index);
         }
         result.push(substring);
     }

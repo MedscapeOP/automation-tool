@@ -182,12 +182,32 @@ describe('Utility Functions', function () {
 
     describe('utils.stringOps.sliceAtBreakpoints()', function () {
         it('should create substrings using the supplied array of breakpoints.', function () {
+            // var breakpoints = [
+            //     /(?:&lt;){1,}level 1(?:&gt;){1,}.*Case \d:.*/gi,
+            //     /&lt;&lt;level 1&gt;&gt;.*Case \d:.*/gi,
+            //     /(?:<strong>){0,}Answer Explanation (?:&#953;){0,}:.*/g,
+            //     /.*Answer Explanation:.*/g,
+            // ];
+
             var breakpoints = [
-                /(?:&lt;){1,}level 1(?:&gt;){1,}.*Case \d:.*/gi,
-                /&lt;&lt;level 1&gt;&gt;.*Case \d:.*/gi,
-                /(?:<strong>){0,}Answer Explanation (?:&#953;){0,}:.*/g,
-                /.*Answer Explanation:.*/g,
+                {
+                    symbol: /(?:&lt;){1,}level 1(?:&gt;){1,}.*Case \d:.*/gi,
+                    inclusive: true
+                },
+                {
+                    symbol: /&lt;&lt;level 1&gt;&gt;.*Case \d:.*/gi, 
+                    inclusive: true
+                },
+                {
+                    symbol: /(?:<strong>){0,}Answer Explanation (?:&#953;){0,}:.*/g,
+                    inclusive: false
+                },
+                {
+                    symbol: /.*Answer Explanation:.*/g, 
+                    inclusive: false
+                }
             ];
+
             /* 
                 POSSIBLE BREAKPOINTS  
                 --> Question Start

@@ -138,6 +138,7 @@ describe('Test And Teach', function () {
             var result = testAndTeach.getContentBlockComponents(contentBlock, program);
             var qnaNumber = result.qnaNumber;
             result = result.objects;
+            // fs.writeFileSync(__dirname + '/output/test-and-teach/block-components.json', JSON.stringify(result, undefined, 2));
             // console.log("RESULT CONTENT BLOCK: ", result);
             for (var i = 0; i < result.length; i++) {
                 expect(result[i].label).to.equalIgnoreSpaces(contentBlockComponents[i].label);

@@ -147,31 +147,6 @@ function getLevelTwos(contentBlockHTML, program) {
     return blocks;
 }
 
-function getContentBlockComponents(contentBlockObject, program) {
-    /*
-    UTILITY FUNCTION: 
-    - Find all level 1s in order - Look for: <<Level 1>>
-    - Find all level 2s in order - Look for: <<Level 2>> 
-    - Find all Tables in order - Start: <<insert table (/d)>> - End: <<end table (/d)>>
-    - Find Figures - Look for <<insert figure (/d)>>
-    - Flatten all component arrays into one 
-    - order the component array by its index value
-        string: strings[i],
-        qnaNumber: null
-    */ 
-    var tables, figures, levelOnes, levelTwos;
-    tables = getTables(contentBlockObject.string, program);
-    figures = getFigures(contentBlockObject.string, program);
-    levelOnes = getLevelOnes(contentBlockObject.string, program);
-    levelTwos = getLevelTwos(contentBlockObject.string, program);
-
-    var components = [tables, figures, levelOnes, levelTwos];     
-    return {
-        objects: _.sortBy(_.flatten(components), [function(o) { return o.startIndex; }]),
-        qnaNumber: contentBlockObject.qnaNumber
-    };    
-}
-
 function hasQNANumber (contentBlockHTML) {
 /*
 - Search to see if the contentBlockHTML contains a Question 
@@ -222,6 +197,32 @@ function getContentBlockObjects(ticketHTML, program) {
     }
     return result;
 }
+
+function getContentBlockComponents(contentBlockObject, program) {
+    /*
+    UTILITY FUNCTION: 
+    - Find all level 1s in order - Look for: <<Level 1>>
+    - Find all level 2s in order - Look for: <<Level 2>> 
+    - Find all Tables in order - Start: <<insert table (/d)>> - End: <<end table (/d)>>
+    - Find Figures - Look for <<insert figure (/d)>>
+    - Flatten all component arrays into one 
+    - order the component array by its index value
+        string: strings[i],
+        qnaNumber: null
+    */ 
+    var tables, figures, levelOnes, levelTwos;
+    tables = getTables(contentBlockObject.string, program);
+    figures = getFigures(contentBlockObject.string, program);
+    levelOnes = getLevelOnes(contentBlockObject.string, program);
+    levelTwos = getLevelTwos(contentBlockObject.string, program);
+
+    var components = [tables, figures, levelOnes, levelTwos];     
+    return {
+        objects: _.sortBy(_.flatten(components), [function(o) { return o.startIndex; }]),
+        qnaNumber: contentBlockObject.qnaNumber
+    };    
+}
+
 
 /* MAIN CONTENT 
 -------------------------------------- */
