@@ -358,26 +358,23 @@ function buildContentTOC (contentBlockComponents, program) {
 
 function getMainContentTOCs(articleContent, program) {
     /* 
-        Algorithm Ideas
-        - Split content section into separate pages -> getContentBlockObjects(contentHTML) 
-        - For each page/contentBlockObject create a TOCElement 
-            - getContentBlockComponents(contentBlockObject)
-            - buildContentTOC(content)
-    */
-    /*
-        getMainContentTOCs 
-        - Use buildContentTOC for the following TOCs
-            CREATE QUESTION TOC ELEMENTS (1 FOR: EACH QUESTION FORM); 
-                - CREATE SUBSECTIONS FOR TEXT BLOCKS; 
-                - CREATE SUBSECTIONS FOR TABLES AND FIGURES; 
-        - Use buildLLAPostTOC() for: 
+        Requirements for getMainContentTOCs: 
+        1) Use buildContentTOC for the following TOCs
+            1a) CREATE QUESTION TOC ELEMENTS (1 FOR: EACH QUESTION FORM); 
+            1b) CREATE SUBSECTIONS FOR TEXT BLOCKS; 
+            1c) CREATE SUBSECTIONS FOR TABLES AND FIGURES; 
+        2) Use buildLLAPostTOC() for: 
             POST ASSESSMENT - buildContentTOC(qnaFormNumber, "Article"); 
 
-        buildTestAndTeach
-        BLANK RESULTS PAGE - buildBlankTOC(); 
-        ABBREVIATIONS - buildAbbreviations(abbreviationsMarkup, program); 
-        REFERENCES - buildReferences(referencesMarkup, program); 
-        BACK MATTER - ; 
+        Algorithm Ideas
+        - Split content section into separate pages -> getContentBlockObjects(contentHTML) 
+        latestQnaNumber = 0;
+        - For each page/contentBlockObject create a TOCElement 
+            - getContentBlockComponents(contentBlockObject)
+            - latestQnaNumber = content.qnaNumber
+            - buildContentTOC(content)
+        - After looping through each contentBlockObject 
+            - Attach EduImpactSubsection 
     */
     var mainTOCs = [];
     for (var i = 0; i < articleComponents.length; i++) {
@@ -507,6 +504,15 @@ function checklistTestAndTeach(ticket, program) {
 /* MASTER FUNCTION 
 -------------------------------------- */
 function buildTestAndTeach(ticket, program) {
+    /*
+        Function requirements for buildTestAndTeach:
+        1) CHECKLIST CREATION 
+            1A) BUILD ALL MAIN CONTENT TOCs 
+        2) BLANK RESULTS PAGE - buildBlankTOC(); 
+        3) ABBREVIATIONS - buildAbbreviations(abbreviationsMarkup, program); 
+        4) REFERENCES - buildReferences(referencesMarkup, program); 
+        5) BACK MATTER - ; 
+    */
     // <script type="text/javascript">var pfizFlag = "active";</script>
     var title, 
     byline, 
