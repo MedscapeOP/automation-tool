@@ -2,7 +2,27 @@
     <toc_label/>
     <toc_type>Default</toc_type>
     <sec_element>
-        <sec_header/>
+        <sec_header>
+            <p>Case 1: Patient Presentation and Background</p>
+        </sec_header>
+        <subsec_element>
+            <subsec_header/>
+            <subsec_content>
+                <table style="margin-right: 20px;" align="left" border="1" bordercolor="#b3b3b3" cellpadding="3" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td align="center">
+                                <img src="/webmd/professional_assets/medscape/images/content/article/902/362/902362-patient1.jpg?interpolation=lanczos-none&amp;resize=200:150" alt="" border="0" width="200"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="min-height: 230px;">
+                    <p>Jason is a 37-year-old male with progressively worsening lower back pain. Thinking back, Jason remembers that even in his late teens he had some sporadic back pain. He first sought treatment for his back pain at the age of 25. There was no injury or identifiable factor or event associated with the pain. At that time, he began treatment with ibuprofen 400 mg taken every 6 hours. This provided him with significant symptom relief. However, after about 5 years, he developed intolerable gastrointestinal (GI) side effects. He switched to naproxen 220 mg BID. This provided relief for a time, but now he reports that it does not adequately control his pain. Jason says that his back pain is worse in the morning and is somewhat relieved after he gets up and moves around. In addition, he says that the pain often disrupts his sleep about 3 or 4 hours into the night. He has sought chiropractic treatment as well as physical therapy for the back pain, but neither resulted in lasting symptom relief (Tables 1 and 2).</p>
+                </p>
+            </subsec_content>
+            <qna_form/>
+        </subsec_element>
         <subsec_element>
             <subsec_header>
                 <p>Discussion</p>

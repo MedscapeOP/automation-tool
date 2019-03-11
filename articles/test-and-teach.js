@@ -88,8 +88,6 @@ function getLevelOnes(contentBlockHTML, program) {
 
     var blocks = utils.stringOps.getAllBlocksInOrder(contentBlockHTML, startRegexps, endRegexps, true, false);
 
-    // console.log("LEVEL ONES BEFORE CLEAN: ", blocks);
-
     _.remove(blocks, function (block) {
         var testString = utils.cleanHTML.onlyParagraphTags(block.textBlock);
         if (testString.length < 30) {
@@ -226,21 +224,31 @@ function getContentBlockComponents(contentBlockObject, program) {
 
 /* MAIN CONTENT 
 -------------------------------------- */
-function buildTableSubsection (componentObject) {
+function buildTableSubsection (componentObject, program) {
     componentObject.label = `<p><strong>${componentObject.label}</strong></p>`;
     return buildLevel2Subsection(componentObject);
 }
 
-function buildFigureSubsection (componentObject) {
+function buildFigureSubsection (componentObject, program) {
     componentObject.label = `<p><strong>${componentObject.label}</strong></p>`;
     return buildLevel2Subsection(componentObject);
 }
 
-function buildLevel1Section (componentObject) {
+function buildLevel1Section (componentObject, program) {
 /*
 - Function should test if level 1 text contains either "case 1" or "case 2"
 - This should be the determining factor for if there is a Case image or not. 
 */
+    var isNewCase = false;
+    var caseNumber = 0;
+    var newCaseRegex = /Case (\d):.*/g; 
+    if (utils.stringOps.regexIndexOf(componentObject.label, newCaseRegex) != -1) {
+        isNewCase = true;
+        caseNumber = parseInt(componentObject.label.replace(newCaseRegex, "$1").trim());
+        // console.log("CASE NUMBER: ", caseNumber);
+    }
+
+
     var levelOneSection = new SectionElement();
     levelOneSection.sectionHeader = componentObject.label;
     
@@ -248,7 +256,14 @@ function buildLevel1Section (componentObject) {
     componentObject.textBlock = componentObject.textBlock.replace(removeRegex, "");
 
     var levelOneSubsection = new SubsectionElement();
-    levelOneSubsection.subsectionContent = utils.wrapSubsectionContent(componentObject.textBlock);
+
+    if (isNewCase) {
+        var content = utils.wrapSubsectionContent(snippets.caseImage(program.articleID, componentObject.textBlock, caseNumber));
+        // console.log("STUFF: ", content);
+        levelOneSubsection.subsectionContent = utils.cleanHTML.insertEntityPlaceholders(content);
+    } else {
+        levelOneSubsection.subsectionContent = utils.wrapSubsectionContent(componentObject.textBlock);
+    }
 
     return {
         sectionElement: levelOneSection,
@@ -256,7 +271,7 @@ function buildLevel1Section (componentObject) {
     };
 }
 
-function buildLevel2Subsection (componentObject) {
+function buildLevel2Subsection (componentObject, program) {
     var levelTwoSubsection = new SubsectionElement();
     levelTwoSubsection.subsectionContent = utils.wrapSubsectionContent(componentObject.textBlock);
     if (componentObject.type == "table" || componentObject.type == "figure") {
@@ -307,19 +322,19 @@ function buildContentTOC (contentBlockComponents, program) {
                 if (currentSection) {
                     tocInstance.insertSectionElement(currentSection);
                 } 
-                var levelOne = buildLevel1Section(components[i]);
+                var levelOne = buildLevel1Section(components[i], program);
                 currentSection = levelOne.sectionElement;
                 currentSubsection = levelOne.subsectionElement;
                 break;
             case "figure":
-                currentSubsection = buildFigureSubsection(components[i]);
+                currentSubsection = buildFigureSubsection(components[i], program);
                 break;
             case "table":
-                currentSubsection = buildTableSubsection(components[i]);
+                currentSubsection = buildTableSubsection(components[i], program);
                 // console.log("TABLE SUBSECTION: ", utils.xmlOps.objectToXMLString(currentSubsection.toObjectLiteral()));
                 break;
             default: 
-                currentSubsection = buildLevel2Subsection(components[i]);
+                currentSubsection = buildLevel2Subsection(components[i], program);
                 break;
         }
         if (!currentSection) {

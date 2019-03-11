@@ -124,7 +124,7 @@ function caseImage(articleID, contentMarkup, caseNumber) {
         <tbody>
             <tr>
                 <td align="center">
-                    <img src="/webmd/professional_assets/medscape/images/content/article/${articleID.slice(0, 3)}/${articleID.slice(3)}/${articleID}-patient${caseNumber}.jpg?interpolation=lanczos-none&resize=200:150" alt="" border="0" width="200">
+                    <img src="/webmd/professional_assets/medscape/images/content/article/${articleID.slice(0, 3)}/${articleID.slice(3)}/${articleID}-patient${caseNumber}.jpg?interpolation=lanczos-none&resize=200:150" alt="" border="0" width="200" />
                 </td>
             </tr>
         </tbody>

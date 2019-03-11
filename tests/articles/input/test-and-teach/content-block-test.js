@@ -1,6 +1,15 @@
 module.exports = {
     objects: [
         {
+            type: "levelOne",
+            textBlock: `
+            <p>Jason is a 37-year-old male with progressively worsening lower back pain. Thinking back, Jason remembers that even in his late teens he had some sporadic back pain. He first sought treatment for his back pain at the age of 25. There was no injury or identifiable factor or event associated with the pain. At that time, he began treatment with ibuprofen 400 mg taken every 6 hours. This provided him with significant symptom relief. However, after about 5 years, he developed intolerable gastrointestinal (GI) side effects. He switched to naproxen 220 mg BID. This provided relief for a time, but now he reports that it does not adequately control his pain. Jason says that his back pain is worse in the morning and is somewhat relieved after he gets up and moves around. In addition, he says that the pain often disrupts his sleep about 3 or 4 hours into the night. He has sought chiropractic treatment as well as physical therapy for the back pain, but neither resulted in lasting symptom relief (Tables 1 and 2).</p>
+            `,
+            label: `Case 1: Patient Presentation and Background`,
+            startIndex: 0,
+            endIndex: 0
+        },
+        {
             type: "levelTwo",
             textBlock: `
             <p>Spondyloarthritis (SpA) describes a collection of chronic inflammatory rheumatic diseases that have overlapping features, including axial and peripheral joint involvement such as sacroiliitis, enthesitis, peripheral inflammatory arthritis, extra-articular manifestations, human leukocyte antigen (HLA)-B27 positivity, and familial aggregation.<sup type="ref">[1,2]</sup> Axial spondyloarthritis (axSpA) is characterized by involvement of the sacroiliac joints and spine. The diagnosis of axSpA is often delayed, sometimes by as much as 8 years or more.<sup type="ref">[3]</sup> A chief reason for the long diagnostic delay is that sacroiliitis, which is considered a hallmark of ankylosing spondylitis (AS), is not clinically detectable and may not be visible on plain x-ray in the early stages of the disease.<sup type="ref">[4]</sup></p>

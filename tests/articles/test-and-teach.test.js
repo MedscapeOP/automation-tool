@@ -161,19 +161,19 @@ describe('Test And Teach', function () {
         });
     });
 
-    describe("#getMainContentTOCs()", function () {
-        it("should return TOCs from main content section of prodticket - (no PostAssessment, Blank, Abbreviations, etc.)", function () {
-            var ticketHTMl = prodTicket;
-            var contentBlockXML = mainContentTOCs;
-            var result = testAndTeach.getMainContentTOCs(prodTicket, program);
-            var resultString = "";
-            for (var i = 0; i < result.length; i++) {
-                resultString += utils.xmlOps.objectToXMLString(result[i].toObjectLiteral());
-            }
-            resultString = utils.cleanHTML.cleanEntities(resultString);
-            fs.writeFileSync(__dirname + '/output/test-and-teach/main-content-tocs.xml', resultString);
-            // expect(result).to.equalIgnoreSpaces(contentBlockXML);
-        });
-    });
+    // describe("#getMainContentTOCs()", function () {
+    //     it("should return TOCs from main content section of prodticket - (no PostAssessment, Blank, Abbreviations, etc.)", function () {
+    //         var ticketHTMl = prodTicket;
+    //         var contentBlockXML = mainContentTOCs;
+    //         var result = testAndTeach.getMainContentTOCs(prodTicket, program);
+    //         var resultString = "";
+    //         for (var i = 0; i < result.length; i++) {
+    //             resultString += utils.xmlOps.objectToXMLString(result[i].toObjectLiteral());
+    //         }
+    //         resultString = utils.cleanHTML.cleanEntities(resultString);
+    //         fs.writeFileSync(__dirname + '/output/test-and-teach/main-content-tocs.xml', resultString);
+    //         // expect(result).to.equalIgnoreSpaces(contentBlockXML);
+    //     });
+    // });
 });
 
