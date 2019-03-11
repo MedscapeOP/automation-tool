@@ -96,15 +96,29 @@ function buildSlidesTOC(slidesComponent, videoEmbed=false, eduImpactSubsection=f
 
     // INSERT: Educational Impact Subsection - If necessary 
     if (eduImpactSubsection) {
-        var eduImpactSubsection = new SubsectionElement(true, false, false);
-        eduImpactSubsection.subsectionHeader = "Educational Impact Challenge";
-        eduImpactSubsection.subsectionContent = utils.wrapSlideIntro(`<p>What did you learn from this activity? Please click on the “Next” button to proceed to a brief survey to see how your knowledge improved after the education. You can also see how your answers compare with those of your peers.</p>`);
+        var eduImpactSubsection = buildEduImpactSubsection();
         slidesSection.insertSubsectionElement(eduImpactSubsection);
     }
 
     // INSERT: Main Section
     slidesTOC.insertSectionElement(slidesSection);
     return slidesTOC;
+}
+
+
+function buildEduImpactSubsection(
+    statement=`<p>What did you learn from this activity? Please click on the “Next” button to proceed to a brief survey to see how your knowledge improved after the education. You can also see how your answers compare with those of your peers.</p>`,
+    articleType="SlidePresentation"
+) {
+    var eduImpactSubsection = new SubsectionElement(true, false, false);
+    eduImpactSubsection.subsectionHeader = "Educational Impact Challenge";
+
+    if (articleType == "SlidePresentation") {
+        eduImpactSubsection.subsectionContent = utils.wrapSlideIntro(statement);
+    } else {
+        eduImpactSubsection.subsectionContent = utils.wrapSubsectionContent(statement);
+    }
+    return (eduImpactSubsection);
 }
 
 /* DONE */
@@ -131,24 +145,29 @@ function buildEduImpactPreSection (qnaFormNumber, goalStatementMarkup) {
 }
 
 /* DONE */
-function buildEduImpactPostSection (qnaFormNumber) {
-    // Set up slide group with QNA form #
-    var slideGroup = new SlideGroup('', '', true, false);
-    slideGroup.sectionImage = null;
-    slideGroup.sectionLabel = null;
-    slideGroup.sectionAltText = null;
-    slideGroup.qnaForm = qnaFormNumber;    
-
-    // Insert goal statement + "before you begin..."
-    var subsection = new SubsectionElement(true, false, false);
+function buildEduImpactPostSection (qnaFormNumber, articleType="SlidePresentation") {
+    if (articleType == "SlidePresentation") {
+        // Set up slide group with QNA form #
+        var slideGroup = new SlideGroup('', '', true, false);
+        slideGroup.sectionImage = null;
+        slideGroup.sectionLabel = null;
+        slideGroup.sectionAltText = null;
+        slideGroup.qnaForm = qnaFormNumber;    
+    
+        // Insert goal statement + "before you begin..."
+        var subsection = new SubsectionElement(true, false, false);
+        subsection.insertSlideGroup(slideGroup);
+    } else {
+        var subsection = new SubsectionElement(false, true, false);
+        subsection.qnaForm = qnaFormNumber;
+    }
 
     // Insert "Educational Impact Challenge" header 
-    var eduImpactPreSection = new SectionElement(false, false);
-    eduImpactPreSection.sectionHeader = "Educational Impact Challenge";
-
-    subsection.insertSlideGroup(slideGroup);
-    eduImpactPreSection.insertSubsectionElement(subsection);
-    return eduImpactPreSection;
+    var eduImpactPostSection = new SectionElement(false, false);
+    eduImpactPostSection.sectionHeader = "Educational Impact Challenge";
+    
+    eduImpactPostSection.insertSubsectionElement(subsection);
+    return eduImpactPostSection;
 }
 
 /* DONE */
@@ -161,8 +180,8 @@ function buildLLAPreTOC(goalStatementMarkup) {
 }
 
 /* DONE */
-function buildLLAPostTOC() {
-    var llaPostSection = buildEduImpactPostSection(4);
+function buildLLAPostTOC(qnaFormNumber=4, articleType="SlidePresentation") {
+    var llaPostSection = buildEduImpactPostSection(qnaFormNumber, articleType);
 
     var llaPostTOC = new TOCElement();
     llaPostTOC.insertSectionElement(llaPostSection);
@@ -322,6 +341,7 @@ module.exports = {
     buildBlankTOC,
     buildSlides,
     buildSlidesTOC,
+    buildEduImpactSubsection,
     buildEduImpactPreSection,
     buildEduImpactPostSection,
     buildLLAPreTOC,

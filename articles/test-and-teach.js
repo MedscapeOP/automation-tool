@@ -358,19 +358,27 @@ function buildContentTOC (contentBlockComponents, program) {
 
 function getMainContentTOCs(articleContent, program) {
     /* 
-    Algorithm Ideas
-    - Split total document into separate pages - each page object should include its QNA form # (if it has one) - use getContentBlocks()
-    - For each page create a TOCElement 
-        - Use buildContentTOC
-        - If 
-
+        Algorithm Ideas
+        - Split content section into separate pages -> getContentBlockObjects(contentHTML) 
+        - For each page/contentBlockObject create a TOCElement 
+            - getContentBlockComponents(contentBlockObject)
+            - buildContentTOC(content)
     */
-/* 
-TT_Transcript: CREATE QUESTION TOC ELEMENTS (1 FOR: EACH QUESTION FORM); CREATE SUBSECTIONS FOR TEXT BLOCKS; CREATE SUBSECTIONS FOR TABLES AND FIGURES; POST ASSESSMENT; BLANK RESULTS PAGE; ABBREVIATIONS; REFERENCES; BACK MATTER; INSERT FIGURES; INSERT PATIENT CASE IMAGES; FORMAT AND INSERT HTML TABLES;
-*/
-    // Get Slide Component from prodticket.getSlides.
-    // Check if LLA 
-    // If LLA build slides with Video embed AND Edu Impact challenge 
+    /*
+        getMainContentTOCs 
+        - Use buildContentTOC for the following TOCs
+            CREATE QUESTION TOC ELEMENTS (1 FOR: EACH QUESTION FORM); 
+                - CREATE SUBSECTIONS FOR TEXT BLOCKS; 
+                - CREATE SUBSECTIONS FOR TABLES AND FIGURES; 
+        - Use buildLLAPostTOC() for: 
+            POST ASSESSMENT - buildContentTOC(qnaFormNumber, "Article"); 
+
+        buildTestAndTeach
+        BLANK RESULTS PAGE - buildBlankTOC(); 
+        ABBREVIATIONS - buildAbbreviations(abbreviationsMarkup, program); 
+        REFERENCES - buildReferences(referencesMarkup, program); 
+        BACK MATTER - ; 
+    */
     var mainTOCs = [];
     for (var i = 0; i < articleComponents.length; i++) {
         mainTOCs.push(buildContentTOC(articleComponents[i]));
