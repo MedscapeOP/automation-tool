@@ -1,9 +1,12 @@
 var fs = require('fs');
-var expect = require('chai').expect;
+const chai = require('chai');
 
 const app = require('../../commands');
 var utils = app.utils;
 const SubsectionElement = app.classes.SubsectionElement;
+
+chai.use(require('chai-string'));
+let expect = chai.expect;
 
 describe('Utility Functions', function () {
 
@@ -101,41 +104,41 @@ describe('Utility Functions', function () {
             });
         });
     
-        describe(".slidesInitial()", function () {
-            it('should transform Slides HTML from from R2Net into format suitable for initial processing/formatting.', function () {
-                var result = utils.cleanHTML.slidesInitial(dirtySlidesHTML);
-                // fs.writeFileSync(__dirname + "/output/fixed-slides.html", result, function(err) {
-                //     if(err) {
-                //         return console.log(err);
-                //     }
-                // }); 
-                expect(result).to.equalIgnoreSpaces(slidesInitialComplete);
-            });
-        });
+        // describe(".slidesInitial()", function () {
+        //     it('should transform Slides HTML from from R2Net into format suitable for initial processing/formatting.', function () {
+        //         var result = utils.cleanHTML.slidesInitial(dirtySlidesHTML);
+        //         // fs.writeFileSync(__dirname + "/output/fixed-slides.html", result, function(err) {
+        //         //     if(err) {
+        //         //         return console.log(err);
+        //         //     }
+        //         // }); 
+        //         expect(result).to.equalIgnoreSpaces(slidesInitialComplete);
+        //     });
+        // });
     
-        describe(".slidesFinal()", function () {
-            it('should transform Slides HTML from from R2Net into format for use in buildSlides().', function () {
-                var result = utils.cleanHTML.slidesFinal(slidesInitialComplete);
-                fs.writeFileSync(__dirname + "/output/clean-slides.html", result, function(err) {
-                    if(err) {
-                        return console.log(err);
-                    }
-                }); 
-                expect(result).to.equalIgnoreSpaces(slidesFinalComplete);
-            });
-        });
+        // describe(".slidesFinal()", function () {
+        //     it('should transform Slides HTML from from R2Net into format for use in buildSlides().', function () {
+        //         var result = utils.cleanHTML.slidesFinal(slidesInitialComplete);
+        //         fs.writeFileSync(__dirname + "/output/clean-slides.html", result, function(err) {
+        //             if(err) {
+        //                 return console.log(err);
+        //             }
+        //         }); 
+        //         expect(result).to.equalIgnoreSpaces(slidesFinalComplete);
+        //     });
+        // });
 
-        describe(".slidesInitial() + .slidesFinal()", function () {
-            it('should fully format dirty slides HTML', function () {
-                var result = utils.cleanHTML.slidesInitial(dirtySlidesHTML2);
-                result = utils.cleanHTML.slidesFinal(result);
-                fs.writeFileSync(__dirname + "/output/clean-slides2.html", result, function(err) {
-                    if (err) {
-                        return console.log(err);
-                    }
-                });
-            });
-        });
+        // describe(".slidesInitial() + .slidesFinal()", function () {
+        //     it('should fully format dirty slides HTML', function () {
+        //         var result = utils.cleanHTML.slidesInitial(dirtySlidesHTML2);
+        //         result = utils.cleanHTML.slidesFinal(result);
+        //         fs.writeFileSync(__dirname + "/output/clean-slides2.html", result, function(err) {
+        //             if (err) {
+        //                 return console.log(err);
+        //             }
+        //         });
+        //     });
+        // });
     });
 
     // describe('utils.stringOps.getAllBlocksInOrder()', function () {
