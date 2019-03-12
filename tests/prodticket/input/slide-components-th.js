@@ -4,6 +4,7 @@ module.exports = [
         componentNumber: 1, 
         slidePath: "903/975/903975_2",
         rawSlides: `<p><strong>&lt;&lt;insert slide 1; Chapter title: Program Introduction; 00:00&gt;&gt;</strong></p>
+
         <p>
         
         <strong>&lt;&lt;level 2&gt;&gt;</strong> <strong>The Big Debate: Pharmacologic vs Alternative Approaches in Smoking Cessation</strong></p>
@@ -13,7 +14,13 @@ module.exports = [
         <p>
         
         <strong>&lt;&lt;level 2&gt;&gt; Program Agenda</strong></p>
-     
+        
+        
+        
+        
+        
+        
+        
         <p><strong>&lt;&lt;level 1&gt;&gt; The Importance of a Complete Quit </strong></p>
         
         <p><strong>&lt;&lt;insert slide 3; Chapter title: The Importance of a Complete Quit; 00:53&gt;&gt;</strong></p>
@@ -40,11 +47,11 @@ module.exports = [
         
         <strong>&lt;&lt;level 2&gt;&gt; Mortality and Morbidity Rates Associated With Smoking<sup>[2,3]</sup></strong></p>
         
-        <p>&#8226;      The figure on the left shows that there is a monotonous dose effect relationship between cigarettes per day and all-cause mortality</p>
+        &#8226; The figure on the left shows that there is a monotonous dose effect relationship between cigarettes per day and all-cause mortality
         
-        <p><tt>o        </tt>This means that even low smoking rates are associated with an increased risk of mortality </p>
+        <tt>o   </tt>This means that even low smoking rates are associated with an increased risk of mortality
         
-        <p>&#8226;      In the specific case of cardiovascular disease, most of the mortality risk is borne by low smoking rates, as seen in the curve on the right </p>
+        &#8226; In the specific case of cardiovascular disease, most of the mortality risk is borne by low smoking rates, as seen in the curve on the right
         
         <p><strong>&lt;&lt;insert slide 7; 02:17&gt;&gt; </strong></p>
         
@@ -58,9 +65,9 @@ module.exports = [
         
         <strong>&lt;&lt;level 2&gt;&gt; All-Cause Mortality Risk Reduction After Quitting Smoking<sup>[5]</sup></strong></p>
         
-        <p>&#8226;      It is believed that complete quit is the safest and most effective way to reduce the all-cause mortality associated with smoking</p>
+        &#8226; It is believed that complete quit is the safest and most effective way to reduce the all-cause mortality associated with smoking
         
-        <p>&#8226;      It is also believed that the reduction of all-cause mortality stabilizes roughly 10 to 15 years after complete smoking cessation</p>
+        &#8226; It is also believed that the reduction of all-cause mortality stabilizes roughly 10 to 15 years after complete smoking cessation
         
         <p><strong>&lt;&lt;insert slide 9; 03:15&gt;&gt; </strong></p>
         
@@ -68,10 +75,9 @@ module.exports = [
         
         <strong>&lt;&lt;level 2&gt;&gt; Little Evidence of All-Cause Mortality Risk Reduction After Smoking Reduction<sup>[6-9]</sup></strong></p>
         
-        <p>&#8226;      It is important to keep in mind that in all the studies shown on this slide, smoking reduction was not supported by any nicotine replacement
-        use </p>
+        &#8226; It is important to keep in mind that in all the studies shown on this slide, smoking reduction was not supported by any nicotine replacement use
         
-        <p>&#8226;      Moreover, it is known that reduction of cigarettes per day does not reflect reduction of toxin exposure</p>
+        &#8226; Moreover, it is known that reduction of cigarettes per day does not reflect reduction of toxin exposure
         
         <p><strong>&lt;&lt;insert slide 1; 04:21&gt;&gt; </strong></p>
         
@@ -105,11 +111,11 @@ module.exports = [
         
         <strong>&lt;&lt;level 2&gt;&gt; Nicotine Replacement Therapy vs Control for Smoking Cessation<sup>[12]</sup></strong></p>
         
-        <p>&#8226;      Nicotine replacement therapy is the oldest, most established, and most used therapy for smoking cessation</p>
+        &#8226; Nicotine replacement therapy is the oldest, most established, and most used therapy for smoking cessation
         
-        <p>&#8226;      Based on the results of this analysis, the Cochrane Group collaborators stated that they will never do another meta-analysis of this type, because the evidence is so strong for nicotine replacement against placebo</p>
+        &#8226; Based on the results of this analysis, the Cochrane Group collaborators stated that they will never do another meta-analysis of this type, because the evidence is so strong for nicotine replacement against placebo
         
-        <p><tt>o        </tt>Subgroup and other types of analyses may be conducted, for example, comparing nicotine replacement with e-cigarettes or other comparators, but the placebo comparison is firmly established at this time</p>
+        <tt>o   </tt>Subgroup and other types of analyses may be conducted, for example, comparing nicotine replacement with e-cigarettes or other comparators, but the placebo comparison is firmly established at this time
         
         <p><strong>&lt;&lt;insert slide 15; 09:57&gt;&gt; </strong></p>
         
@@ -153,9 +159,9 @@ module.exports = [
         
         <strong>&lt;&lt;level 2&gt;&gt; EAGLES: Continuous Abstinence Rates in Psychiatric and Nonpsychiatric Cohorts<sup>[28]</sup></strong></p>
         
-        <p>&#8226;      This is the EAGLES study and included over 8000 subjects, both people with psychiatric disease and people without known psychiatric disease</p>
+        &#8226; This is the EAGLES study and included over 8000 subjects, both people with psychiatric disease and people without known psychiatric disease
         
-        <p>&#8226;      The study was sponsored by both producers of varenicline and of bupropion and in collaboration with health authorities</p>
+        &#8226; The study was sponsored by both producers of varenicline and of bupropion and in collaboration with health authorities
         
         <p><strong>&lt;&lt;insert slide 22; 15:52&gt;&gt; </strong></p>
         
@@ -181,7 +187,7 @@ module.exports = [
         
         <strong>&lt;&lt;level 2&gt;&gt;Lack of Readiness to Use Pharmacologic Options (Smoker)</strong></p>
         
-        <p><strong>&lt;&lt;level 1&lt;&lt;insert slide 26 Chapter title: E-Cigarettes and "Heat-Not-Burn" Devices; 20:19&gt;&gt;</strong></p>
+        <p><strong>&lt;&lt;insert slide 26 Chapter title: E-Cigarettes and "Heat-Not-Burn" Devices; 20:19&gt;&gt;</strong></p>
         
         <p>
         
@@ -193,14 +199,13 @@ module.exports = [
         
         <strong>&lt;&lt;level 2&gt;&gt; Current Controversy</strong></p>
         
-        <p>&#8226;      In my opinion, what we see in our field is this split in the attitude to e-cigarettes, which I believe is based on priority</p>
+        &#8226; In my opinion, what we see in our field is this split in the attitude to e-cigarettes, which I believe is based on priority
         
-        <p>&#8226;      If the priority is smoke-related death and disease, then there is a sort of pragmatic perspective in which alternative lower-risk nicotine devices may appear as promising to lower the total of death and disease from smoking</p>
+        &#8226; If the priority is smoke-related death and disease, then there is a sort of pragmatic perspective in which alternative lower-risk nicotine devices may appear as promising to lower the total of death and disease from smoking
         
-        <p>&#8226;      By contrast, the other view is the concern that providing nicotine in the less dangerous form still maintains and may even increase nicotine
-        use in the population</p>
+        &#8226; By contrast, the other view is the concern that providing nicotine in the less dangerous form still maintains and may even increase nicotine use in the population
         
-        <p><tt>o        </tt>Hence, safe nicotine devices are both a problem and a risk</p>
+        <tt>o   </tt>Hence, safe nicotine devices are both a problem and a risk
         
         <p><strong>&lt;&lt;insert slide 28; Chapter title: The UK Perspective on E-Cigarettes; 22:07&gt;&gt;</strong></p>
         
@@ -393,7 +398,13 @@ module.exports = [
         <p><strong>&lt;&lt;insert slide 59; 39:42&gt;&gt; </strong>
         
         <strong>&lt;&lt;level 2&gt;&gt; Conclusions</strong></p>
-
+        
+        
+        
+        
+        
+        
+        
         <p><strong>&lt;&lt;insert slide 60; 42:08&gt;&gt; </strong></p>
         
         <p>

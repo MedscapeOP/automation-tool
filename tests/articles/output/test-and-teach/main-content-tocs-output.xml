@@ -1,480 +1,69 @@
-<toc_element>
-    <toc_label/>
-    <toc_type>Default</toc_type>
-    <sec_element>
-        <sec_header>
-            <p>Case 1: Patient Presentation and Background</p>
-        </sec_header>
-        <subsec_element>
-            <subsec_header/>
-            <subsec_content>
-                <table style="margin-right: 20px;" align="left" border="1" bordercolor="#b3b3b3" cellpadding="3" cellspacing="0">
-                    <tbody>
-                        <tr>
-                            <td align="center">
-                                <img src="/webmd/professional_assets/medscape/images/content/article/902/362/902362-patient1.jpg?interpolation=lanczos-none&amp;resize=200:150" alt="" border="0" width="200"/>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p style="min-height: 230px;">
-                    <p>Jason is a 37-year-old male with progressively worsening lower back pain. Thinking back, Jason remembers that even in his late teens he had some sporadic back pain. He first sought treatment for his back pain at the age of 25. There was no injury or identifiable factor or event associated with the pain. At that time, he began treatment with ibuprofen 400 mg taken every 6 hours. This provided him with significant symptom relief. However, after about 5 years, he developed intolerable gastrointestinal (GI) side effects. He switched to naproxen 220 mg BID. This provided relief for a time, but now he reports that it does not adequately control his pain. Jason says that his back pain is worse in the morning and is somewhat relieved after he gets up and moves around. In addition, he says that the pain often disrupts his sleep about 3 or 4 hours into the night. He has sought chiropractic treatment as well as physical therapy for the back pain, but neither resulted in lasting symptom relief (Tables 1 and 2).</p>
-                </p>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-        <subsec_element>
-            <subsec_header>
-                <p>
-                    <strong>Table 1. History and Physical Examination Findings</strong>
-                </p>
-            </subsec_header>
-            <subsec_content>
-                <strong>Table 1. History and Physical Examination Findings</strong>
-                <table>
-                    <td>
-                        <strong>History</strong>
-                    </td>
-                    <td>
-                        <strong>Findings</strong>
-                    </td>
-                    <td>Medical
-</td>
-                    <td>
-                        <li>	He is sexually active with multiple partners, both men and women, and has a history of dysuria</li>
-                        <ul>
-                            <li>	Three past episodes of uveitis that were treated by an ophthalmologist</li>
-                            <li>	Past episode of left foot plantar fasciitis that was treated by a podiatrist</li>
-                        </ul>
+<toc_element><toc_label/><toc_type>Default</toc_type><sec_element><sec_header><p>Case 1: Patient Presentation and Background</p></sec_header><subsec_element><subsec_header/><subsec_content><table style="margin-right: 20px;" align="left" border="1" bordercolor="#b3b3b3" cellpadding="3" cellspacing="0"><tbody><tr><td align="center"><img src="/webmd/professional_assets/medscape/images/content/article/902/362/902362-patient1.jpg?interpolation=lanczos-none&amp;resize=200:150" alt="" border="0" width="200"/></td></tr></tbody></table><p style="min-height: 230px;"><p>Jason is a 37-year-old male with progressively worsening lower back pain. Thinking back, Jason remembers that even in his late teens he had some sporadic back pain. He first sought treatment for his back pain at the age of 25. There was no injury or identifiable factor or event associated with the pain. At that time, he began treatment with ibuprofen 400 mg taken every 6 hours. This provided him with significant symptom relief. However, after about 5 years, he developed intolerable gastrointestinal (GI) side effects. He switched to naproxen 220 mg BID. This provided relief for a time, but now he reports that it does not adequately control his pain. Jason says that his back pain is worse in the morning and is somewhat relieved after he gets up and moves around. In addition, he says that the pain often disrupts his sleep about 3 or 4 hours into the night. He has sought chiropractic treatment as well as physical therapy for the back pain, but neither resulted in lasting symptom relief (Tables 1 and 2).</p></p></subsec_content><qna_form/></subsec_element><subsec_element><subsec_header><p><strong>Table 1. History and Physical Examination Findings</strong></p></subsec_header><subsec_content><strong>Table 1. History and Physical Examination Findings</strong><table><td><strong>History</strong></td><td><strong>Findings</strong></td><td>Medical
+</td><td><li>	He is sexually active with multiple partners, both men and women, and has a history of dysuria</li><ul><li>	Three past episodes of uveitis that were treated by an ophthalmologist</li><li>	Past episode of left foot plantar fasciitis that was treated by a podiatrist</li></ul>
 o	Currently has left-sided Achilles tendonitis, diagnosed by his primary care physician
-
-                    </td>
-                    <td>Medications
-</td>
-                    <td>Naproxen 220 mg BID
-</td>
-                    <td>Allergies
-</td>
-                    <td>NKDA
-</td>
-                    <td>Surgical
-</td>
-                    <td>None 
-</td>
-                    <td>Family
-</td>
-                    <td>Mother: 65, alive
+</td><td>Medications
+</td><td>Naproxen 220 mg BID
+</td><td>Allergies
+</td><td>NKDA
+</td><td>Surgical
+</td><td>None 
+</td><td>Family
+</td><td>Mother: 65, alive
 Father: 68, alive
 No siblings
-</td>
-                    <td>Social
-</td>
-                    <td>Single
+</td><td>Social
+</td><td>Single
 Alcohol: social (3-5 beers per week)
 Tobacco: none
 Illicit drugs: none
-</td>
-                    <td>
-                        <strong>Physical Examination</strong>
-                    </td>
-                    <td>
-                        <strong>Findings</strong>
-                    </td>
-                    <td>Vital signs
-</td>
-                    <td>BP 128/84 mm Hg; pulse rate 75/min, regular; respirations 12/min; temperature 98.7⁰F; O
-                        <sub>2</sub> saturation 95%, BMI 28 kg/m
-                        <sup>2</sup>
-                    </td>
-                    <td>General
-</td>
-                    <td>In no acute distress 
-</td>
-                    <td>Skin
-</td>
-                    <td>Normal, no evidence of psoriasis
-</td>
-                    <td>HEENT
-</td>
-                    <td>Normal
-</td>
-                    <td>Pulmonary
-</td>
-                    <td>Normal breath sounds bilaterally, no adventitious sounds
-</td>
-                    <td>Heart
-</td>
-                    <td>Heart sounds normal, no murmur
-</td>
-                    <td>Abdomen
-</td>
-                    <td>Nontender, no organomegaly
-</td>
-                    <td>Musculoskeletal
-</td>
-                    <td>
-                        <li>	Peripheral joints: no synovitis or tenderness</li>
-                        <ul>
-                            <li>	Tenderness over bilateral sacroiliac joints</li>
-                            <li>	Schober's test: 4 cm</li>
-                            <li>	Chest expansion: 1.5 cm </li>
-                            <li>	Tenderness on L plantar fascia insertion on L calcaneum on palpation </li>
-                            <li>	Tenderness and swelling at the insertion of the L Achilles tendon</li>
-                        </ul>
-                    </td>
-                    <td>Neurological
-</td>
-                    <td>No focal deficit
-</td>
-                </table>
+</td><td><strong>Physical Examination</strong></td><td><strong>Findings</strong></td><td>Vital signs
+</td><td>BP 128/84 mm Hg; pulse rate 75/min, regular; respirations 12/min; temperature 98.7⁰F; O<sub>2</sub> saturation 95%, BMI 28 kg/m<sup>2</sup></td><td>General
+</td><td>In no acute distress 
+</td><td>Skin
+</td><td>Normal, no evidence of psoriasis
+</td><td>HEENT
+</td><td>Normal
+</td><td>Pulmonary
+</td><td>Normal breath sounds bilaterally, no adventitious sounds
+</td><td>Heart
+</td><td>Heart sounds normal, no murmur
+</td><td>Abdomen
+</td><td>Nontender, no organomegaly
+</td><td>Musculoskeletal
+</td><td><li>	Peripheral joints: no synovitis or tenderness</li><ul><li>	Tenderness over bilateral sacroiliac joints</li><li>	Schober's test: 4 cm</li><li>	Chest expansion: 1.5 cm </li><li>	Tenderness on L plantar fascia insertion on L calcaneum on palpation </li><li>	Tenderness and swelling at the insertion of the L Achilles tendon</li></ul></td><td>Neurological
+</td><td>No focal deficit
+</td></table>
 &lt;&lt;CAPTION&gt;&gt;BMI = body mass index; BP = blood pressure; HEENT = head, eyes, ears, neck, throat; NKDA = no known drug allergies.
-
-                <strong>&lt;&lt;end table 1&gt;&gt;</strong>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-        <subsec_element>
-            <subsec_header>
-                <p>
-                    <strong>Table 2. Laboratory Tests</strong>
-                </p>
-            </subsec_header>
-            <subsec_content>
-                <strong>Table 2. Laboratory Tests</strong>
-                <table>
-                    <td>
-                        <strong>CBC</strong>
-                    </td>
-                    <td>
-                        <strong>Results</strong>
-                    </td>
-                    <td>WBC
-</td>
-                    <td> 7.8 K/cu mm
-</td>
-                    <td>HGB
-</td>
-                    <td> 14.0 g/dL
-</td>
-                    <td>HCT
-</td>
-                    <td> 43%
-</td>
-                    <td>Platelet count
-</td>
-                    <td> 306 K/cu mm
-</td>
-                    <td>
-                        <strong>Metabolic Panel</strong>
-                    </td>
-                    <td>
-                        <strong>Results</strong>
-                    </td>
-                    <td>Sodium
-</td>
-                    <td>137 mEq/L
-</td>
-                    <td>Potassium
-</td>
-                    <td>5.1 mEq/L
-</td>
-                    <td>Chloride
-</td>
-                    <td>101 mEq/L
-</td>
-                    <td>CO
-                        <sub>2</sub>
-                    </td>
-                    <td>25 mEq/L
-</td>
-                    <td>Creatinine
-</td>
-                    <td>0.9 mg/dL
-</td>
-                    <td>BUN
-</td>
-                    <td>17 mg/dL
-</td>
-                    <td>eGFR
-</td>
-                    <td>100 mL/min/1.73 m
-                        <sup>2</sup>
-                    </td>
-                    <td>Glucose, HbA
-                        <sub>1C</sub>
-                    </td>
-                    <td>98 mg/dL
-</td>
-                    <td>ESR
-</td>
-                    <td>21 mm/h
-</td>
-                    <td>CRP
-</td>
-                    <td>0.6 mg/dl 
-</td>
-                </table>
+<strong>&lt;&lt;end table 1&gt;&gt;</strong></subsec_content><qna_form/></subsec_element><subsec_element><subsec_header><p><strong>Table 2. Laboratory Tests</strong></p></subsec_header><subsec_content><strong>Table 2. Laboratory Tests</strong><table><td><strong>CBC</strong></td><td><strong>Results</strong></td><td>WBC
+</td><td> 7.8 K/cu mm
+</td><td>HGB
+</td><td> 14.0 g/dL
+</td><td>HCT
+</td><td> 43%
+</td><td>Platelet count
+</td><td> 306 K/cu mm
+</td><td><strong>Metabolic Panel</strong></td><td><strong>Results</strong></td><td>Sodium
+</td><td>137 mEq/L
+</td><td>Potassium
+</td><td>5.1 mEq/L
+</td><td>Chloride
+</td><td>101 mEq/L
+</td><td>CO<sub>2</sub></td><td>25 mEq/L
+</td><td>Creatinine
+</td><td>0.9 mg/dL
+</td><td>BUN
+</td><td>17 mg/dL
+</td><td>eGFR
+</td><td>100 mL/min/1.73 m<sup>2</sup></td><td>Glucose, HbA<sub>1C</sub></td><td>98 mg/dL
+</td><td>ESR
+</td><td>21 mm/h
+</td><td>CRP
+</td><td>0.6 mg/dl 
+</td></table>
 &lt;&lt;CAPTION&gt;&gt;BUN = blood urea nitrogen; CBC = complete blood cell count; CRP = C-reactive protein; eGFR = estimated glomerular filtration rate; ESR = erythrocyte sedimentation rate; HbA1c = glycated hemoglobin; HCT = hematocrit; HGB = hemoglobin; WBC = white blood cell.
-
-                <strong>&lt;&lt;end table 2&gt;&gt;</strong>
-            </subsec_content>
-            <qna_form>3</qna_form>
-        </subsec_element>
-    </sec_element>
-    <pg_footnotes/>
-</toc_element>
-<toc_element>
-    <toc_label/>
-    <toc_type>Default</toc_type>
-    <sec_element>
-        <sec_header/>
-        <subsec_element>
-            <subsec_header>
-                <p>Discussion</p>
-            </subsec_header>
-            <subsec_content>BEGIN---
-
-                <p>Spondyloarthritis (SpA) describes a collection of chronic inflammatory rheumatic diseases that have overlapping features, including axial and peripheral joint involvement such as sacroiliitis, enthesitis, peripheral inflammatory arthritis, extra-articular manifestations, human leukocyte antigen (HLA)-B27 positivity, and familial aggregation.
-                    <sup type="ref">[1,2]</sup> Axial spondyloarthritis (axSpA) is characterized by involvement of the sacroiliac joints and spine. The diagnosis of axSpA is often delayed, sometimes by as much as 8 years or more.
-                    <sup type="ref">[3]</sup> A chief reason for the long diagnostic delay is that sacroiliitis, which is considered a hallmark of ankylosing spondylitis (AS), is not clinically detectable and may not be visible on plain x-ray in the early stages of the disease.
-                    <sup type="ref">[4]</sup>
-                </p>
-                <p>There are 2 main types of SpA, axial and peripheral, depending upon the main presenting symptoms. However, the 2 types can overlap, and one may progress to the other. Axial SpA predominantly involves the spine and sacroiliac joints. Peripheral SpA predominantly involves peripheral joints. For classification purposes, axSpA is further divided in radiographic or nonradiographic (Figure 1).
-                    <sup type="ref">[2]</sup>
-                </p>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-        <subsec_element>
-            <subsec_header>
-                <p>
-                    <strong>Figure 1. Spectrum of axSpA
-                        <sup type="ref">[2]</sup>
-                    </strong>
-                </p>
-            </subsec_header>
-            <subsec_content>
-                <p>An evolving understanding of the concept of axSpA has led to a differentiation between nonradiographic axSpA (nr-axSpA) and radiographic axSpA. These 2 terms are distinguished by the degree of sacroiliitis assessed by conventional radiography. Radiographic axSpA, or AS, can be diagnosed only when there is definitive evidence of sacroiliitis on plain radiographs of the sacroiliac.
-                    <sup type="ref">[2]</sup>
-                </p>
-                <p>In clinical practice, it is important to remember that radiographic sacroiliitis is a late finding in the disease course of many patients.
-                    <sup type="ref">[5]</sup> Patients can be diagnosed based on a typical clinical pattern, even in the presence of normal radiographs. The leading symptom of axSpA is chronic back pain, which is "inflammatory" in nature, improves with physical activity, and is not relieved by rest. In addition, other musculoskeletal manifestations of axSpA include arthritis, enthesitis, and dactylitis.
-                    <sup type="ref">[5]</sup> Certain typical extra-articular manifestations in a patient should raise the clinical suspicion of axSpA. These can include acute anterior uveitis (AAU), psoriasis, and inflammatory bowel disease (IBD).
-                    <sup type="ref">[5]</sup>
-                </p>
-                <p>In Jason's case, he has had 3 occurrences of uveitis, which is a common finding in patients with axSpA. In one cross-sectional study of patients with AS, 39% had a history of AAU.
-                    <sup type="ref">[6]</sup> In a systematic review and meta-analysis, the pooled prevalence of AAU was 25.8%.
-                    <sup type="ref">[7]</sup> A study of unselected patients presenting with uveitis identified a minimum prevalence of axSpA of 20.2%. Of those patients, 22.9% did not have a previous diagnosis of axSpA.
-                    <sup type="ref">[8]</sup>
-                </p>
-                <p>Crucial elements for a prompt and accurate diagnosis include a comprehensive history of the presenting complaint and past medical history. A timeline of the pain and description of aggravating factors provide clues to the diagnosis. Patients with axSpA typically describe a pattern of pronounced stiffness and improvement of pain and stiffness with activity or exercise.
-                    <sup type="ref">[5]</sup>
-                </p>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-    </sec_element>
-    <sec_element>
-        <sec_header>
-            <p>Case 1 Continues</p>
-        </sec_header>
-        <subsec_element>
-            <subsec_header/>
-            <subsec_content>
-                <p>An x-ray of the sacroiliac joint shows no evidence of sacroiliitis. Testing for HLA-B27 is positive.</p>
-            </subsec_content>
-            <qna_form>4</qna_form>
-        </subsec_element>
-    </sec_element>
-    <pg_footnotes/>
-</toc_element>
-<toc_element>
-    <toc_label/>
-    <toc_type>Default</toc_type>
-    <sec_element>
-        <sec_header/>
-        <subsec_element>
-            <subsec_header>
-                <p>Discussion</p>
-            </subsec_header>
-            <subsec_content>
-                <p>MRI may show signs of inflammation much earlier than radiographs show structural damage. MRI allows early detection of sacroiliac joint inflammation in patients with axSpA.
-                    <sup type="ref">[9,10]</sup> A gadolinium-enhanced image can detect areas of increased vascularization, helping detect synovitis and enthesitis; however, it does not necessarily add value to the diagnostic capacity of the MRI over STIR or T1 sequences in diagnosing early axSpA.
-                    <sup type="ref">[9]</sup> During the inflammatory phase, a STIR image will typically show hyperintensity in the bone marrow (termed "bone marrow edema") on both sides of the sacroiliac joints.
-                    <sup type="ref">[11]</sup> As such, to save time and to reduce patient burden, cost, and risk, gadolinium administration is not needed. 
-                </p>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-    </sec_element>
-    <sec_element>
-        <sec_header>
-            <p>Case 1 Continues</p>
-        </sec_header>
-        <subsec_element>
-            <subsec_header/>
-            <subsec_content>
-                <p>MRI of the sacroiliac joints is obtained. The T1-weighted image shows some evidence of erosions and sclerosis, and the STIR image shows evidence of bone marrow edema at the inferior corner of the iliac and the sacral side of the joint. Based on these imaging findings, the diagnosis of nr-axSpA is confirmed.</p>
-            </subsec_content>
-            <qna_form>5</qna_form>
-        </subsec_element>
-    </sec_element>
-    <pg_footnotes/>
-</toc_element>
-<toc_element>
-    <toc_label/>
-    <toc_type>Default</toc_type>
-    <sec_element>
-        <sec_header/>
-        <subsec_element>
-            <subsec_header>
-                <p>Discussion</p>
-            </subsec_header>
-            <subsec_content>
-                <p>Nonsteroidal anti-inflammatory drugs (NSAIDs) are recommended as first-line treatment for nr-axSpA. Although these are effective in reducing inflammation, pain, and stiffness, it is important to remember that they can be associated with GI bleeding and cardiotoxicity. For disease that is refractory to NSAIDs and for patients who cannot take NSAIDs, guidelines recommend that a biological medication should be used, such as a TNF inhibitor or an interleukin (IL) 17 inhibitor.
-                    <sup type="ref">[1,5]</sup>
-                </p>
-                <p>At this time, there are no US Food and Drug Administration (FDA)-approved treatment for nr-axSpA; however, treatment guidelines by the American College of Rheumatology (ACR) and also European League Against Rheumatism (EULAR) do recommend the use of some treatments indicated for AS for patients with nr-axSpA.
-                    <sup type="ref">[1,5]</sup> The 5 TNF inhibitors that have demonstrated efficacy for nr-AxSpA and are approved by the FDA to treat AS are
-                    <sup type="ref">[1]</sup>:
-                </p>
-                <p>•	Adalimumab </p>
-                <p>•	Certolizumab pegol </p>
-                <p>•	Etanercept </p>
-                <p>•	Golimumab </p>
-                <p>•	Infliximab </p>
-                <p>Secukinumab is the first IL-17 inhibitor approved by the FDA for the treatment of AS.
-                    <sup type="ref">[12]</sup> Studies of IL-17 inhibitors in patients with nonradiographic disease are currently underway. Caution should be used when considering IL-17 inhibitors for patients with axSpA who have active IBD or Crohn disease.
-                    <sup type="ref">[5]</sup> It should also be noted that both TNF inhibitors and IL-17 inhibitors can reactivate latent tuberculosis and increase the risk for infection.
-                    <sup type="ref">[1]</sup>
-                </p>
-                <p>ACR/SAA/SPARTAN strongly recommend against treatment with systemic glucocorticoids in active AS and active nr-axSpA.
-                    <sup type="ref">[1]</sup> Limited studies have been done on the treatment of active AS with systemic glucocorticoids, showing modest improvements; however, the sample sizes of a randomized controlled trial (RCT) were small, and the quality of evidence for the case studies was considered low due to risk for bias and imprecision in the effect estimation.
-                    <sup type="ref">[1,13-16]</sup>
-                </p>
-                <p>The treatment of patients with axSpA should be individualized according to the patient's current condition and disease severity, as well as patient characteristics such as comorbidities and psychosocial factors.
-                    <sup type="ref">[1,5]</sup> AxSpA is associated with several comorbidities that contribute significantly to morbidity and mortality and add to the complexity of management. These comorbidities include hypertension, hyperlipidemia, diabetes mellitus, peptic ulcers, headaches, depression, uveitis, cancer, IBD, osteoporosis, psoriasis, and other cardiovascular, pulmonary, renal, and neurological complications.
-                    <sup type="ref">[6,17,18]</sup> Therefore, it is important to take any presenting comorbidities into account when creating treatment plans, and to refer patients to specialists in a timely manner. 
-                </p>
-                <p>In addition to receiving pharmacologic therapy, patients should be advised to exercise on a regular basis. Home exercises should be recommended to Jason, as they have proven benefit for patients with axSpA.
-                    <sup type="ref">[19]</sup> Physical therapy is more beneficial than home exercises, but it is more expensive and less feasible than home exercises.
-                    <sup type="ref">[5,19]</sup> Physical therapy should be considered for each patient and the decision should be made on an individual basis.
-                    <sup type="ref">[5]</sup>
-                </p>
-                <p>Patients should be educated about all aspects of managing their disease and be supported to share in decision-making about their treatment.
-                    <sup type="ref">[1] </sup>Disease monitoring of patients with axSpA in the clinic could include assessment of disease activity, patient-reported outcomes, clinical findings, laboratory tests, and imaging. The types and frequency of monitoring should be decided on an individual basis depending on symptoms, severity, and treatment regimen.
-                    <sup type="ref">[5] </sup>To define the level of disease activity, the Bath Ankylosing Spondylitis Disease Activity Index (BASDAI) or the Ankylosing Spondylitis Disease Activity Score (ASDAS) may be used.
-                    <sup type="ref">[1,5,20,21]</sup> (Figures 2 and 3) In past clinical practice, active disease has been defined as BASDAI score ≥4, but active disease can also be defined as ASDAS ≥2.1.
-                    <sup type="ref">[5]</sup>
-                </p>
-                <p>
-                    <strong>Figure 2. BASDAI Score
-                        <sup type="ref">[20]</sup>
-                    </strong>
-                </p>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-        <subsec_element>
-            <subsec_header>
-                <p>
-                    <strong>Figure 2. BASDAI Score
-                        <sup type="ref">[20]</sup>
-                    </strong>
-                </p>
-            </subsec_header>
-            <subsec_content>
-                <p>
-                    <strong>&lt;&lt;insert figure 2&gt;&gt; </strong>
-                </p>
-                <p>
-                    <strong>&lt;&lt;end figure&gt;&gt;</strong>
-                </p>
-                <p>
-                    <strong>&lt;&lt;insert figure 3a&gt;&gt;</strong>
-                </p>
-                <p>
-                    <strong>Figure 3a. ASDAS Parameters and Calculations
-                        <sup type="ref">[22,23]</sup>
-                    </strong>
-                </p>
-                <p>
-                    <strong>&lt;&lt;end figure 3a&gt;&gt;</strong>
-                </p>
-                <p>
-                    <strong>&lt;&lt;insert figure 3b&gt;&gt;</strong>
-                </p>
-                <p>It has been suggested that the ASDAS is a better measure of disease activity than the BASDAI.
-                    <sup type="ref">[5,24]</sup> In support of this conclusion, the BASDAI is a fully patient-reported outcome measure, whereas the ASDAS is based on both patient reports and C-reactive protein.
-                    <sup type="ref">[20,23]</sup> In addition, the ASDAS cut-offs for disease activity states and response criteria were based on a thorough validation process, while the BASDAI cut-offs were chosen arbitrarily. Furthermore, whereas persistently increased ASDAS is associated with syndesmophyte formation, the BASDAI must be combined with CRP measurement to have similar value.
-                    <sup type="ref">[25]</sup> Although often there is concordance between BASDAI score ≥4 and ASDAS ≥2.1, in discordant cases, an elevated ASDAS is more predictive of good response than an elevated BASDAI.
-                    <sup type="ref">[5]</sup>
-                </p>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-    </sec_element>
-    <sec_element>
-        <sec_header>
-            <p>Case 1 Continues</p>
-        </sec_header>
-        <subsec_element>
-            <subsec_header/>
-            <subsec_content>
-                <p>Jason's BASDAI score is 5 and his ASDAS is 2.6. He begins treatment with infliximab 5 mg/kg at baseline, at week 2, at week 6, and then every 6 weeks thereafter and does well. At subsequent follow-ups over the year, his BASDAI score improves to 1.9. One year later, he starts to experience infusion reactions. During his visit, he is symptomatic again, and mentions that his back pain is worsening again. His BASDAI score during this visit is 6.4.</p>
-            </subsec_content>
-            <qna_form>6</qna_form>
-        </subsec_element>
-    </sec_element>
-    <pg_footnotes/>
-</toc_element>
-<toc_element>
-    <toc_label/>
-    <toc_type>Default</toc_type>
-    <sec_element>
-        <sec_header/>
-        <subsec_element>
-            <subsec_header>
-                <p>Discussion</p>
-            </subsec_header>
-            <subsec_content>
-                <p>Infusion reactions to infliximab can happen at any time during treatment, even in patients who have previously tolerated treatment.
-                    <sup type="ref">[26]</sup> However, in a prospective analysis of patients enrolled in a community registry, infusion reactions to infliximab were uncommon and were typically classified as mild to moderate.
-                    <sup type="ref">[27]</sup> Over the 7-year analysis of 1632 patients, 63.1% were treated for rheumatologic conditions such as rheumatoid arthritis, AS, or psoriatic arthritis. The most common infusion reactions were pruritus (19.9%), flushing (9.9%), and dyspnea (6.2%). About two-thirds of infusion reactions were observed during the first year of therapy. 
-                </p>
-                <p>Recent analyses and several guidelines recommend that switching TNF inhibitors can be beneficial in a number of patients with axSpA who have a secondary loss of response to initial TNF inhibitor therapy.
-                    <sup type="ref">[1,5,28]</sup> In Europe, TNF inhibitors are indicated for axSpA, including nonradiographic disease, as long as there is evidence of active inflammation. In the United States, the indication is currently limited to AS.
-                    <sup type="ref">[29-32]</sup>
-                </p>
-                <p>Adalimumab is currently indicated for AS and is recommended for nr-axSpA based on data from clinical trials.
-                    <sup type="ref">[5]</sup> However, it is not a specifically approved indication in the United States.
-                    <sup type="ref">[29]</sup>
-                </p>
-                <p>In the randomized, controlled ABILITY-1 trial, adalimumab had a positive benefit-risk profile in patients with active nr-axSpA.
-                    <sup type="ref">[33]</sup> Greater improvements in disease activity, physical function, and health-related quality of life, as well as reduction of sacroiliac joint and spine inflammation, based on MRI findings were demonstrated after 12 weeks of adalimumab therapy compared with placebo (Table 3). In the open-label ABILITY-1 extension, patients with nr-axSpA had sustained clinical and functional improvements through 3 years, as well as suppression of MRI axial inflammation, which was greater in patients who achieved clinical remission.
-                    <sup type="ref">[34]</sup> The safety profile was consistent with what has been observed with adalimumab in AS and other diseases.
-                    <sup type="ref">[33]</sup>
-                </p>
-                <p>There are several other TNF inhibitors that are currently approved for the indication of nr-axSpA in Europe and other countries, but not in the United States. These include certolizumab, etanercept, and golimumab. Data from several recent clinical trials have demonstrated good efficacy and safety profiles for these agents for nr-axSpA (Table 3).</p>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-        <subsec_element>
-            <subsec_header>
-                <p>
-                    <strong>Table 3. Phase 3 Trials of TNF Inhibitors Currently Approved for AS and Under Investigation for the Treatment of nr-AxSpA</strong>
-                </p>
-            </subsec_header>
-            <subsec_content>
-                <strong>Table 3. Phase 3 Trials of TNF Inhibitors Currently Approved for AS and Under Investigation for the Treatment of nr-AxSpA</strong>
-                <strong>Study Name</strong>
-                <strong>Study Drug</strong>
-                <strong>Study Duration </strong>
-                <strong>Patient Population</strong>
-                <strong>Number of Patients</strong>
-                <strong>Results for Primary Endpoint</strong>
-ABILITY-1
-                <sup>[33]</sup>
+<strong>&lt;&lt;end table 2&gt;&gt;</strong></subsec_content><qna_form>3</qna_form></subsec_element></sec_element><pg_footnotes/></toc_element><toc_element><toc_label/><toc_type>Default</toc_type><sec_element><sec_header/><subsec_element><subsec_header><p>Discussion</p></subsec_header><subsec_content>BEGIN---
+<p>Spondyloarthritis (SpA) describes a collection of chronic inflammatory rheumatic diseases that have overlapping features, including axial and peripheral joint involvement such as sacroiliitis, enthesitis, peripheral inflammatory arthritis, extra-articular manifestations, human leukocyte antigen (HLA)-B27 positivity, and familial aggregation.<sup type="ref">[1,2]</sup> Axial spondyloarthritis (axSpA) is characterized by involvement of the sacroiliac joints and spine. The diagnosis of axSpA is often delayed, sometimes by as much as 8 years or more.<sup type="ref">[3]</sup> A chief reason for the long diagnostic delay is that sacroiliitis, which is considered a hallmark of ankylosing spondylitis (AS), is not clinically detectable and may not be visible on plain x-ray in the early stages of the disease.<sup type="ref">[4]</sup></p><p>There are 2 main types of SpA, axial and peripheral, depending upon the main presenting symptoms. However, the 2 types can overlap, and one may progress to the other. Axial SpA predominantly involves the spine and sacroiliac joints. Peripheral SpA predominantly involves peripheral joints. For classification purposes, axSpA is further divided in radiographic or nonradiographic (Figure 1).<sup type="ref">[2]</sup></p></subsec_content><qna_form/></subsec_element><subsec_element><subsec_header><p><strong>Figure 1. Spectrum of axSpA<sup type="ref">[2]</sup></strong></p></subsec_header><subsec_content><p>An evolving understanding of the concept of axSpA has led to a differentiation between nonradiographic axSpA (nr-axSpA) and radiographic axSpA. These 2 terms are distinguished by the degree of sacroiliitis assessed by conventional radiography. Radiographic axSpA, or AS, can be diagnosed only when there is definitive evidence of sacroiliitis on plain radiographs of the sacroiliac.<sup type="ref">[2]</sup></p><p>In clinical practice, it is important to remember that radiographic sacroiliitis is a late finding in the disease course of many patients.<sup type="ref">[5]</sup> Patients can be diagnosed based on a typical clinical pattern, even in the presence of normal radiographs. The leading symptom of axSpA is chronic back pain, which is "inflammatory" in nature, improves with physical activity, and is not relieved by rest. In addition, other musculoskeletal manifestations of axSpA include arthritis, enthesitis, and dactylitis.<sup type="ref">[5]</sup> Certain typical extra-articular manifestations in a patient should raise the clinical suspicion of axSpA. These can include acute anterior uveitis (AAU), psoriasis, and inflammatory bowel disease (IBD).<sup type="ref">[5]</sup></p><p>In Jason's case, he has had 3 occurrences of uveitis, which is a common finding in patients with axSpA. In one cross-sectional study of patients with AS, 39% had a history of AAU.<sup type="ref">[6]</sup> In a systematic review and meta-analysis, the pooled prevalence of AAU was 25.8%.<sup type="ref">[7]</sup> A study of unselected patients presenting with uveitis identified a minimum prevalence of axSpA of 20.2%. Of those patients, 22.9% did not have a previous diagnosis of axSpA.<sup type="ref">[8]</sup></p><p>Crucial elements for a prompt and accurate diagnosis include a comprehensive history of the presenting complaint and past medical history. A timeline of the pain and description of aggravating factors provide clues to the diagnosis. Patients with axSpA typically describe a pattern of pronounced stiffness and improvement of pain and stiffness with activity or exercise.<sup type="ref">[5]</sup></p></subsec_content><qna_form/></subsec_element></sec_element><sec_element><sec_header><p>Case 1 Continues</p></sec_header><subsec_element><subsec_header/><subsec_content><p>An x-ray of the sacroiliac joint shows no evidence of sacroiliitis. Testing for HLA-B27 is positive.</p></subsec_content><qna_form>4</qna_form></subsec_element></sec_element><pg_footnotes/></toc_element><toc_element><toc_label/><toc_type>Default</toc_type><sec_element><sec_header/><subsec_element><subsec_header><p>Discussion</p></subsec_header><subsec_content><p>MRI may show signs of inflammation much earlier than radiographs show structural damage. MRI allows early detection of sacroiliac joint inflammation in patients with axSpA.<sup type="ref">[9,10]</sup> A gadolinium-enhanced image can detect areas of increased vascularization, helping detect synovitis and enthesitis; however, it does not necessarily add value to the diagnostic capacity of the MRI over STIR or T1 sequences in diagnosing early axSpA.<sup type="ref">[9]</sup> During the inflammatory phase, a STIR image will typically show hyperintensity in the bone marrow (termed "bone marrow edema") on both sides of the sacroiliac joints.<sup type="ref">[11]</sup> As such, to save time and to reduce patient burden, cost, and risk, gadolinium administration is not needed. </p></subsec_content><qna_form/></subsec_element></sec_element><sec_element><sec_header><p>Case 1 Continues</p></sec_header><subsec_element><subsec_header/><subsec_content><p>MRI of the sacroiliac joints is obtained. The T1-weighted image shows some evidence of erosions and sclerosis, and the STIR image shows evidence of bone marrow edema at the inferior corner of the iliac and the sacral side of the joint. Based on these imaging findings, the diagnosis of nr-axSpA is confirmed.</p></subsec_content><qna_form>5</qna_form></subsec_element></sec_element><pg_footnotes/></toc_element><toc_element><toc_label/><toc_type>Default</toc_type><sec_element><sec_header/><subsec_element><subsec_header><p>Discussion</p></subsec_header><subsec_content><p>Nonsteroidal anti-inflammatory drugs (NSAIDs) are recommended as first-line treatment for nr-axSpA. Although these are effective in reducing inflammation, pain, and stiffness, it is important to remember that they can be associated with GI bleeding and cardiotoxicity. For disease that is refractory to NSAIDs and for patients who cannot take NSAIDs, guidelines recommend that a biological medication should be used, such as a TNF inhibitor or an interleukin (IL) 17 inhibitor.<sup type="ref">[1,5]</sup></p><p>At this time, there are no US Food and Drug Administration (FDA)-approved treatment for nr-axSpA; however, treatment guidelines by the American College of Rheumatology (ACR) and also European League Against Rheumatism (EULAR) do recommend the use of some treatments indicated for AS for patients with nr-axSpA.<sup type="ref">[1,5]</sup> The 5 TNF inhibitors that have demonstrated efficacy for nr-AxSpA and are approved by the FDA to treat AS are<sup type="ref">[1]</sup>:</p><p>•	Adalimumab </p><p>•	Certolizumab pegol </p><p>•	Etanercept </p><p>•	Golimumab </p><p>•	Infliximab </p><p>Secukinumab is the first IL-17 inhibitor approved by the FDA for the treatment of AS.<sup type="ref">[12]</sup> Studies of IL-17 inhibitors in patients with nonradiographic disease are currently underway. Caution should be used when considering IL-17 inhibitors for patients with axSpA who have active IBD or Crohn disease.<sup type="ref">[5]</sup> It should also be noted that both TNF inhibitors and IL-17 inhibitors can reactivate latent tuberculosis and increase the risk for infection.<sup type="ref">[1]</sup></p><p>ACR/SAA/SPARTAN strongly recommend against treatment with systemic glucocorticoids in active AS and active nr-axSpA.<sup type="ref">[1]</sup> Limited studies have been done on the treatment of active AS with systemic glucocorticoids, showing modest improvements; however, the sample sizes of a randomized controlled trial (RCT) were small, and the quality of evidence for the case studies was considered low due to risk for bias and imprecision in the effect estimation.<sup type="ref">[1,13-16]</sup></p><p>The treatment of patients with axSpA should be individualized according to the patient's current condition and disease severity, as well as patient characteristics such as comorbidities and psychosocial factors.<sup type="ref">[1,5]</sup> AxSpA is associated with several comorbidities that contribute significantly to morbidity and mortality and add to the complexity of management. These comorbidities include hypertension, hyperlipidemia, diabetes mellitus, peptic ulcers, headaches, depression, uveitis, cancer, IBD, osteoporosis, psoriasis, and other cardiovascular, pulmonary, renal, and neurological complications.<sup type="ref">[6,17,18]</sup> Therefore, it is important to take any presenting comorbidities into account when creating treatment plans, and to refer patients to specialists in a timely manner. </p><p>In addition to receiving pharmacologic therapy, patients should be advised to exercise on a regular basis. Home exercises should be recommended to Jason, as they have proven benefit for patients with axSpA.<sup type="ref">[19]</sup> Physical therapy is more beneficial than home exercises, but it is more expensive and less feasible than home exercises.<sup type="ref">[5,19]</sup> Physical therapy should be considered for each patient and the decision should be made on an individual basis.<sup type="ref">[5]</sup></p><p>Patients should be educated about all aspects of managing their disease and be supported to share in decision-making about their treatment.<sup type="ref">[1] </sup>Disease monitoring of patients with axSpA in the clinic could include assessment of disease activity, patient-reported outcomes, clinical findings, laboratory tests, and imaging. The types and frequency of monitoring should be decided on an individual basis depending on symptoms, severity, and treatment regimen.<sup type="ref">[5] </sup>To define the level of disease activity, the Bath Ankylosing Spondylitis Disease Activity Index (BASDAI) or the Ankylosing Spondylitis Disease Activity Score (ASDAS) may be used.<sup type="ref">[1,5,20,21]</sup> (Figures 2 and 3) In past clinical practice, active disease has been defined as BASDAI score ≥4, but active disease can also be defined as ASDAS ≥2.1.<sup type="ref">[5]</sup></p><p><strong>Figure 2. BASDAI Score<sup type="ref">[20]</sup></strong></p></subsec_content><qna_form/></subsec_element><subsec_element><subsec_header><p><strong>Figure 2. BASDAI Score<sup type="ref">[20]</sup></strong></p></subsec_header><subsec_content><p><strong>&lt;&lt;insert figure 2&gt;&gt; </strong></p><p><strong>&lt;&lt;end figure&gt;&gt;</strong></p><p><strong>&lt;&lt;insert figure 3a&gt;&gt;</strong></p><p><strong>Figure 3a. ASDAS Parameters and Calculations<sup type="ref">[22,23]</sup></strong></p><p><strong>&lt;&lt;end figure 3a&gt;&gt;</strong></p><p><strong>&lt;&lt;insert figure 3b&gt;&gt;</strong></p><p>It has been suggested that the ASDAS is a better measure of disease activity than the BASDAI.<sup type="ref">[5,24]</sup> In support of this conclusion, the BASDAI is a fully patient-reported outcome measure, whereas the ASDAS is based on both patient reports and C-reactive protein.<sup type="ref">[20,23]</sup> In addition, the ASDAS cut-offs for disease activity states and response criteria were based on a thorough validation process, while the BASDAI cut-offs were chosen arbitrarily. Furthermore, whereas persistently increased ASDAS is associated with syndesmophyte formation, the BASDAI must be combined with CRP measurement to have similar value.<sup type="ref">[25]</sup> Although often there is concordance between BASDAI score ≥4 and ASDAS ≥2.1, in discordant cases, an elevated ASDAS is more predictive of good response than an elevated BASDAI.<sup type="ref">[5]</sup></p></subsec_content><qna_form/></subsec_element></sec_element><sec_element><sec_header><p>Case 1 Continues</p></sec_header><subsec_element><subsec_header/><subsec_content><p>Jason's BASDAI score is 5 and his ASDAS is 2.6. He begins treatment with infliximab 5 mg/kg at baseline, at week 2, at week 6, and then every 6 weeks thereafter and does well. At subsequent follow-ups over the year, his BASDAI score improves to 1.9. One year later, he starts to experience infusion reactions. During his visit, he is symptomatic again, and mentions that his back pain is worsening again. His BASDAI score during this visit is 6.4.</p></subsec_content><qna_form>6</qna_form></subsec_element></sec_element><pg_footnotes/></toc_element><toc_element><toc_label/><toc_type>Default</toc_type><sec_element><sec_header/><subsec_element><subsec_header><p>Discussion</p></subsec_header><subsec_content><p>Infusion reactions to infliximab can happen at any time during treatment, even in patients who have previously tolerated treatment.<sup type="ref">[26]</sup> However, in a prospective analysis of patients enrolled in a community registry, infusion reactions to infliximab were uncommon and were typically classified as mild to moderate.<sup type="ref">[27]</sup> Over the 7-year analysis of 1632 patients, 63.1% were treated for rheumatologic conditions such as rheumatoid arthritis, AS, or psoriatic arthritis. The most common infusion reactions were pruritus (19.9%), flushing (9.9%), and dyspnea (6.2%). About two-thirds of infusion reactions were observed during the first year of therapy. </p><p>Recent analyses and several guidelines recommend that switching TNF inhibitors can be beneficial in a number of patients with axSpA who have a secondary loss of response to initial TNF inhibitor therapy.<sup type="ref">[1,5,28]</sup> In Europe, TNF inhibitors are indicated for axSpA, including nonradiographic disease, as long as there is evidence of active inflammation. In the United States, the indication is currently limited to AS.<sup type="ref">[29-32]</sup></p><p>Adalimumab is currently indicated for AS and is recommended for nr-axSpA based on data from clinical trials.<sup type="ref">[5]</sup> However, it is not a specifically approved indication in the United States.<sup type="ref">[29]</sup></p><p>In the randomized, controlled ABILITY-1 trial, adalimumab had a positive benefit-risk profile in patients with active nr-axSpA.<sup type="ref">[33]</sup> Greater improvements in disease activity, physical function, and health-related quality of life, as well as reduction of sacroiliac joint and spine inflammation, based on MRI findings were demonstrated after 12 weeks of adalimumab therapy compared with placebo (Table 3). In the open-label ABILITY-1 extension, patients with nr-axSpA had sustained clinical and functional improvements through 3 years, as well as suppression of MRI axial inflammation, which was greater in patients who achieved clinical remission.<sup type="ref">[34]</sup> The safety profile was consistent with what has been observed with adalimumab in AS and other diseases.<sup type="ref">[33]</sup></p><p>There are several other TNF inhibitors that are currently approved for the indication of nr-axSpA in Europe and other countries, but not in the United States. These include certolizumab, etanercept, and golimumab. Data from several recent clinical trials have demonstrated good efficacy and safety profiles for these agents for nr-axSpA (Table 3).</p></subsec_content><qna_form/></subsec_element><subsec_element><subsec_header><p><strong>Table 3. Phase 3 Trials of TNF Inhibitors Currently Approved for AS and Under Investigation for the Treatment of nr-AxSpA</strong></p></subsec_header><subsec_content><strong>Table 3. Phase 3 Trials of TNF Inhibitors Currently Approved for AS and Under Investigation for the Treatment of nr-AxSpA</strong><strong>Study Name</strong><strong>Study Drug</strong><strong>Study Duration </strong><strong>Patient Population</strong><strong>Number of Patients</strong><strong>Results for Primary Endpoint</strong>
+ABILITY-1<sup>[33]</sup>
 Adalimumab 40 mg every 2 weeks
 12 weeks
 Active nr-axSpA
@@ -483,8 +72,7 @@ Inadequate response or intolerant to ≥1 NSAID
 Adalimumab: n=91
 Placebo: n=94
 ASAS40: 36% vs 15%
-RAPID-axSpA
-                <sup>[35]</sup>
+RAPID-axSpA<sup>[35]</sup>
 Certolizumab pegol SC 200 mg every 2 weeks
 Certolizumab pegol SC 400 mg every 4 weeks
 24 weeks 
@@ -496,8 +84,7 @@ Placebo: n=107
 Nr-axSpA: 147 patients out of 325
 ASAS20 at week 12 for certolizumab pegol 200 mg vs placebo: 58.7% vs 40.0%
 ASAS20 at week 12 for certolizumab pegol 400 mg vs placebo: 62.7% vs 40.0%
-EMBARK
-                <sup>[36]</sup>
+EMBARK<sup>[36]</sup>
 Etanercept SC 50 mg once a week + background NSAID
 12 weeks 
 Active nr-axSpA (BASDAI ≥4) with inadequate response to ≥2 NSAIDs taken separately for a total combined duration of &gt;4 weeks
@@ -506,8 +93,7 @@ Age: 18-49 years old
 Etanercept: n=106
 Placebo: n=109
 ASAS40: 32% vs 16%
-GO-AHEAD
-                <sup>[37]</sup>
+GO-AHEAD<sup>[37]</sup>
 Golimumab SC 50 mg every 4 weeks
 16 weeks double blind
 Active nr-axSpA (BASDAI ≥4 and total back pain ≥4 on a VAS 0-10 cm)  
@@ -518,97 +104,19 @@ Golimumab: n=97
 Placebo: n=100
 ASAS20 at week 16: 71% vs 40%
 &lt;&lt;CAPTION&gt;&gt;ASAS20 = Assessment in SpondyloArthritis international Society 20%; ASAS40 = Assessment in SpondyloArthritis international Society 40%; SC = subcutaneous; VAS = visual analog scale. 
-
-                <strong>&lt;&lt;end table 3&gt;&gt;</strong>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-        <subsec_element>
-            <subsec_header/>
-            <subsec_content>
-                <p>Ixekizumab is a monoclonal antibody that selectively binds with IL-17A cytokine and inhibits its interaction with the IL-17 receptor. In a phase 3 study (presented in abstract form) evaluating safety and efficacy of ixekizumab in patients with active AS who had never received a bDMARD, primary endpoints were met at week 16 in the ixekizumab group (part of a 52-wk study).
-                    <sup type="ref">[38] </sup> Significantly more patients achieved ASAS40 at week 16 with ixekizumab q2w (52%) and ixekizumab q4w (48%) vs placebo (18%, 
-                    <em>P</em>&lt;.001). Both ixekizumab doses also had significantly higher improvements for disease activity, functional disability, and spinal and SIJ inflammation. The incidence of treatment-emergent adverse events was similar with ixekizumab compared with placebo.
-                </p>
-                <p>Tofacitinib is an oral Janus kinase (JAK) inhibitor that inhibits cell signaling through JAK3 and JAK1 proteins and, to a lesser extent, JAK2.
-                    <sup type="ref">[39]</sup> In a 16-week, dose-ranging phase 2 trial, tofacitinib 5 or 10 mg BID demonstrated clinical efficacy superior to placebo in reducing signs, symptoms, and objective endpoints of active AS in adults.
-                    <sup type="ref">[40]</sup> According to a post hoc analysis of this study, approximately one-third of tofacitinib-treated patients experienced clinically meaningful spinal MRI inflammation reductions at week 12.
-                    <sup type="ref">[39]</sup> Nearly 3 times more tofacitinib-treated patients achieved the minimally important change in MRI inflammation compared with the placebo group. 
-                </p>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-    </sec_element>
-    <sec_element>
-        <sec_header>
-            <p>Case 1 Conclusion</p>
-        </sec_header>
-        <subsec_element>
-            <subsec_header/>
-            <subsec_content>
-                <p>Jason starts treatment with adalimumab 40 mg every 2 weeks. At the 3-month follow-up visit, his BASDAI score is 2 and he reports that he is feeling much better. </p>
+<strong>&lt;&lt;end table 3&gt;&gt;</strong></subsec_content><qna_form/></subsec_element><subsec_element><subsec_header/><subsec_content><p>Ixekizumab is a monoclonal antibody that selectively binds with IL-17A cytokine and inhibits its interaction with the IL-17 receptor. In a phase 3 study (presented in abstract form) evaluating safety and efficacy of ixekizumab in patients with active AS who had never received a bDMARD, primary endpoints were met at week 16 in the ixekizumab group (part of a 52-wk study).<sup type="ref">[38] </sup> Significantly more patients achieved ASAS40 at week 16 with ixekizumab q2w (52%) and ixekizumab q4w (48%) vs placebo (18%, <em>P</em>&lt;.001). Both ixekizumab doses also had significantly higher improvements for disease activity, functional disability, and spinal and SIJ inflammation. The incidence of treatment-emergent adverse events was similar with ixekizumab compared with placebo.</p><p>Tofacitinib is an oral Janus kinase (JAK) inhibitor that inhibits cell signaling through JAK3 and JAK1 proteins and, to a lesser extent, JAK2.<sup type="ref">[39]</sup> In a 16-week, dose-ranging phase 2 trial, tofacitinib 5 or 10 mg BID demonstrated clinical efficacy superior to placebo in reducing signs, symptoms, and objective endpoints of active AS in adults.<sup type="ref">[40]</sup> According to a post hoc analysis of this study, approximately one-third of tofacitinib-treated patients experienced clinically meaningful spinal MRI inflammation reductions at week 12.<sup type="ref">[39]</sup> Nearly 3 times more tofacitinib-treated patients achieved the minimally important change in MRI inflammation compared with the placebo group. </p></subsec_content><qna_form/></subsec_element></sec_element><sec_element><sec_header><p>Case 1 Conclusion</p></sec_header><subsec_element><subsec_header/><subsec_content><p>Jason starts treatment with adalimumab 40 mg every 2 weeks. At the 3-month follow-up visit, his BASDAI score is 2 and he reports that he is feeling much better. </p>
 END---
 
 
-
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-    </sec_element>
-    <pg_footnotes/>
-</toc_element>
-<toc_element>
-    <toc_label/>
-    <toc_type>Default</toc_type>
-    <sec_element>
-        <sec_header>
-            <p>Case 2: Patient Presentation and Background</p>
-        </sec_header>
-        <subsec_element>
-            <subsec_header/>
-            <subsec_content>
-                <table style="margin-right: 20px;" align="left" border="1" bordercolor="#b3b3b3" cellpadding="3" cellspacing="0">
-                    <tbody>
-                        <tr>
-                            <td align="center">
-                                <img src="/webmd/professional_assets/medscape/images/content/article/902/362/902362-patient2.jpg?interpolation=lanczos-none&amp;resize=200:150" alt="" border="0" width="200"/>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p style="min-height: 230px;">
-                    <p>Laura is a 41-year-old woman who has been referred to rheumatology for chronic back pain. She presents today with a swollen R ankle. It was initially blamed on a fall when she was carrying a laundry basket up the stairs, but that injury occurred 3 weeks ago. She has treated the ankle with rest, ice, and elevation, but the symptoms have not improved. She reports that this is not the first time that she has had problems with pain and swelling in her right ankle. In fact, she says, it has been a problem on and off since she was 18 or 19 years old. Laura also has a history of progressively worsening back pain. She has had this back pain since the age of 23, first experiencing it after a caesarean section. An x-ray of the lumbar spine was done at age 26, and was normal; however, a repeat x-ray 1 year ago showed mild osteoarthritis in the lumbar region with degenerative disc disease at L5-S1. She reports that she has been doing physical therapy exercises for her back, which help with the pain (Tables 4 and 5).</p>
-                </p>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-        <subsec_element>
-            <subsec_header>
-                <p>
-                    <strong>Table 4. History and Physical Examination Findings </strong>
-                </p>
-            </subsec_header>
-            <subsec_content>
-                <strong>Table 4. History and Physical Examination Findings </strong>
-                <strong>History</strong>
-                <strong>Findings</strong>
+</subsec_content><qna_form/></subsec_element></sec_element><pg_footnotes/></toc_element><toc_element><toc_label/><toc_type>Default</toc_type><sec_element><sec_header><p>Case 2: Patient Presentation and Background</p></sec_header><subsec_element><subsec_header/><subsec_content><table style="margin-right: 20px;" align="left" border="1" bordercolor="#b3b3b3" cellpadding="3" cellspacing="0"><tbody><tr><td align="center"><img src="/webmd/professional_assets/medscape/images/content/article/902/362/902362-patient2.jpg?interpolation=lanczos-none&amp;resize=200:150" alt="" border="0" width="200"/></td></tr></tbody></table><p style="min-height: 230px;"><p>Laura is a 41-year-old woman who has been referred to rheumatology for chronic back pain. She presents today with a swollen R ankle. It was initially blamed on a fall when she was carrying a laundry basket up the stairs, but that injury occurred 3 weeks ago. She has treated the ankle with rest, ice, and elevation, but the symptoms have not improved. She reports that this is not the first time that she has had problems with pain and swelling in her right ankle. In fact, she says, it has been a problem on and off since she was 18 or 19 years old. Laura also has a history of progressively worsening back pain. She has had this back pain since the age of 23, first experiencing it after a caesarean section. An x-ray of the lumbar spine was done at age 26, and was normal; however, a repeat x-ray 1 year ago showed mild osteoarthritis in the lumbar region with degenerative disc disease at L5-S1. She reports that she has been doing physical therapy exercises for her back, which help with the pain (Tables 4 and 5).</p></p></subsec_content><qna_form/></subsec_element><subsec_element><subsec_header><p><strong>Table 4. History and Physical Examination Findings </strong></p></subsec_header><subsec_content><strong>Table 4. History and Physical Examination Findings </strong><strong>History</strong><strong>Findings</strong>
 Medical
-
-                <ul>
-                    <li>	She has history of red and painful eye, first the right, and then the left 3 and 2 years ago, respectively. This was treated with eye drops, but she does not remember the name of the drug. </li>
-                    <li>	R knee swelling and pain</li>
-                </ul>
+<ul><li>	She has history of red and painful eye, first the right, and then the left 3 and 2 years ago, respectively. This was treated with eye drops, but she does not remember the name of the drug. </li><li>	R knee swelling and pain</li></ul>
 o	Knee aspiration 3 years ago
 o	Synovial fluid white cell count was 14,000/mL
 o	She was referred to an orthopedic surgeon, who did not recommend surgery at that time
 o	Treated with oral antibiotics for 2 weeks
 Medications
-
-                <ul>
-                    <li>	Levonorgestrel and ethinyl estradiol</li>
-                    <li>	OTC acetaminophen PRN </li>
-                    <li>	OTC ibuprofen PRN</li>
-                </ul>
+<ul><li>	Levonorgestrel and ethinyl estradiol</li><li>	OTC acetaminophen PRN </li><li>	OTC ibuprofen PRN</li></ul>
 Allergies
 NKDA
 Surgical
@@ -622,13 +130,9 @@ Lives alone, divorced
 Alcohol: social (2-3 beers per week)
 Tobacco: current smoker, 8 pack-years
 Illicit drugs: none
-
-                <strong>Physical Examination</strong>
-                <strong>Findings</strong>
+<strong>Physical Examination</strong><strong>Findings</strong>
 Vital signs
-BP 119/81 mm Hg; pulse rate 72/min, regular; respirations 12/min; temperature 98.6⁰F; O
-                <sub>2</sub> saturation 95%, BMI 28 kg/m
-                <sup>2</sup>
+BP 119/81 mm Hg; pulse rate 72/min, regular; respirations 12/min; temperature 98.6⁰F; O<sub>2</sub> saturation 95%, BMI 28 kg/m<sup>2</sup>
 General
 Well developed, in no acute distress
 Skin
@@ -642,29 +146,11 @@ Normal
 Abdomen
 Normal
 Musculoskeletal
-
-                <ul>
-                    <li>	R ankle: swelling and redness; pain on palpation along the joint line; limited ROM in dorsiflexion and plantar flexion</li>
-                    <li>	Tender on L sacroiliac joint, and the FABER test on the left side is positive </li>
-                </ul>
+<ul><li>	R ankle: swelling and redness; pain on palpation along the joint line; limited ROM in dorsiflexion and plantar flexion</li><li>	Tender on L sacroiliac joint, and the FABER test on the left side is positive </li></ul>
 Neurological
 No focal neurological deficit
 &lt;&lt;CAPTION&gt;&gt;FABER = Flexion, Abduction, External rotation; MI = myocardial infarction; OTC = over the counter; PRN = as needed; ROM = range of motion.
-
-                <strong>&lt;&lt;end table 4&gt;&gt;</strong>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-        <subsec_element>
-            <subsec_header>
-                <p>
-                    <strong>Table 5. Laboratory Tests</strong>
-                </p>
-            </subsec_header>
-            <subsec_content>
-                <strong>Table 5. Laboratory Tests</strong>
-                <strong>CBC</strong>
-                <strong>Results</strong>
+<strong>&lt;&lt;end table 4&gt;&gt;</strong></subsec_content><qna_form/></subsec_element><subsec_element><subsec_header><p><strong>Table 5. Laboratory Tests</strong></p></subsec_header><subsec_content><strong>Table 5. Laboratory Tests</strong><strong>CBC</strong><strong>Results</strong>
 WBC
 6.3 K/cu mm
 HGB
@@ -673,27 +159,22 @@ HCT
 39%
 Platelet count
 240 K/cu mm
-
-                <strong>Metabolic Panel and Other Tests</strong>
-                <strong>Results</strong>
+<strong>Metabolic Panel and Other Tests</strong><strong>Results</strong>
 Sodium
 145 mEq/L
 Potassium
 4.7 mEq/L
 Chloride
 109 mEq/L
-CO
-                <sub>2</sub>
+CO<sub>2</sub>
 27 mEq/L
 Creatinine
 1.1 mg/dL
 BUN
 17 mg/dL
 eGFR
-95 mL/min/1.73 m
-                <sup>2</sup>
-Glucose, HbA
-                <sub>1C</sub>
+95 mL/min/1.73 m<sup>2</sup>
+Glucose, HbA<sub>1C</sub>
 92 mg/dL
 ESR
 25
@@ -701,78 +182,13 @@ CRP
 10 mg/L
 HLA-B27
 Positive
-
-                <strong>&lt;&lt;end table 5&gt;&gt;</strong>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-        <subsec_element>
-            <subsec_header/>
-            <subsec_content>
-                <p>An x-ray of the sacroiliac joint shows grade II sacroiliitis on the left side and grade III sacroiliitis on the right side. </p>
-            </subsec_content>
-            <qna_form>7</qna_form>
-        </subsec_element>
-    </sec_element>
-    <pg_footnotes/>
-</toc_element>
-<toc_element>
-    <toc_label/>
-    <toc_type>Default</toc_type>
-    <sec_element>
-        <sec_header/>
-        <subsec_element>
-            <subsec_header>
-                <p>Discussion</p>
-            </subsec_header>
-            <subsec_content>
-                <p>The diagnosis of AS is generally made by combining clinical criteria of inflammatory back pain with enthesitis and/or inflammatory peripheral arthritis with radiologic findings on sacroiliac joint x-rays (Table 6).
-                    <sup type="ref">[41-43]</sup> The presence of definitive sacroiliitis on plain radiography combined with Laura's symptoms is sufficient to make the diagnosis of AS.
-                    <sup type="ref">[44]</sup> Sacroiliitis grading can be achieved using plain radiographs according to the modified New York criteria (Table 7).
-                    <sup type="ref">[45]</sup>
-                </p>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-        <subsec_element>
-            <subsec_header>
-                <p>
-                    <strong>Table 6. Modified New York Criteria for AS
-                        <sup type="ref">[44]</sup>
-                    </strong>
-                </p>
-            </subsec_header>
-            <subsec_content>
-                <strong>Table 6. Modified New York Criteria for AS
-                    <sup>[44]</sup>
-                </strong>
-                <strong>Diagnosis: Clinical Criteria</strong>
+<strong>&lt;&lt;end table 5&gt;&gt;</strong></subsec_content><qna_form/></subsec_element><subsec_element><subsec_header/><subsec_content><p>An x-ray of the sacroiliac joint shows grade II sacroiliitis on the left side and grade III sacroiliitis on the right side. </p></subsec_content><qna_form>7</qna_form></subsec_element></sec_element><pg_footnotes/></toc_element><toc_element><toc_label/><toc_type>Default</toc_type><sec_element><sec_header/><subsec_element><subsec_header><p>Discussion</p></subsec_header><subsec_content><p>The diagnosis of AS is generally made by combining clinical criteria of inflammatory back pain with enthesitis and/or inflammatory peripheral arthritis with radiologic findings on sacroiliac joint x-rays (Table 6).<sup type="ref">[41-43]</sup> The presence of definitive sacroiliitis on plain radiography combined with Laura's symptoms is sufficient to make the diagnosis of AS.<sup type="ref">[44]</sup> Sacroiliitis grading can be achieved using plain radiographs according to the modified New York criteria (Table 7).<sup type="ref">[45]</sup></p></subsec_content><qna_form/></subsec_element><subsec_element><subsec_header><p><strong>Table 6. Modified New York Criteria for AS<sup type="ref">[44]</sup></strong></p></subsec_header><subsec_content><strong>Table 6. Modified New York Criteria for AS<sup>[44]</sup></strong><strong>Diagnosis: Clinical Criteria</strong>
 Low back pain and stiffness for more than 3 months which improves with exercise, but is not relieved by rest 
 Limitation of lumbar spine motion in both sagittal and frontal planes
 Limitation of chest expansion relative to normal values corrected for age and sex
-
-                <strong>Diagnosis: Radiologic Criteria</strong>
+<strong>Diagnosis: Radiologic Criteria</strong>
 Sacroiliitis grade ≥2 bilaterally or sacroiliitis grade 3-4 unilaterally
-
-                <strong>&lt;&lt;caption&gt;&gt;Requirements: 1 of 2 radiologic criterion AND any clinical criteria </strong>
-                <strong>&lt;&lt;end table 6&gt;&gt;</strong>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-        <subsec_element>
-            <subsec_header>
-                <p>
-                    <strong>Table 7. Sacroiliitis Grading According to the New York Criteria
-                        <sup type="ref">[45]</sup>
-                    </strong>
-                </p>
-            </subsec_header>
-            <subsec_content>
-                <strong>Table 7. Sacroiliitis Grading According to the New York Criteria
-                    <sup>[45]</sup>
-                </strong>
-                <strong>Grade </strong>
-                <strong>Radiographic Findings</strong>
+<strong>&lt;&lt;caption&gt;&gt;Requirements: 1 of 2 radiologic criterion AND any clinical criteria </strong><strong>&lt;&lt;end table 6&gt;&gt;</strong></subsec_content><qna_form/></subsec_element><subsec_element><subsec_header><p><strong>Table 7. Sacroiliitis Grading According to the New York Criteria<sup type="ref">[45]</sup></strong></p></subsec_header><subsec_content><strong>Table 7. Sacroiliitis Grading According to the New York Criteria<sup>[45]</sup></strong><strong>Grade </strong><strong>Radiographic Findings</strong>
 0
 Normal 
 I
@@ -783,74 +199,8 @@ III
 Unequivocal abnormality: moderate or advanced sacroiliitis with 1 or more signs of erosions, sclerosis, widening, joint space narrowing, or partial ankylosis
 IV
 Total ankylosis
-
-                <strong>&lt;&lt;end table 7&gt;&gt;</strong>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-        <subsec_element>
-            <subsec_header/>
-            <subsec_content>
-                <p>A contributor to the problem of delayed diagnosis of AS is difficulty in recognizing disease that is not specifically associated with radiographic findings.
-                    <sup type="ref">[46]</sup> That is illustrated in this case. A synovial cell count of 14,000 suggests inflammatory arthritis, which should prompt a referral to a rheumatologist rather than to an orthopedic surgeon.
-                    <sup type="ref">[47]</sup>
-                </p>
-                <p>Gender can be another factor in a long diagnostic delay of AS and is an important consideration in treatment. Data indicate that men with axSpA have a worse radiologic prognosis, whereas women have a higher disease burden, partly as a result of a longer delay in diagnosis, higher disease activity, and less responsiveness to treatment with TNF inhibitors.
-                    <sup type="ref">[48]</sup>
-                </p>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-    </sec_element>
-    <sec_element>
-        <sec_header>
-            <p>Case 2 Continues</p>
-        </sec_header>
-        <subsec_element>
-            <subsec_header/>
-            <subsec_content>
-                <p>Prior to the time of her referral, Laura continued in physical therapy and with NSAID treatment. Today she rates her back pain as 8 on a scale of 0 to 10 and complains of morning stiffness lasting about 1 hour. Her current BASDAI score is 6.</p>
-            </subsec_content>
-            <qna_form>8</qna_form>
-        </subsec_element>
-    </sec_element>
-    <pg_footnotes/>
-</toc_element>
-<toc_element>
-    <toc_label/>
-    <toc_type>Default</toc_type>
-    <sec_element>
-        <sec_header/>
-        <subsec_element>
-            <subsec_header>
-                <p>Discussion</p>
-            </subsec_header>
-            <subsec_content>
-                <p>TNF inhibition has been the therapy of choice for patients with established AS. There are 5 different TNF inhibitors currently approved for AS: adalimumab, certolizumab, etanercept, golimumab, and infliximab (Table 8). These agents have all demonstrated efficacy in the treatment of AS, but do differ in molecular structure and administration route.
-                    <sup type="ref">[29-32,49]</sup>
-                </p>
-                <p>For adults with active AS despite treatment with NSAIDs, ACR/SAS/SPARTAN recommends a TNF inhibitor based on an analysis of 13 RCTs, which showed large and consistent improvements in clinical outcomes.
-                    <sup type="ref">[1]</sup> However, the panel notes that the trials were short, with most limited to 24 weeks. The panel also emphasizes that the decision to begin treatment with a TNF inhibitor should be made only after educating the patient on the potential risks and benefits. 
-                </p>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-        <subsec_element>
-            <subsec_header>
-                <p>
-                    <strong>Table 8. Phase 3 Trials of TNF Inhibitors Currently Approved for the Treatment of AS </strong>
-                </p>
-            </subsec_header>
-            <subsec_content>
-                <strong>Table 8. Phase 3 Trials of TNF Inhibitors Currently Approved for the Treatment of AS </strong>
-                <strong>Study Name</strong>
-                <strong>Study Drug</strong>
-                <strong>Study Duration </strong>
-                <strong>Patient Population</strong>
-                <strong>Number of Patients</strong>
-                <strong>Results for Primary Endpoint </strong>
-ATLAS
-                <sup>[50]</sup> 
+<strong>&lt;&lt;end table 7&gt;&gt;</strong></subsec_content><qna_form/></subsec_element><subsec_element><subsec_header/><subsec_content><p>A contributor to the problem of delayed diagnosis of AS is difficulty in recognizing disease that is not specifically associated with radiographic findings.<sup type="ref">[46]</sup> That is illustrated in this case. A synovial cell count of 14,000 suggests inflammatory arthritis, which should prompt a referral to a rheumatologist rather than to an orthopedic surgeon.<sup type="ref">[47]</sup></p><p>Gender can be another factor in a long diagnostic delay of AS and is an important consideration in treatment. Data indicate that men with axSpA have a worse radiologic prognosis, whereas women have a higher disease burden, partly as a result of a longer delay in diagnosis, higher disease activity, and less responsiveness to treatment with TNF inhibitors.<sup type="ref">[48]</sup></p></subsec_content><qna_form/></subsec_element></sec_element><sec_element><sec_header><p>Case 2 Continues</p></sec_header><subsec_element><subsec_header/><subsec_content><p>Prior to the time of her referral, Laura continued in physical therapy and with NSAID treatment. Today she rates her back pain as 8 on a scale of 0 to 10 and complains of morning stiffness lasting about 1 hour. Her current BASDAI score is 6.</p></subsec_content><qna_form>8</qna_form></subsec_element></sec_element><pg_footnotes/></toc_element><toc_element><toc_label/><toc_type>Default</toc_type><sec_element><sec_header/><subsec_element><subsec_header><p>Discussion</p></subsec_header><subsec_content><p>TNF inhibition has been the therapy of choice for patients with established AS. There are 5 different TNF inhibitors currently approved for AS: adalimumab, certolizumab, etanercept, golimumab, and infliximab (Table 8). These agents have all demonstrated efficacy in the treatment of AS, but do differ in molecular structure and administration route.<sup type="ref">[29-32,49]</sup></p><p>For adults with active AS despite treatment with NSAIDs, ACR/SAS/SPARTAN recommends a TNF inhibitor based on an analysis of 13 RCTs, which showed large and consistent improvements in clinical outcomes.<sup type="ref">[1]</sup> However, the panel notes that the trials were short, with most limited to 24 weeks. The panel also emphasizes that the decision to begin treatment with a TNF inhibitor should be made only after educating the patient on the potential risks and benefits. </p></subsec_content><qna_form/></subsec_element><subsec_element><subsec_header><p><strong>Table 8. Phase 3 Trials of TNF Inhibitors Currently Approved for the Treatment of AS </strong></p></subsec_header><subsec_content><strong>Table 8. Phase 3 Trials of TNF Inhibitors Currently Approved for the Treatment of AS </strong><strong>Study Name</strong><strong>Study Drug</strong><strong>Study Duration </strong><strong>Patient Population</strong><strong>Number of Patients</strong><strong>Results for Primary Endpoint </strong>
+ATLAS<sup>[50]</sup> 
 Adalimumab SC 40 mg every 2 weeks
 24 weeks
 Active AS
@@ -859,8 +209,7 @@ Inadequate response or intolerant to ≥1 NSAID
 Adalimumab: n=208
 Placebo: n=107
 ASAS20 (at week 12): 58% vs 21%
-RAPID-axSpA
-                <sup>[35]</sup>
+RAPID-axSpA<sup>[35]</sup>
 Certolizumab pegol SC 200 mg every 2 weeks
 Certolizumab pegol SC 400 mg every 4 weeks
 24 weeks 
@@ -872,8 +221,7 @@ Placebo: n=107
 AS population: n=178
 ASAS20 (at week 12): 57% vs 37% (Certolizumab pegol 200 mg q2w vs placebo)
 ASAS20 (at week 12): 64% vs 37% (Certolizumab pegol 400 mg q4w vs placebo)
-Etanercept Phase III Trial
-                <sup>[51]</sup>
+Etanercept Phase III Trial<sup>[51]</sup>
 Etanercept SC 25 mg twice weekly 
 24 weeks 
 Active AS 
@@ -882,8 +230,7 @@ Etanercept 25 mg: n=138
 Placebo: n=139
 ASAS20 (at week 12): 59% vs 28%
 ASAS20 (at week 24): 57% vs 22%
-GO-RAISE
-                <sup>[52]</sup>
+GO-RAISE<sup>[52]</sup>
 Golimumab SC 50 mg every 4 weeks
 or
 Golimumab SC 100 mg every 4 weeks
@@ -896,8 +243,7 @@ Golimumab 100 mg: n=140
 Placebo: n=78
 ASAS20 (at week 14): 59% vs 22% (Golimumab 50 mg vs placebo)
 ASAS20 (at week 14): 60% vs 22% (Golimumab 100 mg vs placebo) 
-GO-ALIVE
-                <sup>[53]</sup>
+GO-ALIVE<sup>[53]</sup>
 Golimumab 2 mg/kg intravenous infusion at weeks 0, 4, 12, and every 8 weeks
 28 weeks
 Active AS (diagnosis of AS for at least 3 months)
@@ -906,8 +252,7 @@ Inadequate response or intolerant to ≥1 NSAID
 Golimumab 2 mg/kg: n=105
 Placebo: n=103
 ASAS20 (at week 16): 73% vs 26%
-ASSERT
-                <sup>[54]</sup>
+ASSERT<sup>[54]</sup>
 Infliximab 5 mg/kg intravenous infusion at weeks 0, 2, 6, 12, and 18
 24 weeks
 Diagnosis of AS for at least 3 months
@@ -917,127 +262,4 @@ Infliximab 5 mg/kg: n=201
 Placebo: n=78
 ASAS20 (at week 24): 61% vs 19% 
 &lt;&lt;CAPTION&gt;&gt;DMARD = disease-modifying antirheumatic drug; q2w = every 2 weeks; q4w = every 4 weeks.
-
-                <strong>&lt;&lt;end table 8&gt;&gt;</strong>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-        <subsec_element>
-            <subsec_header/>
-            <subsec_content>
-                <p>For patients with no significant comorbidities, there is probably no difference between adalimumab, etanercept, certolizumab, golimumab, and infliximab in terms of efficacy, though no head-to-head studies are available. However, if the patient has recurrent episodes of iritis, then treatment with infliximab or adalimumab should be preferred over etanercept.
-                    <sup type="ref">[1]</sup> In patients with IBD, treatment with TNF inhibitor monoclonal antibodies over treatment with etanercept is recommended.
-                    <sup type="ref">[1]</sup>
-                </p>
-                <p>Infectious complications have been shown with use of TNF inhibitors; therefore, before treatment, screening for tuberculosis and certain viral infections (such as hepatitis B virus) is recommended. In addition, injection site reactions are reported with use of these agents. </p>
-                <p>Limited evidence exists on the efficacy of disease-modifying anti-rheumatic drugs (DMARDs) in SpA.
-                    <sup type="ref">[55-57]</sup> In controlled studies, sulfasalazine, methotrexate, and leflunomide have demonstrated modest efficacy on the peripheral manifestations of AS; however, based on a very low to moderate level of evidence of small or no clinical effects, ACR/SAA/SPARTAN conditionally recommends against the use of these agents in most patients whose AS remained active despite NSAID use.
-                    <sup type="ref">[1]</sup> Instead, treatment with a TNF inhibitor is recommended. Sulfasalazine may be considered in patients who have contraindications to TNF inhibitors or in patients with peripheral arthritis.
-                    <sup type="ref">[5]</sup>
-                </p>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-    </sec_element>
-    <sec_element>
-        <sec_header>
-            <p>Case 2 Continues</p>
-        </sec_header>
-        <subsec_element>
-            <subsec_header/>
-            <subsec_content>
-                <p>Baseline x-rays of Laura's cervical spine, lumbar spine, and thoracic spine reveal evidence of syndesmophyte formation. She is counseled about lifestyle factors and treatment options. When asked about her smoking habits, Laura seems quite defensive, but says that she smokes about half a pack of cigarettes a day. Laura is counseled about the association between smoking and syndesmophyte progression. She says she will consider smoking cessation, and she is given information about appropriate resources to help her if she decides to quit. </p>
-                <p>Laura begins treatment with etanercept. At her next appointment, her BASDAI score is a 4, down 2 from her previous appointment. Her ASDAS has come down from 2.3 to 1.7. Laura says that since she is feeling better, she would like to cut down on her medications. She asks whether she has to continue to take naproxen now that she is doing so well on etanercept.</p>
-            </subsec_content>
-            <qna_form>9</qna_form>
-        </subsec_element>
-    </sec_element>
-    <pg_footnotes/>
-</toc_element>
-<toc_element>
-    <toc_label/>
-    <toc_type>Default</toc_type>
-    <sec_element>
-        <sec_header/>
-        <subsec_element>
-            <subsec_header>
-                <p>Discussion</p>
-            </subsec_header>
-            <subsec_content>
-                <p>Current practice is that if a patient with AS is doing well on measures such as BASDAI, there is no need for combination therapy. The ACR/SAA/SPARTAN conditionally recommends continuing treatment with a TNF inhibitor alone in patients with stable AS on TNF inhibitor and NSAID combination therapy.
-                    <sup type="ref">[1]</sup> Some data show that a combination of a TNF inhibitor and an NSAID might be better than monotherapy for reducing radiographic progression, but these data are still preliminary. The question is being explored in an ongoing trial.
-                    <sup type="ref">[58]</sup>
-                </p>
-                <p>A recently reported prospective observational cohort study evaluated NSAID use in relation to disease activity during 52 weeks of follow-up in patients with established AS who were treated with or without TNF inhibitor.
-                    <sup type="ref">[59]</sup> Patients who used TNF inhibitor therapy were advised that after 3 months of using the TNF inhibitor, they should start taking their NSAID only as needed. However, many patients reduced or stopped NSAID use on their own initiative even earlier. Overall, concomitant NSAID use in the TNF inhibitor group declined rapidly.
-                </p>
-                <p>It is important that patients who smoke be educated about the consequences of continuing to smoke and be counseled to stop. The available data indicate that smoking has a dose-dependent impact on progressive structural damage in patients with axSpA.
-                    <sup type="ref">[60]</sup> Patients who smoke have worse scores on measures of function and disease progression, as well as more pain, poorer overall assessment of health, and reduced physical mobility and quality of life. 
-                </p>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-    </sec_element>
-    <sec_element>
-        <sec_header>
-            <p>Case 2 Continues</p>
-        </sec_header>
-        <subsec_element>
-            <subsec_header/>
-            <subsec_content>
-                <p>After about 3 years of feeling well on etanercept, Laura starts having more pain. At her 3-year follow-up visit, her ASDAS has increased from 1.7 to 3.3, and her BASDAI score has gone from 2.0 to 3.8. </p>
-            </subsec_content>
-            <qna_form>10</qna_form>
-        </subsec_element>
-    </sec_element>
-    <pg_footnotes/>
-</toc_element>
-<toc_element>
-    <toc_label/>
-    <toc_type>Default</toc_type>
-    <sec_element>
-        <sec_header/>
-        <subsec_element>
-            <subsec_header>
-                <p>Discussion</p>
-            </subsec_header>
-            <subsec_content>
-                <p>In patients who initially respond to TNF inhibitor treatment and then experience diminished efficacy over time, switching to another TNF inhibitor is a reasonable option.
-                    <sup type="ref">[28]</sup> In case of primary nonresponse, it is important to consider whether this might be the result of an incorrect diagnosis.
-                    <sup type="ref">[5]</sup>
-                </p>
-                <p>The only other biologic currently approved for the treatment of AS is secukinumab, a monoclonal antibody directed against IL-17A.
-                    <sup type="ref">[61]</sup> The Assessment of SpondyloArthritis International Society (ASAS) and EULAR were the first to publish guidelines for management of axSpA after the FDA approval of secukinumab. Their joint recommendation is that, if TNF inhibitor therapy fails, a switch to either another TNF inhibitor or to anti-IL-17 therapy should be considered.
-                    <sup type="ref">[5]</sup> This recommendation is supported by data suggesting that a second TNF inhibitor can be efficacious. However, the level of efficacy may be lower than with the first TNF inhibitor.
-                    <sup type="ref">[62]</sup>
-                </p>
-                <p>Two randomized, controlled, phase 3 trials, MEASURE 1 and MEASURE 2, have examined the safety and efficacy of secukinumab in adults with active AS.
-                    <sup type="ref">[12]</sup> The main difference in their design was that loading doses were intravenous in MEASURE 1 and SC in MEASURE 2 (maintenance doses were SC in both trials). According to a combined analysis of the 2 trials, secukinumab was associated with significant reductions in the signs and symptoms of AS at week 16. In both trials, placebo-treated patients switched to secukinumab after week 16 for a noncontrolled extension phase. Additional results from MEASURE 1 have been reported for patients who were originally randomized to 150 mg secukinumab (n=97) or 75 mg (n=103) and completed 2 years of follow-up. ASAS20 response rates at that time point were 73.7% and 68.0%, respectively.
-                    <sup type="ref">[63]</sup>
-                </p>
-                <p>The MEASURE 2 trial is designed to last for 5 years, and 3 years of data have been published so far.
-                    <sup type="ref">[64]</sup> The retention rate was &gt;80%, and secukinumab 150 mg was associated with sustained improvement on all endpoints, including disease activity, BASDAI score, ASDAS, and physical function. 
-                </p>
-                <p>The new therapy should be chosen based on the individual patient's situation. If the patient had inadequate response to the first TNF inhibitor (primary nonresponse) or has to be switched due to an adverse event, it may be better to switch to anti-IL-17 therapy.</p>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-    </sec_element>
-    <sec_element>
-        <sec_header>
-            <p>Case 2 Conclusion</p>
-        </sec_header>
-        <subsec_element>
-            <subsec_header/>
-            <subsec_content>
-                <p>Laura is switched to secukinumab and is scheduled for follow-up in 3 months. Her BASDAI is down to 2 and her ASDAS is down to 1.3. She is reminded about the potential side effects of treatment and told to call the office if she has concerns. </p>
-                <p>What did you learn from this activity? Please click on the Next button to proceed to a brief survey to see how your knowledge improved after the education. You can also see how your answers compare with those of your peers.</p>
-                <p>&lt;&lt;Note to Production: Insert page break between preamble and post-assessment questions&gt;&gt; </p>
-                <p>&lt;&lt;Note to production: Place post-assessment questions 1-5 (selected from the preassessment/intra-activity questions) here&gt;&gt;</p>
-                <strong>Abbreviations</strong>
-            </subsec_content>
-            <qna_form/>
-        </subsec_element>
-    </sec_element>
-    <pg_footnotes/>
-</toc_element>
+<strong>&lt;&lt;end table 8&gt;&gt;</strong></subsec_content><qna_form/></subsec_element><subsec_element><subsec_header/><subsec_content><p>For patients with no significant comorbidities, there is probably no difference between adalimumab, etanercept, certolizumab, golimumab, and infliximab in terms of efficacy, though no head-to-head studies are available. However, if the patient has recurrent episodes of iritis, then treatment with infliximab or adalimumab should be preferred over etanercept.<sup type="ref">[1]</sup> In patients with IBD, treatment with TNF inhibitor monoclonal antibodies over treatment with etanercept is recommended.<sup type="ref">[1]</sup></p><p>Infectious complications have been shown with use of TNF inhibitors; therefore, before treatment, screening for tuberculosis and certain viral infections (such as hepatitis B virus) is recommended. In addition, injection site reactions are reported with use of these agents. </p><p>Limited evidence exists on the efficacy of disease-modifying anti-rheumatic drugs (DMARDs) in SpA.<sup type="ref">[55-57]</sup> In controlled studies, sulfasalazine, methotrexate, and leflunomide have demonstrated modest efficacy on the peripheral manifestations of AS; however, based on a very low to moderate level of evidence of small or no clinical effects, ACR/SAA/SPARTAN conditionally recommends against the use of these agents in most patients whose AS remained active despite NSAID use.<sup type="ref">[1]</sup> Instead, treatment with a TNF inhibitor is recommended. Sulfasalazine may be considered in patients who have contraindications to TNF inhibitors or in patients with peripheral arthritis.<sup type="ref">[5]</sup></p></subsec_content><qna_form/></subsec_element></sec_element><sec_element><sec_header><p>Case 2 Continues</p></sec_header><subsec_element><subsec_header/><subsec_content><p>Baseline x-rays of Laura's cervical spine, lumbar spine, and thoracic spine reveal evidence of syndesmophyte formation. She is counseled about lifestyle factors and treatment options. When asked about her smoking habits, Laura seems quite defensive, but says that she smokes about half a pack of cigarettes a day. Laura is counseled about the association between smoking and syndesmophyte progression. She says she will consider smoking cessation, and she is given information about appropriate resources to help her if she decides to quit. </p><p>Laura begins treatment with etanercept. At her next appointment, her BASDAI score is a 4, down 2 from her previous appointment. Her ASDAS has come down from 2.3 to 1.7. Laura says that since she is feeling better, she would like to cut down on her medications. She asks whether she has to continue to take naproxen now that she is doing so well on etanercept.</p></subsec_content><qna_form>9</qna_form></subsec_element></sec_element><pg_footnotes/></toc_element><toc_element><toc_label/><toc_type>Default</toc_type><sec_element><sec_header/><subsec_element><subsec_header><p>Discussion</p></subsec_header><subsec_content><p>Current practice is that if a patient with AS is doing well on measures such as BASDAI, there is no need for combination therapy. The ACR/SAA/SPARTAN conditionally recommends continuing treatment with a TNF inhibitor alone in patients with stable AS on TNF inhibitor and NSAID combination therapy.<sup type="ref">[1]</sup> Some data show that a combination of a TNF inhibitor and an NSAID might be better than monotherapy for reducing radiographic progression, but these data are still preliminary. The question is being explored in an ongoing trial.<sup type="ref">[58]</sup></p><p>A recently reported prospective observational cohort study evaluated NSAID use in relation to disease activity during 52 weeks of follow-up in patients with established AS who were treated with or without TNF inhibitor.<sup type="ref">[59]</sup> Patients who used TNF inhibitor therapy were advised that after 3 months of using the TNF inhibitor, they should start taking their NSAID only as needed. However, many patients reduced or stopped NSAID use on their own initiative even earlier. Overall, concomitant NSAID use in the TNF inhibitor group declined rapidly.</p><p>It is important that patients who smoke be educated about the consequences of continuing to smoke and be counseled to stop. The available data indicate that smoking has a dose-dependent impact on progressive structural damage in patients with axSpA.<sup type="ref">[60]</sup> Patients who smoke have worse scores on measures of function and disease progression, as well as more pain, poorer overall assessment of health, and reduced physical mobility and quality of life. </p></subsec_content><qna_form/></subsec_element></sec_element><sec_element><sec_header><p>Case 2 Continues</p></sec_header><subsec_element><subsec_header/><subsec_content><p>After about 3 years of feeling well on etanercept, Laura starts having more pain. At her 3-year follow-up visit, her ASDAS has increased from 1.7 to 3.3, and her BASDAI score has gone from 2.0 to 3.8. </p></subsec_content><qna_form>10</qna_form></subsec_element></sec_element><pg_footnotes/></toc_element><toc_element><toc_label/><toc_type>Default</toc_type><sec_element><sec_header/><subsec_element><subsec_header><p>Discussion</p></subsec_header><subsec_content><p>In patients who initially respond to TNF inhibitor treatment and then experience diminished efficacy over time, switching to another TNF inhibitor is a reasonable option.<sup type="ref">[28]</sup> In case of primary nonresponse, it is important to consider whether this might be the result of an incorrect diagnosis.<sup type="ref">[5]</sup></p><p>The only other biologic currently approved for the treatment of AS is secukinumab, a monoclonal antibody directed against IL-17A.<sup type="ref">[61]</sup> The Assessment of SpondyloArthritis International Society (ASAS) and EULAR were the first to publish guidelines for management of axSpA after the FDA approval of secukinumab. Their joint recommendation is that, if TNF inhibitor therapy fails, a switch to either another TNF inhibitor or to anti-IL-17 therapy should be considered.<sup type="ref">[5]</sup> This recommendation is supported by data suggesting that a second TNF inhibitor can be efficacious. However, the level of efficacy may be lower than with the first TNF inhibitor.<sup type="ref">[62]</sup></p><p>Two randomized, controlled, phase 3 trials, MEASURE 1 and MEASURE 2, have examined the safety and efficacy of secukinumab in adults with active AS.<sup type="ref">[12]</sup> The main difference in their design was that loading doses were intravenous in MEASURE 1 and SC in MEASURE 2 (maintenance doses were SC in both trials). According to a combined analysis of the 2 trials, secukinumab was associated with significant reductions in the signs and symptoms of AS at week 16. In both trials, placebo-treated patients switched to secukinumab after week 16 for a noncontrolled extension phase. Additional results from MEASURE 1 have been reported for patients who were originally randomized to 150 mg secukinumab (n=97) or 75 mg (n=103) and completed 2 years of follow-up. ASAS20 response rates at that time point were 73.7% and 68.0%, respectively.<sup type="ref">[63]</sup></p><p>The MEASURE 2 trial is designed to last for 5 years, and 3 years of data have been published so far.<sup type="ref">[64]</sup> The retention rate was &gt;80%, and secukinumab 150 mg was associated with sustained improvement on all endpoints, including disease activity, BASDAI score, ASDAS, and physical function. </p><p>The new therapy should be chosen based on the individual patient's situation. If the patient had inadequate response to the first TNF inhibitor (primary nonresponse) or has to be switched due to an adverse event, it may be better to switch to anti-IL-17 therapy.</p></subsec_content><qna_form/></subsec_element></sec_element><sec_element><sec_header><p>Case 2 Conclusion</p></sec_header><subsec_element><subsec_header/><subsec_content><p>Laura is switched to secukinumab and is scheduled for follow-up in 3 months. Her BASDAI is down to 2 and her ASDAS is down to 1.3. She is reminded about the potential side effects of treatment and told to call the office if she has concerns. </p><p>What did you learn from this activity? Please click on the Next button to proceed to a brief survey to see how your knowledge improved after the education. You can also see how your answers compare with those of your peers.</p><p>&lt;&lt;Note to Production: Insert page break between preamble and post-assessment questions&gt;&gt; </p><p>&lt;&lt;Note to production: Place post-assessment questions 1-5 (selected from the preassessment/intra-activity questions) here&gt;&gt;</p><strong>Abbreviations</strong></subsec_content><qna_form/></subsec_element></sec_element><pg_footnotes/></toc_element>

@@ -203,6 +203,14 @@ function buildFirstResponse(ticket, program) {
     }
 
     slidesTOCs = getSlidesTOCs(checklistResult.properties.slides.result, program);
+    // console.log("CHECKLIST RESULT: ", checklistResult.properties.slides.result);
+
+    var slideTOCMarkup = "";
+
+    for (var i = 0; i < slidesTOCs.length; i++) {
+        slideTOCMarkup += utils.xmlOps.objectToXMLString(slidesTOCs[i].toObjectLiteral());
+    }
+    // console.log("SLIDES TOCS: ", slideTOCMarkup);
 
     var abbreviationsMarkup = (checklistResult.properties.abbreviations ? checklistResult.properties.abbreviations.result : "");
     abbreviationsTOC = articleUtils.buildAbbreviations(abbreviationsMarkup, program);

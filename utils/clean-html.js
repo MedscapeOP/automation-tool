@@ -230,6 +230,11 @@ function slidesInitial (str) {
     var insertSlideRegExp5 = /&lt;&lt;insert.*slide/gi;
     str = str.replace(insertSlideRegExp5, "&lt;&lt;insert slide");
 
+    // Handle this &lt;&lt; Insert Slide 1
+    // Causes Townhall test to break but fixes FR issue 
+    var insertSlideRegExp6 = /&lt;&lt;.*insert slide/gi;
+    str = str.replace(insertSlideRegExp6, "&lt;&lt;insert slide");
+
     // Handle this: <p><strong>&lt;&lt;insert Slide 59; 39:42&gt;&gt; </strong> <strong>&lt;&lt;level 2&gt;&gt; Conclusions</strong></p>
     var headlineRegExp = /(<strong>(?:&lt;){1,}Level 2(?:&gt;){1,}.*)/gi;
     str = str.replace(headlineRegExp, "\n\n$1");
@@ -245,12 +250,19 @@ function slidesInitial (str) {
     var intraActivityRegExp = /.*(?:&lt;){1,}Intra-activity question.*/gi;
     str = str.replace(intraActivityRegExp, "");
 
+    /* EXTRA CASES FOR NON LIST CONTENT */
+    // Remove List-Based <p> tags 
+    var bulletSymbolRegex = /<p>.*(&#8226;.*)<\/p>/g;
+    var subBulletSymbolRegex = /<p>.*(<tt>o.*)<\/p>/g;
+    var subSubBulletSymbolRegex = /<p>.*(&#9642;.*)<\/p>/g;
+    str = str.replace(bulletSymbolRegex, "$1").replace(subBulletSymbolRegex, "$1").replace(subSubBulletSymbolRegex, "$1");
+
     return str;
 }
 
 function slidesFinal (str) {
         
-    str = unorderedList(str);
+    str = unorderedList(str, true, true, [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt']);
 
     // console.log("STRING AFTER UL FORMAT: ", str);
 
