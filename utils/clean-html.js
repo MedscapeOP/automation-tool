@@ -162,14 +162,14 @@ function paragraph(string, removeFluff=true, allowedTags=['p','em','strong','sup
     return clean;
 }
 
-function unorderedList(string, removeFluff=true, format=true) {
+function unorderedList(string, removeFluff=true, format=true, allowedTags=[ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' ]) {
     var str = string;
     
     if (removeFluff) {
         str = removeTicketFluff(str);
     }
     var options =   {
-        allowedTags: [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' ],
+        allowedTags: allowedTags,
         allowedAttributes: {
           'sup': ["type"],
         },

@@ -88,6 +88,7 @@ function getLevelOnes(contentBlockHTML, program) {
 
     var blocks = utils.stringOps.getAllBlocksInOrder(contentBlockHTML, startRegexps, endRegexps, true, false);
 
+    
     _.remove(blocks, function (block) {
         var testString = utils.cleanHTML.onlyParagraphTags(block.textBlock);
         if (testString.length < 30) {
@@ -163,12 +164,24 @@ function hasQNANumber (contentBlockHTML) {
     return false;
 }
 
-function getContentBlockObjects(ticketHTML, program) {
+function getContentBlockObjects (ticketHTML, program) {
     var breakpoints = [
-        /(?:&lt;){1,}level 1(?:&gt;){1,}.*Case \d:.*/gi,
-        /&lt;&lt;level 1&gt;&gt;.*Case \d:.*/gi,
-        /(?:<strong>){0,}Answer Explanation (?:&#953;){0,}:.*/g,
-        /.*Answer Explanation:.*/g,
+        {
+            symbol: /(?:&lt;){1,}level 1(?:&gt;){1,}.*Case \d:.*/gi,
+            inclusive: true
+        },
+        {
+            symbol: /&lt;&lt;level 1&gt;&gt;.*Case \d:.*/gi, 
+            inclusive: true
+        },
+        {
+            symbol: /(?:<strong>){0,}Answer Explanation (?:&#953;){0,}:.*/g,
+            inclusive: false
+        },
+        {
+            symbol: /.*Answer Explanation:.*/g, 
+            inclusive: false
+        }
     ];
     /* 
         POSSIBLE BREAKPOINTS  
@@ -178,16 +191,19 @@ function getContentBlockObjects(ticketHTML, program) {
     */
     var {textBlock} = utils.stringOps.getTextBlock(ticketHTML, /<strong>Content/g, /<strong>Abbreviations/g, false, true);
 
+    // console.log("CONTENT HTML: ", textBlock);
+
     var result = [];
     var strings = utils.stringOps.sliceAtBreakpoints(textBlock, breakpoints);
     var currentBlock = null;
     var qnaNumber = 3;
     for (var i = 0; i < strings.length; i++) {
+        // console.log("FUNCTION LOOP 1: ");
         currentBlock = {
             string: strings[i],
             qnaNumber: null
         };
-        if (hasQNANumber(currentString)) {
+        if (hasQNANumber(currentBlock.string)) {
             currentBlock.qnaNumber = qnaNumber;
             qnaNumber++;
         }
@@ -196,7 +212,7 @@ function getContentBlockObjects(ticketHTML, program) {
     return result;
 }
 
-function getContentBlockComponents(contentBlockObject, program) {
+function getContentBlockComponents (contentBlockObject, program) {
     /*
     UTILITY FUNCTION: 
     - Find all level 1s in order - Look for: <<Level 1>>
@@ -208,6 +224,7 @@ function getContentBlockComponents(contentBlockObject, program) {
         string: strings[i],
         qnaNumber: null
     */ 
+    // console.log("COMPONENTS FUNCTION: ");
     var tables, figures, levelOnes, levelTwos;
     tables = getTables(contentBlockObject.string, program);
     figures = getFigures(contentBlockObject.string, program);
@@ -254,13 +271,15 @@ function buildLevel1Section (componentObject, program) {
     
     var removeRegex =  /.*(?:&lt;){1,}level 1(?:&gt;){1,}.*/gi;
     componentObject.textBlock = componentObject.textBlock.replace(removeRegex, "");
-
+    
+    
     var levelOneSubsection = new SubsectionElement();
-
+    
     if (isNewCase) {
         var content = utils.wrapSubsectionContent(snippets.caseImage(program.articleID, componentObject.textBlock, caseNumber));
         // console.log("STUFF: ", content);
         levelOneSubsection.subsectionContent = utils.cleanHTML.insertEntityPlaceholders(content);
+        // console.log("BUILD LEVEL 1 BLOCK: ", componentObject.textBlock);
     } else {
         levelOneSubsection.subsectionContent = utils.wrapSubsectionContent(componentObject.textBlock);
     }
@@ -273,6 +292,25 @@ function buildLevel1Section (componentObject, program) {
 
 function buildLevel2Subsection (componentObject, program) {
     var levelTwoSubsection = new SubsectionElement();
+
+    // var clean = componentObject.textBlock.slice(); 
+    // console.log("BEFORE CLEAN: ", clean);
+
+    // clean = utils.formatList.formatUlItems(clean, null, utils.formatList.formatUlItems);
+    // clean = utils.formatList.wrapUls(false, clean, utils.formatList.wrapUls);
+
+    // console.log("AFTER CLEAN: ", clean);
+
+    // var ttRegExp = new RegExp('</tt>', 'g');
+    // clean = clean.replace(ttRegExp, "");
+    if (componentObject.type == "table") {
+        componentObject.textBlock = utils.cleanHTML.unorderedList(componentObject.textBlock, false, true, [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' , 'table', 'th', 'td']); 
+    } else if (componentObject.type == "figure") {
+        componentObject.textBlock = utils.cleanHTML.unorderedList(componentObject.textBlock, false, true, [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' , 'p']);        
+    } else {
+        componentObject.textBlock = utils.cleanHTML.unorderedList(componentObject.textBlock, true, true, [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' , 'p']);        
+    }
+ 
     levelTwoSubsection.subsectionContent = utils.wrapSubsectionContent(componentObject.textBlock);
     if (componentObject.type == "table" || componentObject.type == "figure") {
         levelTwoSubsection.subsectionHeaderMarkup = componentObject.label;
@@ -345,18 +383,18 @@ function buildContentTOC (contentBlockComponents, program) {
             if (contentBlockComponents.qnaNumber) {
                 // currentSection.childElements[childElements.length - 1].qnaForm = contentBlockComponents.qnaNumber;
                 currentSubsection.qnaForm = contentBlockComponents.qnaNumber;
-                currentSection.insertSubsectionElement(currentSubsection);
             } 
+            currentSection.insertSubsectionElement(currentSubsection);
             tocInstance.insertSectionElement(currentSection);
         } else {
             currentSection.insertSubsectionElement(currentSubsection);
         }
     } 
-              
+    // console.log("BUILD TOC: ", utils.xmlOps.objectToXMLString(tocInstance.toObjectLiteral()));              
     return tocInstance;
 }
 
-function getMainContentTOCs(articleContent, program) {
+function getMainContentTOCs (articleContent, program) {
     /* 
         Requirements for getMainContentTOCs: 
         1) Use buildContentTOC for the following TOCs
@@ -377,10 +415,16 @@ function getMainContentTOCs(articleContent, program) {
             - Attach EduImpactSubsection 
     */
     var mainTOCs = [];
-    for (var i = 0; i < articleComponents.length; i++) {
-        mainTOCs.push(buildContentTOC(articleComponents[i]));
+    var contentBlockObjects = getContentBlockObjects(articleContent, program);
+    var contentBlockComponents = null;
+    var latestQnaNumber = null;
+    for (var i = 0; i < contentBlockObjects.length; i++) {
+        // console.log("FUNCTION LOOP 2: ");
+        contentBlockComponents = getContentBlockComponents(contentBlockObjects[i], program);
+        latestQnaNumber = contentBlockComponents.qnaNumber;
+        mainTOCs.push(buildContentTOC(contentBlockComponents, program));
     }
-
+    
     return {
         mainTOCs: mainTOCs
     }
