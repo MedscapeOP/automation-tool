@@ -145,7 +145,7 @@ let buildSlidesXML = (substring, subsectionElement, slidePath = "XXX/XXX", count
         var slide_grp = new SlideGroup(slidePath, counter);
         // console.log("slideContent: ", slideContent);
 
-        console.log("SLIDE CONTENT buildSlides(): ", slideContent);
+        // console.log("SLIDE CONTENT buildSlides(): ", slideContent);
 
         slide_grp.sectionText = (slideContent);
 

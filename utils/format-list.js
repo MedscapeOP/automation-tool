@@ -21,6 +21,7 @@ const testString2 = `
 `;
 
 const _ = require('lodash');
+const fs = require('fs');
 const bulletSymbol = `&#8226;`;
 const subBulletSymbol = `<tt>o`;
 const subSubBulletSymbol = `&#9642;`;
@@ -240,6 +241,7 @@ var testString3 = `
  * @param {*} remainingString 
  * @param {*} fn 
  */
+var logString = "";
 function wrapUls(prevWasListItem, remainingString, fn) {
     // console.log("REMAINING STRING: ", remainingString);
     let newLineRegExp = new RegExp('.*', 'g');
@@ -263,6 +265,13 @@ function wrapUls(prevWasListItem, remainingString, fn) {
     var nextLineIndex = -1;
     var nextStart = "";
     var currentStart = "";
+    logString +=`CURRENT LINE: ${currentLine} \n\n`;
+    logString +=`NEXT LINE: ${nextLine} \n\n\n\n`; 
+    // fs.writeFileSync(__dirname + "/logstring.html", logString, function(err) {
+    //     if(err) {
+    //         return console.log(err);
+    //     }
+    // }); 
     // console.log("CURRENT LINE", currentLine);
     // console.log("NEXT LINE", nextLine);
     if (!isBlankOrWhiteSpace(nextLine)) {
@@ -350,6 +359,7 @@ function wrapUls(prevWasListItem, remainingString, fn) {
         }
     } else {
         // Current is NOT A <ul> or <li>
+        // console.log("****************REMAINING STRING 353: \n\n\n", remainingString);
         return currentLine + fn(false, remainingString, wrapUls);
     }
 }

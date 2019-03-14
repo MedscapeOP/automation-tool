@@ -215,34 +215,34 @@ function slidesInitial (str) {
     /* END NEW REGEX */
 
     // Insert Slide edge cases / Capitalization Edge Cases
-    var insertSlideRegExp1 = new RegExp('&lt;&lt;.*slide&gt;&gt;', 'g');
-    str = str.replace(insertSlideRegExp1, "&lt;&lt;insert slide");
+    var insertSlideRegExp1 = new RegExp('.*&lt;&lt;.*slide&gt;&gt;.*', 'g');
+    str = str.replace(insertSlideRegExp1, "&lt;&lt;insert slide&gt;&gt;");
 
-    var insertSlideRegExp2 = new RegExp('&lt;&lt;.*Slide&gt;&gt;', 'g');
-    str = str.replace(insertSlideRegExp2, "&lt;&lt;insert slide");
+    var insertSlideRegExp2 = new RegExp('.*&lt;&lt;.*Slide&gt;&gt;.*', 'g');
+    str = str.replace(insertSlideRegExp2, "&lt;&lt;insert slide&gt;&gt;");
 
-    var insertSlideRegExp3 = new RegExp('&gt;&gt;.*slide', 'g');
-    str = str.replace(insertSlideRegExp3, "&lt;&lt;insert slide");
+    var insertSlideRegExp3 = new RegExp('.*&gt;&gt;.*slide (\d).*', 'g');
+    str = str.replace(insertSlideRegExp3, "&lt;&lt;insert slide $1&gt;&gt;");
 
-    var insertSlideRegExp4 = new RegExp('&gt;&gt;.*Slide', 'g');
-    str = str.replace(insertSlideRegExp4, "&lt;&lt;insert slide");
+    var insertSlideRegExp4 = new RegExp('.*&gt;&gt;.*Slide  (\d).*', 'g');
+    str = str.replace(insertSlideRegExp4, "&lt;&lt;insert slide $1&gt;&gt;");
     
-    var insertSlideRegExp5 = /&lt;&lt;insert.*slide/gi;
-    str = str.replace(insertSlideRegExp5, "&lt;&lt;insert slide");
+    var insertSlideRegExp5 = /&lt;&lt;insert.*slide (\d)/gi;
+    str = str.replace(insertSlideRegExp5, "&lt;&lt;insert slide $1&gt;&gt;");
 
     // Handle this &lt;&lt; Insert Slide 1
     // Causes Townhall test to break but fixes FR issue 
-    var insertSlideRegExp6 = /&lt;&lt;.*insert slide/gi;
-    str = str.replace(insertSlideRegExp6, "&lt;&lt;insert slide");
+    var insertSlideRegExp6 = /&lt;&lt;.*insert slide (\d).*/gi;
+    str = str.replace(insertSlideRegExp6, "&lt;&lt;insert slide $1&gt;&gt;");
 
     // Handle this: <p><strong>&lt;&lt;insert Slide 59; 39:42&gt;&gt; </strong> <strong>&lt;&lt;level 2&gt;&gt; Conclusions</strong></p>
     var headlineRegExp = /(<strong>(?:&lt;){1,}Level 2(?:&gt;){1,}.*)/gi;
-    str = str.replace(headlineRegExp, "\n\n$1");
+    str = str.replace(headlineRegExp, "$1");
     
 
     /* EXTRA CASES FOR FR SLIDES */
     // Remove Component statement
-    var componentRegExp1 = /(?:&lt;){1,}Component \d.*/gi
+    var componentRegExp1 = /.*(?:&lt;){1,}Component \d.*/gi
     str = str.replace(componentRegExp1, "");
 
     /* EXTRA CASES FOR TH SLIDES */
@@ -257,15 +257,23 @@ function slidesInitial (str) {
     var subSubBulletSymbolRegex = /<p>.*(&#9642;.*)<\/p>/g;
     str = str.replace(bulletSymbolRegex, "$1").replace(subBulletSymbolRegex, "$1").replace(subSubBulletSymbolRegex, "$1");
 
+    // /* PLACEHOLDERS FOR P TAGS */
+    // var pOpenRegexp = /<p>/g;
+    // str = str.replace(pOpenRegexp, "--POPEN--");
+    // var pCloseRegexp = /<\/p>/g;
+    // str = str.replace(pCloseRegexp, "--PCLOSE--");
+
     return str;
 }
 
 function slidesFinal (str) {
-        
+    
     str = unorderedList(str, true, true, [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt']);
-
-    // console.log("STRING AFTER UL FORMAT: ", str);
-
+    // /* REMOVE PLACEHOLDERS FOR P TAGS */
+    // var pOpenRegexp = /--POPEN--/g;
+    // str = str.replace(pOpenRegexp, "<p>");
+    // var pCloseRegexp = /--PCLOSE--/g;
+    // str = str.replace(pCloseRegexp, "</p>");
     /* CLEAN UP HTML FOR EDGE CASES */
 
     // Headline edge cases / Capitalization Edge Cases 
@@ -328,6 +336,9 @@ function slidesFinal (str) {
     var strongRegExp2 = new RegExp('</strong> <strong>', 'g');
     str = str.replace(strongRegExp2, "");
 
+    var strongRegExp3 = new RegExp('((?:</strong>(?=</strong)){1,})', 'g');
+    str = str.replace(strongRegExp3, "");
+
     var emRegExp1 = new RegExp('<em></em>', 'g');
     str = str.replace(emRegExp1, "");
 
@@ -337,7 +348,7 @@ function slidesFinal (str) {
     
 
     /* MAIN REGEX SERIES */
-    var h3RegExp = new RegExp('<strong>(?:&lt;){1,}Level 2(?:&gt;){1,}(.*)</strong>', 'g');
+    var h3RegExp = new RegExp('(?:<p>){0,}<strong>(?:&lt;){1,}Level 2(?:&gt;){1,}(.*)</strong>(?:</p>){0,}', 'gi');
     str = str.replace(h3RegExp, "<h3>$1</h3>");
 
     var h3RegExp2 = new RegExp('<h3>(.*)</h3>', 'g');
@@ -346,6 +357,21 @@ function slidesFinal (str) {
 
     var supRegExp = new RegExp('<sup>\\[', 'g');
     str = str.replace(supRegExp, '<sup type="ref">[');
+
+    // var paragraphRegexp = new RegExp('(?<!\<li\>)(.*)|(?<!\<ul\>)(.*)|(?<!\<h3\>)(.*)|(?<!\<\/ul\>)(.*)|(?<!&lt;)(.*)', 'g');
+
+    // var paragraphRegexp = new RegExp('(<strong>.*)', 'g');
+    // str = str.replace(paragraphRegexp, "<p>$1</p>"); 
+
+    // <([^>]+)> --> FOR HTML TAGS 
+    var paragraphRegexp = new RegExp('((?<!<([^>]+)>).*)', 'g');
+    str = str.replace(paragraphRegexp, "<p>$1</p>");
+    
+    paragraphRegexp = new RegExp('<p></p>', 'g');
+    str = str.replace(paragraphRegexp, "");
+
+    paragraphRegexp = new RegExp('<p>(?=<([^>]+)>)(.*)</p>', 'g');
+    str = str.replace(paragraphRegexp, "$2");
 
     return str;
 }
