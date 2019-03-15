@@ -646,6 +646,7 @@ function tableCleanup(htmlString, removeFluff=false) {
     var addBlockQuoteClosing = /<\/p>\s+<p><strong>&lt;&lt;end table/gi;
     clean = clean.replace(addBlockQuoteClosing, '</blockquote>\n\n<p><strong>&lt;&lt;end table');
 
+    
     return clean;
 }
 
