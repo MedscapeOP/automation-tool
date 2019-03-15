@@ -215,24 +215,28 @@ function slidesInitial (str) {
     /* END NEW REGEX */
 
     // Insert Slide edge cases / Capitalization Edge Cases
-    var insertSlideRegExp1 = new RegExp('.*&lt;&lt;.*slide&gt;&gt;.*', 'g');
+    var insertSlideRegExp1 = new RegExp('.*&lt;&lt;.*slide&gt;&gt;.*', 'gi');
     str = str.replace(insertSlideRegExp1, "&lt;&lt;insert slide&gt;&gt;");
+    
+    var insertSlideRegExp2 = new RegExp('.*&lt;&lt;Slide(?:\s){0,}((?:\d){0,}).*', 'gi');
+    str = str.replace(insertSlideRegExp2, "&lt;&lt;insert slide $1&gt;&gt;");
 
-    var insertSlideRegExp2 = new RegExp('.*&lt;&lt;.*Slide&gt;&gt;.*', 'g');
-    str = str.replace(insertSlideRegExp2, "&lt;&lt;insert slide&gt;&gt;");
-
-    var insertSlideRegExp3 = new RegExp('.*&gt;&gt;.*slide (\d).*', 'g');
+    var insertSlideRegExp2 = new RegExp('.*&gt;&gt;Slide(?:\s){0,}((?:\d){0,}).*', 'gi');
+    str = str.replace(insertSlideRegExp2, "&lt;&lt;insert slide $1&gt;&gt;");
+    
+    var insertSlideRegExp3 = new RegExp('.*&gt;&gt;.*slide(?:\s){0,}((?:\d){0,}).*', 'g');
     str = str.replace(insertSlideRegExp3, "&lt;&lt;insert slide $1&gt;&gt;");
-
-    var insertSlideRegExp4 = new RegExp('.*&gt;&gt;.*Slide  (\d).*', 'g');
+    
+    var insertSlideRegExp4 = new RegExp('.*&gt;&gt;.*Slide(?:\s){0,}((?:\d){0,}).*', 'g');
     str = str.replace(insertSlideRegExp4, "&lt;&lt;insert slide $1&gt;&gt;");
     
-    var insertSlideRegExp5 = /&lt;&lt;insert.*slide (\d)/gi;
+    var insertSlideRegExp5 = /.*&lt;&lt;insert.*slide (\d+).*/gi;
     str = str.replace(insertSlideRegExp5, "&lt;&lt;insert slide $1&gt;&gt;");
+    console.log("STRING: ", str);  
 
     // Handle this &lt;&lt; Insert Slide 1
     // Causes Townhall test to break but fixes FR issue 
-    var insertSlideRegExp6 = /&lt;&lt;.*insert slide (\d).*/gi;
+    var insertSlideRegExp6 = /.*&lt;&lt;.*insert(?:\s){0,}slide(?:\s){0,}((?:\d){0,}).*/gi;
     str = str.replace(insertSlideRegExp6, "&lt;&lt;insert slide $1&gt;&gt;");
 
     // Handle this: <p><strong>&lt;&lt;insert Slide 59; 39:42&gt;&gt; </strong> <strong>&lt;&lt;level 2&gt;&gt; Conclusions</strong></p>
