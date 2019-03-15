@@ -372,6 +372,7 @@ describe('Prodticket Module Functions', function () {
 
         it("should return an array of slide components from .html - Spotlight", function () {
             var result = prodticket.getSlides(prodticketSL, config.programs.spotlight);
+
             expect(result[0].articleID).to.equal(slideComponentsSL[0].articleID);
             expect(result[0].componentNumber).to.equal(slideComponentsSL[0].componentNumber);
             expect(result[0].slidePath).to.equal(slideComponentsSL[0].slidePath);
@@ -380,6 +381,7 @@ describe('Prodticket Module Functions', function () {
 
         it("should return an array of slide components from .html - Curbside", function () {
             var result = prodticket.getSlides(prodticketCC, config.programs.curbsideConsult);
+
             expect(result[0].articleID).to.equal(slideComponentsCC[0].articleID);
             expect(result[0].componentNumber).to.equal(slideComponentsCC[0].componentNumber);
             expect(result[0].slidePath).to.equal(slideComponentsCC[0].slidePath);
@@ -388,6 +390,8 @@ describe('Prodticket Module Functions', function () {
 
         it("should return an array of slide components from .html - First Response", function () {
             var result = prodticket.getSlides(prodticketFR, config.programs.firstResponse);
+            // fs.writeFileSync(__dirname + '/output/slide-components.html', result[4].rawSlides);
+
             for (var i = 0; i < slideComponentsFR.length; i++) {
                 expect(result[i].articleID).to.equal(slideComponentsFR[i].articleID);
                 expect(result[i].componentNumber).to.equal(slideComponentsFR[i].componentNumber);
@@ -400,6 +404,7 @@ describe('Prodticket Module Functions', function () {
         it("should return an array of slide components from .html - TownHall", function () {
             config.programs.townHall.articleID = "903975";
             var result = prodticket.getSlides(prodticketTH_alt, config.programs.townHall);
+
             expect(result[0].articleID).to.equal(slideComponentsTH[0].articleID);
             expect(result[0].componentNumber).to.equal(slideComponentsTH[0].componentNumber);
             expect(result[0].slidePath).to.equal(slideComponentsTH[0].slidePath);

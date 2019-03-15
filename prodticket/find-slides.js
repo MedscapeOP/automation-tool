@@ -28,8 +28,8 @@ FUNCTION REQUIREMENTS:
 let startSlideMatches = [
     /<p><strong>&lt;&lt;component/gi,
     /<p>&lt;&lt;component/gi,
-    /<p><strong>&lt;&lt;.*slide 1/gi,
-    /<p>&lt;&lt;.*slide 1/gi,
+    /&lt;&lt;slide 1/gi,
+    /&lt;&lt;insert slide 1/gi,
     /<strong>Content<\/strong>/gi
 ];
 let endSlideMatches = [

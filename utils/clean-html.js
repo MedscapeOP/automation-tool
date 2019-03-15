@@ -211,6 +211,8 @@ function slidesInitial (str) {
 
     // var chapterRegExp = /Chapter Title:.*/g;
     // str = str.replace(chapterRegExp, "&gt;&gt;</p>");
+    var splitInsertRegExp = /(.*&lt;&lt;insert(?:\s){0,}slide.*)((?:&lt;){1,}.*)/gi;
+    str = str.replace(splitInsertRegExp, "$1</p>\n\r\n<p><strong>$2");
 
     /* END NEW REGEX */
 
@@ -232,7 +234,7 @@ function slidesInitial (str) {
     
     var insertSlideRegExp5 = /.*&lt;&lt;insert.*slide (\d+).*/gi;
     str = str.replace(insertSlideRegExp5, "&lt;&lt;insert slide $1&gt;&gt;");
-    console.log("STRING: ", str);  
+    // console.log("STRING: ", str);  
 
     // Handle this &lt;&lt; Insert Slide 1
     // Causes Townhall test to break but fixes FR issue 
