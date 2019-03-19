@@ -96,6 +96,7 @@ describe('Article Checklist', function () {
         it('should return a readable string of Slides Components', function () {
             var result = articleChecklist.slides.printFn(articleChecklist.slides);
             // console.log(result);
+            // fs.writeFileSync(__dirname + '/output/print-slides-output.html', result);
             expect(result).to.equalIgnoreSpaces(slideComponentsPrint);
         });
     });

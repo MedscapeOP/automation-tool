@@ -133,7 +133,7 @@ let buildSlidesXML = (substring, subsectionElement, slidePath = "XXX/XXX", count
         // }
         
         // Turn Content into JS object
-        console.log("SLIDE CONTENT BEFORE CLEAN: ", slideContent);
+        // console.log("SLIDE CONTENT BEFORE CLEAN: ", slideContent);
         // slideContent = xmlOps.xmlStringToJS(`<sec_txt>${slideContent}</sec_txt>`);
 
         slideContent = cleanHTML.basicHTMLSanitize(slideContent);
