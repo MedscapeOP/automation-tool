@@ -13,7 +13,7 @@ Practice Article - 896014
 -------------------------------------- */
 function getTables(contentBlockHTML, program) {
     var startRegexps = [
-        /.*Table \d+\..*/gi
+        /<p><strong>Table \d+\..*/gi
     ];
 
     var endRegexps = [

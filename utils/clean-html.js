@@ -666,6 +666,7 @@ function tableCleanup(htmlString, removeFluff=false) {
     if (removeFluff) {
         str = removeTicketFluff(str);
     }
+    
     var options = {
         allowedTags: [ 'p', 'br', 'em', 'strong', 'sup', 'sub', 'table', 'td', 'tr', 'th'],
         allowedAttributes: [],
@@ -678,6 +679,20 @@ function tableCleanup(htmlString, removeFluff=false) {
         }
     }
     var clean = sanitizeHtml(str, options);
+    
+    var addTbodyOpening = new RegExp('<table>');
+    clean = clean.replace(addTbodyOpening, '<table class = "inline_data_table">\n<tbody xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dctm="http://www.documentum.com" xmlns:fmt="http://java.sun.com/jstl/fmt" xmlns:jsp="jsp">');
+
+    var addTbodyClosing = new RegExp('</table>');
+    clean = clean.replace(addTbodyClosing, '</tbody></table>');
+
+    var addBlockQuoteOpening = /<\/tbody><\/table>\s+<p>/gi;
+    clean = clean.replace(addBlockQuoteOpening, '</tbody></table>\n<blockquote>');
+
+    var addBlockQuoteClosing = /<\/p>\s+<p><strong>&lt;&lt;end table/gi;
+    clean = clean.replace(addBlockQuoteClosing, '</blockquote>\n\n<p><strong>&lt;&lt;end table');
+
+    
     return clean;
 }
 
