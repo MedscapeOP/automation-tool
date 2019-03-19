@@ -1,5 +1,6 @@
 var _ = require("lodash");
-const xmlOps = require('../utils/index').xmlOps;
+const xmlOps = require('../utils').xmlOps;
+const cleanHTML = require('../utils').cleanHTML;
 /*
     CONSTRUCTOR:
     - initialize _elements
@@ -212,13 +213,13 @@ class XMLElement {
     
     setMarkupField(propName, newMarkup) {  
         if (newMarkup) {
-            // console.log("NEW MARKUP: ", newMarkup);          
+            // console.log("NEW MARKUP: ", newMarkup); 
             var markupObject = xmlOps.xmlStringToJS(newMarkup);
             this[propName].elements = markupObject.elements[0].elements;
         } else {
             this[propName].elements = [];
         }
-    }
+    } 
 
     // FIELDS THAT ARE SINGLE PARENT HTML MARKUP
     getWrappedMarkupField(propName) {

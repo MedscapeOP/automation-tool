@@ -70,6 +70,8 @@ describe('Article Utilities', function () {
         completeSlidesTOC3 = fs.readFileSync(__dirname + '/input/article-utils/slides-toc-edu-impact.xml').toString();
 
         var slidesComponent = app.prodTicket.getSlides(prodTicket, program)[0];
+        
+        // fs.writeFileSync(__dirname + '/output/article-utils/slides-component.html', slidesComponent.rawSlides);
 
         it('should return Slides TOC', function () {
             var result = articleUtils.buildSlidesTOC(slidesComponent, false, false, true).toObjectLiteral();

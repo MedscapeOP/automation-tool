@@ -113,11 +113,11 @@ describe('Utility Functions', function () {
         describe(".slidesInitial()", function () {
             it('should transform Slides HTML from from R2Net into format suitable for initial processing/formatting.', function () {
                 var result = utils.cleanHTML.slidesInitial(dirtySlidesHTML);
-                // fs.writeFileSync(__dirname + "/output/fixed-slides.html", result, function(err) {
-                //     if(err) {
-                //         return console.log(err);
-                //     }
-                // }); 
+                fs.writeFileSync(__dirname + "/output/fixed-slides.html", result, function(err) {
+                    if(err) {
+                        return console.log(err);
+                    }
+                }); 
                 expect(result).to.equalIgnoreSpaces(slidesInitialComplete);
             });
         });

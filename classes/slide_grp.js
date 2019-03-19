@@ -130,6 +130,7 @@ class SlideGroup extends XMLElement {
     }
 
     set sectionText(sectionText) {
+        console.log("SECTION TEXT: ", sectionText);
         this.setMarkupField("_sectionText", sectionText);
         // Remove already existing section text
         // this._sectionText.elements = [];

@@ -21,6 +21,7 @@ describe('Test And Teach', function () {
 
     var program; 
     var prodTicket;
+    var testProdticket;
     var completeTestAndTeach;
     var contentBlock1;
     var contentBlock2;
@@ -31,6 +32,8 @@ describe('Test And Teach', function () {
     var mainContentTOCs;
     beforeEach(function() {
         prodTicket = fs.readFileSync(__dirname + '/input/test-and-teach/article-902362.html').toString();
+
+        testProdticket = fs.readFileSync(__dirname + '/input/test-and-teach/test-article-907945.html').toString();
 
         contentBlock1 = fs.readFileSync(__dirname + '/input/test-and-teach/content-block-1.html').toString();
 

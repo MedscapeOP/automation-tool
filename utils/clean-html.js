@@ -10,6 +10,21 @@ Common Entities / Things to remove:
 <tt>o     </tt> --> Unorder List Sub-bullet 
 */
 
+function basicHTMLSanitize(str) {
+    var options = {
+        // Allow all tags and all attributes 
+        allowedTags: false,
+        allowedAttributes: false,
+        exclusiveFilter: function(frame) {
+            // if (frame.text.trim() == "") {
+            //     return false;
+            // }
+            return !frame.text.trim();
+        }
+    };
+    return sanitizeHtml(str, options);
+}
+
 function removeTicketFluff(str) {
     // Remove this from Prod ticket (Insert text)
     // var insertRegExp = new RegExp('(Insert.*)', 'g');
@@ -263,12 +278,6 @@ function slidesInitial (str) {
     var subSubBulletSymbolRegex = /<p>.*(&#9642;.*)<\/p>/g;
     str = str.replace(bulletSymbolRegex, "$1").replace(subBulletSymbolRegex, "$1").replace(subSubBulletSymbolRegex, "$1");
 
-    // /* PLACEHOLDERS FOR P TAGS */
-    // var pOpenRegexp = /<p>/g;
-    // str = str.replace(pOpenRegexp, "--POPEN--");
-    // var pCloseRegexp = /<\/p>/g;
-    // str = str.replace(pCloseRegexp, "--PCLOSE--");
-
     return str;
 }
 
@@ -369,6 +378,7 @@ function slidesFinal (str) {
     // var paragraphRegexp = new RegExp('(<strong>.*)', 'g');
     // str = str.replace(paragraphRegexp, "<p>$1</p>"); 
 
+    /* Add Paragraph Tags to everything and remove them where needed */
     // <([^>]+)> --> FOR HTML TAGS 
     var paragraphRegexp = new RegExp('((?<!<([^>]+)>).*)', 'g');
     str = str.replace(paragraphRegexp, "<p>$1</p>");
@@ -378,6 +388,10 @@ function slidesFinal (str) {
 
     paragraphRegexp = new RegExp('<p>(?=<([^>]+)>)(.*)</p>', 'g');
     str = str.replace(paragraphRegexp, "$2");
+
+    /* GENERAL FLUFF REMOVAL */
+    var noteToEA = /.*(?:&lt;){1,}Note to EA.*/gi;
+    str = str.replace(noteToEA, "");
 
     return str;
 }
@@ -668,6 +682,7 @@ function tableCleanup(htmlString, removeFluff=false) {
 }
 
 module.exports = {
+    basicHTMLSanitize,
     removeTicketFluff,
     supEdgeCases,
     singleLine,
