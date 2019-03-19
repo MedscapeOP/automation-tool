@@ -154,8 +154,7 @@ module.exports = {
             
             <p>ASAS20 at week 16: 71% vs 40%</p>
             
-            <p>&lt;&lt;CAPTION&gt;&gt;ASAS20 = Assessment in SpondyloArthritis international Society 20%;
-            ASAS40 = Assessment in SpondyloArthritis international Society 40%; SC = subcutaneous; VAS = visual analog scale. </p>
+            <p>&lt;&lt;CAPTION&gt;&gt;ASAS20 = Assessment in SpondyloArthritis international Society 20%; ASAS40 = Assessment in SpondyloArthritis international Society 40%; SC = subcutaneous; VAS = visual analog scale. </blockquote>
             
             <p><strong>&lt;&lt;end table 3&gt;&gt;</strong></p>`,
             label: "Table 3. Phase 3 Trials of TNF Inhibitors Currently Approved for AS and Under Investigation for the Treatment of nr-AxSpA",

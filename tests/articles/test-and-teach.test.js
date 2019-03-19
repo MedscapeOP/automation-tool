@@ -117,40 +117,40 @@ describe('Test And Teach', function () {
         });
     });
 
-    // describe('#getLevelTwos()', function () {
-    //     it('should return array of objects with properties set for level 1s, level 2s, tables, figures, and QnA #s', function () {
-    //         var levelTwos = require('./input/test-and-teach/level-twos');
-    //         var contentBlock = contentBlock3;
-    //         var result = testAndTeach.getLevelTwos(contentBlock, program);
-    //         // console.log("RESULT LVL2: ", result);
-    //         for (var i = 0; i < result.length; i++) {
-    //             expect(result[i].label).to.equalIgnoreSpaces(levelTwos[i].label);
-    //             expect(result[i].textBlock).to.equalIgnoreSpaces(levelTwos[i].textBlock);
-    //             expect(result[i].type).to.equalIgnoreSpaces(levelTwos[i].type);
-    //         }    
-    //     });
-    // });
+    describe('#getLevelTwos()', function () {
+        it('should return array of objects with properties set for level 1s, level 2s, tables, figures, and QnA #s', function () {
+            var levelTwos = require('./input/test-and-teach/level-twos');
+            var contentBlock = contentBlock3;
+            var result = testAndTeach.getLevelTwos(contentBlock, program);
+            // console.log("RESULT LVL2: ", result);
+            for (var i = 0; i < result.length; i++) {
+                expect(result[i].label).to.equalIgnoreSpaces(levelTwos[i].label);
+                expect(result[i].textBlock).to.equalIgnoreSpaces(levelTwos[i].textBlock);
+                expect(result[i].type).to.equalIgnoreSpaces(levelTwos[i].type);
+            }    
+        });
+    });
 
-    // describe('#getContentBlockComponents()', function () {
-    //     it('should return array of objects with properties set for level 1s, level 2s, tables, figures, and QnA #s', function () {
-    //         var contentBlockComponents = require('./input/test-and-teach/content-block-test').objects;
-    //         var contentBlock = {
-    //             string: contentBlockTest,
-    //             qnaNumber: null
-    //         };
-    //         var result = testAndTeach.getContentBlockComponents(contentBlock, program);
-    //         var qnaNumber = result.qnaNumber;
-    //         result = result.objects;
-    //         // fs.writeFileSync(__dirname + '/output/test-and-teach/block-components.json', JSON.stringify(result, undefined, 2));
-    //         // console.log("RESULT CONTENT BLOCK: ", result);
-    //         for (var i = 0; i < result.length; i++) {
-    //             expect(result[i].label).to.equalIgnoreSpaces(contentBlockComponents[i].label);
-    //             expect(utils.cleanHTML.cleanEntities(result[i].textBlock)).to.equalIgnoreSpaces(contentBlockComponents[i].textBlock);
-    //             expect(result[i].type).to.equalIgnoreSpaces(contentBlockComponents[i].type);
-    //         }  
-    //         expect(qnaNumber).to.equal(null);
-    //     });
-    // });
+    describe('#getContentBlockComponents()', function () {
+        it('should return array of objects with properties set for level 1s, level 2s, tables, figures, and QnA #s', function () {
+            var contentBlockComponents = require('./input/test-and-teach/content-block-test').objects;
+            var contentBlock = {
+                string: contentBlockTest,
+                qnaNumber: null
+            };
+            var result = testAndTeach.getContentBlockComponents(contentBlock, program);
+            var qnaNumber = result.qnaNumber;
+            result = result.objects;
+            // fs.writeFileSync(__dirname + '/output/test-and-teach/block-components.json', JSON.stringify(result, undefined, 2));
+            // console.log("RESULT CONTENT BLOCK: ", result);
+            for (var i = 0; i < result.length; i++) {
+                expect(result[i].label).to.equalIgnoreSpaces(contentBlockComponents[i].label);
+                expect(utils.cleanHTML.cleanEntities(result[i].textBlock)).to.equalIgnoreSpaces(contentBlockComponents[i].textBlock);
+                expect(result[i].type).to.equalIgnoreSpaces(contentBlockComponents[i].type);
+            }  
+            expect(qnaNumber).to.equal(null);
+        });
+    });
     
     // describe("#buildContentTOC()", function () {
     //     it('should take in raw content block string and return TOC element', function () {

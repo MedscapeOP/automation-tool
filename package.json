@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nodemon --exec mocha tests/**/*.test.js || exit 1",
-    "alttest": "nodemon --exec mocha tests/articles/article-utils.test.js || exit 1",
+    "alttest": "nodemon --exec mocha tests/articles/test-and-teach.test.js || exit 1",
     "utiltest": "nodemon --exec mocha tests/utils/utils.test.js || exit 1"
   },
   "author": "Brandon Antonelli",
