@@ -704,6 +704,7 @@ describe('Prodticket Module Functions', function () {
      * CREDITS AVAILABLE
      */
     describe("prodticket.getCreditsAvailable()", function () {
+        var creditsAvailableCB = "0.25";
         var creditsAvailableSL = "0.50";
         var creditsAvailableTH = "1.5";
         var creditsAvailableTH_alt = "No Credit Available Section In Prodticket";
@@ -722,10 +723,15 @@ describe('Prodticket Module Functions', function () {
             expect(result).to.equalIgnoreSpaces(creditsAvailableSL);
         });
 
-        // it("should return error object with message for missing credits available", function () {
-        //     var result = prodticket.getCreditsAvailable(prodticketFail, config.programs.townHall);
-        //     expect(result.message).to.equal("No credits available found in the prodticket"); 
-        // });
+        it("should return the program Credits Available from .html - Clinical Brief", function () {
+            var result = prodticket.getCreditsAvailable(prodticketCB, config.programs.clinicalBrief);
+            expect(result).to.equalIgnoreSpaces(creditsAvailableCB);
+        });
+
+        it("should return error object with message for missing credits available", function () {
+            var result = prodticket.getCreditsAvailable(prodticketFail, config.programs.townHall);
+            expect(result.message).to.equal("No credits available found in the prodticket"); 
+        });
     });
 
     // /**
