@@ -389,6 +389,9 @@ function slidesFinal (str) {
     paragraphRegexp = new RegExp('<p>(?=<([^>]+)>)(.*)</p>', 'g');
     str = str.replace(paragraphRegexp, "$2");
 
+    paragraphRegexp = new RegExp('(<strong>.*)', 'g');
+    str = str.replace(paragraphRegexp, "<p>$1</p>");
+
     /* GENERAL FLUFF REMOVAL */
     var noteToEA = /.*(?:&lt;){1,}Note to EA.*/gi;
     str = str.replace(noteToEA, "");
