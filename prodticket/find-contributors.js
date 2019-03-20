@@ -232,4 +232,10 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     }
 }
 
+// Test and Teach 
+exportObject[config.programs.testAndTeach.codeName] = function (ticketHTML , program) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML, program);
+}
+
+
 module.exports = exportObject;

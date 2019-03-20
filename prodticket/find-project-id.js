@@ -40,4 +40,9 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     throw new Error("No SF# in TownHall prodticket");
 }
 
+// Test and Teach  
+exportObject[config.programs.testAndTeach.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+};
+
 module.exports = exportObject;

@@ -42,7 +42,6 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
-
 // Town Hall  
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     var {textBlock} = stringOps.getTextBlock(ticketHTML, "</a>References (for enduring version only)", "</html>");
@@ -54,5 +53,10 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
         return "<ol>" + cleanHTML.singleLine(textBlock) + "</ol>";
     }
 }
+
+// Test and Teach  
+exportObject[config.programs.testAndTeach.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+};
 
 module.exports = exportObject;

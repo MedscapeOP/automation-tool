@@ -64,5 +64,9 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     }
 };
 
+// Test and Teach  
+exportObject[config.programs.testAndTeach.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+};
 
 module.exports = exportObject;

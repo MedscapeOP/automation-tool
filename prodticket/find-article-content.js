@@ -29,7 +29,6 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     return '';
 };
 
-
 // Curbside 
 exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);

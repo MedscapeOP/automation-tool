@@ -210,6 +210,10 @@ function printLearningObjectives(learningObjectives) {
     return resultString + newString;
 }
 
+function printTestAndTeachContent(contentBlockObjects) {
+
+}
+
 module.exports = {
     printStringProp,
     printJSONProp,
@@ -219,5 +223,6 @@ module.exports = {
     printSlides,
     printComponents,
     printDateTime,
-    printLearningObjectives
+    printLearningObjectives,
+    printTestAndTeachContent
 }

@@ -39,35 +39,6 @@ let titleRegexArray = [
     /.*CE Reviewer \/ Nurse Planner.*/gi
 ];
 
-
-// function getAllMatchesInOrder(textBlock, regexArray)  {
-//     // Create a utility function that returns an array of all of the titles
-//     var resultArray = [];
-//     var substring = textBlock.slice();
-//     var foundMatch = null;
-//     var searchStartIndex = 0;
-//     var matchLength = 0;
-//     while (substring) {
-//         // console.log("SUBSTRING: ", substring);
-//         foundMatch = stringOps.getNextRegex(substring, regexArray);        
-//         // console.log("FOUND MATCH: ", foundMatch);
-//         if (!foundMatch.isInString) {
-//             substring = null;
-//         } else {
-//             matchLength = substring.match(foundMatch.symbol)[0].length;
-//             searchStartIndex = (textBlock.length - substring.length) + foundMatch.index + matchLength; // foundMatch.symbol.toString().length + 1;    
-//             substring = textBlock.substring(searchStartIndex);
-//             resultArray.push({
-//                 symbol: foundMatch.symbol,
-//                 index: searchStartIndex - matchLength
-//             });
-//             // console.log("INDEX CHOP: ", textBlock.substring(searchStartIndex, searchStartIndex + 20));
-//             // console.log("INDEX CHOP: ", textBlock.substring(39, 261));
-//         }
-//     }
-//     return resultArray;
-// }
-
 function buildCMEReviewers(cmeReviewerBlock, program) {
     var reviewersResult = [];
     
@@ -223,5 +194,11 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML, program)
         return buildCMEReviewers(cmeReviewerBlock, program);
     }
 }
+
+// Test and Teach 
+exportObject[config.programs.testAndTeach.codeName] = function (ticketHTML , program) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML, program);
+}
+
 
 module.exports = exportObject;

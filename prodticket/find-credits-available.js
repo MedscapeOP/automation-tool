@@ -11,6 +11,38 @@ let creditRegExp = /(\d+\.\d+)/;
 
 var exportObject = {};
 
+// Clinical Brief
+exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
+    /* 
+        NEEDS to be implemented
+    */
+    return `0.25`;
+}
+
+// Spotlight
+exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
+    /* 
+        NEEDS to be implemented
+    */
+   return `0.5`;
+}
+
+
+// Curbside
+exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+}
+
+// Video Lecture 
+exportObject[config.programs.videoLecture.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+}
+
+// First Response
+exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+}
+
 // Town Hall 
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     var startRegExp = /<strong>Credit Available.*/g;
@@ -32,5 +64,9 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     }
 };
 
+// Test and Teach  
+exportObject[config.programs.testAndTeach.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+};
 
 module.exports = exportObject;
