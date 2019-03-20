@@ -38,6 +38,21 @@ function removeFromRegexCapture(string, regex, removeRegex) {
     return str;
 }
 
+/**
+ * @description Using an array of regex, remove all matches from str  
+ * @param {*} str 
+ * @param {*} regexArray 
+ */
+function removeRegexMatches(str, regexArray) {
+    var resultString = str;
+    // console.log("RESULT STRING: ", resultString);
+    for (var i = 0; i < regexArray.length; i++) {
+        resultString = resultString.replace(regexArray[i], "\n\r");
+    }
+    // console.log("RESULT STRING AFTER: ", resultString);
+    return resultString;
+}
+
 function findLastAndReplace(str, removeString, replaceString) {
     var index = str.lastIndexOf(removeString);
     str = str.substring(0, index) + replaceString + str.substring(index + removeString.length, str.length);
@@ -356,6 +371,7 @@ function sliceAtBreakpoints(textBlock, breakpointArray) {
 
 
 module.exports = {
+    removeRegexMatches,
     findLastAndReplace,
     findFirstAndReplace,
     isEmptyString,

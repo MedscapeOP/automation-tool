@@ -704,20 +704,28 @@ describe('Prodticket Module Functions', function () {
      * CREDITS AVAILABLE
      */
     describe("prodticket.getCreditsAvailable()", function () {
+        var creditsAvailableSL = "0.50";
         var creditsAvailableTH = "1.5";
         var creditsAvailableTH_alt = "No Credit Available Section In Prodticket";
         it("should return the program Credits Available from .html - TownHall", function () {
             var result = prodticket.getCreditsAvailable(prodticketTH, config.programs.townHall);
             expect(result).to.equalIgnoreSpaces(creditsAvailableTH);
+        });
 
+        it("should return the program Credits Available from .html - TownHall Alternate", function () {
             var result = prodticket.getCreditsAvailable(prodticketTH_alt, config.programs.townHall);
             expect(result).to.equalIgnoreSpaces(creditsAvailableTH_alt);
         });
 
-        it("should return error object with message for missing credits available", function () {
-            var result = prodticket.getCreditsAvailable(prodticketFail, config.programs.townHall);
-            expect(result.message).to.equal("No credits available found in the prodticket"); 
+        it("should return the program Credits Available from .html - Spotlight", function () {
+            var result = prodticket.getCreditsAvailable(prodticketSL, config.programs.spotlight);
+            expect(result).to.equalIgnoreSpaces(creditsAvailableSL);
         });
+
+        // it("should return error object with message for missing credits available", function () {
+        //     var result = prodticket.getCreditsAvailable(prodticketFail, config.programs.townHall);
+        //     expect(result.message).to.equal("No credits available found in the prodticket"); 
+        // });
     });
 
     // /**

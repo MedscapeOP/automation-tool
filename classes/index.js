@@ -35,6 +35,7 @@ module.exports = {
     BriefChecklist,
     TownHallEnduringChecklist,
     TownHallRegChecklist,
+    TestAndTeachChecklist,
     PropertiesChecklist,
     ProgramTimeline,
     ContributorGroup,
