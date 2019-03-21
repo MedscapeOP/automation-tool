@@ -29,7 +29,7 @@ class TestAndTeachChecklist extends ArticleChecklist {
         this.cmeReviewers = {result: null, printFn: printFunctions.printContributors, printName: "CME REVIEWER DISCLOSURES"};     
         
         // SPECIAL SECTIONS  
-        this.contentArray = {result: null , printFn: printFunctions.printTestAndTeachContent, printName: "ARTICLE CONTENT"}; 
+        this.mainContent = {result: null , printFn: printFunctions.printTestAndTeachContent, printName: "ARTICLE CONTENT"}; 
     }
 
     //--------------------------------

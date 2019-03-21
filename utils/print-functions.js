@@ -210,15 +210,23 @@ function printLearningObjectives(learningObjectives) {
     return resultString + newString;
 }
 
-function printTestAndTeachContent(contentArray) {
-    var contentBlockObjectsArray = contentArray.result;
+function printTestAndTeachContent(mainContent) {
+    // PUT PREAMBLE TEXT BEFORE 
+    var contentBlockObjectsArray = mainContent.result.contentArray;
     var contentBlockComponents = null;
     var component = null;
     var resultString = stripIndent` 
     -----------------------------------------
-    ${contentArray.printName}
+    ${mainContent.printName}
     -----------------------------------------    
     `;
+    resultString += "\n\n"; 
+    resultString += stripIndent`
+    -----------------------------------------
+    TOC 1: PREAMBLE TEXT -> SUBSECTION CONTENT
+    -----------------------------------------
+    <p>The following cases are modeled on the interactive grand rounds approach. The questions within the activity are designed to test your current knowledge. After each question, you will be able to see whether you answered correctly and read evidence-based information that supports the most appropriate answer choice. The questions are designed to challenge you; you will not be penalized for answering the questions incorrectly. At the end of the activity, there will be a short post-test assessment based on the material presented.</p>
+    `
     resultString += "\n\n";  
     for (var i = 0; i < contentBlockObjectsArray.length; i++) {
         contentBlockComponents = contentBlockObjectsArray[i].objects;
@@ -228,28 +236,28 @@ function printTestAndTeachContent(contentArray) {
                 case "levelTwo": 
                     resultString += stripIndent` 
                     -----------------------------------------
-                    TOC ${i+1}: LEVEL TWO - SUBSECTION
+                    TOC ${i+1}: LEVEL TWO -> SUBSECTION
                     -----------------------------------------            
                     `;
                     break;
                 case "levelOne": 
                     resultString += stripIndent` 
                     -----------------------------------------
-                    TOC ${i+1}: LEVEL ONE - SECTION
+                    TOC ${i+1}: LEVEL ONE -> SECTION
                     -----------------------------------------
                     `;
                     break;
                 case "figure":
                     resultString += stripIndent` 
                     -----------------------------------------
-                    TOC ${i+1}: FIGURE - SUBSECTION 
+                    TOC ${i+1}: FIGURE -> SUBSECTION 
                     -----------------------------------------
                     `;
                     break;
                 case "table":
                     resultString += stripIndent` 
                     -----------------------------------------
-                    TOC ${i+1}: TABLE - SUBSECTION 
+                    TOC ${i+1}: TABLE -> SUBSECTION 
                     -----------------------------------------
                     `;
                     break;

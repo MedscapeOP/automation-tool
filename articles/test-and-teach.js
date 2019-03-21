@@ -164,6 +164,12 @@ function hasQNANumber (contentBlockHTML) {
     return false;
 }
 
+/**
+ * @description Take raw prodticket and break into content blocks 
+ * - Each content block object has .string and .qnaNumber
+ * @param {*} ticketHTML 
+ * @param {*} program 
+ */
 function getContentBlockObjects (ticketHTML, program) {
     var breakpoints = [
         {
@@ -189,8 +195,10 @@ function getContentBlockObjects (ticketHTML, program) {
         --> Question End (Answer Explanation) 
         --> New Case                 
     */
-    var {textBlock} = utils.stringOps.getTextBlock(ticketHTML, /<strong>Content/g, /<strong>Abbreviations/g, false, true);
-
+    var textBlock = prodticket.getArticleContent(ticketHTML, program);
+    if (textBlock instanceof Error) {
+        return textBlock;
+    }
     // console.log("CONTENT HTML: ", textBlock);
 
     var result = [];
@@ -394,9 +402,14 @@ function buildContentTOC (contentBlockComponents, program) {
     return tocInstance;
 }
 
-function getMainContentTOCs (articleContent, program) {
+/**
+ * Takes in raw prodticket and returns content block objects, content TOCs, and the main content array printed in the checklist.
+ * @param {*} ticketHTML 
+ * @param {*} program 
+ */
+function getMainContent (ticketHTML, program) {
     /* 
-        Requirements for getMainContentTOCs: 
+        Requirements for getMainContent: 
         1) Use buildContentTOC for the following TOCs
             1a) CREATE QUESTION TOC ELEMENTS (1 FOR: EACH QUESTION FORM); 
             1b) CREATE SUBSECTIONS FOR TEXT BLOCKS; 
@@ -415,20 +428,52 @@ function getMainContentTOCs (articleContent, program) {
             - Attach EduImpactSubsection 
     */
     var mainTOCs = [];
-    var contentBlockObjects = getContentBlockObjects(articleContent, program);
+    var contentArray = [];
+    var contentBlockObjects = getContentBlockObjects(ticketHTML, program);
+    if (contentBlockObjects instanceof Error) {
+        return contentBlockObjects;
+    }
     var contentBlockComponents = null;
     var latestQnaNumber = null;
     for (var i = 0; i < contentBlockObjects.length; i++) {
         // console.log("FUNCTION LOOP 2: ");
         contentBlockComponents = getContentBlockComponents(contentBlockObjects[i], program);
         latestQnaNumber = contentBlockComponents.qnaNumber;
+        contentArray.push(contentBlockComponents);
         mainTOCs.push(buildContentTOC(contentBlockComponents, program));
+
+        if (i == contentBlockObjects.length - 1) {
+            var llaSubsection = articleUtils.buildEduImpactSubsection("Article");
+            mainTOCs[i]._childElements[mainTOCs[i]._childElements.length - 1].insertSubsectionElement(llaSubsection);
+        }
+
+        if (i == 0) {
+            // finalArticle._childElements[0]._childElements[0].insertSubsectionElement(forYourPatientSubsection);
+            var subsectionInstance = new SubsectionElement(false, false, false);
+            subsectionInstance.subsectionContent = `
+            <div><p>The following cases are modeled on the interactive grand rounds approach. The questions within the activity are designed to test your current knowledge. After each question, you will be able to see whether you answered correctly and read evidence-based information that supports the most appropriate answer choice. The questions are designed to challenge you; you will not be penalized for answering the questions incorrectly. At the end of the activity, there will be a short post-test assessment based on the material presented.</p></div>
+            `;
+            var sectionInstance = new SectionElement(false, false)
+            sectionInstance.insertSubsectionElement(subsectionInstance);
+            mainTOCs[0]._childElements.unshift(sectionInstance);
+        }
     }
     
     return {
-        mainTOCs: mainTOCs
+        mainTOCs: mainTOCs,
+        contentArray: contentArray,  
+        contentBlockObjects: contentBlockObjects
     }
 }
+
+/* 
+Finish checklistTestAndTeach() 
+- Refactor getMainContentTOCs() into getMainContent()
+        - Function now returns multiple different objects/arrays
+        - Returns TOCs for XML generation and Also the contentArray for the Checklist
+        - Add preamble text to object returned 
+        - Add Edu Impact Subsection at the end of final TOCs 
+*/
 
 
 /* LLA PRE TOC   
@@ -500,7 +545,7 @@ function checklistTestAndTeach(ticket, program) {
     checklist.cpyrtHolder.result = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
 
     // CREDITS AVAILABLE 
-    // <<<<<<<< PLACEHOLDER >>>>>>>>>
+    checklist.creditsAvailable.result = prodticket.getCreditsAvailable(ticketHTML, program);
 
     // DOWNLOADABLE SLIDES 
     checklist.downloadableSlides.result = snippets.downloadableSlides(program.articleID);
@@ -520,7 +565,7 @@ function checklistTestAndTeach(ticket, program) {
     checklist.references.result = prodticket.getReferences(ticket, program);
 
     // SUPPORTER
-    // <<<<<<<< PLACEHOLDER >>>>>>>>>
+    checklist.supporter.result = prodticket.getSupporter(ticket, program);
 
     // TARGET AUDIENCE 
     checklist.targetAudience.result = prodticket.getTargetAudience(ticket, program);
@@ -539,6 +584,12 @@ function checklistTestAndTeach(ticket, program) {
 
     // CME REVIEWERS 
     checklist.cmeReviewers.result = prodticket.getCMEReviewers(ticket, program);
+
+    // CONTENT ARRAY (TEST AND TEACH SPECIFIC)
+    // getMainContent() returns the mainContent (tocs, contentArray, and contentBlocks)
+    // If there is an error finding content block / transcript then it will return and 
+    // error with a message for the checklist to print. 
+    checklist.mainContent.result = getMainContent(ticket, program);
 
     return checklist.print();
 }
@@ -596,7 +647,9 @@ function buildTestAndTeach(ticket, program) {
         blankResultsTOC = articleUtils.buildBlankTOC();
     }
 
-    var tocs = getMainContentTOCs(checklistResult.properties.articleContent.result, program);
+    var articleContent = (checklistResult.properties.contentArray ? checklistResult.properties.contentArray.result : "")
+
+    var tocs = articleContent.mainTOCs;
 
     // slidesTOC = tocs.slidesTOC;
     // audienceQATOC = tocs.audienceQATOC; 
@@ -672,7 +725,7 @@ function buildTestAndTeach(ticket, program) {
 };
 
 module.exports = {
-    getMainContentTOCs,
+    getMainContent,
     getTables,
     getFigures,
     getLevelOnes,

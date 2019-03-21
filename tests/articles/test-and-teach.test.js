@@ -164,11 +164,11 @@ describe('Test And Teach', function () {
     //     });
     // });
 
-    describe("#getMainContentTOCs()", function () {
+    describe("#getMainContent()", function () {
         it("should return TOCs from main content section of prodticket - (no PostAssessment, Blank, Abbreviations, etc.)", function () {
             var ticketHTMl = prodTicket;
             var contentBlockXML = mainContentTOCs;
-            var result = testAndTeach.getMainContentTOCs(prodTicket, program).mainTOCs;
+            var result = testAndTeach.getMainContent(prodTicket, program).mainTOCs;
             var resultString = "";
             for (var i = 0; i < result.length; i++) {
                 // console.log("TEST LOOP: ");
@@ -185,12 +185,14 @@ describe('Test And Teach', function () {
         it('should print content for test and teach using contentBlockComponents', function (done) {
             var contentBlockComponents = require('./input/test-and-teach/content-block-test');
             contentBlockComponents.qnaNumber = 3;
-            var contentArray = {
-                result: [contentBlockComponents], 
+            var mainContent = {
+                result: {
+                    contentArray: [contentBlockComponents]
+                }, 
                 printFn: utils.printFunctions.printTestAndTeachContent, printName: "ARTICLE CONTENT"
             };
             
-            var result = utils.printFunctions.printTestAndTeachContent(contentArray);
+            var result = utils.printFunctions.printTestAndTeachContent(mainContent);
             fs.writeFileSync(__dirname + '/output/test-and-teach/print-result.html', result);
             done();
         });
