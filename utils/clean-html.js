@@ -85,12 +85,17 @@ function removeTicketFluff(str) {
     str = str.replace(addAbbrevRegExp2, "");
 
     // Remove End of Slides Fluff
-    var endOfSlidesRegExp = /<em>Mandatory Insertion after Main CONTENT with abridged Transcripts:<\/em>/gi;
+    var endOfSlidesRegExp = /Mandatory Insertion after Main CONTENT.*/gi;
     str = str.replace(endOfSlidesRegExp, "");
 
-    // We also remove this statement because we re-include it manually 
-    var endOfSlidesRegExp2 = /<em>This content has been condensed for improved clarity\.<\/em>/gi;
+    var endOfSlidesRegExp2 = /<p>&lt;&lt;Note to Production:.*/gi;
     str = str.replace(endOfSlidesRegExp2, "");
+
+    // We also remove this statement because we re-include it manually 
+    var endOfSlidesRegExp3 = /<em>This content has been condensed for improved clarity\.<\/em>/gi;
+    str = str.replace(endOfSlidesRegExp3, "");
+
+
 
     var aTagRegExp = /<a name=".*"><\/a>/g;
     str = str.replace(aTagRegExp, "");

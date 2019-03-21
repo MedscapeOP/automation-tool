@@ -473,6 +473,7 @@ Finish checklistTestAndTeach()
         - Returns TOCs for XML generation and Also the contentArray for the Checklist
         - Add preamble text to object returned 
         - Add Edu Impact Subsection at the end of final TOCs 
+            - Update EDU Impact statement to include proper "" characters.
 */
 
 
