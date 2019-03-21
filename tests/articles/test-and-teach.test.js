@@ -179,5 +179,21 @@ describe('Test And Teach', function () {
             // expect(result).to.equalIgnoreSpaces(contentBlockXML);
         });
     });
+
+
+    describe('printFunctions.printTestAndTeachContent()', function () {
+        it('should print content for test and teach using contentBlockComponents', function (done) {
+            var contentBlockComponents = require('./input/test-and-teach/content-block-test');
+            contentBlockComponents.qnaNumber = 3;
+            var contentArray = {
+                result: [contentBlockComponents], 
+                printFn: utils.printFunctions.printTestAndTeachContent, printName: "ARTICLE CONTENT"
+            };
+            
+            var result = utils.printFunctions.printTestAndTeachContent(contentArray);
+            fs.writeFileSync(__dirname + '/output/test-and-teach/print-result.html', result);
+            done();
+        });
+    });
 });
 

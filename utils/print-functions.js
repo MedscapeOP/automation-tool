@@ -210,8 +210,72 @@ function printLearningObjectives(learningObjectives) {
     return resultString + newString;
 }
 
-function printTestAndTeachContent(contentBlockObjects) {
+function printTestAndTeachContent(contentArray) {
+    var contentBlockObjectsArray = contentArray.result;
+    var contentBlockComponents = null;
+    var component = null;
+    var resultString = stripIndent` 
+    -----------------------------------------
+    ${contentArray.printName}
+    -----------------------------------------    
+    `;
+    resultString += "\n\n";  
+    for (var i = 0; i < contentBlockObjectsArray.length; i++) {
+        contentBlockComponents = contentBlockObjectsArray[i].objects;
+        for (var a = 0; a < contentBlockComponents.length; a++) {
+            component = contentBlockComponents[a]; 
+            switch(component.type) {
+                case "levelTwo": 
+                    resultString += stripIndent` 
+                    -----------------------------------------
+                    TOC ${i+1}: LEVEL TWO - SUBSECTION
+                    -----------------------------------------            
+                    `;
+                    break;
+                case "levelOne": 
+                    resultString += stripIndent` 
+                    -----------------------------------------
+                    TOC ${i+1}: LEVEL ONE - SECTION
+                    -----------------------------------------
+                    `;
+                    break;
+                case "figure":
+                    resultString += stripIndent` 
+                    -----------------------------------------
+                    TOC ${i+1}: FIGURE - SUBSECTION 
+                    -----------------------------------------
+                    `;
+                    break;
+                case "table":
+                    resultString += stripIndent` 
+                    -----------------------------------------
+                    TOC ${i+1}: TABLE - SUBSECTION 
+                    -----------------------------------------
+                    `;
+                    break;
+            }
 
+            resultString += "\n\n";  
+        
+            var header = stripIndent`
+            -- HEADER ---------------------
+            ${component.label}` + "\n\n";
+        
+            var markup = stripIndent`
+            -- SUBSECTION CONTENT MARKUP ---------------------
+            ${component.textBlock}`;
+        
+            if ((a + 1 == contentBlockComponents.length) && (contentBlockObjectsArray[i].qnaNumber)) {
+                var qnaNumber = stripIndent`
+                -- INSERT QNA ---------------------
+                FORM NUMBER: ${contentBlockObjectsArray[i].qnaNumber}`;
+                resultString += header + markup + "\n\n" + qnaNumber + "\n\n\n";
+            } else {
+                resultString += header + markup + "\n\n\n\n\n";          
+            }
+        }
+    }
+    return resultString;
 }
 
 module.exports = {
