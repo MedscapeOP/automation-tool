@@ -36,7 +36,7 @@ function videoEmbed (slidesComponent, articleID=null) {
     if (articleID) {
         result = `
         <div class="app-loading">        
-            <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/${articleID}/${articleID}.json" data-playertype="edu" id="cme-video-player">
+            <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2019/education/${articleID}/${articleID}.json" data-playertype="edu" id="cme-video-player">
                 &nbsp;
             </div>
         </div>
@@ -55,7 +55,7 @@ function videoEmbed (slidesComponent, articleID=null) {
     if (slidesComponent.componentNumber) {
         result = `
         <div class="app-loading">
-            <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/${videoEmbedPath()}.json" data-playertype="edu" id="cme-video-player">
+            <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2019/education/${videoEmbedPath()}.json" data-playertype="edu" id="cme-video-player">
                 &nbsp;
             </div>
         </div>
@@ -63,7 +63,7 @@ function videoEmbed (slidesComponent, articleID=null) {
     } else {
         result = `
         <div class="app-loading">
-            <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/${videoEmbedPath()}.json" data-playertype="edu" id="cme-video-player">
+            <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2019/education/${videoEmbedPath()}.json" data-playertype="edu" id="cme-video-player">
                 &nbsp;
             </div>
         </div>
