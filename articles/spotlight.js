@@ -291,7 +291,7 @@ function buildSpotlight(ticket, program) {
     return {
         finishedArticleObject: finalArticle,
         checklistHTML: checklistResult.printHTML,
-        activityXML: activityXML   
+        activityXML: utils.cleanHTML.cleanEntities(activityXML)     
     };
 };
 

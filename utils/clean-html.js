@@ -661,7 +661,7 @@ function cleanEntities (xmlString) {
 
     // Remove Ampersand Placeholder 
     var ampersandRegExp = new RegExp('--AMPERSAND--', 'g');
-    clean = clean.replace(ampersandRegExp, '&amp;'); 
+    clean = clean.replace(ampersandRegExp, '&'); 
 
     // Remove &amp; from before entitities  
     var entityRegexp = new RegExp('&amp;([A-Za-z]+|#?[0-9]+);', 'g');

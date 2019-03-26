@@ -40,7 +40,7 @@ function instructionsForCredit(program) {
                     <br/>
                     <br/>
                     This activity is designed to be completed within the time designated on the title page; physicians should claim only those credits that reflect the time actually spent in the activity. To successfully earn credit, participants must complete the activity online during the valid credit period that is noted on the title page. To receive 
-                    <em>AMA PRA Category 1 Credit&amp;trade;</em>, you must receive a minimum score of 70% on the post-test.
+                    <em>AMA PRA Category 1 Credit&#8482;</em>, you must receive a minimum score of 75% on the post-test.
                     <br/>
                     <br/>
                     Follow these steps to earn CME/CE credit*: 
