@@ -73,7 +73,7 @@ regulated by the US Food and Drug Administration, at first mention and where app
                 <subsec_header/>
                 <slide_intro>
                     <div class="app-loading">
-                        <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/901602/901602.json" data-playertype="edu" id="cme-video-player">&#160;</div>
+                        <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2019/education/901602/901602.json" data-playertype="edu" id="cme-video-player">&#160;</div>
                     </div>
                     <div id="page_nav_top">
                         <div id="prev_page_nav">

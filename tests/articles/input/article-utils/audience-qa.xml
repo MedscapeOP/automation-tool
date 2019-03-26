@@ -11,7 +11,7 @@
             <subsec_header/>
             <slide_intro>
                 <div class="app-loading">
-                    <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2018/education/903975/903975_3.json" data-playertype="edu" id="cme-video-player">&#160;</div>
+                    <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2019/education/903975/903975_3.json" data-playertype="edu" id="cme-video-player">&#160;</div>
                 </div>
             </slide_intro>
         </subsec_element>
