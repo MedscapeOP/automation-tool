@@ -5,6 +5,7 @@ const stringOps = require('./string-ops');
 const cleanHTML = require('./clean-html');
 const pathBuilder = require('./path-builder');
 const formatLearningObjectives = require('./format-learning-objectives');
+const formatQNAObjectives = require('./format-qna-objectives');
 const cliTools = require('./cli-tools');
 const printFunctions = require('./print-functions');
 
@@ -56,6 +57,7 @@ module.exports = {
     cliTools,
     formatList,
     formatLearningObjectives,
+    formatQNAObjectives,
     trimObjectText,
     cleanHTML,
     printFunctions,
