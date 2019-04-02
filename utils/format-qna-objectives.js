@@ -12,7 +12,7 @@ let wordList = [
     'Demonstrate increased'
 ];
 
-let formatLearningObjectives = function (string) {
+let formatQNAObjectives = function (string) {
     var regex = null;
     var hasSubLists = false;
     var index = -1;
@@ -26,22 +26,21 @@ let formatLearningObjectives = function (string) {
         }
     }
 
-    var pRegExp = new RegExp('<p>(.*)</p>', 'g');     
-    if (hasSubLists) {
-        string = string.replace(pRegExp, `${subBulletSymbol}` + `$1`);
-        // console.log("SUB LIST IF: ", string);
-    } else {
-        string = string.replace(pRegExp, `${bulletSymbol}` + `$1`);
-        // console.log("LIST IF: ", string);
-    }
+    /*
+    Algorithm:
+    - put flag before each match in wordList
 
-    var removeRegex = /<tt>o(&#8226;.*)/g;
-    string = string.replace(removeRegex, '$1');
-
-    string = formatList.formatUlItems(string, null, formatList.formatUlItems);
-
-    string = formatList.wrapUls(false, string, formatList.wrapUls);
-    return string;
+    - Loop through each line
+        - If line starts with flag
+            // Remove wordlist match from current line
+            - currentLine = currentLine.replace(wordList[i].matchText, "");
+            - currentLine = wordList[i].replacementText + " " + currentLine 
+            - startingPhrase = currentLine 
+        - If doesn't start with flag
+            - currentLine = currentLine.charAt(0).toLowerCase(); 
+            - currentLine = startingPhrase + " " + currentLine 
+            - prepend currentLine to startingPhrase
+    */
 }
 
-module.exports = formatLearningObjectives;
+module.exports = formatQNAObjectives;
