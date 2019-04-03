@@ -109,13 +109,15 @@ let formatPhrases = function (startingPhrase, remainingString, fn) {
 
     if (flagIndex != -1) {
         startingPhrase = insertReplacementText(currentLine); 
-        currentLine = startingPhrase + " " + nextLine.charAt(0).toLowerCase() + nextLine.substring(1);
+        currentLine = startingPhrase + " " + nextLine.trim().charAt(0).toLowerCase() + nextLine.trim().substring(1);
         nextLineIndex = remainingString.indexOf(nextLine) + nextLine.length;
     } else {
         // - prepend currentLine to startingPhrase
-        currentLine = currentLine.charAt(0).toLowerCase() + currentLine.substring(1); 
         if (startingPhrase) {
+            currentLine = currentLine.trim().charAt(0).toLowerCase() + currentLine.trim().substring(1); 
             currentLine = startingPhrase + " " + currentLine; 
+        } else {
+            currentLine = currentLine.trim();
         }
     }
 
@@ -146,7 +148,7 @@ let formatQNAObjectives = function(string) {
     */
     var flaggedString = setFlags(string);
     var result = formatPhrases(null, flaggedString, formatPhrases);
-    // console.log("RESULT: ", result.replace(bulletSymbolRegex, ""));
+    console.log("RESULT: ", result.replace(bulletSymbolRegex, ""));
     return result.replace(bulletSymbolRegex, "");
 }
 

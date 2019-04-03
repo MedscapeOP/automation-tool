@@ -1,6 +1,7 @@
 const cleanHTML = require('./clean-html');
 const xmlOps = require('./xml-ops');
 const formatLearningObjectives = require('./format-learning-objectives');
+const formatQNAObjectives = require('./format-qna-objectives'); 
 const {stripIndent} = require('common-tags');
 
 /* 
@@ -122,10 +123,13 @@ function printSlides(slideComponents) {
     resultString += "\n\n";  
 
     var newString = "";
+    var slidesText = null;
     for (var i = 0; i < slideComponents.result.length; i++) {
+        slidesText = cleanHTML.slidesFinal(cleanHTML.slidesInitial(slideComponents.result[i].rawSlides));
+        slidesText = slidesText.replace(/<p>&lt;&lt;insert slide/g, "\n\n<p>&lt;&lt;insert slide").trim();
         newString = stripIndent`
         -- COMPONENT ${i+1} SLIDES ---------------------
-        ${cleanHTML.slidesFinal(cleanHTML.slidesInitial(slideComponents.result[i].rawSlides))}
+        ${slidesText}
         `;
         resultString += newString + "\n\n\n\n\n";
     }    
@@ -195,6 +199,7 @@ function printDateTime(dateTime) {
 
 function printLearningObjectives(learningObjectives) {
     var formattedObjectives = formatLearningObjectives(learningObjectives.result);
+    var formattedQNAObjectives = formatQNAObjectives(learningObjectives.result);
 
     var resultString = stripIndent`
     -----------------------------------------
@@ -207,7 +212,18 @@ function printLearningObjectives(learningObjectives) {
     ${formattedObjectives}
     ` + "\n\n\n\n\n";
 
-    return resultString + newString;
+    var qnaString = stripIndent`
+    -----------------------------------------
+    LEARNING OBJECTIVES (QNA)
+    -----------------------------------------
+    `;
+    qnaString += "\n";  
+
+    var qnaObjectives = stripIndent`
+    ${formattedQNAObjectives}
+    ` + "\n\n\n\n\n";
+
+    return resultString + newString + qnaString + qnaObjectives;
 }
 
 function printTestAndTeachContent(mainContent) {
