@@ -289,11 +289,7 @@ function slidesInitial (str) {
 function slidesFinal (str) {
     
     str = unorderedList(str, true, true, [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt']);
-    // /* REMOVE PLACEHOLDERS FOR P TAGS */
-    // var pOpenRegexp = /--POPEN--/g;
-    // str = str.replace(pOpenRegexp, "<p>");
-    // var pCloseRegexp = /--PCLOSE--/g;
-    // str = str.replace(pCloseRegexp, "</p>");
+
     /* CLEAN UP HTML FOR EDGE CASES */
 
     // Headline edge cases / Capitalization Edge Cases 
@@ -317,7 +313,6 @@ function slidesFinal (str) {
     str = str.replace(insertSlideRegExp, "&lt;&lt;insert slide");
 
     /* EXTRA CASES FOR TH SLIDES */
-    // console.log("STRING", str); 
     // Remove level 1's 
     var level1RegExp = /.*(?:&lt;){1,}level 1.*/gi; 
     str = str.replace(level1RegExp, "");
@@ -400,6 +395,9 @@ function slidesFinal (str) {
     /* GENERAL FLUFF REMOVAL */
     var noteToEA = /.*(?:&lt;){1,}Note to EA.*/gi;
     str = str.replace(noteToEA, "");
+
+    var chapterTitle = /.*(?:&lt;){1,}Chapter Title.*/g;
+    str = str.replace(chapterTitle, "");
 
     return str;
 }
