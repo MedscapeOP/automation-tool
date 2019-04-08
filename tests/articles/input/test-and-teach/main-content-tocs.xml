@@ -59,12 +59,12 @@
                             <p>Medical</p>
                         </td>
                         <td>
-                            <p>&#8226;	He is sexually active with multiple partners, both men and women, and has a history of dysuria</p>
-                            <p>&#8226;	Three past episodes of uveitis that were treated by an ophthalmologist</p>
-                            <p>&#8226;	Past episode of left foot plantar fasciitis that was treated by a podiatrist</p>
-                            <p>
-                                <tt>o	</tt>Currently has left-sided Achilles tendonitis, diagnosed by his primary care physician
-                            </p>
+                        <li>	He is sexually active with multiple partners, both men and women, and has a history of dysuria</li>
+                        <ul>
+                            <li>	Three past episodes of uveitis that were treated by an ophthalmologist</li>
+                            <li>	Past episode of left foot plantar fasciitis that was treated by a podiatrist</li>
+                        </ul>
+o	Currently has left-sided Achilles tendonitis, diagnosed by his primary care physician
                         </td>
                     </tr>
                     <tr valign="top">

@@ -546,7 +546,7 @@ function checklistTestAndTeach(ticket, program) {
     checklist.cpyrtHolder.result = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
 
     // CREDITS AVAILABLE 
-    checklist.creditsAvailable.result = prodticket.getCreditsAvailable(ticketHTML, program);
+    checklist.creditsAvailable.result = prodticket.getCreditsAvailable(ticket, program);
 
     // DOWNLOADABLE SLIDES 
     checklist.downloadableSlides.result = snippets.downloadableSlides(program.articleID);
@@ -614,7 +614,7 @@ function buildTestAndTeach(ticket, program) {
     byline, 
     peerReviewer, 
     collectionPageInfo, 
-    slidesTOC, 
+    mainContentTOCs, 
     preAssessmentTOC, 
     postAssessmentTOC, 
     blankResultsTOC, 
@@ -648,9 +648,9 @@ function buildTestAndTeach(ticket, program) {
         blankResultsTOC = articleUtils.buildBlankTOC();
     }
 
-    var articleContent = (checklistResult.properties.contentArray ? checklistResult.properties.contentArray.result : "")
+    var articleContent = (checklistResult.properties.mainContent ? checklistResult.properties.mainContent.result : "")
 
-    var tocs = articleContent.mainTOCs;
+    mainContentTOCs = articleContent.mainTOCs;
 
     // slidesTOC = tocs.slidesTOC;
     // audienceQATOC = tocs.audienceQATOC; 
@@ -685,10 +685,13 @@ function buildTestAndTeach(ticket, program) {
     } 
 
     cmeReviewers = (checklistResult.properties.cmeReviewers ? checklistResult.properties.cmeReviewers.result : "");
-          
-    // Insert Main TOC Objects  
-    finalArticle.insertTOCElement(preAssessmentTOC);
-    finalArticle.insertTOCElement(slidesTOC);
+    finalArticle.insertTOCElement(preAssessmentTOC);    
+    // console.log("MAIN TOCS: ", mainContentTOCs);      
+    // Insert Main TOC Objects
+    for (var i = 0; i < mainContentTOCs.length; i++) {
+        finalArticle.insertTOCElement(mainContentTOCs[i]);
+    }  
+    
     finalArticle.insertTOCElement(postAssessmentTOC);
     finalArticle.insertTOCElement(blankResultsTOC);
     finalArticle.insertTOCElement(abbreviationsTOC);

@@ -152,20 +152,20 @@ describe('Test And Teach', function () {
         });
     });
     
-    // describe("#buildContentTOC()", function () {
-    //     it('should take in raw content block string and return TOC element', function () {
-    //         var blockObjects = require('./input/test-and-teach/content-block-test');
-    //         var contentBlockXML = contentBlockTestXML;
-    //         var result = testAndTeach.buildContentTOC(blockObjects, program).toObjectLiteral();
-    //         result = utils.xmlOps.objectToXMLString(result);
-    //         result = utils.cleanHTML.cleanEntities(result);
-    //         fs.writeFileSync(__dirname + '/output/test-and-teach/content-toc.xml', result);
-    //         expect(result).to.equalIgnoreSpaces(contentBlockXML);
-    //     });
-    // });
+    describe("#buildContentTOC()", function () {
+        xit('should take in raw content block string and return TOC element', function () {
+            var blockObjects = require('./input/test-and-teach/content-block-test');
+            var contentBlockXML = contentBlockTestXML;
+            var result = testAndTeach.buildContentTOC(blockObjects, program).toObjectLiteral();
+            result = utils.xmlOps.objectToXMLString(result);
+            result = utils.cleanHTML.cleanEntities(result);
+            fs.writeFileSync(__dirname + '/output/test-and-teach/content-toc.xml', result);
+            expect(result).to.equalIgnoreSpaces(contentBlockXML);
+        });
+    });
 
     describe("#getMainContent()", function () {
-        it("should return TOCs from main content section of prodticket - (no PostAssessment, Blank, Abbreviations, etc.)", function () {
+        xit("should return TOCs from main content section of prodticket - (no PostAssessment, Blank, Abbreviations, etc.)", function () {
             var ticketHTMl = prodTicket;
             var contentBlockXML = mainContentTOCs;
             var result = testAndTeach.getMainContent(prodTicket, program).mainTOCs;
@@ -176,7 +176,7 @@ describe('Test And Teach', function () {
             }
             resultString = utils.cleanHTML.cleanEntities(resultString);
             fs.writeFileSync(__dirname + '/output/test-and-teach/main-content-tocs-output.xml', resultString);
-            // expect(result).to.equalIgnoreSpaces(contentBlockXML);
+            expect(result).to.equalIgnoreSpaces(contentBlockXML);
         });
     });
 
@@ -195,6 +195,14 @@ describe('Test And Teach', function () {
             var result = utils.printFunctions.printTestAndTeachContent(mainContent);
             fs.writeFileSync(__dirname + '/output/test-and-teach/print-result.html', result);
             done();
+        });
+    });
+
+    describe('buildTestAndTeach()', function () {
+        it('should ', function () {
+            var result = testAndTeach.buildTestAndTeach(prodTicket, program);
+            result = result.finishedArticleObject.toFinalXML();
+            fs.writeFileSync(__dirname + '/output/test-and-teach/final-build-output.xml', result);
         });
     });
 });
