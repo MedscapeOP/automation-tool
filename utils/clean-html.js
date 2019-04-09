@@ -707,18 +707,31 @@ function tableCleanup(htmlString, removeFluff=false) {
             clean = clean + blockQuoteCleanup(blockQuote.textBlock);
         }
     }
-    
-    console.log("TABLE: ", clean);
 
-    // var options = {
-    //     allowedTags: [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' , 'table', 'th', 'td'],
-    //     allowedAttributes: [],
-    //     exclusiveFilter: function(frame) {
-    //         // return frame.tag === 'a' && !frame.text.trim();
-    //         return !frame.text.trim();
-    //     }
-    // }
-    // clean = sanitizeHtml(str, options);
+    var pToBreakRegex = /<\/p>\n\n<p>/g;
+    clean = clean.replace(pToBreakRegex, "<br/>\n"); 
+
+    var pRemoveRegex = /<p>|<\/p>/g;
+    clean = clean.replace(pRemoveRegex, "");
+
+    var tdSpaceRemoveRegex = /\s+<\/td>/g;
+    clean = clean.replace(tdSpaceRemoveRegex, "</td>");
+    
+    var tdLineBreakRegex = /(?:\n){1,}<\/td>/g;
+    clean = clean.replace(tdLineBreakRegex, "</td>");
+
+    var tdToTHRegex = /<td><strong>(.*)<\/strong><\/td>/g;
+    clean = clean.replace(tdToTHRegex, "<th><strong>$1</strong></th>");
+    
+    var options = {
+        allowedTags: [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' , 'table', 'th', 'td', 'blockquote'],
+        allowedAttributes: false,
+        exclusiveFilter: function(frame) {
+            // return frame.tag === 'a' && !frame.text.trim();
+            return !frame.text.trim();
+        }
+    }
+    clean = sanitizeHtml(clean, options);
 
     // console.log("CLEAN TABLE: ", clean);
 
