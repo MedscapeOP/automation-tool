@@ -667,38 +667,61 @@ function cleanEntities (xmlString) {
     return clean;
 }
 
+function blockQuoteCleanup(string) {
+    var str = string.slice();
+
+    var captionRegex = /(?:&lt;){1,}caption(?:&gt;){1,}/gi;
+    str = str.replace(captionRegex, "");
+
+    var endTableRegex = /(?:&lt;){1,}end table(?:&gt;){1,}/gi;
+    str = str.replace(endTableRegex, "");
+
+    return str;
+}
+
 function tableCleanup(htmlString, removeFluff=false) {
-    var str = htmlString.slice();
+    var clean = htmlString.slice();
     if (removeFluff) {
-        str = removeTicketFluff(str);
+        clean = removeTicketFluff(clean);
     }
     
-    var options = {
-        allowedTags: [ 'p', 'br', 'em', 'strong', 'sup', 'sub', 'table', 'td', 'tr', 'th'],
-        allowedAttributes: [],
-        parser: {
-            decodeEntities: false
-        },
-        exclusiveFilter: function(frame) {
-            // return frame.tag === 'a' && !frame.text.trim();
-            return !frame.text.trim();
+    if (stringOps.regexIndexOf(clean, /<td>|<\/td>/g) == -1) {
+        clean = clean.replace(/<p>/g, "<td>");
+        clean = clean.replace(/<\/p>/g, "</td>");
+    } 
+    
+    var tableRegexp = new RegExp('<table .*>');
+    clean = clean.replace(tableRegexp, '<table class="inline_data_table">');
+
+    var blockQuoteStartRegex = /.*(?:&lt;){1,}caption(?:&gt;){1,}/gi;
+    var blockQuoteEndRegex = /.*(?:&lt;){1,}end table(?:&gt;){1,}.*/gi;
+
+    var blockQuote = stringOps.getTextBlock(clean, blockQuoteStartRegex, blockQuoteEndRegex, false, true);
+    
+    if (!(stringOps.isBlankOrWhiteSpace(blockQuote.textBlock))) {
+        // console.log("BLOCKQUOTE: ", blockQuote.textBlock);
+        var cutIndex = stringOps.regexIndexOf(clean, blockQuoteStartRegex);
+        if (cutIndex != -1) {
+            clean = clean.substring(0, cutIndex);
+            blockQuote.textBlock = `<blockquote>${blockQuote.textBlock}</blockquote>`; 
+            clean = clean + blockQuoteCleanup(blockQuote.textBlock);
         }
     }
-    var clean = sanitizeHtml(str, options);
     
-    var addTbodyOpening = new RegExp('<table>');
-    clean = clean.replace(addTbodyOpening, '<table class = "inline_data_table">\n<tbody xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dctm="http://www.documentum.com" xmlns:fmt="http://java.sun.com/jstl/fmt" xmlns:jsp="jsp">');
+    console.log("TABLE: ", clean);
 
-    var addTbodyClosing = new RegExp('</table>');
-    clean = clean.replace(addTbodyClosing, '</tbody></table>');
+    // var options = {
+    //     allowedTags: [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' , 'table', 'th', 'td'],
+    //     allowedAttributes: [],
+    //     exclusiveFilter: function(frame) {
+    //         // return frame.tag === 'a' && !frame.text.trim();
+    //         return !frame.text.trim();
+    //     }
+    // }
+    // clean = sanitizeHtml(str, options);
 
-    var addBlockQuoteOpening = /<\/tbody><\/table>\s+<p>/gi;
-    clean = clean.replace(addBlockQuoteOpening, '</tbody></table>\n<blockquote>');
+    // console.log("CLEAN TABLE: ", clean);
 
-    var addBlockQuoteClosing = /<\/p>\s+<p><strong>&lt;&lt;end table/gi;
-    clean = clean.replace(addBlockQuoteClosing, '</blockquote>\n\n<p><strong>&lt;&lt;end table');
-
-    
     return clean;
 }
 

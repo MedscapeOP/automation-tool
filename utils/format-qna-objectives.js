@@ -148,7 +148,7 @@ let formatQNAObjectives = function(string) {
     */
     var flaggedString = setFlags(string);
     var result = formatPhrases(null, flaggedString, formatPhrases);
-    console.log("RESULT: ", result.replace(bulletSymbolRegex, ""));
+    // console.log("RESULT: ", result.replace(bulletSymbolRegex, ""));
     return result.replace(bulletSymbolRegex, "");
 }
 

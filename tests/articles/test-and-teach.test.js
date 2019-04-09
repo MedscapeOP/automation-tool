@@ -63,7 +63,7 @@ describe('Test And Teach', function () {
 
     /* DONE */
     describe('#getTables()', function () {
-        it('should return objects with the contentBlock\'s tables', function () {
+        xit('should return objects with the contentBlock\'s tables', function () {
             var tables = require('./input/test-and-teach/tables');
             var contentBlock = contentBlock1;
             var result = testAndTeach.getTables(contentBlock, program);
@@ -93,7 +93,7 @@ describe('Test And Teach', function () {
 
     /* DONE */
     describe('#getLevelOnes()', function () {
-        it('should return objects with the contentBlock\'s level 1 markup', function () {
+        xit('should return objects with the contentBlock\'s level 1 markup', function () {
             var levelOnes = require('./input/test-and-teach/level-ones-1');
             var contentBlock = contentBlock2;
             var result = testAndTeach.getLevelOnes(contentBlock, program);
@@ -118,7 +118,7 @@ describe('Test And Teach', function () {
     });
 
     describe('#getLevelTwos()', function () {
-        it('should return array of objects with properties set for level 1s, level 2s, tables, figures, and QnA #s', function () {
+        xit('should return array of objects with properties set for level 1s, level 2s, tables, figures, and QnA #s', function () {
             var levelTwos = require('./input/test-and-teach/level-twos');
             var contentBlock = contentBlock3;
             var result = testAndTeach.getLevelTwos(contentBlock, program);
@@ -132,7 +132,7 @@ describe('Test And Teach', function () {
     });
 
     describe('#getContentBlockComponents()', function () {
-        it('should return array of objects with properties set for level 1s, level 2s, tables, figures, and QnA #s', function () {
+        xit('should return array of objects with properties set for level 1s, level 2s, tables, figures, and QnA #s', function () {
             var contentBlockComponents = require('./input/test-and-teach/content-block-test').objects;
             var contentBlock = {
                 string: contentBlockTest,
@@ -200,7 +200,7 @@ describe('Test And Teach', function () {
 
     describe('buildTestAndTeach()', function () {
         it('should ', function () {
-            var result = testAndTeach.buildTestAndTeach(prodTicket, program);
+            var result = testAndTeach.buildTestAndTeach(testProdticket, program);
             result = result.finishedArticleObject.toFinalXML();
             fs.writeFileSync(__dirname + '/output/test-and-teach/final-build-output.xml', result);
         });

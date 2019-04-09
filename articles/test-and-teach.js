@@ -17,7 +17,8 @@ function getTables(contentBlockHTML, program) {
     ];
 
     var endRegexps = [
-        /(?:&lt;){1,}end table.*(?:&gt;){1,}.*/gi
+        /&lt;&lt;end table&gt;&gt;/g,
+        /.*(?:&lt;){1,}end table(?:&gt;){1,}.*/gi
     ]
 
     var tables = utils.stringOps.getAllBlocksInOrder(contentBlockHTML, startRegexps, endRegexps, false, true);
@@ -28,6 +29,7 @@ function getTables(contentBlockHTML, program) {
         tables[i].label = utils.cleanHTML.paragraph(tables[i].label, false, ['sup']);
         tables[i].type = "table";
     } 
+    console.log("TABLES: ", tables);
     return tables;
 }
 
@@ -312,7 +314,9 @@ function buildLevel2Subsection (componentObject, program) {
     // var ttRegExp = new RegExp('</tt>', 'g');
     // clean = clean.replace(ttRegExp, "");
     if (componentObject.type == "table") {
-        componentObject.textBlock = utils.cleanHTML.unorderedList(componentObject.textBlock, false, true, [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' , 'table', 'th', 'td']); 
+        // componentObject.textBlock = utils.cleanHTML.unorderedList(componentObject.textBlock, false, true, [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' , 'table', 'th', 'td']);
+
+        componentObject.textBlock = utils.cleanHTML.tableCleanup(componentObject.textBlock, false);
     } else if (componentObject.type == "figure") {
         componentObject.textBlock = utils.cleanHTML.unorderedList(componentObject.textBlock, false, true, [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' , 'p']);        
     } else {
