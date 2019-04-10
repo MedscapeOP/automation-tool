@@ -696,6 +696,9 @@ function tableCleanup(htmlString, removeFluff=false) {
     var blockQuoteStartRegex = /.*(?:&lt;){1,}caption(?:&gt;){1,}/gi;
     var blockQuoteEndRegex = /.*(?:&lt;){1,}end table(?:&gt;){1,}.*/gi;
 
+    // var blockQuoteStartRegex = /.*(?:--AMPERSAND--lt;){1,}caption(?:--AMPERSAND--gt;){1,}/gi;
+    // var blockQuoteEndRegex = /.*(?:--AMPERSAND--lt;){1,}end table(?:--AMPERSAND--gt;){1,}.*/gi;
+
     var blockQuote = stringOps.getTextBlock(clean, blockQuoteStartRegex, blockQuoteEndRegex, false, true);
     
     if (!(stringOps.isBlankOrWhiteSpace(blockQuote.textBlock))) {
@@ -708,12 +711,6 @@ function tableCleanup(htmlString, removeFluff=false) {
         }
     }
 
-    var pToBreakRegex = /<\/p>\n\n<p>/g;
-    clean = clean.replace(pToBreakRegex, "<br/>\n"); 
-
-    var pRemoveRegex = /<p>|<\/p>/g;
-    clean = clean.replace(pRemoveRegex, "");
-
     var tdSpaceRemoveRegex = /\s+<\/td>/g;
     clean = clean.replace(tdSpaceRemoveRegex, "</td>");
     
@@ -724,7 +721,8 @@ function tableCleanup(htmlString, removeFluff=false) {
     clean = clean.replace(tdToTHRegex, "<th><strong>$1</strong></th>");
     
     var options = {
-        allowedTags: [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' , 'table', 'th', 'td', 'blockquote'],
+        allowedTags: [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' , 'table', 'th', 'td', 'blockquote', 'p', 'br'],
+        allowedTags: false,
         allowedAttributes: false,
         exclusiveFilter: function(frame) {
             // return frame.tag === 'a' && !frame.text.trim();
@@ -733,7 +731,12 @@ function tableCleanup(htmlString, removeFluff=false) {
     }
     clean = sanitizeHtml(clean, options);
 
-    // console.log("CLEAN TABLE: ", clean);
+    var pToBreakRegex = /<\/p>/g;
+    clean = clean.replace(pToBreakRegex, "<br/>"); 
+
+    var pRemoveRegex = /<p>|<\/p>/g;
+    clean = clean.replace(pRemoveRegex, "");
+    console.log("CLEAN TABLE: ", clean);
 
     return clean;
 }

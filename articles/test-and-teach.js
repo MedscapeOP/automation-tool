@@ -315,8 +315,7 @@ function buildLevel2Subsection (componentObject, program) {
     // clean = clean.replace(ttRegExp, "");
     if (componentObject.type == "table") {
         // componentObject.textBlock = utils.cleanHTML.unorderedList(componentObject.textBlock, false, true, [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' , 'table', 'th', 'td']);
-
-        componentObject.textBlock = utils.cleanHTML.tableCleanup(componentObject.textBlock, false);
+        componentObject.textBlock = componentObject.textBlock;
     } else if (componentObject.type == "figure") {
         componentObject.textBlock = utils.cleanHTML.unorderedList(componentObject.textBlock, false, true, [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' , 'p']);        
     } else {
