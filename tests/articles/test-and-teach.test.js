@@ -200,9 +200,9 @@ describe('Test And Teach', function () {
 
     describe('buildTestAndTeach()', function () {
         it('should ', function () {
-            // var result = testAndTeach.buildTestAndTeach(testProdticket, program);
+            var result = testAndTeach.buildTestAndTeach(testProdticket, program);
 
-            var result = testAndTeach.buildTestAndTeach(prodTicket, program);
+            // var result = testAndTeach.buildTestAndTeach(prodTicket, program);
             result = result.finishedArticleObject.toFinalXML();
             fs.writeFileSync(__dirname + '/output/test-and-teach/final-build-output.xml', result);
         });

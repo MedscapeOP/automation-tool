@@ -252,12 +252,12 @@ function getContentBlockComponents (contentBlockObject, program) {
 /* MAIN CONTENT 
 -------------------------------------- */
 function buildTableSubsection (componentObject, program) {
-    componentObject.label = `<p><strong>${componentObject.label}</strong></p>`;
+    componentObject.label = `<strong>${componentObject.label}</strong>`;
     return buildLevel2Subsection(componentObject);
 }
 
 function buildFigureSubsection (componentObject, program) {
-    componentObject.label = `<p><strong>${componentObject.label}</strong></p>`;
+    componentObject.label = `<strong>${componentObject.label}</strong>`;
     return buildLevel2Subsection(componentObject);
 }
 
