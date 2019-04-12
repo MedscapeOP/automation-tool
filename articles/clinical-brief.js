@@ -216,7 +216,7 @@ function buildClinicalBrief(ticket, program) {
 
 
     // Instantiate and Populate Article
-    var finalArticle = new ProfArticle("Article", program.hasOUS);
+    var finalArticle = new ProfArticle(program.profArticleType, program.hasOUS);
     // Set article title (pass text)
     finalArticle.title = title;
     // Set article byline (pass text)

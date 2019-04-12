@@ -29,7 +29,7 @@ function getTables(contentBlockHTML, program) {
         tables[i].label = utils.cleanHTML.paragraph(tables[i].label, false, ['sup']);
         tables[i].type = "table";
     } 
-    console.log("TABLES: ", tables);
+    // console.log("TABLES: ", tables);
     return tables;
 }
 
@@ -666,7 +666,7 @@ function buildTestAndTeach(ticket, program) {
     
 
     // Build Main Article Object - Instantiate and Populate Article
-    var finalArticle = new ProfArticle("SlidePresentation", program.hasOUS);
+    var finalArticle = new ProfArticle(program.profArticleType, program.hasOUS);
     // Set article title (pass text)
     finalArticle.title = title;
     // Set article byline (pass text)
