@@ -32,11 +32,12 @@ function downloadableSlides(articleID) {
 }
 
 function videoEmbed (slidesComponent, articleID=null) {
+    var currentYear = new Date().getFullYear();
     var result = "";
     if (articleID) {
         result = `
         <div class="app-loading">        
-            <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2019/education/${articleID}/${articleID}.json" data-playertype="edu" id="cme-video-player">
+            <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/${currentYear}/education/${articleID}/${articleID}.json" data-playertype="edu" id="cme-video-player">
                 &nbsp;
             </div>
         </div>
@@ -55,7 +56,7 @@ function videoEmbed (slidesComponent, articleID=null) {
     if (slidesComponent.componentNumber) {
         result = `
         <div class="app-loading">
-            <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2019/education/${videoEmbedPath()}.json" data-playertype="edu" id="cme-video-player">
+            <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/${currentYear}/education/${videoEmbedPath()}.json" data-playertype="edu" id="cme-video-player">
                 &nbsp;
             </div>
         </div>
@@ -63,7 +64,7 @@ function videoEmbed (slidesComponent, articleID=null) {
     } else {
         result = `
         <div class="app-loading">
-            <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2019/education/${videoEmbedPath()}.json" data-playertype="edu" id="cme-video-player">
+            <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/${currentYear}/education/${videoEmbedPath()}.json" data-playertype="edu" id="cme-video-player">
                 &nbsp;
             </div>
         </div>
@@ -124,7 +125,7 @@ function caseImage(articleID, contentMarkup, caseNumber) {
         <tbody>
             <tr>
                 <td align="center">
-                    <img src="/webmd/professional_assets/medscape/images/content/article/${articleID.slice(0, 3)}/${articleID.slice(3)}/${articleID}-patient${caseNumber}.jpg?interpolation=lanczos-none&resize=200:150" alt="" border="0" width="200" />
+                    <img src="/webmd/professional_assets/medscape/images/content/article/${articleID.slice(0, 3)}/${articleID.slice(3)}/${articleID}-patient${caseNumber}.jpg?interpolation=lanczos-none&amp;resize=200:150" alt="" border="0" width="200" />
                 </td>
             </tr>
         </tbody>
