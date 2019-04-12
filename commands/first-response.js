@@ -54,7 +54,7 @@ let buildFinalOutput = function (self) {
 module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
-    .command('generate first response <articleID>', firstResponseHelp)
+    .command('generate first-response <articleID>', firstResponseHelp)
     // .parse(function (command, args) { 
     //     args.articleID = String(args.articleID);
     //     return command + ` ` + args.articleID;   

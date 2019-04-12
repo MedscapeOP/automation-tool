@@ -1,12 +1,12 @@
 // ------------------------------------------------------------
-// COMMAND FOR GENERATING VIDEO LECTURE XML 
+// COMMAND FOR GENERATING TOWNHALL ENDURING XML 
 // ------------------------------------------------------------
 
 
 // REQUIRES
 // ------------------------------------------------------------
 const _ = require('lodash');
-const fs = require('fs-extra');
+const fs = require('fs');
 
 const utils = require('../utils');
 const articles = require('../articles');
@@ -18,12 +18,12 @@ let actions = require('./actions');
 
 // VARS
 // ------------------------------------------------------------
-const videoLectureHelp = `
-Generates Video Lecture XML code from R2Net html file. Input directory: video-lecture/article.html`;
+const testAndTeachHelp = `
+Generates Test and Teach XML code from R2Net html file. Input directory: /test-and-teach/article.html`;
 
 
 let inputFile = function () {
-    return cliTools.getInputDirectory() + '/video-lecture/article.html';
+    return cliTools.getInputDirectory() + '/test-and-teach/article.html';
 }
 
 let outputFiles = function () {
@@ -32,12 +32,9 @@ let outputFiles = function () {
         checklist: `${program.articleID}/${program.articleID}_checklist.html`,
         activity: `${program.articleID}/${program.articleID}_activity.xml`
     };
-};
+};    
 
-let program = config.programs.videoLecture;
-
-
-
+let program = config.programs.testAndTeach;
 
 
 // BUILD FUNCTION LOGIC 
@@ -45,7 +42,7 @@ let program = config.programs.videoLecture;
 
 let buildFinalOutput = function (self) {
     var prodTicket = cliTools.readInputFile(inputFile());  
-    return articles.spotlight.buildSpotlight(prodTicket, program);
+    return articles.testAndTeach.buildTestAndTeach(prodTicket, program);
 }
 
 
@@ -54,14 +51,9 @@ let buildFinalOutput = function (self) {
 module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
-    .command('generate video-lecture <articleID>', videoLectureHelp)
-    // .parse(function (command, args) { 
-    //     args.articleID = String(args.articleID);
-    //     return command + ` ` + args.articleID;   
-    // })
+    .command('generate test-and-teach <articleID>', testAndTeachHelp)
     .types({string: ['_']})
-    .action(function(args, callback) {
-        // this.log("RAW ARTICLE ID: ", args.articleID);
+    .action(function(args, callback) {       
         program.articleID = args.articleID;        
         let self = this;
         actions.basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles);
