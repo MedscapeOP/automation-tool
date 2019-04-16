@@ -64,84 +64,64 @@ const collectionPages = [
         "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Medscape: Advances in Angiogenesis Inhibition",
         "fileName": "angiogenesis",
-        "bannerFileName": "angiogenesis.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Management des Anticoagulants en Cardio-Neurovasculaire",
         "fileName": "anticoagulants-cardio-neurovasculaire",
-        "bannerFileName": "anticoagulants-cardio-neurovasculaire.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Anticoagulation Management and Vascular Protection",
         "fileName": "anticoagulation-thrombosis",
-        "bannerFileName": "anticoagulation-thrombosis.jpg"
+        "bannerFileName": "banner-anticoagulation-thrombosis-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Advances in Antiplatelet Therapy: The CV and GI Risk Conundrum",
         "fileName": "antiplatelet-therapy",
-        "bannerFileName": "antiplatelet-therapy.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Antithrombotic Therapies for Early Management of NSTE-Acute Coronary Syndromes",
         "fileName": "antithrombotic-therapies",
-        "bannerFileName": "antithrombotic-therapies.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Medscape: Advances in Arrhythmia & Ischemia",
         "fileName": "arrhythmia-ischemia",
-        "bannerFileName": "arrhythmia-ischemia.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
-        "fileName": "atopic-derm-mgt",
-        "bannerFileName": "atopic-derm-mgt.jpg"
-    },
-    {
-        "title": "",
+        "title": "Clinical Advances in Atopic Dermatitis: From Barriers to Better Care",
         "fileName": "atopic-dermatitis",
-        "bannerFileName": "atopic-dermatitis.jpg"
+        "bannerFileName": "banner-atopic-dermatitis-2017.jpg"
     },
     {
-        "title": "",
-        "fileName": "atopic-dermatitis-management",
-        "bannerFileName": "atopic-dermatitis-management.jpg"
+        "title": "Clinical Advances in Moderate-to-Severe Atopic Dermatitis",
+        "fileName": "atopic-derm-mgt",
+        "bannerFileName": "banner-atopic-derm-mgt.jpg"
     },
     {
-        "title": "",
+        "title": "Advances in atrial fibrilation educational programs",
         "fileName": "atrial-fibrillation",
-        "bannerFileName": "atrial-fibrillation.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
-        "fileName": "bayer-infosite",
-        "bannerFileName": "bayer-infosite.jpg"
-    },
-    {
-        "title": "",
+        "title": "Advances in Beauty",
         "fileName": "beauty",
-        "bannerFileName": "beauty.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
-        "fileName": "beauty-events",
-        "bannerFileName": "beauty-events.jpg"
-    },
-    {
-        "title": "",
-        "fileName": "beauty-polls",
-        "bannerFileName": "beauty-polls.jpg"
-    },
-    {
-        "title": "",
+        "title": "Clinical Advances in Bipolar Depression: A Path to Improved Patient Care",
         "fileName": "bipolar-depression",
-        "bannerFileName": "bipolar-depression.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Guided by Objective Measures: Challenging Case Scenarios in Rheumatoid Arthritis",
         "fileName": "blended-learning-ra",
-        "bannerFileName": "blended-learning-ra.jpg"
+        "bannerFileName": null
     },
     {
         "title": "",
