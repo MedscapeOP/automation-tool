@@ -354,174 +354,164 @@ const collectionPages = [
         "bannerFileName": "banner-eye-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Challenges & avancées dans l'anticoagulation de la FA & MTEV",
         "fileName": "fa_mtev",
-        "bannerFileName": "fa_mtev.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Insulin Therapies for Advanced Diabetes Management",
         "fileName": "faster-acting-insulin",
-        "bannerFileName": "faster-acting-insulin.jpg"
+        "bannerFileName": "banner-faster-acting-insulin-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Gene Therapy for Hemophilia",
         "fileName": "gene-therapy-hemophilia",
-        "bannerFileName": "gene-therapy-hemophilia.jpg"
+        "bannerFileName": "banner-gene-therapy-hemophilia.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Men's Genitourinary and Sexual Health",
         "fileName": "genitourinary-health",
-        "bannerFileName": "genitourinary-health.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Global AF Stroke Prevention & VTE Treatment",
         "fileName": "global-af-stroke-prevention",
-        "bannerFileName": "global-af-stroke-prevention.jpg"
+        "bannerFileName": "banner-global-af-stroke-prevention-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Pulmonary Arterial Hypertension",
         "fileName": "global-pah",
-        "bannerFileName": "global-pah.jpg"
+        "bannerFileName": "banner-global-pah-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Global Update on Pneumococcal Disease",
         "fileName": "global-update-pneumococcal",
-        "bannerFileName": "global-update-pneumococcal.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Innovations in GLP-1 Therapy",
         "fileName": "glp1",
-        "bannerFileName": "glp1.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in GLP-1 Receptor Agonists",
         "fileName": "glp1-receptor-agonists",
-        "bannerFileName": "glp1-receptor-agonists.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Advances in Glycemic Control",
         "fileName": "glycemic-control",
-        "bannerFileName": "glycemic-control.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Medscape: Advances in Gout: New Solutions to an Age-Old Disease",
         "fileName": "gout",
-        "bannerFileName": "gout.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Course in HCV",
         "fileName": "hcv",
-        "bannerFileName": "hcv.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
-        "fileName": "hcv2012",
-        "bannerFileName": "hcv2012.jpg"
-    },
-    {
-        "title": "",
+        "title": "Center for Healthcare Quality and Payment Reforms",
         "fileName": "healthcare-reform",
-        "bannerFileName": "healthcare-reform.jpg"
+        "bannerFileName": "banner-healthcare-reform2017.jpg"
     },
     {
-        "title": "",
+        "title": "Healthcare Updates: Highlights From CMS - Medscape Education",
         "fileName": "healthcare-updates",
-        "bannerFileName": "healthcare-updates.jpg"
+        "bannerFileName": "banner-healthcare-updates.jpg"
     },
+    // {
+    //     "title": "The Heart of a Woman",
+    //     "fileName": "heart-of-woman",
+    //     "bannerFileName": null
+    // },
     {
-        "title": "",
-        "fileName": "healthcare-updates-poll",
-        "bannerFileName": "healthcare-updates-poll.jpg"
-    },
-    {
-        "title": "",
-        "fileName": "heart-of-woman",
-        "bannerFileName": "heart-of-woman.jpg"
-    },
-    {
-        "title": "",
+        "title": "Clinical Advances in Heart Rate as a Risk Factor in Heart Failure",
         "fileName": "heart-rate-risk",
-        "bannerFileName": "heart-rate-risk.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Heart Failure and Chronic Kidney Disease Management Challenges",
         "fileName": "heartfailure-ckd-management",
-        "bannerFileName": "heartfailure-ckd-management.jpg"
+        "bannerFileName": "banner-heartfailure-ckd-management.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in the Treatment of CD30+ Hematological Malignancies",
         "fileName": "hematological-malignancies",
-        "bannerFileName": "hematological-malignancies.jpg"
+        "bannerFileName": "banner-hematological-malignancies-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Hemophilia: Management for Life",
         "fileName": "hemophilia-management",
-        "bannerFileName": "hemophilia-management.jpg"
+        "bannerFileName": "banner-hemophilia-management-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Curing Hepatitis C: Clinical Advances Toward a Future Without Interferon",
         "fileName": "hepatitis-c",
-        "bannerFileName": "hepatitis-c.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Understanding HER2 - A Cornerstone of Breast Cancer Therapy",
         "fileName": "her2-cornerstone",
-        "bannerFileName": "her2-cornerstone.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Advances in Hereditary Angioedema",
         "fileName": "hereditary-angioedema",
-        "bannerFileName": "hereditary-angioedema.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Advances in Hernia and Abdominal Wall Repair",
         "fileName": "hernia",
-        "bannerFileName": "hernia.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in HIV: Optimizing Patient Care",
         "fileName": "hiv-art-of-treatment",
-        "bannerFileName": "hiv-art-of-treatment.jpg"
+        "bannerFileName": "banner-hiv-art-of-treatment.jpg"
     },
     {
-        "title": "",
+        "title": "HIV Management",
         "fileName": "hiv-management",
-        "bannerFileName": "hiv-management.jpg"
+        "bannerFileName": "banner-hiv-management-2017.jpg"
     },
     {
-        "title": "",
+        "title": "CLINICAL ADVANCES IN HIV: Emerging Regimens; Optimizing Care",
         "fileName": "hiv-optimizing-patient-care",
-        "bannerFileName": "hiv-optimizing-patient-care.jpg"
+        "bannerFileName": "banner-hiv-optimizing-patient-care.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in HIV Prevention",
         "fileName": "hiv-screening-prevention",
-        "bannerFileName": "hiv-screening-prevention.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Advances in HIV Testing, Linkage to Care, and Treatment",
         "fileName": "hiv-testing",
-        "bannerFileName": "hiv-testing.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Hormone Receptor-Positive Advanced Breast Cancer",
         "fileName": "hormone-receptor-positive-breastcancer",
-        "bannerFileName": "hormone-receptor-positive-breastcancer.jpg"
+        "bannerFileName": "banner-hormone-receptor-positive-breastcancer-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Hot Topics in Dermatology",
         "fileName": "hot-topics-in-dermatology",
-        "bannerFileName": "hot-topics-in-dermatology.jpg"
+        "bannerFileName": "banner-hot-topics-dermatology-34735.jpg"
     },
     {
-        "title": "",
+        "title": "Hot Topics in Thromboembolic Disease",
         "fileName": "hot-topics-in-thromboembolic-disease",
-        "bannerFileName": "hot-topics-in-thromboembolic-disease.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Advances in HR-Positive Breast Cancer",
         "fileName": "hr-positive-breast-cancer",
-        "bannerFileName": "hr-positive-breast-cancer.jpg"
+        "bannerFileName": "banner-hr-positive-breast-cancer-2017.jpg"
     },
     {
         "title": "",
