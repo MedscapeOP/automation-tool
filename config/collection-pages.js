@@ -124,249 +124,234 @@ const collectionPages = [
         "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Advances in Blood Pressure Control",
         "fileName": "blood-pressure-control",
-        "bannerFileName": "blood-pressure-control.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Enhancing Endocrine Responsiveness in Advanced Breast Cancer",
         "fileName": "breast-cancer",
-        "bannerFileName": "breast-cancer.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Metastatic Breast Cancer Clinic",
         "fileName": "breast-cancer-metastatic",
-        "bannerFileName": "breast-cancer-metastatic.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances: Targeting B-Cell Malignancies",
         "fileName": "btk-inhibitors",
-        "bannerFileName": "btk-inhibitors.jpg"
+        "bannerFileName": "banner-ca-btk-inhibitors-2018.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Cancer Immunotherapy",
         "fileName": "cancer-immunotherapy",
-        "bannerFileName": "cancer-immunotherapy.jpg"
+        "bannerFileName": "banner-cancer-immunotherapy-2017.jpg"
     },
+    // {
+    //     "title": "Clinical Advances in Biomarkers and Testing",
+    //     "fileName": "cardiac-biomarkers",
+    //     "bannerFileName": "cardiac-biomarkers.jpg"
+    // },
     {
-        "title": "",
-        "fileName": "cardiac-biomarkers",
-        "bannerFileName": "cardiac-biomarkers.jpg"
-    },
-    {
-        "title": "",
+        "title": "Clinical Advances in Bridging Cardiovascular Disease and T2DM",
         "fileName": "cardio-disease-t2dm",
-        "bannerFileName": "cardio-disease-t2dm.jpg"
+        "bannerFileName": "banner-cardio-disease-t2dm-2017.jpg"
     },
     {
-        "title": "",
-        "fileName": "cardio-live-cases",
-        "bannerFileName": "cardio-live-cases.jpg"
-    },
-    {
-        "title": "",
+        "title": "Hot Topics in Cardiology and Metabolism",
         "fileName": "cardiology-diabetes-hot-topics",
-        "bannerFileName": "cardiology-diabetes-hot-topics.jpg"
+        "bannerFileName": "banner-cardiology-diabetes-hot-topics.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Cardiometabolic Risk Management in Type 2 Diabetes",
         "fileName": "cardiometabolic-risk-management",
-        "bannerFileName": "cardiometabolic-risk-management.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Advances in CDK4 and 6 Inhibition in Breast Cancer",
         "fileName": "cdk4-6-inhibition-breast-cancer",
-        "bannerFileName": "cdk4-6-inhibition-breast-cancer.jpg"
+        "bannerFileName": "banner_cdk4-6-inhibition-breast-cancer.jpg"
     },
     {
-        "title": "",
+        "title": "Advances In Central Line Insertion and Care: Prevention and Control of Catheter-Related Infection",
         "fileName": "central-line-insertion",
-        "bannerFileName": "central-line-insertion.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Medscape | Blended Learning: Meeting the Goals of RA Control",
         "fileName": "challenging-case-scenarios-ra",
-        "bannerFileName": "challenging-case-scenarios-ra.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Medscape | Blended Learning: Meeting the Goals of RA Control",
         "fileName": "challenging-case-scenarios-ra-details",
-        "bannerFileName": "challenging-case-scenarios-ra-details.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Taking Control: Clinicians Against Childhood Obesity",
         "fileName": "childhood-obesity",
-        "bannerFileName": "childhood-obesity.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Hyperkalemia",
         "fileName": "chronic-hyperkalemia",
-        "bannerFileName": "chronic-hyperkalemia.jpg"
+        "bannerFileName": "banner-chronic-hyperkalemia-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Evidence-Based Approaches to Maximal Medical Management of Chronic Rhinosinusitis",
         "fileName": "chronic-rhinosinusitis",
-        "bannerFileName": "chronic-rhinosinusitis.jpg"
+        "bannerFileName": "banner-rhinosinusitis-optinose-2018.jpg"
     },
     {
-        "title": "",
+        "title": "CINV: Advancing Clinical Care and Improving Patient Outcomes",
         "fileName": "cinv-nausea",
-        "bannerFileName": "cinv-nausea.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
-        "fileName": "ckd-cvd",
-        "bannerFileName": "ckd-cvd.jpg"
-    },
-    {
-        "title": "",
+        "title": "Clinical Advances in Chronic Kidney Disease -- Mineral and Bone Disorder",
         "fileName": "ckd-mineral-bone-disorder",
-        "bannerFileName": "ckd-mineral-bone-disorder.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Emerging Practice Patterns in Clinical Oncology",
         "fileName": "clinicaloncology",
-        "bannerFileName": "clinicaloncology.jpg"
+        "bannerFileName": "banner-oncology-practice-patterns-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Early Combination Therapy for PAH",
         "fileName": "combination-therapy-for-pah",
-        "bannerFileName": "combination-therapy-for-pah.jpg"
+        "bannerFileName": "banner-combination-therapy-for-pah-2017.jpg"
     },
     {
-        "title": "",
-        "fileName": "complement-disorders",
-        "bannerFileName": "complement-disorders.jpg"
-    },
-    {
-        "title": "",
+        "title": "Advances in Complex Dyslipidemia",
         "fileName": "complex-dyslipidemia",
-        "bannerFileName": "complex-dyslipidemia.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Advances in Acute Stroke Care and the Role of Continuous Cardiac Monitoring",
         "fileName": "continuous-cardiac-monitoring",
-        "bannerFileName": "continuous-cardiac-monitoring.jpg"
+        "bannerFileName": "banner-stroke-continuous-cardiac-monitoring-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Inhaled Medication Delivery Systems in COPD Management",
         "fileName": "copd",
-        "bannerFileName": "copd.jpg"
+        "bannerFileName": "banner-copd.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Obstructive Airways Diseases: COPD and Severe Asthma",
         "fileName": "copd-asthma",
-        "bannerFileName": "copd-asthma.jpg"
+        "bannerFileName": "banner_copd-asthma.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in CTEPH: Emerging Treatment Paradigms",
         "fileName": "cteph",
-        "bannerFileName": "cteph.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Interventional Approaches to CV Disease Management",
         "fileName": "cv-disease-mgmt",
-        "bannerFileName": "cv-disease-mgmt.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Cardiovascular Disease Risk Reduction",
         "fileName": "cv-risk-reduction",
-        "bannerFileName": "cv-risk-reduction.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Major Depressive Disorder: Focus on Patient-Centered Care",
         "fileName": "depression-treatment",
-        "bannerFileName": "depression-treatment.jpg"
+        "bannerFileName": "banner-depression-treatment.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances with GLP-1 Receptor Agonists - The Link Between Diabetes and CV Risk",
         "fileName": "diabetes-cardiovascular",
-        "bannerFileName": "diabetes-cardiovascular.jpg"
+        "bannerFileName": "banner-diabetes-cardiovascular-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Type 2 Diabetes and Cardiovascular Risk",
         "fileName": "diabetes-cardiovascular-risk",
-        "bannerFileName": "diabetes-cardiovascular-risk.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Diabetes Education TV: Challenges & Complexities",
         "fileName": "diabetes-edu-tv",
-        "bannerFileName": "diabetes-edu-tv.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Advancing Diabetes Care with Incretin-Based Therapies",
         "fileName": "diabetes-incretin-therapy",
-        "bannerFileName": "diabetes-incretin-therapy.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Diabetes Management with GLP-1 Agonists",
         "fileName": "diabetes-management",
-        "bannerFileName": "diabetes-management.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Diabetes Exchange",
         "fileName": "diabetesexchange",
-        "bannerFileName": "diabetesexchange.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Biomarkers and Testing",
         "fileName": "diagnostics",
-        "bannerFileName": "diagnostics.jpg"
+        "bannerFileName": "banner-diagnostics.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Targeting DNA Damage Response",
         "fileName": "dna-damage-response",
-        "bannerFileName": "dna-damage-response.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Targeting DNA Damage Response",
         "fileName": "dna-damage-response-international",
-        "bannerFileName": "dna-damage-response-international.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Targeting DNA Damage Response",
         "fileName": "dna-damage-response-united-states",
-        "bannerFileName": "dna-damage-response-united-states.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Drug-Eluting Stents",
         "fileName": "drug-eluting-stents-adv",
-        "bannerFileName": "drug-eluting-stents-adv.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in EGFR-Mutated NSCLC",
         "fileName": "egfr-mutated-nsclc",
-        "bannerFileName": "egfr-mutated-nsclc.jpg"
+        "bannerFileName": "banner-egfr-mutated-nsclc-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Electronic Health Records Incentive Programs",
         "fileName": "ehr",
-        "bannerFileName": "ehr.jpg"
+        "bannerFileName": "banner-ehr.jpg"
     },
     {
-        "title": "",
+        "title": "Evolution Beyond Current Targets: Emerging Oral Agents in RA",
         "fileName": "emerging-agents-ra",
-        "bannerFileName": "emerging-agents-ra.jpg"
+        "bannerFileName": "banner-emerging-agents-ra-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Emerging Horizons in Cancer Immunotherapy",
         "fileName": "emerging-immunotherapy",
-        "bannerFileName": "emerging-immunotherapy.jpg"
+        "bannerFileName": "banner-emerging-immunotherapy.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Practical Perspectives on the Clinical Management of Epilepsy",
         "fileName": "epilepsy",
-        "bannerFileName": "epilepsy.jpg"
+        "bannerFileName": "banner-epilepsy-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Evolving Anticoagulation in AF and VTE",
         "fileName": "evolving-anticoagulation",
-        "bannerFileName": "evolving-anticoagulation.jpg"
+        "bannerFileName": "banner-evolving-anticoagulation-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Advances in Ophthalmology: Dry Eye, Glaucoma, and nAMD",
         "fileName": "eye",
-        "bannerFileName": "eye.jpg"
+        "bannerFileName": "banner-eye-2017.jpg"
     },
     {
         "title": "",
@@ -1014,9 +999,9 @@ const collectionPages = [
         "bannerFileName": "seborrheic-keratosis.jpg"
     },
     {
-        "title": "",
+        "title": "Advances in Secondary Prevention of Cardiovascular Disease",
         "fileName": "secondary-prevention-cvd",
-        "bannerFileName": "secondary-prevention-cvd.jpg"
+        "bannerFileName": null
     },
     {
         "title": "",
@@ -1024,9 +1009,9 @@ const collectionPages = [
         "bannerFileName": "seizures.jpg"
     },
     {
-        "title": "",
+        "title": "Advances in the Management of Severe and Rare Disorders",
         "fileName": "severe-rare-disorders",
-        "bannerFileName": "severe-rare-disorders.jpg"
+        "bannerFileName": "banner-severe-rare-disorders.jpg"
     },
     {
         "title": "",
