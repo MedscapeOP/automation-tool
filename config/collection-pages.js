@@ -514,309 +514,309 @@ const collectionPages = [
         "bannerFileName": "banner-hr-positive-breast-cancer-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Hyperhidrosis Management",
         "fileName": "hyperhidrosis",
-        "bannerFileName": "hyperhidrosis.jpg"
+        "bannerFileName": "banner-hyperhidrosis.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Chronic Kidney Disease: Focus on Hyperkalemia and Anemia",
         "fileName": "hyperkalemia",
-        "bannerFileName": "hyperkalemia.jpg"
+        "bannerFileName": "banner-hyperkalemia-2018.jpg"
     },
     {
-        "title": "",
+        "title": "Hypersomnolence: Exploring Narcolepsy & OSA",
         "fileName": "hypersomnolence",
-        "bannerFileName": "hypersomnolence.jpg"
+        "bannerFileName": "banner-hypersomnolence-2018.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in the Treatment of Hypertriglyceridemia",
         "fileName": "hypertriglyceridemia",
-        "bannerFileName": "hypertriglyceridemia.jpg"
+        "bannerFileName": "banner-hypertriglyceridemia-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Vasodilatory Shock: Treating Hypotension to Improve Outcomes",
         "fileName": "hypotension",
-        "bannerFileName": "hypotension.jpg"
+        "bannerFileName": "banner-hypotension.jpg"
     },
     {
-        "title": "",
+        "title": "Medscape: Advances in IBS-C and Chronic Constipation",
         "fileName": "ibs-c-constipation",
-        "bannerFileName": "ibs-c-constipation.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "IC-ONC: Immunotherapy Collaborative of Oncology Networked Communities",
         "fileName": "ic-onc",
-        "bannerFileName": "ic-onc.jpg"
+        "bannerFileName": "ic-collection-header.jpg"
     },
     {
-        "title": "",
+        "title": "IC-ONC Chicago: Immunotherapy Collaborative of Oncology Networked Communities",
         "fileName": "ic-onc-chicago",
-        "bannerFileName": "ic-onc-chicago.jpg"
+        "bannerFileName": "ic-collection-header.jpg"
     },
     {
-        "title": "",
+        "title": "IC-ONC Houston: Immunotherapy Collaborative of Oncology Networked Communities",
         "fileName": "ic-onc-houston",
-        "bannerFileName": "ic-onc-houston.jpg"
+        "bannerFileName": "ic-collection-header.jpg"
     },
     {
-        "title": "",
+        "title": "IC-ONC London (UK): Immunotherapy Collaborative of Oncology Networked Communities",
         "fileName": "ic-onc-london-uk",
-        "bannerFileName": "ic-onc-london-uk.jpg"
+        "bannerFileName": "ic-collection-header.jpg"
     },
     {
-        "title": "",
+        "title": "IC-ONC Los Angeles: Immunotherapy Collaborative of Oncology Networked Communities",
         "fileName": "ic-onc-los-angeles",
-        "bannerFileName": "ic-onc-los-angeles.jpg"
+        "bannerFileName": "ic-collection-header.jpg"
     },
     {
-        "title": "",
+        "title": "IC-ONC Miami: Immunotherapy Collaborative of Oncology Networked Communities",
         "fileName": "ic-onc-miami",
-        "bannerFileName": "ic-onc-miami.jpg"
+        "bannerFileName": "ic-collection-header.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Individualized Diabetes Management",
         "fileName": "individualized-diab-mgmt",
-        "bannerFileName": "individualized-diab-mgmt.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Inflammatory Bowel Disease: The Evolving Role of Biologics",
         "fileName": "inflammatory-bowel-disease",
-        "bannerFileName": "inflammatory-bowel-disease.jpg"
+        "bannerFileName": "banner-inflammatory-bowel-disease-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances In Cross-Therapy Considerations in the Inflammatory Disease Spectrum",
         "fileName": "inflammatory-diseases",
-        "bannerFileName": "inflammatory-diseases.jpg"
+        "bannerFileName": "banner-inflammatory-diseases.jpg"
     },
     {
-        "title": "",
+        "title": "Evolution of Treatment Strategies for Inflammatory Joint Diseases",
         "fileName": "inflammatory-joint-diseases",
-        "bannerFileName": "inflammatory-joint-diseases.jpg"
+        "bannerFileName": "banner-inflammatory-joint-diseases.jpg"
     },
     {
-        "title": "",
+        "title": "Advances in Influenza Prevention and Treatment",
         "fileName": "influenza-prevention",
-        "bannerFileName": "influenza-prevention.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Advances in Innovative Treatment Paradigms in Diabetes Management",
         "fileName": "innovative-insulin-paradigms",
-        "bannerFileName": "innovative-insulin-paradigms.jpg"
+        "bannerFileName": "banner-innovative-insulin-paradigms.jpg"
     },
     {
-        "title": "",
+        "title": "Improving Diabetes Care with Novel Insulin Therapies",
         "fileName": "insulin-analogues",
-        "bannerFileName": "insulin-analogues.jpg"
+        "bannerFileName": "banner-insulin-analogues-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Intensive Low-Density Lipoprotein Management",
         "fileName": "intensive-ldl-management",
-        "bannerFileName": "intensive-ldl-management.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Issues in the Management of Hemophilia: A Best Practice Series",
         "fileName": "issues-in-hemophilia",
-        "bannerFileName": "issues-in-hemophilia.jpg"
+        "bannerFileName": "banner-issues-in-hemophilia-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Life-Course Immunization: A Cornerstone of Event-Free Health",
         "fileName": "life-course-immunization",
-        "bannerFileName": "life-course-immunization.jpg"
+        "bannerFileName": "life-course-immunization.png"
     },
     {
-        "title": "",
+        "title": "Opioid Prescribing: Safe Practice, Changing Lives",
         "fileName": "long-acting-opioids",
-        "bannerFileName": "long-acting-opioids.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Medscape: Advances in the Treatment of Low Testosterone",
         "fileName": "low-testosterone",
-        "bannerFileName": "low-testosterone.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Chronic Lymphocytic Leukemia",
         "fileName": "lymphocytic-leukemia",
-        "bannerFileName": "lymphocytic-leukemia.jpg"
+        "bannerFileName": "banner-lymphocytic-leukemia-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Cognitive Dysfunction in Major Depressive Disorder",
         "fileName": "major-depressive-disorder",
-        "bannerFileName": "major-depressive-disorder.jpg"
+        "bannerFileName": "banner-major-depressive-disorder-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Advances in the Treatment of mCRPC: Targeting the Androgen Pathway",
         "fileName": "mcrpc",
-        "bannerFileName": "mcrpc.jpg"
+        "bannerFileName": "banner-mcrpc-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Major Depressive Disorder",
         "fileName": "mdd",
-        "bannerFileName": "mdd.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Immunotherapeutic Strategies in Metastatic Melanoma: A European Perspective",
         "fileName": "metastatic-melanoma",
-        "bannerFileName": "metastatic-melanoma.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Migraine Prevention: Now Is The Time To Act",
         "fileName": "migraine-time-to-act",
-        "bannerFileName": "migraine-time-to-act.jpg"
+        "bannerFileName": "banner_new_frontiers_in_migraine_34597.jpg"
     },
     {
-        "title": "",
+        "title": "Improving Medical Care for Military Personnel and Their Families - Medscape Education",
         "fileName": "military-families",
-        "bannerFileName": "military-families.jpg"
+        "bannerFileName": "banner-military-families.jpg"
     },
     {
-        "title": "",
+        "title": "Improving Medical Care for Military Personnel and Their Families - Medscape Education",
         "fileName": "military-families-advisory",
-        "bannerFileName": "military-families-advisory.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Improving Medical Care for Military Personnel and Their Families - Medscape Education",
         "fileName": "military-families-resources",
-        "bannerFileName": "military-families-resources.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Advances in Modern Diabetes Management -- Tailored to Patient Needs",
         "fileName": "modern-diabetes-management",
-        "bannerFileName": "modern-diabetes-management.jpg"
+        "bannerFileName": "banner-modern-diabetes-management-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Modern Obesity Management: A Synergistic Approach for Today's Patient",
         "fileName": "modern-obesity-management",
-        "bannerFileName": "modern-obesity-management.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Mood Disorder Spectrum",
         "fileName": "mood-spectrum",
-        "bannerFileName": "mood-spectrum.jpg"
+        "bannerFileName": "banner-mood-spectrum-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Imaging",
         "fileName": "mri",
-        "bannerFileName": "mri.jpg"
+        "bannerFileName": "banner-mri-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Multiple Sclerosis",
         "fileName": "ms",
-        "bannerFileName": "ms.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Advances in MS for the Improvement of Patient Outcomes",
         "fileName": "ms-patient-outcomes",
-        "bannerFileName": "ms-patient-outcomes.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Advances In: Multidisciplinary Imaging",
         "fileName": "multidisciplinary-imaging",
-        "bannerFileName": "multidisciplinary-imaging.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Multiple Myeloma: Staying Abreast of Best Practices Across the Clinical Continuum",
         "fileName": "multiple-myeloma",
-        "bannerFileName": "multiple-myeloma.jpg"
+        "bannerFileName": "banner-multiple-myeloma-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Advances in MS for the Improvement of Patient Outcomes",
         "fileName": "multiple-sclerosis",
-        "bannerFileName": "multiple-sclerosis.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "MS TV: Broadcasting the Latest Data on Oral Therapies for RRMS - Medscape Education",
         "fileName": "multiple-sclerosis-tv",
-        "bannerFileName": "multiple-sclerosis-tv.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Hypersomnolence: Exploring Narcolepsy & OSA",
         "fileName": "narcolepsy",
-        "bannerFileName": "narcolepsy.jpg"
+        "bannerFileName": "banner-narcolepsy-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Neuro-Oncology Learning Portfolio: An Update on Glioblastoma | Medscape",
         "fileName": "neuro-oncology",
-        "bannerFileName": "neuro-oncology.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Neurology Exchange",
         "fileName": "neurologyexchange",
-        "bannerFileName": "neurologyexchange.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "In My Practice: Neurotoxins in Aesthetic Medicine",
         "fileName": "neurotoxins",
-        "bannerFileName": "neurotoxins.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Emergence of a New Era for Heart Failure Management",
         "fileName": "new-era-for-hf-management",
-        "bannerFileName": "new-era-for-hf-management.jpg"
+        "bannerFileName": "banner-new-era-for-hf-management.jpg"
     },
     {
-        "title": "",
+        "title": "Novel Treatment Approaches in MS",
         "fileName": "noveltreatmentinms",
-        "bannerFileName": "noveltreatmentinms.jpg"
+        "bannerFileName": "banner-noveltreatmentinms-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Advances In Obesity Management",
         "fileName": "obesity-mgmt",
-        "bannerFileName": "obesity-mgmt.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Obesity Treatment Today: Patient-Centered Approaches to Improving Health Outcomes",
         "fileName": "obesity-treatment",
-        "bannerFileName": "obesity-treatment.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Emerging Practice Patterns in Clinical Oncology",
         "fileName": "oncology-practice-patterns",
-        "bannerFileName": "oncology-practice-patterns.jpg"
+        "bannerFileName": "banner-oncology-practice-patterns-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Oncology Exchange",
         "fileName": "oncologyexchange",
-        "bannerFileName": "oncologyexchange.jpg"
+        "bannerFileName": "banner-oncologyexchange-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Oncology Exchange: Colorectal Cancer",
         "fileName": "oncologyexchange-colorectal-cancer",
-        "bannerFileName": "oncologyexchange-colorectal-cancer.jpg"
+        "bannerFileName": "banner-oncologyexchange-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Oncology Exchange: Evolving Treatment Strategies for Mantle Cell Lymphoma in Elderly Patients",
         "fileName": "oncologyexchange-mantle-cell-lymphoma",
-        "bannerFileName": "oncologyexchange-mantle-cell-lymphoma.jpg"
+        "bannerFileName": "banner-oncologyexchange-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Oncology Exchange: Multiple Myeloma",
         "fileName": "oncologyexchange-multiple-myeloma",
-        "bannerFileName": "oncologyexchange-multiple-myeloma.jpg"
+        "bannerFileName": "banner-oncologyexchange-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Oncology Exchange: Non-Hodgkin's Lymphoma",
         "fileName": "oncologyexchange-non-hodgkins-lymphoma",
-        "bannerFileName": "oncologyexchange-non-hodgkins-lymphoma.jpg"
+        "bannerFileName": "banner-oncologyexchange-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Oncology Exchange: Ovarian Cancer",
         "fileName": "oncologyexchange-ovarian-cancer",
-        "bannerFileName": "oncologyexchange-ovarian-cancer.jpg"
+        "bannerFileName": "banner-oncologyexchange-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Oncology Exchange: Renal Cell Carcinoma",
         "fileName": "oncologyexchange-renal-cell-carcinoma",
-        "bannerFileName": "oncologyexchange-renal-cell-carcinoma.jpg"
+        "bannerFileName": "banner-oncologyexchange-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in the Management of Onychomycosis",
         "fileName": "onychomycosis",
-        "bannerFileName": "onychomycosis.jpg"
+        "bannerFileName": "banner-onychomycosis-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Novel Oral Therapeutics for Hematological Malignancies",
         "fileName": "oraltherapies-hm",
-        "bannerFileName": "oraltherapies-hm.jpg"
+        "bannerFileName": "banner-oraltherapies-cll-2017.jpg"
     },
     {
         "title": "",
