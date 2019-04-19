@@ -4,9 +4,7 @@ var usAndGlobal = [
         name: "Laurie Barclay, MD",
         affiliation: "Freelance writer and reviewer, Medscape, LLC",
         disclosure: `
-        Disclosure: Laurie Barclay, MD, has disclosed the following relevant financial relationships:
-        <br/>
-        Owns stock, stock options, or bonds from: Pfizer
+        Disclosure: Laurie Barclay, MD, has disclosed no relevant financial relationships.
         `,
         chronicleid: "0901c791800019c8"
     },
@@ -39,9 +37,7 @@ var ous = [
         name: "Laurie Barclay, MD",
         affiliation: "Freelance writer and reviewer",
         disclosure: `
-        Disclosure: Laurie Barclay, MD, has disclosed the following relevant financial relationships:
-        <br/>
-        Owns stock, stock options, or bonds from: Pfizer
+        Disclosure: Laurie Barclay, MD, has disclosed no relevant financial relationships.
         `,
         chronicleid: "0901c791800019c8"
     },
