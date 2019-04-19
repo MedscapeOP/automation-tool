@@ -651,7 +651,7 @@ const collectionPages = [
     {
         "title": "Clinical Advances in Major Depressive Disorder",
         "fileName": "mdd",
-        "bannerFileName": null
+        "bannerFileName": "34746-collection-header.jpg"
     },
     {
         "title": "Immunotherapeutic Strategies in Metastatic Melanoma: A European Perspective",
@@ -819,94 +819,94 @@ const collectionPages = [
         "bannerFileName": "banner-oraltherapies-cll-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in the Management of Solid Organ Transplantation",
         "fileName": "organ-transplantation",
-        "bannerFileName": "organ-transplantation.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in the Care of Knee Osteoarthritis",
         "fileName": "osteoarthritis",
-        "bannerFileName": "osteoarthritis.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Osteoporosis",
         "fileName": "osteoporosis",
-        "bannerFileName": "osteoporosis.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Treating Obesity as a Chronic Disease: Novel Insights and Strategies",
         "fileName": "overcoming-obesity",
-        "bannerFileName": "overcoming-obesity.jpg"
+        "bannerFileName": "banner-overcoming-obesity-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Advances in Pulmonary Arterial Hypertension",
         "fileName": "pah",
-        "bannerFileName": "pah.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "PAH TV: Pulmonary Arterial Hypertension Unmasked - Medscape Education",
         "fileName": "pah-tv",
-        "bannerFileName": "pah-tv.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Optimal Approaches for the Management of Osteoarthritis and Low Back Pain",
         "fileName": "pain",
-        "bannerFileName": "pain.jpg"
+        "bannerFileName": "ca-pain-hero.jpg"
     },
     {
-        "title": "",
+        "title": "Pain TV: Chronic Pain in America - Medscape Education",
         "fileName": "pain-tv",
-        "bannerFileName": "pain-tv.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Patient Stories in Multiple Sclerosis: Expert Insights Series",
         "fileName": "patient-stories-ms",
-        "bannerFileName": "patient-stories-ms.jpg"
+        "bannerFileName": "banner-patient-stories-ms-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Protecting Patients' Rights",
         "fileName": "patients-rights",
-        "bannerFileName": "patients-rights.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Parkinson Disease-Related Symptoms",
         "fileName": "pd-related-symptoms",
         "bannerFileName": "pd-related-symptoms.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Parkinson’s Disease Psychosis",
         "fileName": "pdp",
-        "bannerFileName": "pdp.jpg"
+        "bannerFileName": "banner-pdp-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Pediatric Acquired Brain Injury",
         "fileName": "ped-acq-brain-injury",
         "bannerFileName": "banner-advances-pediatric-acquired-brain-injury.jpg"
     },
     {
-        "title": "",
+        "title": "Pertussis Disease: Solutions for All Ages",
         "fileName": "pertussis-disease",
-        "bannerFileName": "pertussis-disease.jpg"
+        "bannerFileName": "banner-pertussis-disease-2017.jpg"
     },
     {
-        "title": "",
+        "title": "PH TV Season 2: Focus on Expanding Care Options and Approaches",
         "fileName": "ph-tv-season2",
-        "bannerFileName": "ph-tv-season2.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Pneumonia TV: Preventing a Lung Attack",
         "fileName": "pneumonia-tv",
-        "bannerFileName": "pneumonia-tv.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Postpartum Depression: From Diagnosis to New Treatments",
         "fileName": "postpartum-depression",
-        "bannerFileName": "postpartum-depression.jpg"
+        "bannerFileName": "banner-postpartum-depression.jpg"
     },
     {
-        "title": "",
+        "title": "Castrate Resistant Prostate Cancer Clinic",
         "fileName": "prostate-cancer",
-        "bannerFileName": "prostate-cancer.jpg"
+        "bannerFileName": null
     },
     {
         "title": "",
@@ -914,79 +914,79 @@ const collectionPages = [
         "bannerFileName": "proteasome-mm.jpg"
     },
     {
-        "title": "",
+        "title": "Proteasome Inhibitor Paradigms in Multiple Myeloma",
         "fileName": "psoriasis-mgmt",
-        "bannerFileName": "psoriasis-mgmt.jpg"
+        "bannerFileName": "banner-proteasome-mm-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Quality Management T2D",
         "fileName": "quality-management-t2d",
-        "bannerFileName": "quality-management-t2d.jpg"
+        "bannerFileName": "banner-quality-management-t2d-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Rheumatoid Arthritis in Practice",
         "fileName": "ra-practice",
-        "bannerFileName": "ra-practice.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in MS: Changing the Future for Patients",
         "fileName": "relapsing-remitting-ms",
-        "bannerFileName": "relapsing-remitting-ms.jpg"
+        "bannerFileName": "banner-relapsing-remitting-ms-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Advances in Renal Cell Carcinoma",
         "fileName": "renal-cell-essentials",
-        "bannerFileName": "renal-cell-essentials.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Cardiometabolic Risk Management in Type 2 Diabetes",
         "fileName": "residual-risk-mgmt",
-        "bannerFileName": "residual-risk-mgmt.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Resistant Hypertension",
         "fileName": "resistant-hypertension-adv",
-        "bannerFileName": "resistant-hypertension-adv.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Chronic Respiratory Diseases: COPD and Asthma",
         "fileName": "respiratory-diseases",
-        "bannerFileName": "respiratory-diseases.jpg"
+        "bannerFileName": "banner-respiratory-diseases.jpg"
     },
     {
-        "title": "",
+        "title": "Medscape: Advances In Restless Legs Syndrome",
         "fileName": "restless-legs-syndrome",
-        "bannerFileName": "restless-legs-syndrome.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Rosacea",
         "fileName": "rosacea",
-        "bannerFileName": "rosacea.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Rotavirus TV: Global Impact of Rotavirus Vaccination",
         "fileName": "rotavirus-tv",
-        "bannerFileName": "rotavirus-tv.jpg"
+        "bannerFileName": "banner-rotavirus-tv-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Sanford Health Children's Health, Fitness and Nutrition Initiative",
         "fileName": "sanford-health",
-        "bannerFileName": "sanford-health.jpg"
+        "bannerFileName": "banner-sanford-health.jpg"
     },
     {
-        "title": "",
+        "title": "The Long-term View: Schizophrenia and the Long-acting Atypical Antipsychotics",
         "fileName": "schizophrenia",
-        "bannerFileName": "schizophrenia.jpg"
+        "bannerFileName": "banner-schizophrenia-2017.jpg"
     },
     {
-        "title": "",
+        "title": "The Future Is Friendly: Advances for Improving Patient Outcomes in Schizophrenia",
         "fileName": "schizophrenia-treatment",
-        "bannerFileName": "schizophrenia-treatment.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Benign But Bothersome: A Closer Look at Seborrheic Keratosis",
         "fileName": "seborrheic-keratosis",
-        "bannerFileName": "seborrheic-keratosis.jpg"
+        "bannerFileName": "banner-seborrheic-keratosis.jpg"
     },
     {
         "title": "Advances in Secondary Prevention of Cardiovascular Disease",
@@ -994,9 +994,9 @@ const collectionPages = [
         "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Seizure Disorder Diagnosis and Management",
         "fileName": "seizures",
-        "bannerFileName": "seizures.jpg"
+        "bannerFileName": "banner-seizures-2017.jpg"
     },
     {
         "title": "Advances in the Management of Severe and Rare Disorders",
@@ -1004,99 +1004,99 @@ const collectionPages = [
         "bannerFileName": "banner-severe-rare-disorders.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Systemic Lupus Erythematosus: A Focus on Patient-Centered Symptom Management",
         "fileName": "sle",
-        "bannerFileName": "sle.jpg"
+        "bannerFileName": "banner-advances-systemic-lupus-erythematosus.jpg"
     },
     {
-        "title": "",
+        "title": "Advances in Circadian Rhythm Sleep Disorders and the Management of Excessive Sleepiness",
         "fileName": "sleep-disorders",
-        "bannerFileName": "sleep-disorders.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Advances in Circadian Rhythm Sleep Disorders and the Management of Excessive Sleepiness (CME Activities from Other Providers)",
         "fileName": "sleep-disorders-cme",
-        "bannerFileName": "sleep-disorders-cme.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Science, Medicine, and Clinical Practice: Expert and Community Updates on Solid Tumors | Medscape",
         "fileName": "solid-tumors",
-        "bannerFileName": "solid-tumors.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Advances in Acute Stroke Care and the Role of Continuous Cardiac Monitoring",
         "fileName": "stroke-continuous-cardiac-monitoring",
-        "bannerFileName": "stroke-continuous-cardiac-monitoring.jpg"
+        "bannerFileName": "banner-stroke-continuous-cardiac-monitoring-2017.jpg"
     },
     {
-        "title": "",
+        "title": "Clinical Advances in the Management of Systemic Lupus Erythematosus",
         "fileName": "systemic-lupus-erythematosus",
-        "bannerFileName": "systemic-lupus-erythematosus.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Treatment of Systemic Sclerosis and Progressive Fibrosing Interstitial Lung Diseases",
         "fileName": "systemicsclerosis-lungfibrosis",
-        "bannerFileName": "systemicsclerosis-lungfibrosis.jpg"
+        "bannerFileName": "banner-systemicsclerosis-lungfibrosis.jpg"
     },
     {
-        "title": "",
+        "title": "Diabetes Education TV: Challenges & Complexities",
         "fileName": "t2d-tv",
-        "bannerFileName": "t2d-tv.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Type 2 Diabetes Management: Tailored Therapies",
         "fileName": "t2dm-management",
-        "bannerFileName": "t2dm-management.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Tardive Dyskinesia",
         "fileName": "tardive-dyskinesia",
-        "bannerFileName": "tardive-dyskinesia.jpg"
+        "bannerFileName": "banner-tardive-dyskinesia.jpg"
     },
     {
-        "title": "",
+        "title": "Novel Therapies in B-Cell Malignancies: Targeting BCR Signaling Pathways",
         "fileName": "targetingpi3k",
-        "bannerFileName": "targetingpi3k.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Hot Topics in Thrombosis",
         "fileName": "thrombosis",
-        "bannerFileName": "thrombosis.jpg"
+        "bannerFileName": "banner-thrombosis.jpg"
     },
     {
-        "title": "",
+        "title": "ACS: Worldwide Perspectives in Thrombosis",
         "fileName": "thrombosis-acs",
-        "bannerFileName": "thrombosis-acs.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Thrombosis TV: Treatment Across the Spectrum of Thromboembolic Disease",
         "fileName": "thrombosis-tv",
-        "bannerFileName": "thrombosis-tv.jpg"
+        "bannerFileName": "banner-thrombosis-tv-s5.jpg"
     },
     {
-        "title": "",
+        "title": "NCCN Oncology Tumor Board Series",
         "fileName": "tumor",
-        "bannerFileName": "tumor.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Ulcerative Colitis",
         "fileName": "ulcerative-colitis",
-        "bannerFileName": "ulcerative-colitis.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Advancing Understanding of Neurodegenerative Disorders",
         "fileName": "understanding-neurodegenerative-disorders",
-        "bannerFileName": "understanding-neurodegenerative-disorders.jpg"
+        "bannerFileName": "banner-understanding-neurodegenerative-disorders-2017.jpg"
     },
     {
-        "title": "",
+        "title": "CME TV: The Real Clinicians of VTE",
         "fileName": "vte-tv",
-        "bannerFileName": "vte-tv.jpg"
+        "bannerFileName": null
     },
     {
-        "title": "",
+        "title": "Clinical Advances in Weekly GLP-1 Agonists in T2DM",
         "fileName": "weekly-glp1-agonists",
-        "bannerFileName": "weekly-glp1-agonists.jpg"
+        "bannerFileName": null
     }
 ];
 
