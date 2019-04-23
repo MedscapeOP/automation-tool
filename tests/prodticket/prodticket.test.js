@@ -997,5 +997,64 @@ describe('Prodticket Module Functions', function () {
             expect(result).to.equalIgnoreSpaces(articleContentTT);
         });
     });
+
+    /**
+     * COLLECTION PAGE INFO     
+     */
+    describe("prodticket.getCollectionPageInfo()", function () {
+        var collectionPageSL =     {
+            "title": "Clinical Advances in Anticoagulation Management and Vascular Protection",
+            "fileName": "anticoagulation-thrombosis",
+            "bannerFileName": "banner-anticoagulation-thrombosis-2017.jpg",
+            "type": "Clinical Advances",
+            "url": "https://www.medscape.org/sites/advances/anticoagulation-thrombosis"
+        };
+        var collectionPageCC =     {
+            "title": "Clinical Advances in Anticoagulation Management and Vascular Protection",
+            "fileName": "anticoagulation-thrombosis",
+            "bannerFileName": "banner-anticoagulation-thrombosis-2017.jpg",
+            "type": "Clinical Advances",
+            "url": "https://www.medscape.org/sites/advances/anticoagulation-thrombosis"
+        };
+        var collectionPageFR = null;
+        var collectionPageTH =     {
+            "title": "ACS and Beyond: Worldwide Perspectives in Acute and Secondary Prevention",
+            "fileName": "acs-and-beyond",
+            "bannerFileName": "banner-acs-and-beyond-2017.jpg",
+            "type": "Clinical Advances",
+            "url": "https://www.medscape.org/sites/advances/acs-and-beyond"
+        };
+        var collectionPageTT = null; 
+
+        // it("should return Product Type from the prodticket .html - Clinical Brief", function () {
+        //     var result = prodticket.getProductType(prodticketCB, config.programs.clinicalBrief);
+        //     expect(result).to.equalIgnoreSpaces(productTypeCB); 
+        // });
+
+        it("should return the Collection Page Object from the prodticket .html - Spotlight", function () {
+            var result = prodticket.getCollectionPage(prodticketSL, config.programs.spotlight);
+            expect(result).to.eql(collectionPageSL); 
+        });
+
+        it("should return the Collection Page Object from the prodticket .html - Curbside", function () { 
+            var result = prodticket.getCollectionPage(prodticketCC, config.programs.curbsideConsult);
+            expect(result).to.eql(collectionPageCC);
+        });
+
+        it("should return the Collection Page Object from the prodticket .html - First Response", function () {
+            var result = prodticket.getCollectionPage(prodticketFR, config.programs.firstResponse);
+            expect(result).to.eql(collectionPageFR);
+        });
+
+        it("should return the Collection Page Object from the prodticket .html - TownHall", function () {
+            var result = prodticket.getCollectionPage(prodticketTH_alt_2, config.programs.townHall);
+            expect(result).to.eql(collectionPageTH); 
+        });
+
+        it("should return the Collection Page Object from the prodticket .html - Test and Teach", function () {
+            var result = prodticket.getProductType(prodticketTT_902362, config.programs.testAndTeach);
+            expect(result).to.eql(collectionPageTT); 
+        });
+    });
 });
 

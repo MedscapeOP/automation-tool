@@ -21,6 +21,7 @@ const _ = require("lodash");
 const utils = require('../utils');
 let findTitle = require('./find-title');
 let findByline = require('./find-byline');
+let findCollectionPageInfo = require('./find-collection-page-info');
 let findContributors = require('./find-contributors'); 
 let findReferences = require('./find-references');
 let findAbbreviations = require('./find-abbreviations');
@@ -174,34 +175,14 @@ function getLearningObjectives(ticketHTML, program) {
 }
 
 function getCollectionPage(ticketHTML, program) {
-    /* 
-        Should return the collection page as an object 
-        - APPROACH:
-            - Check Prodticket for Is there a collection Page?
-                - If yes move on otherwise return null 
-            - Get the Type and URL from the Prodticket and update 
-              result object.  
-                - Check Prodticket for Is there a collection Page?
-                - If yes move on otherwise return null 
-            - Then complete the result object properties using one of the strategies below. 
-
-            Strategy 1: Build internal database of collection pages that we pull from to extract data.  
-
-            Strategy 2: Should request the collection page URL if there is one and extract necessary info (banner image filename, title, & type).
-            - Make request using axios to the URL 
-            - Take the response object and search it for: 
-                - the first instance of <title> 
-                    - This will be the title of the collection page.
-            - Return a Promise object to handle async issues         
-
-    */
-    return {
-        type: "Clinical Advances", 
-        url: "https://www.medscape.org/sites/advances/anticoagulation-thrombosis",
-        title: "Clinical Advances in Anticoagulation Management and Vascular Protection",
-        bannerFileName: "33543-collection-header.png",
-        advancesFileName: "anticoagulation-thrombosis" 
-    };
+    if (checkTicket(ticketHTML)) {
+        try {
+            var collectionPageObject = findCollectionPageInfo[program.codeName](ticketHTML, program);
+            return collectionPageObject;
+        } catch (error) {
+            return error;
+        }
+    }
 }
 
 function getComponents(ticketHTML, program) {
