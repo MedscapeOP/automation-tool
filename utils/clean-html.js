@@ -363,7 +363,7 @@ function slidesFinal (str) {
     
 
     /* MAIN REGEX SERIES */
-    var h3RegExp = new RegExp('(?:<p>){0,}<strong>(?:&lt;){1,}Level 2(?:&gt;){1,}(.*)</strong>(?:</p>){0,}', 'gi');
+    var h3RegExp = new RegExp('(?:<p>){0,}(?:<strong>){0,}(?:&lt;){1,}Level 2(?:&gt;){1,}(.*)(?:</strong>){0,}(?:</p>){0,}', 'gi');
     str = str.replace(h3RegExp, "<h3>$1</h3>");
 
     var h3RegExp2 = new RegExp('<h3>(.*)</h3>', 'g');

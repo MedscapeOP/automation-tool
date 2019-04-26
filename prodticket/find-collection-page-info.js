@@ -3,6 +3,21 @@ const {stringOps, cleanHTML} = require('../utils');
 
 var exportObject = {};
 
+/*
+Get Text block from 'Collection Page Details' to 'Product-Specific Information...'
+
+Remove "Add to other publications or pages"
+
+Remove other fluff
+
+check if &#9746; No 
+check if &#9746; Yes 
+
+If No return null
+Else:
+    - Scrub the Yes line for information. 
+*/
+
 // Clinical Brief
 exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
     throw new Error("No Collection Pages in Clinical Briefs!");
