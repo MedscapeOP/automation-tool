@@ -253,7 +253,7 @@ function buildSpotlight(ticket, program) {
     collectionPageInfo = (checklistResult.properties.collectionPageInfo ? checklistResult.properties.collectionPageInfo.result : null);
     if (collectionPageInfo) {
         finalArticle.bannerImage = collectionPageInfo.bannerFileName;
-        finalArticle.insertAboveTitleCA(collectionPageInfo.title, collectionPageInfo.advancesFileName);
+        finalArticle.insertAboveTitleCollection(collectionPageInfo);
     } 
 
     cmeReviewers = (checklistResult.properties.cmeReviewers ? checklistResult.properties.cmeReviewers.result : "");

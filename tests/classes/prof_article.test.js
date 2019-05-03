@@ -88,8 +88,15 @@ describe('Prof Article Element', function () {
     /* TEST INSERT METHODS */
     describe('#insertAboveTitleCA() && .aboveTitle', function () {
         it('should insert above_title in CA format, and getter should return XML string of above_title', function (done) {
-            
-            profArticleInstance.insertAboveTitleCA('Evolving Anticoagulation in AF and VTE', 'evolving-anticoagulation');
+            var collectionPageObject = {
+                "title": "Evolving Anticoagulation in AF and VTE",
+                "fileName": "evolving-anticoagulation",
+                "bannerFileName": "banner-evolving-anticoagulation-2017.jpg",
+                "type": "Clinical Advances",
+                "url": "https://www.medscape.org/sites/advances/evolving-anticoagulation"
+            };
+
+            profArticleInstance.insertAboveTitleCollection(collectionPageObject);
 
             // console.log("ABOVE TITLE", profArticleInstance.aboveTitle);
             // console.log("ELEMENTS: ", profArticleInstance.elements);

@@ -2,6 +2,7 @@ const languages = require('./languages');
 const credentials = require('./credentials');
 const dates = require('./dates');
 const cmeAuthors = require('./cme-authors');
+const collectionPages = require('./collection-pages');
 
 let programs = {
     clinicalBrief: {
@@ -120,5 +121,6 @@ module.exports = {
     credentials,
     dates,
     propertiesChecklist,
-    cmeAuthors
+    cmeAuthors,
+    collectionPages
 };

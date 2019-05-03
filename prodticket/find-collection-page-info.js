@@ -1,14 +1,20 @@
 const config = require('../config');
 const {stringOps, cleanHTML} = require('../utils');
+const _ = require('lodash');
 
+var collectionPages = config.collectionPages;
 var exportObject = {};
 
+// Clinical Brief
+exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
+    throw new Error("No Collection Pages in Clinical Briefs!");
+}
+
 /*
-Get Text block from 'Collection Page Details' to 'Product-Specific Information...'
+Get Text block from 'Collection Page Details' to
+"Add to other publications or pages"
 
-Remove "Add to other publications or pages"
-
-Remove other fluff
+Remove fluff
 
 check if &#9746; No 
 check if &#9746; Yes 
@@ -17,16 +23,26 @@ If No return null
 Else:
     - Scrub the Yes line for information. 
 */
-
-// Clinical Brief
-exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
-    throw new Error("No Collection Pages in Clinical Briefs!");
-}
-
-
 // Spotlight
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
-    return '';
+    var startRegExp = /.*Collection Page Details.*/gi;
+    var endRegExp = /.*Add to other publications or pages.*/gi;
+    var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
+    var noIndex = stringOps.regexIndexOf(textBlock, /&#9746; No/g);
+    var yesIndex = stringOps.regexIndexOf(textBlock, /&#9746; Yes/g);
+
+    var collectionPageInfo = null;    
+    if (yesIndex != -1) {        
+        var pageURL = textBlock.match(/.*&#9746; Yes.*/g)[0];
+        pageURL = stringOps.removeFromRegexCapture(pageURL, /.*&#9746; Yes.*/g, /.*https:/g);
+        pageURL = pageURL.replace(/<p>|<\/p>/g, "");
+        pageURL = `https:${pageURL}`;
+        return _.find(collectionPages, ['url', pageURL]);
+    } else if (noIndex == -1) {
+        throw new Error("Prodticket doesn't have correct checkboxes for collection page info. Check manually.");
+    } else {
+        return collectionPageInfo;
+    }
 }
 
 
@@ -47,27 +63,35 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
 
 // Town Hall
 var townHallStartRegExps = [
-    /\(Names and degrees only, separated by semicolons\)/g,
-    /<strong>Faculty Byline/g,
-    /Faculty Byline.*/g,
-    /<strong>Faculty\/Author\(s\)/g
+    /.*Is there a collection page\?.*/g
+];
+var townHallEndRegExps = [
+    /.*Add to other publications or pages.*/g
 ];
 
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
-    return '';
-    // var startRegExp = stringOps.getUsableRegExp(ticketHTML, townHallStartRegExps);
-    // var endRegExp = /<strong>Location\/map info/g;
-    // if (startRegExp != -1) {
-    //     var {textBlock: byline} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
-        
-    //     if (stringOps.isBlankOrWhiteSpace(byline) || stringOps.isEmptyString(byline)) {
-    //         throw new Error("No byline found in the prodticket");
-    //     } else {
-    //         return cleanHTML.singleLine(cleanHTML.plainText(byline)).trim();
-    //     }
-    // } else {
-    //     throw new Error("No byline found in the prodticket");
-    // }
+    var startRegExp = stringOps.getUsableRegExp(ticketHTML, townHallStartRegExps);
+    var endRegExp = stringOps.getUsableRegExp(ticketHTML, townHallEndRegExps);
+    if (startRegExp == -1 || endRegExp == -1) {
+        throw new Error("No collection page info found in the prodticket");
+    } else {
+        var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
+        var noIndex = stringOps.regexIndexOf(textBlock, /&#9746; No/g);
+        var yesIndex = stringOps.regexIndexOf(textBlock, /&#9746; Yes/g);
+    
+        var collectionPageInfo = null;    
+        if (yesIndex != -1) {        
+            var pageURL = textBlock.match(/.*&#9746; Yes.*/g)[0];
+            pageURL = stringOps.removeFromRegexCapture(pageURL, /.*&#9746; Yes.*/g, /.*https:/g);
+            pageURL = pageURL.replace(/<p>|<\/p>/g, "");
+            pageURL = `https:${pageURL}`;
+            return _.find(collectionPages, ['url', pageURL]);
+        } else if (noIndex == -1) {
+            throw new Error("Prodticket doesn't have correct checkboxes for collection page info. Check manually.");
+        } else {
+            return collectionPageInfo;
+        }
+    }
 }
 
 // Test and Teach 

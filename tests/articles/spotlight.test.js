@@ -126,7 +126,7 @@ describe('Spotlight', function () {
             // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
 
             // result = utils.xmlOps.objectToXMLString(result);
-            expect(result).to.equalIgnoreSpaces(completeSpotlight)
+            expect(result).to.equalIgnoreSpaces(completeSpotlight);
         });
     });
 });

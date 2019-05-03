@@ -1017,7 +1017,7 @@ describe('Prodticket Module Functions', function () {
             "url": "https://www.medscape.org/sites/advances/anticoagulation-thrombosis"
         };
         var collectionPageFR = null;
-        var collectionPageTH =     {
+        var collectionPageTH = {
             "title": "ACS and Beyond: Worldwide Perspectives in Acute and Secondary Prevention",
             "fileName": "acs-and-beyond",
             "bannerFileName": "banner-acs-and-beyond-2017.jpg",
@@ -1032,7 +1032,7 @@ describe('Prodticket Module Functions', function () {
         // });
 
         it("should return the Collection Page Object from the prodticket .html - Spotlight", function () {
-            var result = prodticket.getCollectionPage(prodticketSL, config.programs.spotlight);
+            var result = prodticket.getCollectionPage(prodticketSL, config.programs.spotlight);      
             expect(result).to.eql(collectionPageSL); 
         });
 
@@ -1043,7 +1043,7 @@ describe('Prodticket Module Functions', function () {
 
         it("should return the Collection Page Object from the prodticket .html - First Response", function () {
             var result = prodticket.getCollectionPage(prodticketFR, config.programs.firstResponse);
-            expect(result).to.eql(collectionPageFR);
+            expect(result).to.equal(collectionPageFR);
         });
 
         it("should return the Collection Page Object from the prodticket .html - TownHall", function () {
@@ -1052,8 +1052,8 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the Collection Page Object from the prodticket .html - Test and Teach", function () {
-            var result = prodticket.getProductType(prodticketTT_902362, config.programs.testAndTeach);
-            expect(result).to.eql(collectionPageTT); 
+            var result = prodticket.getCollectionPage(prodticketTT_902362, config.programs.testAndTeach);
+            expect(result).to.equal(collectionPageTT); 
         });
     });
 });

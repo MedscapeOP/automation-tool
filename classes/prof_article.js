@@ -294,7 +294,13 @@ class ProfArticle extends XMLElement{
         return this.getMarkupField("_above_title");
     }
 
-    insertAboveTitleCA (advancesTitle, advancesFileName) {
+    insertAboveTitleCollection (collectionPageObject) {
+        var url = "";
+        if (collectionPageObject.type == "Clinical Advances") {
+            url = `/sites/advances/${collectionPageObject.fileName}`
+        } else if (collectionPageObject.type == "Collection Page") {
+            url = `/viewcollection/${collectionPageObject.fileName}`
+        }
         var aboveTitleObject = {
             "type": "element",
             "name": "p",
@@ -303,12 +309,12 @@ class ProfArticle extends XMLElement{
                     "type": "element",
                     "name": "a",
                     "attributes": {
-                        "href": `/sites/advances/${advancesFileName}`
+                        "href": url
                     },
                     "elements": [
                         {
                             "type": "text",
-                            "text": `${advancesTitle}`
+                            "text": `${collectionPageObject.title}`
                         }
                     ]
                 }
