@@ -140,6 +140,8 @@ function getAllBlocksInOrder(textBlock, startRegExpArray, endRegExpArray, stripS
         // console.log("END REGEX: ", endRegex);
         // console.log("SUBSTRING: ", substring.substring(0, 4000));
         if (endRegex.index < startRegex.index && (_.indexOf(startRegExpArray, endRegex.symbol) != -1)) {
+        /* NEW LOGIC 5/3/19 */
+        // if (endRegex.index < startRegex.index && (_.some(startRegExpArray, endRegex.symbol) != false)) {
             currentBlock = {
                 label: prevLabel, 
                 textBlock: substring.substring(0, endRegex.index), 

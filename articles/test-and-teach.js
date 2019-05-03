@@ -76,14 +76,14 @@ function getLevelOnes(contentBlockHTML, program) {
     add levelOne to the type of each object in the result  
 */
     var startRegexps = [
-        /(?:&lt;){1,}level 1(?:&gt;){1,}.*/gi,
+        /(?:&lt;){1,}\s{0,}level 1\s{0,}(?:&gt;){1,}.*/gi,
         /&lt;&lt;level 1&gt;&gt;.*/gi
     ];
 
-    var endRegexps = [ 
-        /<strong>Y\/N<\/strong>/g,
-        // /(?:&lt;){1,}level 2(?:&gt;){1,}.*/gi,
-        /&lt;&lt;level 2&gt;&gt;.*/gi,
+    var endRegexps = [
+        /<strong>Y\/N<\/strong>/gi,
+        /(?:&lt;){1,}\s{0,}level 2\s{0,}(?:&gt;){1,}.*/gi,
+        // /&lt;&lt;level 2&gt;&gt;.*/gi,
         // /level 2&gt;&gt;.*Discussion/gi,
         /.*Table \d\..*/g
     ];
@@ -97,7 +97,7 @@ function getLevelOnes(contentBlockHTML, program) {
             return true;
         } else {
             block.type = "levelOne";
-            block.label = block.label.replace(/(?:&lt;){1,}level 1(?:&gt;){1,}/g, "");
+            block.label = block.label.replace(/(?:&lt;){1,}\s{0,}level 1\s{0,}(?:&gt;){1,}/gi, "");
             block.label = utils.cleanHTML.plainText(block.label).trim();
             block.textBlock = utils.cleanHTML.paragraph(block.textBlock);
             return false;
@@ -114,7 +114,7 @@ function getLevelTwos(contentBlockHTML, program) {
     - Instead we should look for everything else and call those     functions inside here. 
 */
     var startRegexps = [
-        /(?:&lt;){1,}level 2(?:&gt;){1,}.*/gi,
+        /(?:&lt;){1,}\s{0,}level 2\s{0,}(?:&gt;){1,}.*/gi,
         /&lt;&lt;level 2&gt;&gt;.*/gi,
         /(?:&lt;){1,}end table.*(?:&gt;){1,}.*/gi
     ];
@@ -122,6 +122,7 @@ function getLevelTwos(contentBlockHTML, program) {
     var endRegexps = [ 
         /<strong>Y\/N<\/strong>/g,
         /(?:&lt;){1,}insert figure \d+(?:&gt;){1,}.*/gi,
+        /(?:&lt;){1,}\s{0,}level 1\s{0,}(?:&gt;){1,}.*/gi,
         /(?:&lt;){1,}level 1(?:&gt;){1,}.*/gi,
         /&lt;&lt;level 1&gt;&gt;.*/gi,
         // /(?:&lt;){1,}level 2(?:&gt;){1,}.*/gi,
@@ -174,22 +175,22 @@ function hasQNANumber (contentBlockHTML) {
  */
 function getContentBlockObjects (ticketHTML, program) {
     var breakpoints = [
-        {
-            symbol: /(?:&lt;){1,}level 1(?:&gt;){1,}.*Case \d:.*/gi,
-            inclusive: true
-        },
-        {
-            symbol: /&lt;&lt;level 1&gt;&gt;.*Case \d:.*/gi, 
-            inclusive: true
-        },
-        {
-            symbol: /(?:<strong>){0,}Answer Explanation (?:&#953;){0,}:.*/g,
-            inclusive: false
-        },
-        {
-            symbol: /.*Answer Explanation:.*/g, 
-            inclusive: false
-        }
+        // {
+            //     symbol: /(?:&lt;){1,}\s{0,}level 1\s{0,}(?:&gt;){1,}.*Case\s{0,}\d<\//gi,
+            //     inclusive: true
+            // },
+            // {
+            //     symbol: /(?:<strong>){0,}Answer Explanation (?:&#953;){0,}(?::){0,}.*/gi,
+            //     inclusive: false
+            // },
+            {
+                symbol: /.*Answer Explanation\s{0,}(?:&#953;){0,}\s{0,}(?::){0,}.*/gi, 
+                inclusive: false
+            },
+            {
+                symbol: /(?:&lt;){1,}\s{0,}level 1\s{0,}(?:&gt;){1,}.*Case\s{0,}\d:.*/gi,
+                inclusive: true
+            }
     ];
     /* 
         POSSIBLE BREAKPOINTS  
@@ -219,6 +220,7 @@ function getContentBlockObjects (ticketHTML, program) {
         }
         result.push(currentBlock);
     }
+    console.log("CONTENT BLOCK OBJECTS: \n\n", result);
     return result;
 }
 

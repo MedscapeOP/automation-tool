@@ -736,8 +736,6 @@ function tableCleanup(htmlString, removeFluff=false) {
 
     var pRemoveRegex = /<p>|<\/p>/g;
     clean = clean.replace(pRemoveRegex, "");
-    console.log("CLEAN TABLE: ", clean);
-
     return clean;
 }
 
