@@ -13,7 +13,10 @@ Practice Article - 896014
 -------------------------------------- */
 function getTables(contentBlockHTML, program) {
     var startRegexps = [
-        /<p><strong>Table \d+\..*/gi
+        /<p><strong>Table \d+\..*/gi,
+        /.*<strong>Table \d+\..*<\/strong>.*/gi,
+        /(?:&lt;){1,}\s{0,}insert table.*(?:&gt;){1,}.*/gi,
+        /(?:&lt;){1,}\s{0,}insert table \d\.\s{0,}(?:&gt;){1,}.*/gi
     ];
 
     var endRegexps = [
@@ -85,7 +88,10 @@ function getLevelOnes(contentBlockHTML, program) {
         /(?:&lt;){1,}\s{0,}level 2\s{0,}(?:&gt;){1,}.*/gi,
         // /&lt;&lt;level 2&gt;&gt;.*/gi,
         // /level 2&gt;&gt;.*Discussion/gi,
-        /.*Table \d\..*/g
+        /.*<strong>Table \d+\..*<\/strong>.*/gi,
+        /(?:&lt;){1,}\s{0,}insert table.*(?:&gt;){1,}.*/gi,
+        /(?:&lt;){1,}\s{0,}insert table \d\.\s{0,}(?:&gt;){1,}.*/gi
+        // /.*Table \d\..*/g
     ];
 
     var blocks = utils.stringOps.getAllBlocksInOrder(contentBlockHTML, startRegexps, endRegexps, true, false);
@@ -220,7 +226,7 @@ function getContentBlockObjects (ticketHTML, program) {
         }
         result.push(currentBlock);
     }
-    console.log("CONTENT BLOCK OBJECTS: \n\n", result);
+    // console.log("CONTENT BLOCK OBJECTS: \n\n", result);
     return result;
 }
 
@@ -244,10 +250,12 @@ function getContentBlockComponents (contentBlockObject, program) {
     levelTwos = getLevelTwos(contentBlockObject.string, program);
 
     var components = [tables, figures, levelOnes, levelTwos];     
-    return {
+    var result = {
         objects: _.sortBy(_.flatten(components), [function(o) { return o.startIndex; }]),
         qnaNumber: contentBlockObject.qnaNumber
     };    
+    console.log("CONTENT BLOCK COMPONENTS: \n\n", result);
+    return result;
 }
 
 
