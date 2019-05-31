@@ -2,6 +2,23 @@
 // PROMPTS 
 // ------------------------------------------------------------
 
+let transcriptPrompt = function (self) {
+    return self.prompt({
+        type: 'confirm',
+        name: 'hasTranscript',
+        message: 'Has Transcript?'  
+    });
+};
+
+let transcriptTypePrompt = function (self, transcriptTypes) {
+    return self.prompt({
+        type: 'list',
+        name: 'transcriptType',
+        message: `What type of transcript?`,
+        choices: transcriptTypes
+    }); 
+};
+
 let llaPrompt = function (self) {
     return self.prompt({
         type: 'confirm',
@@ -93,6 +110,8 @@ let publicationPrompt = function (self) {
 
 
 module.exports = {
+    transcriptPrompt,
+    transcriptTypePrompt,
     llaPrompt,
     ousPrompt,
     peerReviewerPrompt,

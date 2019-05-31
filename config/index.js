@@ -4,6 +4,8 @@ const dates = require('./dates');
 const cmeAuthors = require('./cme-authors');
 const collectionPages = require('./collection-pages');
 
+const transcriptTypes = ["Slides", "Text"];
+
 let programs = {
     clinicalBrief: {
         name: "Clinical Brief",
@@ -23,6 +25,8 @@ let programs = {
         codeName: "spotlight",
         profArticleType: "SlidePresentation",
         articleID: "901602",
+        hasTranscript: true, 
+        transcriptType: transcriptTypes[0],
         hasLLA: false,
         hasOUS: false, 
         hasPeerReviewer: false, 
@@ -36,6 +40,8 @@ let programs = {
         codeName: "curbside",
         profArticleType: "SlidePresentation",
         articleID: "902082",
+        hasTranscript: true, 
+        transcriptType: transcriptTypes[0],
         hasLLA: false,
         hasOUS: false, 
         hasPeerReviewer: false, 
@@ -49,6 +55,8 @@ let programs = {
         codeName: "video",
         profArticleType: "SlidePresentation",
         articleID: "902082",
+        hasTranscript: true, 
+        transcriptType: transcriptTypes[0],
         hasLLA: false,
         hasOUS: false, 
         hasPeerReviewer: false, 
@@ -62,6 +70,8 @@ let programs = {
         codeName: "firstResponse",
         profArticleType: "SlidePresentation",
         articleID: "900319",
+        hasTranscript: true, 
+        transcriptType: transcriptTypes[0],
         hasLLA: false,
         hasOUS: false, 
         hasPeerReviewer: false, 
@@ -75,6 +85,8 @@ let programs = {
         codeName: "townHall",
         profArticleType: "SlidePresentation",
         articleID: "903975",
+        hasTranscript: true, 
+        transcriptType: transcriptTypes[0],
         hasLLA: false,
         hasOUS: false, 
         hasPeerReviewer: false, 
@@ -88,6 +100,7 @@ let programs = {
         codeName: "testAndTeach",
         profArticleType: "Article",
         articleID: "902362",
+        hasTranscript: true, 
         hasLLA: false,
         hasOUS: false, 
         hasPeerReviewer: false, 
@@ -122,5 +135,6 @@ module.exports = {
     dates,
     propertiesChecklist,
     cmeAuthors,
-    collectionPages
+    collectionPages,
+    transcriptTypes
 };

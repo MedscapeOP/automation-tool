@@ -56,7 +56,7 @@ module.exports = function (vorpal) {
     .action(function(args, callback) {       
         program.articleID = args.articleID;        
         let self = this;
-        actions.basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles);
+        actions.testAndTeachAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles);
     });
     vorpal.on('client_prompt_submit', function (program){
         cliTools.resetProgram(program);

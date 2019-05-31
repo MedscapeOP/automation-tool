@@ -53,8 +53,8 @@ function completeGenerateAction(self, callback, functionOrArticle, checklistHTML
 }
 
 /**
- * @description Full action logic using the following prompt chain: 
- * LLA -> OUS -> Peer Reviewer -> Collection Page -> Slide Deck, FYP, Build Function
+ * @description Action logic for test and teach has the prompt chain below: 
+ * Transcript, OUS, Peer Reviewer, Collection Page, FYP -> Build Function
  * @param  {} vorpal
  * @param  {} self
  * @param  {} callback
@@ -63,10 +63,84 @@ function completeGenerateAction(self, callback, functionOrArticle, checklistHTML
  * @param  {} buildFinalOutput
  * @param  {} outputFile
  */
-function basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles) {
+function testAndTeachAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles) {
+    // Has OUS?
+    prompts.transcriptPrompt(self)
+    .then((answers) => {
+        // Has Peer Reviewer?
+        return callbacks.promiseCallback(self, callback, program, answers, "hasTranscript", prompts.ousPrompt);
+    })
+    .then((answers) => {
+        // Has Peer Reviewer?
+        return callbacks.promiseCallback(self, callback, program, answers, "hasOUS", prompts.peerReviewerPrompt);
+    })
+    .then((answers) => {
+        // Has Collection Page?
+        return callbacks.promiseCallback(self, callback, program, answers, "hasPeerReviewer", prompts.collectionPagePrompt);
+    })
+    .then((answers) => {
+        return callbacks.promiseCallback(self, callback, program, answers, "hasCollectionPage", prompts.forYourPatientPrompt);
+    })
+    .then((answers) => {
+        // Build Final Output
+        return callbacks.promiseCallback(self, callback, program, answers, "hasForYourPatient", buildFinalOutput);
+    })
+    .then((buildResult) => {
+        self.log(program);
+        vorpal.emit('client_prompt_submit', program);
+        var completionMessages = {};
+        completionMessages.xmlFile = `${program.name} XML created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().xmlFile)}`;
+        completionMessages.checklist = `${program.name} Checklist created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().checklist)}`;
+        completionMessages.activity = `${program.name} Activity created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().activity)}`;
 
-    // Has LLA? 
-    prompts.llaPrompt(self)
+        completeGenerateAction(self, callback, buildResult.finishedArticleObject, buildResult.checklistHTML, buildResult.activityXML, outputFiles(), completionMessages);   
+    }) 
+    .catch((err) => {
+        self.log(err);
+        callback();
+    });
+}
+
+
+/**
+ * @description Full action logic using the following prompt chain: 
+ * Transcript, LLA, OUS, Peer Reviewer, Collection Page, Slide Deck, FYP -> Build Function
+ * @param  {} vorpal
+ * @param  {} self
+ * @param  {} callback
+ * @param  {} chalk
+ * @param  {} program
+ * @param  {} buildFinalOutput
+ * @param  {} outputFile
+ */
+function basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles, transcriptTypes) {
+
+    prompts.transcriptPrompt(self)
+    .then((answers) => {
+        var hasTranscript = false;
+        if (answers) {
+            hasTranscript = answers["hasTranscript"];
+            program["hasTranscript"] = hasTranscript;
+            if (hasTranscript) {
+                return prompts.transcriptTypePrompt(self, transcriptTypes);
+            }
+        } else {
+            self.log(`Not getting answers for hasTranscript prompt`);
+            callback();
+        } 
+    })
+    .then((answers) => {
+        var transcriptType = null;
+        if (answers) {
+            transcriptType = answers["transcriptType"];
+            program["transcriptType"] = transcriptType;
+            // Has LLA? 
+            return prompts.llaPrompt(self);
+        } else {
+            self.log(`Not getting answers for hasTranscript prompt`);
+            callback();
+        } 
+    })
     .then((answers) => {
         // Has OUS?
         return callbacks.promiseCallback(self, callback, program, answers, "hasLLA", prompts.ousPrompt);
@@ -152,5 +226,6 @@ function checklistAction(vorpal, self, callback, chalk, program, buildFinalOutpu
 module.exports = {
     completeGenerateAction,
     basicArticleAction,
+    testAndTeachAction,
     checklistAction
 }
