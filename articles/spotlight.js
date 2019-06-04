@@ -167,9 +167,9 @@ function checklistSpotlight(ticket, program) {
     // TITLE 
     checklist.title.result = prodticket.getTitle(ticket, program);
 
-    // SLIDES 
+    // SLIDES / TRANSCRIPT 
     checklist.slides.result = prodticket.getSlides(ticket, program);
-    
+
     // CONTRIBUTORS
     checklist.contributors.result = prodticket.getContributors(ticket, program);
 
