@@ -45,6 +45,14 @@ function getSlidesTOC (slidesComponents, program) {
     return articleUtils.buildSlidesTOC(slidesComponent, false, false, true);
 }
 
+function getVideoTOC (componentOrArticleID, program) {
+    return articleUtils.buildVideoEmbedTOC(componentOrArticleID);
+}
+
+function getTranscriptTOC (transcript, program) {
+    return articleUtils.buildTranscriptTOC(transcript, 'Transcript');
+}
+
 
 /* LLA PRE TOC   
 -------------------------------------- */
@@ -173,7 +181,7 @@ function checklistSpotlight(ticket, program) {
         if (program.transcriptType === config.transcriptTypes[0]) {
             checklist.slides.result = prodticket.getSlides(ticket, program);
         } else if (program.transcriptType === config.transcriptTypes[1]) {
-            checklist.slides.result = prodticket.getSlides(ticket, program);
+            checklist.transcript.result = prodticket.getArticleContent(ticket, program);
         }
     }
 
@@ -194,7 +202,8 @@ function buildSpotlight(ticket, program) {
     byline, 
     peerReviewer, 
     collectionPageInfo, 
-    slidesTOC, 
+    contentTOC,
+    transcriptTOC,  
     preAssessmentTOC, 
     postAssessmentTOC, 
     blankResultsTOC, 
@@ -233,7 +242,16 @@ function buildSpotlight(ticket, program) {
         blankResultsTOC = articleUtils.buildBlankTOC();
     }
 
-    slidesTOC = getSlidesTOC(checklistResult.properties.slides.result, program); 
+    if (checklistResult.properties.slides) {
+        contentTOC = getSlidesTOC(checklistResult.properties.slides.result, program); 
+        transcriptTOC = null;
+    } else if (checklistResult.properties.transcript) {
+        transcriptTOC = getTranscriptTOC(checklistResult.properties.transcript.result, program);
+        contentTOC = getVideoTOC(program.articleID, program);
+    } else {
+        contentTOC = getVideoTOC(componentOrArticleID, program);
+        transcriptTOC = null;
+    }
 
     var abbreviationsMarkup = (checklistResult.properties.abbreviations ? checklistResult.properties.abbreviations.result : "");
     abbreviationsTOC = articleUtils.buildAbbreviations(abbreviationsMarkup, program);
@@ -267,9 +285,12 @@ function buildSpotlight(ticket, program) {
           
     // Insert Main TOC Objects  
     finalArticle.insertTOCElement(preAssessmentTOC);
-    finalArticle.insertTOCElement(slidesTOC);
+    finalArticle.insertTOCElement(contentTOC);
     finalArticle.insertTOCElement(postAssessmentTOC);
     finalArticle.insertTOCElement(blankResultsTOC);
+    if (transcriptTOC) {
+        finalArticle.insertTOCElement(transcriptTOC);
+    }
     finalArticle.insertTOCElement(abbreviationsTOC);
     finalArticle.insertTOCElement(referencesTOC);
 
@@ -303,6 +324,7 @@ function buildSpotlight(ticket, program) {
 };
 
 module.exports = {
+    getTranscriptTOC,
     getSlidesTOC,
     getLLAPreTOC,
     getLLAPostTOC,

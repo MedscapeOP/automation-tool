@@ -105,7 +105,7 @@ function buildSlidesTOC(slidesComponent, videoEmbed=false, eduImpactSubsection=f
     return slidesTOC;
 }
 
-
+/* DONE */
 function buildEduImpactSubsection(
     articleType="SlidePresentation",
     statement=`<p>What did you learn from this activity? Please click on the "Next" button to proceed to a brief survey to see how your knowledge improved after the education. You can also see how your answers compare with those of your peers.</p>`
@@ -334,6 +334,39 @@ function buildContributorGroups(contributors) {
     }
     return contributorGroups;
 }
+
+function buildTranscriptTOC (transcript, label) {
+    var slideGroup = new SlideGroup("", "", true, false);
+    slideGroup.sectionImage = null;
+    slideGroup.sectionLabel = null;
+    slideGroup.sectionAltText = null;
+
+    var subsectionInstance = new SubsectionElement(true, false, false);
+
+    subsectionInstance.insertSlideGroup(slideGroup);
+    
+    var sectionInstance = new SectionElement();
+    sectionInstance.insertSubsectionElement(subsectionInstance);
+    sectionInstance.sectionHeader = label;
+
+    var tocInstance = new TOCElement("Sidebar");
+    tocInstance.insertSectionElement(sectionInstance);
+    tocInstance.tocLabel = label;
+    return tocInstance;
+}
+
+/* DONE */
+function buildVideoEmbedTOC(componentOrArticleID, eduImpactSubsection=false, isLastComponent=false) {
+
+/*
+- Params => componentOrArticleID, eduImpactSubsection=false, isLastComponent=false
+- if componentOrArticleID == string 
+    - subsection.subsectionContent = snippets.videoEmbed(null, componentOrArticleID)
+- else 
+    - subsection.subsectionContent = snippets.videoEmbed(componentOrArticleID)
+*/
+    return buildBlankTOC();
+}
  
 module.exports = {
     buildSection,
@@ -350,5 +383,7 @@ module.exports = {
     buildAbbreviations,
     buildTableOfContentsTOC,
     buildAudienceQATOC,
-    buildContributorGroups
+    buildContributorGroups,
+    buildTranscriptTOC,
+    buildVideoEmbedTOC
 };
