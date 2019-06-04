@@ -26,6 +26,7 @@ const articleUtils = require('./article-utils');
 const {ProfArticle, ProfActivity, TOCElement, SectionElement, SubsectionElement, SlideGroup, SpotlightChecklist} = require("../classes");
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
+const config = require('../config');
 
 
 /* SLIDES / MAIN CONTENT 
@@ -168,7 +169,13 @@ function checklistSpotlight(ticket, program) {
     checklist.title.result = prodticket.getTitle(ticket, program);
 
     // SLIDES / TRANSCRIPT 
-    checklist.slides.result = prodticket.getSlides(ticket, program);
+    if (program.hasTranscript) {
+        if (program.transcriptType === config.transcriptTypes[0]) {
+            checklist.slides.result = prodticket.getSlides(ticket, program);
+        } else if (program.transcriptType === config.transcriptTypes[1]) {
+            checklist.slides.result = prodticket.getSlides(ticket, program);
+        }
+    }
 
     // CONTRIBUTORS
     checklist.contributors.result = prodticket.getContributors(ticket, program);

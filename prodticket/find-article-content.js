@@ -3,6 +3,10 @@ const {stringOps, cleanHTML} = require('../utils');
 
 var exportObject = {};
 /* 
+ARTICLE CONTENT CAN BE EITHER A TRANSCRIPT OR MAINCONTENT 
+- Checklist should either store this information as "transcript" 
+  or as "mainContent"
+
 Base Statement: CB 
 <p>Upon completion of this activity, participants will be able to:</p>
 

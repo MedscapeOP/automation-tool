@@ -25,6 +25,7 @@ class TownHallEnduringChecklist extends ArticleChecklist {
         this.title = {result: null , printFn: printFunctions.printStringProp, printName: "TITLE"};
 
         // SPECIAL PRINT FUNCTIONS 
+        this.transcript = {result: null, printFn: printFunctions.printStringProp, printName: "TRANSCRIPT"};
         this.slides = {result: null , printFn: printFunctions.printSlides, printName: "SLIDES"}; 
         this.contributors = {result: null, printFn: printFunctions.printContributors, printName: "CONTRIBUTOR DISCLOSURES AND AFFILIATIONS"}; 
         this.cmeReviewers = {result: null, printFn: printFunctions.printContributors, printName: "CME REVIEWER DISCLOSURES"};     
