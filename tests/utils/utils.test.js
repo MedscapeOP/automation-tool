@@ -268,5 +268,16 @@ describe('Utility Functions', function () {
             expect(resultString).equalIgnoreSpaces(completeString);
         });
     });
+
+    describe('utils.cleanHTML.transcript()', function () {
+        var dirtyTranscript = fs.readFileSync(__dirname + './../prodticket/input/article-content-cc-transcript.html').toString();
+        var cleanString = fs.readFileSync(__dirname + '/input/clean-transcript.html').toString();
+
+        it('should clean and format transcript from HTML prodticket', function () {
+            var resultString = utils.cleanHTML.transcript(dirtyTranscript);
+            fs.writeFileSync(__dirname + '/output/clean-transcript.html', resultString);
+            // expect(resultString).to.equalIgnoreSpaces(cleanString);
+        });
+    });
 });
 

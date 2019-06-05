@@ -739,6 +739,11 @@ function tableCleanup(htmlString, removeFluff=false) {
     return clean;
 }
 
+function transcript(htmlString, removeFluff=false) {
+    return htmlString;
+}
+
+
 module.exports = {
     basicHTMLSanitize,
     removeTicketFluff,
@@ -763,5 +768,6 @@ module.exports = {
     removeEntities,
     insertEntityPlaceholders,
     cleanEntities,
-    tableCleanup
+    tableCleanup,
+    transcript
 }; 

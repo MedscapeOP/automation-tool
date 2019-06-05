@@ -22,6 +22,7 @@ describe('Prodticket Module Functions', function () {
     let prodticketTH_alt_2;
     let prodticketFail;
     let prodticketTT_902362;
+    let prodticketCCTranscript;
 
     beforeEach(function() {
         prodticketCB = fs.readFileSync(__dirname + '/input/prodticket-cb.html').toString();
@@ -991,10 +992,24 @@ describe('Prodticket Module Functions', function () {
     describe("prodticket.getArticleContent()", function () {
         var articleContentTT = fs.readFileSync(__dirname + '/input/article-content-tt.html').toString();
 
+        var articleContentCCTranscript = fs.readFileSync(__dirname + '/input/article-content-cc-transcript.html').toString();
+
+        prodticketCCTranscript = fs.readFileSync(__dirname + '/input/prodticket-cc-transcript.html').toString();
+
         it("should return article content from the prodticket .html - Test and Teach", function () {
             var result = prodticket.getArticleContent(prodticketTT_902362, config.programs.testAndTeach);
             // fs.writeFileSync(__dirname + '/output/article-content-tt.html', result);
             expect(result).to.equalIgnoreSpaces(articleContentTT);
+        });
+
+        it('should return transcript/content from prodticket .html - Curbside', function () {
+            config.programs.curbsideConsult.transcriptType = config.transcriptTypes[1];
+            var result = prodticket.getArticleContent(prodticketCCTranscript, config.programs.curbsideConsult);
+            
+            // Reset program settings
+            config.programs.curbsideConsult.transcriptType = config.transcriptTypes[0];
+
+            expect(result).to.equalIgnoreSpaces(articleContentCCTranscript);
         });
     });
 

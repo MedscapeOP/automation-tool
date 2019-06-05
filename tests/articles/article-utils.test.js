@@ -44,6 +44,8 @@ describe('Article Utilities', function () {
     var completeAbbreviations;
     var completeTableOfContents;
     var completeAudienceQA; 
+    var completeTranscriptTOC;
+    var completeVideoEmbedTOC;
     
     beforeEach(function() {});
 
@@ -191,15 +193,47 @@ describe('Article Utilities', function () {
     });
 
     describe('buildContributorGroups()', function () {
-        var cmeReviewers = require('../prodticket/input/cme-reviewers-cc');
-        var contributorGroups = articleUtils.buildContributorGroups(cmeReviewers);
-        var result = "";
-        for (var i = 0; i < contributorGroups.length; i++) {
-            result = result + utils.xmlOps.objectToXMLString(contributorGroups[i].toObjectLiteral()) + "\n\n";
-        }
-        
-        // console.log("BUILD CONTRIBUTORS RESULT: ", result);
-        expect(result).to.equalIgnoreSpaces(completeContributorGroups);
+        it('should build contributor groups', function () {
+            var cmeReviewers = require('../prodticket/input/cme-reviewers-cc');
+            var contributorGroups = articleUtils.buildContributorGroups(cmeReviewers);
+            var result = "";
+            for (var i = 0; i < contributorGroups.length; i++) {
+                result = result + utils.xmlOps.objectToXMLString(contributorGroups[i].toObjectLiteral()) + "\n\n";
+            }
+            
+            // console.log("BUILD CONTRIBUTORS RESULT: ", result);
+            expect(result).to.equalIgnoreSpaces(completeContributorGroups);
+        });
     });
+
+    describe('buildTranscriptTOC()', function () {
+        it('should build the transcript TOC as a sidebar', function () {
+            completeTranscriptTOC = fs.readFileSync(__dirname + '/input/article-utils/transcript-toc.xml').toString();
+
+            var transcript = fs.readFileSync(__dirname + './../utils/input/clean-transcript.html').toString();
+
+            var result = articleUtils.buildTranscriptTOC(transcript, "Activity Transcript").toObjectLiteral();
+
+            result = utils.xmlOps.objectToXMLString(result);
+    
+            // fs.writeFileSync(__dirname + '/output/article-utils/finished-transcript-toc.xml', result);
+            expect(result).to.equalIgnoreSpaces(completeTranscriptTOC);
+        });
+    });
+
+    describe('buildVideoEmbedTOC()', function () {
+        it('should build TOC with video embed code', function () {
+            completeVideoEmbedTOC = fs.readFileSync(__dirname + '/input/article-utils/video-embed-toc.xml').toString();
+
+            var articleID = "901602";
+
+            var result = articleUtils.buildVideoEmbedTOC(articleID, true, true).toObjectLiteral();
+
+            result = utils.xmlOps.objectToXMLString(result);
+    
+            // fs.writeFileSync(__dirname + '/output/article-utils/finished-video-embed-toc.xml', result);
+            expect(result).to.equalIgnoreSpaces(completeVideoEmbedTOC);
+        });
+    });    
 });
 

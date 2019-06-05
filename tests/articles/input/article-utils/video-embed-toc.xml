@@ -1,0 +1,28 @@
+<toc_element>
+    <toc_label/>
+    <toc_type>Default</toc_type>
+    <sec_element>
+        <sec_header/>
+        <subsec_element>
+            <subsec_header/>
+            <slide_intro>
+                <div class="app-loading">
+                    <div class="webcomp-player" data-config="en/pi/editorial/studio/configs/2019/education/901602/901602.json" data-playertype="edu" id="cme-video-player">&#160;</div>
+                </div>
+                <div id="page_nav_top">
+                    <div id="prev_page_nav">
+                        <a href="901602">« Back </a>
+                    </div>
+                    <div id="next_page_nav">
+                        <a href="901602_3">Next»</a>
+                        <a href="javascript:next_toc();" id="next_toc_link" style="height: 17px;">
+                            <img alt="" border="0" class="inline_img" src="http://img.medscape.com/pi/cme/ornaments/arrow-next-toc.png"/>
+                        </a>
+                    </div>
+                    <div class="spacer">&#160;</div>
+                </div>
+            </slide_intro>
+        </subsec_element>
+    </sec_element>
+    <pg_footnotes/>
+</toc_element>
