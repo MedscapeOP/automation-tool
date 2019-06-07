@@ -1061,6 +1061,13 @@ const collectionPages = [
         "url": "https://www.medscape.org/sites/advances/obesity-treatment"
     },
     {
+        "title": "Personalized Care in Obstructive Airways Disease",
+        "fileName": "obstructive-airways",
+        "bannerFileName": "banner-obstructive-airways-2019.jpg",
+        "type": "Clinical Advances",
+        "url": "https://www.medscape.org/sites/advances/obstructive-airways"
+    },
+    {
         "title": "Emerging Practice Patterns in Clinical Oncology",
         "fileName": "oncology-practice-patterns",
         "bannerFileName": "banner-oncology-practice-patterns-2017.jpg",

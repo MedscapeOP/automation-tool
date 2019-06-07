@@ -254,7 +254,7 @@ function getContentBlockComponents (contentBlockObject, program) {
         objects: _.sortBy(_.flatten(components), [function(o) { return o.startIndex; }]),
         qnaNumber: contentBlockObject.qnaNumber
     };    
-    console.log("CONTENT BLOCK COMPONENTS: \n\n", result);
+    // console.log("CONTENT BLOCK COMPONENTS: \n\n", result);
     return result;
 }
 
