@@ -119,23 +119,24 @@ function basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOu
     .then((answers) => {
         var hasTranscript = false;
         if (answers) {
-            hasTranscript = answers["hasTranscript"];
+            hasTranscript = answers["hasTranscript"];            
             program["hasTranscript"] = hasTranscript;
             if (hasTranscript) {
-                return prompts.transcriptTypePrompt(self, transcriptTypes);
+                return prompts.transcriptTypePrompt(self, transcriptTypes).then((answers) => {
+                    var transcriptType = null;
+                    if (answers) {
+                        transcriptType = answers["transcriptType"];
+                        program["transcriptType"] = transcriptType;
+                        // Has LLA? 
+                        return prompts.llaPrompt(self);
+                    } else {
+                        self.log(`Not getting answers for hasTranscript prompt`);
+                        callback();
+                    } 
+                });
+            } else {
+                return prompts.llaPrompt(self); 
             }
-        } else {
-            self.log(`Not getting answers for hasTranscript prompt`);
-            callback();
-        } 
-    })
-    .then((answers) => {
-        var transcriptType = null;
-        if (answers) {
-            transcriptType = answers["transcriptType"];
-            program["transcriptType"] = transcriptType;
-            // Has LLA? 
-            return prompts.llaPrompt(self);
         } else {
             self.log(`Not getting answers for hasTranscript prompt`);
             callback();

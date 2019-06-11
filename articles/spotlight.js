@@ -249,7 +249,7 @@ function buildSpotlight(ticket, program) {
         transcriptTOC = getTranscriptTOC(checklistResult.properties.transcript.result, program);
         contentTOC = getVideoTOC(program.articleID, program);
     } else {
-        contentTOC = getVideoTOC(componentOrArticleID, program);
+        contentTOC = getVideoTOC(program.articleID, program);
         transcriptTOC = null;
     }
 
