@@ -11,6 +11,14 @@
                 </div>
             </slide_intro>
         </subsec_element>
+        <subsec_element>
+            <subsec_header>
+                <p>Educational Impact Challenge</p>
+            </subsec_header>
+            <slide_intro>
+                <p>What did you learn from this activity? Please click on the "Next" button to proceed to a brief survey to see how your knowledge improved after the education. You can also see how your answers compare with those of your peers.</p>
+            </slide_intro>
+        </subsec_element>
     </sec_element>
     <pg_footnotes/>
 </toc_element>

@@ -227,9 +227,21 @@ describe('Article Utilities', function () {
 
             var articleID = "901602";
 
-            var result = articleUtils.buildVideoEmbedTOC(articleID, true, true).toObjectLiteral();
+            var result = articleUtils.buildVideoEmbedTOC(articleID, false).toObjectLiteral();
 
-            result = utils.xmlOps.objectToXMLString(result);
+            result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
+    
+            // fs.writeFileSync(__dirname + '/output/article-utils/finished-video-embed-toc.xml', result);
+            expect(result).to.equalIgnoreSpaces(completeVideoEmbedTOC);
+        });
+        it('should build TOC with video embed code and EDU impact challenge', function () {
+            completeVideoEmbedTOC = fs.readFileSync(__dirname + '/input/article-utils/video-embed-toc-lla.xml').toString();
+
+            var articleID = "901602";
+
+            var result = articleUtils.buildVideoEmbedTOC(articleID, true).toObjectLiteral();
+
+            result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
     
             // fs.writeFileSync(__dirname + '/output/article-utils/finished-video-embed-toc.xml', result);
             expect(result).to.equalIgnoreSpaces(completeVideoEmbedTOC);

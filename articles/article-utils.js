@@ -335,15 +335,17 @@ function buildContributorGroups(contributors) {
     return contributorGroups;
 }
 
-function buildTranscriptTOC (transcript, label) {
-    var slideGroup = new SlideGroup("", "", true, false);
-    slideGroup.sectionImage = null;
-    slideGroup.sectionLabel = null;
-    slideGroup.sectionAltText = null;
+/**
+ * Function that cleans transcript HTML and builds the sidebar TOC 
+ * @param {*} transcript 
+ * @param {*} label: Text used as sidebar label  
+ */
+function buildTranscriptTOC (transcript, label = "Activity Transcript") {
+    var cleanTranscript = utils.cleanHTML.transcript(transcript);
 
-    var subsectionInstance = new SubsectionElement(true, false, false);
+    var subsectionInstance = new SubsectionElement(false, false, false);
 
-    subsectionInstance.insertSlideGroup(slideGroup);
+    subsectionInstance.subsectionContent = cleanTranscript;
     
     var sectionInstance = new SectionElement();
     sectionInstance.insertSubsectionElement(subsectionInstance);
@@ -356,7 +358,7 @@ function buildTranscriptTOC (transcript, label) {
 }
 
 /* DONE */
-function buildVideoEmbedTOC(componentOrArticleID, eduImpactSubsection=false, isLastComponent=false) {
+function buildVideoEmbedTOC(componentOrArticleID, hasEduImpactSubsection=false) {
 
 /*
 - Params => componentOrArticleID, eduImpactSubsection=false, isLastComponent=false
@@ -365,7 +367,20 @@ function buildVideoEmbedTOC(componentOrArticleID, eduImpactSubsection=false, isL
 - else 
     - subsection.subsectionContent = snippets.videoEmbed(componentOrArticleID)
 */
-    return buildBlankTOC();
+    var subsection = new SubsectionElement(true, false, false);
+    var section = new SectionElement(false, false);
+    var tocElement = new TOCElement();
+    if (typeof componentOrArticleID == 'string') {
+        subsection.subsectionContent = utils.wrapSlideIntro(snippets.videoEmbed(null, componentOrArticleID));
+    } else {
+        subsection.subsectionContent = utils.wrapSlideIntro(snippets.videoEmbed(componentOrArticleID));
+    }
+    section.insertSubsectionElement(subsection);
+    if (hasEduImpactSubsection) {
+        section.insertSubsectionElement(buildEduImpactSubsection());
+    }
+    tocElement.insertSectionElement(section);
+    return tocElement;
 }
  
 module.exports = {
