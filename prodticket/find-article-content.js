@@ -30,7 +30,22 @@ exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
 
 // Spotlight
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
-    return '';
+    var startRegExp = stringOps.getNextRegex(ticketHTML, contentRegexArray);
+    var endRegExp = stringOps.getNextRegex(ticketHTML, endContentRegexArray);    
+
+    if (endRegExp != -1 && startRegExp != -1) {
+        startRegExp = startRegExp.symbol;
+        endRegExp = endRegExp.symbol;
+        var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, false, true);
+
+        if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+            throw new Error("No content section found in the prodticket");
+        } else {
+            return textBlock;
+        }
+    } else {
+        throw new Error("No content section found in the prodticket");
+    }
 };
 
 // Curbside 

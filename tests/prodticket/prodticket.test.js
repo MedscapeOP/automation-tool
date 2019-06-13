@@ -23,6 +23,7 @@ describe('Prodticket Module Functions', function () {
     let prodticketFail;
     let prodticketTT_902362;
     let prodticketCCTranscript;
+    let prodticketFRTranscript;
 
     beforeEach(function() {
         prodticketCB = fs.readFileSync(__dirname + '/input/prodticket-cb.html').toString();
@@ -994,7 +995,11 @@ describe('Prodticket Module Functions', function () {
 
         var articleContentCCTranscript = fs.readFileSync(__dirname + '/input/article-content-cc-transcript.html').toString();
 
+        var articleContentFRTranscript = fs.readFileSync(__dirname + '/input/article-content-fr-transcript.html').toString();
+
         prodticketCCTranscript = fs.readFileSync(__dirname + '/input/prodticket-cc-transcript.html').toString();
+
+        prodticketFRTranscript = fs.readFileSync(__dirname + '/input/prodticket-fr-transcript.html').toString();
 
         it("should return article content from the prodticket .html - Test and Teach", function () {
             var result = prodticket.getArticleContent(prodticketTT_902362, config.programs.testAndTeach);
@@ -1010,6 +1015,16 @@ describe('Prodticket Module Functions', function () {
             config.programs.curbsideConsult.transcriptType = config.transcriptTypes[0];
 
             expect(result).to.equalIgnoreSpaces(articleContentCCTranscript);
+        });
+
+        xit('should return transcript/content from prodticket .html - First Response', function () {
+            config.programs.firstResponse.transcriptType = config.transcriptTypes[1];
+            var result = prodticket.getArticleContent(prodticketFRTranscript, config.programs.firstResponse);
+            
+            // Reset program settings
+            config.programs.firstResponse.transcriptType = config.transcriptTypes[0];
+
+            expect(result).to.equalIgnoreSpaces(articleContentFRTranscript);
         });
     });
 
