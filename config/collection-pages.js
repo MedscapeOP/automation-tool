@@ -1528,7 +1528,14 @@ const collectionPages = [
         "bannerFileName": null,
         "type": "Clinical Advances",
         "url": "https://www.medscape.org/sites/advances/weekly-glp1-agonists"
-    }
+    },
+    {
+        "title": "Advances in Spinal Muscular Atrophy",
+        "fileName": "34983",
+        "bannerFileName": "34983-collection-header.jpg",
+        "type": "Collection Page",
+        "url": "https://www.medscape.org/viewcollection/34983"
+    }    
 ];
 
 
