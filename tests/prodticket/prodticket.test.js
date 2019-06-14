@@ -25,6 +25,7 @@ describe('Prodticket Module Functions', function () {
     let prodticketCCTranscript;
     let prodticketFRTranscript;
     let prodticketSLTranscript;
+    let prodticketTHTranscript;
 
     beforeEach(function() {
         prodticketCB = fs.readFileSync(__dirname + '/input/prodticket-cb.html').toString();
@@ -1000,11 +1001,15 @@ describe('Prodticket Module Functions', function () {
 
         var articleContentSLTranscript = fs.readFileSync(__dirname + '/input/article-content-sl-transcript.html').toString();
 
+        var articleContentTHTranscript = fs.readFileSync(__dirname + '/input/article-content-th-transcript.html').toString();
+
         prodticketCCTranscript = fs.readFileSync(__dirname + '/input/prodticket-cc-transcript-lla.html').toString();
 
         prodticketFRTranscript = fs.readFileSync(__dirname + '/input/prodticket-fr-transcript-lla.html').toString();
 
         prodticketSLTranscript = fs.readFileSync(__dirname + '/input/prodticket-sl-transcript.html').toString();
+
+        prodticketTHTranscript = fs.readFileSync(__dirname + '/input/prodticket-th-transcript.html').toString(); 
 
         it("should return article content from the prodticket .html - Test and Teach", function () {
             var result = prodticket.getArticleContent(prodticketTT_902362, config.programs.testAndTeach);
@@ -1041,6 +1046,17 @@ describe('Prodticket Module Functions', function () {
 
             // fs.writeFileSync(__dirname + '/output/article-content-sl.html', result);
             expect(result).to.equalIgnoreSpaces(articleContentSLTranscript);
+        });
+
+        it('should return transcript/content from prodticket .html - TownHall', function () {
+            config.programs.townHall.transcriptType = config.transcriptTypes[1];
+            var result = prodticket.getArticleContent(prodticketTHTranscript, config.programs.townHall);
+            
+            // Reset program settings
+            config.programs.townHall.transcriptType = config.transcriptTypes[0];
+
+            // fs.writeFileSync(__dirname + '/output/article-content-th.html', result);
+            expect(result).to.equalIgnoreSpaces(articleContentTHTranscript);
         });
     });
 

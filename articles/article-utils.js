@@ -343,9 +343,9 @@ function buildContributorGroups(contributors) {
 function buildTranscriptTOC (transcript, label = "Activity Transcript") {
     var cleanTranscript = utils.cleanHTML.transcript(transcript);
 
-    var subsectionInstance = new SubsectionElement(false, false, false);
+    var subsectionInstance = new SubsectionElement(true, false, false);
 
-    subsectionInstance.subsectionContent = cleanTranscript;
+    subsectionInstance.subsectionContent = utils.wrapSubsectionContent(cleanTranscript);
     
     var sectionInstance = new SectionElement();
     sectionInstance.insertSubsectionElement(subsectionInstance);

@@ -50,7 +50,7 @@ function getVideoTOC (componentOrArticleID, program) {
 }
 
 function getTranscriptTOC (transcript, program) {
-    return articleUtils.buildTranscriptTOC(transcript, 'Transcript');
+    return articleUtils.buildTranscriptTOC(transcript);
 }
 
 

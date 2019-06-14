@@ -85,7 +85,7 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
 
 // Town Hall 
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
-    return '';
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
 };
 
 
