@@ -210,7 +210,7 @@ describe('Article Utilities', function () {
         it('should build the transcript TOC as a sidebar', function () {
             completeTranscriptTOC = fs.readFileSync(__dirname + '/input/article-utils/transcript-toc.xml').toString();
 
-            var transcript = fs.readFileSync(__dirname + './../utils/input/clean-transcript.html').toString();
+            var transcript = fs.readFileSync(__dirname + './../utils/input/clean-transcript-cc.html').toString();
 
             var result = articleUtils.buildTranscriptTOC(transcript, "Activity Transcript").toObjectLiteral();
 
