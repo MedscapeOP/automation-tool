@@ -750,11 +750,13 @@ function transcript(htmlString, removeFluff=false) {
 
     var endTranscriptRegexArray = [
         /.*<em>Mandatory Insertion after Main.*/gi,
-        /.*<em>This transcript has been edited for style and clarity.<\/em>.*/gi
+        /.*<em>This transcript has been edited for style and clarity.*/gi
     ];
 
     var endRegexObject = stringOps.getNextRegex(clean, endTranscriptRegexArray);
     clean = clean.substring(0, endRegexObject.index);
+
+    console.log(endRegexObject);
 
     var startTranscriptRegexArray = [
         /.*(?:&lt;){1,}Insert pre-assessment.*(?:&gt;){1,}/gi,
