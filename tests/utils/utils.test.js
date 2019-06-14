@@ -270,14 +270,34 @@ describe('Utility Functions', function () {
     });
 
     describe('utils.cleanHTML.transcript()', function () {
-        var dirtyTranscript = fs.readFileSync(__dirname + './../prodticket/input/article-content-cc-transcript.html').toString();
-        var cleanString = fs.readFileSync(__dirname + '/input/clean-transcript.html').toString();
+        var dirtyTranscriptCCLLA = fs.readFileSync(__dirname + './../prodticket/input/article-content-cc-transcript-lla.html').toString();
+        var dirtyTranscriptFRLLA = fs.readFileSync(__dirname + './../prodticket/input/article-content-fr-transcript-lla.html').toString();
+        var dirtyTranscriptSL = fs.readFileSync(__dirname + './../prodticket/input/article-content-sl-transcript.html').toString();
 
-        it('should clean and format transcript from HTML prodticket', function () {
-            var resultString = utils.cleanHTML.transcript(dirtyTranscript);
-            fs.writeFileSync(__dirname + '/output/clean-transcript.html', resultString);
-            // expect(resultString).to.equalIgnoreSpaces(cleanString);
+        var cleanStringCC = fs.readFileSync(__dirname + '/input/clean-transcript-cc.html').toString();
+        var cleanStringFR = fs.readFileSync(__dirname + '/input/clean-transcript-fr.html').toString();
+        var cleanStringSL = fs.readFileSync(__dirname + '/input/clean-transcript-sl.html').toString();
+
+        it('should clean and format transcript from HTML prodticket - Curbside LLA', function () {
+            var resultString = utils.cleanHTML.transcript(dirtyTranscriptCCLLA);
+            fs.writeFileSync(__dirname + '/output/clean-transcript-cc.html', resultString);
+            // expect(resultString).to.equalIgnoreSpaces(cleanStringCC);
         });
+
+
+        it('should clean and format transcript from HTML prodticket - FR LLA', function () {
+            var resultString = utils.cleanHTML.transcript(dirtyTranscriptFRLLA);
+            fs.writeFileSync(__dirname + '/output/clean-transcript-fr.html', resultString);
+            // expect(resultString).to.equalIgnoreSpaces(cleanStringFR);
+        });
+
+        it('should clean and format transcript from HTML prodticket - Spotlight', function () {
+            var resultString = utils.cleanHTML.transcript(dirtyTranscriptSL);
+            fs.writeFileSync(__dirname + '/output/clean-transcript-sl.html', resultString);
+            // expect(resultString).to.equalIgnoreSpaces(cleanStringFR);
+        });
+
+
     });
 });
 

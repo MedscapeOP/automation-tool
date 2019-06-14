@@ -744,7 +744,41 @@ function tableCleanup(htmlString, removeFluff=false) {
 }
 
 function transcript(htmlString, removeFluff=false) {
-    return htmlString;
+    var clean = htmlString.slice();
+
+    clean = clean.replace(/.*<strong>Content.*/g, "");
+
+    var endTranscriptRegexArray = [
+        /.*<em>Mandatory Insertion after Main.*/gi,
+        /.*<em>This transcript has been edited for style and clarity.<\/em>.*/gi
+    ];
+
+    var endRegexObject = stringOps.getNextRegex(clean, endTranscriptRegexArray);
+    clean = clean.substring(0, endRegexObject.index);
+
+    var startTranscriptRegexArray = [
+        /.*(?:&lt;){1,}Insert pre-assessment.*(?:&gt;){1,}/gi,
+        /.*(?:&lt;){1,}level 1(?:&gt;){1,}\s+Educational Impact Challenge.*/gi
+    ];
+
+    var matches = stringOps.getAllMatchesInOrder(clean, startTranscriptRegexArray);
+    if (matches.length > 0) {
+        var lastStartMatch = matches[matches.length - 1];
+        clean = clean.substring(lastStartMatch.index + lastStartMatch.matchLength);
+    }
+
+    var options = {
+        allowedTags: [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' , 'table', 'th', 'td', 'blockquote', 'p', 'br'],
+        allowedTags: false,
+        allowedAttributes: false,
+        exclusiveFilter: function(frame) {
+            // return frame.tag === 'a' && !frame.text.trim();
+            return !frame.text.trim();
+        }
+    }
+    clean = sanitizeHtml(clean, options);
+
+    return clean;
 }
 
 

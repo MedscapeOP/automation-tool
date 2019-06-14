@@ -24,6 +24,7 @@ describe('Prodticket Module Functions', function () {
     let prodticketTT_902362;
     let prodticketCCTranscript;
     let prodticketFRTranscript;
+    let prodticketSLTranscript;
 
     beforeEach(function() {
         prodticketCB = fs.readFileSync(__dirname + '/input/prodticket-cb.html').toString();
@@ -993,13 +994,17 @@ describe('Prodticket Module Functions', function () {
     describe("prodticket.getArticleContent()", function () {
         var articleContentTT = fs.readFileSync(__dirname + '/input/article-content-tt.html').toString();
 
-        var articleContentCCTranscript = fs.readFileSync(__dirname + '/input/article-content-cc-transcript.html').toString();
+        var articleContentCCTranscript = fs.readFileSync(__dirname + '/input/article-content-cc-transcript-lla.html').toString();
 
-        var articleContentFRTranscript = fs.readFileSync(__dirname + '/input/article-content-fr-transcript.html').toString();
+        var articleContentFRTranscript = fs.readFileSync(__dirname + '/input/article-content-fr-transcript-lla.html').toString();
 
-        prodticketCCTranscript = fs.readFileSync(__dirname + '/input/prodticket-cc-transcript.html').toString();
+        var articleContentSLTranscript = fs.readFileSync(__dirname + '/input/article-content-sl-transcript.html').toString();
 
-        prodticketFRTranscript = fs.readFileSync(__dirname + '/input/prodticket-fr-transcript.html').toString();
+        prodticketCCTranscript = fs.readFileSync(__dirname + '/input/prodticket-cc-transcript-lla.html').toString();
+
+        prodticketFRTranscript = fs.readFileSync(__dirname + '/input/prodticket-fr-transcript-lla.html').toString();
+
+        prodticketSLTranscript = fs.readFileSync(__dirname + '/input/prodticket-sl-transcript.html').toString();
 
         it("should return article content from the prodticket .html - Test and Teach", function () {
             var result = prodticket.getArticleContent(prodticketTT_902362, config.programs.testAndTeach);
@@ -1024,9 +1029,18 @@ describe('Prodticket Module Functions', function () {
             // Reset program settings
             config.programs.firstResponse.transcriptType = config.transcriptTypes[0];
 
-            // console.log("RESULT: ", result);
-
             expect(result).to.equalIgnoreSpaces(articleContentFRTranscript);
+        });
+
+        it('should return transcript/content from prodticket .html - Spotlight', function () {
+            config.programs.spotlight.transcriptType = config.transcriptTypes[1];
+            var result = prodticket.getArticleContent(prodticketSLTranscript, config.programs.spotlight);
+            
+            // Reset program settings
+            config.programs.spotlight.transcriptType = config.transcriptTypes[0];
+
+            // fs.writeFileSync(__dirname + '/output/article-content-sl.html', result);
+            expect(result).to.equalIgnoreSpaces(articleContentSLTranscript);
         });
     });
 
