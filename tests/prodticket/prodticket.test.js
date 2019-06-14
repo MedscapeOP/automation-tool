@@ -1017,12 +1017,14 @@ describe('Prodticket Module Functions', function () {
             expect(result).to.equalIgnoreSpaces(articleContentCCTranscript);
         });
 
-        xit('should return transcript/content from prodticket .html - First Response', function () {
+        it('should return transcript/content from prodticket .html - First Response', function () {
             config.programs.firstResponse.transcriptType = config.transcriptTypes[1];
             var result = prodticket.getArticleContent(prodticketFRTranscript, config.programs.firstResponse);
             
             // Reset program settings
             config.programs.firstResponse.transcriptType = config.transcriptTypes[0];
+
+            // console.log("RESULT: ", result);
 
             expect(result).to.equalIgnoreSpaces(articleContentFRTranscript);
         });

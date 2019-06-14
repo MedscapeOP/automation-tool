@@ -23,6 +23,7 @@ var endContentRegexArray = [
     /<strong>Abbreviations/g
 ];
 
+
 // Clinical Brief
 exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
     return '';
@@ -61,7 +62,25 @@ exportObject[config.programs.videoLecture.codeName] = function (ticketHTML) {
 
 // First Response
 exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
-    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+    var componentTextBlock = stringOps.getTextBlock(ticketHTML, /.*<strong>Product-Specific Information.*/g, /.*<strong>Learning Objectives and KMI Map.*/g);
+    var ticketSubstring = ticketHTML.substring(0, componentTextBlock.startIndex) + ticketHTML.substring(componentTextBlock.endIndex);
+
+    var startRegExp = stringOps.getNextRegex(ticketSubstring, contentRegexArray);
+    var endRegExp = stringOps.getNextRegex(ticketSubstring, endContentRegexArray);    
+
+    if (endRegExp != -1 && startRegExp != -1) {
+        startRegExp = startRegExp.symbol;
+        endRegExp = endRegExp.symbol;
+        var {textBlock} = stringOps.getTextBlock(ticketSubstring, startRegExp, endRegExp, false, true);
+
+        if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+            throw new Error("No content section found in the prodticket");
+        } else {
+            return textBlock;
+        }
+    } else {
+        throw new Error("No content section found in the prodticket");
+    }
 }
 
 // Town Hall 
@@ -69,11 +88,20 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     return '';
 };
 
+
+var contentRegexArrayTT = [
+    /<strong>Content.*/g,
+    /<p>The following cases.*/g    
+];
+
+var endContentRegexArrayTT = [
+    /<strong>Abbreviations/g
+];
 // Test and Teach  
 exportObject[config.programs.testAndTeach.codeName] = function (ticketHTML) {
 
-    var startRegExp = stringOps.getNextRegex(ticketHTML, contentRegexArray);
-    var endRegExp = stringOps.getNextRegex(ticketHTML, endContentRegexArray);    
+    var startRegExp = stringOps.getNextRegex(ticketHTML, contentRegexArrayTT);
+    var endRegExp = stringOps.getNextRegex(ticketHTML, endContentRegexArrayTT);    
 
     if (endRegExp != -1 && startRegExp != -1) {
         startRegExp = startRegExp.symbol;

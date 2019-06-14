@@ -90,8 +90,8 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML, pro
     // console.log("CLEAN TICKET", ticketHTML);
     var startSlideRegExp = stringOps.getUsableRegExp(ticketHTML, startSlideMatches);
     var endSlideRegExp = stringOps.getUsableRegExp(ticketHTML, endSlideMatches);
-    console.log("START REGEXP: ", startSlideRegExp);
-    console.log("END REGEXP: ", endSlideRegExp);
+    // console.log("START REGEXP: ", startSlideRegExp);
+    // console.log("END REGEXP: ", endSlideRegExp);
     if (!startSlideRegExp || !endSlideRegExp) {
         throw new Error("No slides found in the prodticket");
     } else {
