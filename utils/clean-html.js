@@ -767,6 +767,8 @@ function transcript(htmlString, removeFluff=false) {
         clean = clean.substring(lastStartMatch.index + lastStartMatch.matchLength);
     }
 
+    clean = insertEntityPlaceholders(clean);
+
     var options = {
         allowedTags: [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' , 'table', 'th', 'td', 'blockquote', 'p', 'br'],
         allowedTags: false,
@@ -778,7 +780,7 @@ function transcript(htmlString, removeFluff=false) {
     }
     clean = sanitizeHtml(clean, options);
 
-    return clean;
+    return cleanEntities(clean);
 }
 
 
