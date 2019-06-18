@@ -37,6 +37,25 @@ function getSlidesTOCs (slidesComponents, program) {
     return slideTOCs;
 }
 
+function getVideoTOCs (components, program) {
+    var videoTOCs = [];
+
+    var hasEduImpact = program.hasLLA;
+
+    for (var i = 0; i < components.length; i++) {
+        if (i == components.length - 1) {
+            videoTOCs.push(articleUtils.buildVideoEmbedTOC(components[i], hasEduImpact));
+        } else {
+            videoTOCs.push(articleUtils.buildVideoEmbedTOC(components[i], false));
+        }
+    }
+    return videoTOCs;
+}
+
+function getTranscriptTOC (transcript, program) {
+    return articleUtils.buildTranscriptTOC(transcript);
+}
+
 
 /* LLA PRE TOC   
 -------------------------------------- */
