@@ -261,12 +261,16 @@ function buildTableOfContentsTOC(componentsArray, program) {
 } 
 
 /* DONE */
-function buildAudienceQATOC(slidesComponent) {
+function buildAudienceQATOC(slidesComponent, articleID="XXXXXX") {
     // - It just has an extra Sidebar, Audience Q&A where you need to embed video code video code is provided in media info in custom forms
     // - Use a normal LLA-style video embed. 
    // BUILD: Main TOC Element 
 
-   var newSlidesComponent = new SlideComponent(slidesComponent.articleID, 2, "").toObjectLiteral();
+   if (slidesComponent) {
+       var newSlidesComponent = new SlideComponent(slidesComponent.articleID, 2, "").toObjectLiteral();
+   } else {
+        var newSlidesComponent = new SlideComponent(articleID, 2, "").toObjectLiteral();
+   }
 
    // BUILD: Main TOC 
    var audienceQATOC = new TOCElement("Sidebar");

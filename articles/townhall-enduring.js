@@ -4,6 +4,7 @@ const articleUtils = require('./article-utils');
 const {ProfArticle, ProfActivity, TOCElement, SectionElement, SubsectionElement, SlideGroup, TownHallEnduringChecklist} = require("../classes");
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
+const config = require('../config');
 
 
 /* SLIDES / MAIN CONTENT 
@@ -24,6 +25,17 @@ function getSlidesTOC (slidesComponents, program) {
         slidesTOC: articleUtils.buildSlidesTOC(slidesComponent, false, false, true),
         audienceQATOC: articleUtils.buildAudienceQATOC(slidesComponent)
     }
+}
+
+function getVideoTOC (componentOrArticleID, program) {
+    return {
+        videoTOC: articleUtils.buildVideoEmbedTOC(componentOrArticleID),
+        audienceQATOC: articleUtils.buildAudienceQATOC(null, program.articleID)
+    }
+}
+
+function getTranscriptTOC (transcript, program) {
+    return articleUtils.buildTranscriptTOC(transcript);
 }
 
 
@@ -127,8 +139,15 @@ function checklistTownHallEnduring(ticket, program) {
     // TITLE 
     checklist.title.result = prodticket.getTitle(ticket, program);
     
-    // SLIDES 
-    checklist.slides.result = prodticket.getSlides(ticket, program);
+    // SLIDES / TRANSCRIPT  
+    if (program.hasTranscript) {
+        if (program.transcriptType === config.transcriptTypes[0]) {
+            checklist.slides.result = prodticket.getSlides(ticket, program);
+        } else if (program.transcriptType === config.transcriptTypes[1]) {
+            checklist.transcript.result = prodticket.getArticleContent(ticket, program);
+        }
+    }
+
  
     // CONTRIBUTORS
     checklist.contributors.result = prodticket.getContributors(ticket, program);
@@ -149,7 +168,8 @@ function buildTownHallEnduring(ticket, program) {
     byline, 
     peerReviewer, 
     collectionPageInfo, 
-    slidesTOC, 
+    contentTOC,
+    transcriptTOC,
     preAssessmentTOC, 
     postAssessmentTOC, 
     blankResultsTOC, 
@@ -183,9 +203,34 @@ function buildTownHallEnduring(ticket, program) {
         blankResultsTOC = articleUtils.buildBlankTOC();
     }
 
-    var tocs = getSlidesTOC(checklistResult.properties.slides.result, program);
-    slidesTOC = tocs.slidesTOC;
-    audienceQATOC = tocs.audienceQATOC; 
+    var tocs = null; 
+    if (checklistResult.properties.slides) {
+        // Put SlidesTOC (which includes video) As Content
+        // Also build AudienceQA
+        // No Transcript Sidebar
+        tocs = getSlidesTOC(checklistResult.properties.slides.result, program);
+        // slidesTOC = tocs.slidesTOC;
+        contentTOC = tocs.slidesTOC; 
+        audienceQATOC = tocs.audienceQATOC; 
+        transcriptTOC = null;
+    } else if (checklistResult.properties.transcript) {
+        // Put VideoTOC As Content
+        // Also build AudienceQA
+        // Also build Transcript Sidebar
+        tocs = getVideoTOC(program.articleID, program);
+        contentTOC = tocs.videoTOC;  
+        audienceQATOC = tocs.audienceQATOC;
+        transcriptTOC = getTranscriptTOC(checklistResult.properties.transcript.result, program);
+    } else {
+        // Put VideoTOC As Content
+        // Also build AudienceQA
+        // No Transcript Sidebar
+        tocs = getVideoTOC(program.articleID, program);
+        contentTOC = tocs.videoTOC;  
+        audienceQATOC = tocs.audienceQATOC;
+        transcriptTOC = null;
+    }
+    
 
     var abbreviationsMarkup = (checklistResult.properties.abbreviations ? checklistResult.properties.abbreviations.result : "");
     abbreviationsTOC = articleUtils.buildAbbreviations(abbreviationsMarkup, program);
@@ -220,9 +265,12 @@ function buildTownHallEnduring(ticket, program) {
           
     // Insert Main TOC Objects  
     finalArticle.insertTOCElement(preAssessmentTOC);
-    finalArticle.insertTOCElement(slidesTOC);
+    finalArticle.insertTOCElement(contentTOC);
     finalArticle.insertTOCElement(postAssessmentTOC);
     finalArticle.insertTOCElement(blankResultsTOC);
+    if (transcriptTOC) {
+        finalArticle.insertTOCElement(transcriptTOC);
+    }
     finalArticle.insertTOCElement(abbreviationsTOC);
     finalArticle.insertTOCElement(referencesTOC);
     finalArticle.insertTOCElement(audienceQATOC);
