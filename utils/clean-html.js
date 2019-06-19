@@ -767,7 +767,7 @@ function transcript(htmlString, removeFluff=false) {
     var endRegexObject = stringOps.getNextRegex(clean, endTranscriptRegexArray);
     clean = clean.substring(0, endRegexObject.index);
 
-    console.log(endRegexObject);
+    // console.log(endRegexObject);
 
     var startTranscriptRegexArray = [
         /.*(?:&lt;){1,}Insert pre-assessment.*(?:&gt;){1,}/gi,

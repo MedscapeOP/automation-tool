@@ -85,7 +85,7 @@ describe('First Response', function () {
     });
 
     describe('#getLLAPreTOC()', function () {
-        it('should return LLA Pre TOC with program goal statement', function () {
+        xit('should return LLA Pre TOC with program goal statement', function () {
             // Uses same function as spotlight see that test suite 
         });
     });
