@@ -1535,6 +1535,13 @@ const collectionPages = [
         "bannerFileName": "34983-collection-header.jpg",
         "type": "Collection Page",
         "url": "https://www.medscape.org/viewcollection/34983"
+    },
+    {
+        "title": "Patient Journeys in Migraine: The Intersection of Patient, Therapeutics, and Pathophysiology",
+        "fileName": "34927",
+        "bannerFileName": "34927-collection-header.png",
+        "type": "Collection Page",
+        "url": "https://www.medscape.org/viewcollection/34927"
     }    
 ];
 
