@@ -436,9 +436,13 @@ function references(string, removeFluff=true) {
         }
     }
     var clean = sanitizeHtml(str, options);
+
     // Remove numbers following <p> tags 
     var pRegExp = /<p>(\d{0,3}\.?\s+)(.*)<\/p>/g;     
-    return clean.replace(pRegExp, "<li>$2</li>");
+    clean = clean.replace(pRegExp, "<li>$2</li>");
+
+    pRegExp = /<p>(.*)<\/p>/g;
+    return clean.replace(pRegExp, "<li>$1</li>");
 }
 
 function formatServedReceived(string) {
@@ -589,13 +593,16 @@ function learningObjectives(textBlock, removeFluff=true) {
     var removeRegExp = /.*Question type assessing.*/g;
     textBlock = textBlock.replace(removeRegExp, '');
 
-    removeRegExp = /&#8226;/g;
-    textBlock = textBlock.replace(removeRegExp, '');
-
     removeRegExp = /.*<p>Question #.*/g;
     textBlock = textBlock.replace(removeRegExp, '');
 
     removeRegExp = /.*Question #.*/g;
+    textBlock = textBlock.replace(removeRegExp, '');
+
+    removeRegExp = /.*<p>Slide #.*/g;
+    textBlock = textBlock.replace(removeRegExp, '');
+
+    removeRegExp = /.*Slide #.*/g;
     textBlock = textBlock.replace(removeRegExp, '');
 
     removeRegExp = /.*Question type answering this objective.*/g;
@@ -604,7 +611,11 @@ function learningObjectives(textBlock, removeFluff=true) {
     removeRegExp = /.*<p>Linked Pre-\/Post-assessment.*/g;
     textBlock = textBlock.replace(removeRegExp, '');
     
-    removeRegExp = /<p>\d+<\/p>|<p>\d+,\d+<\/p>/g;
+    // REMOVE THE NUMBERS 
+    removeRegExp = /<p>\d+.*|<p>(?:\d+\,){1,}.*|.*\d+\-\d+.*/g;
+    textBlock = textBlock.replace(removeRegExp, '');
+
+    removeRegExp = /&#8226;/g;
     textBlock = textBlock.replace(removeRegExp, '');
 
     removeRegExp = /<p>CME evaluation<\/p>/g;
