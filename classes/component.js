@@ -1,12 +1,13 @@
 // const _ = require("lodash");
 
 class Component {
-    constructor(componentNumber, title, teaser, byline, contentType) {
+    constructor(componentNumber, title, teaser, byline, contentType, articleID) {
         this.componentNumber = componentNumber;
         this.title = title;
         this.teaser = teaser;
         this.byline = byline;
         this.contentType = contentType;
+        this.articleID = articleID;
     }
 
     //--------------------------------

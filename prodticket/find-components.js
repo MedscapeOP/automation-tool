@@ -29,7 +29,7 @@ FUNCTION REQUIREMENTS:
 */
 
 // First Response
-exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
+exportObject[config.programs.firstResponse.codeName] = function (ticketHTML, program) {
     var {textBlock: productSpecificAddonsBlock} = stringOps.getTextBlock(
         ticketHTML, 
         "Product-Specific Information", 
@@ -91,7 +91,7 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
             contentType = cleanHTML.singleLine(cleanHTML.plainText(contentTypeString));
 
             // console.log("CONTENT TYPE: ", contentType);
-            var component = new Component(componentNumber, title, teaser, byline, contentType); 
+            var component = new Component(componentNumber, title, teaser, byline, contentType, program.articleID); 
             
             components.push(component.toObjectLiteral());
 

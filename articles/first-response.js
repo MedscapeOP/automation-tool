@@ -4,6 +4,7 @@ const articleUtils = require('./article-utils');
 const {ProfArticle, ProfActivity, TOCElement, SectionElement, SubsectionElement, SlideGroup, FirstResponseChecklist} = require("../classes");
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
+const config = require('../config');
 
 
 /* TABLE OF CONTENTS TOC   
@@ -159,8 +160,14 @@ function checklistFirstResponse(ticket, program) {
     // COMPONENTS 
     checklist.components.result = prodticket.getComponents(ticket, program);
 
-    // SLIDES 
-    checklist.slides.result = prodticket.getSlides(ticket, program);
+    // SLIDES / TRANSCRIPT  
+    if (program.hasTranscript) {
+        if (program.transcriptType === config.transcriptTypes[0]) {
+            checklist.slides.result = prodticket.getSlides(ticket, program);
+        } else if (program.transcriptType === config.transcriptTypes[1]) {
+            checklist.transcript.result = prodticket.getArticleContent(ticket, program);
+        }
+    }
 
     // CONTRIBUTORS
     checklist.contributors.result = prodticket.getContributors(ticket, program);
@@ -182,7 +189,8 @@ function buildFirstResponse(ticket, program) {
     collectionPageInfo,
     componentsArray, 
     tableOfContentsTOC,
-    slidesTOCs, 
+    contentTOCs,
+    transcriptTOC,  
     postAssessmentTOC, 
     blankResultsTOC, 
     abbreviationsTOC,
@@ -221,15 +229,26 @@ function buildFirstResponse(ticket, program) {
         blankResultsTOC = articleUtils.buildBlankTOC();
     }
 
-    slidesTOCs = getSlidesTOCs(checklistResult.properties.slides.result, program);
-    // console.log("CHECKLIST RESULT: ", checklistResult.properties.slides.result);
-
-    var slideTOCMarkup = "";
-
-    for (var i = 0; i < slidesTOCs.length; i++) {
-        slideTOCMarkup += utils.xmlOps.objectToXMLString(slidesTOCs[i].toObjectLiteral());
+    
+    if (checklistResult.properties.slides) {
+        contentTOCs = getSlidesTOCs(checklistResult.properties.slides.result, program); 
+        transcriptTOC = null;
+    } else if (checklistResult.properties.transcript) {
+        contentTOCs = getVideoTOCs(componentsArray, program);
+        transcriptTOC = getTranscriptTOC(checklistResult.properties.transcript.result, program);
+    } else {
+        contentTOCs = getVideoTOCs(componentsArray, program);
+        transcriptTOC = null;
     }
-    // console.log("SLIDES TOCS: ", slideTOCMarkup);
+
+    /* DEBUGGING */
+    // var slideTOCMarkup = "";
+
+    // for (var i = 0; i < slidesTOCs.length; i++) {
+    //     slideTOCMarkup += utils.xmlOps.objectToXMLString(slidesTOCs[i].toObjectLiteral());
+    // }
+    // // console.log("SLIDES TOCS: ", slideTOCMarkup);
+    /* END DEBUGGING */ 
 
     var abbreviationsMarkup = (checklistResult.properties.abbreviations ? checklistResult.properties.abbreviations.result : "");
     abbreviationsTOC = articleUtils.buildAbbreviations(abbreviationsMarkup, program);
@@ -263,11 +282,14 @@ function buildFirstResponse(ticket, program) {
 
     // Insert Main TOC Objects  
     finalArticle.insertTOCElement(tableOfContentsTOC);
-    for (var i = 0; i < slidesTOCs.length; i++) {
-        finalArticle.insertTOCElement(slidesTOCs[i]);
+    for (var i = 0; i < contentTOCs.length; i++) {
+        finalArticle.insertTOCElement(contentTOCs[i]);
     }
     finalArticle.insertTOCElement(postAssessmentTOC);
     finalArticle.insertTOCElement(blankResultsTOC);
+    if (transcriptTOC) {
+        finalArticle.insertTOCElement(transcriptTOC);
+    }
     finalArticle.insertTOCElement(abbreviationsTOC);
     finalArticle.insertTOCElement(referencesTOC);
 

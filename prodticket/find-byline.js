@@ -40,7 +40,7 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     if (startRegExp != -1) {
         var {textBlock: byline} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
 
-        console.log("BYLINE: ", byline);
+        // console.log("BYLINE: ", byline);
         for (var i = 0; i < spotlightRemoveRegExps.length; i++) {
             byline = byline.replace(spotlightRemoveRegExps[i], "");
         }
