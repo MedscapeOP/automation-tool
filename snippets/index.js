@@ -109,7 +109,7 @@ function tableOfContents(componentsArray, articleID) {
         component = componentsArray[i];
         componentSection += `\n
         <div id="prgteaser">
-            <img src="professional_assets/medscape/images/thumbnail_library/${articleID}_${component.componentNumber + 1}.jpg?interpolation=lanczos-none&resize=200:150" alt="" />
+            <img src="professional_assets/medscape/images/thumbnail_library/${articleID}_${component.componentNumber + 1}.jpg?interpolation=lanczos-none&amp;resize=200:150" alt="" />
             <h4>${component.title}</h4> ${component.teaser}<br /> <em>${component.byline}</em>
         </div>`;
     }
@@ -117,6 +117,7 @@ function tableOfContents(componentsArray, articleID) {
     var endSpacer = `\n<div class="spacer">&nbsp;</div>`;
     result = styles + introStatement + componentSection + endSpacer;
     return utils.cleanHTML.insertEntityPlaceholders(result);
+    // return result;
 }
 
 function caseImage(articleID, contentMarkup, caseNumber) {
