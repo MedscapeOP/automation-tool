@@ -1,6 +1,6 @@
 {
   "name": "automationtool",
-  "version": "1.10.4",
+  "version": "1.11.4",
   "description": "test",
   "main": "index.js",
   "scripts": {

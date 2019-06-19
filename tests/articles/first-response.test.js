@@ -57,9 +57,11 @@ describe('First Response', function () {
 
             var checklist = new app.classes.FirstResponseChecklist();
             checklist.slides.result = app.prodTicket.getSlides(prodTicket, program);
+            checklist.components.result = app.prodTicket.getComponents(prodTicket, program);
+
             var checklistResult = checklist.print();
 
-            var slideTOCs= firstResponse.getSlidesTOCs(checklistResult.properties.slides.result, program);
+            var slideTOCs= firstResponse.getSlidesTOCs(checklistResult.properties.slides.result, program, checklistResult.properties.components.result);
             var result = "";
             var currentTOC = null;
 

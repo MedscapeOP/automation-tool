@@ -23,17 +23,22 @@ function getTableOfContentsTOC(componentsArray, program) {
  * @param {*} ticket 
  * @param {*} program 
  */
-function getSlidesTOCs (slidesComponents, program) {
+function getSlidesTOCs (slidesComponents, program, components) {
     var slideTOCs = [];
     
     var hasEduImpact = program.hasLLA;
 
     for (var i = 0; i < slidesComponents.length; i++) {            
-        if (i == slidesComponents.length - 1) {
+        if (i == slidesComponents.length - 1) { 
             slideTOCs.push(articleUtils.buildSlidesTOC(slidesComponents[i], true, hasEduImpact, true));
         } else {
             slideTOCs.push(articleUtils.buildSlidesTOC(slidesComponents[i], true, false, false));
         }
+    }
+    
+    for (var i = 0; i < components.length; i++) {
+        // Insert Section Header here
+        slideTOCs[i]._childElements[0].sectionHeader = components[i].title;
     }
     return slideTOCs;
 }
@@ -43,11 +48,19 @@ function getVideoTOCs (components, program) {
 
     var hasEduImpact = program.hasLLA;
 
+    var videoTOC = null;
     for (var i = 0; i < components.length; i++) {
         if (i == components.length - 1) {
-            videoTOCs.push(articleUtils.buildVideoEmbedTOC(components[i], hasEduImpact));
+            // Insert Section Header here
+            videoTOC = articleUtils.buildVideoEmbedTOC(components[i], hasEduImpact);
+            videoTOC._childElements[0].sectionHeader = components[i].title;
+            videoTOCs.push(videoTOC);
         } else {
-            videoTOCs.push(articleUtils.buildVideoEmbedTOC(components[i], false));
+            // Insert Section Header here
+            videoTOC = articleUtils.buildVideoEmbedTOC(components[i], false);
+            videoTOC._childElements[0].sectionHeader = components[i].title;
+            // console.log(videoTOC._childElements[0]);
+            videoTOCs.push(videoTOC);
         }
     }
     return videoTOCs;
@@ -231,7 +244,7 @@ function buildFirstResponse(ticket, program) {
 
     
     if (checklistResult.properties.slides) {
-        contentTOCs = getSlidesTOCs(checklistResult.properties.slides.result, program); 
+        contentTOCs = getSlidesTOCs(checklistResult.properties.slides.result, program, componentsArray); 
         transcriptTOC = null;
     } else if (checklistResult.properties.transcript) {
         contentTOCs = getVideoTOCs(componentsArray, program);
