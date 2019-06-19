@@ -25,13 +25,33 @@ exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
 
 
 // Spotlight
-exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
-    var {textBlock} = stringOps.getTextBlock(ticketHTML, "Faculty/Author(s) Byline(s): &#953;", "Indicate thumbnail URL");
+var spotlightStartRegExps = [
+    /<strong>Faculty\/Author\(s\) Byline\(s\): &#953;.*/g,
+    /<strong>Faculty\/Author\(s\) Byline\(s\).*/g,
+    /<strong>Faculty Byline/g,
+];
+var spotlightRemoveRegExps = [
+    /.*Indicate thumbnail URL (?:&#953;){0,}.*/g
+];
 
-    if (stringOps.isBlankOrWhiteSpace(textBlock) || stringOps.isEmptyString(textBlock)) {
-        throw new Error("No byline found in the prodticket");
+exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
+    var startRegExp = stringOps.getUsableRegExp(ticketHTML, spotlightStartRegExps);
+    var endRegExp = /<strong>Target Audience/g;
+    if (startRegExp != -1) {
+        var {textBlock: byline} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
+
+        console.log("BYLINE: ", byline);
+        for (var i = 0; i < spotlightRemoveRegExps.length; i++) {
+            byline = byline.replace(spotlightRemoveRegExps[i], "");
+        }
+
+        if (stringOps.isBlankOrWhiteSpace(byline) || stringOps.isEmptyString(byline)) {
+            throw new Error("No byline found in the prodticket");
+        } else {
+            return cleanHTML.singleLine(cleanHTML.plainText(byline)).trim();
+        }
     } else {
-        return cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim();
+        throw new Error("No byline found in the prodticket");
     }
 }
 
