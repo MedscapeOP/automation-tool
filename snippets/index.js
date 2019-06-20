@@ -87,6 +87,7 @@ function videoEmbed (slidesComponent, articleID=null) {
 }
 
 function tableOfContents(componentsArray, articleID) {
+    var currentYear = new Date().getFullYear();
     var styles = `
     <style type="text/css">
         div.articleTitle {
@@ -109,7 +110,7 @@ function tableOfContents(componentsArray, articleID) {
         component = componentsArray[i];
         componentSection += `\n
         <div id="prgteaser">
-            <img src="professional_assets/medscape/images/thumbnail_library/${articleID}_${component.componentNumber + 1}.jpg?interpolation=lanczos-none&amp;resize=200:150" alt="" />
+            <img src="professional_assets/medscape/images/thumbnail_library/mobile_start/org/${currentYear}/${articleID}_${component.componentNumber + 1}_start.jpg?interpolation=lanczos-none&amp;resize=240:135" alt="" />
             <h4>${component.title}</h4> ${component.teaser}<br /> <em>${component.byline}</em>
         </div>`;
     }

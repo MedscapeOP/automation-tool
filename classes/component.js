@@ -23,7 +23,9 @@ class Component {
         var teaser = this.teaser;
         var byline = this.byline;
         var contentType = this.contentType;
+        var articleID = this.articleID;
         return {
+            articleID,
             componentNumber,
             title, 
             teaser,
