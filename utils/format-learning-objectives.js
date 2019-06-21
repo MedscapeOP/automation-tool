@@ -38,8 +38,6 @@ let formatLearningObjectives = function (string) {
     var removeRegex = /<tt>o(&#8226;.*)/g;
     string = string.replace(removeRegex, '$1');
 
-    // console.log("LO STRING: ", string);
-
     string = formatList.formatUlItems(string, null, formatList.formatUlItems);
 
     string = formatList.wrapUls(false, string, formatList.wrapUls);

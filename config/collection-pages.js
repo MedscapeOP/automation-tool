@@ -1537,12 +1537,19 @@ const collectionPages = [
         "url": "https://www.medscape.org/viewcollection/34983"
     },
     {
+        "title": "Defining A New Era in Family Planning in Multiple Sclerosis",
+        "fileName": "34998",
+        "bannerFileName": null,
+        "type": "Collection Page",
+        "url": "https://www.medscape.org/viewcollection/34998"
+    },       
+    {
         "title": "Patient Journeys in Migraine: The Intersection of Patient, Therapeutics, and Pathophysiology",
         "fileName": "34927",
         "bannerFileName": "34927-collection-header.png",
         "type": "Collection Page",
         "url": "https://www.medscape.org/viewcollection/34927"
-    }    
+    }
 ];
 
 
