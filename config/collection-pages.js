@@ -284,6 +284,13 @@ const collectionPages = [
         "url": "https://www.medscape.org/sites/advances/cinv-nausea"
     },
     {
+        "title": "Clinical Advances in Chronic Kidney Disease: Focus on Hyperkalemia and Anemia",
+        "fileName": "ckd",
+        "bannerFileName": "banner-ckd",
+        "type": "Clinical Advances",
+        "url": "https://www.medscape.org/sites/advances/ckd"
+    },
+    {
         "title": "Clinical Advances in Chronic Kidney Disease -- Mineral and Bone Disorder",
         "fileName": "ckd-mineral-bone-disorder",
         "bannerFileName": null,
