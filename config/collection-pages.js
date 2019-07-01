@@ -1334,6 +1334,13 @@ const collectionPages = [
         "url": "https://www.medscape.org/sites/advances/respiratory-diseases"
     },
     {
+        "title": "Avances clínicos en América Latina: nuevas estrategias para combatir las enfermedades",
+        "fileName": "respiratory-health-latin-america",
+        "bannerFileName": "banner-respiratory-health-latin-america.png",
+        "type": "Clinical Advances",
+        "url": "https://www.medscape.org/sites/advances/respiratory-health-latin-america"
+    },
+    {
         "title": "Medscape: Advances In Restless Legs Syndrome",
         "fileName": "restless-legs-syndrome",
         "bannerFileName": null,
