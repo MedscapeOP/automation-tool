@@ -22,7 +22,7 @@ Generates code for in language add-ons. ${N}Use flags for components you wish to
 
 const languageChoices = _.keys(languages);
 let outputFile = function () {
-    return `${infoObject.articleID}_in-language.xml`; 
+    return `${infoObject.articleID}/in-language.xml`; 
 }; 
 
 
@@ -186,7 +186,7 @@ let buildFinalOutput = function (self) {
 module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
-    .command('il <articleID>', inLanguageHelp)
+    .command('component il <articleID>', inLanguageHelp)
     // .parse(function (command, args) { 
     //     args.articleID = String(args.articleID);
     //     return command + ` ` + args.articleID;   
