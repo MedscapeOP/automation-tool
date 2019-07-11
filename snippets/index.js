@@ -1,3 +1,4 @@
+const customForm = require('./custom-form');
 const activity = require('./activity');
 const inLanguage = require('./in-language');
 const preContent = require('./pre-content');
@@ -149,5 +150,6 @@ module.exports = {
     backmatter,
     tableOfContents,
     activity,
+    customForm,
     caseImage
 };

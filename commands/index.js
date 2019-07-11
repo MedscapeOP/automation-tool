@@ -11,10 +11,11 @@ const articles = require('../articles');
 const propertiesChecklist = require('./properties-checklist');
 
 // SNIPPET COMMANDS (HTML)
+const inLanguage = require('./in-language');
 const downloadableSlides = require('./downloadable-slides');
+const certificateLinks = require('./certificate-links');
 
 // COMPONENT COMMANDS (XML)
-const inLanguage = require('./in-language');
 
 // CLEAN UP COMMANDS (HTML)
 
@@ -33,11 +34,12 @@ let commands = function (vorpal) {
     // PRODUCER COMMANDS 
     propertiesChecklist(vorpal);
     
-    // SNIPPET COMMANDS (HTML)
+    // SNIPPET COMMANDS (HTML/XML)
+    inLanguage(vorpal);
     downloadableSlides(vorpal);
+    certificateLinks(vorpal);
 
     // COMPONENT COMMANDS (XML)
-    inLanguage(vorpal);
 
     // CLEAN UP COMMANDS (HTML)
 
