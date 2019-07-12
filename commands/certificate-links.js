@@ -99,6 +99,11 @@ module.exports = function (vorpal) {
     .types({string: ['_']})
     .action(function(args, callback) {
         // this.log("RAW ARTICLE ID: ", args.articleID);
+        if (typeof callback != "function") {
+            callback = () => {
+                return null;
+            };                                     
+        } 
         infoObject.articleID = args.articleID;        
         let self = this;
         var result = null;

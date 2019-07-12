@@ -186,7 +186,7 @@ let buildFinalOutput = function (self) {
 module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
-    .command('snippet il <articleID>', inLanguageHelp)
+    .command('snippet in-language <articleID>', inLanguageHelp)
     // .parse(function (command, args) { 
     //     args.articleID = String(args.articleID);
     //     return command + ` ` + args.articleID;   
