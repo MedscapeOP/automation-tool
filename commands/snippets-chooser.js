@@ -17,16 +17,12 @@ const snippetChooserHelp = `This command allows you to run a combination of snip
 
 let commandChoices = ["in-language", "certificate-links", "certificate-links", "downloadable-slides"]; 
 
-// let infoObject = {
-//     articleID: null,
-//     activityID: null,
-//     eligibilities: [
-//         {type: 'loc', activityID: null, inActivity: false},
-//         {type: 'cme', activityID: null, inActivity: false},
-//         {type: 'nurse_ce', activityID: null, inActivity: false},
-//         {type: 'pharma_ce', activityID: null, inActivity: false}
-//     ]
-// };
+let infoObject = {
+    articleID: null,
+    activityID: null,
+    commandStringArray: null,
+    callback: null 
+};
 
 // PROMPTS 
 // ------------------------------------------------------------
@@ -46,30 +42,37 @@ let commandsPrompt = function (self) {
     });
 };
 
+const promiseSerial = funcs =>
+  funcs.reduce((promise, func) =>
+    promise.then(result =>
+      func().then(Array.prototype.concat.bind(result))),
+      Promise.resolve([]))
+
 // BUILD PROMISE ALL ARRAY
 // ------------------------------------------------------------
-// let callCommands = function (vorpal, self, commands, fn) {
-//     return new Promise(function (resolve, reject) {
-//         var command = null;
-//         if (commands.length >= 1)  {
-//             command = commands.pop();
-//             console.log("COMMAND: ", command);
-//             // vorpal.exec(command).then(function () {
-//             //     return fn(vorpal, self, commands, callback, callCommands);    
-//             // }).catch(function (error) {
-//             //     self.log(`ERROR at ${command} COMMAND: `, error);
-//             // });
-//             vorpal.exec(command).then(function () {
-//                 return fn(vorpal, self, commands, callCommands);
-//             });
-//         } else {
-//             return resolve();
-//         }
-//     });
-// }
+let callCommands = async function (vorpal, commands, fn) {
+    // return vorpal.exec(commands[commands.length - 1]).then(() => {
+    //     vorpal.exec(commands[commands.length - 2]);
+    // });
+    console.log("CALL COMMANDS: ");
+    var promises = [];
+    for (const command of commands) {
+        promises.push(
+            function () {
+                return vorpal.exec(command);
+            }
+        );
+    }
+    return promiseSerial(promises);
+}
 
 let buildCommandArray = function (vorpal, callback, answers, articleID, fn) {
-    // 
+    var commands = answers.commands;
+    var result = [];
+    commands.forEach((command) => {
+        result.push(`snippet ${command} ${articleID}`);
+    });
+    return result; 
 }
 
 // EXPORT
@@ -91,13 +94,18 @@ module.exports = function (vorpal) {
         commandsPrompt(self)
         .then((answers) => {
             if (answers) {                
-                buildCommandArray(vorpal, callback, answers, articleID, buildCommandArray).then(() => {
-                    callback();
-                });
+                infoObject.commandStringArray = buildCommandArray(vorpal, callback, answers, articleID, buildCommandArray);
+                infoObject.callback = callback;
+                callback();
+                vorpal.emit("start_commands");
             } else {
                 self.log('Not getting answer for activity ID');
                 callback();
             }
         })
+    });
+    vorpal.on('start_commands', function (){
+        console.log("HERE: ");
+        callCommands(vorpal, infoObject.commandStringArray, callCommands);
     });
 };

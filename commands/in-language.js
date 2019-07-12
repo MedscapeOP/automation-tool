@@ -197,6 +197,12 @@ module.exports = function (vorpal) {
         infoObject.articleID = args.articleID;        
         let self = this;
 
+        if (typeof callback != 'function') {
+            callback = function () {
+                return;
+            }
+        }
+
         // Get TITLE
         articleTitlePrompt(self)
         .then(answers => {           
