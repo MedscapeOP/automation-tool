@@ -109,3 +109,31 @@ module.exports = function (vorpal) {
         callCommands(vorpal, infoObject.commandStringArray, callCommands);
     });
 };
+
+
+/*
+****** NEW IDEA: 7/16/19 ******  
+var choices = {
+    downloadableSlides: function () {
+        return (series of prompts) 
+    },
+    certificateLinks: function () {
+        return (series of prompts) 
+    }
+} 
+
+var choiceOptionArray = choices.keys(); 
+
+mainPrompt(self)
+.then((answers) => {
+    answers.options.forEach((option) => {
+        infoObject.choiceFunctions.push(infoObject.choices[option]);
+    });
+    return optionCallback(infoObject)
+})
+
+function optionCallback(infoObject) {
+    for (var i = 0; i < infoObject.choiceFunctions)
+}
+
+*/
