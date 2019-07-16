@@ -167,7 +167,7 @@ module.exports = function (vorpal) {
             if (answers) {
                 result = buildFinalOutput(self, answers);
                 try {
-                    var completionMessage = `Media info snippet created successfully! Check your output folder for the file: ${chalk.cyan(outputFile())}`;
+                    var completionMessage = `Media-info snippet for custom form created successfully! Check your output folder for the file: ${chalk.cyan(outputFile())}`;
                     result = utils.cleanHTML.cleanEntities(result);
                     utils.cliTools.writeOutputFile(outputFile(), result, self, completionMessage, callback);
                     callback();                                     
