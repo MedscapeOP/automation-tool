@@ -14,7 +14,8 @@ const propertiesChecklist = require('./properties-checklist');
 const inLanguage = require('./in-language');
 const downloadableSlides = require('./downloadable-slides');
 const certificateLinks = require('./certificate-links');
-const snippetChooser = require('./snippets-chooser');
+const mediaInfo = require('./media-info');
+// const snippetChooser = require('./snippets-chooser');
 
 // COMPONENT COMMANDS (XML)
 
@@ -39,7 +40,8 @@ let commands = function (vorpal) {
     inLanguage(vorpal);
     downloadableSlides(vorpal);
     certificateLinks(vorpal);
-    snippetChooser(vorpal);
+    mediaInfo(vorpal);
+    // snippetChooser(vorpal);
 
     // COMPONENT COMMANDS (XML)
 
