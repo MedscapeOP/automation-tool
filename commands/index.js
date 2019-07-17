@@ -16,6 +16,7 @@ const downloadableSlides = require('./downloadable-slides');
 const certificateLinks = require('./certificate-links');
 const mediaInfo = require('./media-info');
 const miscProviderStatement = require('./misc-provider-statement');
+const slideTOCs = require('./slide-tocs');
 // const snippetChooser = require('./snippets-chooser');
 
 // COMPONENT COMMANDS (XML)
@@ -43,6 +44,7 @@ let commands = function (vorpal) {
     certificateLinks(vorpal);
     mediaInfo(vorpal);
     miscProviderStatement(vorpal);
+    slideTOCs(vorpal);
     // snippetChooser(vorpal);
 
     // COMPONENT COMMANDS (XML)

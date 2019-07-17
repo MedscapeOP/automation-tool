@@ -1,10 +1,11 @@
 // const _ = require("lodash");
 
 class SlideComponent {
-    constructor(articleID, componentNumber, rawSlides) {
+    constructor(articleID, componentNumber, rawSlides, numberOfSlides=null) {
         this.articleID = articleID + "";
         this.componentNumber = componentNumber;
         this.rawSlides = rawSlides;
+        this.numberOfSlides = numberOfSlides;
     }
 
     //--------------------------------
@@ -27,12 +28,23 @@ class SlideComponent {
         var componentNumber = this.componentNumber;
         var slidePath = this.slidePath;
         var rawSlides = this.rawSlides;
-        return {
-            articleID,
-            componentNumber, 
-            slidePath,
-            rawSlides 
-        };     
+        var numberOfSlides = this.numberOfSlides;
+        if (numberOfSlides) {
+            return {
+                articleID,
+                componentNumber, 
+                slidePath,
+                rawSlides,
+                numberOfSlides 
+            };     
+        } else {
+            return {
+                articleID,
+                componentNumber, 
+                slidePath,
+                rawSlides 
+            };
+        }
     }
 }
 

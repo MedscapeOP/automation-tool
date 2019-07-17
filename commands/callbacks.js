@@ -8,7 +8,7 @@ function promiseCallback(self, callback, program, answers, nameOfPrompt, nextFun
             program[nameOfPrompt] = answers[nameOfPrompt];
         } 
         if (nextFunction) {
-            return nextFunction(self);                                         
+            return nextFunction(self);                  
         } else {
             callback();
         }                
