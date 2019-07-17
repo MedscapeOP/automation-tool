@@ -9,7 +9,7 @@ const _ = require('lodash');
 
 const articleUtils = require('../articles').articleUtils;
 const utils = require('../utils');
-const {TOCElement, SectionElement, SubsectionElement, SlideGroup, SlideComponent, ContributorGroup, ContributorElement} = require("../classes");
+const {TOCElement, SectionElement, SubsectionElement, SlideGroup, SlideComponent} = require("../classes");
 const callbacks = require('./callbacks');
 const cliTools = utils.cliTools;
 const N = cliTools.N;
@@ -97,47 +97,48 @@ let slideCountPromptMulti = function (self) {
 // ------------------------------------------------------------
 
 let buildFinalOutput = function (self) {
-    // BUILD: Main TOC Element 
-    // var slidesTOC = new TOCElement();
+    // For each component 
+        // BUILD: slidesTOC Element
+        // BUILD: section 
+        // BUILD: subsection 
+        // BUILD: slideComponent
+            // For numberOfSlides in slideComponent
+                // BUILD: SlideGroup 
+                    // -> Use slideComponent.slidePath
+                    // -> Use i + 1 for SlideNumber
+                // subsection.insertSlideGroup 
+        // slidesTOC.insertSection 
+        // section.insertSubsection 
+        // push TOC onto tocArray
+    // return tocArray 
+    // console.log("INFO: ", infoObject);
+    let tocArray = []; 
+    let componentCount = infoObject.numberOfComponents;
 
-    // // BUILD: Main Section Element 
-    // var slidesSection = new SectionElement();    
-    // var slideGroups = [];
-    // var slide_grp = new SlideGroup(slidePath, counter);
-    // // console.log("slideContent: ", slideContent);
+    if (typeof infoObject.slideCount == 'string') {
+        infoObject.slideCount = [parseInt(infoObject.slideCount)];
+    }
 
-    // // console.log("SLIDE CONTENT buildSlides(): ", slideContent);
-
-    // slide_grp.sectionText = (slideContent);
-
-    // // Push slide_grp onto subsection element 
-    // subsectionElement.insertSlideGroup(slide_grp);
-
-    // var subsectionElement = new SubsectionElement(true, false, false);
-
-    // var keys = _.keys(infoObject.addons);
-    // var currentKey = "";
-    // var addonObject = null;
-    // var languageString = null;
-    // var languageObject = null;
-    // for (var i = 0; i < 4; i++) {
-    //     currentKey = keys[i];
-    //     addonObject = infoObject.addons[currentKey];
-    //     // self.log("CURRENT KEY: ", keys[i]);
-    //     // self.log("KEYS: ", keys);
-    //     // self.log("ADDON OBJECT: ", addonObject);        
-    //     if (addonObject.has) {
-    //         for (var z = 0; z < addonObject.languages.length; z++) {
-    //             // (articleID, language, programTitle)
-    //             languageString = addonObject.languages[z];
-    //             languageObject = languages[languageString];
-    //             tocElements.push(snippets.inLanguage[currentKey](infoObject.articleID, languageObject, infoObject.articleTitle));
-    //         }
-    //     } 
-    // }
-    // // self.log(tocElements);
-    // return tocElements;
-    return [new TOCElement()];
+    let slidesTOC = null; 
+    let slidesSection = null;
+    let slidesSubsection = null;
+    let slideComponent = null; 
+    let slideGroup = null; 
+    
+    for (var i = 0; i < componentCount; i++) {
+        slidesTOC = new TOCElement();
+        slidesSection = new SectionElement(); 
+        slidesSubsection = new SubsectionElement(true, false, false);
+        slideComponent = new SlideComponent(infoObject.articleID, (componentCount == 1 ? null: i + 1), '', infoObject.slideCount[i]).toObjectLiteral();
+        for (var s = 0; s < slideComponent.numberOfSlides; s++) {
+            slideGroup = new SlideGroup(slideComponent.slidePath, s + 1);
+            slidesSubsection.insertSlideGroup(slideGroup);
+        }
+        slidesTOC.insertSectionElement(slidesSection);
+        slidesSection.insertSubsectionElement(slidesSubsection);
+        tocArray.push(slidesTOC);
+    }
+    return tocArray;
 }
 
 
@@ -170,6 +171,7 @@ module.exports = function (vorpal) {
             if (answers) {
                 infoObject["isMultiComponent"] = answers.isMultiComponent;
                 if (!answers.isMultiComponent) {
+                    infoObject.numberOfComponents = 1;
                     return slideCountPrompt(self);
                 } else {
                     return numberOfComponentsPrompt(self).then((answers) => {
@@ -189,10 +191,10 @@ module.exports = function (vorpal) {
         })
         .then((answers) => {
             // Build Final Output
-            return callbacks.promiseCallback(self, callback, infoObject, answers, "slideCount", buildFinalOutput);
+            return callbacks.delimitedAnswerCallback(self, callback, infoObject, answers, "slideCount", buildFinalOutput);
         })
         .then((tocElements) => {
-            self.log("INFO: ", infoObject);
+            // self.log("INFO: ", infoObject);
             var result = "";
             var xmlString = "";
             for (var i = 0; i < tocElements.length; i++) {
