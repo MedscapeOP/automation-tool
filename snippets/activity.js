@@ -118,8 +118,7 @@ function additionalCreditAvailable() {
 var statementConfig = {
     cme: {
         include: true, 
-        creditAmount: 0.25,
-        creditAllocation  
+        creditAmount: 0.25  
     }
 }
 

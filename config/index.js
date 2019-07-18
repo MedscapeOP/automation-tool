@@ -143,6 +143,5 @@ module.exports = {
     propertiesChecklist,
     cmeAuthors,
     collectionPages,
-    transcriptTypes,
-    programTypes
+    transcriptTypes
 };
