@@ -10,6 +10,7 @@ let programs = {
     clinicalBrief: {
         name: "Clinical Brief",
         codeName: "brief",
+        dirName: "brief",
         profArticleType: "Article",
         articleID: "",
         hasLLA: false,
@@ -23,6 +24,7 @@ let programs = {
     spotlight: {
         name: "Spotlight",
         codeName: "spotlight",
+        dirName: "spotlight",
         profArticleType: "SlidePresentation",
         articleID: "901602",
         hasTranscript: true, 
@@ -38,6 +40,7 @@ let programs = {
     curbsideConsult: {
         name: "Curbside Consult",
         codeName: "curbside",
+        dirName: "curbside",
         profArticleType: "SlidePresentation",
         articleID: "902082",
         hasTranscript: true, 
@@ -53,6 +56,7 @@ let programs = {
     videoLecture: {
         name: "Video Lecture",
         codeName: "video",
+        dirName: "video-lecture",
         profArticleType: "SlidePresentation",
         articleID: "902082",
         hasTranscript: true, 
@@ -68,6 +72,7 @@ let programs = {
     firstResponse: {
         name: "First Response",
         codeName: "firstResponse",
+        dirName: "first-response",
         profArticleType: "SlidePresentation",
         articleID: "900319",
         hasTranscript: true, 
@@ -83,6 +88,7 @@ let programs = {
     townHall: {
         name: "Town Hall",
         codeName: "townHall",
+        dirName: "townhall-enduring",
         profArticleType: "SlidePresentation",
         articleID: "903975",
         hasTranscript: true, 
@@ -98,6 +104,7 @@ let programs = {
     testAndTeach: {
         name: "Test and Teach",
         codeName: "testAndTeach",
+        dirName: "test-and-teach",
         profArticleType: "Article",
         articleID: "902362",
         hasTranscript: true, 
@@ -136,5 +143,6 @@ module.exports = {
     propertiesChecklist,
     cmeAuthors,
     collectionPages,
-    transcriptTypes
+    transcriptTypes,
+    programTypes
 };

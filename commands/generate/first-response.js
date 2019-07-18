@@ -1,29 +1,29 @@
 // ------------------------------------------------------------
-// COMMAND FOR GENERATING CLINICAL BRIEF XML 
+// COMMAND FOR GENERATING FIRST RESPONSE XML 
 // ------------------------------------------------------------
 
 
 // REQUIRES
 // ------------------------------------------------------------
 const _ = require('lodash');
-const fs = require('fs');
+const fs = require('fs-extra');
 
-const utils = require('../utils');
-const articles = require('../articles');
+const utils = require('../../utils');
+const articles = require('../../articles');
 const cliTools = utils.cliTools;
 const N = cliTools.N;
-let config = require('../config');
-let actions = require('./actions');
+let config = require('../../config');
+let actions = require('../actions');
 
 
 // VARS
 // ------------------------------------------------------------
-const briefHelp = `
-Generates Clinical Brief XML code from R2Net html file. Input directory: /brief/article.html`;
+const firstResponseHelp = `
+Generates First Response XML code from R2Net html file. Input directory: /first-response/article.html`;
 
 
 let inputFile = function () {
-    return cliTools.getInputDirectory() + '/brief/article.html';
+    return cliTools.getInputDirectory() + '/first-response/article.html';
 }
 
 let outputFiles = function () {
@@ -32,9 +32,12 @@ let outputFiles = function () {
         checklist: `${program.articleID}/${program.articleID}_checklist.html`,
         activity: `${program.articleID}/${program.articleID}_activity.xml`
     };
-};  
+}; 
 
-let program = config.programs.clinicalBrief;
+let program = config.programs.firstResponse;
+
+
+
 
 
 // BUILD FUNCTION LOGIC 
@@ -42,7 +45,7 @@ let program = config.programs.clinicalBrief;
 
 let buildFinalOutput = function (self) {
     var prodTicket = cliTools.readInputFile(inputFile());  
-    return articles.clinicalBrief.buildClinicalBrief(prodTicket, program);
+    return articles.firstResponse.buildFirstResponse(prodTicket, program);
 }
 
 
@@ -51,15 +54,17 @@ let buildFinalOutput = function (self) {
 module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
-    .command('generate brief <articleID>', briefHelp)
+    .command('generate first-response <articleID>', firstResponseHelp)
+    // .parse(function (command, args) { 
+    //     args.articleID = String(args.articleID);
+    //     return command + ` ` + args.articleID;   
+    // })
     .types({string: ['_']})
     .action(function(args, callback) {
+        // this.log("RAW ARTICLE ID: ", args.articleID);
         program.articleID = args.articleID;        
-        vorpal.emit('client_prompt_submit', program);
-        var completionMessages = {};
-        completionMessages.xmlFile = `${program.name} XML created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().xmlFile)}`;
-        completionMessages.checklist = `${program.name} Checklist created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().checklist)}`;
-        actions.completeGenerateAction(this, callback, buildFinalOutput, "", "", outputFiles(), completionMessages);
+        let self = this;
+        actions.basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles, config.transcriptTypes);
     });
     vorpal.on('client_prompt_submit', function (program){
         cliTools.resetProgram(program);

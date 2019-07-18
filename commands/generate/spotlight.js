@@ -1,5 +1,5 @@
 // ------------------------------------------------------------
-// COMMAND FOR GENERATING PRODUCER CHECKLIST FILE 
+// COMMAND FOR GENERATING SPOTLIGHT XML 
 // ------------------------------------------------------------
 
 
@@ -8,52 +8,41 @@
 const _ = require('lodash');
 const fs = require('fs');
 
-const utils = require('../utils');
-const articles = require('../articles');
+const utils = require('../../utils');
+const articles = require('../../articles');
 const cliTools = utils.cliTools;
 const N = cliTools.N;
-let config = require('../config');
-let actions = require('./actions');
+let config = require('../../config');
+let actions = require('../actions');
 
 
 // VARS
 // ------------------------------------------------------------
-const propertiesHelp = `
-Generates Checklist of D2 properties for Producers. Input directory: /producer/article.html`;
+const spotlightHelp = `
+Generates Spotlight XML code from R2Net html file. Input directory: /spotlight/article.html`;
 
 
 let inputFile = function () {
-    return cliTools.getInputDirectory() + '/producer/article.html';
+    return cliTools.getInputDirectory() + '/spotlight/article.html';
 }
 
 let outputFiles = function () {
     return {
-        xmlFile: null,
-        checklist: `${program.articleID}_D2checklist.html`
+        xmlFile: `${program.articleID}/${program.articleID}.xml`,
+        checklist: `${program.articleID}/${program.articleID}_checklist.html`,
+        activity: `${program.articleID}/${program.articleID}_activity.xml`
     };
 };  
 
-
-let programOptions = _.mapKeys(config.programs, function (value, key) {
-    return value.name;
-});
-
-programOptions = _.mapValues(programOptions, function (o){
-    return o.codeName;
-});
-
-// Make names be the keys --> Map keys 
-// then set value of key to be codeName --> Map values
-
-let program = config.propertiesChecklist;
+let program = config.programs.spotlight;
 
 
 // BUILD FUNCTION LOGIC 
 // ------------------------------------------------------------
+
 let buildFinalOutput = function (self) {
     var prodTicket = cliTools.readInputFile(inputFile());  
-    var checklist = articles.propertiesChecklist.getChecklist(prodTicket, program);
-    return articles.propertiesChecklist.buildChecklist(checklist, program);
+    return articles.spotlight.buildSpotlight(prodTicket, program);
 }
 
 
@@ -62,7 +51,7 @@ let buildFinalOutput = function (self) {
 module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
-    .command('producer checklist <articleID>', propertiesHelp)
+    .command('generate spotlight <articleID>', spotlightHelp)
     // .parse(function (command, args) { 
     //     args.articleID = String(args.articleID);
     //     return command + ` ` + args.articleID;   
@@ -72,9 +61,16 @@ module.exports = function (vorpal) {
         // this.log("RAW ARTICLE ID: ", args.articleID);
         program.articleID = args.articleID;        
         let self = this;
-        actions.checklistAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles, programOptions);
+        actions.basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles, config.transcriptTypes);
     });
     vorpal.on('client_prompt_submit', function (program){
         cliTools.resetProgram(program);
     });
 };
+
+// vorpal.on('client_prompt_submit', function (command){
+//     if (command === "properties") {
+//         self.log(newComponents);
+//         callback();
+//     } 
+// });

@@ -7,10 +7,10 @@
 // ------------------------------------------------------------
 const _ = require('lodash');
 
-const utils = require('../utils');
-const prodticket = require('../prodticket');
-const snippets = require('../snippets');
-const languages = require('../config').languages;
+const utils = require('../../utils');
+const prodticket = require('../../prodticket');
+const snippets = require('../../snippets');
+const languages = require('../../config').languages;
 const cliTools = utils.cliTools;
 const N = cliTools.N;
 

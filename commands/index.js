@@ -8,15 +8,15 @@ const articles = require('../articles');
 
 
 // PRODUCER COMMANDS 
-const propertiesChecklist = require('./properties-checklist');
+const propertiesChecklist = require('./producer/properties-checklist');
 
 // SNIPPET COMMANDS (HTML)
-const inLanguage = require('./in-language');
-const downloadableSlides = require('./downloadable-slides');
-const certificateLinks = require('./certificate-links');
-const mediaInfo = require('./media-info');
-const miscProviderStatement = require('./misc-provider-statement');
-const slideTOCs = require('./slide-tocs');
+const inLanguage = require('./snippet/in-language');
+const downloadableSlides = require('./snippet/downloadable-slides');
+const certificateLinks = require('./snippet/certificate-links');
+const mediaInfo = require('./snippet/media-info');
+const miscProviderStatement = require('./snippet/misc-provider-statement');
+const slideTOCs = require('./snippet/slide-tocs');
 // const snippetChooser = require('./snippets-chooser');
 
 // COMPONENT COMMANDS (XML)
@@ -25,13 +25,13 @@ const slideTOCs = require('./slide-tocs');
 
 
 // GENERATE COMMANDS
-const brief = require('./clinical-brief');
-const spotlight = require('./spotlight');
-const curbside = require('./curbside-consult');
-const videoLecture = require('./video-lecture');
-const firstResponse = require('./first-response');
-const townHallEnduring = require('./townhall-enduring');
-const testAndTeach = require('./test-and-teach');
+const brief = require('./generate/clinical-brief');
+const spotlight = require('./generate/spotlight');
+const curbside = require('./generate/curbside-consult');
+const videoLecture = require('./generate/video-lecture');
+const firstResponse = require('./generate/first-response');
+const townHallEnduring = require('./generate/townhall-enduring');
+const testAndTeach = require('./generate/test-and-teach');
 
 // Build commands function 
 let commands = function (vorpal) {

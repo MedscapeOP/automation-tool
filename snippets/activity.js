@@ -115,6 +115,18 @@ function additionalCreditAvailable() {
     `;
 }
 
+var statementConfig = {
+    cme: {
+        include: true, 
+        creditAmount: 0.25,
+        creditAllocation  
+    }
+}
+
+function creditStatements(statementConfig) {
+    
+}
+
 module.exports = {
     instructionsForCredit,
     medscapeProviderStatement,

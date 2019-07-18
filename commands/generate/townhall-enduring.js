@@ -8,22 +8,22 @@
 const _ = require('lodash');
 const fs = require('fs');
 
-const utils = require('../utils');
-const articles = require('../articles');
+const utils = require('../../utils');
+const articles = require('../../articles');
 const cliTools = utils.cliTools;
 const N = cliTools.N;
-let config = require('../config');
-let actions = require('./actions');
+let config = require('../../config');
+let actions = require('../actions');
 
 
 // VARS
 // ------------------------------------------------------------
-const testAndTeachHelp = `
-Generates Test and Teach XML code from R2Net html file. Input directory: /test-and-teach/article.html`;
+const townHallEnduringHelp = `
+Generates TownHall Enduring XML code from R2Net html file. Input directory: /townhall-enduring/article.html`;
 
 
 let inputFile = function () {
-    return cliTools.getInputDirectory() + '/test-and-teach/article.html';
+    return cliTools.getInputDirectory() + '/townhall-enduring/article.html';
 }
 
 let outputFiles = function () {
@@ -34,7 +34,7 @@ let outputFiles = function () {
     };
 };    
 
-let program = config.programs.testAndTeach;
+let program = config.programs.townHall;
 
 
 // BUILD FUNCTION LOGIC 
@@ -42,7 +42,7 @@ let program = config.programs.testAndTeach;
 
 let buildFinalOutput = function (self) {
     var prodTicket = cliTools.readInputFile(inputFile());  
-    return articles.testAndTeach.buildTestAndTeach(prodTicket, program);
+    return articles.townHallEnduring.buildTownHallEnduring(prodTicket, program);
 }
 
 
@@ -51,12 +51,12 @@ let buildFinalOutput = function (self) {
 module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
-    .command('generate test-and-teach <articleID>', testAndTeachHelp)
+    .command('generate townhall enduring <articleID>', townHallEnduringHelp)
     .types({string: ['_']})
     .action(function(args, callback) {       
         program.articleID = args.articleID;        
         let self = this;
-        actions.testAndTeachAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles);
+        actions.basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles, config.transcriptTypes);
     });
     vorpal.on('client_prompt_submit', function (program){
         cliTools.resetProgram(program);

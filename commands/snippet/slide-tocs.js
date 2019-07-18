@@ -7,10 +7,10 @@
 // ------------------------------------------------------------
 const _ = require('lodash');
 
-const articleUtils = require('../articles').articleUtils;
-const utils = require('../utils');
-const {TOCElement, SectionElement, SubsectionElement, SlideGroup, SlideComponent} = require("../classes");
-const callbacks = require('./callbacks');
+const articleUtils = require('../../articles').articleUtils;
+const utils = require('../../utils');
+const {TOCElement, SectionElement, SubsectionElement, SlideGroup, SlideComponent} = require("../../classes");
+const callbacks = require('../callbacks');
 const cliTools = utils.cliTools;
 const N = cliTools.N;
 

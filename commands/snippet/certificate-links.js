@@ -5,8 +5,8 @@
 
 // REQUIRES
 // ------------------------------------------------------------
-const utils = require('../utils');
-const snippets = require('../snippets');
+const utils = require('../../utils');
+const snippets = require('../../snippets');
 const cliTools = utils.cliTools;
 const N = cliTools.N;
 
