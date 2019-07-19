@@ -20,6 +20,7 @@ const slideTOCs = require('./snippet/slide-tocs');
 // const snippetChooser = require('./snippets-chooser');
 
 // COMPONENT COMMANDS (XML)
+const activity = require('./component/activity');
 
 // CLEAN UP COMMANDS (HTML)
 
@@ -48,6 +49,7 @@ let commands = function (vorpal) {
     // snippetChooser(vorpal);
 
     // COMPONENT COMMANDS (XML)
+    activity(vorpal);
 
     // CLEAN UP COMMANDS (HTML)
 
