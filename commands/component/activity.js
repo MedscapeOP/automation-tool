@@ -12,6 +12,7 @@ const utils = require('../../utils');
 const articles = require('../../articles');
 const cliTools = utils.cliTools;
 const N = cliTools.N;
+const prodticket = require('../../prodticket');
 let config = require('../../config');
 let actions = require('../actions');
 
@@ -23,7 +24,6 @@ Generates Activity XML code from R2Net html file. Input directory: /<articleType
 
 
 let inputFile = function () {
-
     return cliTools.getInputDirectory() + '/spotlight/article.html';
 }
 
@@ -46,15 +46,17 @@ programOptions = _.mapValues(programOptions, function (o){
 // Make names be the keys --> Map keys 
 // then set value of key to be codeName --> Map values
 
-let program = config.propertiesChecklist;
+let program = null;
 
 
 // BUILD FUNCTION LOGIC 
 // ------------------------------------------------------------
 let buildFinalOutput = function (self) {
-    var prodTicket = cliTools.readInputFile(inputFile());  
-    var checklist = articles.propertiesChecklist.getChecklist(prodTicket, program);
-    return articles.propertiesChecklist.buildChecklist(checklist, program);
+    var ticket = cliTools.readInputFile(inputFile());  
+
+    var activityXML = articles.activity.activity(program, infoObject.title, infoObject.targetAudience, infoObject.goalStatement, infoObject.learningObjectives, infoObject.cmeReviewers);
+
+    return activityXML;
 }
 
 

@@ -2,7 +2,7 @@ const _ = require("lodash");
 const utils = require("../utils");
 const stringOps = utils.stringOps;
 const articleUtils = require('./article-utils');
-const {ProfActivity} = require("../classes");
+const {ProfActivity, ActivityChecklist} = require("../classes");
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
 
@@ -65,7 +65,82 @@ function activity(program, title, targetAudience, goalStatement, learningObjecti
     return activityInstance.toFinalXML();
 }
 
+
+/* ACTIVITY BUILDER  
+-------------------------------------- */
+function buildActivity(ticketHTML, program) {
+    var checklist = new ActivityChecklist();
+
+    // TITLE 
+    checklist.title.result = prodticket.getTitle(ticketHTML, program);
+
+    // TARGET AUDIENCE 
+    checklist.targetAudience.result = prodticket.getTargetAudience(ticketHTML, program);
+    
+    // GOAL STATEMENT 
+    checklist.goalStatement.result = prodticket.getGoalStatement(ticketHTML, program);
+    
+    // LEARNING OBJECTIVES 
+    checklist.learningObjectives.result = prodticket.getLearningObjectives(ticketHTML, program);
+
+    // CME REVIEWERS 
+    checklist.cmeReviewers.result = prodticket.getCMEReviewers(ticketHTML, program);
+
+    var checklistResult = checklist.print();
+
+    title = (checklistResult.properties.title ? checklistResult.properties.title.result : "");
+
+    targetAudience = (checklistResult.properties.targetAudience ? checklistResult.properties.targetAudience.result : "");
+
+    goalStatement = (checklistResult.properties.goalStatement ? checklistResult.properties.goalStatement.result : "");
+
+    learningObjectives = (checklistResult.properties.learningObjectives ? checklistResult.properties.learningObjectives.result : "");
+
+    learningObjectives = utils.formatLearningObjectives(learningObjectives); 
+
+    cmeReviewers = (checklistResult.properties.cmeReviewers ? checklistResult.properties.cmeReviewers.result : "");
+
+    return activity(program, title, targetAudience, goalStatement, learningObjectives, cmeReviewers);
+}
+
+
+/* CLINICAL BRIEF ACTIVITY BUILDER  
+-------------------------------------- */
+function buildActivityCB(ticketHTML, program) {
+    var checklist = new ActivityChecklist();
+
+    // TITLE 
+    checklist.title.result = prodticket.getTitle(ticketHTML, program);
+
+    // TARGET AUDIENCE 
+    checklist.targetAudience.result = prodticket.getTargetAudience(ticketHTML, program);
+    
+    // LEARNING OBJECTIVES 
+    checklist.learningObjectives.result = prodticket.getLearningObjectives(ticketHTML, program);
+
+    // CME REVIEWERS 
+    checklist.cmeReviewers.result = prodticket.getCMEReviewers(ticketHTML, program);
+
+    var checklistResult = checklist.print();
+
+    title = (checklistResult.properties.title ? checklistResult.properties.title.result : "");
+
+    targetAudience = (checklistResult.properties.targetAudience ? checklistResult.properties.targetAudience.result : "");
+
+    goalStatement = (checklistResult.properties.goalStatement ? checklistResult.properties.goalStatement.result : "");
+
+    learningObjectives = (checklistResult.properties.learningObjectives ? checklistResult.properties.learningObjectives.result : "");
+
+    learningObjectives = utils.formatLearningObjectives(learningObjectives); 
+
+    cmeReviewers = (checklistResult.properties.cmeReviewers ? checklistResult.properties.cmeReviewers.result : "");
+
+    return activityClinicalBrief(program, title, targetAudience, learningObjectives, cmeReviewers);
+}
+
 module.exports = {
     activityClinicalBrief,
-    activity
+    activity,
+    buildActivity, 
+    buildActivityCB 
 };

@@ -15,6 +15,7 @@ const TownHallEnduringChecklist = require('./townhall_enduring_checklist');
 const TownHallRegChecklist = require('./townhall_reg_checklist');
 const TestAndTeachChecklist = require('./test-and-teach-checklist');
 const PropertiesChecklist = require('./properties_checklist');
+const ActivityChecklist = require('./activity_checklist');
 const ProgramTimeline = require('./program_timeline');
 const ContributorGroup = require('./contrbtr_group');
 const ContributorElement = require('./contrbtr_element');
@@ -37,6 +38,7 @@ module.exports = {
     TownHallRegChecklist,
     TestAndTeachChecklist,
     PropertiesChecklist,
+    ActivityChecklist,
     ProgramTimeline,
     ContributorGroup,
     ContributorElement
