@@ -36,6 +36,36 @@ function activityClinicalBrief(program, title, targetAudience, learningObjective
 }
 
 
+/* ACTIVITY FUNCTION  
+-------------------------------------- */
+function activity(program, title, targetAudience, goalStatement, learningObjectives, cmeReviewers) {
+    // console.log("CME REVIEWERS: ", cmeReviewers);
+    var activityInstance = new ProfActivity(title, program.hasOUS);
+    activityInstance.targetAudience = targetAudience; // Text field
+
+    learningObjectives = `<p><p>Upon completion of this activity, participants will:</p>` + learningObjectives + "</p>";
+
+    activityInstance.learningObjectives =  learningObjectives; // unwrapped markup
+    activityInstance.goalStatement = utils.cleanHTML.plainText(goalStatement);
+    
+    activityInstance.miscProviderStatement = snippets.activity.medscapeProviderStatement(program);
+
+    activityInstance.creditInstructions = snippets.activity.instructionsForCredit(program);
+
+    activityInstance.hardwareRequirements = snippets.activity.hardwareRequirements();
+
+    activityInstance.additionalCreditAvailable = snippets.activity.additionalCreditAvailable();
+
+    var contributorGroups = articleUtils.buildContributorGroups(cmeReviewers);
+
+    for (var i = 0; i < contributorGroups.length; i++) {       
+        activityInstance.insertContributorGroup(contributorGroups[i]);
+    }
+
+    return activityInstance.toFinalXML();
+}
+
 module.exports = {
-    activityClinicalBrief
+    activityClinicalBrief,
+    activity
 };
