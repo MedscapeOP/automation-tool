@@ -315,6 +315,7 @@ function buildFirstResponse(ticket, program) {
 
 module.exports = {
     getSlidesTOCs,
+    getTranscriptTOC,
     getLLAPreSection,
     getLLAPostTOC,
     buildFirstResponse

@@ -506,7 +506,6 @@ function getLLAPostTOC(ticket, program) {
 }
 
 
-
 /* CHECKLIST FUNCTION  
 -------------------------------------- */
 function checklistTestAndTeach(ticket, program) {
