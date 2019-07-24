@@ -28,6 +28,13 @@ var usAndGlobal = [
         affiliation: "Associate CME Clinical Director, Medscape, LLC",
         disclosure: "Disclosure: Esther Nyarko, PharmD, has disclosed no relevant financial relationships.",
         chronicleid: "0901c79180d496f2"
+    },
+    {
+        title: "CME Reviewer/Nurse Planner",
+        name: "Hazel Dennison, DNP, RN, FNP, CPHQ, CNE", 
+        affiliation: "Associate Director, Accreditation and Compliance, Medscape, LLC",
+        disclosure: "Disclosure: Hazel Dennison, DNP, RN, FNP, CPHQ, CNE, has disclosed no relevant financial relationships.",
+        chronicleid: "0901c79180??????"
     }
 ];
 
@@ -58,9 +65,16 @@ var ous = [
     {
         title: "Content Reviewer",
         name: "Esther Nyarko, PharmD",
-        affiliation: "Associate CME Clinical Director, Medscape, LLC",
+        affiliation: "Associate CME Clinical Director",
         disclosure: "Disclosure: Esther Nyarko, PharmD, has disclosed no relevant financial relationships.",
         chronicleid: "0901c79180d496f2"
+    },
+    {
+        title: "Content Reviewer",
+        name: "Hazel Dennison, DNP, RN, FNP, CPHQ, CNE", 
+        affiliation: "Associate Director, Accreditation and Compliance",
+        disclosure: "Disclosure: Hazel Dennison, DNP, RN, FNP, CPHQ, CNE, has disclosed no relevant financial relationships.",
+        chronicleid: "0901c79180??????"
     }
 ];
 
