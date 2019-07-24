@@ -111,10 +111,10 @@ let buildFinalOutput = function (self, answers) {
     console.log("INFO: ", infoObject);
     if (infoObject.isMulticomponent) {
         for (var i = 1; i < infoObject.componentCount + 1; i++) {
-            result += snippets.mediaInfo(infoObject.articleID, infoObject.rssLinks[i - 1], i) + "\n\n\n";
+            result += snippets.customForm.mediaInfo(infoObject.articleID, infoObject.rssLinks[i - 1], i) + "\n\n\n";
         }
     } else {
-        result = snippets.mediaInfo(infoObject.articleID, infoObject.rssLinks);
+        result = snippets.customForm.mediaInfo(infoObject.articleID, infoObject.rssLinks);
     }
     return result; 
 }
