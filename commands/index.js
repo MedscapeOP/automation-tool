@@ -21,7 +21,8 @@ const slideTOCs = require('./snippet/slide-tocs');
 
 // COMPONENT COMMANDS (XML)
 const activity = require('./component/activity');
-const transcript = require('./component/transcript');
+const textTranscript = require('./component/text-transcript');
+const slidesTranscript = require('./component/slides-transcript');
 
 // CLEAN UP COMMANDS (HTML)
 
@@ -51,7 +52,8 @@ let commands = function (vorpal) {
 
     // COMPONENT COMMANDS (XML)
     activity(vorpal);
-    transcript(vorpal);
+    textTranscript(vorpal);
+    slidesTranscript(vorpal);
 
     // CLEAN UP COMMANDS (HTML)
 

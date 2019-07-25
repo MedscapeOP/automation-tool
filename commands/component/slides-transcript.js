@@ -16,13 +16,13 @@ const prodticket = require('../../prodticket');
 let config = require('../../config');
 let prompts = require('../prompts');
 let callbacks = require('../callbacks');
-const {TOCElement, SectionElement, SubsectionElement, SlideGroup, SlideComponent, ContributorGroup, ContributorElement} = require("../../classes");
+// const {TOCElement, SectionElement, SubsectionElement, SlideGroup, SlideComponent, ContributorGroup, ContributorElement} = require("../../classes");
 
 
 // VARS
 // ------------------------------------------------------------
 const activityHelp = `
-Generates XML code for Sidebar Transcript from R2Net html file. Input directory: /<articleType>/article.html`;
+Generates XML code for Slides Transcript from R2Net html file. Input directory: /<articleType>/article.html`;
 
 
 let inputFile = function () {
@@ -30,7 +30,7 @@ let inputFile = function () {
 }
 
 let outputFile = function () {
-    return `${program.articleID}/${program.articleID}_transcript.xml`
+    return `${program.articleID}/${program.articleID}_slides.xml`
 };  
 
 let programOptions = _.mapKeys(config.programs, function (value, key) {
@@ -62,53 +62,38 @@ let infoObject = {
 // ------------------------------------------------------------
 let buildFinalOutput = function (self) {
     var ticket = cliTools.readInputFile(inputFile());  
-    var transcriptHTML = null;
+    var slideComponents = null;
+    var slidesTOCs = null;
     var transcriptXML = null; 
 
-    // GET TRANSCRIPT FROM PRODTICKET BASED ON TRASCRIPT TYPE 
-    if (program.codeName == "brief") {
-        var mainTOCInstance = new TOCElement();
-        // CLINICAL CONTEXT  
-        var clinicalContext = articles.clinicalBrief.getClinicalContext(ticket);
-        // SYNOPSIS AND PERSPECTIVE 
-        var synopsisAndPerspective = articles.clinicalBrief.getSynopsisAndPerspective(ticket);
-        // STUDY HIGHLIGHTS 
-        var studyHighlights = articles.clinicalBrief.getStudyHighlights(ticket);
-        // CLINICAL IMPLICATIONS 
-        var clinicalImplications = articles.clinicalBrief.getClinicalImplications(ticket);
-        ;
-        mainTOCInstance.insertSectionElement(clinicalContext);
-        mainTOCInstance.insertSectionElement(synopsisAndPerspective);
-        mainTOCInstance.insertSectionElement(studyHighlights);
-        mainTOCInstance.insertSectionElement(clinicalImplications);
-        transcriptXML = utils.xmlOps.objectToXMLString(mainTOCInstance.toObjectLiteral());
-    } else if (program.codeName == "testAndTeach") {
-        var mainContentTOCs = articles.testAndTeach.getMainContent(ticket, program);
-        var resultXML = "";
-        for (var i = 0; i < mainContentTOCs.mainTOCs.length; i++) {
-            resultXML += utils.xmlOps.objectToXMLString(mainContentTOCs.mainTOCs[i].toObjectLiteral()) + "\n\n\n";
-        }
-        transcriptXML = resultXML;
-    } else {
-        transcriptHTML = prodticket.getArticleContent(ticket, program);
-    }
+    // GET SLIDES FROM PRODTICKET  
+    slideComponents = prodticket.getSlides(ticket, program);
 
 
     // SET TRANSCRIPT TO NULL IF THE RESULT RETURNED WAS AN ERROR 
-    if (transcriptHTML instanceof Error) {
-        throw transcriptHTML;
-    } else if (!transcriptXML) {
+    if (slideComponents instanceof Error) {
+        throw slideComponents;
+    } else {
         // If no transcriptXML --> then we ran brief or test and teach functions.
         if (
             program.codeName == "spotlight" ||
             program.codeName == "curbside" ||
             program.codeName == "video" 
         ) {
-            transcriptXML = utils.xmlOps.objectToXMLString(articles.spotlight.getTranscriptTOC(transcriptHTML, program).toObjectLiteral());
+            slidesTOCs = articles.spotlight.getSlidesTOC(slideComponents, program);
+            transcriptXML = utils.xmlOps.objectToXMLString(slidesTOCs.toObjectLiteral());
         } else if (program.codeName == "firstResponse") {
-            transcriptXML = utils.xmlOps.objectToXMLString(articles.firstResponse.getTranscriptTOC(transcriptHTML, program).toObjectLiteral());
+            var components = prodticket.getComponents(ticket, program);
+            if (components instanceof Error) {
+                throw components;
+            }
+            slidesTOCs = articles.firstResponse.getSlidesTOCs(slideComponents, program, components);
+            for (var i = 0; i < slidesTOCs.length; i++) {
+                transcriptXML += utils.xmlOps.objectToXMLString(slidesTOCs[i].toObjectLiteral()) + "\n\n\n";
+            }
         } else if (program.codeName == "townHall") {
-            transcriptXML = utils.xmlOps.objectToXMLString(articles.townHallEnduring.getTranscriptTOC(transcriptHTML, program).toObjectLiteral());
+            slidesTOCs = articles.townHallEnduring.getSlidesTOC(slideComponents, program).slidesTOC;
+            transcriptXML = utils.xmlOps.objectToXMLString(slidesTOCs.toObjectLiteral());
         } else {
             transcriptXML = "";
         }
@@ -122,7 +107,7 @@ let buildFinalOutput = function (self) {
 module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
-    .command('component text-transcript <articleID>', activityHelp)
+    .command('component slides-transcript <articleID>', activityHelp)
     // .parse(function (command, args) { 
     //     args.articleID = String(args.articleID);
     //     return command + ` ` + args.articleID;   
@@ -133,7 +118,7 @@ module.exports = function (vorpal) {
         infoObject.articleID = args.articleID;        
         let self = this;
 
-        prompts.productTypePrompt(self, _.keys(programOptions))
+        prompts.productTypePrompt(self, _.pull(_.keys(programOptions), 'Clinical Brief', 'Test and Teach'))
         .then((answers) => {
             // Has OUS?
             if (answers) {
@@ -151,7 +136,7 @@ module.exports = function (vorpal) {
             }        
         }).then((result) => {
             try {
-                var completionMessage = `Transcript Sidebar XML created successfully! Check your output folder for the file: ${outputFile()}`;
+                var completionMessage = `Slides Transcript XML created successfully! Check your output folder for the file: ${outputFile()}`;
                 result = utils.cleanHTML.cleanEntities(result);
                 utils.cliTools.writeOutputFile(outputFile(), result, self, completionMessage, callback);
                 callback();                                     
@@ -159,6 +144,9 @@ module.exports = function (vorpal) {
                 self.log(error.message);
                 callback(); 
             }   
+        }).catch((error) => {
+            self.log(error);
+            callback(); 
         });
     });
     vorpal.on('client_prompt_submit', function (program){

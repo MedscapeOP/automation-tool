@@ -6,6 +6,8 @@ const _ = require("lodash");
 const vorpal = require('vorpal')();
 const chalk = vorpal.chalk;
 
+vorpal.setMaxListeners(30);
+
 const commands = require('./commands');
 
 // MODULE HIERARCHY: tests/app > commands > coremodules > utils
