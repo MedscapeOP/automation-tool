@@ -278,6 +278,7 @@ function buildTownHallEnduring(ticket, program) {
 };
 
 module.exports = {
+    getTranscriptTOC,
     getSlidesTOC,
     getLLAPreTOC,
     getLLAPostTOC,

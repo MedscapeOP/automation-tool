@@ -16,12 +16,13 @@ const prodticket = require('../../prodticket');
 let config = require('../../config');
 let prompts = require('../prompts');
 let callbacks = require('../callbacks');
+const {TOCElement, SectionElement, SubsectionElement, SlideGroup, SlideComponent, ContributorGroup, ContributorElement} = require("../../classes");
 
 
 // VARS
 // ------------------------------------------------------------
 const activityHelp = `
-Generates Activity XML code from R2Net html file. Input directory: /<articleType>/article.html`;
+Generates XML code for Sidebar Transcript from R2Net html file. Input directory: /<articleType>/article.html`;
 
 
 let inputFile = function () {
@@ -29,7 +30,7 @@ let inputFile = function () {
 }
 
 let outputFile = function () {
-    return `${program.articleID}/${program.articleID}_activity.xml`
+    return `${program.articleID}/${program.articleID}_transcript.xml`
 };  
 
 let programOptions = _.mapKeys(config.programs, function (value, key) {
@@ -55,30 +56,6 @@ let infoObject = {
 
 // PROMPTS 
 // ------------------------------------------------------------
-let articleTitlePrompt = function (self) {
-    return self.prompt({
-        type: 'input',
-        name: 'title',
-        message: 'Please Enter the Article Title: ',
-        validate: function (answer) {
-            if (answer.length < 1) {
-                return ('You must enter a title!');
-            } else {
-                return true;
-            }
-        }                    
-    });
-};
-
-
-let expertCommentaryPrompt = function (self) {
-    return self.prompt({
-        type: 'confirm',
-        name: 'expertCommentary',
-        message: 'Has Expert Commentary?'                  
-    });
-};
-
 
 
 // BUILD FUNCTION LOGIC 
@@ -89,9 +66,30 @@ let buildFinalOutput = function (self) {
     var transcriptXML = null; 
 
     // GET TRANSCRIPT FROM PRODTICKET BASED ON TRASCRIPT TYPE 
-    if (program.transcriptType === config.transcriptTypes[0]) {
-        transcriptHTML = prodticket.getSlides(ticket, program);
-    } else if (program.transcriptType === config.transcriptTypes[1]) {
+    if (program.codeName == "brief") {
+        var mainTOCInstance = new TOCElement();
+        // CLINICAL CONTEXT  
+        var clinicalContext = articles.clinicalBrief.getClinicalContext(ticket);
+        // SYNOPSIS AND PERSPECTIVE 
+        var synopsisAndPerspective = articles.clinicalBrief.getSynopsisAndPerspective(ticket);
+        // STUDY HIGHLIGHTS 
+        var studyHighlights = articles.clinicalBrief.getStudyHighlights(ticket);
+        // CLINICAL IMPLICATIONS 
+        var clinicalImplications = articles.clinicalBrief.getClinicalImplications(ticket);
+        ;
+        mainTOCInstance.insertSectionElement(clinicalContext);
+        mainTOCInstance.insertSectionElement(synopsisAndPerspective);
+        mainTOCInstance.insertSectionElement(studyHighlights);
+        mainTOCInstance.insertSectionElement(clinicalImplications);
+        transcriptXML = utils.xmlOps.objectToXMLString(mainTOCInstance.toObjectLiteral());
+    } else if (program.codeName == "testAndTeach") {
+        var mainContentTOCs = articles.testAndTeach.getMainContent(ticket, program);
+        var resultXML = "";
+        for (var i = 0; i < mainContentTOCs.mainTOCs.length; i++) {
+            resultXML += utils.xmlOps.objectToXMLString(mainContentTOCs.mainTOCs[i].toObjectLiteral()) + "\n\n\n";
+        }
+        transcriptXML = resultXML;
+    } else {
         transcriptHTML = prodticket.getArticleContent(ticket, program);
     }
 
@@ -99,16 +97,22 @@ let buildFinalOutput = function (self) {
     // SET TRANSCRIPT TO NULL IF THE RESULT RETURNED WAS AN ERROR 
     if (transcriptHTML instanceof Error) {
         throw transcriptHTML;
-    } else {
-        if (program.codeName == "brief") {
-
-        } else if (program.codeName == "testAndTeach") {
-
+    } else if (!transcriptXML) {
+        // If no transcriptXML --> then we ran brief or test and teach functions.
+        if (
+            program.codeName == "spotlight" ||
+            program.codeName == "curbside" ||
+            program.codeName == "video" 
+        ) {
+            transcriptXML = utils.xmlOps.objectToXMLString(articles.spotlight.getTranscriptTOC(transcriptHTML, program).toObjectLiteral());
+        } else if (program.codeName == "firstResponse") {
+            transcriptXML = utils.xmlOps.objectToXMLString(articles.firstResponse.getTranscriptTOC(transcriptHTML, program).toObjectLiteral());
+        } else if (program.codeName == "townHall") {
+            transcriptXML = utils.xmlOps.objectToXMLString(articles.townHallEnduring.getTranscriptTOC(transcriptHTML, program).toObjectLiteral());
         } else {
-            
+            transcriptXML = "";
         }
     }
-
     return transcriptXML;
 }
 
@@ -118,7 +122,7 @@ let buildFinalOutput = function (self) {
 module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
-    .command('component activity <articleID>', activityHelp)
+    .command('component text-transcript <articleID>', activityHelp)
     // .parse(function (command, args) { 
     //     args.articleID = String(args.articleID);
     //     return command + ` ` + args.articleID;   
@@ -140,16 +144,14 @@ module.exports = function (vorpal) {
                         program.articleID = infoObject.articleID;
                     }
                 }
-                return prompts.ousPrompt(self);
+                return buildFinalOutput(self);
             } else {
                 self.log(`Not getting answers for productType`);
                 callback();
             }        
-        }).then((answers) => {            
-            return callbacks.promiseCallback(self, callback, program, answers, "hasOUS", buildFinalOutput);
         }).then((result) => {
             try {
-                var completionMessage = `Activity XML file created successfully! Check your output folder for the file: ${outputFile()}`;
+                var completionMessage = `Transcript Sidebar XML created successfully! Check your output folder for the file: ${outputFile()}`;
                 result = utils.cleanHTML.cleanEntities(result);
                 utils.cliTools.writeOutputFile(outputFile(), result, self, completionMessage, callback);
                 callback();                                     
