@@ -55,29 +55,6 @@ let infoObject = {
 
 // PROMPTS 
 // ------------------------------------------------------------
-let articleTitlePrompt = function (self) {
-    return self.prompt({
-        type: 'input',
-        name: 'title',
-        message: 'Please Enter the Article Title: ',
-        validate: function (answer) {
-            if (answer.length < 1) {
-                return ('You must enter a title!');
-            } else {
-                return true;
-            }
-        }                    
-    });
-};
-
-
-let expertCommentaryPrompt = function (self) {
-    return self.prompt({
-        type: 'confirm',
-        name: 'expertCommentary',
-        message: 'Has Expert Commentary?'                  
-    });
-};
 
 
 

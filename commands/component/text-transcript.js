@@ -21,7 +21,7 @@ const {TOCElement, SectionElement, SubsectionElement, SlideGroup, SlideComponent
 
 // VARS
 // ------------------------------------------------------------
-const activityHelp = `
+const textTranscriptHelp = `
 Generates XML code for Sidebar Transcript from R2Net html file. Input directory: /<articleType>/article.html`;
 
 
@@ -122,7 +122,7 @@ let buildFinalOutput = function (self) {
 module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
-    .command('component text-transcript <articleID>', activityHelp)
+    .command('component text-transcript <articleID>', textTranscriptHelp)
     // .parse(function (command, args) { 
     //     args.articleID = String(args.articleID);
     //     return command + ` ` + args.articleID;   

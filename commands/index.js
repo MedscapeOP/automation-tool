@@ -23,6 +23,7 @@ const slideTOCs = require('./snippet/slide-tocs');
 const activity = require('./component/activity');
 const textTranscript = require('./component/text-transcript');
 const slidesTranscript = require('./component/slides-transcript');
+const abbreviations = require('./component/abbreviations');
 
 // CLEAN UP COMMANDS (HTML)
 
@@ -54,6 +55,7 @@ let commands = function (vorpal) {
     activity(vorpal);
     textTranscript(vorpal);
     slidesTranscript(vorpal);
+    abbreviations(vorpal);
 
     // CLEAN UP COMMANDS (HTML)
 

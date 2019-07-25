@@ -16,13 +16,12 @@ const prodticket = require('../../prodticket');
 let config = require('../../config');
 let prompts = require('../prompts');
 let callbacks = require('../callbacks');
-// const {TOCElement, SectionElement, SubsectionElement, SlideGroup, SlideComponent, ContributorGroup, ContributorElement} = require("../../classes");
 
 
 // VARS
 // ------------------------------------------------------------
-const slidesTranscriptHelp = `
-Generates XML code for Slides Transcript from R2Net html file. Input directory: /<articleType>/article.html`;
+const abbreviationsHelp = `
+Generates Abbrevations TOC XML code from R2Net html file. Input directory: /<articleType>/article.html`;
 
 
 let inputFile = function () {
@@ -30,7 +29,7 @@ let inputFile = function () {
 }
 
 let outputFile = function () {
-    return `${program.articleID}/${program.articleID}_slides.xml`
+    return `${program.articleID}/${program.articleID}_abbreviations.xml`
 };  
 
 let programOptions = _.mapKeys(config.programs, function (value, key) {
@@ -62,43 +61,19 @@ let infoObject = {
 // ------------------------------------------------------------
 let buildFinalOutput = function (self) {
     var ticket = cliTools.readInputFile(inputFile());  
-    var slideComponents = null;
-    var slidesTOCs = null;
-    var transcriptXML = null; 
+    var abbreviationsXML = null;
+    var abbreviationsHTML = null; 
 
-    // GET SLIDES FROM PRODTICKET  
-    slideComponents = prodticket.getSlides(ticket, program);
+    abbreviationsHTML = prodticket.getAbbreviations(ticket, program);
 
-
-    // SET TRANSCRIPT TO NULL IF THE RESULT RETURNED WAS AN ERROR 
-    if (slideComponents instanceof Error) {
-        throw slideComponents;
+    if (abbreviationsHTML instanceof Error) {
+        throw abbreviationsHTML;
+    } else if (!abbreviationsHTML) {
+        throw new Error("Something went wrong when searching for abbreviations!");
     } else {
-        // If no transcriptXML --> then we ran brief or test and teach functions.
-        if (
-            program.codeName == "spotlight" ||
-            program.codeName == "curbside" ||
-            program.codeName == "video" 
-        ) {
-            slidesTOCs = articles.spotlight.getSlidesTOC(slideComponents, program);
-            transcriptXML = utils.xmlOps.objectToXMLString(slidesTOCs.toObjectLiteral());
-        } else if (program.codeName == "firstResponse") {
-            var components = prodticket.getComponents(ticket, program);
-            if (components instanceof Error) {
-                throw components;
-            }
-            slidesTOCs = articles.firstResponse.getSlidesTOCs(slideComponents, program, components);
-            for (var i = 0; i < slidesTOCs.length; i++) {
-                transcriptXML += utils.xmlOps.objectToXMLString(slidesTOCs[i].toObjectLiteral()) + "\n\n\n";
-            }
-        } else if (program.codeName == "townHall") {
-            slidesTOCs = articles.townHallEnduring.getSlidesTOC(slideComponents, program).slidesTOC;
-            transcriptXML = utils.xmlOps.objectToXMLString(slidesTOCs.toObjectLiteral());
-        } else {
-            transcriptXML = "";
-        }
+        abbreviationsXML = utils.xmlOps.objectToXMLString(articles.articleUtils.buildAbbreviations(abbreviationsHTML, program).toObjectLiteral());
     }
-    return transcriptXML;
+    return abbreviationsXML;
 }
 
 
@@ -107,7 +82,7 @@ let buildFinalOutput = function (self) {
 module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
-    .command('component slides-transcript <articleID>', slidesTranscriptHelp)
+    .command('component abbreviations <articleID>', abbreviationsHelp)
     // .parse(function (command, args) { 
     //     args.articleID = String(args.articleID);
     //     return command + ` ` + args.articleID;   
@@ -118,7 +93,7 @@ module.exports = function (vorpal) {
         infoObject.articleID = args.articleID;        
         let self = this;
 
-        prompts.productTypePrompt(self, _.pull(_.keys(programOptions), 'Clinical Brief', 'Test and Teach'))
+        prompts.productTypePrompt(self, _.pull(_.keys(programOptions), 'Clinical Brief'))
         .then((answers) => {
             // Has OUS?
             if (answers) {
@@ -136,7 +111,7 @@ module.exports = function (vorpal) {
             }        
         }).then((result) => {
             try {
-                var completionMessage = `Slides Transcript XML created successfully! Check your output folder for the file: ${outputFile()}`;
+                var completionMessage = `Abbreviations XML file created successfully! Check your output folder for the file: ${outputFile()}`;
                 result = utils.cleanHTML.cleanEntities(result);
                 utils.cliTools.writeOutputFile(outputFile(), result, self, completionMessage, callback);
                 callback();                                     
