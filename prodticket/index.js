@@ -36,6 +36,7 @@ let findTeaser = require('./find-teaser');
 let findAccreditation = require('./find-accreditation-statement');
 let findSupporter = require('./find-supporter');
 let findCreditsAvailable = require('./find-credits-available');
+let findCreditStatements = require('./find-credit-statements');
 let findLocationInfo = require('./find-location-info');
 let findDateTime = require('./find-date-time');
 let findProgramDetails = require('./find-program-details');
@@ -251,6 +252,17 @@ function getCreditsAvailable(ticketHTML, program) {
     } 
 }
 
+function getCreditStatements(ticketHTML, program) {
+    if (checkTicket(ticketHTML)) {
+        try {
+            var rawCreditStatements = findCreditStatements[program.codeName](ticketHTML);
+            return rawCreditStatements;
+        } catch (error) {
+            return error;
+        }
+    } 
+}
+
 function getLocationInfo(ticketHTML, program) {
     if (checkTicket(ticketHTML)) {
         try {
@@ -347,6 +359,7 @@ module.exports = {
     getAccreditation,
     getSupporter,
     getCreditsAvailable,
+    getCreditStatements,
     getLocationInfo,
     getDateTime,
     getProgramDetails,
