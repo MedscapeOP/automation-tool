@@ -56,28 +56,29 @@ let eligibilities = [
         prop: 'cme',
         briefRegex: /<p>&#9746;.*CME/g,
         startRegex: /&\#9746;\s+.*ACCME:/g,
-        endRegex: /&#974.*ANCC:/g,
+        endRegex: /&#974.*ANCC:|.*Partner Details/g,
         returnRegex: /<p>Medscape.* designates.*/g
     },
     {
         prop: 'moc',
         briefRegex: /<p>&#9746;.*ABIM MOC/g,
         startRegex: /&\#9746;\s+.*ABIM MOC:/g,
-        endRegex: /&#974.*ACPE:/g,
+        endRegex: /&#974.*ACPE:|.*Partner Details/g,
+        // endRegex: /.*Partner Details/g,
         returnRegex: /<p>Successful completion.*/g
     },
     {
         prop: 'nurseCE',
         briefRegex: /<p>&#9746;.*Nurse/g,
         startRegex: /&#9746;.*ANCC:/g,
-        endRegex: /&#974.*ABIM MOC:/g,
+        endRegex: /&#974.*ABIM MOC:|.*Partner Details/g,
         returnRegex: /<p>Awarded \d+\.\d+ contact.*/g
     },
     {
         prop: 'pharmaCE',
         briefRegex: /<p>&#9746;.*ACPE CE/g,
         startRegex: /&#9746;.*ACPE:/g,
-        endRegex: /&#974.*AAPA:/g,
+        endRegex: /&#974.*AAPA:|.*Partner Details/g,
         returnRegex: /<p>Medscape.* designates.*/g
     },
     {
@@ -113,7 +114,7 @@ exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
         configObject.creditAmount = getCreditAmount(textBlock);
         configObject.UAN = getUAN(textBlock);
         configObject.contactHours = checkContactHours(textBlock);
-        console.log(configObject);
+        // console.log(configObject);
         return snippets.activity.briefStatements(configObject);
     }
 }

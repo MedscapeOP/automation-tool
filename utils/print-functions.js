@@ -310,21 +310,19 @@ function printCreditStatements(creditStatements) {
         CME CREDIT STATEMENT
         -----------------------------------------
         `;
+        cmeStatement +="\n";
         var statement = ``;
         if (creditStatements.moc) {
             statement = stripIndent`
             ${creditStatements.cme}
-
-            ${creditStatements.disclosure}
-
-            ${creditStatements.moc}
             `;
+            statement += "\n\n" + stripIndent`${creditStatements.disclosure}`
+            statement += "\n\n" + stripIndent`${creditStatements.moc}`
         } else {
             statement = stripIndent`
             ${creditStatements.cme}
-
-            ${creditStatements.disclosure}
             `;
+            statement += "\n\n" + stripIndent`${creditStatements.disclosure}`
         }
         cmeStatement += statement + "\n\n";  
     }
@@ -336,10 +334,7 @@ function printCreditStatements(creditStatements) {
         NURSE CE CREDIT STATEMENT
         -----------------------------------------
         `;
-        var statement = stripIndent`
-        ${creditStatements.nurseCE}
-        `;
-        nurseCEStatement += statement + "\n\n";  
+        nurseCEStatement += "\n" + stripIndent`${creditStatements.nurseCE}` + "\n\n";
     }
 
     var pharmaCEStatement = ``;
@@ -349,10 +344,7 @@ function printCreditStatements(creditStatements) {
         PHARMA CE CREDIT STATEMENT
         -----------------------------------------
         `;
-        var statement = stripIndent`
-        ${creditStatements.pharmaCE}
-        `;
-        pharmaCEStatement += statement + "\n\n";  
+        pharmaCEStatement += "\n" + stripIndent`${creditStatements.pharmaCE}` + "\n\n";
     }
 
     var npCEStatement = ``;
@@ -361,11 +353,8 @@ function printCreditStatements(creditStatements) {
         -----------------------------------------
         NURSE PRACTITIONER CE CREDIT STATEMENT
         -----------------------------------------
-        `;
-        var statement = stripIndent`
-        ${creditStatements.npCE}
-        `;
-        npCEStatement += statement + "\n\n";  
+        `;  
+        npCEStatement += "\n" + stripIndent`${creditStatements.npCE}` + "\n\n";
     }
 
     var paCEStatement = ``;
@@ -375,10 +364,7 @@ function printCreditStatements(creditStatements) {
         PHARMA CE CREDIT STATEMENT
         -----------------------------------------
         `;
-        var statement = stripIndent`
-        ${creditStatements.paCE}
-        `;
-        paCEStatement += statement + "\n\n";  
+        paCEStatement += "\n" + `${creditStatements.paCE}` + "\n\n";
     }
 
     // return cleanHTML.cleanEntities(resultString);

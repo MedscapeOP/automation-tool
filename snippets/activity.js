@@ -147,7 +147,7 @@ function briefStatements(configObject) {
                 endStatement += `${configObject.creditAmount} contact hours are in the area of pharmacology.`
             } 
             return `
-            Awarded ${configObject.creditAmount} contact hour(s) of continuing nursing education for RNs and APNs; ${endStatement}
+            <p>Awarded ${configObject.creditAmount} contact hour(s) of continuing nursing education for RNs and APNs; ${endStatement}</p>
             `
         } else {
             return null; 
@@ -156,7 +156,7 @@ function briefStatements(configObject) {
     var pharmaCEStatement = () => {
         if (configObject.pharmaCE) {
             return `
-            Medscape, LLC designates this continuing education activity for ${configObject.creditAmount} contact hour(s) (${configObject.creditAmount * 0.1} CEUs) (Universal Activity Number ${configObject.UAN}).
+            <p>Medscape, LLC designates this continuing education activity for ${configObject.creditAmount} contact hour(s) (${configObject.creditAmount * 0.1} CEUs) (Universal Activity Number ${configObject.UAN}).</p>
             `
         } else {
             return null

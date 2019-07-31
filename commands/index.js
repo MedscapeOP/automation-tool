@@ -26,6 +26,7 @@ const slidesTranscript = require('./component/slides-transcript');
 const abbreviations = require('./component/abbreviations');
 const references = require('./component/references');
 const tableOfContents = require('./component/toc');
+const creditStatements = require('./component/credit-statements');
 // CLEAN UP COMMANDS (HTML)
 
 
@@ -59,6 +60,7 @@ let commands = function (vorpal) {
     abbreviations(vorpal);
     references(vorpal);
     tableOfContents(vorpal);
+    creditStatements(vorpal);
 
     // CLEAN UP COMMANDS (HTML)
 

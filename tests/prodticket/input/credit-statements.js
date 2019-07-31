@@ -57,7 +57,7 @@ var brief = {
     moc: `
     <p class="moc-text">Successful completion of this CME activity, which includes participation in the evaluation component, enables the participant to earn up to 0.25 MOC points in the American Board of Internal Medicine&#39;s (ABIM) Maintenance of Certification (MOC) program. Participants will earn MOC points equivalent to the amount of CME credits claimed for the activity. It is the CME activity provider&#39;s responsibility to submit participant completion information to ACCME for the purpose of granting ABIM MOC credit.</p>
     `,
-    nurseCE: `Awarded 0.25 contact hour(s) of continuing nursing education for RNs and APNs; none of these credits is in the area of pharmacology.`, 
+    nurseCE: `<p>Awarded 0.25 contact hour(s) of continuing nursing education for RNs and APNs; none of these credits is in the area of pharmacology.</p>`, 
     pharmaCE: null,
     npCE: null,
     paCE: null 
