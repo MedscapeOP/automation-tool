@@ -1,23 +1,94 @@
 const config = require('../config');
 const {stringOps, cleanHTML} = require('../utils');
+const snippets = require('../snippets');
 
 
-let creditRegExpArray = [
-    /.*and allocated it (\d+\.\d+) continuing professional.*/gi,
-    /.*for a maximum of (\d+\.\d+) <em>AMA PRA.*/gi,
-    /.*for a maximum of (\d+\.\d+).*/gi
-];
+let getCreditStatement = (ticketHTML, startRegex, endRegex, returnRegex) => {
+    return stringOps.getTextWithinBlock(ticketHTML, startRegex, endRegex, returnRegex);
+}
 
-let removeRegexArray = [
-    /.*for a maximum of X\.X.*/gi,
-    /.*For Physicians.*/gi,
-    /.*For nurses.*/gi,
-    /.*e\.g\.:.*/gi
-];
+let getBriefCreditStatement = (ticketHTML, eligibility) => {
+    var match = ticketHTML.match(eligibility.briefRegex);
+    if (match && typeof match === "object") {
+        return true; 
+    } else {
+        return null;
+    }
+}
+
+let getCreditAmount = (textBlock) => {
+    var creditAmount = textBlock.match(creditRegExp);
+    // console.log("CREDIT AMOUNT REGEX: ", creditAmountLineRegExp);
+    if (creditAmount.length >= 1) {
+        creditAmount = creditAmount[0];
+        // console.log("RESULT: ", result);
+        creditAmount = parseFloat(cleanHTML.plainText(creditAmount, removeFluff=false).trim());
+    } else {
+        creditAmount = null;
+    }
+    return creditAmount;
+}
+
+let getUAN = (textBlock) => {
+    var match = textBlock.match(/(?:[A-Z0-9]{1,}-){4,5}[A-Z0-9]/g);
+    if (match && typeof match === "object") {
+        return match[0]; 
+    } else {
+        return null;
+    }
+}
+
+let checkContactHours = (textBlock) => {
+    var match = textBlock.match(/<p>&#9746;.*Contact hours/);
+    if (match && typeof match === "object") {
+        return true; 
+    } else {
+        return null;
+    }
+}
 
 let creditRegExp = /(\d+\.\d+)/;
 
 var exportObject = {};
+
+let eligibilities = [
+    {
+        prop: 'cme',
+        briefRegex: /<p>&#9746;.*CME/g,
+        startRegex: /&\#9746;\s+.*ACCME:/g,
+        endRegex: /&#974.*ANCC:/g,
+        returnRegex: /<p>Medscape.* designates.*/g
+    },
+    {
+        prop: 'moc',
+        briefRegex: /<p>&#9746;.*ABIM MOC/g,
+        startRegex: /&\#9746;\s+.*ABIM MOC:/g,
+        endRegex: /&#974.*ACPE:/g,
+        returnRegex: /<p>Successful completion.*/g
+    },
+    {
+        prop: 'nurseCE',
+        briefRegex: /<p>&#9746;.*Nurse/g,
+        startRegex: /&#9746;.*ANCC:/g,
+        endRegex: /&#974.*ABIM MOC:/g,
+        returnRegex: /<p>Awarded \d+\.\d+ contact.*/g
+    },
+    {
+        prop: 'pharmaCE',
+        briefRegex: /<p>&#9746;.*ACPE CE/g,
+        startRegex: /&#9746;.*ACPE:/g,
+        endRegex: /&#974.*AAPA:/g,
+        returnRegex: /<p>Medscape.* designates.*/g
+    },
+    {
+        prop: 'paCE',
+        briefRegex: /<p>&#9746;.*AAPA/g,
+        startRegex: /&#9746;.*AAPA:/g,
+        endRegex: /.*Partner Details/g,
+        returnRegex: /<p>Medscape.* has been authorized by.*/g
+    }    
+]
+
 
 // Clinical Brief
 exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
@@ -26,21 +97,27 @@ exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
    var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
    // console.log("TEXTBLOCK FOR CREDITS: ", cleanBlock);
 
-   if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
-       throw new Error("No credits available found in the prodticket");
-   } else {  
-       var creditAmount = textBlock.match(creditRegExp);
-       // console.log("CREDIT AMOUNT REGEX: ", creditAmountLineRegExp);
-       var result;
-       if (creditAmount.length >= 1) {
-           result = creditAmount[0];
-           // console.log("RESULT: ", result);
-           return cleanHTML.plainText(result, removeFluff=false).trim();
-       } else {
-           return "No Credit Available Section In Prodticket";
-       }
-   }
+    if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+        throw new Error("No credits available found in the prodticket");
+    } else { 
+        let configObject = {};
+        configObject.disclosure = snippets.activity.medscapeDisclosure();
+        configObject.npCE = null;
+        for (var i = 0; i < eligibilities.length; i++) {
+            configObject[eligibilities[i].prop] = getBriefCreditStatement(
+                textBlock, 
+                eligibilities[i]
+            );
+        }
+
+        configObject.creditAmount = getCreditAmount(textBlock);
+        configObject.UAN = getUAN(textBlock);
+        configObject.contactHours = checkContactHours(textBlock);
+        console.log(configObject);
+        return snippets.activity.briefStatements(configObject);
+    }
 }
+
 
 // Spotlight
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
@@ -55,25 +132,25 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     if (startRegExp == -1 || endRegExp == -1) {
         throw new Error("No credits available found in the prodticket");
     } else {
-        var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp.symbol, endRegExp.symbol, true, false);
+        var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp.symbol, endRegExp.symbol, true, true);
         // console.log("SYMBOLS: ", startRegExp.symbol + " " + endRegExp.symbol);
         // console.log("TEXTBLOCK: ", textBlock);
 
         if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
             throw new Error("No credits available found in the prodticket");
-        } else {  
-            var creditAmountLineRegExp = stringOps.getNextRegex(textBlock, creditRegExpArray);
-            // console.log("CREDIT AMOUNT REGEX: ", creditAmountLineRegExp);
-            var result;
-            if (creditAmountLineRegExp != -1) {
-                result = textBlock.match(creditAmountLineRegExp.symbol)[0];
-                // console.log("RESULT: ", result);
-                result = result.replace(creditAmountLineRegExp.symbol, '$1');
-                result = cleanHTML.plainText(result, removeFluff=false).trim();
-                return result;
-            } else {
-                return "No Credit Available Section In Prodticket";
+        } else {
+            let result = {};
+            result.disclosure = snippets.activity.medscapeDisclosure();
+            result.npCE = null;
+            for (var i = 0; i < eligibilities.length; i++) {
+                result[eligibilities[i].prop] = getCreditStatement(
+                    textBlock, 
+                    eligibilities[i].startRegex, 
+                    eligibilities[i].endRegex, 
+                    eligibilities[i].returnRegex
+                    );
             }
+            return result;
         }
     }
 }

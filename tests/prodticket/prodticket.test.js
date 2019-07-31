@@ -749,9 +749,14 @@ describe('Prodticket Module Functions', function () {
         it("should return the program Credit Statements from .html - Spotlight", function () {
             var spotlight = creditStatements.spotlight;
             var result = prodticket.getCreditStatements(prodticketSLCreditStatements, config.programs.spotlight);
-
+            // console.log(result);
+            // console.log(spotlight);
             for (var prop in spotlight) {
-                expect(result[prop]).to.equalIgnoreSpaces(spotlight[prop]);
+                if (spotlight[prop] == null) {
+                    expect(result[prop]).to.equal(null);
+                } else {
+                    expect(result[prop]).to.equalIgnoreSpaces(spotlight[prop]);
+                }
             }
         });
 
@@ -760,7 +765,11 @@ describe('Prodticket Module Functions', function () {
             var result = prodticket.getCreditStatements(prodticketCC, config.programs.curbsideConsult);
 
             for (var prop in curbside) {
-                expect(result[prop]).to.equalIgnoreSpaces(curbside[prop]);
+                if (curbside[prop] == null) {
+                    expect(result[prop]).to.equal(null);
+                } else {
+                    expect(result[prop]).to.equalIgnoreSpaces(curbside[prop]);
+                }
             }
         });
 
@@ -768,15 +777,24 @@ describe('Prodticket Module Functions', function () {
             var firstResponse = creditStatements.firstResponse;
             var result = prodticket.getCreditStatements(prodticketFR, config.programs.firstResponse);
             for (var prop in firstResponse) {
-                expect(result[prop]).to.equalIgnoreSpaces(firstResponse[prop]);
+                if (firstResponse[prop] == null) {
+                    expect(result[prop]).to.equal(null);
+                } else {
+                    expect(result[prop]).to.equalIgnoreSpaces(firstResponse[prop]);
+                }
             }
         });
 
-        xit("should return the program Credit Statements from .html - Brief", function () {
+        it("should return the program Credit Statements from .html - Brief", function () {
             var brief = creditStatements.brief;
             var result = prodticket.getCreditStatements(prodticketCB, config.programs.clinicalBrief);
+            // console.log(result);
             for (var prop in brief) {
-                expect(result[prop]).to.equalIgnoreSpaces(brief[prop]);
+                if (brief[prop] == null) {
+                    expect(result[prop]).to.equal(null);
+                } else {
+                    expect(result[prop]).to.equalIgnoreSpaces(brief[prop]);
+                }
             }
         });
     });

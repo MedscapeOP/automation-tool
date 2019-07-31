@@ -21,25 +21,25 @@ var exportObject = {};
 
 // Clinical Brief
 exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
-   var startRegExp = /<u>CREDITS.*/g;
-   var endRegExp = /<\/html>/g;
-   var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
-   // console.log("TEXTBLOCK FOR CREDITS: ", cleanBlock);
+    var startRegExp = /<u>CREDITS.*/g;
+    var endRegExp = /<\/html>/g;
+    var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
+    // console.log("TEXTBLOCK FOR CREDITS: ", cleanBlock);
 
-   if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
-       throw new Error("No credits available found in the prodticket");
-   } else {  
-       var creditAmount = textBlock.match(creditRegExp);
-       // console.log("CREDIT AMOUNT REGEX: ", creditAmountLineRegExp);
-       var result;
-       if (creditAmount.length >= 1) {
-           result = creditAmount[0];
-           // console.log("RESULT: ", result);
-           return cleanHTML.plainText(result, removeFluff=false).trim();
-       } else {
-           return "No Credit Available Section In Prodticket";
-       }
-   }
+    if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
+        throw new Error("No credits available found in the prodticket");
+    } else {  
+        var creditAmount = textBlock.match(creditRegExp);
+        // console.log("CREDIT AMOUNT REGEX: ", creditAmountLineRegExp);
+        var result;
+        if (creditAmount.length >= 1) {
+            result = creditAmount[0];
+            // console.log("RESULT: ", result);
+            return cleanHTML.plainText(result, removeFluff=false).trim();
+        } else {
+            return "No Credit Available Section In Prodticket";
+        }
+    }
 }
 
 // Spotlight

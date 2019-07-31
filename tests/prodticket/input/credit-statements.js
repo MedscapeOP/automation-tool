@@ -52,12 +52,12 @@ var brief = {
     disclosure: `
     <p>Medscape, LLC staff have disclosed that they have no relevant financial relationships.</p>`,
     cme: `
-    <p>Medscape, LLC designates this enduring material for a maximum of 0.25 <strong><em>AMA PRA Category 1 Credit(s)&#8482;</em></strong>. Physicians should claim only the credit commensurate with the extent of their participation in the activity.</p>
+    <p>Medscape, LLC designates this enduring material for a maximum of 0.25 <strong><em>AMA PRA Category 1 Credit(s)&trade;</em></strong>. Physicians should claim only the credit commensurate with the extent of their participation in the activity.</p>
     `,
     moc: `
-    <p>Successful completion of this CME activity, which includes participation in the evaluation component, enables the participant to earn up to 0.25 MOC points in the American Board of Internal Medicine's (ABIM) Maintenance of Certification (MOC) program. Participants will earn MOC points equivalent to the amount of CME credits claimed for the activity. It is the CME activity provider's responsibility to submit participant completion information to ACCME for the purpose of granting ABIM MOC credit. Aggregate participant data will be shared with commercial supporters of this activity.</p> 
+    <p class="moc-text">Successful completion of this CME activity, which includes participation in the evaluation component, enables the participant to earn up to 0.25 MOC points in the American Board of Internal Medicine&#39;s (ABIM) Maintenance of Certification (MOC) program. Participants will earn MOC points equivalent to the amount of CME credits claimed for the activity. It is the CME activity provider&#39;s responsibility to submit participant completion information to ACCME for the purpose of granting ABIM MOC credit.</p>
     `,
-    nurseCE: null, 
+    nurseCE: `Awarded 0.25 contact hour(s) of continuing nursing education for RNs and APNs; none of these credits is in the area of pharmacology.`, 
     pharmaCE: null,
     npCE: null,
     paCE: null 
