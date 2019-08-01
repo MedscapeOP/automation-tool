@@ -27,8 +27,9 @@ const abbreviations = require('./component/abbreviations');
 const references = require('./component/references');
 const tableOfContents = require('./component/toc');
 const creditStatements = require('./component/credit-statements');
-// CLEAN UP COMMANDS (HTML)
 
+// FORMAT COMMANDS (HTML)
+const learningObjectives = require('./format/learning-objectives');
 
 // GENERATE COMMANDS
 const brief = require('./generate/clinical-brief');
@@ -62,7 +63,8 @@ let commands = function (vorpal) {
     tableOfContents(vorpal);
     creditStatements(vorpal);
 
-    // CLEAN UP COMMANDS (HTML)
+    // FORMAT COMMANDS (HTML)
+    learningObjectives(vorpal);
 
     // GENERATE COMMANDS (FULL ARTICLE XML)
     brief(vorpal);
