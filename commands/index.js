@@ -27,6 +27,7 @@ const abbreviations = require('./component/abbreviations');
 const references = require('./component/references');
 const tableOfContents = require('./component/toc');
 const creditStatements = require('./component/credit-statements');
+const contributors = require('./component/contributors');
 
 // FORMAT COMMANDS (HTML)
 const learningObjectives = require('./format/learning-objectives');
@@ -62,6 +63,7 @@ let commands = function (vorpal) {
     references(vorpal);
     tableOfContents(vorpal);
     creditStatements(vorpal);
+    contributors(vorpal);
 
     // FORMAT COMMANDS (HTML)
     learningObjectives(vorpal);

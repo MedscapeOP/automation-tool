@@ -95,7 +95,6 @@ module.exports = function (vorpal) {
 
         prompts.productTypePrompt(self, _.keys(programOptions))
         .then((answers) => {
-            // Has OUS?
             if (answers) {
                 var productType = answers.productType;                
                 for (var key in config.programs) {
