@@ -1,5 +1,5 @@
 // ------------------------------------------------------------
-// COMMAND FOR GENERATING CURBSIDE CONSULT XML 
+// COMMAND FOR GENERATING CLINICAL BRIEF XML 
 // ------------------------------------------------------------
 
 
@@ -8,23 +8,23 @@
 const _ = require('lodash');
 const fs = require('fs');
 
-const utils = require('../utils');
-const articles = require('../articles');
+const utils = require('../../utils');
+const articles = require('../../articles');
 const cliTools = utils.cliTools;
 const N = cliTools.N;
-let config = require('../config');
-let actions = require('./actions');
+let config = require('../../config');
+let actions = require('../actions');
 
 
 // VARS
 // ------------------------------------------------------------
-const curbsideHelp = `
-Generates Curbside Consult XML code from R2Net html file. Input directory: /curbside/article.html`;
+const briefHelp = `
+Generates Clinical Brief XML code from R2Net html file. Input directory: /brief/article.html`;
 
 
 let inputFile = function () {
-    return cliTools.getInputDirectory() + '/curbside/article.html';
-};
+    return cliTools.getInputDirectory() + '/brief/article.html';
+}
 
 let outputFiles = function () {
     return {
@@ -32,9 +32,9 @@ let outputFiles = function () {
         checklist: `${program.articleID}/${program.articleID}_checklist.html`,
         activity: `${program.articleID}/${program.articleID}_activity.xml`
     };
-}; 
+};  
 
-let program = config.programs.curbsideConsult;
+let program = config.programs.clinicalBrief;
 
 
 // BUILD FUNCTION LOGIC 
@@ -42,9 +42,8 @@ let program = config.programs.curbsideConsult;
 
 let buildFinalOutput = function (self) {
     var prodTicket = cliTools.readInputFile(inputFile());  
-    return articles.spotlight.buildSpotlight(prodTicket, program);
+    return articles.clinicalBrief.buildClinicalBrief(prodTicket, program);
 }
-
 
 
 // EXPORT
@@ -52,14 +51,15 @@ let buildFinalOutput = function (self) {
 module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
-    .command('generate curbside <articleID>', curbsideHelp)
+    .command('generate brief <articleID>', briefHelp)
     .types({string: ['_']})
     .action(function(args, callback) {
-        // this.log("RAW ARTICLE ID: ", args.articleID);
         program.articleID = args.articleID;        
-        let self = this;
-
-        actions.basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles, config.transcriptTypes);
+        vorpal.emit('client_prompt_submit', program);
+        var completionMessages = {};
+        completionMessages.xmlFile = `${program.name} XML created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().xmlFile)}`;
+        completionMessages.checklist = `${program.name} Checklist created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().checklist)}`;
+        actions.completeGenerateAction(this, callback, buildFinalOutput, "", "", outputFiles(), completionMessages);
     });
     vorpal.on('client_prompt_submit', function (program){
         cliTools.resetProgram(program);

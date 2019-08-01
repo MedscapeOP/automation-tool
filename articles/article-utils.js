@@ -105,6 +105,48 @@ function buildSlidesTOC(slidesComponent, videoEmbed=false, eduImpactSubsection=f
     return slidesTOC;
 }
 
+/* DONE */ 
+function buildEmptySlidesTOC(slidesComponent, videoEmbed=true, isLastComponent=false) {
+    // BUILD: Main TOC Element 
+    var slidesTOC = new TOCElement();
+
+    // BUILD: Main Section Element 
+    var slidesSection = new SectionElement();
+
+    // BUILD: Main Slides Subsection
+    var slidesSubsection = new SubsectionElement(true, false, false);
+
+    // Insert Video Embed - If necessary 
+    if (videoEmbed) {
+        slidesSubsection.subsectionContent = utils.wrapSlideIntro(snippets.videoEmbed(slidesComponent));
+    } 
+
+    var slideGroup = null;
+    for (var i = 0; i < slidesComponent.numberOfSlides; i++) {
+        slideGroup = new SlideGroup(slidesComponent.slidePath, i+1);
+        slidesSubsection.insertSlideGroup(slideGroup);
+    }
+
+    if (isLastComponent && typeof slidesComponent == 'object') {
+        var lastSlideGroup = new SlideGroup(slidesComponent.slidePath, "undefined");
+        lastSlideGroup.sectionImage = null;
+        lastSlideGroup.sectionLabel = null;
+        lastSlideGroup.sectionAltText = null;
+        lastSlideGroup.sectionText = `<p><em>This content has been condensed for improved clarity.</em></p>`;
+
+        // Push last slide_grp onto subsection element 
+        slidesSubsection.insertSlideGroup(lastSlideGroup);
+    }
+
+    // INSERT: Main Slides Subsection
+    slidesSection.insertSubsectionElement(slidesSubsection);
+
+    // INSERT: Main Section
+    slidesTOC.insertSectionElement(slidesSection);
+    return slidesTOC;
+}
+
+
 /* DONE */
 function buildEduImpactSubsection(
     articleType="SlidePresentation",
@@ -395,6 +437,7 @@ module.exports = {
     buildBlankTOC,
     buildSlides,
     buildSlidesTOC,
+    buildEmptySlidesTOC,
     buildEduImpactSubsection,
     buildEduImpactPreSection,
     buildEduImpactPostSection,

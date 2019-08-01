@@ -1,5 +1,5 @@
 // ------------------------------------------------------------
-// COMMAND FOR GENERATING SPOTLIGHT XML 
+// COMMAND FOR GENERATING CURBSIDE CONSULT XML 
 // ------------------------------------------------------------
 
 
@@ -8,23 +8,23 @@
 const _ = require('lodash');
 const fs = require('fs');
 
-const utils = require('../utils');
-const articles = require('../articles');
+const utils = require('../../utils');
+const articles = require('../../articles');
 const cliTools = utils.cliTools;
 const N = cliTools.N;
-let config = require('../config');
-let actions = require('./actions');
+let config = require('../../config');
+let actions = require('../actions');
 
 
 // VARS
 // ------------------------------------------------------------
-const spotlightHelp = `
-Generates Spotlight XML code from R2Net html file. Input directory: /spotlight/article.html`;
+const curbsideHelp = `
+Generates Curbside Consult XML code from R2Net html file. Input directory: /curbside/article.html`;
 
 
 let inputFile = function () {
-    return cliTools.getInputDirectory() + '/spotlight/article.html';
-}
+    return cliTools.getInputDirectory() + '/curbside/article.html';
+};
 
 let outputFiles = function () {
     return {
@@ -32,9 +32,9 @@ let outputFiles = function () {
         checklist: `${program.articleID}/${program.articleID}_checklist.html`,
         activity: `${program.articleID}/${program.articleID}_activity.xml`
     };
-};  
+}; 
 
-let program = config.programs.spotlight;
+let program = config.programs.curbsideConsult;
 
 
 // BUILD FUNCTION LOGIC 
@@ -46,31 +46,22 @@ let buildFinalOutput = function (self) {
 }
 
 
+
 // EXPORT
 // ------------------------------------------------------------
 module.exports = function (vorpal) {
     let chalk = vorpal.chalk;    
     vorpal
-    .command('generate spotlight <articleID>', spotlightHelp)
-    // .parse(function (command, args) { 
-    //     args.articleID = String(args.articleID);
-    //     return command + ` ` + args.articleID;   
-    // })
+    .command('generate curbside <articleID>', curbsideHelp)
     .types({string: ['_']})
     .action(function(args, callback) {
         // this.log("RAW ARTICLE ID: ", args.articleID);
         program.articleID = args.articleID;        
         let self = this;
+
         actions.basicArticleAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles, config.transcriptTypes);
     });
     vorpal.on('client_prompt_submit', function (program){
         cliTools.resetProgram(program);
     });
 };
-
-// vorpal.on('client_prompt_submit', function (command){
-//     if (command === "properties") {
-//         self.log(newComponents);
-//         callback();
-//     } 
-// });

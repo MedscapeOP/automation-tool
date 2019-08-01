@@ -184,9 +184,10 @@ exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
 // Spotlight
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     var {textBlock: disclosureBlock} = stringOps.getTextBlock(ticketHTML, "<strong>Disclosures", '<strong>SD/Editor/Writer', true, true);
+    console.log("CONTRIBUTOR BLOCK 1: \n\n", disclosureBlock);
 
     var {textBlock: contributorBlock} = stringOps.getTextBlock(disclosureBlock, /<table border=".*/g, /<\/table>/g, true, false);
-    
+    console.log("CONTRIBUTOR BLOCK 2: \n\n", contributorBlock);
     if (stringOps.isBlankOrWhiteSpace(contributorBlock) || stringOps.isEmptyString(contributorBlock) || contributorBlock.length < 10) {
         throw new Error("No contributors found in the Speakers section of the prodticket");
     } else {

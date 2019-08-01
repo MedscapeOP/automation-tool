@@ -1,3 +1,4 @@
+const customForm = require('./custom-form');
 const activity = require('./activity');
 const inLanguage = require('./in-language');
 const preContent = require('./pre-content');
@@ -138,6 +139,7 @@ function caseImage(articleID, contentMarkup, caseNumber) {
     `;
 }
 
+
 module.exports = {
     videoEmbed,
     downloadableSlides,
@@ -149,5 +151,6 @@ module.exports = {
     backmatter,
     tableOfContents,
     activity,
+    customForm,
     caseImage
 };

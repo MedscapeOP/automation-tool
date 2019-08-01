@@ -5,6 +5,7 @@ const firstResponse = require('./first-response');
 const townHallEnduring = require('./townhall-enduring');
 const testAndTeach = require('./test-and-teach');
 const propertiesChecklist = require('./properties-checklist');
+const activity = require('./activity');
 
 module.exports = {
     articleUtils,
@@ -13,5 +14,6 @@ module.exports = {
     firstResponse,
     townHallEnduring,
     testAndTeach,
-    propertiesChecklist
+    propertiesChecklist,
+    activity 
 }

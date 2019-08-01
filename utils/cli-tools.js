@@ -62,7 +62,9 @@ function writeOutputFile(filename, data, self, completionMessage, callback) {
                 throw err;
             } else {
                 self.log(completionMessage);
-                callback();
+                if (typeof callback == 'function') {
+                    callback();
+                }
             }
         });
     })

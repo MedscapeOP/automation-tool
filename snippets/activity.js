@@ -62,18 +62,21 @@ function instructionsForCredit(program) {
     return utils.cleanHTML.insertEntityPlaceholders(result);
 }
 
-function medscapeProviderStatement(program) {
-    var result = "";
-    if (program.hasOUS) {
-        return null;
+function medscapeProviderStatement(program=null) {
+    var result = `
+        <p><img src="/webmd/professional_assets/medscape/images/provider/medscape1.150x34.gif" alt="Medscape" /><br />
+        <img src="/webmd/professional_assets/medscape/images/provider/interprofessional-continuing-education.jpg?interpolation=lanczos-none&amp;resize=150:96" alt="Interprofessional Continuing Education" /><br />
+        In support of improving patient care, Medscape, LLC is jointly accredited by the Accreditation Council for Continuing Medical Education (ACCME), the Accreditation Council for Pharmacy Education (ACPE), and the American Nurses Credentialing Center (ANCC), to provide continuing education for the healthcare team.</p>
+    `;
+    if (program) {
+        if (program.hasOUS) {
+            return null;
+        } else {        
+            return utils.cleanHTML.insertEntityPlaceholders(result);
+        }    
     } else {
-        result = `
-            <p><img src="/webmd/professional_assets/medscape/images/provider/medscape1.150x34.gif" alt="Medscape" /><br />
-            <img src="/webmd/professional_assets/medscape/images/provider/interprofessional-continuing-education.jpg?interpolation=lanczos-none&amp;resize=150:96" alt="Interprofessional Continuing Education" /><br />
-            In support of improving patient care, Medscape, LLC is jointly accredited by the Accreditation Council for Continuing Medical Education (ACCME), the Accreditation Council for Pharmacy Education (ACPE), and the American Nurses Credentialing Center (ANCC), to provide continuing education for the healthcare team.</p>
-        `;
+        return utils.cleanHTML.insertEntityPlaceholders(result);
     }
-    return utils.cleanHTML.insertEntityPlaceholders(result);
 }
 
 function goalStatementCB() {
@@ -112,10 +115,82 @@ function additionalCreditAvailable() {
     `;
 }
 
+function medscapeDisclosure() {
+    return `
+    <p>Medscape, LLC staff have disclosed that they have no relevant financial relationships.</p>
+    `;
+}
+
+function briefStatements(configObject) { 
+    var cmeStatement = () => {
+        if (configObject.cme) {
+            return `
+            <p>Medscape, LLC designates this enduring material for a maximum of ${configObject.creditAmount} <strong><em>AMA PRA Category 1 Credit(s)&trade;</em></strong>. Physicians should claim only the credit commensurate with the extent of their participation in the activity.</p>
+            `
+        } else {
+            return null; 
+        }
+    };
+    var mocStatement = () => {
+        if (configObject.moc) {
+            return `
+            <p class="moc-text">Successful completion of this CME activity, which includes participation in the evaluation component, enables the participant to earn up to ${configObject.creditAmount} MOC points in the American Board of Internal Medicine&#39;s (ABIM) Maintenance of Certification (MOC) program. Participants will earn MOC points equivalent to the amount of CME credits claimed for the activity. It is the CME activity provider&#39;s responsibility to submit participant completion information to ACCME for the purpose of granting ABIM MOC credit.</p>
+            `;
+        } else {
+            return null; 
+        }
+    };
+    var nurseCEStatement = () => {
+        if (configObject.nurseCE) {
+            var endStatement = "none of these credits is in the area of pharmacology.";
+            if (configObject.contactHours) {
+                endStatement += `${configObject.creditAmount} contact hours are in the area of pharmacology.`
+            } 
+            return `
+            <p>Awarded ${configObject.creditAmount} contact hour(s) of continuing nursing education for RNs and APNs; ${endStatement}</p>
+            `
+        } else {
+            return null; 
+        }
+    };
+    var pharmaCEStatement = () => {
+        if (configObject.pharmaCE) {
+            return `
+            <p>Medscape, LLC designates this continuing education activity for ${configObject.creditAmount} contact hour(s) (${configObject.creditAmount * 0.1} CEUs) (Universal Activity Number ${configObject.UAN}).</p>
+            `
+        } else {
+            return null
+        }
+    };
+    var npCEStatement = () => {
+        return null;
+    };
+    var paCEStatement = () => {
+        if (configObject.paCE) {
+            return `
+            <p>Medscape, LLC has been authorized by the American Academy of PAs (AAPA) to award AAPA Category 1 CME credit for activities planned in accordance with AAPA CME Criteria. This activity is designated for ${configObject.creditAmount} AAPA Category 1 CME credits. Approval is valid until Expiration Date. PAs should only claim credit commensurate with the extent of their participation.</p>`
+        } else {
+            return null; 
+        }
+    };
+    return {
+        disclosure: `
+        <p>Medscape, LLC staff have disclosed that they have no relevant financial relationships.</p>`,
+        cme: cmeStatement(),
+        moc: mocStatement(),
+        nurseCE: nurseCEStatement(),
+        pharmaCE: pharmaCEStatement(),
+        npCE: npCEStatement(),
+        paCE: paCEStatement()
+    }
+}
+
 module.exports = {
     instructionsForCredit,
     medscapeProviderStatement,
     goalStatementCB,
     hardwareRequirements,
-    additionalCreditAvailable
+    additionalCreditAvailable,
+    medscapeDisclosure,
+    briefStatements
 };

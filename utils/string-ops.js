@@ -371,6 +371,28 @@ function sliceAtBreakpoints(textBlock, breakpointArray) {
     return result;
 }
 
+/** 
+ * @description
+ * Finds the match for returnRegex within substring of ticketHTML
+ * Substring is determined by start and endRegex provided 
+ * @param {*} ticketHTML 
+ * @param {*} startRegex 
+ * @param {*} endRegex 
+ * @param {*} returnRegex 
+ */
+let getTextWithinBlock = (ticketHTML, startRegex, endRegex, returnRegex) => {
+    let {textBlock} = getTextBlock(ticketHTML, startRegex, endRegex, true, false);
+    if (isBlankOrWhiteSpace(textBlock) || isEmptyString(textBlock)) {
+        return null;
+    } else {
+        var match = textBlock.match(returnRegex);
+        if (match && typeof match === "object") {
+            return match[0];
+        } else {
+            return null;
+        }
+    }
+}
 
 module.exports = {
     removeRegexMatches,
@@ -385,5 +407,6 @@ module.exports = {
     removeFromRegexCapture,
     getUsableRegExp,
     getAllMatchesInOrder,
-    sliceAtBreakpoints
+    sliceAtBreakpoints,
+    getTextWithinBlock
 }

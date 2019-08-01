@@ -302,6 +302,76 @@ function printTestAndTeachContent(mainContent) {
     return resultString;
 }
 
+function printCreditStatements(creditStatements) {
+    var cmeStatement = ``;
+    if (creditStatements.cme) {
+        cmeStatement = stripIndent` 
+        -----------------------------------------
+        CME CREDIT STATEMENT
+        -----------------------------------------
+        `;
+        cmeStatement +="\n";
+        var statement = ``;
+        if (creditStatements.moc) {
+            statement = stripIndent`
+            ${creditStatements.cme}
+            `;
+            statement += "\n\n" + stripIndent`${creditStatements.disclosure}`
+            statement += "\n\n" + stripIndent`${creditStatements.moc}`
+        } else {
+            statement = stripIndent`
+            ${creditStatements.cme}
+            `;
+            statement += "\n\n" + stripIndent`${creditStatements.disclosure}`
+        }
+        cmeStatement += statement + "\n\n";  
+    }
+
+    var nurseCEStatement = ``;
+    if (creditStatements.nurseCE) {
+        nurseCEStatement = stripIndent` 
+        -----------------------------------------
+        NURSE CE CREDIT STATEMENT
+        -----------------------------------------
+        `;
+        nurseCEStatement += "\n" + stripIndent`${creditStatements.nurseCE}` + "\n\n";
+    }
+
+    var pharmaCEStatement = ``;
+    if (creditStatements.pharmaCE) {
+        pharmaCEStatement = stripIndent` 
+        -----------------------------------------
+        PHARMA CE CREDIT STATEMENT
+        -----------------------------------------
+        `;
+        pharmaCEStatement += "\n" + stripIndent`${creditStatements.pharmaCE}` + "\n\n";
+    }
+
+    var npCEStatement = ``;
+    if (creditStatements.npCE) {
+        npCEStatement = stripIndent` 
+        -----------------------------------------
+        NURSE PRACTITIONER CE CREDIT STATEMENT
+        -----------------------------------------
+        `;  
+        npCEStatement += "\n" + stripIndent`${creditStatements.npCE}` + "\n\n";
+    }
+
+    var paCEStatement = ``;
+    if (creditStatements.paCE) {
+        paCEStatement = stripIndent` 
+        -----------------------------------------
+        PHARMA CE CREDIT STATEMENT
+        -----------------------------------------
+        `;
+        paCEStatement += "\n" + `${creditStatements.paCE}` + "\n\n";
+    }
+
+    // return cleanHTML.cleanEntities(resultString);
+    return cmeStatement + nurseCEStatement + pharmaCEStatement + npCEStatement + paCEStatement + "\n\n\n\n\n";
+}
+
+
 module.exports = {
     printStringProp,
     printJSONProp,
@@ -312,5 +382,6 @@ module.exports = {
     printComponents,
     printDateTime,
     printLearningObjectives,
-    printTestAndTeachContent
+    printTestAndTeachContent,
+    printCreditStatements
 }

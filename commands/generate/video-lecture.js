@@ -8,12 +8,12 @@
 const _ = require('lodash');
 const fs = require('fs-extra');
 
-const utils = require('../utils');
-const articles = require('../articles');
+const utils = require('../../utils');
+const articles = require('../../articles');
 const cliTools = utils.cliTools;
 const N = cliTools.N;
-let config = require('../config');
-let actions = require('./actions');
+let config = require('../../config');
+let actions = require('../actions');
 
 
 // VARS

@@ -26,6 +26,7 @@ describe('Prodticket Module Functions', function () {
     let prodticketFRTranscript;
     let prodticketSLTranscript;
     let prodticketTHTranscript;
+    let prodticketSLCreditStatements;
 
     beforeEach(function() {
         prodticketCB = fs.readFileSync(__dirname + '/input/prodticket-cb.html').toString();
@@ -644,7 +645,7 @@ describe('Prodticket Module Functions', function () {
     });
 
     /**
-     * CREDIT STATEMENT 
+     * ACCREDITATION STATEMENT 
      */
     describe("prodticket.getAccreditation()", function () {
         var accreditationStatementTH = fs.readFileSync(__dirname + '/input/accreditation-statement-th.html').toString();
@@ -737,6 +738,67 @@ describe('Prodticket Module Functions', function () {
             expect(result.message).to.equal("No credits available found in the prodticket"); 
         });
     });
+
+    /**
+     * CREDIT STATEMENTS 
+     */
+    describe("prodticket.getCreditStatements()", function () {
+        var creditStatements = require('./input/credit-statements');
+        prodticketSLCreditStatements = fs.readFileSync(__dirname + '/input/prodticket-sl-credit-statements.html').toString();
+
+        it("should return the program Credit Statements from .html - Spotlight", function () {
+            var spotlight = creditStatements.spotlight;
+            var result = prodticket.getCreditStatements(prodticketSLCreditStatements, config.programs.spotlight);
+            // console.log(result);
+            // console.log(spotlight);
+            for (var prop in spotlight) {
+                if (spotlight[prop] == null) {
+                    expect(result[prop]).to.equal(null);
+                } else {
+                    expect(result[prop]).to.equalIgnoreSpaces(spotlight[prop]);
+                }
+            }
+        });
+
+        it("should return the program Credit Statements from .html - Curbside Consult", function () {
+            var curbside = creditStatements.curbside;
+            var result = prodticket.getCreditStatements(prodticketCC, config.programs.curbsideConsult);
+
+            for (var prop in curbside) {
+                if (curbside[prop] == null) {
+                    expect(result[prop]).to.equal(null);
+                } else {
+                    expect(result[prop]).to.equalIgnoreSpaces(curbside[prop]);
+                }
+            }
+        });
+
+        it("should return the program Credit Statements from .html - First Response", function () {
+            var firstResponse = creditStatements.firstResponse;
+            var result = prodticket.getCreditStatements(prodticketFR, config.programs.firstResponse);
+            for (var prop in firstResponse) {
+                if (firstResponse[prop] == null) {
+                    expect(result[prop]).to.equal(null);
+                } else {
+                    expect(result[prop]).to.equalIgnoreSpaces(firstResponse[prop]);
+                }
+            }
+        });
+
+        it("should return the program Credit Statements from .html - Brief", function () {
+            var brief = creditStatements.brief;
+            var result = prodticket.getCreditStatements(prodticketCB, config.programs.clinicalBrief);
+            // console.log(result);
+            for (var prop in brief) {
+                if (brief[prop] == null) {
+                    expect(result[prop]).to.equal(null);
+                } else {
+                    expect(result[prop]).to.equalIgnoreSpaces(brief[prop]);
+                }
+            }
+        });
+    });
+
 
     // /**
     //  * LOCATION & MAP INFO
