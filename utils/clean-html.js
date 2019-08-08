@@ -608,6 +608,12 @@ function learningObjectives(textBlock, removeFluff=true) {
     removeRegExp = /.*Question type answering this objective.*/g;
     textBlock = textBlock.replace(removeRegExp, '');
 
+    removeRegExp = /.*Question type assessing this objective.*/g;
+    textBlock = textBlock.replace(removeRegExp, '');
+
+    removeRegExp = /.*Upon completion of this activity.*/g;
+    textBlock = textBlock.replace(removeRegExp, '');
+
     removeRegExp = /.*<p>Linked Pre-\/Post-assessment.*/g;
     textBlock = textBlock.replace(removeRegExp, '');
     

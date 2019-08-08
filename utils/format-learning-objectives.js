@@ -9,7 +9,8 @@ let wordList = [
     'Have greater',
     'Have increased',
     'Demonstrate greater',
-    'Demonstrate increased'
+    'Demonstrate increased',
+    'Self-assess learning'
 ];
 
 let formatLearningObjectives = function (string) {
