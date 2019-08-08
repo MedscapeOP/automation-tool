@@ -1,12 +1,12 @@
 {
   "name": "automationtool",
-  "version": "1.13.2",
+  "version": "1.13.3",
   "description": "test",
   "main": "index.js",
   "scripts": {
     "test": "nodemon --exec mocha tests/**/*.test.js || exit 1",
     "prodtickettest": "nodemon --exec mocha tests/prodticket/prodticket.test.js || exit 1",
-    "alttest": "nodemon --exec mocha tests/articles/article-utils.test.js || exit 1",
+    "alttest": "nodemon --exec mocha tests/articles/clinical-brief.test.js || exit 1",
     "utiltest": "nodemon --exec mocha tests/utils/utils.test.js || exit 1"
   },
   "author": "Brandon Antonelli",

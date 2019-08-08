@@ -76,11 +76,25 @@ function getStudyHighlights (ticket) {
 /* CLINICAL IMPLICATIONS
 -------------------------------------- */
 function getClinicalImplications(ticket) {
-    var {textBlock, label} = utils.stringOps.getTextBlock(
-        ticket,
-        "Clinical Implications",
-        "CME Post Test Questions"
-    );
+    var endRegexArray = [
+        /CME.*pre-assessment\/post-assessment questions/g,
+        /CME Post Test Questions/g
+    ];
+    var endRegex = utils.stringOps.getNextRegex(ticket, endRegexArray);
+    if (endRegex != -1) {
+        var {textBlock, label} = utils.stringOps.getTextBlock(
+            ticket,
+            /Clinical Implications/g,
+            endRegex.symbol
+        );
+    } else {
+        var {textBlock, label} = utils.stringOps.getTextBlock(
+            ticket,
+            "Clinical Implications",
+            "CME Post Test Questions"
+        );
+    }
+
     if (stringOps.isBlankOrWhiteSpace(textBlock) || stringOps.isEmptyString(textBlock)) {
         return new Error("Clinical Implications not found in the prodticket");
     } else {
@@ -160,7 +174,6 @@ function buildClinicalBrief(ticket, program) {
     synopsisAndPerspective = (checklistResult.properties.synopsisAndPerspective ? checklistResult.properties.synopsisAndPerspective.result : "");
     studyHighlights = (checklistResult.properties.studyHighlights ? checklistResult.properties.studyHighlights.result : "");
     clinicalImplications = (checklistResult.properties.clinicalImplications ? checklistResult.properties.clinicalImplications.result : "");
-    cmeTest = articleUtils.buildCMETestSection(3, "CME Test");
 
     // Universal Info (Markup Strings)
     references = (checklistResult.properties.references ? checklistResult.properties.references.result : "");
@@ -178,11 +191,19 @@ function buildClinicalBrief(ticket, program) {
  
     // Build Main TOC - Insert Brief Sections & Insert CME Test Section 
     var mainTOCInstance = new TOCElement();
+
+    if (program.hasPreAssessment) {
+        cmeTest = articleUtils.buildCMETestSection(3, "Pre-Assessment Question");
+        mainTOCInstance.insertSectionElement(cmeTest);
+    } 
     mainTOCInstance.insertSectionElement(clinicalContext);
     mainTOCInstance.insertSectionElement(synopsisAndPerspective);
     mainTOCInstance.insertSectionElement(studyHighlights);
     mainTOCInstance.insertSectionElement(clinicalImplications);
-    mainTOCInstance.insertSectionElement(cmeTest);
+    if (program.hasPostAssessment) {
+        cmeTest = articleUtils.buildCMETestSection(3, "Post-Assessment Question");
+        mainTOCInstance.insertSectionElement(cmeTest);
+    }
     
     // Build References TOC
     var referencesTOC = articleUtils.buildReferences(references, program);
@@ -202,8 +223,22 @@ function buildClinicalBrief(ticket, program) {
     finalArticle.bkmtrFront = checklistResult.properties.bkmtrFront.result;
     finalArticle.insertSupporterGrantAttr(null); // passing null defaults to medscape.gif 
           
+    // Build earn credit button section 
+    var earnCreditSection = articleUtils.buildEarnCreditSection(program.qnaID);
+
+    // If !hasPostAssessment --> mainTOCInstance.insertSectionElement()
+    if (!program.hasPostAssessment) {
+        mainTOCInstance.insertSectionElement(earnCreditSection);
+    }
+
     // Insert Main TOC Object & Insert References TOC Object 
     finalArticle.insertTOCElement(mainTOCInstance);
+    if (program.hasPostAssessment) {
+        var blankAnswerTOC = articleUtils.buildBlankTOC(false);
+        // Insert earnCreditSection in blankTOC 
+        blankAnswerTOC.insertSectionElement(earnCreditSection);
+        finalArticle.insertTOCElement(blankAnswerTOC);
+    }
     finalArticle.insertTOCElement(referencesTOC);
 
 

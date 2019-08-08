@@ -34,15 +34,30 @@ function buildCMETestSection(qnaFormNumber, label) {
 }
 
 /* DONE */
-function buildBlankTOC() {
-    var slideGroup = new SlideGroup("", "", true, false);
-    slideGroup.sectionImage = null;
-    slideGroup.sectionLabel = null;
-    slideGroup.sectionAltText = null;
+function buildEarnCreditSection(qnaID) {
+    // Return instance of section for use in master BUILD function
+    var sectionInstance = new SectionElement();
+    var subsectionInstance = new SubsectionElement(false, true, false);
+    // subsectionInstance.subsectionContent = (subsectionContent);
+    subsectionInstance.subsectionContent = utils.wrapSubsectionContent(snippets.earnCreditButton(qnaID));
+    sectionInstance.insertSubsectionElement(subsectionInstance);
+    return sectionInstance;
+}
 
-    var subsectionInstance = new SubsectionElement(true, false, false);
-
-    subsectionInstance.insertSlideGroup(slideGroup);
+/* DONE */
+function buildBlankTOC(isSlidePresentation=true) {
+    if (isSlidePresentation) {
+        var slideGroup = new SlideGroup("", "", true, false);
+        slideGroup.sectionImage = null;
+        slideGroup.sectionLabel = null;
+        slideGroup.sectionAltText = null;
+    
+        var subsectionInstance = new SubsectionElement(true, false, false);
+    
+        subsectionInstance.insertSlideGroup(slideGroup);
+    } else {
+        var subsectionInstance = new SubsectionElement(false, true, false);
+    }
     
     var sectionInstance = new SectionElement();
     sectionInstance.insertSubsectionElement(subsectionInstance);
@@ -434,6 +449,7 @@ function buildVideoEmbedTOC(componentOrArticleID, hasEduImpactSubsection=false) 
 module.exports = {
     buildSection,
     buildCMETestSection,
+    buildEarnCreditSection, 
     buildBlankTOC,
     buildSlides,
     buildSlidesTOC,

@@ -20,6 +20,8 @@ describe('Clinical Brief', function () {
     */
 
     var prodTicket;
+    var prodTicketPreAssessment;
+    var prodTicketPostAssessment;
     var program;
     var completeClinicalContext;
     var completeStudySynopsis;
@@ -34,7 +36,6 @@ describe('Clinical Brief', function () {
         completeStudySynopsis = fs.readFileSync(__dirname + '/input/clinical-brief/study-synopsis.xml');
         completeStudyHighlights = fs.readFileSync(__dirname + '/input/clinical-brief/study-highlights.xml');
         completeClinicalImplications = fs.readFileSync(__dirname + '/input/clinical-brief/clinical-implications.xml');
-        completeClinicalBrief = fs.readFileSync(__dirname + '/input/clinical-brief/complete-article.xml');
     });
     
     describe('#getClinicalContext()', function () {
@@ -66,25 +67,38 @@ describe('Clinical Brief', function () {
     });
 
     describe('#buildClinicalBrief()', function () {
-        it('should return complete XML string of Clinical Brief article', function () {
-            program.hasOUS = true;
-            var result = clinicalBrief.buildClinicalBrief(prodTicket, program).finishedArticleObject.toObjectLiteral();
-            var differences = [
-                "contrbtr_pre_content shouldn't have anything - FIXED",
-                "contrbtr_post_content shouldn't have peer reviewer automatically - FIXED",
-                "prof_article wrapper element is not present - FIXED",
-                "References should be wrapped in <ol></ol> - FIXED",
-                "contrbtr_groups not inserted - KNOWN ISSUE",
-                "supprtr_grant_attr not found or handled - KNOWN ISSUE"
-            ]
-            // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/clinical-brief/finished-cb.xml");
+        it('should return complete XML string of Clinical Brief', function () {
+            program.hasOUS = false;
+            program.qnaID = 55555;
 
+            var result = clinicalBrief.buildClinicalBrief(prodTicket, program).finishedArticleObject.toObjectLiteral();
             result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result))
-            
-            // console.log("EVERYTHING PASSES EXCEPT THESE DIFFERENCES: ", differences);
-            // var result = clinicalBrief.buildClinicalBrief(prodTicket, app.config.programs.clinicalBrief).toFinalXML();
-            // expect(result).to.equalIgnoreSpaces(completeClinicalBrief.toString());
-            // console.log(result);
+            completeClinicalBrief = fs.readFileSync(__dirname + '/input/clinical-brief/complete-article.xml').toString();
+            expect(result).to.equalIgnoreSpaces(completeClinicalBrief);
+        });
+
+        it('should return complete XML string of Clinical Brief - Pre Assessment', function () {
+            prodTicketPreAssessment = fs.readFileSync(__dirname + '/input/clinical-brief/article-pre-assessment.html', 'utf8');
+            program.hasOUS = false;
+            program.hasPreAssessment = true;
+            program.qnaID = 53918;
+
+            var result = clinicalBrief.buildClinicalBrief(prodTicketPreAssessment, program).finishedArticleObject.toObjectLiteral();
+            result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
+            completeClinicalBrief = fs.readFileSync(__dirname + '/input/clinical-brief/complete-article-pre.xml').toString();
+            expect(result).to.equalIgnoreSpaces(completeClinicalBrief);
+        });
+
+        it('should return complete XML string of Clinical Brief - Post Assessment', function () {
+            prodTicketPostAssessment = fs.readFileSync(__dirname + '/input/clinical-brief/article-post-assessment.html', 'utf8');
+            program.hasOUS = false;
+            program.hasPreAssessment = false;
+            program.hasPostAssessment = true;
+            program.qnaID = 53498;
+            var result = clinicalBrief.buildClinicalBrief(prodTicketPostAssessment, program).finishedArticleObject.toObjectLiteral();
+            result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
+            completeClinicalBrief = fs.readFileSync(__dirname + '/input/clinical-brief/complete-article-post.xml').toString();
+            expect(result).to.equalIgnoreSpaces(completeClinicalBrief);
         });
     });
 });

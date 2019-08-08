@@ -139,6 +139,12 @@ function caseImage(articleID, contentMarkup, caseNumber) {
     `;
 }
 
+function earnCreditButton(qnaID) {
+    var result = `
+    <p><a class="cme_btn cme_erncr-bttm_btn" href="/qna/processor/${qnaID}?showStandAlone=true" onclick="wmdTrack(&apos;vwart-erncr_bttm&apos;);">Earn Credit</a></p>
+    `;
+    return utils.cleanHTML.insertEntityPlaceholders(result);
+}
 
 module.exports = {
     videoEmbed,
@@ -152,5 +158,6 @@ module.exports = {
     tableOfContents,
     activity,
     customForm,
-    caseImage
+    caseImage,
+    earnCreditButton
 };
