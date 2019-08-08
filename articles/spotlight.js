@@ -47,7 +47,7 @@ function getSlidesTOC (slidesComponents, program) {
 }
 
 function getVideoTOC (componentOrArticleID, program) {
-    return articleUtils.buildVideoEmbedTOC(componentOrArticleID);
+    return articleUtils.buildVideoEmbedTOC(componentOrArticleID, program.hasLLA);
 }
 
 function getTranscriptTOC (transcript, program) {

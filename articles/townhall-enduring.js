@@ -30,7 +30,7 @@ function getSlidesTOC (slidesComponents, program) {
 
 function getVideoTOC (componentOrArticleID, program) {
     return {
-        videoTOC: articleUtils.buildVideoEmbedTOC(componentOrArticleID),
+        videoTOC: articleUtils.buildVideoEmbedTOC(componentOrArticleID, program.hasLLA),
         audienceQATOC: articleUtils.buildAudienceQATOC(null, program.articleID)
     }
 }
