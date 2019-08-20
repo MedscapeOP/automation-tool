@@ -1,6 +1,6 @@
 {
   "name": "automationtool",
-  "version": "1.13.3",
+  "version": "1.13.4",
   "description": "CLI program which generates front-end components and XML for use in D2",
   "main": "index.js",
   "scripts": {

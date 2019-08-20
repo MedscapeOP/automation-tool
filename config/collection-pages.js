@@ -1404,6 +1404,13 @@ const collectionPages = [
         "url": "https://www.medscape.org/sites/advances/seizures"
     },
     {
+        "title": "Clinical Advances in Key Issues in the Diagnosis, Referral and Therapy of Severe Asthma",
+        "fileName": "severe-asthma-pcp",
+        "bannerFileName": "banner-severe-asthma-pcp.jpg",
+        "type": "Clinical Advances",
+        "url": "https://www.medscape.org/sites/advances/severe-asthma-pcp"
+    },
+    {
         "title": "Advances in the Management of Severe and Rare Disorders",
         "fileName": "severe-rare-disorders",
         "bannerFileName": "banner-severe-rare-disorders.jpg",
