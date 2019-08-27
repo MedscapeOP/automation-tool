@@ -298,6 +298,13 @@ const collectionPages = [
         "url": "https://www.medscape.org/sites/advances/ckd-mineral-bone-disorder"
     },
     {
+        "title": "Clinical Advances in Chronic Kidney Disease -- Mineral and Bone Disorder",
+        "fileName": "ckd-t2d-resource-center",
+        "bannerFileName": "banner-ckd-t2d-resource-center-2019.jpg",
+        "type": "Clinical Advances",
+        "url": "https://www.medscape.org/sites/advances/ckd-t2d-resource-center"
+    },    
+    {
         "title": "Emerging Practice Patterns in Clinical Oncology",
         "fileName": "clinicaloncology",
         "bannerFileName": "banner-oncology-practice-patterns-2017.jpg",
