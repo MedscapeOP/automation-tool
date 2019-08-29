@@ -1026,6 +1026,13 @@ const collectionPages = [
         "url": "https://www.medscape.org/sites/advances/narcolepsy"
     },
     {
+        "title": "Clinical Advances in NASH",
+        "fileName": "nash",
+        "bannerFileName": "banner-nash.jpg",
+        "type": "Clinical Advances",
+        "url": "https://www.medscape.org/sites/advances/nash"
+    },
+    {
         "title": "Neuro-Oncology Learning Portfolio: An Update on Glioblastoma | Medscape",
         "fileName": "neuro-oncology",
         "bannerFileName": null,
