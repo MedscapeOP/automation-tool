@@ -108,6 +108,23 @@ let programs = {
         hasForYourPatient: false, 
         hasInLanguage: false 
     },
+    townHallCert: {
+        name: "Town Hall Cert Page",
+        codeName: "townHallCert",
+        dirName: "townhall-cert",
+        profArticleType: "Article",
+        articleID: "916008",
+        qnaID: "",
+        hasTranscript: true, 
+        transcriptType: transcriptTypes[0],
+        hasLLA: false,
+        hasOUS: false, 
+        hasPeerReviewer: false, 
+        hasCollectionPage: false,
+        hasSlideDeck: false, 
+        hasForYourPatient: false, 
+        hasInLanguage: false 
+    },
     testAndTeach: {
         name: "Test and Teach",
         codeName: "testAndTeach",

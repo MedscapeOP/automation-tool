@@ -4,8 +4,8 @@ const {stringOps, cleanHTML} = require('../utils');
 var exportObject = {};
 
 
-// Town Hall 
-exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+// Town Hall Cert Page 
+exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
     var startRegExp = /<strong>Activity Overview.*/g;
     var endRegExp = /<\/a>Registration\/Overview/g;
     var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);

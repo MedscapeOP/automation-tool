@@ -3,8 +3,8 @@ const {stringOps, cleanHTML} = require('../utils');
 
 var exportObject = {};
 
-// Town Hall 
-exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+// Town Hall Cert 
+exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
     var result = {};
     var startRegExp = /<strong>Date &amp; Time:/g;
     var endRegExp = /<\/a>Speakers\/Program Info\/Faculty information\/Disclosures/g;

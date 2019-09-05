@@ -71,15 +71,19 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
-// Town Hall
+// Town Hall Enduring 
+exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+}
+
+// Town Hall Cert Page 
 var townHallStartRegExps = [
     /\(Names and degrees only, separated by semicolons\)/g,
     /<strong>Faculty Byline/g,
     /Faculty Byline.*/g,
     /<strong>Faculty\/Author\(s\)/g
 ];
-
-exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
     var startRegExp = stringOps.getUsableRegExp(ticketHTML, townHallStartRegExps);
     var endRegExp = /<strong>Location\/map info/g;
     if (startRegExp != -1) {

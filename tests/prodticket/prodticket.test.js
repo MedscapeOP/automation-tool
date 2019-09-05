@@ -60,14 +60,14 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the program title + subtitle from the .html - TownHall", function () {
-            var result = prodticket.getTitle(prodticketTH_alt, config.programs.townHall);
+            var result = prodticket.getTitle(prodticketTH_alt, config.programs.townHallCert);
             // expect(result).to.equal("Preventing HPV-Related Disease: From Global Perspectives to Local Solutions");
             expect(result).to.equal("The Big Debate: Pharmacologic vs Alternative Approaches in Smoking Cessation");
         });
 
         it("should return error object with message for missing title", function () {
            
-            var result = prodticket.getTitle(prodticketFail, config.programs.townHall);
+            var result = prodticket.getTitle(prodticketFail, config.programs.townHallCert);
         
             expect(result.message).to.equal("No title found in the prodticket");
     
@@ -94,7 +94,7 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the program byline from the .html - TownHall", function () {
-            var result = prodticket.getByline(prodticketTH_alt, config.programs.townHall);
+            var result = prodticket.getByline(prodticketTH_alt, config.programs.townHallCert);
             // expect(result).to.equal("<p>Kenneth A. Alexander, MD, PhD; Suzanne M. Garland, AO, MBBS, MD, FRCPA, FRANZCOG Ad Eundem, FAChSHM, FASM, FFSc(RCPA); Suresh Kumarasamy, MBBS, MObGyn, FRCOG, FRCPI; Batmunkh Tsetsegsaikhan, PhD, MPH/MHM</p>");
 
             // expect(result).to.equal("<p>Byline not found in the prodticket!</p>");
@@ -104,7 +104,7 @@ describe('Prodticket Module Functions', function () {
 
         it("should return error object with message for missing byline", function () {
            
-            var result = prodticket.getByline(prodticketFail, config.programs.townHall);
+            var result = prodticket.getByline(prodticketFail, config.programs.townHallCert);
         
             expect(result.message).to.equal("No byline found in the prodticket");
         });  
@@ -161,7 +161,7 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the program contributors from the .html - TownHall", function () {
-            var result = prodticket.getContributors(prodticketTH_alt, config.programs.townHall);
+            var result = prodticket.getContributors(prodticketTH_alt, config.programs.townHallCert);
 
             for (var i = 0; i < contributorsTH_alt.length; i++) {
                 expect(result[i].title).to.equalIgnoreSpaces(contributorsTH_alt[i].title);
@@ -172,7 +172,7 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the program contributors (With Titles) from the .html - TownHall", function () {
-            var result = prodticket.getContributors(prodticketTH, config.programs.townHall);
+            var result = prodticket.getContributors(prodticketTH, config.programs.townHallCert);
 
             for (var i = 0; i < contributorsTH.length; i++) {
                 expect(result[i].title).to.equalIgnoreSpaces(contributorsTH[i].title);
@@ -184,7 +184,7 @@ describe('Prodticket Module Functions', function () {
 
         it("should return error object with message for missing contributors", function () {
         
-            var result = prodticket.getContributors(prodticketFail, config.programs.townHall);
+            var result = prodticket.getContributors(prodticketFail, config.programs.townHallCert);
         
             expect(result.message).to.equal("No contributors found in the Speakers section of the prodticket");
         
@@ -229,8 +229,8 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the program CME Reviewers from the .html - Town Hall", function (done) {
-            config.programs.townHall.hasOUS = false;
-            var result = prodticket.getCMEReviewers(prodticketTH, config.programs.townHall);
+            config.programs.townHallCert.hasOUS = false;
+            var result = prodticket.getCMEReviewers(prodticketTH, config.programs.townHallCert);
             for (var i = 0; i < reviewersTH.length; i++) {
                 expect(result[i].title).to.equalIgnoreSpaces(reviewersTH[i].title);
                 expect(result[i].name).to.equalIgnoreSpaces(reviewersTH[i].name);
@@ -243,7 +243,7 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the program CME Reviewers from the .html - Town Hall Alt", function (done) {
-            var result = prodticket.getCMEReviewers(prodticketTH_alt, config.programs.townHall);
+            var result = prodticket.getCMEReviewers(prodticketTH_alt, config.programs.townHallCert);
             for (var i = 0; i < reviewersTH_alt.length; i++) {
                 expect(result[i].title).to.equalIgnoreSpaces(reviewersTH_alt[i].title);
                 expect(result[i].name).to.equalIgnoreSpaces(reviewersTH_alt[i].name);
@@ -256,7 +256,7 @@ describe('Prodticket Module Functions', function () {
 
         it("should return error object with message for missing CME reviewers", function () {
         
-            var result = prodticket.getCMEReviewers(prodticketFail, config.programs.townHall);
+            var result = prodticket.getCMEReviewers(prodticketFail, config.programs.townHallCert);
         
             expect(result.message).to.equal("No CME reviewers found in the prodticket");
         
@@ -282,13 +282,13 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the program abbreviations from the .html - TownHall", function (){
-            var result = prodticket.getAbbreviations(prodticketTH_alt, config.programs.townHall);
+            var result = prodticket.getAbbreviations(prodticketTH_alt, config.programs.townHallCert);
             expect(result).to.equal(abbreviationsTH);
         });
 
         it("should return error object with message for missing abbreviations", function () {
            
-            var result = prodticket.getAbbreviations(prodticketFail, config.programs.townHall);
+            var result = prodticket.getAbbreviations(prodticketFail, config.programs.townHallCert);
         
             expect(result.message).to.equal("No abbreviations found in the prodticket");
             
@@ -321,13 +321,13 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the program references from the .html - TownHall", function () {
-            var result = prodticket.getReferences(prodticketTH_alt, config.programs.townHall);
+            var result = prodticket.getReferences(prodticketTH_alt, config.programs.townHallCert);
             expect(result).to.equalIgnoreSpaces(referencesTH);
         });
 
         it("should return error object with message for missing references", function () {
            
-            var result = prodticket.getReferences(prodticketFail, config.programs.townHall);
+            var result = prodticket.getReferences(prodticketFail, config.programs.townHallCert);
         
             expect(result.message).to.equal("No references found in the prodticket");
             
@@ -353,13 +353,13 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the program peer reviewer statement from .html - TownHall", function () {
-            var result = prodticket.getPeerReviewer(prodticketTH, config.programs.townHall);
+            var result = prodticket.getPeerReviewer(prodticketTH, config.programs.townHallCert);
             expect(result).to.equalIgnoreSpaces(peerReviewerTH);
         });
 
         it("should return error object with message for missing peer reviewer", function () {
            
-            var result = prodticket.getPeerReviewer(prodticketFail, config.programs.townHall);
+            var result = prodticket.getPeerReviewer(prodticketFail, config.programs.townHallCert);
         
             expect(result.message).to.equal("No peer reviewer info found in the prodticket");
             
@@ -407,8 +407,8 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return an array of slide components from .html - TownHall", function () {
-            config.programs.townHall.articleID = "903975";
-            var result = prodticket.getSlides(prodticketTH_alt, config.programs.townHall);
+            config.programs.townHallCert.articleID = "903975";
+            var result = prodticket.getSlides(prodticketTH_alt, config.programs.townHallCert);
 
             expect(result[0].articleID).to.equal(slideComponentsTH[0].articleID);
             expect(result[0].componentNumber).to.equal(slideComponentsTH[0].componentNumber);
@@ -418,7 +418,7 @@ describe('Prodticket Module Functions', function () {
 
         it("should return error object with message for missing slides", function () {
            
-            var result = prodticket.getSlides(prodticketFail, config.programs.townHall);
+            var result = prodticket.getSlides(prodticketFail, config.programs.townHallCert);
         
             expect(result.message).to.equal("No slides found in the prodticket");
         
@@ -451,13 +451,13 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the program goal statement from the .html - TownHall", function() {
-            var result = prodticket.getGoalStatement(prodticketTH, config.programs.townHall);
+            var result = prodticket.getGoalStatement(prodticketTH, config.programs.townHallCert);
             expect(result).to.equalIgnoreSpaces(goalStatementTH);
         });
 
         it("should return error object with message for missing goal statement", function () {
         
-            var result = prodticket.getGoalStatement(prodticketFail, config.programs.townHall);
+            var result = prodticket.getGoalStatement(prodticketFail, config.programs.townHallCert);
         
             expect(result.message).to.equal("No goal statement found in the prodticket");
             
@@ -490,13 +490,13 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the program target audience from .html - TownHall", function () {
-            var result = prodticket.getTargetAudience(prodticketTH, config.programs.townHall);
+            var result = prodticket.getTargetAudience(prodticketTH, config.programs.townHallCert);
             expect(result).to.equalIgnoreSpaces(targetAudienceTH);
         });
 
         it("should return error object with message for missing target audience", function () {
            
-            var result = prodticket.getTargetAudience(prodticketFail, config.programs.townHall);
+            var result = prodticket.getTargetAudience(prodticketFail, config.programs.townHallCert);
         
             expect(result.message).to.equal("No target audience statement found in the prodticket");
         
@@ -529,16 +529,16 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the program learning objectives from .html - TownHall", function () {
-            var result = prodticket.getLearningObjectives(prodticketTH, config.programs.townHall);
+            var result = prodticket.getLearningObjectives(prodticketTH, config.programs.townHallCert);
             expect(result).to.equalIgnoreSpaces(learningObjectivesTH);
 
-            var result_alt = prodticket.getLearningObjectives(prodticketTH_alt, config.programs.townHall);
+            var result_alt = prodticket.getLearningObjectives(prodticketTH_alt, config.programs.townHallCert);
             expect(result_alt).to.equalIgnoreSpaces(learningObjectivesTH_alt);
         });
 
         it("should return error object with message for missing learning objectives", function () {
         
-            var result = prodticket.getLearningObjectives(prodticketFail, config.programs.townHall);
+            var result = prodticket.getLearningObjectives(prodticketFail, config.programs.townHallCert);
         
             expect(result.message).to.equal("No learning objectives found in the prodticket");
             
@@ -585,16 +585,16 @@ describe('Prodticket Module Functions', function () {
         var activityOverviewTH_alt = fs.readFileSync(__dirname + '/input/activity-overview-th-alt.html').toString();
 
         it("should return the program Activity Overview from .html - TownHall", function () {
-            var result = prodticket.getActivityOverview(prodticketTH, config.programs.townHall);
+            var result = prodticket.getActivityOverview(prodticketTH, config.programs.townHallCert);
             expect(result).to.equalIgnoreSpaces(activityOverviewTH);
 
-            var result_alt = prodticket.getActivityOverview(prodticketTH_alt, config.programs.townHall);
+            var result_alt = prodticket.getActivityOverview(prodticketTH_alt, config.programs.townHallCert);
             expect(result_alt).to.equalIgnoreSpaces(activityOverviewTH_alt);
         });
 
         it("should return error object with message for missing activity overview", function () {
            
-            var result = prodticket.getActivityOverview(prodticketFail, config.programs.townHall);
+            var result = prodticket.getActivityOverview(prodticketFail, config.programs.townHallCert);
         
             expect(result.message).to.equal("No activity overview found in the prodticket");
             
@@ -628,16 +628,16 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the program Teaser from .html - TownHall", function () {
-            var result = prodticket.getTeaser(prodticketTH, config.programs.townHall);
+            var result = prodticket.getTeaser(prodticketTH, config.programs.townHallCert);
             expect(result).to.equalIgnoreSpaces(teaserTH);
             
-            var result_alt = prodticket.getTeaser(prodticketTH_alt, config.programs.townHall);
+            var result_alt = prodticket.getTeaser(prodticketTH_alt, config.programs.townHallCert);
             expect(result_alt).to.equalIgnoreSpaces(teaserTH_alt);
         });
 
         it("should return error object with message for missing teaser", function () {
            
-            var result = prodticket.getTeaser(prodticketFail, config.programs.townHall);
+            var result = prodticket.getTeaser(prodticketFail, config.programs.townHallCert);
         
             expect(result.message).to.equal("No teaser info found in the prodticket");
             
@@ -652,16 +652,16 @@ describe('Prodticket Module Functions', function () {
         var accreditationStatementTH_alt = fs.readFileSync(__dirname + '/input/accreditation-statement-th-alt.html').toString();
 
         it("should return the program Credit Statement from .html - TownHall", function () {
-            var result = prodticket.getAccreditation(prodticketTH, config.programs.townHall);
+            var result = prodticket.getAccreditation(prodticketTH, config.programs.townHallCert);
             expect(result).to.equalIgnoreSpaces(accreditationStatementTH);
 
-            var result_alt = prodticket.getAccreditation(prodticketTH_alt, config.programs.townHall);
+            var result_alt = prodticket.getAccreditation(prodticketTH_alt, config.programs.townHallCert);
             expect(result_alt).to.equalIgnoreSpaces(accreditationStatementTH_alt);
         });
 
         it("should return error object with message for missing accreditation statement", function () {
            
-            var result = prodticket.getAccreditation(prodticketFail, config.programs.townHall);
+            var result = prodticket.getAccreditation(prodticketFail, config.programs.townHallCert);
         
             expect(result.message).to.equal("No accreditation statement found in the prodticket");
             
@@ -695,12 +695,12 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the program Supporter name from .html - TownHall", function () {
-            var result = prodticket.getSupporter(prodticketTH, config.programs.townHall);
+            var result = prodticket.getSupporter(prodticketTH, config.programs.townHallCert);
             expect(result).to.equalIgnoreSpaces(supporterTH);
         });
 
         it("should return error object with message for missing supporter info", function () {
-            var result = prodticket.getSupporter(prodticketFail, config.programs.townHall);
+            var result = prodticket.getSupporter(prodticketFail, config.programs.townHallCert);
             expect(result.message).to.equal("No supporter info found in the prodticket"); 
         });
     });
@@ -714,12 +714,12 @@ describe('Prodticket Module Functions', function () {
         var creditsAvailableTH = "1.5";
         var creditsAvailableTH_alt = "No Credit Available Section In Prodticket";
         it("should return the program Credits Available from .html - TownHall", function () {
-            var result = prodticket.getCreditsAvailable(prodticketTH, config.programs.townHall);
+            var result = prodticket.getCreditsAvailable(prodticketTH, config.programs.townHallCert);
             expect(result).to.equalIgnoreSpaces(creditsAvailableTH);
         });
 
         it("should return the program Credits Available from .html - TownHall Alternate", function () {
-            var result = prodticket.getCreditsAvailable(prodticketTH_alt, config.programs.townHall);
+            var result = prodticket.getCreditsAvailable(prodticketTH_alt, config.programs.townHallCert);
             expect(result).to.equalIgnoreSpaces(creditsAvailableTH_alt);
         });
 
@@ -734,7 +734,7 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return error object with message for missing credits available", function () {
-            var result = prodticket.getCreditsAvailable(prodticketFail, config.programs.townHall);
+            var result = prodticket.getCreditsAvailable(prodticketFail, config.programs.townHallCert);
             expect(result.message).to.equal("No credits available found in the prodticket"); 
         });
     });
@@ -824,7 +824,7 @@ describe('Prodticket Module Functions', function () {
     //     var venueTH = "International Convention Centre Sydney";
     //     var roomTH = "Room: Hall C4.4";
     //     it("should return the program Location Info from .html - TownHall", function () {
-    //         var result = prodticket.getLocationInfo(prodticketTH, config.programs.townHall);
+    //         var result = prodticket.getLocationInfo(prodticketTH, config.programs.townHallCert);
     //         expect(result.address).to.equalIgnoreSpaces(addressTH);
     //         expect(result.city).to.equalIgnoreSpaces(cityTH);
     //         expect(result.state).to.equalIgnoreSpaces(stateTH);
@@ -841,7 +841,7 @@ describe('Prodticket Module Functions', function () {
     //     var venueTH_alt_2 = "Hilton Baltimore";
     //     var roomTH_alt_2 = "Room: Key Ballroom";
     //     it("should return the program Location Info from .html - TownHall", function () {
-    //         var result = prodticket.getLocationInfo(prodticketTH_alt_2, config.programs.townHall);
+    //         var result = prodticket.getLocationInfo(prodticketTH_alt_2, config.programs.townHallCert);
     //         expect(result.address).to.equalIgnoreSpaces(addressTH_alt_2);
     //         expect(result.city).to.equalIgnoreSpaces(cityTH_alt_2);
     //         expect(result.state).to.equalIgnoreSpaces(stateTH_alt_2);
@@ -863,7 +863,7 @@ describe('Prodticket Module Functions', function () {
         var dateTH = "Wednesday, 3 October, 2018";
         var timeTH = "13:00 &#8211; 14:30";
         it("should return the program Date/Time from .html - TownHall", function () {
-            var result = prodticket.getDateTime(prodticketTH, config.programs.townHall);
+            var result = prodticket.getDateTime(prodticketTH, config.programs.townHallCert);
             expect(result.date).to.equalIgnoreSpaces(dateTH);
             expect(result.time).to.equalIgnoreSpaces(timeTH);
         });
@@ -871,7 +871,7 @@ describe('Prodticket Module Functions', function () {
         var dateTH_alt = "September 7, 2018";
         var timeTH_alt = "12:30 to 13:30";
         it("should return the program Date/Time from .html - TownHall Alt 2", function () {
-            var result = prodticket.getDateTime(prodticketTH_alt, config.programs.townHall);
+            var result = prodticket.getDateTime(prodticketTH_alt, config.programs.townHallCert);
             expect(result.date).to.equalIgnoreSpaces(dateTH_alt);
             expect(result.time).to.equalIgnoreSpaces(timeTH_alt);
         });
@@ -879,13 +879,13 @@ describe('Prodticket Module Functions', function () {
         var dateTH_alt_2 = "Saturday, August 18, 2018";
         var timeTH_alt_2 = "5:30 PM &#8211; 7:30 PM"
         it("should return the program Date/Time from .html - TownHall Alt 2", function () {
-            var result = prodticket.getDateTime(prodticketTH_alt_2, config.programs.townHall);
+            var result = prodticket.getDateTime(prodticketTH_alt_2, config.programs.townHallCert);
             expect(result.date).to.equalIgnoreSpaces(dateTH_alt_2);
             expect(result.time).to.equalIgnoreSpaces(timeTH_alt_2);
         });
 
         it("should return error object with message for missing date/time", function () {
-            var result = prodticket.getDateTime(prodticketFail, config.programs.townHall);
+            var result = prodticket.getDateTime(prodticketFail, config.programs.townHallCert);
             expect(result.message).to.equal("No event date/time found in the prodticket"); 
         });
     });
@@ -929,7 +929,7 @@ describe('Prodticket Module Functions', function () {
         */ 
         var programDetailsTH = require('./input/program-details');
         it("should return the Program Details from .html - TownHall", function () {
-            var result = prodticket.getProgramDetails(prodticketTH, config.programs.townHall);
+            var result = prodticket.getProgramDetails(prodticketTH, config.programs.townHallCert);
 
             for (var i = 0; i < programDetailsTH.length; i++) {
                 expect(result[i].schedule).to.equalIgnoreSpaces(programDetailsTH[i].schedule);
@@ -939,7 +939,7 @@ describe('Prodticket Module Functions', function () {
         });
         var programDetailsTH_alt = require('./input/program-details-alt');
         it("should return the Program Details from .html - TownHall ALT", function () {
-            var result = prodticket.getProgramDetails(prodticketTH_alt, config.programs.townHall);
+            var result = prodticket.getProgramDetails(prodticketTH_alt, config.programs.townHallCert);
             for (var i = 0; i < programDetailsTH_alt.length; i++) {
                 expect(result[i].schedule).to.equalIgnoreSpaces(programDetailsTH_alt[i].schedule);
                 expect(result[i].infoTitle).to.equalIgnoreSpaces(programDetailsTH_alt[i].infoTitle);
@@ -948,7 +948,7 @@ describe('Prodticket Module Functions', function () {
         });
         var programDetailsTH_alt_2 = require('./input/program-details-alt-2');
         it("should return the Program Details from .html - TownHall ALT2", function () {
-            var result = prodticket.getProgramDetails(prodticketTH_alt_2, config.programs.townHall);
+            var result = prodticket.getProgramDetails(prodticketTH_alt_2, config.programs.townHallCert);
             for (var i = 0; i < programDetailsTH_alt_2.length; i++) {
                 expect(result[i].schedule).to.equalIgnoreSpaces(programDetailsTH_alt_2[i].schedule);
                 expect(result[i].infoTitle).to.equalIgnoreSpaces(programDetailsTH_alt_2[i].infoTitle);
@@ -956,7 +956,7 @@ describe('Prodticket Module Functions', function () {
             }
         });
         it("should return error object with message for missing program details", function () {
-            var result = prodticket.getProgramDetails(prodticketFail, config.programs.townHall);
+            var result = prodticket.getProgramDetails(prodticketFail, config.programs.townHallCert);
             expect(result.message).to.equal("No program details found in the prodticket"); 
         });
     });
@@ -967,11 +967,11 @@ describe('Prodticket Module Functions', function () {
     describe("prodticket.getAssociationDisclaimer()", function () {
         var associationDisclaimerTH = "<p>This is an example Association Disclaimer Statement if there is one it would be in this section of the prodticket.</p>";
         it("should return the program Association Disclaimer Statement from .html - TownHall", function () {
-            var result = prodticket.getAssociationDisclaimer(prodticketTH, config.programs.townHall);
+            var result = prodticket.getAssociationDisclaimer(prodticketTH, config.programs.townHallCert);
             expect(result).to.equalIgnoreSpaces(associationDisclaimerTH);
         });
         it("should return error object with message for missing association disclaimer statement", function () {
-            var result = prodticket.getAssociationDisclaimer(prodticketFail, config.programs.townHall);
+            var result = prodticket.getAssociationDisclaimer(prodticketFail, config.programs.townHallCert);
             expect(result.message).to.equal("No association disclaimer found in the prodticket"); 
         });
     });
@@ -1009,7 +1009,7 @@ describe('Prodticket Module Functions', function () {
         });
 
         // it("should return Project ID from the prodticket .html - TownHall", function () {
-        //     var result = prodticket.getProjectId(prodticketTH, config.programs.townHall);
+        //     var result = prodticket.getProjectId(prodticketTH, config.programs.townHallCert);
         //     expect(result).to.equalIgnoreSpaces(projectIdTH); 
         // });
     });
@@ -1046,7 +1046,7 @@ describe('Prodticket Module Functions', function () {
         });
 
         // it("should return Product Type from the prodticket .html - TownHall", function () {
-        //     var result = prodticket.getProductType(prodticketTH, config.programs.townHall);
+        //     var result = prodticket.getProductType(prodticketTH, config.programs.townHallCert);
         //     expect(result).to.equalIgnoreSpaces(productTypeTH); 
         // });
     });
@@ -1110,7 +1110,7 @@ describe('Prodticket Module Functions', function () {
             expect(result).to.equalIgnoreSpaces(articleContentSLTranscript);
         });
 
-        it('should return transcript/content from prodticket .html - TownHall', function () {
+        it('should return transcript/content from prodticket .html - TownHall Enduring', function () {
             config.programs.townHall.transcriptType = config.transcriptTypes[1];
             var result = prodticket.getArticleContent(prodticketTHTranscript, config.programs.townHall);
             
@@ -1119,6 +1119,17 @@ describe('Prodticket Module Functions', function () {
 
             // fs.writeFileSync(__dirname + '/output/article-content-th.html', result);
             expect(result).to.equalIgnoreSpaces(articleContentTHTranscript);
+        });
+        
+        it('should return transcript/content from prodticket .html - TownHall Cert Page', function () {
+            config.programs.townHallCert.transcriptType = config.transcriptTypes[1];
+            var result = prodticket.getArticleContent(prodticketTHTranscript, config.programs.townHallCert);
+            
+            // Reset program settings
+            config.programs.townHallCert.transcriptType = config.transcriptTypes[0];
+
+            // fs.writeFileSync(__dirname + '/output/article-content-th.html', result);
+            expect(result).to.equalIgnoreSpaces("This certificate page is associated with a Medscape Education event.");
         });
     });
 
@@ -1171,7 +1182,7 @@ describe('Prodticket Module Functions', function () {
         });
 
         it("should return the Collection Page Object from the prodticket .html - TownHall", function () {
-            var result = prodticket.getCollectionPage(prodticketTH_alt_2, config.programs.townHall);
+            var result = prodticket.getCollectionPage(prodticketTH_alt_2, config.programs.townHallCert);
             expect(result).to.eql(collectionPageTH); 
         });
 

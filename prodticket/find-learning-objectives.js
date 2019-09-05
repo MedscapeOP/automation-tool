@@ -51,14 +51,18 @@ exportObject[config.programs.videoLecture.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
-
 // First Response
 exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
-// Town Hall 
+// Town Hall Enduring
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+}
+
+// Town Hall Cert Page 
+exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
     var startRegExp = /<strong>Upon completion of this activity.*/g;
     var endRegExp = /<strong>Association Disclaimer Statement/g;
     var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);

@@ -5,7 +5,7 @@ var exportObject = {};
 
 
 // Town Hall 
-exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
     var result = {};
     // var startRegExp = /<\/a>Print\/Collateral\/Other information/g;
     // var endRegExp = /<\/a>Design Information/g;

@@ -117,8 +117,13 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML, pro
     }
 }
 
-// Town Hall  
+// Town Hall Enduring
 exportObject[config.programs.townHall.codeName] = function (ticketHTML, program) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML, program);
+}
+
+// Town Hall Cert Page
+exportObject[config.programs.townHallCert.codeName] = function (ticketHTML, program) {
     ticketHTML = cleanHTML.slidesInitial(ticketHTML);
     var startSlideRegExp = stringOps.getUsableRegExp(ticketHTML, startSlideMatches);
     var endSlideRegExp = stringOps.getUsableRegExp(ticketHTML, endSlideMatches);

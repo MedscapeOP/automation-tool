@@ -61,15 +61,19 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
-// Town Hall
+// Town Hall Enduring 
+exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+}
+
+// Town Hall Cert Page 
 var townHallStartRegExps = [
     /.*Is there a collection page\?.*/g
 ];
 var townHallEndRegExps = [
     /.*Add to other publications or pages.*/g
 ];
-
-exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
     var startRegExp = stringOps.getUsableRegExp(ticketHTML, townHallStartRegExps);
     var endRegExp = stringOps.getUsableRegExp(ticketHTML, townHallEndRegExps);
     if (startRegExp == -1 || endRegExp == -1) {

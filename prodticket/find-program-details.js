@@ -259,8 +259,8 @@ function buildProgramDetails(prevWasSubtitle, remainingString, timelineObject, r
     }
 }
 
-// Town Hall 
-exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+// Town Hall Cert Page 
+exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
     var startRegExp = /<strong>Program Details.*/g;
     var endRegExp = /<\/a>Activity Information/g;
     var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, true);

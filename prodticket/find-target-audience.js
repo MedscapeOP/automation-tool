@@ -43,9 +43,13 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
+// Town Hall Enduring
+exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+}
 
 // Town Hall 
-exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
     var startRegExp = /<strong>Target Audience.*/g;
     var endRegExp = /<strong>Goal Statement.*/g;
     var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);

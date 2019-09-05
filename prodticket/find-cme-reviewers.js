@@ -172,8 +172,13 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML, pro
     return exportObject[config.programs.spotlight.codeName](ticketHTML, program);
 }
 
-// Town Hall
+// Town Hall Enduring 
 exportObject[config.programs.townHall.codeName] = function (ticketHTML, program) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML, program);
+}
+
+// Town Hall Cert Page 
+exportObject[config.programs.townHallCert.codeName] = function (ticketHTML, program) {
     var {textBlock: additionalReviewerBlock} = stringOps.getTextBlock(ticketHTML, "</a>Additional Planners/Reviewers Information and Disclosure Statements", '</a>Related links', false, true);
 
     var peerReviewIndex = stringOps.regexIndexOf(additionalReviewerBlock, /Peer Reviewer/g);

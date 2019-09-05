@@ -34,9 +34,13 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
-
-// Town Hall  
+// Town Hall Enduring  
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+}
+
+// Town Hall Cert Page
+exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
     throw new Error("No SF# in TownHall prodticket");
 }
 

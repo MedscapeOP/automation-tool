@@ -37,8 +37,13 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
-// TownHall 
+// TownHall Enduring  
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+}
+
+// TownHall Cert Page 
+exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
     var {textBlock: rawAbbreviations, label: abbrLabel} = stringOps.getTextBlock(ticketHTML, /Abbreviations/g, /<a name=".*"><\/a>Transcript/g);
     // console.log(cleanHTML.abbreviations(rawAbbreviations));
     // return "";

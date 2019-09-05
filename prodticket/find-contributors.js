@@ -180,7 +180,6 @@ exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
     return ``;
 }
 
-
 // Spotlight
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     var {textBlock: disclosureBlock} = stringOps.getTextBlock(ticketHTML, "<strong>Disclosures", '<strong>SD/Editor/Writer', true, true);
@@ -200,7 +199,6 @@ exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
     }
 }
 
-
 // Curbside
 exportObject[config.programs.curbsideConsult.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
@@ -216,8 +214,13 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
 }
 
-// Town Hall
+// Town Hall Enduring 
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+}
+
+// Town Hall Cert Page 
+exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
     var {textBlock: speakerBlock} = stringOps.getTextBlock(ticketHTML, "<strong>Speakers", '<strong>Program Details', true, true);
 
     var {textBlock: contributorBlock} = stringOps.getTextBlock(speakerBlock, "Disclosure: Clyde W. Yancy, MD, MSc, has disclosed the following relevant financial relationships:</p>", "<strong>Program Details", true, false);

@@ -83,9 +83,15 @@ exportObject[config.programs.firstResponse.codeName] = function (ticketHTML) {
     }
 }
 
-// Town Hall 
+// Town Hall Enduring  
 exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
     return exportObject[config.programs.spotlight.codeName](ticketHTML);
+};
+
+// Town Hall Cert Page 
+exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
+    // Add logic to look at prodticket for Event Statement. 
+    return 'This certificate page is associated with a Medscape Education event.';
 };
 
 

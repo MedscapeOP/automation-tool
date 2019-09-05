@@ -69,8 +69,8 @@ var townHallSubtitleRegExps = [
 var townHallEndSubtitleRegExps = [
     /<strong>Teaser/g
 ];
-// Town Hall
-exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+// Town Hall Cert Page 
+exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
     var startRegExp = stringOps.getUsableRegExp(ticketHTML, townHallTitleRegExps);
     var endRegExp = stringOps.getUsableRegExp(ticketHTML, townHallEndTitleRegExps);
     // console.log("START REGEXP:", startRegExp);
@@ -97,6 +97,12 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
         throw new Error("No title found in the prodticket");
     }
 }
+
+// TownHall Enduring 
+exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
+    return exportObject[config.programs.spotlight.codeName](ticketHTML);
+};
+
 
 // Test and Teach  
 exportObject[config.programs.testAndTeach.codeName] = function (ticketHTML) {
