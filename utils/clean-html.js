@@ -764,6 +764,7 @@ function transcript(htmlString, removeFluff=false) {
     var clean = htmlString.slice();
 
     clean = clean.replace(/.*<strong>Content.*/g, "");
+    // clean = clean.replace(/<a href=".*">(.*)<\/a>/g, "$1");
 
     var endTranscriptRegexArray = [
         /.*<em>Mandatory Insertion after Main.*/gi,
@@ -789,8 +790,8 @@ function transcript(htmlString, removeFluff=false) {
     clean = insertEntityPlaceholders(clean);
 
     var options = {
-        allowedTags: [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt' , 'table', 'th', 'td', 'blockquote', 'p', 'br'],
-        allowedTags: false,
+        allowedTags: [ 'ul', 'li', 'em', 'strong', 'sup', 'sub', 'tt', 'table', 'th', 'td', 'blockquote', 'p', 'br'],
+        // allowedTags: false,
         allowedAttributes: false,
         exclusiveFilter: function(frame) {
             // return frame.tag === 'a' && !frame.text.trim();

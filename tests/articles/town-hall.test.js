@@ -8,6 +8,7 @@ let expect = chai.expect;
 const app = require('../../commands');
 const {SubsectionElement} = app.classes;
 const utils = app.utils;
+const config = app.config;
 const townHallEnduring = app.articles.townHallEnduring;
 
 describe('Town Hall', function () {
@@ -54,6 +55,8 @@ describe('Town Hall', function () {
             program.hasForYourPatient = false;
             program.hasLLA = false;
             program.hasOUS = true; 
+            program.hasTranscript = true;
+            program.transcriptType = config.transcriptTypes[1];
             // program.articleID = "902206";
 
             var result = townHallEnduring.buildTownHallEnduring(prodTicket, program).finishedArticleObject.toObjectLiteral();
@@ -65,7 +68,7 @@ describe('Town Hall', function () {
             // console.log("RESULT: ", result);
             // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
 
-            // expect(result).to.equalIgnoreSpaces(completeTownHallEnduring);
+            expect(result).to.equalIgnoreSpaces(completeTownHallEnduring);
         });
     });
 });
