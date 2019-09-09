@@ -60,8 +60,7 @@ function getLLAPostTOC(ticket, program) {
 function checklistTownHallCert(ticket, program) {
     var checklist = new TownHallCertChecklist();
 
-    // ABBREVIATIONS
-    checklist.abbreviations.result = prodticket.getAbbreviations(ticket, program);
+    // ABBREVIATIONS -> N/A 
 
     // BACKMATTER FRONT PAGE      
     checklist.bkmtrFront.result = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
@@ -69,10 +68,7 @@ function checklistTownHallCert(ticket, program) {
     // BYLINE
     checklist.byline.result = prodticket.getByline(ticket, program);
 
-    // COLLECTION PAGE 
-    if (program.hasCollectionPage) {
-        checklist.collectionPageInfo.result = prodticket.getCollectionPage(ticket, program);
-    }
+    // COLLECTION PAGE -> N/A
     
     // CONTRIBUTOR PRE CONTENT (CONTENT ABOVE CONTRIBS)
     checklist.contrbtrPreContent.result = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
@@ -80,8 +76,7 @@ function checklistTownHallCert(ticket, program) {
     // COPYRIGHT HOLDER 
     checklist.cpyrtHolder.result = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
 
-    // CREDITS AVAILABLE 
-    // <<<<<<<< PLACEHOLDER >>>>>>>>>
+    // CREDITS AVAILABLE - N/A 
 
     // DOWNLOADABLE SLIDES 
     checklist.downloadableSlides.result = snippets.downloadableSlides(program.articleID);
@@ -97,8 +92,7 @@ function checklistTownHallCert(ticket, program) {
         checklist.peerReviewer.result = prodticket.getPeerReviewer(ticket, program);        
     } 
 
-    // REFERENCES
-    checklist.references.result = prodticket.getReferences(ticket, program);
+    // REFERENCES - N/A
 
     // SUPPORTER
     // <<<<<<<< PLACEHOLDER >>>>>>>>>
@@ -112,15 +106,7 @@ function checklistTownHallCert(ticket, program) {
     // TITLE 
     checklist.title.result = prodticket.getTitle(ticket, program);
     
-    // SLIDES / TRANSCRIPT  
-    if (program.hasTranscript) {
-        if (program.transcriptType === config.transcriptTypes[0]) {
-            checklist.slides.result = prodticket.getSlides(ticket, program);
-        } else if (program.transcriptType === config.transcriptTypes[1]) {
-            checklist.transcript.result = prodticket.getArticleContent(ticket, program);
-        }
-    }
-
+    // SLIDES / TRANSCRIPT -> N/A 
  
     // CONTRIBUTORS
     checklist.contributors.result = prodticket.getContributors(ticket, program);
