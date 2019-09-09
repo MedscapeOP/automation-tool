@@ -185,7 +185,7 @@ describe('Article Utilities', function () {
 
         it('should return the Audience Q&A Sidebar TOC for TH Enduring articles', function () {
             var slidesComponent = app.prodTicket.getSlides(prodticketTH, programTH)[0];
-            var result = articleUtils.buildAudienceQATOC(slidesComponent).toObjectLiteral();
+            var result = articleUtils.buildSidebarVideoTOC(slidesComponent).toObjectLiteral();
             result = utils.xmlOps.objectToXMLString(result);
             result = utils.cleanHTML.cleanEntities(result);
             expect(result).to.equalIgnoreSpaces(completeAudienceQA);

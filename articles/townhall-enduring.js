@@ -1,7 +1,7 @@
 const _ = require("lodash");
 const utils = require("../utils");
 const articleUtils = require('./article-utils');
-const {ProfArticle, ProfActivity, TOCElement, SectionElement, SubsectionElement, SlideGroup, TownHallEnduringChecklist} = require("../classes");
+const {ProfArticle, ProfActivity, TOCElement, SectionElement, SubsectionElement, SlideGroup, TownHallEnduringChecklist, SlideComponent} = require("../classes");
 const prodticket = require('../prodticket');
 const snippets = require('../snippets');
 const config = require('../config');
@@ -19,19 +19,19 @@ function getSlidesTOC (slidesComponents, program) {
     if (program.hasLLA) {
         return {
             slidesTOC: articleUtils.buildSlidesTOC(slidesComponent, true, true, true),
-            audienceQATOC: articleUtils.buildAudienceQATOC(slidesComponent)
+            fullAudioSidebarTOC: articleUtils.buildSidebarVideoTOC(slidesComponent, "XXXXXX", "Full Live Event Audio", 2)
         }
     }
     return {
         slidesTOC: articleUtils.buildSlidesTOC(slidesComponent, false, false, true),
-        audienceQATOC: articleUtils.buildAudienceQATOC(slidesComponent)
+        fullAudioSidebarTOC: articleUtils.buildSidebarVideoTOC(slidesComponent, "XXXXXX", "Full Live Event Audio", 2)
     }
 }
 
 function getVideoTOC (componentOrArticleID, program) {
     return {
         videoTOC: articleUtils.buildVideoEmbedTOC(componentOrArticleID, program.hasLLA),
-        audienceQATOC: articleUtils.buildAudienceQATOC(null, program.articleID)
+        fullAudioSidebarTOC: articleUtils.buildSidebarVideoTOC(null, program.articleID, "Full Live Event Audio", 2)
     }
 }
 
@@ -148,7 +148,7 @@ function buildTownHallEnduring(ticket, program) {
     abbreviationsTOC,
     referencesTOC,
     forYourPatientMarkup,
-    audienceQATOC,
+    fullAudioSidebarTOC,
     targetAudience, 
     goalStatement,
     learningObjectives,
@@ -176,6 +176,8 @@ function buildTownHallEnduring(ticket, program) {
     }
 
     var tocs = null; 
+    var mainVideoComponent = new SlideComponent(program.articleID, 1, "").toObjectLiteral();
+    // console.log(mainVideoComponent);
     if (checklistResult.properties.slides) {
         // Put SlidesTOC (which includes video) As Content
         // Also build AudienceQA
@@ -183,23 +185,23 @@ function buildTownHallEnduring(ticket, program) {
         tocs = getSlidesTOC(checklistResult.properties.slides.result, program);
         // slidesTOC = tocs.slidesTOC;
         contentTOC = tocs.slidesTOC; 
-        audienceQATOC = tocs.audienceQATOC; 
+        fullAudioSidebarTOC = tocs.fullAudioSidebarTOC; 
         transcriptTOC = null;
     } else if (checklistResult.properties.transcript) {
         // Put VideoTOC As Content
         // Also build AudienceQA
         // Also build Transcript Sidebar
-        tocs = getVideoTOC(program.articleID, program);
+        tocs = getVideoTOC(mainVideoComponent, program);
         contentTOC = tocs.videoTOC;  
-        audienceQATOC = tocs.audienceQATOC;
+        fullAudioSidebarTOC = tocs.fullAudioSidebarTOC;
         transcriptTOC = getTranscriptTOC(checklistResult.properties.transcript.result, program);
     } else {
         // Put VideoTOC As Content
         // Also build AudienceQA
         // No Transcript Sidebar
-        tocs = getVideoTOC(program.articleID, program);
+        tocs = getVideoTOC(mainVideoComponent, program);
         contentTOC = tocs.videoTOC;  
-        audienceQATOC = tocs.audienceQATOC;
+        fullAudioSidebarTOC = tocs.fullAudioSidebarTOC;
         transcriptTOC = null;
     }
     
@@ -245,7 +247,7 @@ function buildTownHallEnduring(ticket, program) {
     }
     finalArticle.insertTOCElement(abbreviationsTOC);
     finalArticle.insertTOCElement(referencesTOC);
-    finalArticle.insertTOCElement(audienceQATOC);
+    finalArticle.insertTOCElement(fullAudioSidebarTOC);
 
     // Addons 
     if (program.hasForYourPatient) {

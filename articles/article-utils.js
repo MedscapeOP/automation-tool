@@ -318,24 +318,24 @@ function buildTableOfContentsTOC(componentsArray, program) {
 } 
 
 /* DONE */
-function buildAudienceQATOC(slidesComponent, articleID="XXXXXX") {
+function buildSidebarVideoTOC(slidesComponent, articleID="XXXXXX", tocLabel="Audience Q &amp; A", componentNumber=2) {
     // - It just has an extra Sidebar, Audience Q&A where you need to embed video code video code is provided in media info in custom forms
     // - Use a normal LLA-style video embed. 
    // BUILD: Main TOC Element 
 
    if (slidesComponent) {
-       var newSlidesComponent = new SlideComponent(slidesComponent.articleID, 2, "").toObjectLiteral();
+       var newSlidesComponent = new SlideComponent(slidesComponent.articleID, componentNumber, "").toObjectLiteral();
    } else {
-        var newSlidesComponent = new SlideComponent(articleID, 2, "").toObjectLiteral();
+        var newSlidesComponent = new SlideComponent(articleID, componentNumber, "").toObjectLiteral();
    }
 
    // BUILD: Main TOC 
-   var audienceQATOC = new TOCElement("Sidebar");
-   audienceQATOC.tocLabel = "Audience Q &amp; A";
+   var sidebarTOC = new TOCElement("Sidebar");
+   sidebarTOC.tocLabel = tocLabel;
 
    // BUILD: Main Section Element 
    var sectionElement = new SectionElement();
-   sectionElement.sectionHeader = "Audience Q &amp; A";
+   sectionElement.sectionHeader = tocLabel;
 
    // BUILD: Main Subsection
    var subsectionElement = new SubsectionElement(true, false, false);
@@ -345,8 +345,8 @@ function buildAudienceQATOC(slidesComponent, articleID="XXXXXX") {
    sectionElement.insertSubsectionElement(subsectionElement);
 
    // INSERT: Main Section
-   audienceQATOC.insertSectionElement(sectionElement);
-   return audienceQATOC;
+   sidebarTOC.insertSectionElement(sectionElement);
+   return sidebarTOC;
 }
 
 /**
@@ -462,7 +462,7 @@ module.exports = {
     buildReferences,
     buildAbbreviations,
     buildTableOfContentsTOC,
-    buildAudienceQATOC,
+    buildSidebarVideoTOC,
     buildContributorGroups,
     buildTranscriptTOC,
     buildVideoEmbedTOC
