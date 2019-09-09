@@ -12,6 +12,7 @@ const BriefChecklist = require('./brief_checklist');
 const FirstResponseChecklist = require('./first_response_checklist');
 const SpotlightChecklist = require('./spotlight_checklist');
 const TownHallEnduringChecklist = require('./townhall_enduring_checklist');
+const TownHallCertChecklist = require('./townhall_cert_checklist');
 const TownHallRegChecklist = require('./townhall_reg_checklist');
 const TestAndTeachChecklist = require('./test-and-teach-checklist');
 const PropertiesChecklist = require('./properties_checklist');
@@ -35,6 +36,7 @@ module.exports = {
     FirstResponseChecklist,
     BriefChecklist,
     TownHallEnduringChecklist,
+    TownHallCertChecklist,
     TownHallRegChecklist,
     TestAndTeachChecklist,
     PropertiesChecklist,

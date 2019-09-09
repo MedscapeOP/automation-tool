@@ -10,6 +10,7 @@ const {SubsectionElement} = app.classes;
 const utils = app.utils;
 const config = app.config;
 const townHallEnduring = app.articles.townHallEnduring;
+const townHallCert = app.articles.townHallCert;
 
 describe('Town Hall', function () {
  
@@ -35,21 +36,21 @@ describe('Town Hall', function () {
     var program; 
     var prodTicket;
     var completeTownHallEnduring;
+    var completeTownHallCert;
     var completeTownHallReg;
 
     beforeEach(function() {
-        prodTicket = fs.readFileSync(__dirname + '/input/town-hall/article-enduring.html', 'utf8');
-
         completeTownHallEnduring = fs.readFileSync(__dirname + '/input/town-hall/town-hall-enduring.xml').toString();
 
+        completeTownHallCert = fs.readFileSync(__dirname + '/input/town-hall/town-hall-cert.xml').toString();
+
         completeTownHallReg = fs.readFileSync(__dirname + '/input/town-hall/town-hall-reg.jsp').toString();
-
-        program = app.config.programs.townHall;
-
     });
-
+    
     describe('#buildTownHallEnduring()', function () {
         it('should return complete XML string of Town Hall Enduring article', function () {
+            prodTicket = fs.readFileSync(__dirname + '/input/town-hall/article-enduring.html', 'utf8');
+            program = app.config.programs.townHall;
             program.hasCollectionPage = false;
             program.hasPeerReviewer = false;
             program.hasForYourPatient = false;
@@ -69,6 +70,31 @@ describe('Town Hall', function () {
             // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
 
             expect(result).to.equalIgnoreSpaces(completeTownHallEnduring);
+        });
+    });
+
+    describe('#buildTownHallCert()', function () {
+        it('should return complete XML string of Town Hall Cert page', function () {
+            prodTicket = fs.readFileSync(__dirname + '/input/town-hall/article-cert.html', 'utf8');
+            program = app.config.programs.townHallCert;
+            program.hasCollectionPage = false;
+            program.hasPeerReviewer = false;
+            program.hasForYourPatient = false;
+            program.hasLLA = false;
+            program.hasOUS = false; 
+            program.hasTranscript = false;
+            // program.articleID = "902206";
+
+            var result = townHallCert.buildTownHallCert(prodTicket, program).finishedArticleObject.toObjectLiteral();
+
+            result = utils.cleanHTML.cleanEntities(utils.xmlOps.objectToXMLString(result));
+
+            fs.writeFileSync(__dirname + '/output/town-hall/finished-th-cert.xml', result);
+
+            // console.log("RESULT: ", result);
+            // utils.xmlOps.writeXMLFromObject(result, __dirname + "/output/spotlight/finished-sl.xml");
+
+            expect(result).to.equalIgnoreSpaces(completeTownHallCert);
         });
     });
 });

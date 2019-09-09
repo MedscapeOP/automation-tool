@@ -408,7 +408,6 @@ function buildTranscriptTOC (transcript, label = "Activity Transcript") {
 
     var subsectionInstance = new SubsectionElement(true, false, false);
 
-    console.log(cleanTranscript);
     subsectionInstance.subsectionContent = utils.wrapSubsectionContent(cleanTranscript);
     
     var sectionInstance = new SectionElement();
