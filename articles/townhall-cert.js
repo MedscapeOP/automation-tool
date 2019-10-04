@@ -9,51 +9,13 @@ const activity = require('./activity').activity;
 
 
 /* SLIDES / MAIN CONTENT 
--------------------------------------- */
-function getSlidesTOC (slidesComponents, program) {
+-----------------------------------t--- */
+function getContentTOC (articleContent, program) {
     // Get Slide Component from prodticket.getSlides.
     // Check if LLA 
     // If LLA build slides with Video embed AND Edu Impact challenge 
-    var slidesComponent = (slidesComponents ? slidesComponents[0] : program.articleID);
-
-    if (program.hasLLA) {
-        return {
-            slidesTOC: articleUtils.buildSlidesTOC(slidesComponent, true, true, true),
-            fullAudioSidebarTOC: articleUtils.buildSidebarVideoTOC(slidesComponent, "XXXXXX", "Full Live Event Audio", 2)
-        }
-    }
-    return {
-        slidesTOC: articleUtils.buildSlidesTOC(slidesComponent, false, false, true),
-        fullAudioSidebarTOC: articleUtils.buildSidebarVideoTOC(slidesComponent, "XXXXXX", "Full Live Event Audio", 2)
-    }
+    return null;
 }
-
-function getVideoTOC (componentOrArticleID, program) {
-    return {
-        videoTOC: articleUtils.buildVideoEmbedTOC(componentOrArticleID, program.hasLLA),
-        fullAudioSidebarTOC: articleUtils.buildSidebarVideoTOC(null, program.articleID, "Full Live Event Audio", 2)
-    }
-}
-
-function getTranscriptTOC (transcript, program) {
-    return articleUtils.buildTranscriptTOC(transcript);
-}
-
-
-/* LLA PRE TOC   
--------------------------------------- */
-function getLLAPreTOC(goalStatementMarkup, program) {
-    // var goalStatementMarkup = prodticket.getGoalStatement(ticket, program);
-    return articleUtils.buildLLAPreTOC(goalStatementMarkup);
-}
-
-
-/* LLA POST TOC  
--------------------------------------- */
-function getLLAPostTOC(ticket, program) {
-    return articleUtils.buildLLAPostTOC();
-}
-
 
 /* CHECKLIST FUNCTION  
 -------------------------------------- */
@@ -61,6 +23,7 @@ function checklistTownHallCert(ticket, program) {
     var checklist = new TownHallCertChecklist();
 
     // ABBREVIATIONS -> N/A 
+    checklist.abbreviations.result = prodticket.getAbbreviations(ticket, program);
 
     // BACKMATTER FRONT PAGE      
     checklist.bkmtrFront.result = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
@@ -79,7 +42,7 @@ function checklistTownHallCert(ticket, program) {
     // CREDITS AVAILABLE - N/A 
 
     // DOWNLOADABLE SLIDES 
-    checklist.downloadableSlides.result = snippets.downloadableSlides(program.articleID);
+    // checklist.downloadableSlides.result = snippets.downloadableSlides(program.articleID);
 
     // GOAL STATEMENT
     checklist.goalStatement.result = prodticket.getGoalStatement(ticket, program);
@@ -106,7 +69,7 @@ function checklistTownHallCert(ticket, program) {
     // TITLE 
     checklist.title.result = prodticket.getTitle(ticket, program);
     
-    // SLIDES / TRANSCRIPT -> N/A 
+    // SLIDES / TRANSCRIPT - N/A
  
     // CONTRIBUTORS
     checklist.contributors.result = prodticket.getContributors(ticket, program);
@@ -127,14 +90,9 @@ function buildTownHallCert(ticket, program) {
     peerReviewer, 
     collectionPageInfo, 
     contentTOC,
-    transcriptTOC,
-    preAssessmentTOC, 
-    postAssessmentTOC, 
-    blankResultsTOC, 
     abbreviationsTOC,
     referencesTOC,
     forYourPatientMarkup,
-    fullAudioSidebarTOC,
     targetAudience, 
     goalStatement,
     learningObjectives,
@@ -154,49 +112,17 @@ function buildTownHallCert(ticket, program) {
     learningObjectives = (checklistResult.properties.learningObjectives ? checklistResult.properties.learningObjectives.result : "");
 
     learningObjectives = utils.formatLearningObjectives(learningObjectives);    
-
-    if (program.hasLLA) {
-        preAssessmentTOC = getLLAPreTOC(goalStatement, program);
-        postAssessmentTOC = getLLAPostTOC(ticket, program);
-        blankResultsTOC = articleUtils.buildBlankTOC();
-    }
-
-    var tocs = null; 
-    var mainVideoComponent = new SlideComponent(program.articleID, 1, "").toObjectLiteral();
-    // console.log(mainVideoComponent);
-    if (checklistResult.properties.slides) {
-        // Put SlidesTOC (which includes video) As Content
-        // Also build AudienceQA
-        // No Transcript Sidebar
-        tocs = getSlidesTOC(checklistResult.properties.slides.result, program);
-        // slidesTOC = tocs.slidesTOC;
-        contentTOC = tocs.slidesTOC; 
-        fullAudioSidebarTOC = tocs.fullAudioSidebarTOC; 
-        transcriptTOC = null;
-    } else if (checklistResult.properties.transcript) {
-        // Put VideoTOC As Content
-        // Also build AudienceQA
-        // Also build Transcript Sidebar
-        tocs = getVideoTOC(mainVideoComponent, program);
-        contentTOC = tocs.videoTOC;  
-        fullAudioSidebarTOC = tocs.fullAudioSidebarTOC;
-        transcriptTOC = getTranscriptTOC(checklistResult.properties.transcript.result, program);
-    } else {
-        // Put VideoTOC As Content
-        // Also build AudienceQA
-        // No Transcript Sidebar
-        tocs = getVideoTOC(mainVideoComponent, program);
-        contentTOC = tocs.videoTOC;  
-        fullAudioSidebarTOC = tocs.fullAudioSidebarTOC;
-        transcriptTOC = null;
-    }
     
 
     var abbreviationsMarkup = (checklistResult.properties.abbreviations ? checklistResult.properties.abbreviations.result : "");
+    // console.log("ABBREVIATIONS MARKUP: ", abbreviationsMarkup);
     abbreviationsTOC = articleUtils.buildAbbreviations(abbreviationsMarkup, program);
 
     var referencesMarkup = (checklistResult.properties.references ? checklistResult.properties.references.result : "");
     referencesTOC = articleUtils.buildReferences(referencesMarkup, program);
+
+    var contentMarkup = prodticket.getArticleContent(ticket, program);
+    contentTOC = getContentTOC(contentMarkup, program);
     
 
     // Build Main Article Object - Instantiate and Populate Article
@@ -224,16 +150,9 @@ function buildTownHallCert(ticket, program) {
     cmeReviewers = (checklistResult.properties.cmeReviewers ? checklistResult.properties.cmeReviewers.result : "");
           
     // Insert Main TOC Objects  
-    finalArticle.insertTOCElement(preAssessmentTOC);
     finalArticle.insertTOCElement(contentTOC);
-    finalArticle.insertTOCElement(postAssessmentTOC);
-    finalArticle.insertTOCElement(blankResultsTOC);
-    if (transcriptTOC) {
-        finalArticle.insertTOCElement(transcriptTOC);
-    }
     finalArticle.insertTOCElement(abbreviationsTOC);
     finalArticle.insertTOCElement(referencesTOC);
-    finalArticle.insertTOCElement(fullAudioSidebarTOC);
 
     // Addons 
     if (program.hasForYourPatient) {
@@ -266,9 +185,5 @@ function buildTownHallCert(ticket, program) {
 };
 
 module.exports = {
-    getTranscriptTOC,
-    getSlidesTOC,
-    getLLAPreTOC,
-    getLLAPostTOC,
     buildTownHallCert
 }

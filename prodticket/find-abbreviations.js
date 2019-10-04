@@ -45,7 +45,7 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
 // TownHall Cert Page 
 exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
     var {textBlock: rawAbbreviations, label: abbrLabel} = stringOps.getTextBlock(ticketHTML, /Abbreviations/g, /<a name=".*"><\/a>Transcript/g);
-    // console.log(cleanHTML.abbreviations(rawAbbreviations));
+    console.log("ABBREVIATIONS: ", (rawAbbreviations));
     // return "";
     if (stringOps.isEmptyString(rawAbbreviations) || stringOps.isBlankOrWhiteSpace(rawAbbreviations) || rawAbbreviations.length < 5) {
         throw new Error("No abbreviations found in the prodticket");
