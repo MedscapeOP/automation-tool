@@ -53,6 +53,45 @@ function completeGenerateAction(self, callback, functionOrArticle, checklistHTML
 }
 
 /**
+ * @description Action logic for townhall cert page. Has the prompt chain below: 
+ * OUS, Peer Reviewer -> Build Function
+ * @param  {} vorpal
+ * @param  {} self
+ * @param  {} callback
+ * @param  {} chalk
+ * @param  {} program
+ * @param  {} buildFinalOutput
+ * @param  {} outputFile
+ */
+function townHallCertAction(vorpal, self, callback, chalk, program, buildFinalOutput, outputFiles) {
+    // Has OUS?
+    prompts.ousPrompt(self)
+    .then((answers) => {
+        // Has Peer Reviewer?
+        return callbacks.promiseCallback(self, callback, program, answers, "hasOUS", prompts.peerReviewerPrompt);
+    })
+    .then((answers) => {
+        // Has Collection Page?
+        return callbacks.promiseCallback(self, callback, program, answers, "hasPeerReviewer", buildFinalOutput);
+    })
+    .then((buildResult) => {
+        self.log(program);
+        vorpal.emit('client_prompt_submit', program);
+        var completionMessages = {};
+        completionMessages.xmlFile = `${program.name} XML created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().xmlFile)}`;
+        completionMessages.checklist = `${program.name} Checklist created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().checklist)}`;
+        completionMessages.activity = `${program.name} Activity created successfully! Check your output folder for the file: ${chalk.cyan(outputFiles().activity)}`;
+
+        completeGenerateAction(self, callback, buildResult.finishedArticleObject, buildResult.checklistHTML, buildResult.activityXML, outputFiles(), completionMessages);   
+    }) 
+    .catch((err) => {
+        self.log(err);
+        callback();
+    });
+}
+
+
+/**
  * @description Action logic for test and teach has the prompt chain below: 
  * Transcript, OUS, Peer Reviewer, Collection Page, FYP -> Build Function
  * @param  {} vorpal
@@ -228,5 +267,6 @@ module.exports = {
     completeGenerateAction,
     basicArticleAction,
     testAndTeachAction,
+    townHallCertAction,
     checklistAction
 }
