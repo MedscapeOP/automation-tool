@@ -11,10 +11,14 @@ const activity = require('./activity').activity;
 /* SLIDES / MAIN CONTENT 
 -----------------------------------t--- */
 function getContentTOC (articleContent, program) {
-    // Get Slide Component from prodticket.getSlides.
-    // Check if LLA 
-    // If LLA build slides with Video embed AND Edu Impact challenge 
-    return null;
+    var contentTOC, contentSection, contentSubsection;
+    contentTOC = new TOCElement();
+    contentSection = new SectionElement();
+    contentSubsection = new SubsectionElement();
+    contentSubsection.subsectionContent = utils.wrapSubsectionContent(articleContent);
+    contentSection.insertSubsectionElement(contentSubsection)
+    contentTOC.insertSectionElement(contentSection);
+    return contentTOC;
 }
 
 /* CHECKLIST FUNCTION  
@@ -23,7 +27,7 @@ function checklistTownHallCert(ticket, program) {
     var checklist = new TownHallCertChecklist();
 
     // ABBREVIATIONS -> N/A 
-    checklist.abbreviations.result = prodticket.getAbbreviations(ticket, program);
+    // checklist.abbreviations.result = prodticket.getAbbreviations(ticket, program);
 
     // BACKMATTER FRONT PAGE      
     checklist.bkmtrFront.result = utils.wrapSubsectionContent(snippets.backmatter.backmatterFrontPage(program));
@@ -34,7 +38,7 @@ function checklistTownHallCert(ticket, program) {
     // COLLECTION PAGE -> N/A
     
     // CONTRIBUTOR PRE CONTENT (CONTENT ABOVE CONTRIBS)
-    checklist.contrbtrPreContent.result = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
+    // checklist.contrbtrPreContent.result = utils.wrapSubsectionContent(snippets.preContent.contrbtrPreContentMarkup(program));
 
     // COPYRIGHT HOLDER 
     checklist.cpyrtHolder.result = utils.wrapSubsectionContent(snippets.copyrightHolder.copyrightHolderMarkup(program));
@@ -114,14 +118,14 @@ function buildTownHallCert(ticket, program) {
     learningObjectives = utils.formatLearningObjectives(learningObjectives);    
     
 
-    var abbreviationsMarkup = (checklistResult.properties.abbreviations ? checklistResult.properties.abbreviations.result : "");
+    // var abbreviationsMarkup = (checklistResult.properties.abbreviations ? checklistResult.properties.abbreviations.result : "");
     // console.log("ABBREVIATIONS MARKUP: ", abbreviationsMarkup);
-    abbreviationsTOC = articleUtils.buildAbbreviations(abbreviationsMarkup, program);
+    // abbreviationsTOC = articleUtils.buildAbbreviations(abbreviationsMarkup, program);
 
-    var referencesMarkup = (checklistResult.properties.references ? checklistResult.properties.references.result : "");
-    referencesTOC = articleUtils.buildReferences(referencesMarkup, program);
+    // var referencesMarkup = (checklistResult.properties.references ? checklistResult.properties.references.result : "");
+    // referencesTOC = articleUtils.buildReferences(referencesMarkup, program);
 
-    var contentMarkup = prodticket.getArticleContent(ticket, program);
+    var contentMarkup = "<p>" + prodticket.getArticleContent(ticket, program) + "</p>";
     contentTOC = getContentTOC(contentMarkup, program);
     
 
@@ -134,7 +138,7 @@ function buildTownHallCert(ticket, program) {
     // insert peer reviewer
     finalArticle.contrbtrPostContent = peerReviewer;
     // set contrbtr_pre_content
-    finalArticle.contrbtrPreContent = checklistResult.properties.contrbtrPreContent.result;
+    // finalArticle.contrbtrPreContent = checklistResult.properties.contrbtrPreContent.result;
     // set copyright holder 
     finalArticle.cpyrtHolder = checklistResult.properties.cpyrtHolder.result;
     // set backmatter front page 
@@ -151,8 +155,8 @@ function buildTownHallCert(ticket, program) {
           
     // Insert Main TOC Objects  
     finalArticle.insertTOCElement(contentTOC);
-    finalArticle.insertTOCElement(abbreviationsTOC);
-    finalArticle.insertTOCElement(referencesTOC);
+    // finalArticle.insertTOCElement(abbreviationsTOC);
+    // finalArticle.insertTOCElement(referencesTOC);
 
     // Addons 
     if (program.hasForYourPatient) {

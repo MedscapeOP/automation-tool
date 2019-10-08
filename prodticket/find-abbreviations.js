@@ -56,7 +56,6 @@ var endAbbreviationsRegexArray = [
 
 // TownHall Cert Page 
 exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
-
     // var startRegExp = ticketHTML.match(/Abbreviations(?!Abbreviations)/i);
     // if (startRegExp.index) {
     //     startRegExp = stringOps.getNextRegex(ticketHTML.substring(startRegExp.index), abbreviationsRegexArray);
@@ -65,16 +64,15 @@ exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
     // }
     var startRegExp = stringOps.getAllMatchesInOrder(ticketHTML, abbreviationsRegexArray);
     startRegExp = startRegExp[startRegExp.length - 1];
-
-    var endRegExp = stringOps.getAllMatchesInOrder(ticketHTML, endAbbreviationsRegexArray);
-    endRegExp = endRegExp[endRegExp.length - 1];
+    
+    var endRegExp = stringOps.getNextRegex(ticketHTML.substring(startRegExp.index), endAbbreviationsRegexArray);
     
     if (endRegExp != -1 && startRegExp != -1) {
         startRegExp = startRegExp.symbol;
         endRegExp = endRegExp.symbol;
         // console.log("START REGEX: ", startRegExp);
         var {textBlock: rawAbbreviations, label: abbrLabel} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
-        console.log("ABBREVIATIONS: ", (rawAbbreviations));
+        // console.log("ABBREVIATIONS: ", (rawAbbreviations));
         if (stringOps.isEmptyString(rawAbbreviations) || stringOps.isBlankOrWhiteSpace(rawAbbreviations) || rawAbbreviations.length < 5) {
             throw new Error("No abbreviations found in the prodticket");
         } else {

@@ -43,6 +43,8 @@ exportObject[config.programs.townHall.codeName] = function (ticketHTML) {
 exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
     var {textBlock} = stringOps.getTextBlock(ticketHTML, "Peer Reviewer", "</a>Related links");
 
+    console.log("RAW PEER REVIEWER: ", textBlock);
+
     if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
         throw new Error("No peer reviewer info found in the prodticket");
     } else {  

@@ -78,7 +78,7 @@ describe('Town Hall', function () {
             prodTicket = fs.readFileSync(__dirname + '/input/town-hall/article-cert.html', 'utf8');
             program = app.config.programs.townHallCert;
             program.hasCollectionPage = false;
-            program.hasPeerReviewer = false;
+            program.hasPeerReviewer = true;
             program.hasForYourPatient = false;
             program.hasLLA = false;
             program.hasOUS = false; 
