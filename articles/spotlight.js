@@ -236,8 +236,10 @@ function buildSpotlight(ticket, program) {
     finalArticle.title = title;
     // Set article byline (pass text)
     finalArticle.contrbtrByline = byline;
-    // insert peer reviewer
-    finalArticle.contrbtrPostContent = peerReviewer;
+    // insert peer reviewer and disclosure 
+    // set contrbtr_post_content with Medscape disclosure
+    peerReviewer = peerReviewer.replace("<div>", "");
+    finalArticle.contrbtrPostContent = `<div>${snippets.activity.medscapeDisclosure()} ${peerReviewer}`;
     // set contrbtr_pre_content
     finalArticle.contrbtrPreContent = checklistResult.properties.contrbtrPreContent.result;
     // set copyright holder 

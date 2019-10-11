@@ -217,6 +217,10 @@ function buildClinicalBrief(ticket, program) {
     finalArticle.contrbtrByline = byline;
     // set contrbtr_pre_content
     finalArticle.contrbtrPreContent = checklistResult.properties.contrbtrPreContent.result;
+
+    // set contrbtr_post_content with Medscape disclosure
+    finalArticle.contrbtrPostContent = `<div>${snippets.activity.medscapeDisclosure()}</div>`;
+
     // set copyright holder 
     finalArticle.cpyrtHolder = checklistResult.properties.cpyrtHolder.result;
     // set backmatter front page 

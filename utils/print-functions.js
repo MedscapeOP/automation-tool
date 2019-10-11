@@ -316,13 +316,13 @@ function printCreditStatements(creditStatements) {
             statement = stripIndent`
             ${creditStatements.cme}
             `;
-            statement += "\n\n" + stripIndent`${creditStatements.disclosure}`
+            // statement += "\n\n" + stripIndent`${creditStatements.disclosure}`
             statement += "\n\n" + stripIndent`${creditStatements.moc}`
         } else {
             statement = stripIndent`
             ${creditStatements.cme}
             `;
-            statement += "\n\n" + stripIndent`${creditStatements.disclosure}`
+            // statement += "\n\n" + stripIndent`${creditStatements.disclosure}`
         }
         cmeStatement += statement + "\n\n";  
     }
