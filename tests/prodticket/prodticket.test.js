@@ -20,6 +20,7 @@ describe('Prodticket Module Functions', function () {
     let prodticketTH;
     let prodticketTH_alt;
     let prodticketTH_alt_2;
+    let prodticketTHCert;
     let prodticketFail;
     let prodticketTT_902362;
     let prodticketCCTranscript;
@@ -281,18 +282,18 @@ describe('Prodticket Module Functions', function () {
             expect(result).to.equal(abbreviationsCC);
         });
 
-        it("should return the program abbreviations from the .html - TownHall", function (){
-            var result = prodticket.getAbbreviations(prodticketTH_alt, config.programs.townHallCert);
-            expect(result).to.equal(abbreviationsTH);
-        });
+        // it("should return the program abbreviations from the .html - TownHall", function (){
+        //     var result = prodticket.getAbbreviations(prodticketTH_alt, config.programs.townHallCert);
+        //     expect(result).to.equal(abbreviationsTH);
+        // });
 
-        it("should return error object with message for missing abbreviations", function () {
+        // it("should return error object with message for missing abbreviations", function () {
            
-            var result = prodticket.getAbbreviations(prodticketFail, config.programs.townHallCert);
+        //     var result = prodticket.getAbbreviations(prodticketFail, config.programs.townHallCert);
         
-            expect(result.message).to.equal("No abbreviations found in the prodticket");
+        //     expect(result.message).to.equal("No abbreviations found in the prodticket");
             
-        });  
+        // });  
         
     });
 
@@ -794,6 +795,19 @@ describe('Prodticket Module Functions', function () {
                     expect(result[prop]).to.equal(null);
                 } else {
                     expect(result[prop]).to.equalIgnoreSpaces(brief[prop]);
+                }
+            }
+        });
+
+        it("should return the program Credit Statements from .html - TownHall Cert", function () {
+            prodticketTHCert = fs.readFileSync(__dirname + '/input/prodticket-th-cert.html').toString();
+            var townHallCert = creditStatements.townHallCert;
+            var result = prodticket.getCreditStatements(prodticketTHCert, config.programs.townHallCert);
+            for (var prop in townHallCert) {
+                if (townHallCert[prop] == null) {
+                    expect(result[prop]).to.equal(null);
+                } else {
+                    expect(result[prop]).to.equalIgnoreSpaces(townHallCert[prop]);
                 }
             }
         });

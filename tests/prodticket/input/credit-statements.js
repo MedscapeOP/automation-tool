@@ -63,9 +63,23 @@ var brief = {
     paCE: null 
 };
 
+var townHallCert = {
+    disclosure: `
+    <p>Medscape, LLC staff have disclosed that they have no relevant financial relationships.</p>`,
+    cme: `
+    <p>Medscape, LLC designates this live activity for a maximum of 1.5 <em>AMA PRA Category 1 Credits</em>&#8482;. Physicians should claim only the credit commensurate with the extent of their participation in the activity.</p>
+    `,
+    moc: null,
+    nurseCE: null, 
+    pharmaCE: null,
+    npCE: null,
+    paCE: null 
+};
+
 module.exports = {
     spotlight,
     curbside,
     firstResponse,
-    brief
+    brief,
+    townHallCert
 }

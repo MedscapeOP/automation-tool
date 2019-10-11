@@ -11,7 +11,7 @@ module.exports = [
     {
         title: "Editor/CME Reviewer/Nurse Planner",
         name: "Amy Bernard, MS, BSN, RN-BC, CHCP",
-        affiliation: "Lead Nurse Planner, Medscape, LLC",
+        affiliation: "Director, Accreditation and Compliance, Medscape, LLC",
         disclosure: "Disclosure: Amy Bernard, MS, BSN, RN-BC, CHCP, has disclosed no relevant financial relationships.",
         chronicleid: "0901c791806f176d"
     }

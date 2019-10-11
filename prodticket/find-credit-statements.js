@@ -183,24 +183,26 @@ exportObject[config.programs.townHallCert.codeName] = function (ticketHTML) {
     var endRegExp = /<p><strong>Accreditation Statement/g;
     var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp, endRegExp, true, false);
 
-    var cleanBlock = stringOps.removeRegexMatches(textBlock, removeRegexArray);
-    // console.log("TEXTBLOCK FOR CREDITS: ", cleanBlock);
+    var forPhysiciansIndex = textBlock.lastIndexOf("For Physicians");
+    textBlock = textBlock.substring(forPhysiciansIndex);
 
-    if (stringOps.isEmptyString(cleanBlock) || stringOps.isBlankOrWhiteSpace(cleanBlock) || cleanBlock.length < 10) {
+    if (stringOps.isEmptyString(textBlock) || stringOps.isBlankOrWhiteSpace(textBlock) || textBlock.length < 10) {
         throw new Error("No credits available found in the prodticket");
     } else {  
-        var creditAmountLineRegExp = stringOps.getNextRegex(cleanBlock, creditRegExpArray);
-        // console.log("CREDIT AMOUNT REGEX: ", creditAmountLineRegExp);
-        var result;
-        if (creditAmountLineRegExp != -1) {
-            // result = cleanBlock.match(creditAmountLineRegExp.symbol)[1];
-            result = cleanBlock.replace(creditAmountLineRegExp.symbol, '$1');
-            // console.log("RESULT: ", result);
-            result = cleanHTML.plainText(result, removeFluff=false).trim();
-            return result;
-        } else {
-            return "No Credit Available Section In Prodticket";
+        console.log("Credit Statements:", textBlock);
+        let result = {};
+        result.disclosure = snippets.activity.medscapeDisclosure();
+        result.npCE = null;
+        for (var i = 0; i < eligibilities.length; i++) {
+            result[eligibilities[i].prop] = null;
         }
+        result['cme'] = getCreditStatement(
+            textBlock, 
+            /.*For Physicians.*/g, 
+            /<td>.*/g, 
+            /<p>Medscape,.* designates this live activity.*/g
+        );
+        return result;
     }
 };
 
