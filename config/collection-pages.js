@@ -130,6 +130,13 @@ const collectionPages = [
         "url": "https://www.medscape.org/sites/advances/arrhythmia-ischemia"
     },
     {
+        "title": "Ankylosing Spondylitis Learning Center",
+        "fileName": "as",
+        "bannerFileName": "banner-as.jpg",
+        "type": "Clinical Advances",
+        "url": "https://www.medscape.org/sites/advances/as"
+    },
+    {
         "title": "Clinical Advances in Atopic Dermatitis: From Barriers to Better Care",
         "fileName": "atopic-dermatitis",
         "bannerFileName": "banner-atopic-dermatitis-2017.jpg",
