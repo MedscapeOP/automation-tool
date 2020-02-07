@@ -16,13 +16,29 @@ exportObject[config.programs.clinicalBrief.codeName] = function (ticketHTML) {
     }
 }
 
+let startTeaserMatches = [
+    /.*Teaser: &#953;.*/gi,
+];
+let endTeaserMatches = [
+    /.*<strong>Faculty\/Author\(s\) Byline\(s\).*/g, 
+    /.*<strong>Indicate thumbnail URL.*/g
+];
+
 // Spotlight 
 exportObject[config.programs.spotlight.codeName] = function (ticketHTML) {
-    var {textBlock} = stringOps.getTextBlock(ticketHTML, "Teaser: &#953;", "Faculty/Author(s) Byline(s): &#953;");
-    if (stringOps.isBlankOrWhiteSpace(textBlock) || stringOps.isEmptyString(textBlock)) {
-        throw new Error("No teaser found in the prodticket")
+    var startRegExp = stringOps.getAllMatchesInOrder(ticketHTML, startTeaserMatches);
+    var endRegExp = stringOps.getAllMatchesInOrder(ticketHTML, endTeaserMatches);
+    // console.log("Start RegExp", startRegExp)
+    // console.log("EndRegex: ", endRegExp)
+    if (startRegExp.length <= 0 || endRegExp.length <=0) {
+        throw new Error("No teaser found in the prodticket");
     } else {
-        return cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim();
+        var {textBlock} = stringOps.getTextBlock(ticketHTML, startRegExp[0].symbol, endRegExp[0].symbol, true, false);
+        if (stringOps.isBlankOrWhiteSpace(textBlock) || stringOps.isEmptyString(textBlock)) {
+            throw new Error("No teaser found in the prodticket")
+        } else {
+            return cleanHTML.singleLine(cleanHTML.plainText(textBlock)).trim();
+        }
     }
 }
 

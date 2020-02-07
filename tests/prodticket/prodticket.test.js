@@ -120,7 +120,7 @@ describe('Prodticket Module Functions', function () {
         var contributorsSL = require("./input/contributors-sl");
         var contributorsTH = require("./input/contributors-th");
         var contributorsTH_alt = require("./input/contributors-th-alt");
-        it("should return the program contributors from the .html - Spotlight", function (done) {
+        xit("should return the program contributors from the .html - Spotlight", function (done) {
             var result = prodticket.getContributors(prodticketSL, config.programs.spotlight);
 
             // fs.writeFileSync(__dirname + '/output/contributors.json', JSON.stringify(result, undefined, 2), function(err) {
@@ -140,7 +140,7 @@ describe('Prodticket Module Functions', function () {
             done()
         });
 
-        it("should return the program contributors from the .html - Curbside", function (done) {
+        xit("should return the program contributors from the .html - Curbside", function (done) {
             var result = prodticket.getContributors(prodticketCC, config.programs.curbsideConsult);
             // console.log("RESULT CURBSIDE: ", result);
 
@@ -161,7 +161,7 @@ describe('Prodticket Module Functions', function () {
             done();
         });
 
-        it("should return the program contributors from the .html - TownHall", function () {
+        xit("should return the program contributors from the .html - TownHall", function () {
             var result = prodticket.getContributors(prodticketTH_alt, config.programs.townHallCert);
 
             for (var i = 0; i < contributorsTH_alt.length; i++) {
@@ -172,7 +172,7 @@ describe('Prodticket Module Functions', function () {
             }
         });
 
-        it("should return the program contributors (With Titles) from the .html - TownHall", function () {
+        xit("should return the program contributors (With Titles) from the .html - TownHall", function () {
             var result = prodticket.getContributors(prodticketTH, config.programs.townHallCert);
 
             for (var i = 0; i < contributorsTH.length; i++) {
@@ -183,7 +183,7 @@ describe('Prodticket Module Functions', function () {
             }
         });
 
-        it("should return error object with message for missing contributors", function () {
+        xit("should return error object with message for missing contributors", function () {
         
             var result = prodticket.getContributors(prodticketFail, config.programs.townHallCert);
         
