@@ -193,6 +193,30 @@ describe('Snippet Module Functions', function () {
                 expect(result).to.equalIgnoreSpaces(subJapanese);
             });   
         });
+
+        describe("captions()", function () {
+            // var subGerman = utils.xmlOps.xmlStringToJS(fs.readFileSync(__dirname + "/input/sub-german.xml").toString());
+            // var subItalian = utils.xmlOps.xmlStringToJS(fs.readFileSync(__dirname + "/input/sub-italian.xml").toString());
+            // var subJapanese = utils.xmlOps.xmlStringToJS(fs.readFileSync(__dirname + "/input/sub-japanese.xml").toString());
+
+            var captionsHTML = (fs.readFileSync(__dirname + "/input/sheet001.htm").toString());
+            var completeVTT = (fs.readFileSync(__dirname + "/input/complete-vtt.vtt").toString());
+            var articleID = "900000"
+        
+            it("should return VTT file properly formatted with name based on language - Chinese", function () {
+                // var result = snippets.inLanguage.subtitles("900219", config.languages.german, null);
+                var result = snippets.captions.buildVttFile(captionsHTML, articleID, config.languages.chinese);
+                var resultString = result.cleanedString; 
+                var resultFileName = result.fileName;
+                // result = utils.cleanHTML.cleanEntities(result);
+
+                expect(resultFileName).to.equalIgnoreSpaces('900000_c_cc_DFXP.vtt');
+                expect(resultString).to.equalIgnoreSpaces(completeVTT);
+                // result = utils.trimObjectText(result.toObjectLiteral());
+                // expect(result).to.deep.equal(utils.trimObjectText(subGerman));
+            });
+        });
+        
     });
 });
 

@@ -4,6 +4,7 @@ const inLanguage = require('./in-language');
 const preContent = require('./pre-content');
 const copyrightHolder = require('./copyright-holder');
 const backmatter = require('./backmatter');
+const captions = require('./captions');
 const utils = require('../utils');
 
 function downloadablePDF (articleID, nameOfAddon, pdfFilename) {
@@ -155,6 +156,7 @@ module.exports = {
     preContent,
     copyrightHolder,
     backmatter,
+    captions,
     tableOfContents,
     activity,
     customForm,

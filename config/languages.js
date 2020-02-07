@@ -302,7 +302,7 @@ module.exports = {
         }
     },
     arabic: {
-        videoConfigSuffix: "",
+        videoConfigSuffix: "a",
         transcriptSuffix: "transcript_ara",
         expertCommentary: {
             tocType: "Sidebar",
