@@ -7,16 +7,27 @@ const {stripIndent} = require('common-tags');
 /* 
 Utility functions 
 */
-
-function removeLineBreaks(prevWasTimestamp, remainingString, fn) {
-
-};
-
+function generateXMLWrapper(language, bodyTags) {
+    let wrapper = 
+`
+<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="${language.xmlLang}" xmlns="http://www.w3.org/ns/ttml" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+  <body>
+    <div xml:lang="${language.xmlLang}">
+        ${bodyTags}
+    </div>
+  </body>
+</tt>
+`
+    return wrapper;
+}
 
 
 /* 
 Main Functions 
 */
+const timestampRegex = /(\d\d:\d\d:\d\d)(?:\s){0,}\n+(\d\d:\d\d:\d\d)/g
+const timestampRegexShort = /(\d\d:\d\d:\d\d)/g
 function buildVttFile (htmlString, articleID, language) {
     let cleanedString, fileName;
     fileName = `${articleID}_${language.videoConfigSuffix}_cc_DFXP.vtt`
@@ -25,36 +36,9 @@ function buildVttFile (htmlString, articleID, language) {
     htmlString = htmlString.replace(regex, '');
     
     cleanedString = clean.plainText(htmlString);
-    
-    /*
-    - Remove Spaces before timestamps and text
-        - use strip indent
-    - Find both time stamps 
-        - (\d\d:\d\d:\d\d)\n(\d\d:\d\d:\d\d) 
-    - Use regex capture to replace 
-        - $1.000 --> $2.000 align:middle line:90%
-    - R
-    - Remove any line breaks 
-        - If previous line was either timestamp or empty skip 
-        - Else (previous line was content)
-            - regex = new RegExp("\n(.*)")
-            - substring = substring.replace(regex, "$1");
-    - Insert Line Break after 90%
-        - 90%\s+
-        - replace with: 90%\n
-    - Insert "WEBVTT" at the top followed by a line break
-    - Insert 1 line break before timestamps 
-        - \n(\d\d:\d\d:\d\d\.000 -->)
-        - replace with: \n\n$1
-    - Make extension .vtt on output  
-    */
-    
-    // cleaned = cleaned.replace(/\s+(?=\d\d:)/g, "");
     cleanedString = stripIndent(cleanedString);
     
     // var altTimestampRegex = /(\d\d:\d\d:\d\d)(?:\s){0,}\n+\s+?(\d\d:\d\d:\d\d)/g
-    var timestampRegex = /(\d\d:\d\d:\d\d)(?:\s){0,}\n+(\d\d:\d\d:\d\d)/g
-    var timestampRegexShort = /(\d\d:\d\d:\d\d)/g
     cleanedString = cleanedString.replace(timestampRegex, "$1.000 --> $2.000 align:middle line:90%")
     var matches = cleanedString.match(/.*/g);
 
@@ -81,7 +65,7 @@ function buildVttFile (htmlString, articleID, language) {
 
 function buildXmlFile (htmlString, articleID, language) {
     let cleanedString, fileName;
-    fileName = `${articleID}_${language.videoConfigSuffix}_cc_DFXP.vtt`
+    fileName = `${articleID}_${language.videoConfigSuffix}_cc_DFXP.xml`
 
     var regex = /<td .*>[w]+\d<\/td>/g;
     htmlString = htmlString.replace(regex, '');
@@ -89,7 +73,37 @@ function buildXmlFile (htmlString, articleID, language) {
     cleanedString = clean.plainText(htmlString);
     cleanedString = stripIndent(cleanedString);
 
-    var timestampRegex = /(\d\d:\d\d:\d\d)(?:\s){0,}\n+(\d\d:\d\d:\d\d)/g
+    var startIndex = stringOps.regexIndexOf(cleanedString, timestampRegexShort)
+
+    cleanedString = cleanedString.substring(startIndex)
+    
+    var matches = cleanedString.match(/.*/g)
+    .filter((element) => {
+        return !stringOps.isBlankOrWhiteSpace(element);
+    })
+
+    var outputString = ""
+    var isTimeStamp = false;
+    var nextIsTimeStamp = false;
+    for (var i = 0; i < matches.length; i++) {
+        isTimeStamp = (stringOps.regexIndexOf(matches[i], timestampRegexShort) != -1)
+        if (i + 1 < matches.length) {
+            nextIsTimeStamp = (stringOps.regexIndexOf(matches[i+1], timestampRegexShort) != -1)
+        }
+        if (isTimeStamp && nextIsTimeStamp) {
+            outputString += `<p begin="${matches[i].trim()}" end="${matches[i+1].trim()}">`
+            i++; 
+        } else if (!isTimeStamp && !nextIsTimeStamp) {
+            outputString += `${matches[i].trim()} ${matches[i+1].trim()}</p>\n`
+            i++;
+        } else if (!isTimeStamp && nextIsTimeStamp) {
+            outputString += `${matches[i].trim()}</p>\n`            
+        } else {
+            outputString += `${matches[i].trim()} --> DIDN'T GET MATCH`
+        }
+    }
+
+    cleanedString = generateXMLWrapper(language, outputString);
 
     return {cleanedString, fileName};
 }

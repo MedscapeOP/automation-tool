@@ -201,6 +201,7 @@ describe('Snippet Module Functions', function () {
 
             var captionsHTML = (fs.readFileSync(__dirname + "/input/sheet001.htm").toString());
             var completeVTT = (fs.readFileSync(__dirname + "/input/complete-vtt.vtt").toString());
+            var completeXML = (fs.readFileSync(__dirname + "/input/complete-xml.xml").toString());
             var articleID = "900000"
         
             it("should return VTT file properly formatted with name based on language - Chinese", function () {
@@ -214,6 +215,21 @@ describe('Snippet Module Functions', function () {
                 
                 expect(resultFileName).to.equalIgnoreSpaces('900000_c_cc_DFXP.vtt');
                 expect(resultString).to.equalIgnoreSpaces(completeVTT);
+                // result = utils.trimObjectText(result.toObjectLiteral());
+                // expect(result).to.deep.equal(utils.trimObjectText(subGerman));
+            });
+
+            it("should return XML file properly formatted with name based on language - Chinese", function () {
+                // var result = snippets.inLanguage.subtitles("900219", config.languages.german, null);
+                var result = snippets.captions.buildXmlFile(captionsHTML, articleID, config.languages.chinese);
+                var resultString = result.cleanedString; 
+                var resultFileName = result.fileName;
+                // result = utils.cleanHTML.cleanEntities(result);
+
+                fs.writeFileSync(__dirname + `/output/${resultFileName}`, resultString);
+                
+                expect(resultFileName).to.equalIgnoreSpaces('900000_c_cc_DFXP.xml');
+                expect(resultString).to.equalIgnoreSpaces(completeXML);
                 // result = utils.trimObjectText(result.toObjectLiteral());
                 // expect(result).to.deep.equal(utils.trimObjectText(subGerman));
             });

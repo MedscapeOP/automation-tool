@@ -3,6 +3,7 @@
 module.exports = {
     spanishLATAM: {
         videoConfigSuffix: "s",
+        xmlLang: "es-419",
         transcriptSuffix: "transcript_spa",
         expertCommentary: {
             tocType: "Sidebar",
@@ -28,6 +29,7 @@ module.exports = {
     },
     spanishSpain: {
         videoConfigSuffix: "s",
+        xmlLang: "es",
         transcriptSuffix: "transcript_spa",
         expertCommentary: {
             tocType: "Sidebar",
@@ -53,6 +55,7 @@ module.exports = {
     },
     french: {
         videoConfigSuffix: "f",
+        xmlLang: "fr",
         transcriptSuffix: "transcript_fre",
         expertCommentary: {
             tocType: "Sidebar",
@@ -78,6 +81,7 @@ module.exports = {
     },
     italian: {
         videoConfigSuffix: "i",
+        xmlLang: "it",
         transcriptSuffix: "transcript_ita",
         expertCommentary: {
             tocType: "Sidebar",
@@ -103,6 +107,7 @@ module.exports = {
     },
     german: {
         videoConfigSuffix: "g",
+        xmlLang: "de",
         transcriptSuffix: "transcript_ger",
         expertCommentary: {
             tocType: "Sidebar",
@@ -128,6 +133,7 @@ module.exports = {
     },
     portugueseBrazil: {
         videoConfigSuffix: "p",
+        xmlLang: "pt",
         transcriptSuffix: "transcript_por",
         expertCommentary: {
             tocType: "Sidebar",
@@ -153,6 +159,7 @@ module.exports = {
     },
     portuguesePortugal: {
         videoConfigSuffix: "p",
+        xmlLang: "pt",
         transcriptSuffix: "transcript_por",
         expertCommentary: {
             tocType: "Sidebar",
@@ -178,6 +185,7 @@ module.exports = {
     },
     danish: {
         videoConfigSuffix: "d",
+        xmlLang: "da",
         transcriptSuffix: "transcript_dan",
         expertCommentary: {
             tocType: "Sidebar",
@@ -203,6 +211,7 @@ module.exports = {
     },
     russian: {
         videoConfigSuffix: "r",
+        xmlLang: "ru",
         transcriptSuffix: "transcript_rus",
         expertCommentary: {
             tocType: "Sidebar",
@@ -228,6 +237,7 @@ module.exports = {
     },
     japanese: {
         videoConfigSuffix: "j",
+        xmlLang: "ja",
         transcriptSuffix: "transcript_jpn",
         expertCommentary: {
             tocType: "Sidebar",
@@ -253,6 +263,7 @@ module.exports = {
     },
     korean: {
         videoConfigSuffix: "k",
+        xmlLang: "ko",
         transcriptSuffix: "transcript_kor",
         expertCommentary: {
             tocType: "Sidebar",
@@ -278,6 +289,7 @@ module.exports = {
     },
     chinese: {
         videoConfigSuffix: "c",
+        xmlLang: "zh",
         transcriptSuffix: "transcript_chi",
         expertCommentary: {
             tocType: "Sidebar",
@@ -303,6 +315,7 @@ module.exports = {
     },
     arabic: {
         videoConfigSuffix: "a",
+        xmlLang: "ar",
         transcriptSuffix: "transcript_ara",
         expertCommentary: {
             tocType: "Sidebar",
