@@ -210,6 +210,8 @@ describe('Snippet Module Functions', function () {
                 var resultFileName = result.fileName;
                 // result = utils.cleanHTML.cleanEntities(result);
 
+                fs.writeFileSync(__dirname + `/output/${resultFileName}`, resultString);
+                
                 expect(resultFileName).to.equalIgnoreSpaces('900000_c_cc_DFXP.vtt');
                 expect(resultString).to.equalIgnoreSpaces(completeVTT);
                 // result = utils.trimObjectText(result.toObjectLiteral());
