@@ -41,6 +41,7 @@ const firstResponse = require('./generate/first-response');
 const townHallEnduring = require('./generate/townhall-enduring');
 const townHallCert = require('./generate/townhall-cert');
 const testAndTeach = require('./generate/test-and-teach');
+const captions = require('./generate/captions');
 
 // Build commands function 
 let commands = function (vorpal) {
@@ -78,6 +79,7 @@ let commands = function (vorpal) {
     townHallEnduring(vorpal);
     townHallCert(vorpal);
     testAndTeach(vorpal);
+    captions(vorpal);
 }
 
 // ------------------------------------------------------------
