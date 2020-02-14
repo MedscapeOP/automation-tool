@@ -34,6 +34,9 @@ function buildVttFile (htmlString, articleID, language) {
 
     var regex = /<td .*>[w]+\d<\/td>/g;
     htmlString = htmlString.replace(regex, '');
+
+    var titleRemoveRegex = /<title>.*<\/title>/g;
+    htmlString = htmlString.replace(titleRemoveRegex, '');
     
     cleanedString = clean.plainText(htmlString);
     cleanedString = stripIndent(cleanedString);
