@@ -130,7 +130,8 @@ function plainText(string, removeFluff=true) {
         allowedTags: [ 'em' ],
         exclusiveFilter: function(frame) {
             return !frame.text.trim();
-        }
+        },
+        decodeEntities: true 
     };
     var clean = sanitizeHtml(str, options);
     return clean;

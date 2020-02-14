@@ -3,6 +3,7 @@ const utils = require('../utils');
 const stringOps = utils.stringOps;
 const clean = utils.cleanHTML;
 const {stripIndent} = require('common-tags');
+const { StringDecoder } = require('string_decoder');
 
 /* 
 Utility functions 
@@ -22,6 +23,21 @@ function generateXMLWrapper(language, bodyTags) {
     return wrapper;
 }
 
+function preClean(htmlString) {
+
+    var regex = /<td .*>[w]+\d<\/td>/g;
+    htmlString = htmlString.replace(regex, '');
+    
+    var titleRemoveRegex = /<title>.*<\/title>/g;
+    htmlString = htmlString.replace(titleRemoveRegex, '');
+    
+    const buffer = Buffer.from(htmlString, "utf16le");
+    const decoder = new StringDecoder('utf16le');
+    decoder.write(buffer);
+    htmlString = decoder.end(buffer);
+    
+    return stripIndent(clean.plainText(htmlString))
+}
 
 /* 
 Main Functions 
@@ -31,15 +47,8 @@ const timestampRegexShort = /(\d\d:\d\d:\d\d)/g
 function buildVttFile (htmlString, articleID, language) {
     let cleanedString, fileName;
     fileName = `${articleID}_${language.videoConfigSuffix}_cc_DFXP.vtt`
-
-    var regex = /<td .*>[w]+\d<\/td>/g;
-    htmlString = htmlString.replace(regex, '');
-
-    var titleRemoveRegex = /<title>.*<\/title>/g;
-    htmlString = htmlString.replace(titleRemoveRegex, '');
     
-    cleanedString = clean.plainText(htmlString);
-    cleanedString = stripIndent(cleanedString);
+    cleanedString = preClean(htmlString);
     
     // var altTimestampRegex = /(\d\d:\d\d:\d\d)(?:\s){0,}\n+\s+?(\d\d:\d\d:\d\d)/g
     cleanedString = cleanedString.replace(timestampRegex, "$1.000 --> $2.000 align:middle line:90%")
@@ -70,11 +79,7 @@ function buildXmlFile (htmlString, articleID, language) {
     let cleanedString, fileName;
     fileName = `${articleID}_${language.videoConfigSuffix}_cc_DFXP.xml`
 
-    var regex = /<td .*>[w]+\d<\/td>/g;
-    htmlString = htmlString.replace(regex, '');
-    
-    cleanedString = clean.plainText(htmlString);
-    cleanedString = stripIndent(cleanedString);
+    cleanedString = preClean(htmlString);
 
     var startIndex = stringOps.regexIndexOf(cleanedString, timestampRegexShort)
 
