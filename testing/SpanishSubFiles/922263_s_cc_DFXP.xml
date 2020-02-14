@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="es" xmlns="http://www.w3.org/ns/ttml" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+  <body>
+    <div xml:lang="es">
+      <p begin="00:00:06" end="00:00:08">Hola. Soy el profesor Quentin Anstee, profesor</p>
+      <p begin="00:00:08" end="00:00:11">de hepatología experimental en la Facultad de Ciencias</p>
+      <p begin="00:00:11" end="00:00:14">Médicas de la Universidad de Newcastle y especialista honorario</p>
+      <p begin="00:00:14" end="00:00:17">en hepatología en el Servicio de Hepatología del hospital Freeman,</p>
+      <p begin="00:00:17" end="00:00:21">en Newcastle Upon Tyne (Reino Unido). Bienvenidos a este</p>
+      <p begin="00:00:21" end="00:00:24">programa, titulado "Avances en esteatosis hepática: repercusión</p>
+      <p begin="00:00:24" end="00:00:27">de los nuevos datos en el ejercicio de la profesión en Europa".</p>
+      <p begin="00:00:27" end="00:00:31">Hoy me acompañan la profesora Elisabetta Bugianesi,</p>
+      <p begin="00:00:31" end="00:00:34">que es profesora del Área de Gastroenterología y</p>
+      <p begin="00:00:34" end="00:00:37">Hepatología de la Facultad de Ciencias Médicas de</p>
+      <p begin="00:00:37" end="00:00:42">la Universidad de Turín (Italia), y el profesor Vlad Ratziu, que</p>
+      <p begin="00:00:42" end="00:00:46">es profesor de Hepatología en la Universidad de París-Sorbona</p>
+      <p begin="00:00:46" end="00:00:49">y en el hospital Pitié-Salpêtrière de París (Francia). Bienvenidos.</p>
+      <p begin="00:00:49" end="00:00:54">Hoy vamos a hablar sobre el espectro de</p>
+      <p begin="00:00:54" end="00:00:57">la esteatosis hepática no alcohólica. Para muchos de nosotros</p>
+      <p begin="00:00:57" end="00:01:01">no es nada nuevo. Esta afección comienza con la acumulación</p>
+      <p begin="00:01:01" end="00:01:04">de grasa en un hígado sano, a lo que se denomina</p>
+      <p begin="00:01:04" end="00:01:08">ptosis o esteatosis hepática no alcohólica (EHNA).</p>
+      <p begin="00:01:08" end="00:01:12">En algunas personas, se observa una forma inflamatoria</p>
+      <p begin="00:01:12" end="00:01:16">de la afección, denominada esteatohepatitis no alcohólica (ENA),</p>
+      <p begin="00:01:16" end="00:01:20">que, si se vuelve crónica, puede dar lugar a</p>
+      <p begin="00:01:20" end="00:01:23">cirrosis y fibrosis hepáticas, que podrían generar</p>
+      <p begin="00:01:23" end="00:01:27">cirrosis y fibrosis avanzadas y, en algunos</p>
+      <p begin="00:01:27" end="00:01:32">casos, carcinoma hepatocelular. Cuanto más</p>
+      <p begin="00:01:32" end="00:01:36">sabemos sobre la esteatosis hepática, más nos percatamos</p>
+      <p begin="00:01:36" end="00:01:39">de que se trata de un proceso muy dinámico. Mientras que</p>
+      <p begin="00:01:39" end="00:01:43">en algunos pacientes la afección evoluciona de forma</p>
+      <p begin="00:01:43" end="00:01:46">continua, en otros se reagudiza y mejora de forma constante.</p>
+      <p begin="00:01:46" end="00:01:49">Esto puede atribuirse a varios motivos.</p>
+      <p begin="00:01:49" end="00:01:53">Uno de estos es el factor medioambiental y otro es</p>
+      <p begin="00:01:53" end="00:01:57">el factor genético intrínseco al paciente. No obstante, los factores</p>
+      <p begin="00:01:57" end="00:02:00">de riesgo a los que más atención debemos prestar en la práctica</p>
+      <p begin="00:02:00" end="00:02:04">son la obesidad, la diabetes de tipo 2 y la resistencia a la insulina,</p>
+      <p begin="00:02:04" end="00:02:07">la hipertensión arterial y el colesterol alto, que en conjunto son</p>
+      <p begin="00:02:07" end="00:02:11">las características que definen al síndrome metabólico.</p>
+      <p begin="00:02:11" end="00:02:13">También se observan varios factores genéticos</p>
+      <p begin="00:02:13" end="00:02:18">relevantes, como los genes PNPLA3 y TM6SF2,</p>
+      <p begin="00:02:18" end="00:02:22">que contienen polimorfismos de nucleótido único,</p>
+      <p begin="00:02:22" end="00:02:25">relacionados con más riesgo de progresión</p>
+      <p begin="00:02:25" end="00:02:28">de la enfermedad, más riesgo de cirrosis y, en el caso</p>
+      <p begin="00:02:28" end="00:02:33">del PNPLA3, más riesgo de desarrollo de cáncer de hígado.</p>
+      <p begin="00:02:33" end="00:02:38">En Europa, la esteatosis hepática presenta una alta prevalencia,</p>
+      <p begin="00:02:38" end="00:02:42">que, de acuerdo con un metanálisis reciente, va a seguir</p>
+      <p begin="00:02:42" end="00:02:46">al alza. En la actualidad, se calcula que en torno</p>
+      <p begin="00:02:46" end="00:02:50">a 25 % de la población europea tiene</p>
+      <p begin="00:02:50" end="00:02:53">cierto grado de esteatosis hepática no alcohólica,</p>
+      <p begin="00:02:53" end="00:02:56">por lo que la esteatosis hepática ha reemplazado al</p>
+      <p begin="00:02:56" end="00:02:59">alcoholismo y a la hepatitis vírica como la principal causa</p>
+      <p begin="00:02:59" end="00:03:03">de hepatopatía. Lo más inquietante es que esta no se limita</p>
+      <p begin="00:03:03" end="00:03:07">a los adultos: se trata de un trastorno que también</p>
+      <p begin="00:03:07" end="00:03:09">afecta a los niños, lo que significa que las personas</p>
+      <p begin="00:03:09" end="00:03:11">están expuestas al riesgo de progresión de la enfermedad</p>
+      <p begin="00:03:11" end="00:03:15">desde una edad mucho más temprana.</p>
+      <p begin="00:03:15" end="00:03:21">Una de las mayores dificultades es la obtención de datos</p>
+      <p begin="00:03:21" end="00:03:25">fiables sobre prevalencia; gran parte de los datos disponibles</p>
+      <p begin="00:03:25" end="00:03:28">en la actualidad proceden del conocimiento de</p>
+      <p begin="00:03:28" end="00:03:32">la prevalencia de la obesidad y la diabetes. No obstante, </p>
+      <p begin="00:03:32" end="00:03:37">el modelo de Márkov indica que la prevalencia seguirá al alza</p>
+      <p begin="00:03:37" end="00:03:40">en los próximos 10 años. De hecho, se cree</p>
+      <p begin="00:03:40" end="00:03:45">que aumentará 21 % más y los 80 millones</p>
+      <p begin="00:03:45" end="00:03:49">de pacientes europeos pasarán a ser más de 100 millones.</p>
+      <p begin="00:03:49" end="00:03:52">De este modo, no solo es probable que aumente la prevalencia</p>
+      <p begin="00:03:52" end="00:03:55">de la esteatosis, sino que también es probable que aumente</p>
+      <p begin="00:03:55" end="00:03:59">la prevalencia de la esteatohepatitis. Esto, sin lugar a duda,</p>
+      <p begin="00:03:59" end="00:04:03">tiene una repercusión importante en materia de gastos asistenciales.</p>
+      <p begin="00:04:03" end="00:04:07">Profesor Ratziu, Vlad, ¿qué más puedes contarnos?</p>
+      <p begin="00:04:07" end="00:04:08">¿Qué sabemos sobre los gastos relacionados</p>
+      <p begin="00:04:08" end="00:04:10">con la atención de la esteatosis hepática?</p>
+      <p begin="00:04:10" end="00:04:13">En la actualidad, solo contamos con cálculos y no</p>
+      <p begin="00:04:13" end="00:04:17">con cifras reales; las cifras reales indudablemente están</p>
+      <p begin="00:04:17" end="00:04:22">determinadas por la tasa de diagnósticos y por la posibilidad de que</p>
+      <p begin="00:04:22" end="00:04:26">el diagnóstico se establezca en etapa temprana o tardía. Por lo tanto, solo</p>
+      <p begin="00:04:26" end="00:04:29">podemos basarnos en cálculos, que se fundamentan en</p>
+      <p begin="00:04:29" end="00:04:32">la prevalencia de la obesidad y la diabetes, en nuestro</p>
+      <p begin="00:04:32" end="00:04:36">entendimiento de la prevalencia de la EHNA grave</p>
+      <p begin="00:04:36" end="00:04:39">y también en las prácticas actuales.</p>
+      <p begin="00:04:39" end="00:04:43">Nada de esto desde luego es muy preciso, pues aumentará</p>
+      <p begin="00:04:43" end="00:04:47">la concienciación, mejorarán los diagnósticos y se utilizarán</p>
+      <p begin="00:04:47" end="00:04:51">técnicas de diagnóstico incruentas para cribar a más pacientes.</p>
+      <p begin="00:04:51" end="00:04:56">Además, nuestra práctica clínica se modificará</p>
+      <p begin="00:04:56" end="00:05:00">considerablemente con el desarrollo de nuevos fármacos.</p>
+      <p begin="00:05:00" end="00:05:05">De cualquier modo, uno de los estudios presentados en</p>
+      <p begin="00:05:05" end="00:05:09">el Congreso Estadounidense del Hígado indicó que, para</p>
+      <p begin="00:05:09" end="00:05:13">los cinco países industrializados más importantes de Europa,</p>
+      <p begin="00:05:13" end="00:05:19">los gastos en atención médica a estos pacientes son importantes.</p>
+      <p begin="00:05:19" end="00:05:22">La mayor parte de los gastos parecen atribuirse a los casos</p>
+      <p begin="00:05:22" end="00:05:26">más graves de EHNA y ENA. De hecho, se calcula que</p>
+      <p begin="00:05:26" end="00:05:31">95 % de los gastos se destina a pacientes con fibrosis o cirrosis</p>
+      <p begin="00:05:31" end="00:05:34">avanzadas. Esto es realmente preocupante, pues sabemos</p>
+      <p begin="00:05:34" end="00:05:37">que, cuando se alcanza esta fase de la cirrosis, entre</p>
+      <p begin="00:05:37" end="00:05:40">otras hepatopatías, cuesta mucho dinero evitar</p>
+      <p begin="00:05:40" end="00:05:44">las complicaciones y los tratamientos drásticos,</p>
+      <p begin="00:05:44" end="00:05:47">como el trasplante hepático. Ya se está haciendo frente</p>
+      <p begin="00:05:47" end="00:05:51">a la cuestión, pero prevemos que la carga económica</p>
+      <p begin="00:05:51" end="00:05:55">de la enfermedad en los sistemas sanitarios será considerable.</p>
+      <p begin="00:05:55" end="00:05:58">De acuerdo, gracias. Qué importante es este tema. Bien,</p>
+      <p begin="00:05:58" end="00:06:02">una de las cosas que, como personal clínico, tendemos a hacer</p>
+      <p begin="00:06:02" end="00:06:06">es dividir el diagnóstico y clasificar a los pacientes en</p>
+      <p begin="00:06:06" end="00:06:10">categorías específicas: esteatosis hepática no alcohólica y</p>
+      <p begin="00:06:10" end="00:06:13">esteatosis hepática alcohólica. ¿Hay datos nuevos sobre</p>
+      <p begin="00:06:13" end="00:06:18">la sinergia de alcohol y obesidad? ¿Crees que</p>
+      <p begin="00:06:18" end="00:06:20">deberíamos comenzar a considerar que todas estas son</p>
+      <p begin="00:06:20" end="00:06:24">variantes de una sola enfermedad? ¿Qué opinas, Vlad?</p>
+      <p begin="00:06:24" end="00:06:26">No sé si deberían considerarse variantes, pues se supone</p>
+      <p begin="00:06:26" end="00:06:30">que las vías comunes de las variantes son las mismas, pero</p>
+      <p begin="00:06:30" end="00:06:32">sí que debemos comprender la coexistencia de estas dos</p>
+      <p begin="00:06:32" end="00:06:35">enfermedades. Muchas personas consumen cantidades</p>
+      <p begin="00:06:35" end="00:06:39">nocivas de alcohol de forma esporádica o irregular e incluso</p>
+      <p begin="00:06:39" end="00:06:42">regular, por lo que estos dos trastornos pueden coexistir.</p>
+      <p begin="00:06:42" end="00:06:46">Está demostrado que si la persona es obesa y consume bebidas</p>
+      <p begin="00:06:46" end="00:06:49">alcohólicas o, mejor dicho, si la persona consume muchas bebidas</p>
+      <p begin="00:06:49" end="00:06:52">alcohólicas y, además, es obesa o tiene síndrome metabólico,</p>
+      <p begin="00:06:52" end="00:06:56">el daño hepático es mucho peor. Por lo tanto, la existencia de este</p>
+      <p begin="00:06:56" end="00:07:00">tipo de agregación o sinergia se ha demostrado de forma retrospectiva.</p>
+      <p begin="00:07:00" end="00:07:04">Curiosamente, al otro lado del espectro del consumo</p>
+      <p begin="00:07:04" end="00:07:07">nocivo de alcohol, incluso en los estudios de poblaciones</p>
+      <p begin="00:07:07" end="00:07:12">de mayor tamaño, independientemente del consumo de alcohol,</p>
+      <p begin="00:07:12" end="00:07:15">está la contribución de factores de riesgo metabólicos, que</p>
+      <p begin="00:07:15" end="00:07:19">aumenta la probabilidad de presentar problemas hepáticos.</p>
+      <p begin="00:07:19" end="00:07:24">Entre los pacientes que consumen bebidas alcohólicas, incluso</p>
+      <p begin="00:07:24" end="00:07:27">en pequeñas cantidades, y son diabéticos u obesos, la prevalencia</p>
+      <p begin="00:07:27" end="00:07:31">de los factores de riesgo metabólicos aumenta el daño asociado</p>
+      <p begin="00:07:31" end="00:07:33">a dicho consumo y el número de problemas hepáticos. Ambos</p>
+      <p begin="00:07:33" end="00:07:36">contribuyen. No es que podamos pasar por alto uno</p>
+      <p begin="00:07:36" end="00:07:39">u otro. Por lo tanto, en lugar de tratar de comprender</p>
+      <p begin="00:07:39" end="00:07:42">a dónde se dirige la fisiopatología y si existen variantes,</p>
+      <p begin="00:07:42" end="00:07:44">creo que debemos esforzarnos por tratar de cuantificar</p>
+      <p begin="00:07:44" end="00:07:48">del mejor modo posible la cantidad de alcohol consumido</p>
+      <p begin="00:07:48" end="00:07:51">y determinar entre nosotros si podemos aceptar</p>
+      <p begin="00:07:51" end="00:07:53">el consumo de pequeñas cantidades de alcohol o si</p>
+      <p begin="00:07:53" end="00:07:56">debemos prohibir el consumo de bebidas alcohólicas.</p>
+      <p begin="00:07:56" end="00:07:59">Esta cuestión aún no se ha resuelto.</p>
+      <p begin="00:07:59" end="00:08:01">Así es. De hecho, disponemos de datos nuevos que indican</p>
+      <p begin="00:08:01" end="00:08:04">que el consumo de una sola unidad de bebida alcohólica al día,</p>
+      <p begin="00:08:04" end="00:08:07">en especial en personas con diabetes de tipo 2, conlleva</p>
+      <p begin="00:08:07" end="00:08:11">un aumento del riesgo de fibrosis hepática avanzada. Esta</p>
+      <p begin="00:08:11" end="00:08:13">cuestión aún no se ha resuelto y, en mi opinión, </p>
+      <p begin="00:08:13" end="00:08:16">la profesión debe tenerla en cuenta en adelante.</p>
+      <p begin="00:08:16" end="00:08:20">Determinados factores representan los principales</p>
+      <p begin="00:08:20" end="00:08:23">indicadores de la morbilidad y la mortalidad de</p>
+      <p begin="00:08:23" end="00:08:26">la esteatosis hepática. La cirrosis es uno de los factores</p>
+      <p begin="00:08:26" end="00:08:29">a los que el personal clínico da más importancia; al</p>
+      <p begin="00:08:29" end="00:08:33">carcinoma hepatocelular también. Sin lugar a duda, estas</p>
+      <p begin="00:08:33" end="00:08:38">afecciones alimentan la creciente demanda de trasplante hepático.</p>
+      <p begin="00:08:38" end="00:08:42">Elisabetta, ¿cuáles son los principales factores de riesgo</p>
+      <p begin="00:08:42" end="00:08:46">de aparición del carcinoma hepatocelular? ¿Cuáles son</p>
+      <p begin="00:08:46" end="00:08:50">las probabilidades de que aparezca un carcinoma hepatocelular</p>
+      <p begin="00:08:50" end="00:08:52">si el paciente tiene antecedentes de esteatosis hepática?</p>
+      <p begin="00:08:52" end="00:08:55">El carcinoma hepatocelular relacionado con la ENA</p>
+      <p begin="00:08:55" end="00:08:59">es un tipo de carcinoma hepatocelular especial, pues</p>
+      <p begin="00:08:59" end="00:09:02">no se ve afectado por la propia hepatopatía, en particular</p>
+      <p begin="00:09:02" end="00:09:06">por la cirrosis, y puede observarse en hígados no cirróticos.</p>
+      <p begin="00:09:06" end="00:09:10">Además, algunos de los componentes del</p>
+      <p begin="00:09:10" end="00:09:13">síndrome metabólico, sobre todo la diabetes de tipo 2</p>
+      <p begin="00:09:13" end="00:09:16">y la obesidad, guardan relación con el riesgo de aparición</p>
+      <p begin="00:09:16" end="00:09:20">del carcinoma hepatocelular. Por lo tanto, se trata de</p>
+      <p begin="00:09:20" end="00:09:25">la suma de cirrosis, obesidad y diabetes de tipo 2,</p>
+      <p begin="00:09:25" end="00:09:28">además de un posible elemento genético; la variante GG</p>
+      <p begin="00:09:28" end="00:09:33">del PNPLA3, del que hablábamos antes, se asocia con un</p>
+      <p begin="00:09:33" end="00:09:37">aumento de cinco tantos en el riesgo de carcinoma hepatocelular.</p>
+      <p begin="00:09:37" end="00:09:43">Y si se quiere tomar en cuenta un solo factor de riesgo,</p>
+      <p begin="00:09:43" end="00:09:46">más bien diría que en un paciente con una</p>
+      <p begin="00:09:46" end="00:09:50">hepatopatía crónica, una cirrosis prolongada o una diabetes</p>
+      <p begin="00:09:50" end="00:09:53">de larga duración, además de alguna de las variantes</p>
+      <p begin="00:09:53" end="00:09:58">del PNPLA3, el riesgo de aparición de carcinoma</p>
+      <p begin="00:09:58" end="00:10:02">hepatocelular es muy elevado. La propia enfermedad</p>
+      <p begin="00:10:02" end="00:10:08">multiplica el riesgo por 2,5 y la obesidad multiplica el riesgo</p>
+      <p begin="00:10:08" end="00:10:13">por 2,5 también, aunque esto depende de la duración de la obesidad.</p>
+      <p begin="00:10:13" end="00:10:17">Si el paciente ha sido obeso desde la infancia,</p>
+      <p begin="00:10:17" end="00:10:21">el riesgo de desarrollar un CHC en la edad adulta</p>
+      <p begin="00:10:21" end="00:10:25">aumenta: desarrollará carcinoma hepatocelular</p>
+      <p begin="00:10:25" end="00:10:29">antes que quienes no se consideraron obesos hasta</p>
+      <p begin="00:10:29" end="00:10:34">llegar a la edad adulta. Este es un problema particularmente</p>
+      <p begin="00:10:34" end="00:10:37">importante en vistas del aumento de la obesidad</p>
+      <p begin="00:10:37" end="00:10:40">infantil en todo Europa y el mundo.</p>
+      <p begin="00:10:40" end="00:10:43">Entonces, ¿es la duración del riesgo lo que da lugar al aumento?</p>
+      <p begin="00:10:43" end="00:10:48">Es la exposición a los factores de riesgo: la obesidad es un factor</p>
+      <p begin="00:10:48" end="00:10:52">de riesgo y la diabetes de tipo 2 también. Además, los antecedentes</p>
+      <p begin="00:10:52" end="00:10:55">genéticos podrían acelerar la evolución hacia el CHC. Es posible</p>
+      <p begin="00:10:55" end="00:10:58">que, a lo largo de su vida, el paciente beba algo más de alcohol</p>
+      <p begin="00:10:58" end="00:11:04">de lo normal o que se le transmita algún virus y esto, sin duda,</p>
+      <p begin="00:11:04" end="00:11:07">aumentará el riesgo de carcinoma hepatocelular.</p>
+      <p begin="00:11:07" end="00:11:12">Sabemos que el carcinoma hepatocelular relacionado con</p>
+      <p begin="00:11:12" end="00:11:17">la ENA es la afección que lleva al paciente con más</p>
+      <p begin="00:11:17" end="00:11:23">rapidez a la lista de trasplante de hígado. Evidentemente,</p>
+      <p begin="00:11:23" end="00:11:27">la hepatitis C y la hepatitis B siguen siendo las principales causas,</p>
+      <p begin="00:11:27" end="00:11:30">pero van descendiendo, en particular la hepatitis C.</p>
+      <p begin="00:11:30" end="00:11:35">No será una transición rápida y pasará bastante tiempo hasta</p>
+      <p begin="00:11:35" end="00:11:42">que veamos la repercusión de los nuevos tratamientos, pero es probable</p>
+      <p begin="00:11:42" end="00:11:46">que, en 20 años, el carcinoma hepatocelular relacionado con la ENA</p>
+      <p begin="00:11:46" end="00:11:49">sea una carga considerable si no hacemos nada antes.</p>
+      <p begin="00:11:49" end="00:11:53">Bien. Vlad, teniendo todo esto en cuenta, ¿cuál debe ser</p>
+      <p begin="00:11:53" end="00:11:56">la estrategia actual para la detección del CHC? ¿Debemos realizar</p>
+      <p begin="00:11:56" end="00:11:59">pruebas a todas las personas con esteatosis hepática? ¿Cómo</p>
+      <p begin="00:11:59" end="00:12:01">hacemos frente a esto? ¿Cuál es tu opinión?</p>
+      <p begin="00:12:01" end="00:12:08">Bueno, si tuviéramos a un solo paciente, haríamos</p>
+      <p begin="00:12:08" end="00:12:11">lo que consideráramos pertinente, pero no tenemos a un solo paciente,</p>
+      <p begin="00:12:11" end="00:12:16">por lo que debemos elaborar políticas que sean viables</p>
+      <p begin="00:12:16" end="00:12:19">y resulten rentables. Lo único que podemos decir</p>
+      <p begin="00:12:19" end="00:12:23">hoy en día es que los pacientes con cirrosis deben</p>
+      <p begin="00:12:23" end="00:12:25">realizarse pruebas de detección de carcinoma hepatocelular,</p>
+      <p begin="00:12:25" end="00:12:28">que es lo que estamos haciendo con todas las causas de cirrosis.</p>
+      <p begin="00:12:28" end="00:12:31">¿Y los que no tienen cirrosis? Se trata de una cuestión</p>
+      <p begin="00:12:31" end="00:12:34">compleja, pues evidentemente se observan casos en pacientes</p>
+      <p begin="00:12:34" end="00:12:37">que no tienen cirrosis e incluso que no tienen ENA, solo</p>
+      <p begin="00:12:37" end="00:12:41">esteatosis hepática. Lo que ocurre es que estos casos son</p>
+      <p begin="00:12:41" end="00:12:44">tan poco frecuentes que no se justifican las pruebas de</p>
+      <p begin="00:12:44" end="00:12:48">detección sistemática. No obstante, el número de pacientes</p>
+      <p begin="00:12:48" end="00:12:51">con riesgo es muy elevado. En las guías de práctica clínica,</p>
+      <p begin="00:12:51" end="00:12:56">en particular las de la ESMO para el CHC, se indica</p>
+      <p begin="00:12:56" end="00:13:02">que existe una opinión consensuada de que las pruebas</p>
+      <p begin="00:13:02" end="00:13:09">de detección sistemática no resultan rentables si</p>
+      <p begin="00:13:09" end="00:13:11">la incidencia es inferior a 1,5 % al año. Y este es</p>
+      <p begin="00:13:11" end="00:13:13">el caso de la ENA no cirrótica.</p>
+      <p begin="00:13:13" end="00:13:16">Como saben, debemos controlar a los pacientes</p>
+      <p begin="00:13:16" end="00:13:20">con cirrosis y lo hacemos de forma regular, pero incluso</p>
+      <p begin="00:13:20" end="00:13:23">entre dichos pacientes, existe una amplia variabilidad en</p>
+      <p begin="00:13:23" end="00:13:26">cuanto al riesgo: algunos pacientes tienen un riesgo mucho</p>
+      <p begin="00:13:26" end="00:13:30">mayor que otros. Lo hemos visto. Es verdad que </p>
+      <p begin="00:13:30" end="00:13:34">cada agente cancerígeno presenta su propia potencia</p>
+      <p begin="00:13:34" end="00:13:37">oncogénica, que puede diferir entre VPH, aflatoxinas,</p>
+      <p begin="00:13:37" end="00:13:40">CHC y ENA. Por lo tanto, es adecuado pensar que</p>
+      <p begin="00:13:40" end="00:13:43">cada enfermedad podría presentar una distinta. De cualquier modo,</p>
+      <p begin="00:13:43" end="00:13:47">se trata de un trabajo en curso, incluso por lo que respecta a</p>
+      <p begin="00:13:47" end="00:13:51">la identificación de pacientes cirróticos con alto riesgo. De momento,</p>
+      <p begin="00:13:51" end="00:13:53">debemos realizar pruebas a estos pacientes cada seis meses.</p>
+      <p begin="00:13:53" end="00:13:55">A los demás, se les harán ecografías esporádicas;</p>
+      <p begin="00:13:55" end="00:13:57">no podemos emitir recomendaciones.</p>
+      <p begin="00:13:57" end="00:14:00">De acuerdo, gracias. Sabemos que muchos de los pacientes</p>
+      <p begin="00:14:00" end="00:14:03">con esteatosis hepática no alcohólica no presentan ninguna</p>
+      <p begin="00:14:03" end="00:14:07">lesión hepática directa. De hecho, de acuerdo con</p>
+      <p begin="00:14:07" end="00:14:11">el artículo que Paul Angulo publicó en 2015, solo</p>
+      <p begin="00:14:11" end="00:14:15">9-10 % de los pacientes con un seguimiento a largo plazo</p>
+      <p begin="00:14:15" end="00:14:18">murió por causas hepáticas; la mayor parte murió</p>
+      <p begin="00:14:18" end="00:14:23">por causas cardiovasculares. Elisabetta, ¿puedes comentarnos</p>
+      <p begin="00:14:23" end="00:14:27">algo más sobre los eventos de tipo no hepático y sobre</p>
+      <p begin="00:14:27" end="00:14:30">la repercusión en los pacientes con esteatosis hepática?</p>
+      <p begin="00:14:30" end="00:14:33">Para empezar, me gustaría presentar el tema</p>
+      <p begin="00:14:33" end="00:14:37">del trabajo, pues fue un trabajo en el que pudimos</p>
+      <p begin="00:14:37" end="00:14:41">participar llevando el seguimiento de pacientes</p>
+      <p begin="00:14:41" end="00:14:44">con EHNA en fase inicial. Estaban en observación,</p>
+      <p begin="00:14:44" end="00:14:49">por lo que la tasa de morbilidad y mortalidad</p>
+      <p begin="00:14:49" end="00:14:52">de tipo hepático era muy baja.</p>
+      <p begin="00:14:52" end="00:14:57">A su vez, vemos a muchos pacientes que</p>
+      <p begin="00:14:57" end="00:15:01">no se han atendido y que acuden a nuestros consultorios con</p>
+      <p begin="00:15:01" end="00:15:05">cirrosis descompensada u otras complicaciones importantes,</p>
+      <p begin="00:15:05" end="00:15:08">como carcinoma hepatocelular. Dicho esto, sin duda,</p>
+      <p begin="00:15:08" end="00:15:12">las afecciones cardiovasculares representan la primera causa de</p>
+      <p begin="00:15:12" end="00:15:15">muerte en estos pacientes, pues la EHNA no solo</p>
+      <p begin="00:15:15" end="00:15:20">es una enfermedad hepática. Se trata de una enfermedad sistémica</p>
+      <p begin="00:15:20" end="00:15:26">que deriva de una afección metabólica que, en ocasiones,</p>
+      <p begin="00:15:26" end="00:15:32">también afecta al hígado. No obstante, por lo general,</p>
+      <p begin="00:15:32" end="00:15:36">el principal peligro es el riesgo cardiovascular.</p>
+      <p begin="00:15:36" end="00:15:39">En suma, la EHNA y el síndrome metabólico</p>
+      <p begin="00:15:39" end="00:15:44">tienen una especie de relación bidireccional: la esteatosis hepática</p>
+      <p begin="00:15:44" end="00:15:49">aparece cuando aumenta el flujo de ácidos grasos libres hacia</p>
+      <p begin="00:15:49" end="00:15:53">el hígado y esto se debe a la resistencia del tejido adiposo a</p>
+      <p begin="00:15:53" end="00:15:58">la insulina. Por otro lado, cuando aparece la esteatosis hepática,</p>
+      <p begin="00:15:58" end="00:16:01">se incrementa la producción de glucosa en el hígado, por lo que aumenta</p>
+      <p begin="00:16:01" end="00:16:05">la probabilidad de que el paciente desarrolle diabetes de tipo 2</p>
+      <p begin="00:16:05" end="00:16:09">y de que el hígado genere más lípidos.</p>
+      <p begin="00:16:09" end="00:16:13">Todo esto da lugar a un aumento de la aterogénesis y</p>
+      <p begin="00:16:13" end="00:16:20">de la producción de la proteína C reactiva y PAI-1, que</p>
+      <p begin="00:16:20" end="00:16:25">son marcadores proinflamatorios. Además,</p>
+      <p begin="00:16:25" end="00:16:29">favorece la aparición de enfermedades cardiovasculares.</p>
+      <p begin="00:16:29" end="00:16:32">Se trata de una carretera de dos carriles y estos van en</p>
+      <p begin="00:16:32" end="00:16:36">sentidos opuestos. ¿Crees que así está bien descrito?</p>
+      <p begin="00:16:36" end="00:16:40">Sí. No se trata solo de una consecuencia del síndrome</p>
+      <p begin="00:16:40" end="00:16:44">metabólico, aunque es un favor principal de este tras aparecer la esteatosis</p>
+      <p begin="00:16:44" end="00:16:49">hepática, que intensifica todas los desenlaces adversos del</p>
+      <p begin="00:16:49" end="00:16:53">síndrome metabólico, como el riesgo de desarrollar</p>
+      <p begin="00:16:53" end="00:16:55">diabetes de tipo 2 y el riesgo de </p>
+      <p begin="00:16:55" end="00:16:59">presentar eventos de tipo cardiovascular.</p>
+      <p begin="00:16:59" end="00:17:03">De acuerdo, gracias. Debemos hacer frente a</p>
+      <p begin="00:17:03" end="00:17:06">múltiples dificultades en el abordaje de los pacientes</p>
+      <p begin="00:17:06" end="00:17:09">con esteatosis hepática. En primer lugar, debemos identificar</p>
+      <p begin="00:17:09" end="00:17:12">a los que tienen más riesgo de desarrollar EHNA.</p>
+      <p begin="00:17:12" end="00:17:16">Además, es necesario tener en cuenta la estratificación del riesgo</p>
+      <p begin="00:17:16" end="00:17:18">para identificar a los pacientes con esteatosis hepática que tienen</p>
+      <p begin="00:17:18" end="00:17:21">más riesgo de peores desenlaces. Por último, es preciso comentar</p>
+      <p begin="00:17:21" end="00:17:23">algunas de las cuestiones relativas al abordaje</p>
+      <p begin="00:17:23" end="00:17:25">y el tratamiento óptimos de esta afección.</p>
+      <p begin="00:17:25" end="00:17:30">Hay algo que me preocupa sobremanera y es saber</p>
+      <p begin="00:17:30" end="00:17:34">si somos eficaces a la hora de identificar a</p>
+      <p begin="00:17:34" end="00:17:37">todos los pacientes con esteatosis hepática.</p>
+      <p begin="00:17:37" end="00:17:40">Por una parte, los datos indican que en torno a</p>
+      <p begin="00:17:40" end="00:17:43">un cuarto del total de la población tiene cierto grado</p>
+      <p begin="00:17:43" end="00:17:46">de esteatosis hepática. Sin embargo, están los datos del contexto real,</p>
+      <p begin="00:17:46" end="00:17:50">como los derivados de un estudio reciente en el que se analizó a más</p>
+      <p begin="00:17:50" end="00:17:53">de 18 millones de adultos de las bases de datos de atención primaria</p>
+      <p begin="00:17:53" end="00:17:57">de cuatro países europeos; este estudio mostró que</p>
+      <p begin="00:17:57" end="00:18:01">solo 137.000 de estos pacientes estaban registrados</p>
+      <p begin="00:18:01" end="00:18:03">como portadores de esteatosis hepática.</p>
+      <p begin="00:18:03" end="00:18:08">Esto es bastante desconcertante y puede que</p>
+      <p begin="00:18:08" end="00:18:11">indique que la esteatosis hepática no es tan habitual como</p>
+      <p begin="00:18:11" end="00:18:16">pensamos que es. No obstante, también</p>
+      <p begin="00:18:16" end="00:18:18">podemos interpretar --y yo apuesto por esto--</p>
+      <p begin="00:18:18" end="00:18:20">que esta afección está infradiagnosticada, por lo que</p>
+      <p begin="00:18:20" end="00:18:24">no aparece en las bases de datos y tampoco en</p>
+      <p begin="00:18:24" end="00:18:27">las estadísticas. Sabemos que las personas que tienen</p>
+      <p begin="00:18:27" end="00:18:31">diabetes de tipo 2, hipertensión, obesidad y síndrome</p>
+      <p begin="00:18:31" end="00:18:34">metabólico son mucho más propensas a desarrollar esteatosis</p>
+      <p begin="00:18:34" end="00:18:37">hepática. Vlad, ¿puedes indicar algunos</p>
+      <p begin="00:18:37" end="00:18:40">de los motivos por los que la esteatosis</p>
+      <p begin="00:18:40" end="00:18:43">hepática podría estar deficientemente registrada?</p>
+      <p begin="00:18:43" end="00:18:50">Algunos son motivos históricos: la esteatosis</p>
+      <p begin="00:18:50" end="00:18:52">se ha considerado, durante años, una afección</p>
+      <p begin="00:18:52" end="00:18:56">benigna, algo que también ocurría con la obesidad</p>
+      <p begin="00:18:56" end="00:19:02">y el sobrepeso: no había por qué preocuparse.</p>
+      <p begin="00:19:02" end="00:19:08">Además, el hecho de que no contemos con una prueba sencilla de</p>
+      <p begin="00:19:08" end="00:19:14">predicción de la enfermedad es un obstáculo para identificar a</p>
+      <p begin="00:19:14" end="00:19:17">estos pacientes. Siempre podemos hacer una ecografía,</p>
+      <p begin="00:19:17" end="00:19:21">pero las ecografías no son muy sensibles tampoco.</p>
+      <p begin="00:19:21" end="00:19:26">También cabe señalar que, durante años, hemos desconocido</p>
+      <p begin="00:19:26" end="00:19:28">la evolución natural de la enfermedad, por lo que no éramos</p>
+      <p begin="00:19:28" end="00:19:33">conscientes de la posibilidad de desarrollo de una</p>
+      <p begin="00:19:33" end="00:19:35">hepatopatía terminal, algo que ahora sabemos gracias</p>
+      <p begin="00:19:35" end="00:19:38">a los datos disponibles. Durante años, muchos pensaban</p>
+      <p begin="00:19:38" end="00:19:41">que esta afección nunca avanzaría o que avanzaría en muy</p>
+      <p begin="00:19:41" end="00:19:45">pocas ocasiones a una fase terminal. Por último, también está</p>
+      <p begin="00:19:45" end="00:19:50">el hecho de que se establezca o no el diagnóstico, no podemos</p>
+      <p begin="00:19:50" end="00:19:54">hacer nada distinto de que lo ya hacíamos, que es</p>
+      <p begin="00:19:54" end="00:19:56">tratar de modificar la alimentación y los hábitos.</p>
+      <p begin="00:19:56" end="00:19:58">En otras palabras, que no exista un tratamiento</p>
+      <p begin="00:19:58" end="00:20:02">específico es otro obstáculo importante</p>
+      <p begin="00:20:02" end="00:20:05">para la detección de la enfermedad.</p>
+      <p begin="00:20:05" end="00:20:08">En mi opinión, estos podrían ser los motivos. Por lo que</p>
+      <p begin="00:20:08" end="00:20:11">respecta a los nuevos estudios, en particular al estudio</p>
+      <p begin="00:20:11" end="00:20:17">que antes mencionaste, creo que el contexto en el que</p>
+      <p begin="00:20:17" end="00:20:19">se realizan los estudios es fundamental. Si analizamos solo</p>
+      <p begin="00:20:19" end="00:20:21">a los pacientes hospitalizados, la proporción evidentemente</p>
+      <p begin="00:20:21" end="00:20:24">será muy inferior a 24 % de la población. Si analizamos</p>
+      <p begin="00:20:24" end="00:20:26">la atención tanto primaria como especializada, este</p>
+      <p begin="00:20:26" end="00:20:29">porcentaje podría ser muy variable en función del</p>
+      <p begin="00:20:29" end="00:20:32">motivo por el que el paciente acuda al consultorio.</p>
+      <p begin="00:20:32" end="00:20:35">Bien. Me gustaría que habláramos un poco sobre la</p>
+      <p begin="00:20:35" end="00:20:39">estratificación del riesgo: qué es, por qué es importante y</p>
+      <p begin="00:20:39" end="00:20:43">cómo debemos proceder. Lo primero que quiero decir es que,</p>
+      <p begin="00:20:43" end="00:20:47">para empezar, debemos saber quién tiene riesgo de desarrollar</p>
+      <p begin="00:20:47" end="00:20:49">una hepatopatía. Esto nos lleva, una vez más, a</p>
+      <p begin="00:20:49" end="00:20:52">las características del síndrome metabólico.</p>
+      <p begin="00:20:52" end="00:20:54">Cuantas más de estas reúna el paciente, mayor</p>
+      <p begin="00:20:54" end="00:20:57">es el riesgo. A continuación, debemos descartar</p>
+      <p begin="00:20:57" end="00:21:01">otras enfermedades. En la actualidad, la esteatosis hepática</p>
+      <p begin="00:21:01" end="00:21:04">es un diagnóstico por exclusión, por lo que debemos descartar</p>
+      <p begin="00:21:04" end="00:21:08">la hepatitis vírica y la inmunitaria, entre otras. Esto es fundamental</p>
+      <p begin="00:21:08" end="00:21:11">para el diagnóstico. Una vez que hayamos establecido</p>
+      <p begin="00:21:11" end="00:21:14">el diagnóstico, debemos evaluar la gravedad de </p>
+      <p begin="00:21:14" end="00:21:19">la enfermedad. Elisabetta, en un contexto de atención</p>
+      <p begin="00:21:19" end="00:21:23">primaria en la población ¿cómo realizarías la estratificación</p>
+      <p begin="00:21:23" end="00:21:26">del riesgo de los pacientes? ¿Existen métodos</p>
+      <p begin="00:21:26" end="00:21:28">incruentos que puedan ayudarnos?</p>
+      <p begin="00:21:28" end="00:21:33">Para empezar, diré que las guías de práctica clínica</p>
+      <p begin="00:21:33" end="00:21:36">no recomiendan la estratificación del riesgo de EHNA</p>
+      <p begin="00:21:36" end="00:21:40">para toda la población. Está recomendada para la población</p>
+      <p begin="00:21:40" end="00:21:44">con alto riesgo, es decir, para personas con diabetes de tipo 2,</p>
+      <p begin="00:21:44" end="00:21:48">con síndrome metabólico y posiblemente de más de 45 años.</p>
+      <p begin="00:21:48" end="00:21:52">Esto es lo que indican las guías europeas. Una vez finalizada</p>
+      <p begin="00:21:52" end="00:21:56">la detección sistemática de la EHNA, debemos tratar de</p>
+      <p begin="00:21:56" end="00:22:00">identificar a los pacientes con ENA, que es la hepatopatía</p>
+      <p begin="00:22:00" end="00:22:04">realmente progresiva, y estratificar a quienes</p>
+      <p begin="00:22:04" end="00:22:07">tengan riesgo de desarrollar fibrosis grave.</p>
+      <p begin="00:22:07" end="00:22:11">La mayor parte de las pruebas hepáticas incruentas con las que</p>
+      <p begin="00:22:11" end="00:22:17">contamos tienen como propósito identificar o excluir la fibrosis</p>
+      <p begin="00:22:17" end="00:22:21">hepática grave; es decir, la F3, la F4, la precirrosis y</p>
+      <p begin="00:22:21" end="00:22:25">la cirrosis. Podemos usar distintos tipos de</p>
+      <p begin="00:22:25" end="00:22:29">pruebas incruentas. Tanto los médicos de atención</p>
+      <p begin="00:22:29" end="00:22:33">primaria como los especialistas, como endocrinólogos</p>
+      <p begin="00:22:33" end="00:22:37">o cardiólogos, podemos usar, por ejemplo, el sistema de puntuación</p>
+      <p begin="00:22:37" end="00:22:42">de la fibrosis en la EHNA, basado en edad, AST, ALT, cifra</p>
+      <p begin="00:22:42" end="00:22:47">de trombocitos, IMC y valor de la glucosa en ayunas; o el FIB-4,</p>
+      <p begin="00:22:47" end="00:22:52">basado en edad, AST, ALT y cifra de trombocitos. Estos son</p>
+      <p begin="00:22:52" end="00:22:55">los dos sistemas más recomendados. También contamos con</p>
+      <p begin="00:22:55" end="00:22:59">sistemas de segundo nivel, como la prueba ELF,</p>
+      <p begin="00:22:59" end="00:23:04">que combina aspectos de la remodelación del</p>
+      <p begin="00:23:04" end="00:23:07">colágeno que se produce con la fibrosis.</p>
+      <p begin="00:23:07" end="00:23:12">Cabe mencionar, como ejemplo de sistema de detección sistemática en</p>
+      <p begin="00:23:12" end="00:23:16">la atención primaria el Camden and Islington NAFLD Pathway, que</p>
+      <p begin="00:23:16" end="00:23:20">se puso en marcha en el Reino Unido. Se pidió a todos los médicos de</p>
+      <p begin="00:23:20" end="00:23:24">atención primaria que realizaran pruebas de detección a los pacientes</p>
+      <p begin="00:23:24" end="00:23:28">con esteatosis hepática y valores elevados de ALT tras</p>
+      <p begin="00:23:28" end="00:23:30">prohibirles el consumo significativo de bebidas alcohólicas</p>
+      <p begin="00:23:30" end="00:23:33">y otras causas de hepatopatías crónicas.</p>
+      <p begin="00:23:33" end="00:23:38">El primer tipo de prueba de detección fue el FIB-4, que</p>
+      <p begin="00:23:38" end="00:23:41">presenta dos umbrales. Si los pacientes estaban</p>
+      <p begin="00:23:41" end="00:23:46">por debajo del umbral inferior, no se les remitía al</p>
+      <p begin="00:23:46" end="00:23:49">especialista. Si estaban por encima del umbral superior,</p>
+      <p begin="00:23:49" end="00:23:52">se les remitía al hepatólogo, pues tenían</p>
+      <p begin="00:23:52" end="00:23:55">más riesgo de fibrosis hepática grave.</p>
+      <p begin="00:23:55" end="00:23:59">El problema de todas estas pruebas incruentas es que</p>
+      <p begin="00:23:59" end="00:24:04">presentan cierta indeterminación. En la porción de</p>
+      <p begin="00:24:04" end="00:24:08">pacientes con un resultado indeterminado se efectuaba</p>
+      <p begin="00:24:08" end="00:24:12">una prueba de segundo nivel, que es la prueba ELF, tras la que</p>
+      <p begin="00:24:12" end="00:24:15">se volvía a estratificar en función del riesgo de fibrosis grave.</p>
+      <p begin="00:24:15" end="00:24:19">Resultó ser un método eficaz, pues la cifra de pacientes</p>
+      <p begin="00:24:19" end="00:24:26">con fibrosis grave remitidos al especialista aumentó de un 8 %</p>
+      <p begin="00:24:26" end="00:24:33">a un 30 %; en el caso de la cirrosis, esta pasó de un 6 % a un 14 %.</p>
+      <p begin="00:24:33" end="00:24:36">De acuerdo. En mi opinión, una de las principales características</p>
+      <p begin="00:24:36" end="00:24:39">de las pruebas incruentas es que tienen un alto valor diagnóstico</p>
+      <p begin="00:24:39" end="00:24:41">ante un resultado negativo: son muy buenas para descartar la enfermedad</p>
+      <p begin="00:24:41" end="00:24:45">avanzada, pero menos buenas para detectarla. En este</p>
+      <p begin="00:24:45" end="00:24:49">mismo ejemplo, observamos una mejora importante</p>
+      <p begin="00:24:49" end="00:24:52">en lo que respecta a remisión por enfermedad avanzada;</p>
+      <p begin="00:24:52" end="00:24:55">aun así, 70 % de los pacientes derivados no tenía</p>
+      <p begin="00:24:55" end="00:24:58">enfermedad avanzada. Se trata de un área en el que</p>
+      <p begin="00:24:58" end="00:25:02">debemos seguir trabajando, pero es fundamental que</p>
+      <p begin="00:25:02" end="00:25:04">nos percatemos de que podemos invertir mucho tiempo preocupándonos</p>
+      <p begin="00:25:04" end="00:25:07">por cuál es la prueba correcta. Para mí, todas son buenas</p>
+      <p begin="00:25:07" end="00:25:09">siempre que se apliquen de forma congruente.</p>
+      <p begin="00:25:09" end="00:25:11">Sigue siendo mejor que nada, pues la norma asistencial consistía en</p>
+      <p begin="00:25:11" end="00:25:15">derivar a algunos, no derivar a ninguno o derivar al azar.</p>
+      <p begin="00:25:15" end="00:25:16">Así es.</p>
+      <p begin="00:25:16" end="00:25:20">Más allá de todo esto, creo que el mensaje más importante</p>
+      <p begin="00:25:20" end="00:25:22">que debemos hacer llegar al público general y a</p>
+      <p begin="00:25:22" end="00:25:26">los médicos de atención primaria es que, incluso antes de</p>
+      <p begin="00:25:26" end="00:25:29">implementar una prueba, es preciso reconocer que</p>
+      <p begin="00:25:29" end="00:25:32">los factores de riesgo metabólico ponen al hígado</p>
+      <p begin="00:25:32" end="00:25:36">en riesgo; a continuación, se ha de pensar que</p>
+      <p begin="00:25:36" end="00:25:39">si el paciente tiene sobrepeso, diabetes,</p>
+      <p begin="00:25:39" end="00:25:42">dislipidemia, hipertensión arterial o una combinación</p>
+      <p begin="00:25:42" end="00:25:45">de estas, hay que examinar el hígado.</p>
+      <p begin="00:25:45" end="00:25:47">Después, se pueden realizar las pruebas que se crea convenientes.</p>
+      <p begin="00:25:47" end="00:25:49">Cuando el médico de atención primaria identifica</p>
+      <p begin="00:25:49" end="00:25:54">al paciente y te lo deriva, Vlad, ¿cómo lo evalúas?</p>
+      <p begin="00:25:54" end="00:25:56">¿Todos los pacientes necesitan una biopsia del hígado</p>
+      <p begin="00:25:56" end="00:25:57">o existen métodos más inteligentes?</p>
+      <p begin="00:25:57" end="00:26:02">Básicamente, lo que hacemos es tratar de comprender</p>
+      <p begin="00:26:02" end="00:26:05">si la enfermedad del paciente corre el riesgo de avanzar a cirrosis.</p>
+      <p begin="00:26:05" end="00:26:09">Este riesgo se evalúa principalmente a partir de la fase</p>
+      <p begin="00:26:09" end="00:26:13">de la fibrosis y de la actividad de la enfermedad.</p>
+      <p begin="00:26:13" end="00:26:17">No obstante, a veces basta con evaluar</p>
+      <p begin="00:26:17" end="00:26:20">la fase de la fibrosis. A veces, debemos ir</p>
+      <p begin="00:26:20" end="00:26:24">más allá y tratar de saber si la ENA</p>
+      <p begin="00:26:24" end="00:26:27">es o no es muy activa. El primer paso, por supuesto,</p>
+      <p begin="00:26:27" end="00:26:31">consiste en asegurarnos de que no existan otros trastornos</p>
+      <p begin="00:26:31" end="00:26:34">crónicos, lo que vuelve a llevarnos al consumo de alcohol.</p>
+      <p begin="00:26:34" end="00:26:36">Debemos tomar muy en cuenta la cantidad que</p>
+      <p begin="00:26:36" end="00:26:39">consume para saber si el consumo de alcohol </p>
+      <p begin="00:26:39" end="00:26:41">aumenta el riesgo del paciente aún más que </p>
+      <p begin="00:26:41" end="00:26:43">el debido al síndrome metabólico.</p>
+      <p begin="00:26:43" end="00:26:47">Además, hay que tratar de calcular de forma incruenta</p>
+      <p begin="00:26:47" end="00:26:51">el grado de fibrosis y de utilizar</p>
+      <p begin="00:26:51" end="00:26:54">distintas pruebas, que pueden ser más o menos</p>
+      <p begin="00:26:54" end="00:26:56">especializadas que la que mencionábamos antes.</p>
+      <p begin="00:26:56" end="00:27:00">El problema es que ninguna prueba es suficiente por sí sola,</p>
+      <p begin="00:27:00" end="00:27:02">por lo que deben combinarse al menos dos pruebas</p>
+      <p begin="00:27:02" end="00:27:05">de distinto tipo con biomarcadores biofísicos, como</p>
+      <p begin="00:27:05" end="00:27:09">la rigidez hepática. El siguiente problema recae en la interpretación</p>
+      <p begin="00:27:09" end="00:27:11">de los resultados. A veces, son bastante claros. Otras veces,</p>
+      <p begin="00:27:11" end="00:27:15">debemos comprender por qué existe una posible discordancia.</p>
+      <p begin="00:27:15" end="00:27:22">Una vez que hemos pasado por esto, en función del</p>
+      <p begin="00:27:22" end="00:27:26">perfil del paciente, podríamos esperar un poco y ver</p>
+      <p begin="00:27:26" end="00:27:28">si pone en práctica cambios en la alimentación</p>
+      <p begin="00:27:28" end="00:27:31">y en el modo de vida y si estos resultan eficaces.</p>
+      <p begin="00:27:31" end="00:27:33">Algunas personas jóvenes que no tienen enfermedad avanzada</p>
+      <p begin="00:27:33" end="00:27:35">desconocen la enfermedad en cuestión. Muchos regresan</p>
+      <p begin="00:27:35" end="00:27:38">después de cuatro a seis meses y vemos que han comenzado</p>
+      <p begin="00:27:38" end="00:27:41">a bajar de peso y que han mejorado en algunos de estos aspectos.</p>
+      <p begin="00:27:41" end="00:27:44">En estos casos, no debe hacerse la biopsia. Por otro lado, están</p>
+      <p begin="00:27:44" end="00:27:47">las personas que llevan años enfermas y que lo han intentado todo</p>
+      <p begin="00:27:47" end="00:27:51">sin obtener buenos resultados. Es entonces cuando hay que</p>
+      <p begin="00:27:51" end="00:27:54">plantearse si la biopsia hepática ayudará a comprender</p>
+      <p begin="00:27:54" end="00:27:58">mejor el riesgo. ¿Ayudará al paciente a ser más</p>
+      <p begin="00:27:58" end="00:28:01">consciente de las consecuencias de no cambiar algo?</p>
+      <p begin="00:28:01" end="00:28:05">¿Le ayudará a sacar provecho</p>
+      <p begin="00:28:05" end="00:28:07">de los fármacos que aún están en fase de desarrollo?</p>
+      <p begin="00:28:07" end="00:28:10">Es entonces cuando el médico debe decidir si quiere</p>
+      <p begin="00:28:10" end="00:28:13">hacer la biopsia; para ello, debe tener en cuenta</p>
+      <p begin="00:28:13" end="00:28:16">la edad, las enfermedades concomitantes y los tratamientos que</p>
+      <p begin="00:28:16" end="00:28:21">puedan aumentar el riesgo. Se trata de un fenómeno muy complejo.</p>
+      <p begin="00:28:21" end="00:28:23">Además, hay que convencer al paciente de la conveniencia</p>
+      <p begin="00:28:23" end="00:28:28">de llevar a cabo el procedimiento, que puede ser doloroso.</p>
+      <p begin="00:28:28" end="00:28:31">De acuerdo, gracias. Como saben, se están desarrollando</p>
+      <p begin="00:28:31" end="00:28:34">varios biomarcadores nuevos. Varios de nosotros</p>
+      <p begin="00:28:34" end="00:28:36">estamos participando en el desarrollo y la validación de nuevos</p>
+      <p begin="00:28:36" end="00:28:40">biomarcadores, por ejemplo, en el Consorcio EU LITMUS.</p>
+      <p begin="00:28:40" end="00:28:44">Contamos con diversas herramientas, como el procolágeno C3</p>
+      <p begin="00:28:44" end="00:28:48">o la elastografía por resonancia magnética. De momento, son</p>
+      <p begin="00:28:48" end="00:28:50">herramientas para la investigación reservadas principalmente</p>
+      <p begin="00:28:50" end="00:28:53">para los ensayos clínicos. No obstante, resultará interesante ver</p>
+      <p begin="00:28:53" end="00:28:57">cómo funcionan y si ofrecen algún beneficio adicional en la</p>
+      <p begin="00:28:57" end="00:29:01">práctica cotidiana. Por ahora, no contamos con buenas pruebas</p>
+      <p begin="00:29:01" end="00:29:06">incruentas específicas para diagnosticar la esteatohepatitis.</p>
+      <p begin="00:29:06" end="00:29:08">Podemos identificar bien la fibrosis avanzada</p>
+      <p begin="00:29:08" end="00:29:11">y podemos identificar bien la esteatosis; pero todavía</p>
+      <p begin="00:29:11" end="00:29:15">es útil la biopsia, y la cuestión es cuál es</p>
+      <p begin="00:29:15" end="00:29:18">el mejor método. En mi opinión, la explicación</p>
+      <p begin="00:29:18" end="00:29:20">que has dado tiene muchísimo sentido.</p>
+      <p begin="00:29:20" end="00:29:24">Aún no existen fármacos autorizados para el tratamiento de la</p>
+      <p begin="00:29:24" end="00:29:27">esteatosis hepática, pero eso no significa que no tengamos opciones.</p>
+      <p begin="00:29:27" end="00:29:31">La intervención en el modo de vida es fundamental.</p>
+      <p begin="00:29:31" end="00:29:33">Debemos trabajar con nuestros pacientes y ayudarles</p>
+      <p begin="00:29:33" end="00:29:36">con la dieta y el ejercicio, de modo que bajen de peso; los datos</p>
+      <p begin="00:29:36" end="00:29:39">indican que la pérdida de peso puede mejorar las características histológicas</p>
+      <p begin="00:29:39" end="00:29:43">en los pacientes con esteatosis hepática. Teniendo en cuenta</p>
+      <p begin="00:29:43" end="00:29:45">todo lo que se ha dicho sobre el riesgo cardiovascular,</p>
+      <p begin="00:29:45" end="00:29:49">es fundamental que mejoremos el perfil de riesgo</p>
+      <p begin="00:29:49" end="00:29:52">cardiovascular de nuestros pacientes; si son diabéticos,</p>
+      <p begin="00:29:52" end="00:29:55">debemos tener la diabetes bajo control y también tratar</p>
+      <p begin="00:29:55" end="00:30:00">la dislipidemia adecuadamente. Aún queda mucho por</p>
+      <p begin="00:30:00" end="00:30:04">averiguar sobre cuál es la forma más eficaz de</p>
+      <p begin="00:30:04" end="00:30:08">bajar de peso. Elisabetta, ¿puedes explicar</p>
+      <p begin="00:30:08" end="00:30:10">brevemente lo que harías si tuvieras que</p>
+      <p begin="00:30:10" end="00:30:12">aconsejar a un paciente y qué tipo de</p>
+      <p begin="00:30:12" end="00:30:14">objetivos le pondrías a la hora de adelgazar?</p>
+      <p begin="00:30:14" end="00:30:19">Se pueden utilizar distintas dietas, pero</p>
+      <p begin="00:30:19" end="00:30:22">la que resulta más eficaz, en especial por lo que respecta</p>
+      <p begin="00:30:22" end="00:30:26">al riesgo cardiovascular, es la dieta mediterránea.</p>
+      <p begin="00:30:26" end="00:30:30">Lamentablemente, hemos desvirtuado el concepto de dieta</p>
+      <p begin="00:30:30" end="00:30:34">mediterránea, que no consiste en comer pizzas y helados, sino</p>
+      <p begin="00:30:34" end="00:30:40">que es una dieta mucho más compleja, rica en alimentos</p>
+      <p begin="00:30:40" end="00:30:44">vegetales. El 40 % de las calorías procede de los carbohidratos</p>
+      <p begin="00:30:44" end="00:30:48">complejos. El consumo de carnes rojas, sal</p>
+      <p begin="00:30:48" end="00:30:53">y fructosa es bajo, mientras que el de carnes blancas es elevado.</p>
+      <p begin="00:30:53" end="00:30:57">La única fructosa que se consume en la dieta mediterránea es la que</p>
+      <p begin="00:30:57" end="00:31:01">deriva de la fruta. De hecho, la fructosa es uno de los aditivos</p>
+      <p begin="00:31:01" end="00:31:08">más dañinos, cuyo uso es particularmente importante entre</p>
+      <p begin="00:31:08" end="00:31:13">adolescentes y niños, cuando consumen gaseosas, comidas</p>
+      <p begin="00:31:13" end="00:31:18">industriales, y pan industrial, entre otros. No obstante,</p>
+      <p begin="00:31:18" end="00:31:22">lo que importa es la proporción de peso que el paciente pueda</p>
+      <p begin="00:31:22" end="00:31:28">perder. En cierto modo, tratamos de personalizar la dieta</p>
+      <p begin="00:31:28" end="00:31:33">en función del paciente. La dieta más asequible es</p>
+      <p begin="00:31:33" end="00:31:36">la dieta que mejor funciona, pues es la que el paciente puede</p>
+      <p begin="00:31:36" end="00:31:41">mantener más tiempo. Desde luego, la actividad física</p>
+      <p begin="00:31:41" end="00:31:45">es fundamental, ya que, cuando hacemos dieta, no solo</p>
+      <p begin="00:31:45" end="00:31:50">perdemos tejido adiposo sino que también perdemos músculo;</p>
+      <p begin="00:31:50" end="00:31:53">si hacemos ejercicio, perdemos tejido adiposo y no músculo.</p>
+      <p begin="00:31:53" end="00:31:58">Además, la probabilidad de volver a engordar es menor que</p>
+      <p begin="00:31:58" end="00:32:02">la de quienes hacen solo dieta y, pasado un tiempo, la dejan.</p>
+      <p begin="00:32:02" end="00:32:06">Dejemos a un lado los cambios en el modo de vida y</p>
+      <p begin="00:32:06" end="00:32:09">centrémonos en los fármacos. Una de las cosas que suele</p>
+      <p begin="00:32:09" end="00:32:12">preocupar a las personas, especialmente en casos de</p>
+      <p begin="00:32:12" end="00:32:14">diagnóstico de una hepatopatía, es la presentación de</p>
+      <p begin="00:32:14" end="00:32:17">valores anómalos en los análisis de bioquímica del hígado;</p>
+      <p begin="00:32:17" end="00:32:22">valores elevados de ALT y AST.</p>
+      <p begin="00:32:22" end="00:32:25">Esta es una cuestión muy importante,</p>
+      <p begin="00:32:25" end="00:32:29">pues los pacientes con EHNA están infratratados</p>
+      <p begin="00:32:29" end="00:32:33">por lo que respecta al riesgo cardiovascular, en especial</p>
+      <p begin="00:32:33" end="00:32:37">los diabéticos, pero las estatinas son inocuas.</p>
+      <p begin="00:32:37" end="00:32:42">Se dice que las estatinas aprietan, pero no ahogan; la tasa</p>
+      <p begin="00:32:42" end="00:32:49">de reacciones graves es muy baja. El aumento de AST</p>
+      <p begin="00:32:49" end="00:32:52">y ALT que se observa durante el primer mes de uso</p>
+      <p begin="00:32:52" end="00:32:56">de las estatinas no es indicativo de hepatopatía; suele</p>
+      <p begin="00:32:56" end="00:32:59">remitir de forma espontánea unos seis meses después del inicio de</p>
+      <p begin="00:32:59" end="00:33:04">las estatinas. Por eso, solemos recomendar la disminución progresiva</p>
+      <p begin="00:33:04" end="00:33:13">de las estatinas cuando se alcanza un valor 2,5 veces superior</p>
+      <p begin="00:33:13" end="00:33:18">al valor inicial de la AST o la ALT. Aun así, si el médico prefiere</p>
+      <p begin="00:33:18" end="00:33:21">no utilizar estatinas, puede usar ezetimiba, entre otros.</p>
+      <p begin="00:33:21" end="00:33:24">Solo con los fármacos existentes, ya tenemos numerosas opciones.</p>
+      <p begin="00:33:24" end="00:33:27">Esto es muy importante. Vlad, sabemos que hay</p>
+      <p begin="00:33:27" end="00:33:31">numerosos fármacos nuevos en desarrollo. Me gustaría</p>
+      <p begin="00:33:31" end="00:33:36">que presentaras una perspectiva general muy breve.</p>
+      <p begin="00:33:36" end="00:33:39">¿Qué fármacos se encuentran en la fase III de desarrollo?</p>
+      <p begin="00:33:39" end="00:33:42">En la actualidad, hay varios fármacos en la fase III</p>
+      <p begin="00:33:42" end="00:33:47">de desarrollo. Ya se conocen los resultados del estudio de uno de</p>
+      <p begin="00:33:47" end="00:33:50">los fármacos en fase III, que es el ácido obeticólico. También</p>
+      <p begin="00:33:50" end="00:33:55">está elafibranor; el ácido obeticólico es</p>
+      <p begin="00:33:55" end="00:33:59">un agonista del FXR, el elafibranor es un agonista doble</p>
+      <p begin="00:33:59" end="00:34:02">del PPAR, cuyos resultados se publicarán pronto. Además, hay</p>
+      <p begin="00:34:02" end="00:34:06">otros tres fármacos en fase III que se están evaluando en varios</p>
+      <p begin="00:34:06" end="00:34:09">estudios de fase III internacionales con más de 2000 pacientes.</p>
+      <p begin="00:34:09" end="00:34:14">En uno de estos se está evaluando resmetirom,</p>
+      <p begin="00:34:14" end="00:34:17">que es un tiromimético. En otro está evaluando</p>
+      <p begin="00:34:17" end="00:34:21">Aramchol, que es una molécula híbrida de ácidos</p>
+      <p begin="00:34:21" end="00:34:23">biliares y un lípido. En el tercero de estos se está evaluando</p>
+      <p begin="00:34:23" end="00:34:27">cenicriviroc, que es un antagonista del receptor de</p>
+      <p begin="00:34:27" end="00:34:33">la qumiocina CCR2/CCR5. Todos estos fármacos actúan sobre</p>
+      <p begin="00:34:33" end="00:34:37">distintos aspectos de la enfermedad y la mayoría tiene</p>
+      <p begin="00:34:37" end="00:34:43">cierta acción metabólica y alguna acción antinflamatoria.</p>
+      <p begin="00:34:43" end="00:34:45">Se están desarrollando otros con un efecto antifibrótico,</p>
+      <p begin="00:34:45" end="00:34:50">como cenicriviroc, que resultarán interesantísimos</p>
+      <p begin="00:34:50" end="00:34:52">y cuyos resultados estarán disponibles muy</p>
+      <p begin="00:34:52" end="00:34:55">pronto. Es muy importante que participemos</p>
+      <p begin="00:34:55" end="00:34:58">en estos ensayos y que convenzamos a los pacientes</p>
+      <p begin="00:34:58" end="00:35:05">de que pueden generar grandes beneficios y contribuir</p>
+      <p begin="00:35:05" end="00:35:09">a la investigación si deciden participar en estos ensayos,</p>
+      <p begin="00:35:09" end="00:35:12">en los que no son conejillos de Indias, sino</p>
+      <p begin="00:35:12" end="00:35:14">responsables del avance global de la medicina.</p>
+      <p begin="00:35:14" end="00:35:17">Así es. Como dices, estamos viviendo un momento</p>
+      <p begin="00:35:17" end="00:35:20">muy emocionante. Ya tenemos los resultados de uno de</p>
+      <p begin="00:35:20" end="00:35:23">los estudios y son positivos. El ensayo REGENERATE,</p>
+      <p begin="00:35:23" end="00:35:27">en el que se evaluó ácido obeticólico, tenía dos criterios</p>
+      <p begin="00:35:27" end="00:35:30">de valoración principales. Uno era la resolución de la ENA, que</p>
+      <p begin="00:35:30" end="00:35:33">lamentablemente no se alcanzó. No obstante, los datos</p>
+      <p begin="00:35:33" end="00:35:36">relativos al otro criterio de valoración, derivados del</p>
+      <p begin="00:35:36" end="00:35:40">análisis por intención de tratar, demuestran</p>
+      <p begin="00:35:40" end="00:35:43">la mejora de la fibrosis, sin el agravamiento de</p>
+      <p begin="00:35:43" end="00:35:46">la esteatohepatitis en pacientes con ENA.</p>
+      <p begin="00:35:46" end="00:35:49">En mi opinión, estamos dándonos cuenta de que</p>
+      <p begin="00:35:49" end="00:35:53">la farmacoterapia resultará beneficiosa en esta enfermedad.</p>
+      <p begin="00:35:53" end="00:35:55">Solo falta por saber cuáles fármacos</p>
+      <p begin="00:35:55" end="00:35:57">lograrán tener éxito.</p>
+      <p begin="00:35:57" end="00:36:00">Es importante comprender que es probable que</p>
+      <p begin="00:36:00" end="00:36:02">los dos desenlaces indicados guarden relación</p>
+      <p begin="00:36:02" end="00:36:06">con la progresión de la enfermedad. Lo que es importante </p>
+      <p begin="00:36:06" end="00:36:10">ahora es que algunos de estos se han controlado</p>
+      <p begin="00:36:10" end="00:36:12">a corto plazo. Es fundamental saber si</p>
+      <p begin="00:36:12" end="00:36:15">esto redunda en una menor incidencia de cirrosis.</p>
+      <p begin="00:36:15" end="00:36:17">Es vital que estos ensayos clínicos continúen.</p>
+      <p begin="00:36:17" end="00:36:21">Así es. Vista la situación, posiblemente el año</p>
+      <p begin="00:36:21" end="00:36:25">próximo o el siguiente, contemos con fármacos aprobados</p>
+      <p begin="00:36:25" end="00:36:28">para la esteatosis hepática. ¿Cómo cambiará esto la práctica?</p>
+      <p begin="00:36:28" end="00:36:31">Cambiará, sobre todo, en lo que atañe a la derivación, pues hasta ahora</p>
+      <p begin="00:36:31" end="00:36:36">los médicos de atención primaria y los especialistas no derivaban.</p>
+      <p begin="00:36:36" end="00:36:38">Esto también se debe a que no contamos con fármacos específicos.</p>
+      <p begin="00:36:38" end="00:36:40">Así que dicen para qué derivamos al hepatólogo,</p>
+      <p begin="00:36:40" end="00:36:43">qué hará diferente de lo que hacemos.</p>
+      <p begin="00:36:43" end="00:36:44">Eso es lo que va a cambiar.</p>
+      <p begin="00:36:44" end="00:36:45">Así es.</p>
+      <p begin="00:36:45" end="00:36:46">Sí, eso va a cambiar.</p>
+      <p begin="00:36:46" end="00:36:50">Para terminar, me gustaría señalar que</p>
+      <p begin="00:36:50" end="00:36:52">la esteatosis hepática es una afección muy prevalente.</p>
+      <p begin="00:36:52" end="00:36:55">Sabemos que se producen problemas hepáticos</p>
+      <p begin="00:36:55" end="00:36:58">y cardiovasculares importantes, por lo que nuestra labor,</p>
+      <p begin="00:36:58" end="00:37:03">como hepatólogos, consiste en hacer frente a estos. Debemos tratar</p>
+      <p begin="00:37:03" end="00:37:06">el origen haciendo frente a la obesidad. Debemos tratar</p>
+      <p begin="00:37:06" end="00:37:08">el riesgo cardiovascular haciendo frente a la dislipidemia</p>
+      <p begin="00:37:08" end="00:37:12">y la diabetes. Debemos estratificar el riesgo de nuestros pacientes</p>
+      <p begin="00:37:12" end="00:37:15">y centrar la atención en quienes tienen más riesgo de</p>
+      <p begin="00:37:15" end="00:37:18">sufrir daños. Ya contamos con varios conceptos</p>
+      <p begin="00:37:18" end="00:37:21">terapéuticos básicos, pero creo que lo mejor es</p>
+      <p begin="00:37:21" end="00:37:24">que, de aquí a unos años, tendremos</p>
+      <p begin="00:37:24" end="00:37:27">más fármacos en el arsenal terapéutico.</p>
+      <p begin="00:37:27" end="00:37:31">Es un momento ideal para el abordaje de la esteatosis hepática.</p>
+      <p begin="00:37:31" end="00:37:34">Y con esto terminamos. Gracias,</p>
+      <p begin="00:37:34" end="00:37:36">Elisabetta, y gracias, Vlad, por participar en</p>
+      <p begin="00:37:36" end="00:37:41">esta actividad. Gracias a ustedes por participar</p>
+      <p begin="00:37:41" end="00:37:44">y por acompañarnos en esta actividad. Ahora</p>
+      <p begin="00:37:44" end="00:37:45">sírvanse responder a las preguntas que siguen</p>
+      <p begin="00:37:45" end="00:37:47">y completen la evaluación.</p>
+    </div>
+  </body>
+</tt>

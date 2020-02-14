@@ -1,6 +1,10 @@
 // USE CLIP INSTEAD OF CONFLUENCE TO BUILD OBJECT
 // Put required code snippets inside of language object
 module.exports = {
+    english: {
+        videoConfigSuffix: "e",
+        xmlLang: "en"
+    },
     spanishLATAM: {
         videoConfigSuffix: "s",
         xmlLang: "es-419",

@@ -19,7 +19,11 @@ const N = cliTools.N;
 const captionsHelp = `
 Generates .vtt and .xml files for in language captions.`;
 
-const languageChoices = _.keys(languages);
+const languageChoices = _.filter(_.keys(languages), (language) => {
+    if (language != "portugueseBrazil" && language != "spanishLATAM") {
+        return true; 
+    }
+});
 
 let inputFile = function () {
     return cliTools.getInputDirectory() + '/captions/sheet001.htm';

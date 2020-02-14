@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="de" xmlns="http://www.w3.org/ns/ttml" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+  <body>
+    <div xml:lang="de">
+      <p begin="00:00:06" end="00:00:08">Hallo, ich bin Professor Quentin Anstee. Ich bin Professor</p>
+      <p begin="00:00:08" end="00:00:11">für experimentelle Hepatologie an der medizinischen Fakultät</p>
+      <p begin="00:00:11" end="00:00:14">der Universität Newcastle und außerdem Facharzt</p>
+      <p begin="00:00:14" end="00:00:17">für Hepatologie in der Hepatologischen Abteilung des Freeman</p>
+      <p begin="00:00:17" end="00:00:21">Hospital in Newcastle Upon Tyne, Vereinigtes Königreich. Willkommen bei</p>
+      <p begin="00:00:21" end="00:00:24">unserem Programm „Neue Entwicklungen bei der Fettleber:</p>
+      <p begin="00:00:24" end="00:00:27">Auswirkungen jüngster Daten auf die europäische Praxis“.</p>
+      <p begin="00:00:27" end="00:00:31">Zu Gast sind heute Prof. Elisabetta Bugianesi,</p>
+      <p begin="00:00:31" end="00:00:34">Professorin an der Abteilung für Gastroenterologie und</p>
+      <p begin="00:00:34" end="00:00:37">Hepatologie der Medizinischen Fakultät der</p>
+      <p begin="00:00:37" end="00:00:42">Universität Turin in Italien, und Professor Vlad Ratziu,</p>
+      <p begin="00:00:42" end="00:00:46">Professor für Hepatologie an der Universität Sorbonne und</p>
+      <p begin="00:00:46" end="00:00:49">am Pitié-Salpêtrière-Krankenhaus in Paris, Frankreich. Willkommen.</p>
+      <p begin="00:00:49" end="00:00:54">Wir sprechen heute über das Spektrum der</p>
+      <p begin="00:00:54" end="00:00:57">nichtalkoholischen Fettlebererkrankung. Viele von uns sind damit</p>
+      <p begin="00:00:57" end="00:01:01">sicherlich vertraut. Es beginnt mit einer normalen Leber, dann</p>
+      <p begin="00:01:01" end="00:01:04">sammelt sich Fett in dieser Leber an und führt zur sogenannten</p>
+      <p begin="00:01:04" end="00:01:08">Steatose oder nichtalkoholischen Fettlebererkrankung, kurz NAFLD.</p>
+      <p begin="00:01:08" end="00:01:12">Bei einigen Patienten entwickelt sich eine entzündliche Form der</p>
+      <p begin="00:01:12" end="00:01:16">Erkrankung, die sogenannte NASH, die nichtalkoholische Steatohepatitis.</p>
+      <p begin="00:01:16" end="00:01:20">Wenn diese länger andauert, kommt es bei manchen Betroffenen </p>
+      <p begin="00:01:20" end="00:01:23">zur Narben- und Fibrosebildung in der Leber, und das kann sich </p>
+      <p begin="00:01:23" end="00:01:27">zur fortgeschrittenen Fibrose und Zirrhose, bei einigen Patienten</p>
+      <p begin="00:01:27" end="00:01:32">auch zum hepatozellulären Karzinom weiterentwickeln. Je mehr</p>
+      <p begin="00:01:32" end="00:01:36">wir über Fettlebererkrankungen erfahren, desto klarer wird es,</p>
+      <p begin="00:01:36" end="00:01:39">dass es sich um einen sehr dynamischen Prozess handelt. Bei einigen</p>
+      <p begin="00:01:39" end="00:01:43">schreitet die Erkrankung stetig fort. Bei anderen wechseln sich</p>
+      <p begin="00:01:43" end="00:01:46">progressive und abklingende Phasen ab,</p>
+      <p begin="00:01:46" end="00:01:49">und dafür gibt es eine Reihe von Gründen.</p>
+      <p begin="00:01:49" end="00:01:53">Bei manchen davon handelt es sich um Umweltfaktoren, bei anderen um</p>
+      <p begin="00:01:53" end="00:01:57">genetische Faktoren, die dem Betroffenen zu eigen sind. Aber die</p>
+      <p begin="00:01:57" end="00:02:00">Haupt-Risikofaktoren, die wir in unserer klinischen Praxis beachten müssen,</p>
+      <p begin="00:02:00" end="00:02:04">sind Adipositas, Typ-2-Diabetes, Insulinresistenz,</p>
+      <p begin="00:02:04" end="00:02:07">Bluthochdruck und ein hoher Cholesterinspiegel, insgesamt</p>
+      <p begin="00:02:07" end="00:02:11">also die Merkmale des metabolischen Syndroms. Es gibt auch</p>
+      <p begin="00:02:11" end="00:02:13">eine Reihe genetischer Faktoren, die relevant sind.</p>
+      <p begin="00:02:13" end="00:02:18">Die Gene PNPLA3 und TM6SF z. B., </p>
+      <p begin="00:02:18" end="00:02:22">die Einzelnukleotid-Polymorphismen aufweisen, sind</p>
+      <p begin="00:02:22" end="00:02:25">mit einem höheren Risiko für die Krankheitsprogression,</p>
+      <p begin="00:02:25" end="00:02:28">einem höheren Risiko für Leberzirrhose und im Fall</p>
+      <p begin="00:02:28" end="00:02:33">von PNPLA3 auch mit einem höheren Risiko für Leberkrebs assoziiert.</p>
+      <p begin="00:02:33" end="00:02:38">Die Prävalenz von Fettlebererkrankungen in Europa ist hoch,</p>
+      <p begin="00:02:38" end="00:02:42">und eine kürzlich durchgeführte Metaanalyse deutet darauf hin, dass sie</p>
+      <p begin="00:02:42" end="00:02:46">weiter zunehmen wird. Derzeit gehen Schätzungen davon aus,</p>
+      <p begin="00:02:46" end="00:02:50">dass ca. 25 % der europäischen Bevölkerung zu einem</p>
+      <p begin="00:02:50" end="00:02:53">gewissen Grad an einer nichtalkoholischen Fettleber erkranken werden.</p>
+      <p begin="00:02:53" end="00:02:56">Das bedeutet, dass die Fettlebererkrankung den Alkoholkonsum</p>
+      <p begin="00:02:56" end="00:02:59">oder die Virushepatitis als häufigste Ursache für Lebererkrankungen</p>
+      <p begin="00:02:59" end="00:03:03">inzwischen abgelöst hat. Es ist besorgniserregend, dass das nicht nur</p>
+      <p begin="00:03:03" end="00:03:07">Erwachsene betrifft. Diese Erkrankung betrifft auch Kinder,</p>
+      <p begin="00:03:07" end="00:03:09">was bedeutet, dass Menschen in einer viel</p>
+      <p begin="00:03:09" end="00:03:11">früheren Lebensphase dem Risiko einer</p>
+      <p begin="00:03:11" end="00:03:15">progressiven Erkrankung ausgesetzt sind.</p>
+      <p begin="00:03:15" end="00:03:21">Eine der Herausforderungen besteht jedoch darin, zuverlässige Daten</p>
+      <p begin="00:03:21" end="00:03:25">zur Prävalenz zu erhalten. Viele der Daten, die wir derzeit haben,</p>
+      <p begin="00:03:25" end="00:03:28">basieren auf unserem Verständnis der</p>
+      <p begin="00:03:28" end="00:03:32">Prävalenz von Adipositas und Diabetes. Das Markov-Model</p>
+      <p begin="00:03:32" end="00:03:37">deutet jedoch darauf hin, dass die Prävalenz in den nächsten 10 Jahren</p>
+      <p begin="00:03:37" end="00:03:40">weiter zunehmen wird. Tatsächlich</p>
+      <p begin="00:03:40" end="00:03:45">wird ein Anstieg um weitere 21 %, von etwa 80</p>
+      <p begin="00:03:45" end="00:03:49">Millionen Betroffenen in ganz Europa auf über 100 Millionen</p>
+      <p begin="00:03:49" end="00:03:52">Menschen prognostiziert. Damit steigt wahrscheinlich nicht</p>
+      <p begin="00:03:52" end="00:03:55">nur die Prävalenz der Steatose, sondern auch der Steatohepatitis an.</p>
+      <p begin="00:03:55" end="00:03:59">Und das hat natürlich erhebliche</p>
+      <p begin="00:03:59" end="00:04:03">Auswirkungen auf die Pflegekosten.</p>
+      <p begin="00:04:03" end="00:04:07">Vlad, Professor Ratziu, können Sie uns etwas mehr dazu erzählen?</p>
+      <p begin="00:04:07" end="00:04:08">Was weiß man über die wahrscheinliche Höhe</p>
+      <p begin="00:04:08" end="00:04:10">der Kosten für die Behandlung von Fettlebererkrankungen?</p>
+      <p begin="00:04:10" end="00:04:13">Im Moment haben wir nur Schätzungen. Wir kennen</p>
+      <p begin="00:04:13" end="00:04:17">die tatsächlichen Zahlen nicht und die tatsächlichen Zahlen hängen</p>
+      <p begin="00:04:17" end="00:04:22">natürlich von der Diagnoserate und auch davon ab, ob</p>
+      <p begin="00:04:22" end="00:04:26">die Diagnose früh oder spät gestellt wird. Wir können uns daher nur auf</p>
+      <p begin="00:04:26" end="00:04:29">Schätzungen stützen, die auf der Prävalenz von Adipositas</p>
+      <p begin="00:04:29" end="00:04:32">und Diabetes, auf unserem Verständnis der Prävalenz</p>
+      <p begin="00:04:32" end="00:04:36">schwerwiegender Erkrankungen bei allen NAFLD-Patienten</p>
+      <p begin="00:04:36" end="00:04:39">und auch auf unseren derzeitigen Behandlungsmethoden beruhen.</p>
+      <p begin="00:04:39" end="00:04:43">All das ist natürlich nicht sehr präzise, da die</p>
+      <p begin="00:04:43" end="00:04:47">Sensibilisierung zunehmen wird, die Diagnostik immer besser wird,</p>
+      <p begin="00:04:47" end="00:04:51">nicht-invasive Diagnostik mehr Reihenuntersuchungen ermöglichen wird,</p>
+      <p begin="00:04:51" end="00:04:56">und sich zudem unsere Behandlungsmethoden durch die</p>
+      <p begin="00:04:56" end="00:05:00">Verfügbarkeit neuer Medikamente erheblich verändern werden.</p>
+      <p begin="00:05:00" end="00:05:05">Aber alles in allem kann man sagen, was eine der hier auf dem</p>
+      <p begin="00:05:05" end="00:05:09">American Liver Meeting vorgestellten Studien in 5 großen</p>
+      <p begin="00:05:09" end="00:05:13">westeuropäischen Ländern gezeigt hat, nämlich dass die</p>
+      <p begin="00:05:13" end="00:05:19">Behandlung dieser Patienten mit erheblichen Kosten verbunden ist.</p>
+      <p begin="00:05:19" end="00:05:22">Anscheinend kann man den Großteil der Kosten auf sehr schwere</p>
+      <p begin="00:05:22" end="00:05:26">Fälle von NAFLD oder NASH zurückführen. Es wurde geschätzt,</p>
+      <p begin="00:05:26" end="00:05:31">dass 95 % der Kosten bei Menschen mit fortgeschrittener Fibrose</p>
+      <p begin="00:05:31" end="00:05:34">oder Zirrhose anfallen. Das ist sehr besorgniserregend, da wir wissen:</p>
+      <p begin="00:05:34" end="00:05:37">Sobald dieses zirrhotische Stadium erreicht ist, kostet</p>
+      <p begin="00:05:37" end="00:05:40">die Prävention von Komplikationen und die Prävention von</p>
+      <p begin="00:05:40" end="00:05:44">Radikalmaßnahmen wie einer Lebertransplantation</p>
+      <p begin="00:05:44" end="00:05:47">eine Menge Geld. All das wird derzeit geklärt,</p>
+      <p begin="00:05:47" end="00:05:51">aber wir gehen davon aus, dass die Gesundheitssysteme</p>
+      <p begin="00:05:51" end="00:05:55">durch diese Erkrankung erheblich belastet werden.</p>
+      <p begin="00:05:55" end="00:05:58">Okay, vielen Dank. Das ist ein sehr wichtiger Punkt.</p>
+      <p begin="00:05:58" end="00:06:02">Wir Ärzte tendieren dazu, unsere Diagnose zu</p>
+      <p begin="00:06:02" end="00:06:06">„dichotomisieren“ und Patienten, wenn Sie so wollen, in bestimmte</p>
+      <p begin="00:06:06" end="00:06:10">Kategorien wie „nichtalkoholische Fettlebererkrankung“ oder </p>
+      <p begin="00:06:10" end="00:06:13">„alkoholische Lebererkrankung“ zu unterteilen. Gibt es Hinweise auf einen</p>
+      <p begin="00:06:13" end="00:06:18">synergistischen Effekt zwischen Alkohol und Adipositas, und sollten</p>
+      <p begin="00:06:18" end="00:06:20">wir Ihrer Meinung nach damit beginnen, das als Spektrum</p>
+      <p begin="00:06:20" end="00:06:24">einer einzigen Erkrankung zu betrachten? Vlad, was denken Sie darüber?</p>
+      <p begin="00:06:24" end="00:06:26">Ich bin mir nicht sicher, ob wir von einem „Spektrum“ sprechen können.</p>
+      <p begin="00:06:26" end="00:06:30">In einem Spektrum wären vermutlich die gängigen Verläufe gleich. </p>
+      <p begin="00:06:30" end="00:06:32">Was uns aber auf jeden Fall klar sein muss, ist, dass die</p>
+      <p begin="00:06:32" end="00:06:35">beiden Erkrankungen koexistieren. So viele Menschen trinken gelegentlich</p>
+      <p begin="00:06:35" end="00:06:39">oder unregelmäßig oder sogar regelmäßig schädliche Mengen Alkohol.</p>
+      <p begin="00:06:39" end="00:06:42">Die beiden können also eindeutig koexistieren, und es hat sich</p>
+      <p begin="00:06:42" end="00:06:46">gezeigt, dass der Schaden für die Leber viel höher ist, wenn</p>
+      <p begin="00:06:46" end="00:06:49">bei bestehender Adipositas Alkohol getrunken wird oder umgekehrt, </p>
+      <p begin="00:06:49" end="00:06:52">wenn bei hohem Alkoholkonsum obendrein eine Adipositas oder</p>
+      <p begin="00:06:52" end="00:06:56">ein metabolisches Syndrom dazukommt. Diese additiven oder</p>
+      <p begin="00:06:56" end="00:07:00">synergistischen Effekte wurden retrospektiv nachgewiesen.</p>
+      <p begin="00:07:00" end="00:07:04">Aber noch interessanter ist: Was die andere Seite des Spektrums</p>
+      <p begin="00:07:04" end="00:07:07">(in Bezug auf schädlichen Alkoholkonsum) angeht, so zeigte sich selbst</p>
+      <p begin="00:07:07" end="00:07:12">in größeren Bevölkerungsstudien, dass das Vorhandensein metabolischer</p>
+      <p begin="00:07:12" end="00:07:15">Risikofaktoren die Wahrscheinlichkeit für leberassoziierte Ereignisse</p>
+      <p begin="00:07:15" end="00:07:19">unabhängig vom Alkoholkonsum erhöhte.</p>
+      <p begin="00:07:19" end="00:07:24">Bei Patienten, die Alkohol trinken, selbst in geringeren Mengen und</p>
+      <p begin="00:07:24" end="00:07:27">gleich, ob Diabetiker oder Adipositas-Patient, erhöht die Prävalenz</p>
+      <p begin="00:07:27" end="00:07:31">metabolischer Risikofaktoren den damit verbundenen Schaden</p>
+      <p begin="00:07:31" end="00:07:33">und die Anzahl leberassoziierter Ereignisse. Also tragen beide</p>
+      <p begin="00:07:33" end="00:07:36">Erkrankungen dazu bei. Es ist nicht so, als könnte man die eine oder</p>
+      <p begin="00:07:36" end="00:07:39">andere ignorieren. Also anstatt zu versuchen zu verstehen,</p>
+      <p begin="00:07:39" end="00:07:42">wohin die Pathophysiologie führt – da gibt es ein Spektrum –</p>
+      <p begin="00:07:42" end="00:07:44">sollten wir uns meiner Meinung nach bemühen,</p>
+      <p begin="00:07:44" end="00:07:48">die Menge an Alkohol so gut wie möglich zu quantifizieren,</p>
+      <p begin="00:07:48" end="00:07:51">und dann unter uns ausmachen, ob kleine Mengen</p>
+      <p begin="00:07:51" end="00:07:53">Alkohol akzeptabel sind oder ob</p>
+      <p begin="00:07:53" end="00:07:56">wir den Alkoholkonsum komplett verbieten sollten.</p>
+      <p begin="00:07:56" end="00:07:59">Ich denke, das ist immer noch eine ungeklärte Frage.</p>
+      <p begin="00:07:59" end="00:08:01">Ja, auf jeden Fall. Und neue Daten zeigen,</p>
+      <p begin="00:08:01" end="00:08:04">dass sogar eine einzige Alkoholeinheit pro Tag, insbesondere bei</p>
+      <p begin="00:08:04" end="00:08:07">Typ-2-Diabetikern, mit einem erhöhten Risiko für eine</p>
+      <p begin="00:08:07" end="00:08:11">fortgeschrittene Leberfibrose assoziiert sein kann. Das ist also</p>
+      <p begin="00:08:11" end="00:08:13">eine sehr wichtige Frage, und ich denke, dieses Thema muss</p>
+      <p begin="00:08:13" end="00:08:16">vom Fachbereich in Zukunft berücksichtigt werden.</p>
+      <p begin="00:08:16" end="00:08:20">Es gibt also tatsächlich eine Reihe von Merkmalen, </p>
+      <p begin="00:08:20" end="00:08:23">die die stärksten Indikatoren für Morbidität und Mortalität bei</p>
+      <p begin="00:08:23" end="00:08:26">Fettlebererkrankungen darstellen. Leberzirrhose ist die Erkrankung,</p>
+      <p begin="00:08:26" end="00:08:29">die wir als Ärzte sehr stark im Blick haben. Das hepatozelluläre</p>
+      <p begin="00:08:29" end="00:08:33">Karzinom ist eine weitere. Beide tragen natürlich</p>
+      <p begin="00:08:33" end="00:08:38">zur steigenden Nachfrage nach Lebertransplantationen bei.</p>
+      <p begin="00:08:38" end="00:08:42">Elisabetta, kommen wir auf die Risiken eines hepatozellulären</p>
+      <p begin="00:08:42" end="00:08:46">Karzinoms zu sprechen: Was sind die Hauptauslöser? Wie hoch ist die</p>
+      <p begin="00:08:46" end="00:08:50">Wahrscheinlichkeit für die Entwicklung eines Leberzellkarzinoms </p>
+      <p begin="00:08:50" end="00:08:52">vor dem Hintergrund einer Fettlebererkrankung?</p>
+      <p begin="00:08:52" end="00:08:55">Das hepatozelluläre Karzinom bei NASH ist eine besondere Form</p>
+      <p begin="00:08:55" end="00:08:59">des Leberzellkarzinoms insofern, als es nicht nur</p>
+      <p begin="00:08:59" end="00:09:02">von Lebererkrankungen selbst – insbesondere von Leberzirrhose –</p>
+      <p begin="00:09:02" end="00:09:06">beeinflusst wird, da es auch bei nicht-zirrhotischer Leber auftreten kann.</p>
+      <p begin="00:09:06" end="00:09:10">Das kommt daher, dass einige der Komponenten des</p>
+      <p begin="00:09:10" end="00:09:13">metabolischen Syndroms, insbesondere Typ-2-Diabetes</p>
+      <p begin="00:09:13" end="00:09:16">und Adipositas, selbst mit dem Risiko eines</p>
+      <p begin="00:09:16" end="00:09:20">hepatozellulären Karzinoms assoziiert sind, also eine additive</p>
+      <p begin="00:09:20" end="00:09:25">Wirkung durch Zirrhose, Adipositas und Typ-2-Diabetes entsteht,</p>
+      <p begin="00:09:25" end="00:09:28">und obendrein könnte es einen genetischen Aspekt geben –</p>
+      <p begin="00:09:28" end="00:09:33">die von Ihnen erwähnte PNPLA3-GG-Variante, die mit einem</p>
+      <p begin="00:09:33" end="00:09:37">5-fach erhöhten Risiko für ein Leberzellkarzinom verbunden ist.</p>
+      <p begin="00:09:37" end="00:09:43">Wenn man einen einzelnen Risikofaktor ausmachen möchte,</p>
+      <p begin="00:09:43" end="00:09:46">oder sozusagen, wenn man einen Patienten mit einer</p>
+      <p begin="00:09:46" end="00:09:50">langjährigen Lebererkrankung hat, einer langjährigen Leberzirrhose,</p>
+      <p begin="00:09:50" end="00:09:53">einem langjährigen Diabetes und einigen der</p>
+      <p begin="00:09:53" end="00:09:58">PNPLA3-Varianten, ist das Risiko für ein hepatozelluläres Karzinom</p>
+      <p begin="00:09:58" end="00:10:02">tatsächlich sehr hoch, weil das Risiko durch die Krankheit selbst</p>
+      <p begin="00:10:02" end="00:10:08">um das 2,5-Fache und durch die Adipositas um das 2,5-Fache erhöht ist.</p>
+      <p begin="00:10:08" end="00:10:13">Und die Adipositas hängt auch von der Dauer der Adipositas ab.</p>
+      <p begin="00:10:13" end="00:10:17">Denn wer seit der Kindheit adipös war,</p>
+      <p begin="00:10:17" end="00:10:21">hat im Erwachsenenalter ein höheres Risiko für HCC,</p>
+      <p begin="00:10:21" end="00:10:25">und es entwickelt sich sehr früh ein hepatozelluläres Karzinom</p>
+      <p begin="00:10:25" end="00:10:29">verglichen mit Patienten, die erst im Erwachsenenalter</p>
+      <p begin="00:10:29" end="00:10:34">adipös sind. Also ist das ein besonders wichtiges</p>
+      <p begin="00:10:34" end="00:10:37">Problem im Hinblick auf die steigende Prävalenz der Adipositas</p>
+      <p begin="00:10:37" end="00:10:40">bei Kindern in ganz Europa, aber auch auf der ganzen Welt.</p>
+      <p begin="00:10:40" end="00:10:43">Es ist also die Dauer des Risikos, die das beeinflusst?</p>
+      <p begin="00:10:43" end="00:10:48">Es geht um die Exposition gegenüber Risikofaktoren. Adipositas ist</p>
+      <p begin="00:10:48" end="00:10:52">ein Risikofaktor, Typ-2-Diabetes ein anderer. Mitsamt dem genetischen</p>
+      <p begin="00:10:52" end="00:10:55">Hintergrund kann dies das Fortschreiten zum HCC beschleunigen. Und</p>
+      <p begin="00:10:55" end="00:10:58">dann trinken Betroffene vielleicht im Laufe des Lebens ein bisschen</p>
+      <p begin="00:10:58" end="00:11:04">mehr Alkohol oder bekommen einen Virus, was das Risiko</p>
+      <p begin="00:11:04" end="00:11:07">für ein hepatozelluläres Karzinom definitiv erhöht.</p>
+      <p begin="00:11:07" end="00:11:12">Wir sehen jetzt, dass das bei NASH auftretende Leberzellkarzinom</p>
+      <p begin="00:11:12" end="00:11:17">die am schnellsten zunehmende Erkrankung ist, die für eine </p>
+      <p begin="00:11:17" end="00:11:23">Aufnahme in die Lebertransplantationsliste qualifiziert. Natürlich</p>
+      <p begin="00:11:23" end="00:11:27">sind Hepatitis C und Hepatitis B immer noch die Hauptgründe,</p>
+      <p begin="00:11:27" end="00:11:30">ihr Anteil nimmt aber ab, insbesondere Hepatitis C.</p>
+      <p begin="00:11:30" end="00:11:35">Nicht sehr schnell, es wird einige Zeit dauern, bis wir die tatsächliche</p>
+      <p begin="00:11:35" end="00:11:42">Auswirkung der neuen Therapien sehen. Aber in 20 Jahren </p>
+      <p begin="00:11:42" end="00:11:46">wird das hepatozelluläre Karzinom infolge NASH wahrscheinlich</p>
+      <p begin="00:11:46" end="00:11:49">eine echte Belastung darstellen, wenn wir davor nichts unternehmen.</p>
+      <p begin="00:11:49" end="00:11:53">OK. Also, vor diesem Hintergrund: Vlad, was sollten wir aktuell </p>
+      <p begin="00:11:53" end="00:11:56">in Bezug auf das HCC-Screening tun? Sollten alle Patienten</p>
+      <p begin="00:11:56" end="00:11:59">mit Fettlebererkrankung untersucht werden? Wie sollten</p>
+      <p begin="00:11:59" end="00:12:01">wir das angehen? Was denken Sie?</p>
+      <p begin="00:12:01" end="00:12:08">Ich denke, zurzeit geht man bei der Behandlung eines einzelnen Patienten</p>
+      <p begin="00:12:08" end="00:12:11">nach dem Gefühl. Wenn es sich jedoch um mehr als einen Patienten handelt,</p>
+      <p begin="00:12:11" end="00:12:16">muss man Strategien entwickeln, die anwendbar und </p>
+      <p begin="00:12:16" end="00:12:19">kosteneffizient sind. Und ich denke, zum jetzigen Zeitpunkt kann man</p>
+      <p begin="00:12:19" end="00:12:23">lediglich sagen, dass Patienten mit Leberzirrhose auf </p>
+      <p begin="00:12:23" end="00:12:25">hepatozelluläres Karzinom untersucht werden müssen,</p>
+      <p begin="00:12:25" end="00:12:28">genau wie wir es bei jeder Ursache der Leberzirrhose tun.</p>
+      <p begin="00:12:28" end="00:12:31">Wie ist es bei Patienten ohne Leberzirrhose? Das ist ein sehr schwieriges </p>
+      <p begin="00:12:31" end="00:12:34">Thema, da es natürlich Fälle ohne Leberzirrhose gibt,</p>
+      <p begin="00:12:34" end="00:12:37">manchmal sogar ohne NASH, bei denen es sich einfach nur um eine</p>
+      <p begin="00:12:37" end="00:12:41">Fettleber handelt. Diese Fälle scheinen jedoch in Bezug auf</p>
+      <p begin="00:12:41" end="00:12:44">Vorfälle so selten zu sein, dass sie ein systematisches Screening</p>
+      <p begin="00:12:44" end="00:12:48">nicht rechtfertigen. Und die Anzahl der Risikopatienten ist zu hoch.</p>
+      <p begin="00:12:48" end="00:12:51">Wenn wir uns die Leitlinien für die klinische Praxis anschauen,</p>
+      <p begin="00:12:51" end="00:12:56">die unsere Kollegen aufgestellt haben, insbesondere die</p>
+      <p begin="00:12:56" end="00:13:02">der ESMO für HCC, so besteht Einigkeit darüber, dass ein systematisches</p>
+      <p begin="00:13:02" end="00:13:09">Screening bei einer Inzidenz von weniger als 1,5 % pro Jahr</p>
+      <p begin="00:13:09" end="00:13:11">nicht kosteneffektiv ist. Und das ist eindeutig</p>
+      <p begin="00:13:11" end="00:13:13">der Fall bei nicht-zirrhotischer NASH.</p>
+      <p begin="00:13:13" end="00:13:16">Interessant ist, dass Patienten mit Leberzirrhose regelmäßig überwacht</p>
+      <p begin="00:13:16" end="00:13:20">werden sollten, was wir auch praktizieren. Aber selbst bei Patienten</p>
+      <p begin="00:13:20" end="00:13:23">mit Leberzirrhose scheint es eine sehr große Variabilität hinsichtlich des</p>
+      <p begin="00:13:23" end="00:13:26">Risikos zu geben. Einige Patienten mit Leberzirrhose haben ein viel höheres</p>
+      <p begin="00:13:26" end="00:13:30">Risiko als andere. Das haben wir beobachtet. Und es stimmt,</p>
+      <p begin="00:13:30" end="00:13:34">dass jede kanzerogene Substanz ihre eigene Potenz, ihre onkogene</p>
+      <p begin="00:13:34" end="00:13:37">Potenz hat, die bei HPV, Aflatoxin, HCC und NASH unterschiedlich</p>
+      <p begin="00:13:37" end="00:13:40">ausfallen kann. Es besteht also Grund zur Annahme, dass jede</p>
+      <p begin="00:13:40" end="00:13:43">Krankheit eine andere aufweisen könnte. Selbst bei zirrhotischen</p>
+      <p begin="00:13:43" end="00:13:47">Patienten ist das also noch nicht abgeschlossen, der Versuch,</p>
+      <p begin="00:13:47" end="00:13:51">diejenigen mit höherem Risiko zu identifizieren. Aber im Moment würde ich</p>
+      <p begin="00:13:51" end="00:13:53">sagen, dass zirrhotische Patienten alle 6 Monate gescreent werden sollten.</p>
+      <p begin="00:13:53" end="00:13:55">Für die anderen gilt: nur gelegentlich ein Ultraschall,</p>
+      <p begin="00:13:55" end="00:13:57">da kann keine Empfehlung abgegeben werden.</p>
+      <p begin="00:13:57" end="00:14:00">Ok. Vielen Dank. Wir wissen also, dass viele Patienten mit</p>
+      <p begin="00:14:00" end="00:14:03">nichtalkoholischer Fettlebererkrankung tatsächlich keinen direkten</p>
+      <p begin="00:14:03" end="00:14:07">Leberschaden erleiden. In der Tat zeigte die Studie des verstorbenen</p>
+      <p begin="00:14:07" end="00:14:11">Paul Angulo aus dem Jahr 2015, dass nur etwa</p>
+      <p begin="00:14:11" end="00:14:15">9 bis 10 % der Patienten unter Verlaufsbeobachtung an</p>
+      <p begin="00:14:15" end="00:14:18">Leberversagen starben und bei wesentlich mehr Patienten </p>
+      <p begin="00:14:18" end="00:14:23">ein kardiovaskulärer Endpunkt auftrat. Elisabetta, können Sie uns</p>
+      <p begin="00:14:23" end="00:14:27">etwas mehr über nicht mit der Leber zusammenhängende Ereignisse</p>
+      <p begin="00:14:27" end="00:14:30">und Auswirkungen bei Patienten mit Fettlebererkrankungen erzählen?</p>
+      <p begin="00:14:30" end="00:14:33">Ich möchte zunächst etwas zu den Bedingungen dieser Arbeit</p>
+      <p begin="00:14:33" end="00:14:37">sagen, da wir daran beteiligt waren. NAFLD-Patienten,</p>
+      <p begin="00:14:37" end="00:14:41">die wir nachbeobachtet haben, waren NAFLD-Patienten </p>
+      <p begin="00:14:41" end="00:14:44">in einem frühen Stadium der Lebererkrankung. Sie wurden</p>
+      <p begin="00:14:44" end="00:14:49">überwacht, und die leberassoziierten Morbiditäts- und</p>
+      <p begin="00:14:49" end="00:14:52">Mortalitätsraten waren aufgrund dieser Bedingungen niedrig.</p>
+      <p begin="00:14:52" end="00:14:57">Gleichzeitig jedoch behandeln wir viele Patienten,</p>
+      <p begin="00:14:57" end="00:15:01">die nicht überwacht werden und erst zu uns überwiesen werden, wenn sie</p>
+      <p begin="00:15:01" end="00:15:05">eine dekompensierte Leberzirrhose haben, oder eine größere Komplikation</p>
+      <p begin="00:15:05" end="00:15:08">wie das hepatozelluläre Karzinom. Abgesehen davon sind natürlich</p>
+      <p begin="00:15:08" end="00:15:12">kardiovaskuläre Erkrankungen die Haupttodesursache</p>
+      <p begin="00:15:12" end="00:15:15">bei diesen Patienten, da es sich bei der NAFLD nicht nur um eine</p>
+      <p begin="00:15:15" end="00:15:20">Lebererkrankung handelt. Es ist eine systemische Erkrankung infolge</p>
+      <p begin="00:15:20" end="00:15:26">einer Stoffwechselerkrankung, die manchmal auch die Leber</p>
+      <p begin="00:15:26" end="00:15:32">angreift, aber normalerweise ist die größte Gefahr</p>
+      <p begin="00:15:32" end="00:15:36">für diese Patienten das kardiovaskuläre Risiko.</p>
+      <p begin="00:15:36" end="00:15:39">Das Problem ist, dass NAFLD und das metabolische Syndrom</p>
+      <p begin="00:15:39" end="00:15:44">eine Art bidirektionale Beziehung haben: Einerseits entsteht</p>
+      <p begin="00:15:44" end="00:15:49">eine Fettleber, wenn aufgrund der Insulinresistenz</p>
+      <p begin="00:15:49" end="00:15:53">des Fettgewebes mehr freie Fettsäure in die Leber gelangt,</p>
+      <p begin="00:15:53" end="00:15:58">andererseits aber, wenn die Leber verfettet,</p>
+      <p begin="00:15:58" end="00:16:01">steigt die Glukose-Produktion durch die Leber.</p>
+      <p begin="00:16:01" end="00:16:05">Der Patient erkrankt also eher an Typ-2-Diabetes</p>
+      <p begin="00:16:05" end="00:16:09">und die Leber produziert auch mehr Lipide.</p>
+      <p begin="00:16:09" end="00:16:13">Das führt zu einem atherogeneren Profil, und zusammen</p>
+      <p begin="00:16:13" end="00:16:20">mit der Produktion von C-reaktivem Protein und PAI-1, beides</p>
+      <p begin="00:16:20" end="00:16:25">proinflammatorische Faktoren, begünstigt das</p>
+      <p begin="00:16:25" end="00:16:29">die Entwicklung von Herz-Kreislauf-Erkrankungen.</p>
+      <p begin="00:16:29" end="00:16:32">OK, es ist also keine Einbahnstraße. Die eine Störung kann</p>
+      <p begin="00:16:32" end="00:16:36">die andere fördern und umgekehrt. Würden Sie das so beschreiben?</p>
+      <p begin="00:16:36" end="00:16:40">Ja, es ist nicht nur eine Folge des metabolischen</p>
+      <p begin="00:16:40" end="00:16:44">Syndroms, obwohl es ein Hauptfaktor des metabolischen</p>
+      <p begin="00:16:44" end="00:16:49">Syndroms ist, wenn die Leber verfettet ist. Es erhöht alle negativen</p>
+      <p begin="00:16:49" end="00:16:53">Endpunkte des metabolischen Syndroms, sowohl das Risiko für</p>
+      <p begin="00:16:53" end="00:16:55">Typ-2-Diabetes als auch das Risiko für</p>
+      <p begin="00:16:55" end="00:16:59">die Entwicklung kardiovaskulärer Erkrankungen.</p>
+      <p begin="00:16:59" end="00:17:03">OK, vielen Dank. Es gibt also eine Reihe von Herausforderungen</p>
+      <p begin="00:17:03" end="00:17:06">bei der Behandlung von Patienten mit </p>
+      <p begin="00:17:06" end="00:17:09">Fettlebererkrankungen. Zunächst müssen wir Patienten</p>
+      <p begin="00:17:09" end="00:17:12">mit dem größten Risiko für eine NAFLD identifizieren.</p>
+      <p begin="00:17:12" end="00:17:16">Dann müssen wir über eine Risikostratifizierung nachdenken,</p>
+      <p begin="00:17:16" end="00:17:18">um Patienten mit Fettlebererkrankungen zu identifizieren, die die</p>
+      <p begin="00:17:18" end="00:17:21">schlechteste Prognose haben. Und schließlich</p>
+      <p begin="00:17:21" end="00:17:23">gibt es natürlich Herausforderungen, wie man diese Erkrankung</p>
+      <p begin="00:17:23" end="00:17:25">am besten handhabt und behandelt.</p>
+      <p begin="00:17:25" end="00:17:30">Was mir immer Sorge macht, ist die Frage, ob</p>
+      <p begin="00:17:30" end="00:17:34">wir tatsächlich alle Patienten innerhalb der Bevölkerung</p>
+      <p begin="00:17:34" end="00:17:37">erfassen können, die an einer Fettlebererkrankung leiden.</p>
+      <p begin="00:17:37" end="00:17:40">Einerseits lässt die Prognose darauf schließen, dass etwa ein Viertel</p>
+      <p begin="00:17:40" end="00:17:43">der Bevölkerung zu einem gewissen Grad an einer Fettlebererkrankung</p>
+      <p begin="00:17:43" end="00:17:46">leidet. Wenn wir uns jedoch Real-World-Evidenz anschauen,</p>
+      <p begin="00:17:46" end="00:17:50">wie eine kürzlich durchgeführte Studie, in der mehr als</p>
+      <p begin="00:17:50" end="00:17:53">18 Millionen Erwachsene aus Datenbanken zur Grundversorgung</p>
+      <p begin="00:17:53" end="00:17:57">in vier europäischen Ländern untersucht wurden, stellen wir fest,</p>
+      <p begin="00:17:57" end="00:18:01">dass nur 137.000 davon tatsächlich</p>
+      <p begin="00:18:01" end="00:18:03">als Fettlebererkrankungen kodiert wurden.</p>
+      <p begin="00:18:03" end="00:18:08">Das ist ein sehr großer Unterschied und weist womöglich</p>
+      <p begin="00:18:08" end="00:18:11">darauf hin, dass die Fettleber nicht so häufig auftritt, wie wir</p>
+      <p begin="00:18:11" end="00:18:16">denken. Aber eine andere Interpretation der Daten,</p>
+      <p begin="00:18:16" end="00:18:18">die ich für viel wahrscheinlicher halte, lautet, dass wir</p>
+      <p begin="00:18:18" end="00:18:20">diese Erkrankung nicht genau diagnostizieren können</p>
+      <p begin="00:18:20" end="00:18:24">und sie nicht genau kodieren können, sodass sie in der Statistik</p>
+      <p begin="00:18:24" end="00:18:27">nicht erfasst wird. Wir wissen, dass Patienten mit Typ-2-Diabetes,</p>
+      <p begin="00:18:27" end="00:18:31">Bluthochdruck, Adipositas und metabolischem</p>
+      <p begin="00:18:31" end="00:18:34">Syndrom viel häufiger an einer Fettlebererkrankung</p>
+      <p begin="00:18:34" end="00:18:37">leiden. Vlad, könnten Sie uns etwas mehr über die</p>
+      <p begin="00:18:37" end="00:18:40">Gründe sagen, warum die Fettlebererkrankung</p>
+      <p begin="00:18:40" end="00:18:43">möglicherweise weniger erfasst wird?</p>
+      <p begin="00:18:43" end="00:18:50">Ich denke, es gibt einige historische Gründe dafür.</p>
+      <p begin="00:18:50" end="00:18:52">Sehr lange galt Steatose als gutartige Erkrankung, </p>
+      <p begin="00:18:52" end="00:18:56">die mit Adipositas oder Übergewicht einhergeht, </p>
+      <p begin="00:18:56" end="00:19:02">also keinen Grund zur Sorge gibt. Außerdem denke ich:</p>
+      <p begin="00:19:02" end="00:19:08">Die Tatsache, dass wir keinen einfachen Test zur Vorhersage</p>
+      <p begin="00:19:08" end="00:19:14">der Erkrankung haben, ist auch ein Hindernis für die Identifizierung</p>
+      <p begin="00:19:14" end="00:19:17">dieser Patienten. Natürlich kann man Ultraschall machen,</p>
+      <p begin="00:19:17" end="00:19:21">aber Ultraschall ist auch nicht sehr empfindlich. Drittens</p>
+      <p begin="00:19:21" end="00:19:26">ist die Pathogenese der Erkrankung sehr lange nicht</p>
+      <p begin="00:19:26" end="00:19:28">verstanden worden, sodass es den Handlungsdruck</p>
+      <p begin="00:19:28" end="00:19:33">nicht gab, den wir heute haben, da die verfügbaren Daten zeigen,</p>
+      <p begin="00:19:33" end="00:19:35">dass die Erkrankung zum Endstadium einer Lebererkrankung</p>
+      <p begin="00:19:35" end="00:19:38">fortschreiten kann. Viele dachten jahrelang, dass diese</p>
+      <p begin="00:19:38" end="00:19:41">Erkrankung niemals oder nur „anekdotisch“ zu einer Lebererkrankung im </p>
+      <p begin="00:19:41" end="00:19:45">Endstadium führen könnte. Und zuletzt die Tatsache, dass es</p>
+      <p begin="00:19:45" end="00:19:50">unabhängig von der Diagnostizierung oder Einstufung nichts weiter</p>
+      <p begin="00:19:50" end="00:19:54">zu tun gibt als das, was bereits gemacht wurde, nämlich</p>
+      <p begin="00:19:54" end="00:19:56">es mit Diät- und Lebensstilmaßnahmen zu versuchen.</p>
+      <p begin="00:19:56" end="00:19:58">Mit anderen Worten: Die Tatsache, dass es keine gezielte </p>
+      <p begin="00:19:58" end="00:20:02">Therapie gibt, ist auch ein wesentliches Hindernis für die</p>
+      <p begin="00:20:02" end="00:20:05">aktive Untersuchung auf diese Erkrankung.</p>
+      <p begin="00:20:05" end="00:20:08">Ich denke, das könnten die Faktoren sein. Und all die Studien,</p>
+      <p begin="00:20:08" end="00:20:11">die angefangen wurden, insbesondere die, die Sie vorhin erwähnt</p>
+      <p begin="00:20:11" end="00:20:17">haben: Da kommt es darauf an, in welchem Kontext diese</p>
+      <p begin="00:20:17" end="00:20:19">Studien durchgeführt werden. Wenn man sich nur</p>
+      <p begin="00:20:19" end="00:20:21">die hospitalisierten Patienten anschaut, dann liegt der Anteil</p>
+      <p begin="00:20:21" end="00:20:24">natürlich weit unter 24 % der Bevölkerung. Wenn man sich</p>
+      <p begin="00:20:24" end="00:20:26">die Primär-, Sekundär- und Tertiärversorgung anschaut,</p>
+      <p begin="00:20:26" end="00:20:29">kann dieser Prozentsatz ganz anders ausfallen,</p>
+      <p begin="00:20:29" end="00:20:32">je nachdem, warum Patienten ihren Arzt aufsuchen.</p>
+      <p begin="00:20:32" end="00:20:35">Okay, ich möchte jetzt ein wenig über Risikostratifizierung sprechen,</p>
+      <p begin="00:20:35" end="00:20:39">worum es sich handelt, warum sie wichtig ist und wie wir </p>
+      <p begin="00:20:39" end="00:20:43">sie anwenden sollten. Erstens muss dieser Prozess damit beginnen, </p>
+      <p begin="00:20:43" end="00:20:47">dass wir erkennen, bei wem das Risiko für eine Lebererkrankung</p>
+      <p begin="00:20:47" end="00:20:49">besteht. Und da sind wir wieder bei dem Thema, über das wir bereits</p>
+      <p begin="00:20:49" end="00:20:52">gesprochen haben: die Merkmale des metabolischen Syndroms.</p>
+      <p begin="00:20:52" end="00:20:54">Je mehr dieser Merkmale ein Patient aufweist, desto größer</p>
+      <p begin="00:20:54" end="00:20:57">ist das Risiko. Dann müssen wir daran denken, andere</p>
+      <p begin="00:20:57" end="00:21:01">Erkrankungen auszuschließen. Bislang ist Fettleber eine</p>
+      <p begin="00:21:01" end="00:21:04">Ausschlussdiagnose. Wir müssen also eine Virushepatitis, </p>
+      <p begin="00:21:04" end="00:21:08">eine Autoimmunhepatitis usw. ausschließen. Das ist ein wichtiger Schritt</p>
+      <p begin="00:21:08" end="00:21:11">bei der Diagnostik. Und drittens müssen wir den Schweregrad</p>
+      <p begin="00:21:11" end="00:21:14">der Erkrankung beurteilen, sobald die Diagnose</p>
+      <p begin="00:21:14" end="00:21:19">gestellt wurde. Elisabetta: Wie würden Sie bei der </p>
+      <p begin="00:21:19" end="00:21:23">Risikostratifizierung im Rahmen der Primärversorgung</p>
+      <p begin="00:21:23" end="00:21:26">vorgehen? Gibt es nicht-invasive Methoden,</p>
+      <p begin="00:21:26" end="00:21:28">die dabei helfen könnten?</p>
+      <p begin="00:21:28" end="00:21:33">Also erstens wird eine Risikostratifizierung für NAFLD</p>
+      <p begin="00:21:33" end="00:21:36">in der gesamten Bevölkerung in den klinischen Leitlinien</p>
+      <p begin="00:21:36" end="00:21:40">nicht empfohlen. Sie wird für die Hochrisikopopulation</p>
+      <p begin="00:21:40" end="00:21:44">empfohlen, das heißt für Patienten mit Typ-2-Diabetes,</p>
+      <p begin="00:21:44" end="00:21:48">ausgeprägtem metabolischem Syndrom, evt. für Patienten über 45.</p>
+      <p begin="00:21:48" end="00:21:52">Das ist in den europäischen Leitlinien festgelegt. Bei einem</p>
+      <p begin="00:21:52" end="00:21:56">NAFLD-Screening möchte man dann möglicherweise</p>
+      <p begin="00:21:56" end="00:22:00">Patienten mit NASH erfassen, was die tatsächlich fortschreitende</p>
+      <p begin="00:22:00" end="00:22:04">Lebererkrankung ist. Insbesondere müssen Patienten mit einem</p>
+      <p begin="00:22:04" end="00:22:07">Risiko für die Entwicklung einer schweren Fibrose stratifiziert werden.</p>
+      <p begin="00:22:07" end="00:22:11">Die meisten der bisher verfügbaren nicht-invasiven Leberuntersuchungen</p>
+      <p begin="00:22:11" end="00:22:17">sind für die Identifizierung bzw. den Ausschluss signifikanter</p>
+      <p begin="00:22:17" end="00:22:21">Leberfibrosen konzipiert. Das bedeutet F3, F4, Präzirrhose oder</p>
+      <p begin="00:22:21" end="00:22:25">Zirrhose. Es gibt also verschiedene Tests, nicht-invasive</p>
+      <p begin="00:22:25" end="00:22:29">Tests, die wir anwenden können. Allgemeinmediziner</p>
+      <p begin="00:22:29" end="00:22:33">oder Fachärzte wie Endokrinologen oder</p>
+      <p begin="00:22:33" end="00:22:37">Kardiologen können beispielsweise den NAFLD-Fibrose-Score anwenden,</p>
+      <p begin="00:22:37" end="00:22:42">mit den Kenngrößen Alter, AST, ALT, Thrombozytenzahl, BMI und</p>
+      <p begin="00:22:42" end="00:22:47">Vorliegen einer gestörten Nüchternglukose, oder FIB-4 mit den Kenngrößen</p>
+      <p begin="00:22:47" end="00:22:52">Alter, AST, ALT und Thrombozytenzahl. Das sind die beiden</p>
+      <p begin="00:22:52" end="00:22:55">meistempfohlenen Tests. Es gibt auch eine </p>
+      <p begin="00:22:55" end="00:22:59">zweite Teststufe, zum Beispiel den ELF-Test, </p>
+      <p begin="00:22:59" end="00:23:04">eine kombinierte Messung der Komponenten</p>
+      <p begin="00:23:04" end="00:23:07">der Kollagenneubildung bei Fibrose.</p>
+      <p begin="00:23:07" end="00:23:12">Ein gutes Beispiel für Screening in der Primärversorgung ist der NAFLD-</p>
+      <p begin="00:23:12" end="00:23:16">Untersuchungsablauf nach Camden und Islington, der in Großbritannien</p>
+      <p begin="00:23:16" end="00:23:20">durchgeführt wurde. Dort wurden alle Allgemeinmediziner aufgefordert,</p>
+      <p begin="00:23:20" end="00:23:24">ihre Patienten mit Ultraschall auf Fettleber, </p>
+      <p begin="00:23:24" end="00:23:28">auf erhöhte ALT-Werte nach Ausschluss von Alkoholkonsum, </p>
+      <p begin="00:23:28" end="00:23:30">bei signifikantem Alkoholkonsum und auf andere Ursachen </p>
+      <p begin="00:23:30" end="00:23:33">für chronische Lebererkrankungen zu untersuchen.</p>
+      <p begin="00:23:33" end="00:23:38">Das erste Screening bestand aus einem FIB-4-Test. FIB-4 hat</p>
+      <p begin="00:23:38" end="00:23:41">2 Schwellenwerte. Wenn Patienten den unteren</p>
+      <p begin="00:23:41" end="00:23:46">Schwellenwert nicht erreichten, wurden sie nicht an einen</p>
+      <p begin="00:23:46" end="00:23:49">Hepatologen überwiesen. Wenn sie über dem oberen Schwellenwert lagen,</p>
+      <p begin="00:23:49" end="00:23:52">wurden sie wegen des erhöhten Risikos einer</p>
+      <p begin="00:23:52" end="00:23:55">signifikanten Leberfibrose an einen Hepatologen überwiesen.</p>
+      <p begin="00:23:55" end="00:23:59">Das Problem bei all diesen nicht-invasiven Tests ist, dass sie</p>
+      <p begin="00:23:59" end="00:24:04">eine unbestimmte Grauzone, einen Grenzbereich haben. Daher </p>
+      <p begin="00:24:04" end="00:24:08">wurden diese Patienten, die in einen Grenzbereich fielen, durch eine </p>
+      <p begin="00:24:08" end="00:24:12">zweite Teststufe, den ELF-Test, wiederaufgenommen und erneut</p>
+      <p begin="00:24:12" end="00:24:15">entsprechend ihrem Risiko für eine signifikante Fibrose stratifiziert.</p>
+      <p begin="00:24:15" end="00:24:19">Und das war effektiv, weil die Zahl der Patienten,</p>
+      <p begin="00:24:19" end="00:24:26">die überwiesen wurden, bei schwerer Fibrose von 8 %</p>
+      <p begin="00:24:26" end="00:24:33">auf 30 % und bei Leberzirrhose von 6 % auf 14 % stieg.</p>
+      <p begin="00:24:33" end="00:24:36">Okay. Ich denke, einer der wesentlichen Punkte bei diesen</p>
+      <p begin="00:24:36" end="00:24:39">nicht-invasiven Tests ist, dass sie alle einen hohen negativen prädiktiven</p>
+      <p begin="00:24:39" end="00:24:41">Wert aufweisen. Fortgeschrittene Erkrankungen können damit also hervorragend</p>
+      <p begin="00:24:41" end="00:24:45">ausgeschlossen werden. Identifiziert werden können sie weniger gut. Selbst in</p>
+      <p begin="00:24:45" end="00:24:49">diesem Beispiel gab es zwar eine signifikante Verbesserung in Bezug auf</p>
+      <p begin="00:24:49" end="00:24:52">die Überweisungspraxis bei fortgeschrittener Erkrankung, aber</p>
+      <p begin="00:24:52" end="00:24:55">noch 70 % der untersuchten Patienten hatten gar keine</p>
+      <p begin="00:24:55" end="00:24:58">fortgeschrittene Erkrankung. In diesem Bereich gibt es also</p>
+      <p begin="00:24:58" end="00:25:02">noch viel zu tun, aber eine wichtige Botschaft ist, dass man viel</p>
+      <p begin="00:25:02" end="00:25:04">Zeit mit Überlegungen verbringen kann, welcher Test</p>
+      <p begin="00:25:04" end="00:25:07">der richtige ist. Ich denke, es ist gut, einen Test zu verwenden</p>
+      <p begin="00:25:07" end="00:25:09">und ihn konsequent einzusetzen.</p>
+      <p begin="00:25:09" end="00:25:11">Besser als nichts, denn das Standardvorgehen lautete</p>
+      <p begin="00:25:11" end="00:25:15">„alle überweisen“, „keinen überweisen“ oder „nach Zufallsprinzip überweisen“.</p>
+      <p begin="00:25:15" end="00:25:16">Ja, auf jeden Fall.</p>
+      <p begin="00:25:16" end="00:25:20">Und auch darüber hinaus denke ich, das Wichtigste ist,</p>
+      <p begin="00:25:20" end="00:25:22">dass wir der Öffentlichkeit und den Hausärzten </p>
+      <p begin="00:25:22" end="00:25:26">vermitteln müssen: Noch bevor ein bestimmter Test </p>
+      <p begin="00:25:26" end="00:25:29">angewendet wird, muss klar sein, dass das Vorhandensein</p>
+      <p begin="00:25:29" end="00:25:32">metabolischer Risikofaktoren die Leber gefährdet.</p>
+      <p begin="00:25:32" end="00:25:36">Zuallererst geht es darum:</p>
+      <p begin="00:25:36" end="00:25:39">Wenn ein Patient übergewichtig ist oder Diabetiker ist,</p>
+      <p begin="00:25:39" end="00:25:42">eine Dyslipidämie oder Hypertonie hat, oder eine Kombination</p>
+      <p begin="00:25:42" end="00:25:45">beider Störungen, dann muss die Leber untersucht werden.</p>
+      <p begin="00:25:45" end="00:25:47">Dann kann man den Test anwenden, dem man vertraut.</p>
+      <p begin="00:25:47" end="00:25:49">Also, wenn Patienten in der Primärversorgung erfasst und an Sie,</p>
+      <p begin="00:25:49" end="00:25:54">Vlad, überwiesen wurden: Wie untersuchen Sie die Patienten weiter?</p>
+      <p begin="00:25:54" end="00:25:56">Braucht jeder Patient eine Leberbiopsie </p>
+      <p begin="00:25:56" end="00:25:57">oder können wir effektiver arbeiten?</p>
+      <p begin="00:25:57" end="00:26:02">Ja, also im Grunde versucht man zu erkennen,</p>
+      <p begin="00:26:02" end="00:26:05">ob bei dem Patienten das Risiko für ein Fortschreiten zur Zirrhose besteht.</p>
+      <p begin="00:26:05" end="00:26:09">Dieses Risiko hängt hauptsächlich vom Stadium</p>
+      <p begin="00:26:09" end="00:26:13">der Fibrose, aber auch von der Krankheitsaktivität ab.</p>
+      <p begin="00:26:13" end="00:26:17">Manchmal reicht es, zu versuchen, das Stadium</p>
+      <p begin="00:26:17" end="00:26:20">der Fibrose zu beurteilen. Manchmal muss man ein bisschen</p>
+      <p begin="00:26:20" end="00:26:24">weitergehen und auch versuchen zu bestimmen, ob NASH</p>
+      <p begin="00:26:24" end="00:26:27">selbst sehr aktiv ist oder nicht. Als Erstes müssen natürlich</p>
+      <p begin="00:26:27" end="00:26:31">andere Erkrankungen, chronische Erkrankungen ausgeschlossen</p>
+      <p begin="00:26:31" end="00:26:34">werden. Wir kommen wieder auf das Thema Alkohol zurück.</p>
+      <p begin="00:26:34" end="00:26:36">Sie müssen also genau wissen, inwieweit der </p>
+      <p begin="00:26:36" end="00:26:39">Konsum von Alkohol das Risiko für die Patienten </p>
+      <p begin="00:26:39" end="00:26:41">erhöht, über das bereits bestehende Risiko</p>
+      <p begin="00:26:41" end="00:26:43">durch das metabolische Syndrom hinaus.</p>
+      <p begin="00:26:43" end="00:26:47">Als Zweites muss versucht werden, den Schweregrad</p>
+      <p begin="00:26:47" end="00:26:51">der Fibrose nicht-invasiv einzuschätzen. Und dafür werden </p>
+      <p begin="00:26:51" end="00:26:54">verschiedene Tests verwendet, die spezialisierter sind,</p>
+      <p begin="00:26:54" end="00:26:56">als die zuvor erwähnten.</p>
+      <p begin="00:26:56" end="00:27:00">Das Problem ist jedoch, dass ein einzelner Test nicht ausreicht.</p>
+      <p begin="00:27:00" end="00:27:02">Idealerweise sollte man mindestens zwei verschiedene Testarten kombinieren,</p>
+      <p begin="00:27:02" end="00:27:05">zum Beispiel einen biochemischen mit einem biophysikalischen Marker</p>
+      <p begin="00:27:05" end="00:27:09">wie Lebersteifigkeit. Die eigentliche Herausforderung ist dann die</p>
+      <p begin="00:27:09" end="00:27:11">Interpretation der Ergebnisse. Manchmal ist es einfach. Manchmal muss</p>
+      <p begin="00:27:11" end="00:27:15">man klären, warum es eine Nichtübereinstimmung gibt oder nicht.</p>
+      <p begin="00:27:15" end="00:27:22">Wenn das getan ist, sollte je nach Patientenprofil</p>
+      <p begin="00:27:22" end="00:27:26">vielleicht etwas abgewartet werden, um zu sehen,</p>
+      <p begin="00:27:26" end="00:27:28">ob der Patient Änderungen in Bezug auf Ernährung und</p>
+      <p begin="00:27:28" end="00:27:31">Lebensstil vornehmen kann und ob das erfolgreich ist.</p>
+      <p begin="00:27:31" end="00:27:33">Zum Beispiel kommen vielleicht einige junge Patienten ohne fortgeschrittene</p>
+      <p begin="00:27:33" end="00:27:35">Erkrankung, die auch nie über die Erkrankung aufgeklärt wurden,</p>
+      <p begin="00:27:35" end="00:27:38">vier bis sechs Monate später zurück, nachdem sie bereits angefangen</p>
+      <p begin="00:27:38" end="00:27:41">haben, Gewicht zu verlieren und einige dieser Parameter zu verbessern.</p>
+      <p begin="00:27:41" end="00:27:44">In diesem Fall: keine Leberbiopsie. Andererseits muss man sich </p>
+      <p begin="00:27:44" end="00:27:47">bei Patienten, die seit vielen Jahren krank sind und das schon oft </p>
+      <p begin="00:27:47" end="00:27:51">erfolglos versucht haben, die Frage stellen:</p>
+      <p begin="00:27:51" end="00:27:54">Hilft mir eine Leberbiopsie, das Risiko besser</p>
+      <p begin="00:27:54" end="00:27:58">zu verstehen? Hilft es dem Patienten, besser zu verstehen,</p>
+      <p begin="00:27:58" end="00:28:01">welche Folgen es hat, wenn er nichts ändert?</p>
+      <p begin="00:28:01" end="00:28:05">Und hat der Patient dadurch auch einen größeren Nutzen von</p>
+      <p begin="00:28:05" end="00:28:07">den neuen Medikamenten, die derzeit in der Entwicklung sind?</p>
+      <p begin="00:28:07" end="00:28:10">An dieser Stelle wird die Leberbiopsie gemacht. Wenn man sich für</p>
+      <p begin="00:28:10" end="00:28:13">eine Leberbiopsie entscheidet, muss natürlich berücksichtigt werden,</p>
+      <p begin="00:28:13" end="00:28:16">ob Alter, Begleiterkrankungen, Behandlungen das Risiko des </p>
+      <p begin="00:28:16" end="00:28:21">Eingriffs erhöhen. Es ist also ein sehr komplexes Phänomen.</p>
+      <p begin="00:28:21" end="00:28:23">Und dann muss man den Patienten davon überzeugen, diesen</p>
+      <p begin="00:28:23" end="00:28:28">Eingriff machen zu lassen, der ja schmerzhaft sein kann.</p>
+      <p begin="00:28:28" end="00:28:31">Okay, vielen Dank. Es befinden sich ja mehrere neue </p>
+      <p begin="00:28:31" end="00:28:34">Biomarker in der Entwicklung. Einige von uns an diesem Tisch</p>
+      <p begin="00:28:34" end="00:28:36">sind daran beteiligt, zum Beispiel am EU-LITMUS-Konsortium,</p>
+      <p begin="00:28:36" end="00:28:40">das neue Biomarker entwickelt und validiert.</p>
+      <p begin="00:28:40" end="00:28:44">Es gibt eine Reihe von Diagnostika wie das Procollagen C3</p>
+      <p begin="00:28:44" end="00:28:48">oder die Magnetresonanz-Elastographie, die derzeit nur</p>
+      <p begin="00:28:48" end="00:28:50">in der Forschung und in klinischen Prüfungen eingesetzt</p>
+      <p begin="00:28:50" end="00:28:53">werden. Aber man darf gespannt sein, wie sie sich</p>
+      <p begin="00:28:53" end="00:28:57">bewähren und ob sie in der Routinepraxis einen zusätzlichen</p>
+      <p begin="00:28:57" end="00:29:01">Nutzen bieten. Letztendlich gibt es zurzeit keine guten</p>
+      <p begin="00:29:01" end="00:29:06">nicht-invasiven Tests speziell zur Diagnose der Steatohepatitis.</p>
+      <p begin="00:29:06" end="00:29:08">Wir können fortgeschrittene Fibrose und</p>
+      <p begin="00:29:08" end="00:29:11">Steatose gut erkennen, aber es gibt immer noch Bedarf</p>
+      <p begin="00:29:11" end="00:29:15">nach Biopsien und die Frage ist tatsächlich,</p>
+      <p begin="00:29:15" end="00:29:18">wie man da am besten vorgeht. Ihre Erläuterungen</p>
+      <p begin="00:29:18" end="00:29:20">leuchten mir da sehr gut ein.</p>
+      <p begin="00:29:20" end="00:29:24">Derzeit gibt es keine zugelassenen Medikamente zur Behandlung von</p>
+      <p begin="00:29:24" end="00:29:27">Fettlebererkrankungen, aber das bedeutet nicht, dass wir keine Optionen haben.</p>
+      <p begin="00:29:27" end="00:29:31">Lifestyle-Interventionen sind hier unabdingbar.</p>
+      <p begin="00:29:31" end="00:29:33">Wir müssen mit unseren Patienten zusammenarbeiten und ihnen helfen,</p>
+      <p begin="00:29:33" end="00:29:36">durch Ernährungsumstellung und Bewegung Gewicht zu verlieren. Es gibt</p>
+      <p begin="00:29:36" end="00:29:39">eine gute Evidenz dafür, dass Gewichtsverlust die Histologie</p>
+      <p begin="00:29:39" end="00:29:43">bei Fettlebererkrankungen verbessern kann. Ausschlaggebend ist</p>
+      <p begin="00:29:43" end="00:29:45">– unter Berücksichtigung dessen, was wir bereits über das kardiovaskuläre</p>
+      <p begin="00:29:45" end="00:29:49">Risiko gesagt haben – das kardiovaskuläre</p>
+      <p begin="00:29:49" end="00:29:52">Risikoprofil unserer Patienten mit Diabetes zu verbessern,</p>
+      <p begin="00:29:52" end="00:29:55">den Diabetes gut einzustellen und auch Dyslipidämie </p>
+      <p begin="00:29:55" end="00:30:00">wirksam zu behandeln. Jetzt gibt es viele Fragen dazu,</p>
+      <p begin="00:30:00" end="00:30:04">wie ein Gewichtsverlust am effektivsten erreicht</p>
+      <p begin="00:30:04" end="00:30:08">werden kann. Elisabetta, ganz kurz: Können Sie uns</p>
+      <p begin="00:30:08" end="00:30:10">etwas darüber sagen, wie Sie Patienten</p>
+      <p begin="00:30:10" end="00:30:12">beraten würden und welche</p>
+      <p begin="00:30:12" end="00:30:14">Ziele Sie beim Abnehmen verfolgen würden?</p>
+      <p begin="00:30:14" end="00:30:19">Es gibt verschiedenste Diäten, die angewendet werden können, aber die</p>
+      <p begin="00:30:19" end="00:30:22">wirksamste, insbesondere in Hinblick auf das</p>
+      <p begin="00:30:22" end="00:30:26">kardiovaskuläre Risiko, ist die mediterrane Diät.</p>
+      <p begin="00:30:26" end="00:30:30">Leider haben wir das Konzept der mediterranen Ernährung aus dem</p>
+      <p begin="00:30:30" end="00:30:34">Auge verloren. Es geht ja nicht nur um Pizza und Eis, sondern um eine viel</p>
+      <p begin="00:30:34" end="00:30:40">komplexere Ernährung, die mit pflanzlichen Lebensmitteln angereichert ist.</p>
+      <p begin="00:30:40" end="00:30:44">40 % der Kalorien basieren auf komplexen Kohlenhydraten. </p>
+      <p begin="00:30:44" end="00:30:48">Es gibt einen geringen Anteil an rotem Fleisch,</p>
+      <p begin="00:30:48" end="00:30:53">einen hohen Anteil an weißem Fleisch, wenig Salz, wenig Fructose.</p>
+      <p begin="00:30:53" end="00:30:57">Die Fructose in der mediterranen Ernährung stammt ausschließlich</p>
+      <p begin="00:30:57" end="00:31:01">von Früchten. Fructose ist in der Tat eines der schädlichsten </p>
+      <p begin="00:31:01" end="00:31:08">Elemente, das besonders von Jugendlichen und Kindern</p>
+      <p begin="00:31:08" end="00:31:13">konsumiert wird, z. B. in Brause, industriellen Nahrungsmitteln,</p>
+      <p begin="00:31:13" end="00:31:18">industriellem Brot usw. Aber letztlich ist es der Grad des </p>
+      <p begin="00:31:18" end="00:31:22">Gewichtsverlusts, den man erreicht, was wirklich zählt.</p>
+      <p begin="00:31:22" end="00:31:28">Also versuchen wir auf irgendeine Weise, die Ernährung</p>
+      <p begin="00:31:28" end="00:31:33">auf den Patienten zuzuschneiden. Die günstigste Diät ist die,</p>
+      <p begin="00:31:33" end="00:31:36">die am besten funktioniert, weil der Patient dann</p>
+      <p begin="00:31:36" end="00:31:41">länger durchhalten kann. Und natürlich ist körperliche Aktivität</p>
+      <p begin="00:31:41" end="00:31:45">sehr wichtig, denn während einer Diät wird nicht nur Fett abgebaut,</p>
+      <p begin="00:31:45" end="00:31:50">sondern es werden auch Muskeln abgebaut. Bewegung sorgt dafür,</p>
+      <p begin="00:31:50" end="00:31:53">dass nur Fett, aber keine Muskeln abgebaut werden.</p>
+      <p begin="00:31:53" end="00:31:58">Außerdem ist die Wahrscheinlichkeit für eine erneute Gewichtszunahme </p>
+      <p begin="00:31:58" end="00:32:02">nach dem Ende der Diät niedriger als bei Menschen, die nur Diät halten.</p>
+      <p begin="00:32:02" end="00:32:06">Okay, gehen wir einmal einen Schritt weiter und kommen </p>
+      <p begin="00:32:06" end="00:32:09">auf pharmakologische Wirkstoffe zu sprechen. Ich weiß, dass</p>
+      <p begin="00:32:09" end="00:32:12">es häufig Bedenken gibt, insbesondere bei Patienten,</p>
+      <p begin="00:32:12" end="00:32:14">bei denen eine Lebererkrankung diagnostiziert wurde,</p>
+      <p begin="00:32:14" end="00:32:17">die möglicherweise eine abnormale Leberbiochemie aufweisen,</p>
+      <p begin="00:32:17" end="00:32:22">erhöhte ALT-Werte, erhöhte AST-Werte: Sind Statine unbedenklich?</p>
+      <p begin="00:32:22" end="00:32:25">Das ist ein wichtiger Punkt, ein wirklich wichtiger Punkt.</p>
+      <p begin="00:32:25" end="00:32:29">Ich verstehe, dass unsere NAFLD-Patienten hinsichtlich</p>
+      <p begin="00:32:29" end="00:32:33">ihres kardiovaskulären Risikos unterbehandelt sind,</p>
+      <p begin="00:32:33" end="00:32:37">insbesondere Diabetespatienten. Aber Statine sind unbedenklich.</p>
+      <p begin="00:32:37" end="00:32:42">Es heißt, dass Statine Rauch auslösen, aber kein Feuer. Die Zahl der</p>
+      <p begin="00:32:42" end="00:32:49">schwerwiegenden Reaktionen ist wirklich sehr gering. Der Anstieg bei AST</p>
+      <p begin="00:32:49" end="00:32:52">und ALT, der im ersten Monat der Statineinnahme beobachtet</p>
+      <p begin="00:32:52" end="00:32:56">werden kann, ist kein Hinweis auf eine Lebererkrankung.</p>
+      <p begin="00:32:56" end="00:32:59">Er nimmt in der Regel bis zu 6 Monate nach Beginn der </p>
+      <p begin="00:32:59" end="00:33:04">Statineinnahme spontan ab. Wir raten daher in der Regel, Statine zu</p>
+      <p begin="00:33:04" end="00:33:13">reduzieren, auszuschleichen, wenn der Wert das 2,5-Fache der Ausgangs-</p>
+      <p begin="00:33:13" end="00:33:18">konzentration von AST oder ALT überschreitet. Wenn man aber keine Statine</p>
+      <p begin="00:33:18" end="00:33:21">verwendet, könnte man Ezetemib oder andere Medikamente einsetzen.</p>
+      <p begin="00:33:21" end="00:33:24">Es gibt also eine Reihe von Optionen bei verfügbaren Medikamenten.</p>
+      <p begin="00:33:24" end="00:33:27">Das ist wichtig. Jetzt zur Entwicklungspipeline: </p>
+      <p begin="00:33:27" end="00:33:31">Vlad, da kommen viele therapeutische Ziele hinzu.</p>
+      <p begin="00:33:31" end="00:33:36">Geben Sie uns doch ganz kurz einen Überblick.</p>
+      <p begin="00:33:36" end="00:33:39">Was ist in Bezug auf Phase III in der Pipeline?</p>
+      <p begin="00:33:39" end="00:33:42">Wir haben jetzt einige Medikamente, die sich in der fortgeschrittenen</p>
+      <p begin="00:33:42" end="00:33:47">Phase III befinden. Für die Obeticholsäure wurden bereits Ergebnisse</p>
+      <p begin="00:33:47" end="00:33:50">aus der Phase III berichte. Dann gibt es</p>
+      <p begin="00:33:50" end="00:33:55">Elafibranor, d. h., Obeticholsäure ist ein FXR-Agonist,</p>
+      <p begin="00:33:55" end="00:33:59">Elafibranor ist ein dualer PPAR-Agonist, und die Ergebnisse</p>
+      <p begin="00:33:59" end="00:34:02">werden sehr bald veröffentlicht. Dann laufen drei weitere</p>
+      <p begin="00:34:02" end="00:34:06">Phase-III-Studien, große, globale Phase-III-Studien,</p>
+      <p begin="00:34:06" end="00:34:09">internationale Studien, mit mehr als 2000 Patienten.</p>
+      <p begin="00:34:09" end="00:34:14">In einer der Studien wird Resmetirom, ein Thyromimetikum,</p>
+      <p begin="00:34:14" end="00:34:17">geprüft. In einer anderen wird Aramchol</p>
+      <p begin="00:34:17" end="00:34:21">geprüft, ein Hybridmolekül aus Gallensäure</p>
+      <p begin="00:34:21" end="00:34:23">und einem Lipid. Und in der dritten wird Cenicriviroc</p>
+      <p begin="00:34:23" end="00:34:27">geprüft, ein CCR2-/CCR5-Chemokinrezeptor-</p>
+      <p begin="00:34:27" end="00:34:33">Antagonist. All diese Wirkstoffe zielen auf verschiedene</p>
+      <p begin="00:34:33" end="00:34:37">Aspekte der Erkrankung ab und die meisten von ihnen haben eine</p>
+      <p begin="00:34:37" end="00:34:43">gewisse metabolische und eine gewisse entzündungshemmende Wirkung.</p>
+      <p begin="00:34:43" end="00:34:45">Und dann gibt es andere, die eher antifibrotisch wirken,</p>
+      <p begin="00:34:45" end="00:34:50">wie z. B. Cenicriviroc. Wir dürfen also äußerst gespannt sein,</p>
+      <p begin="00:34:50" end="00:34:52">wie diese Wirkstoffe abschneiden, und wir werden die Ergebnisse</p>
+      <p begin="00:34:52" end="00:34:55">bald haben. Es ist sehr wichtig, dass jeder an diesen Studien</p>
+      <p begin="00:34:55" end="00:34:58">teilnimmt, und wir sollten die Patienten davon überzeugen, dass sie</p>
+      <p begin="00:34:58" end="00:35:05">einen erheblichen Nutzen und einen Beitrag zur Forschung leisten,</p>
+      <p begin="00:35:05" end="00:35:09">wenn sie an diesen Studien teilnehmen. Und</p>
+      <p begin="00:35:09" end="00:35:12">dass sie nicht als Versuchskaninchen behandelt werden,</p>
+      <p begin="00:35:12" end="00:35:14">sondern zum allgemeinen Fortschritt der Medizin beitragen.</p>
+      <p begin="00:35:14" end="00:35:17">Auf jeden Fall. Und wie Sie sagen: Es ist eine äußerst </p>
+      <p begin="00:35:17" end="00:35:20">spannende Zeit. Für eine dieser Studien haben wir bereits einen</p>
+      <p begin="00:35:20" end="00:35:23">Bericht mit positiven Ergebnissen. Die REGENERATE-Studie, </p>
+      <p begin="00:35:23" end="00:35:27">in der Obeticholsäure untersucht wurde, hatte zwei primäre Endpunkte.</p>
+      <p begin="00:35:27" end="00:35:30">Einer bezog sich auf die Auflösung der NASH, die</p>
+      <p begin="00:35:30" end="00:35:33">leider nicht erreicht wurde. Entscheidend war jedoch, dass </p>
+      <p begin="00:35:33" end="00:35:36">beim anderen primären Endpunkt in der Intent-to-treat-Analyse</p>
+      <p begin="00:35:36" end="00:35:40">eine Verbesserung der Fibrose um mindestens ein Stadium</p>
+      <p begin="00:35:40" end="00:35:43">ohne Verschlechterung der Steatohepatitis bei behandelten</p>
+      <p begin="00:35:43" end="00:35:46">NASH-Patienten nachgewiesen werden konnte.</p>
+      <p begin="00:35:46" end="00:35:49">Ich denke, wir erkennen zunehmend, dass dies eine Erkrankung ist,</p>
+      <p begin="00:35:49" end="00:35:53">bei der pharmakologische Therapien einen Nutzen bringen.</p>
+      <p begin="00:35:53" end="00:35:55">Und jetzt ist die Frage lediglich,</p>
+      <p begin="00:35:55" end="00:35:57">welches Medikament es bis zur Ziellinie schafft.</p>
+      <p begin="00:35:57" end="00:36:00">Ja. Was hierbei klar sein muss ist, dass</p>
+      <p begin="00:36:00" end="00:36:02">diese beiden von Ihnen erwähnten Ergebnisse wahrscheinlich</p>
+      <p begin="00:36:02" end="00:36:06">mit dem Fortschreiten der Erkrankung zusammenhängen. </p>
+      <p begin="00:36:06" end="00:36:10">Einige Kenngrößen konnten kurzfristig</p>
+      <p begin="00:36:10" end="00:36:12">kontrolliert werden. Jetzt kommt es darauf an, ob das dazu führt, </p>
+      <p begin="00:36:12" end="00:36:15">dass weniger Menschen an Zirrhose erkranken.</p>
+      <p begin="00:36:15" end="00:36:17">Daher ist es wichtig, dass diese Studien bis zum Ende fortgesetzt werden.</p>
+      <p begin="00:36:17" end="00:36:21">Auf jeden Fall. Nun frage ich Sie: Wir befinden uns in einer Situation,</p>
+      <p begin="00:36:21" end="00:36:25">in der nächstes Jahr womöglich Medikamente gegen Fettlebererkrankungen</p>
+      <p begin="00:36:25" end="00:36:28">zugelassen werden. Wie wird das Ihre Behandlungspraxis verändern?</p>
+      <p begin="00:36:28" end="00:36:31">Das wird sich insbesondere auf Überweisungen auswirken, da</p>
+      <p begin="00:36:31" end="00:36:36">Allgemeinmediziner und Fachärzte bisher keine Überweisungen ausstellten</p>
+      <p begin="00:36:36" end="00:36:38">Auch weil es keine speziellen Behandlungen gibt.</p>
+      <p begin="00:36:38" end="00:36:40">Sie sagen also: „Warum an einen Hepatologen überweisen?</p>
+      <p begin="00:36:40" end="00:36:43">Was macht der denn anders als wir?“</p>
+      <p begin="00:36:43" end="00:36:44">Das wird sich also ändern.</p>
+      <p begin="00:36:44" end="00:36:45">Auf jeden Fall.</p>
+      <p begin="00:36:45" end="00:36:46">Ja, das wird sich ändern.</p>
+      <p begin="00:36:46" end="00:36:50">Um die Situation einmal kurz zusammenzufassen:</p>
+      <p begin="00:36:50" end="00:36:52">Die Fettlebererkrankung hat eine sehr hohe Prävalenzrate.</p>
+      <p begin="00:36:52" end="00:36:55">Wir wissen, dass es wichtige leberassoziierte und</p>
+      <p begin="00:36:55" end="00:36:58">und kardiovaskuläre Ergebnisse gibt, und deshalb ist es unsere Aufgabe</p>
+      <p begin="00:36:58" end="00:37:03">als Hepatologen, auf alle diese Ergebnisse einzugehen. Wir müssen die Ursache</p>
+      <p begin="00:37:03" end="00:37:06">behandeln, indem wir uns um Adipositas kümmern. Wir müssen das</p>
+      <p begin="00:37:06" end="00:37:08">kardiovaskuläre Risiko angehen, indem wir Dyslipidämie und Diabetes behandeln.</p>
+      <p begin="00:37:08" end="00:37:12">Wir müssen unsere Patienten nach Risiko stratifizieren und die</p>
+      <p begin="00:37:12" end="00:37:15">Behandlung auf diejenigen mit dem größten Risiko für</p>
+      <p begin="00:37:15" end="00:37:18">bleibende Schäden konzentrieren. Wir haben bereits einige grundlegende</p>
+      <p begin="00:37:18" end="00:37:21">therapeutische Konzepte, aber ich denke, wirklich spannend ist,</p>
+      <p begin="00:37:21" end="00:37:24">dass wir in den nächsten Jahren zusätzliche Therapien</p>
+      <p begin="00:37:24" end="00:37:27">zur Verfügung haben werden.</p>
+      <p begin="00:37:27" end="00:37:31">Es ist eine gute Zeit für Therapeuten von Fettlebererkrankungen.</p>
+      <p begin="00:37:31" end="00:37:34">Mit diesem Punkt möchte ich abschließen und Ihnen, </p>
+      <p begin="00:37:34" end="00:37:36">Elisabetta, und Ihnen, Vlad, für Ihre Teilnahme an dieser Fortbildung</p>
+      <p begin="00:37:36" end="00:37:41">danken. Und auch an unsere Zuschauer herzlichen Dank</p>
+      <p begin="00:37:41" end="00:37:44">für Ihre Teilnahme. Bitte fahren Sie mit der Beantwortung</p>
+      <p begin="00:37:44" end="00:37:45">der anschließenden Fragen fort und</p>
+      <p begin="00:37:45" end="00:37:47">füllen Sie die Bewertung aus.</p>
+    </div>
+  </body>
+</tt>

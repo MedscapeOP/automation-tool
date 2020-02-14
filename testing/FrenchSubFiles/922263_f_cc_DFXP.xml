@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="fr" xmlns="http://www.w3.org/ns/ttml" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+  <body>
+    <div xml:lang="fr">
+      <p begin="00:00:06" end="00:00:08">Bonjour, je suis le professeur Quentin Anstee. Je suis professeur</p>
+      <p begin="00:00:08" end="00:00:11">d’hépatologie expérimentale à la Faculté de sciences médicales</p>
+      <p begin="00:00:11" end="00:00:14">de l’Université de Newcastle et consultant honoraire en hépatologie</p>
+      <p begin="00:00:14" end="00:00:17">à l’Unité d’hépatologie du Freeman Hospital à Newcastle Upon Tyne</p>
+      <p begin="00:00:17" end="00:00:21">au Royaume-Uni. Bienvenue dans ce programme intitulé</p>
+      <p begin="00:00:21" end="00:00:24">« Avancées récentes concernant la stéatose hépatique:</p>
+      <p begin="00:00:24" end="00:00:27">les conséquences des nouvelles données sur la pratique européenne ».</p>
+      <p begin="00:00:27" end="00:00:31">Je suis entouré aujourd’hui du Professeur Elisabetta Bugianesi</p>
+      <p begin="00:00:31" end="00:00:34">qui est professeur dans la division de gastro-entérologie</p>
+      <p begin="00:00:34" end="00:00:37">et d’hépatologie au département des Sciences médicales</p>
+      <p begin="00:00:37" end="00:00:42">de l’Université de Turin en Italie et du Professeur Vlad Ratziu</p>
+      <p begin="00:00:42" end="00:00:46">qui est professeur d’hépatologie à l’Université de la Sorbonne</p>
+      <p begin="00:00:46" end="00:00:49">et à l’Hôpital de la Pitié-Salpêtrière à Paris, en France. Bienvenue.</p>
+      <p begin="00:00:49" end="00:00:54">Nous allons parler aujourd’hui du spectre de la stéatose hépatique</p>
+      <p begin="00:00:54" end="00:00:57">non alcoolique. Je pense qu’elle est familière à un grand nombre</p>
+      <p begin="00:00:57" end="00:01:01">d’entre nous. Au début de cette maladie, le foie est normal</p>
+      <p begin="00:01:01" end="00:01:04">et la graisse s’y accumule, ce qui conduit à une ptose</p>
+      <p begin="00:01:04" end="00:01:08">ou stéatose hépatique non alcoolique, NAFLD en abrégé.</p>
+      <p begin="00:01:08" end="00:01:12">Chez certaines personnes, elle évolue en une forme inflammatoire</p>
+      <p begin="00:01:12" end="00:01:16">de la maladie appelée stéatohépatite non alcoolique ou NASH.</p>
+      <p begin="00:01:16" end="00:01:20">Si elle perdure suffisamment longtemps, chez certains individus,</p>
+      <p begin="00:01:20" end="00:01:23">des cicatrices et une fibrose se forment dans le foie et cela peut</p>
+      <p begin="00:01:23" end="00:01:27">évoluer vers une fibrose avancée, une cirrhose et, chez certains, </p>
+      <p begin="00:01:27" end="00:01:32">également vers un carcinome hépatocellulaire. Plus nous en apprenons</p>
+      <p begin="00:01:32" end="00:01:36">sur les stéatoses hépatiques, plus nous réalisons</p>
+      <p begin="00:01:36" end="00:01:39">qu’il s’agit d’un processus très dynamique. Chez certains individus,</p>
+      <p begin="00:01:39" end="00:01:43">la maladie connaît une évolution régulière. Chez d’autres, la maladie</p>
+      <p begin="00:01:43" end="00:01:46">progresse et régresse et cela peut avoir de nombreuses raisons.</p>
+      <p begin="00:01:46" end="00:01:49">Certaines d’entre elles sont des facteurs environnementaux</p>
+      <p begin="00:01:49" end="00:01:53">tandis que d’autres sont des facteurs génétiques intrinsèques</p>
+      <p begin="00:01:53" end="00:01:57">à l’individu. Mais les principaux facteurs de risque</p>
+      <p begin="00:01:57" end="00:02:00">auxquels nous devons être attentifs dans notre pratique clinique</p>
+      <p begin="00:02:00" end="00:02:04">sont l’obésité, le diabète de type 2 et la résistance à l’insuline,</p>
+      <p begin="00:02:04" end="00:02:07">l’hypertension artérielle et l’hypercholestérolémie, dont l’ensemble</p>
+      <p begin="00:02:07" end="00:02:11">représente des manifestations du syndrome métabolique. Il existe</p>
+      <p begin="00:02:11" end="00:02:13">également de nombreux facteurs génétiques associés.</p>
+      <p begin="00:02:13" end="00:02:18">Les gènes PNPLA3 et TM6SF2 en sont des exemples.</p>
+      <p begin="00:02:18" end="00:02:22">Ils possèdent tous deux des polymorphismes de nucléotides uniques (SNP)</p>
+      <p begin="00:02:22" end="00:02:25">qui ont été associés à une augmentation du risque d’évolution</p>
+      <p begin="00:02:25" end="00:02:28">de la maladie, du risque de cirrhose et, dans le cas de PNPLA3,</p>
+      <p begin="00:02:28" end="00:02:33">du risque de développer un cancer du foie.</p>
+      <p begin="00:02:33" end="00:02:38">La prévalence de la stéatose hépatique en Europe est élevée et</p>
+      <p begin="00:02:38" end="00:02:42">une méta-analyse récente suggère que cette tendance va se poursuivre. </p>
+      <p begin="00:02:42" end="00:02:46">Actuellement, les estimations indiquent qu’environ 25 %</p>
+      <p begin="00:02:46" end="00:02:50">de la population européenne sera atteinte à un certain degré</p>
+      <p begin="00:02:50" end="00:02:53">de stéatose hépatique non alcoolique. Ceci signifie que</p>
+      <p begin="00:02:53" end="00:02:56">le « foie gras » est désormais la cause la plus fréquente</p>
+      <p begin="00:02:56" end="00:02:59">de maladie hépatique devant les maladies provoquées</p>
+      <p begin="00:02:59" end="00:03:03">par une consommation d’alcool ou une hépatite virale. Il est inquiétant</p>
+      <p begin="00:03:03" end="00:03:07">qu’elle ne se limite pas aux adultes. Elle affecte également</p>
+      <p begin="00:03:07" end="00:03:09">les enfants et cela implique que les personnes seront exposées</p>
+      <p begin="00:03:09" end="00:03:11">au risque d’une maladie évolutive</p>
+      <p begin="00:03:11" end="00:03:15">bien plus tôt au cours de leur vie. L’une des difficultés</p>
+      <p begin="00:03:15" end="00:03:21">consiste cependant à obtenir des données fiables</p>
+      <p begin="00:03:21" end="00:03:25">sur la prévalence. Une grande partie des données actuelles</p>
+      <p begin="00:03:25" end="00:03:28">a été déduite de notre compréhension de la prévalence </p>
+      <p begin="00:03:28" end="00:03:32">de l’obésité et du diabète. Cependant, le modèle de Markov</p>
+      <p begin="00:03:32" end="00:03:37">suggère qu’au cours des 10 ans à venir, la prévalence continuera</p>
+      <p begin="00:03:37" end="00:03:40">à augmenter. En réalité, on prédit une nouvelle augmentation de 21 %,</p>
+      <p begin="00:03:40" end="00:03:45">ce qui correspondrait à près de 80 millions d’individus</p>
+      <p begin="00:03:45" end="00:03:49">en Europe, voire plus de 100 millions d’individus touchés.</p>
+      <p begin="00:03:49" end="00:03:52">À ce propos, il ne s’agit pas seulement de la prévalence</p>
+      <p begin="00:03:52" end="00:03:55">de la stéatose, mais également de la prévalence de la stéatohépatite</p>
+      <p begin="00:03:55" end="00:03:59">qui va probablement augmenter. Et bien sûr, cela a</p>
+      <p begin="00:03:59" end="00:04:03">des conséquences importantes en termes de coûts de soins de santé.</p>
+      <p begin="00:04:03" end="00:04:07">Vlad, Professeur Ratziu, pouvez-vous nous en dire un peu plus ?</p>
+      <p begin="00:04:07" end="00:04:08">Que savons-nous des coûts probables des soins de santé</p>
+      <p begin="00:04:08" end="00:04:10">pour la stéatose hépatique non alcoolique ?</p>
+      <p begin="00:04:10" end="00:04:13">Nous avons actuellement uniquement des estimations, mais nous ignorons</p>
+      <p begin="00:04:13" end="00:04:17">les chiffres exacts, qui seront déterminés avec certitude</p>
+      <p begin="00:04:17" end="00:04:22">d’après le taux de diagnostic et qui dépendront également </p>
+      <p begin="00:04:22" end="00:04:26">du moment précoce ou tardif de ce diagnostic. Nous pouvons donc</p>
+      <p begin="00:04:26" end="00:04:29">seulement nous appuyer sur des estimations obtenues</p>
+      <p begin="00:04:29" end="00:04:32">à partir de la prévalence de l’obésité et du diabète, de notre compréhension</p>
+      <p begin="00:04:32" end="00:04:36">de la prévalence de la maladie sévère chez tous les patients atteints</p>
+      <p begin="00:04:36" end="00:04:39">de NAFLD et de ce que nous observons dans nos pratiques actuelles.</p>
+      <p begin="00:04:39" end="00:04:43">Ce n’est donc pas très précis pour l’instant, car la sensibilisation</p>
+      <p begin="00:04:43" end="00:04:47">va progresser, mais cela s’affinera avec l’amélioration</p>
+      <p begin="00:04:47" end="00:04:51">des diagnostics. Le diagnostic non invasif aidera à dépister</p>
+      <p begin="00:04:51" end="00:04:56">davantage de patients et, surtout, nos pratiques seront</p>
+      <p begin="00:04:56" end="00:05:00">fortement modifiées par la disponibilité de nouveaux médicaments.</p>
+      <p begin="00:05:00" end="00:05:05">À ce stade, ce que nous pouvons dire, c’est que l’une des études</p>
+      <p begin="00:05:05" end="00:05:09">présentées ici au congrès annuel américain The Liver Meeting®</p>
+      <p begin="00:05:09" end="00:05:13">a montré que 5 grands pays d’Europe occidentale</p>
+      <p begin="00:05:13" end="00:05:19">doivent assumer des coûts de santé élevés pour traiter ces patients.</p>
+      <p begin="00:05:19" end="00:05:22">La plupart des coûts semblent correspondre aux cas très sévères</p>
+      <p begin="00:05:22" end="00:05:26">de NAFLD et de NASH. Plus précisément, on estime que 95 % du coût</p>
+      <p begin="00:05:26" end="00:05:31">concerne les personnes atteintes de fibrose avancée ou de cirrhose.</p>
+      <p begin="00:05:31" end="00:05:34">Cela est très inquiétant car, une fois le stade cirrhotique atteint</p>
+      <p begin="00:05:34" end="00:05:37">et pour de nombreuses autres maladies hépatiques, </p>
+      <p begin="00:05:37" end="00:05:40">il est très coûteux de prévenir les complications</p>
+      <p begin="00:05:40" end="00:05:44">et d’éviter les traitements radicaux comme la greffe de foie.</p>
+      <p begin="00:05:44" end="00:05:47">Nous étudions donc tout cela actuellement,</p>
+      <p begin="00:05:47" end="00:05:51">mais nous pressentons un fardeau économique important</p>
+      <p begin="00:05:51" end="00:05:55">pour les systèmes de santé en raison de cette maladie.</p>
+      <p begin="00:05:55" end="00:05:58">Très bien, merci. C’est véritablement un point important.</p>
+      <p begin="00:05:58" end="00:06:02">En tant que cliniciens, nous avons tendance à dichotomiser</p>
+      <p begin="00:06:02" end="00:06:06">notre diagnostic et à classer les individus</p>
+      <p begin="00:06:06" end="00:06:10">dans des catégories spécifiques comme la stéatose hépatique</p>
+      <p begin="00:06:10" end="00:06:13">non alcoolique ou la maladie alcoolique du foie.</p>
+      <p begin="00:06:13" end="00:06:18">Y a-t-il des preuves récentes d’un effet de synergie entre l’alcool</p>
+      <p begin="00:06:18" end="00:06:20">et l’obésité ? Pensez-vous qu’il soit temps d’envisager cela comme</p>
+      <p begin="00:06:20" end="00:06:24">le spectre d’une maladie unique ? Qu’en pensez-vous Vlad ?</p>
+      <p begin="00:06:24" end="00:06:26">Eh bien, je ne sais pas s’il est vraiment question d’un spectre.</p>
+      <p begin="00:06:26" end="00:06:30">Un spectre suppose généralement des voies communes,</p>
+      <p begin="00:06:30" end="00:06:32">mais ce qui est sûr, c’est que nous devons comprendre d’où vient</p>
+      <p begin="00:06:32" end="00:06:35">la coexistence de ces 2 maladies. Il y a tant de gens qui peuvent</p>
+      <p begin="00:06:35" end="00:06:39">consommer de manière occasionnelle ou irrégulière</p>
+      <p begin="00:06:39" end="00:06:42">voire régulièrement des quantités nocives d’alcool.</p>
+      <p begin="00:06:42" end="00:06:46">Ces 2 pathologies peuvent donc coexister. On a démontré qu’être obèse</p>
+      <p begin="00:06:46" end="00:06:49">et boire de l’alcool ou vice versa, boire beaucoup d’alcool et</p>
+      <p begin="00:06:49" end="00:06:52">être obèse ou souffrir du syndrome métabolique engendre des lésions</p>
+      <p begin="00:06:52" end="00:06:56">plus importantes au niveau du foie. Ce type d’additivité/de synergie</p>
+      <p begin="00:06:56" end="00:07:00">a été démontré de manière rétrospective.</p>
+      <p begin="00:07:00" end="00:07:04">Mais plus intéressant encore, à l’autre extrémité du spectre</p>
+      <p begin="00:07:04" end="00:07:07">en termes de consommation nocive d’alcool, même dans les études</p>
+      <p begin="00:07:07" end="00:07:12">basées sur une population plus large, indépendamment</p>
+      <p begin="00:07:12" end="00:07:15">de la consommation d’alcool, la présence de facteurs de risque</p>
+      <p begin="00:07:15" end="00:07:19">d’origine métabolique augmente la probabilité de développer des</p>
+      <p begin="00:07:19" end="00:07:24">événements hépatiques. Chez les patients qui consomment de l’alcool,</p>
+      <p begin="00:07:24" end="00:07:27">même en faible quantité, qu’ils soient diabétiques ou obèses,</p>
+      <p begin="00:07:27" end="00:07:31">la prévalence des facteurs de risque métaboliques accroît la nocivité</p>
+      <p begin="00:07:31" end="00:07:33">associée et le nombre d’événements hépatiques. En conclusion,</p>
+      <p begin="00:07:33" end="00:07:36">les deux maladies apportent leur contribution. Vous ne pouvez</p>
+      <p begin="00:07:36" end="00:07:39">ignorer ni l’une ni l’autre. Donc, au lieu d’essayer de comprendre</p>
+      <p begin="00:07:39" end="00:07:42">où conduit la physiopathologie, s’il existe un spectre,</p>
+      <p begin="00:07:42" end="00:07:44">je pense que nous devrions faire beaucoup d’efforts pour essayer</p>
+      <p begin="00:07:44" end="00:07:48">de quantifier au mieux la quantité d’alcool</p>
+      <p begin="00:07:48" end="00:07:51">et déterminer entre nous médecins</p>
+      <p begin="00:07:51" end="00:07:53">si de petites quantités d’alcool sont acceptables</p>
+      <p begin="00:07:53" end="00:07:56">ou s’il faut interdire totalement sa consommation.</p>
+      <p begin="00:07:56" end="00:07:59">Je pense que la question est encore en suspens.</p>
+      <p begin="00:07:59" end="00:08:01">Tout à fait. Des résultats récents indiquent</p>
+      <p begin="00:08:01" end="00:08:04">que même une unité d’alcool par jour, en particulier</p>
+      <p begin="00:08:04" end="00:08:07">chez les diabétiques de type 2, peut être associée</p>
+      <p begin="00:08:07" end="00:08:11">à une augmentation de la probabilité d’une fibrose hépatique avancée.</p>
+      <p begin="00:08:11" end="00:08:13">Il s’agit donc d’une question vitale et, à mon avis,</p>
+      <p begin="00:08:13" end="00:08:16">notre domaine d’exercice doit continuer à tenter d’y répondre.</p>
+      <p begin="00:08:16" end="00:08:20">Il existe donc de nombreux éléments caractéristiques</p>
+      <p begin="00:08:20" end="00:08:23">qui sont les meilleurs indicateurs de morbidité et de mortalité</p>
+      <p begin="00:08:23" end="00:08:26">en cas de stéatose hépatique. La cirrhose est une maladie à laquelle</p>
+      <p begin="00:08:26" end="00:08:29">nous accordons beaucoup d’importance en tant que cliniciens,</p>
+      <p begin="00:08:29" end="00:08:33">de même que le carcinome hépatocellulaire (CHC). Ces deux pathologies </p>
+      <p begin="00:08:33" end="00:08:38">s’inscrivent bien sûr dans les demandes croissantes de greffe de foie.</p>
+      <p begin="00:08:38" end="00:08:42">Elisabetta, en parlant des risques de carcinome hépatocellulaire,</p>
+      <p begin="00:08:42" end="00:08:46">quels sont les principaux déclencheurs ? Quelle est la probabilité</p>
+      <p begin="00:08:46" end="00:08:50">de développer un carcinome hépatocellulaire</p>
+      <p begin="00:08:50" end="00:08:52">alors qu’on est atteint de stéatose hépatique ?</p>
+      <p begin="00:08:52" end="00:08:55">Le carcinome hépatocellulaire en cas de NASH est un type particulier</p>
+      <p begin="00:08:55" end="00:08:59">de carcinome hépatocellulaire, car il n’est pas seulement influencé</p>
+      <p begin="00:08:59" end="00:09:02">par la maladie hépatique elle-même, en particulier la cirrhose.</p>
+      <p begin="00:09:02" end="00:09:06">En effet, il peut également apparaître dans un foie non cirrhotique.</p>
+      <p begin="00:09:06" end="00:09:10">Cela s’explique par le fait que certaines des composantes</p>
+      <p begin="00:09:10" end="00:09:13">du syndrome métabolique, en particulier le diabète de type 2</p>
+      <p begin="00:09:13" end="00:09:16">et l’obésité, sont elles-mêmes liées au risque</p>
+      <p begin="00:09:16" end="00:09:20">de carcinome hépatocellulaire. Il y aura donc un effet supplémentaire</p>
+      <p begin="00:09:20" end="00:09:25">dû à la cirrhose, à l’obésité et au diabète de type 2</p>
+      <p begin="00:09:25" end="00:09:28">et, en plus de cela, il peut y avoir un aspect génétique ou, comme</p>
+      <p begin="00:09:28" end="00:09:33">vous l’avez mentionné, le variant GG du gène PNPLA3, qui est associé</p>
+      <p begin="00:09:33" end="00:09:37">à un risque 5 fois plus élevé de carcinome hépatocellulaire.</p>
+      <p begin="00:09:37" end="00:09:43">Et si vous souhaitez expliquer un seul facteur de risque</p>
+      <p begin="00:09:43" end="00:09:46">ou si vous prenez un patient atteint d’une maladie hépatique </p>
+      <p begin="00:09:46" end="00:09:50">de longue date ou d’une cirrhose ancienne,</p>
+      <p begin="00:09:50" end="00:09:53">d’un diabète ancien, possédant certains des variants</p>
+      <p begin="00:09:53" end="00:09:58">du gène PNPLA3, le risque de carcinome hépatocellulaire</p>
+      <p begin="00:09:58" end="00:10:02">est vraiment élevé car la maladie elle-même </p>
+      <p begin="00:10:02" end="00:10:08">multiplie le risque par 2,5 ; l’obésité par 2,5 ;</p>
+      <p begin="00:10:08" end="00:10:13">et celui-ci dépend également de la durée d’existence de l’obésité</p>
+      <p begin="00:10:13" end="00:10:17">car si vous êtes obèse depuis l’enfance,</p>
+      <p begin="00:10:17" end="00:10:21">le risque de développer un CHC à l’âge adulte</p>
+      <p begin="00:10:21" end="00:10:25">augmente et vous développerez un carcinome hépatocellulaire</p>
+      <p begin="00:10:25" end="00:10:29">plus tôt que les individus obèses à l’âge adulte.</p>
+      <p begin="00:10:29" end="00:10:34">Il s’agit d’un problème particulièrement important</p>
+      <p begin="00:10:34" end="00:10:37">compte tenu de la prévalence croissante de l’obésité</p>
+      <p begin="00:10:37" end="00:10:40">chez les enfants dans toute l’Europe, mais aussi dans le monde entier.</p>
+      <p begin="00:10:40" end="00:10:43">C’est donc peut-être la durée de la période à risque qui compte,</p>
+      <p begin="00:10:43" end="00:10:48">l’exposition aux facteurs de risque. L’obésité est l’un des facteurs,</p>
+      <p begin="00:10:48" end="00:10:52">le diabète de type 2 en est un autre. Comme le patrimoine génétique,</p>
+      <p begin="00:10:52" end="00:10:55">cela peut accélérer l’évolution vers le CHC. Puis, au cours</p>
+      <p begin="00:10:55" end="00:10:58">de votre vie, vous pourriez boire un peu plus d’alcool</p>
+      <p begin="00:10:58" end="00:11:04">ou attraper un virus et cela accélérera fortement</p>
+      <p begin="00:11:04" end="00:11:07">votre risque de carcinome hépatocellulaire.</p>
+      <p begin="00:11:07" end="00:11:12">On remarque actuellement que l’apparition du CHC dans la NASH</p>
+      <p begin="00:11:12" end="00:11:17">sera la maladie qui progressera le plus vite</p>
+      <p begin="00:11:17" end="00:11:23">parmi les pathologies nécessitant une greffe de foie.</p>
+      <p begin="00:11:23" end="00:11:27">Bien sûr, l’hépatite C et l’hépatite B restent les premières causes,</p>
+      <p begin="00:11:27" end="00:11:30">mais elles reculent, en particulier l’hépatite C. Ce n’est pas</p>
+      <p begin="00:11:30" end="00:11:35">très rapide. Il faudra du temps pour observer le véritable </p>
+      <p begin="00:11:35" end="00:11:42">impact des nouveaux traitements. Mais en effet, dans 20 ans,</p>
+      <p begin="00:11:42" end="00:11:46">il est probable que le carcinome hépatocellulaire issu de la NASH</p>
+      <p begin="00:11:46" end="00:11:49">deviendra un fardeau très lourd si l’on ne fait rien avant.</p>
+      <p begin="00:11:49" end="00:11:53">Très bien. En gardant cela l’esprit, Vlad, que devrions-nous faire</p>
+      <p begin="00:11:53" end="00:11:56">à présent à propos du dépistage du CHC ? Faut-il effectuer</p>
+      <p begin="00:11:56" end="00:11:59">l’examen chez toutes les personnes atteintes de stéatose hépatique ?</p>
+      <p begin="00:11:59" end="00:12:01">Comment devrions-nous procéder ? Quel est votre avis ?</p>
+      <p begin="00:12:01" end="00:12:08">Je pense qu’actuellement, pour un patient individuel,</p>
+      <p begin="00:12:08" end="00:12:11">il faut suivre son instinct mais, dans le cas de plusieurs patients,</p>
+      <p begin="00:12:11" end="00:12:16">il faut établir des politiques qui peuvent être mises en œuvre et qui</p>
+      <p begin="00:12:16" end="00:12:19">soient coût-efficaces. Je pense que la seule chose que nous pouvons dire</p>
+      <p begin="00:12:19" end="00:12:23">aujourd’hui, c’est qu’un dépistage du carcinome hépatocellulaire</p>
+      <p begin="00:12:23" end="00:12:25">est nécessaire chez les patients cirrhotiques</p>
+      <p begin="00:12:25" end="00:12:28">exactement comme pour n’importe quelle cause de cirrhose.</p>
+      <p begin="00:12:28" end="00:12:31">Dans le cas des patients non cirrhotiques, c’est une question</p>
+      <p begin="00:12:31" end="00:12:34">très difficile, car il est évident qu’il existe des cas sans lien</p>
+      <p begin="00:12:34" end="00:12:37">avec la cirrhose, parfois même sans lien avec la NASH,</p>
+      <p begin="00:12:37" end="00:12:41">où il s’agit simplement de stéatose hépatique. Mais l’incidence</p>
+      <p begin="00:12:41" end="00:12:44">de ces cas semble suffisamment faible pour ne pas justifier</p>
+      <p begin="00:12:44" end="00:12:48">un dépistage systématique. Et le nombre de patients à risque</p>
+      <p begin="00:12:48" end="00:12:51">est trop élevé. Donc, si l’on veut suivre ce que préconisent</p>
+      <p begin="00:12:51" end="00:12:56">nos collègues dans les recommandations de pratique clinique,</p>
+      <p begin="00:12:56" end="00:13:02">en particulier l’ESMO pour le CHC, il existe un consensus</p>
+      <p begin="00:13:02" end="00:13:09">reconnaissant qu’un dépistage systématique n’est pas rentable</p>
+      <p begin="00:13:09" end="00:13:11">lorsque l’incidence est inférieure à 1,5 % par an,</p>
+      <p begin="00:13:11" end="00:13:13">ce qui est clairement le cas pour la NASH non cirrhotique.</p>
+      <p begin="00:13:13" end="00:13:16">Ce qui est intéressant, c’est que la cirrhose doit être surveillée</p>
+      <p begin="00:13:16" end="00:13:20">comme nous le faisons régulièrement, mais qu’il semble exister</p>
+      <p begin="00:13:20" end="00:13:23">une très grande variabilité parmi les patients cirrhotiques</p>
+      <p begin="00:13:23" end="00:13:26">en ce qui concerne le risque et que certains patients présentent</p>
+      <p begin="00:13:26" end="00:13:30">un risque bien plus élevé que d’autres, comme nous l’avons vu.</p>
+      <p begin="00:13:30" end="00:13:34">Chaque agent carcinogène possède sa propre puissance oncogénique</p>
+      <p begin="00:13:34" end="00:13:37">qui peut être différente entre le HPV (papillomavirus humain), l’aflatoxine,</p>
+      <p begin="00:13:37" end="00:13:40">le CHC et la NASH. Il est donc raisonnable de penser</p>
+      <p begin="00:13:40" end="00:13:43">que chaque maladie peut présenter des risques différents.</p>
+      <p begin="00:13:43" end="00:13:47">Du travail reste, même chez les patients cirrhotiques,</p>
+      <p begin="00:13:47" end="00:13:51">pour identifier ceux qui présentent le plus de risque.</p>
+      <p begin="00:13:51" end="00:13:53">Mais je pense qu’actuellement, il faut effectuer un dépistage</p>
+      <p begin="00:13:53" end="00:13:55">tous les 6 mois chez ces patients. Pour les autres, on peut réaliser</p>
+      <p begin="00:13:55" end="00:13:57">à l’occasion une échographie, mais il n’existe pas de recommandation.</p>
+      <p begin="00:13:57" end="00:14:00">Bien, merci. Nous savons donc que de nombreux patients atteints de</p>
+      <p begin="00:14:00" end="00:14:03">stéatose hépatique non alcoolique ne présentent aucun dommage</p>
+      <p begin="00:14:03" end="00:14:07">direct secondaire au foie. En effet, l’article écrit par feu Paul Angulo</p>
+      <p begin="00:14:07" end="00:14:11">datant de 2015 a démontré que seuls 9 à 10 % des patients suivis</p>
+      <p begin="00:14:11" end="00:14:15">lors d’une étude longitudinale sont décédés à la suite</p>
+      <p begin="00:14:15" end="00:14:18">d’un événement d’origine hépatique. Un nombre bien plus important</p>
+      <p begin="00:14:18" end="00:14:23">de décès résultait d’un événement cardiovasculaire.</p>
+      <p begin="00:14:23" end="00:14:27">Elisabetta, pouvez-vous nous en dire un peu plus sur les événements</p>
+      <p begin="00:14:27" end="00:14:30">d’origine non hépatique et leurs conséquences sur les patients</p>
+      <p begin="00:14:30" end="00:14:33">atteints de stéatose hépatique ?</p>
+      <p begin="00:14:33" end="00:14:37">Je vais faire un aparté sur ce travail, car nous y avons participé.</p>
+      <p begin="00:14:37" end="00:14:41">Les patients atteints de NAFLD que nous suivions</p>
+      <p begin="00:14:41" end="00:14:44">se trouvaient à un stade précoce de maladie hépatique.</p>
+      <p begin="00:14:44" end="00:14:49">Ils étaient surveillés, c’est pourquoi le taux de morbidité</p>
+      <p begin="00:14:49" end="00:14:52">et de mortalité d’origine hépatique est faible.</p>
+      <p begin="00:14:52" end="00:14:57">Parallèlement, nous rencontrons beaucoup de patients</p>
+      <p begin="00:14:57" end="00:15:01">qui ne sont pas surveillés et qui nous sont envoyés seulement</p>
+      <p begin="00:15:01" end="00:15:05">lorsqu’ils présentent une cirrhose décompensée ou</p>
+      <p begin="00:15:05" end="00:15:08">une complication majeure comme le carcinome hépatocellulaire.</p>
+      <p begin="00:15:08" end="00:15:12">Cela étant dit, bien sûr, les maladies cardiovasculaires représentent</p>
+      <p begin="00:15:12" end="00:15:15">la première cause de décès chez ce type de patients, car la NAFLD</p>
+      <p begin="00:15:15" end="00:15:20">n’est pas simplement une maladie liée au foie. Il s’agit</p>
+      <p begin="00:15:20" end="00:15:26">d’une maladie systémique résultant d’une pathologie métabolique</p>
+      <p begin="00:15:26" end="00:15:32">qui occasionnellement attaque le foie mais, en général,</p>
+      <p begin="00:15:32" end="00:15:36">le principal danger pour ces patients est un risque cardiovasculaire.</p>
+      <p begin="00:15:36" end="00:15:39">Le corollaire de cela est que la NAFLD et le syndrome métabolique</p>
+      <p begin="00:15:39" end="00:15:44">présentent une sorte de relation bidirectionnelle, car la stéatose</p>
+      <p begin="00:15:44" end="00:15:49">hépatique résulte d’un flux plus élevé d’acides gras libres</p>
+      <p begin="00:15:49" end="00:15:53">vers le foie en raison de la résistance à l’insuline du tissu adipeux</p>
+      <p begin="00:15:53" end="00:15:58">d’une part mais, d’autre part, lorsque le foie devient gras,</p>
+      <p begin="00:15:58" end="00:16:01">la production de glucose d’origine hépatique augmente,</p>
+      <p begin="00:16:01" end="00:16:05">ce qui accentue la probabilité du patient de développer</p>
+      <p begin="00:16:05" end="00:16:09">un diabète de type 2 et la production de lipides par le foie.</p>
+      <p begin="00:16:09" end="00:16:13">Cela conduit donc à un profil plus athérogénique et à la production</p>
+      <p begin="00:16:13" end="00:16:20">de CR pro-réactive et de PAI-1, qui sont tous</p>
+      <p begin="00:16:20" end="00:16:25">des facteurs pro-inflammatoires. Cela favorise</p>
+      <p begin="00:16:25" end="00:16:29">le développement d’une maladie cardio-vasculaire.</p>
+      <p begin="00:16:29" end="00:16:32">Cela fonctionne donc dans les deux sens, l’un entraînant l’autre</p>
+      <p begin="00:16:32" end="00:16:36">et vice versa. C’est ainsi que vous le décririez ?</p>
+      <p begin="00:16:36" end="00:16:40">Oui, ce n’est pas simplement une conséquence du syndrome métabolique</p>
+      <p begin="00:16:40" end="00:16:44">même s’il s’agit d’un facteur essentiel du syndrome métabolique</p>
+      <p begin="00:16:44" end="00:16:49">une fois que le foie devient gras, qui amplifie donc toutes les</p>
+      <p begin="00:16:49" end="00:16:53">conséquences négatives du syndrome métabolique, à la fois le risque de</p>
+      <p begin="00:16:53" end="00:16:55">développer un diabète de type 2 et le risque d’apparition</p>
+      <p begin="00:16:55" end="00:16:59">d’événements d’origine cardiovasculaire.</p>
+      <p begin="00:16:59" end="00:17:03">Je vous remercie. Il existe donc de nombreux problèmes</p>
+      <p begin="00:17:03" end="00:17:06">lorsqu’on envisage la prise en charge des patients atteints</p>
+      <p begin="00:17:06" end="00:17:09">de stéatose hépatique. Nous devons d’abord identifier les patients</p>
+      <p begin="00:17:09" end="00:17:12">présentant le risque le plus important de développer une NAFLD.</p>
+      <p begin="00:17:12" end="00:17:16">Il faut ensuite considérer la stratification du risque</p>
+      <p begin="00:17:16" end="00:17:18">pour identifier les patients atteints de stéatose hépatique</p>
+      <p begin="00:17:18" end="00:17:21">présentant le risque d’évolution la plus défavorable.</p>
+      <p begin="00:17:21" end="00:17:23">Il reste alors les questions concernant le meilleur moyen</p>
+      <p begin="00:17:23" end="00:17:25">de prendre en charge et de traiter cette maladie.</p>
+      <p begin="00:17:25" end="00:17:30">L’une des choses qui m’inquiètent toujours est de savoir</p>
+      <p begin="00:17:30" end="00:17:34">si nous sommes véritablement efficaces pour identifier</p>
+      <p begin="00:17:34" end="00:17:37">l’ensemble des patients atteints de stéatose hépatique.</p>
+      <p begin="00:17:37" end="00:17:40">D’un côté, les prévisions suggèrent qu’environ un quart</p>
+      <p begin="00:17:40" end="00:17:43">de la population est atteint à un certain degré de stéatose hépatique.</p>
+      <p begin="00:17:43" end="00:17:46">Pourtant, lorsqu’on regarde les données réelles</p>
+      <p begin="00:17:46" end="00:17:50">comme dans une étude portant sur une population de plus de 18 millions</p>
+      <p begin="00:17:50" end="00:17:53">d’adultes issus de bases de données de soins primaires</p>
+      <p begin="00:17:53" end="00:17:57">dans quatre pays européens, nous avons découvert que seuls</p>
+      <p begin="00:17:57" end="00:18:01">137 000 de ces individus répertoriés étaient véritablement</p>
+      <p begin="00:18:01" end="00:18:03">reconnus comme étant atteints d’une stéatose hépatique.</p>
+      <p begin="00:18:03" end="00:18:08">Il y a donc un écart important qui implique potentiellement</p>
+      <p begin="00:18:08" end="00:18:11">le fait que la stéatose hépatique ne soit pas aussi fréquente</p>
+      <p begin="00:18:11" end="00:18:16">que nous le pensons. Cependant, l’autre interprétation</p>
+      <p begin="00:18:16" end="00:18:18">de ces données qui selon moi est la plus probable est que</p>
+      <p begin="00:18:18" end="00:18:20">nous ne parvenons pas à diagnostiquer précisément cette maladie</p>
+      <p begin="00:18:20" end="00:18:24">et que nous ne la répertorions pas correctement. C’est pourquoi</p>
+      <p begin="00:18:24" end="00:18:27">elle n’est pas intégrée dans les statistiques. Nous savons que</p>
+      <p begin="00:18:27" end="00:18:31">les individus atteints de diabète de type 2, d’hypertension, d’obésité</p>
+      <p begin="00:18:31" end="00:18:34">et de syndrome métabolique ont une probabilité bien plus forte</p>
+      <p begin="00:18:34" end="00:18:37">de souffrir de stéatose hépatique. Vlad, pourriez-vous nous décrire</p>
+      <p begin="00:18:37" end="00:18:40">un peu mieux certaines des raisons qui pourraient expliquer</p>
+      <p begin="00:18:40" end="00:18:43">le manque de référencement de la stéatose hépatique ?</p>
+      <p begin="00:18:43" end="00:18:50">Je pense qu’il existe des raisons historiques dues au fait</p>
+      <p begin="00:18:50" end="00:18:52">que pendant longtemps, la stéatose était considérée</p>
+      <p begin="00:18:52" end="00:18:56">comme une maladie bénigne associée à l’obésité</p>
+      <p begin="00:18:56" end="00:19:02">ou au surpoids dont il n’était pas nécessaire de s’inquiéter.</p>
+      <p begin="00:19:02" end="00:19:08">À mon avis, l’absence de test très simple permettant </p>
+      <p begin="00:19:08" end="00:19:14">de prédire la maladie est également un obstacle</p>
+      <p begin="00:19:14" end="00:19:17">pour identifier ces patients. Nous disposons bien sûr de l’échographie</p>
+      <p begin="00:19:17" end="00:19:21">mais celle-ci n’est pas très sensible non plus. Le troisième élément</p>
+      <p begin="00:19:21" end="00:19:26">réside dans le fait que pendant longtemps l’histoire naturelle</p>
+      <p begin="00:19:26" end="00:19:28">de la maladie a été mal comprise. C’est pourquoi</p>
+      <p begin="00:19:28" end="00:19:33">il n’y avait pas le sentiment d’urgence qui existe maintenant</p>
+      <p begin="00:19:33" end="00:19:35">en raison des chiffres disponibles indiquant le nombre d’individus</p>
+      <p begin="00:19:35" end="00:19:38">susceptibles d’atteindre le stade terminal de la maladie hépatique.</p>
+      <p begin="00:19:38" end="00:19:41">On a très longtemps cru que cette maladie n’évoluait jamais ou</p>
+      <p begin="00:19:41" end="00:19:45">très rarement jusqu’au stade terminal de la maladie hépatique.</p>
+      <p begin="00:19:45" end="00:19:50">De plus, le fait que si vous la diagnostiquez, à n’importe quel stade,</p>
+      <p begin="00:19:50" end="00:19:54">il n’y ait rien à faire de plus que les recommandations actuelles</p>
+      <p begin="00:19:54" end="00:19:56">qui consistent à mettre en œuvre un régime alimentaire</p>
+      <p begin="00:19:56" end="00:19:58">et des mesures concernant le mode de vie, en d’autres termes</p>
+      <p begin="00:19:58" end="00:20:02">l’absence de traitement spécifique, est aussi un obstacle important</p>
+      <p begin="00:20:02" end="00:20:05">pour les personnes qui recherchent activement cette maladie.</p>
+      <p begin="00:20:05" end="00:20:08">Je pense que cela correspond aux facteurs concernés</p>
+      <p begin="00:20:08" end="00:20:11">et que toutes les études en cours, en particulier celle que</p>
+      <p begin="00:20:11" end="00:20:17">vous avez mentionnée, dépendent du contexte dans lequel elles sont</p>
+      <p begin="00:20:17" end="00:20:19">réalisées. Si l’étude porte uniquement sur des patients hospitalisés,</p>
+      <p begin="00:20:19" end="00:20:21">il est évident que la proportion sera nettement inférieure</p>
+      <p begin="00:20:21" end="00:20:24">à 24 % de la population. Si vous regardez les soins primaires,</p>
+      <p begin="00:20:24" end="00:20:26">secondaires ou tertiaires, selon la raison pour laquelle</p>
+      <p begin="00:20:26" end="00:20:29">les individus consultent leur médecin,</p>
+      <p begin="00:20:29" end="00:20:32">ce pourcentage pourrait être extrêmement variable.</p>
+      <p begin="00:20:32" end="00:20:35">J’aimerais parler à présent de la stratification du risque,</p>
+      <p begin="00:20:35" end="00:20:39">expliquer ce que c’est, son importance et la façon</p>
+      <p begin="00:20:39" end="00:20:43">dont nous devrions la mettre en œuvre. Nous devons commencer</p>
+      <p begin="00:20:43" end="00:20:47">par repérer les personnes présentant un risque</p>
+      <p begin="00:20:47" end="00:20:49">de maladie hépatique. Cela nous ramène à ce dont nous avons parlé</p>
+      <p begin="00:20:49" end="00:20:52">concernant les caractéristiques du syndrome métabolique.</p>
+      <p begin="00:20:52" end="00:20:54">Plus un individu possède ces caractéristiques, plus son risque</p>
+      <p begin="00:20:54" end="00:20:57">est élevé. Nous devons ensuite éliminer les autres maladies.</p>
+      <p begin="00:20:57" end="00:21:01">À ce stade, le diagnostic de stéatose hépatique est</p>
+      <p begin="00:21:01" end="00:21:04">un diagnostic d’exclusion qui implique d’éliminer l’hépatite virale,</p>
+      <p begin="00:21:04" end="00:21:08">l’hépatite auto-immune, etc. C’est une étape essentielle</p>
+      <p begin="00:21:08" end="00:21:11">du diagnostic. Troisièmement, nous devons évaluer</p>
+      <p begin="00:21:11" end="00:21:14">la sévérité de la maladie une fois le diagnostic établi.</p>
+      <p begin="00:21:14" end="00:21:19">Alors Elisabetta, en médecine générale</p>
+      <p begin="00:21:19" end="00:21:23">à l’échelle de la population, comment allons-nous</p>
+      <p begin="00:21:23" end="00:21:26">stratifier le risque des patients? Existe-t-il des méthodes</p>
+      <p begin="00:21:26" end="00:21:28">non invasives qui pourraient nous aider en cela ?</p>
+      <p begin="00:21:28" end="00:21:33">Tout d’abord, la stratification du risque pour la NAFLD</p>
+      <p begin="00:21:33" end="00:21:36">dans la population totale n’est pas recommandée dans les recommandations</p>
+      <p begin="00:21:36" end="00:21:40">de pratique clinique, mais elle l’est pour la population à haut risque</p>
+      <p begin="00:21:40" end="00:21:44">c’est-à-dire les individus atteints de diabète de type 2,</p>
+      <p begin="00:21:44" end="00:21:48">de syndrome métabolique complet, généralement âgés de plus de 45 ans.</p>
+      <p begin="00:21:48" end="00:21:52">C’est ce que stipulent les recommandations européennes. Après avoir réalisé</p>
+      <p begin="00:21:52" end="00:21:56">le dépistage de la NAFLD, vous souhaiteriez peut-être</p>
+      <p begin="00:21:56" end="00:22:00">identifier les personnes atteintes de NASH, qui est véritablement</p>
+      <p begin="00:22:00" end="00:22:04">la maladie hépatique évolutive. Vous devez en particulier stratifier</p>
+      <p begin="00:22:04" end="00:22:07">les personnes présentant un risque de développer une fibrose sévère.</p>
+      <p begin="00:22:07" end="00:22:11">D’ailleurs, la plupart des tests hépatiques non invasifs</p>
+      <p begin="00:22:11" end="00:22:17">dont nous disposons actuellement sont destinés à identifier ou exclure</p>
+      <p begin="00:22:17" end="00:22:21">une fibrose hépatique importante. Cela correspond aux stades F3, F4,</p>
+      <p begin="00:22:21" end="00:22:25">pré-cirrhose ou cirrhose. Il existe donc différents niveaux</p>
+      <p begin="00:22:25" end="00:22:29">de tests, des tests non invasifs que nous pouvons utiliser.</p>
+      <p begin="00:22:29" end="00:22:33">Ainsi, les généralistes ou les spécialistes comme les endocrinologues</p>
+      <p begin="00:22:33" end="00:22:37">ou les cardiologues peuvent utiliser le score de fibrose de la NAFLD </p>
+      <p begin="00:22:37" end="00:22:42">basé sur l’âge, l’ASAT, l’ALAT, la numération plaquettaire, l’IMC et</p>
+      <p begin="00:22:42" end="00:22:47">la présence d’un diabète avec des anomalies de la tolérance glucidique, ou</p>
+      <p begin="00:22:47" end="00:22:52">le score FIB-4, basé sur l’âge, l’ASAT, l’ALAT et la numération plaquettaire.</p>
+      <p begin="00:22:52" end="00:22:55">Ce sont les deux les plus recommandés. Il existe également</p>
+      <p begin="00:22:55" end="00:22:59">un deuxième niveau de test comme par exemple, le test ELF</p>
+      <p begin="00:22:59" end="00:23:04">associant des composants du remodelage du collagène</p>
+      <p begin="00:23:04" end="00:23:07">qui se produit au cours de la fibrose.</p>
+      <p begin="00:23:07" end="00:23:12">Le test de la voie de la NAFLD de Camden et Islington réalisé</p>
+      <p begin="00:23:12" end="00:23:16">au Royaume-Uni est un bon exemple de dépistage en soins primaires.</p>
+      <p begin="00:23:16" end="00:23:20">Tous les médecins généralistes ont été invités à réaliser un dépistage</p>
+      <p begin="00:23:20" end="00:23:24">par échographie sur leurs patients présentant une stéatose hépatique</p>
+      <p begin="00:23:24" end="00:23:28">et une augmentation de l’ALAT après exclusion</p>
+      <p begin="00:23:28" end="00:23:30">d’une consommation d’alcool importante</p>
+      <p begin="00:23:30" end="00:23:33">et d’autres causes de maladies hépatiques chroniques.</p>
+      <p begin="00:23:33" end="00:23:38">Le premier type de dépistage l’était par le score FIB-4. FIB-4 possède</p>
+      <p begin="00:23:38" end="00:23:41">2 seuils : un seuil inférieur, en deçà duquel les patients</p>
+      <p begin="00:23:41" end="00:23:46">ne sont pas orientés vers un hépatologue</p>
+      <p begin="00:23:46" end="00:23:49">et un au-delà duquel ils sont adressés à un hépatologue en raison</p>
+      <p begin="00:23:49" end="00:23:52">d’une augmentation significative du risque de fibrose hépatique.</p>
+      <p begin="00:23:52" end="00:23:55">Le problème avec tous ces tests non invasifs</p>
+      <p begin="00:23:55" end="00:23:59">est l’existence d’une zone grise importante,</p>
+      <p begin="00:23:59" end="00:24:04">une zone indéterminée. Les patients présents</p>
+      <p begin="00:24:04" end="00:24:08">dans la zone indéterminée peuvent être identifiés à l’aide</p>
+      <p begin="00:24:08" end="00:24:12">d’un test secondaire, le test ELF. Ces patients sont stratifiés</p>
+      <p begin="00:24:12" end="00:24:15">à nouveau en fonction de leur risque de fibrose significative.</p>
+      <p begin="00:24:15" end="00:24:19">Cela a été efficace, car le nombre de patients atteints</p>
+      <p begin="00:24:19" end="00:24:26">de fibrose sévère orientés vers un spécialiste est passé de 8 à 30 %</p>
+      <p begin="00:24:26" end="00:24:33">et, pour les patients atteints de cirrhose, de 6 à 14 %.</p>
+      <p begin="00:24:33" end="00:24:36">Très bien. Je pense que l’un des éléments essentiels</p>
+      <p begin="00:24:36" end="00:24:39">concernant ces tests est leur valeur prédictive négative élevée.</p>
+      <p begin="00:24:39" end="00:24:41">Ils sont donc très efficaces pour éliminer une maladie supposée.</p>
+      <p begin="00:24:41" end="00:24:45">Ils sont moins bons pour l’identifier. Même dans l’exemple présenté,</p>
+      <p begin="00:24:45" end="00:24:49">il y a eu une amélioration significative en termes d’orientation</p>
+      <p begin="00:24:49" end="00:24:52">des patients vers un spécialiste pour une maladie avancée.</p>
+      <p begin="00:24:52" end="00:24:55">Parmi ceux-ci, 70 % des individus réorientés ne présentaient</p>
+      <p begin="00:24:55" end="00:24:58">cependant pas de maladie avancée. C’est donc un domaine dans lequel</p>
+      <p begin="00:24:58" end="00:25:02">il reste beaucoup à faire, mais l’un des messages essentiels ici</p>
+      <p begin="00:25:02" end="00:25:04">est que vous pouvez consacrer beaucoup de temps à vous inquiéter</p>
+      <p begin="00:25:04" end="00:25:07">du choix du test adapté. Selon moi, on peut utiliser</p>
+      <p begin="00:25:07" end="00:25:09">n’importe quel test et le mettre en application de façon constante.</p>
+      <p begin="00:25:09" end="00:25:11">C’est mieux que rien car la prise en charge conventionnelle consistait à :</p>
+      <p begin="00:25:11" end="00:25:15">« adresser n’importe qui, n’adresser personne ou au hasard ».</p>
+      <p begin="00:25:15" end="00:25:16">Tout à fait.</p>
+      <p begin="00:25:16" end="00:25:20">Et même au-delà de ça, je pense que la chose la plus importante</p>
+      <p begin="00:25:20" end="00:25:22">dont nous devons informer le grand public</p>
+      <p begin="00:25:22" end="00:25:26">et les médecins généralistes est qu’avant même d’appliquer</p>
+      <p begin="00:25:26" end="00:25:29">un test particulier, nous devons d’abord reconnaître que la présence</p>
+      <p begin="00:25:29" end="00:25:32">de facteurs de risques métaboliques constitue un danger</p>
+      <p begin="00:25:32" end="00:25:36">pour le foie. Nous devons aussi commencer à nous interroger</p>
+      <p begin="00:25:36" end="00:25:39">de savoir si le patient est en surpoids ou atteint de diabète,</p>
+      <p begin="00:25:39" end="00:25:42">de dyslipidémie, d’hypertension artérielle ou d’une association</p>
+      <p begin="00:25:42" end="00:25:45">de ceux-ci. Dans ce cas, nous devons vérifier le foie.</p>
+      <p begin="00:25:45" end="00:25:47">Vous pouvez alors utiliser le test dans lequel vous avez confiance.</p>
+      <p begin="00:25:47" end="00:25:49">Par conséquent, une fois le patient identifié par le généraliste,</p>
+      <p begin="00:25:49" end="00:25:54">qu’il vous l’adresse Vlad, comment l’évaluez-vous ensuite ?</p>
+      <p begin="00:25:54" end="00:25:56">Est-il nécessaire d’effectuer une biopsie du foie pour chaque patient</p>
+      <p begin="00:25:56" end="00:25:57">ou pouvons-nous procéder de façon plus intelligente ?</p>
+      <p begin="00:25:57" end="00:26:02">Oui, en résumé, vous essayez de comprendre</p>
+      <p begin="00:26:02" end="00:26:05">si le patient présente un risque d’évolution vers une cirrhose.</p>
+      <p begin="00:26:05" end="00:26:09">Et ce risque est principalement lié au stade de la fibrose,</p>
+      <p begin="00:26:09" end="00:26:13">mais également à l’activité de la maladie. Certaines choses</p>
+      <p begin="00:26:13" end="00:26:17">peuvent cependant suffire pour essayer d’évaluer</p>
+      <p begin="00:26:17" end="00:26:20">le stade de la fibrose. Parfois il faut aller un peu plus loin</p>
+      <p begin="00:26:20" end="00:26:24">et essayer de comprendre si la NASH elle-même</p>
+      <p begin="00:26:24" end="00:26:27">est très active ou non. La première étape consiste à s’assurer</p>
+      <p begin="00:26:27" end="00:26:31">de l’absence d’autres maladies, des maladies chroniques,</p>
+      <p begin="00:26:31" end="00:26:34">et une fois encore nous en revenons au problème de l’alcool.</p>
+      <p begin="00:26:34" end="00:26:36">Vous devez donc établir avec précision si la consommation d’alcool</p>
+      <p begin="00:26:36" end="00:26:39">présente un risque pour le patient, et à quel point,</p>
+      <p begin="00:26:39" end="00:26:41">par rapport au risque</p>
+      <p begin="00:26:41" end="00:26:43">dû au syndrome métabolique.</p>
+      <p begin="00:26:43" end="00:26:47">Le deuxième point est d’essayer d’obtenir une estimation non invasive</p>
+      <p begin="00:26:47" end="00:26:51">de l’ampleur de la fibrose. Vous utilisez alors différents tests</p>
+      <p begin="00:26:51" end="00:26:54">de plus en plus spécialisés, pas celui dont nous venons</p>
+      <p begin="00:26:54" end="00:26:56">de parler, mais des tests plus spécialisés.</p>
+      <p begin="00:26:56" end="00:27:00">Le problème réside dans le fait qu’aucun test utilisé seul</p>
+      <p begin="00:27:00" end="00:27:02">n’est suffisant. Dans l’idéal, il faudrait combiner au moins 2 tests</p>
+      <p begin="00:27:02" end="00:27:05">de nature différente avec des biomarqueurs biophysiques</p>
+      <p begin="00:27:05" end="00:27:09">tels que la dureté du foie. Le problème qui se pose consiste alors à</p>
+      <p begin="00:27:09" end="00:27:11">interpréter les résultats. Parfois, ils sont évidents. D’autres fois,</p>
+      <p begin="00:27:11" end="00:27:15">vous devez comprendre pourquoi il existe une discordance ou non.</p>
+      <p begin="00:27:15" end="00:27:22">Par conséquent, après ça, selon le profil du patient, vous préférerez</p>
+      <p begin="00:27:22" end="00:27:26">peut-être attendre un peu et voir si le patient est capable</p>
+      <p begin="00:27:26" end="00:27:28">d’effectuer des modifications d’alimentation et de mode de vie</p>
+      <p begin="00:27:28" end="00:27:31">et vérifier que celles-ci soient efficaces. Certaines personnes jeunes,</p>
+      <p begin="00:27:31" end="00:27:33">dont la maladie n’est pas à un stade avancé,</p>
+      <p begin="00:27:33" end="00:27:35">ne savent pas qu’elles sont atteintes de cette pathologie.</p>
+      <p begin="00:27:35" end="00:27:38">Elles reviennent parfois 4 à 6 mois plus tard en ayant déjà commencé</p>
+      <p begin="00:27:38" end="00:27:41">à perdre du poids et à améliorer certains de ces paramètres.</p>
+      <p begin="00:27:41" end="00:27:44">Dans ce cas, il n’est pas nécessaire d’effectuer de biopsie du foie.</p>
+      <p begin="00:27:44" end="00:27:47">À l’inverse, il y a des personnes malades depuis de nombreuses années</p>
+      <p begin="00:27:47" end="00:27:51">qui ont déjà essayé de mettre en place ces changements, sans succès.</p>
+      <p begin="00:27:51" end="00:27:54">Vous devez alors vous interroger : est-ce qu’une biopsie hépatique</p>
+      <p begin="00:27:54" end="00:27:58">va m’aider à mieux comprendre le risque, cela aidera-t-il les patients</p>
+      <p begin="00:27:58" end="00:28:01">à prendre conscience des conséquences s’ils ne changent rien ?</p>
+      <p begin="00:28:01" end="00:28:05">Et cela aidera-t-il le patient à profiter</p>
+      <p begin="00:28:05" end="00:28:07">des nouveaux médicaments développés actuellement ?</p>
+      <p begin="00:28:07" end="00:28:10">Lorsque vous effectuez la biopsie du foie bien sûr, quand vous décidez</p>
+      <p begin="00:28:10" end="00:28:13">de réaliser une biopsie, vous devez prendre en compte</p>
+      <p begin="00:28:13" end="00:28:16">l’âge, les comorbidités, les traitements qui pourraient augmenter</p>
+      <p begin="00:28:16" end="00:28:21">le risque de la procédure. Il s’agit donc d’un phénomène</p>
+      <p begin="00:28:21" end="00:28:23">très complexe et vous devez persuader le patient de se soumettre</p>
+      <p begin="00:28:23" end="00:28:28">à cette procédure qui peut être douloureuse.</p>
+      <p begin="00:28:28" end="00:28:31">Bien, merci. Et bien sûr, de nombreux biomarqueurs</p>
+      <p begin="00:28:31" end="00:28:34">sont en cours de développement. Beaucoup d’entre nous ici</p>
+      <p begin="00:28:34" end="00:28:36">faisons partie par exemple du consortium LITMUS de l’UE</p>
+      <p begin="00:28:36" end="00:28:40">qui développe et valide de nouveau biomarqueurs.</p>
+      <p begin="00:28:40" end="00:28:44">Il existe une gamme d’outils comme le procollagène C3</p>
+      <p begin="00:28:44" end="00:28:48">ou l’élastographie par résonance magnétique.</p>
+      <p begin="00:28:48" end="00:28:50">Il y a actuellement de nombreux outils de recherche, dont beaucoup</p>
+      <p begin="00:28:50" end="00:28:53">sont utilisés lors d’essais cliniques. Il sera intéressant d’examiner</p>
+      <p begin="00:28:53" end="00:28:57">leur efficacité et de voir s’ils constituent un atout</p>
+      <p begin="00:28:57" end="00:29:01">pour la pratique quotidienne. Enfin, il n’existe pas aujourd’hui</p>
+      <p begin="00:29:01" end="00:29:06">de test non invasif spécifique pour diagnostiquer la stéatohépatite.</p>
+      <p begin="00:29:06" end="00:29:08">Nous parvenons bien à identifier la fibrose avancée,</p>
+      <p begin="00:29:08" end="00:29:11">la stéatose, mais la biopsie reste encore utilisée</p>
+      <p begin="00:29:11" end="00:29:15">et nous ne savons pas encore comment faire au mieux</p>
+      <p begin="00:29:15" end="00:29:18">avec cela. Je pense que votre explication</p>
+      <p begin="00:29:18" end="00:29:20">m’éclaire vraiment à ce sujet. Il n’existe pas actuellement</p>
+      <p begin="00:29:20" end="00:29:24">de médicament commercialisé pour traiter la stéatose hépatique,</p>
+      <p begin="00:29:24" end="00:29:27">ce qui ne signifie pas qu’il n’existe aucune option.</p>
+      <p begin="00:29:27" end="00:29:31">Les interventions concernant le mode de vie sont cruciales ici.</p>
+      <p begin="00:29:31" end="00:29:33">Nous devons aider nos patients à entreprendre un régime alimentaire</p>
+      <p begin="00:29:33" end="00:29:36">et de l’exercice physique pour perdre du poids.</p>
+      <p begin="00:29:36" end="00:29:39">Il existe des données probantes démontrant que la perte de poids peut</p>
+      <p begin="00:29:39" end="00:29:43">améliorer l’histologie des patients atteints de stéatose hépatique.</p>
+      <p begin="00:29:43" end="00:29:45">Gardons à l’esprit ce que nous avons dit du risque cardio-vasculaire.</p>
+      <p begin="00:29:45" end="00:29:49">Il est essentiel d’améliorer le profil de risque cardio-vasculaire</p>
+      <p begin="00:29:49" end="00:29:52">de nos patients diabétiques, de bien contrôler leur diabète</p>
+      <p begin="00:29:52" end="00:29:55">et de traiter efficacement leur dyslipidémie.</p>
+      <p begin="00:29:55" end="00:30:00">Il reste de nombreuses questions</p>
+      <p begin="00:30:00" end="00:30:04">concernant les moyens à utiliser pour parvenir</p>
+      <p begin="00:30:04" end="00:30:08">à la perte de poids la plus efficace. Elisabetta, brièvement,</p>
+      <p begin="00:30:08" end="00:30:10">pouvez-vous nous donner quelques informations sur la façon</p>
+      <p begin="00:30:10" end="00:30:12">dont vous conseilleriez vos patients et quelle sorte d’objectifs</p>
+      <p begin="00:30:12" end="00:30:14">de perte de poids vous viseriez ?</p>
+      <p begin="00:30:14" end="00:30:19">De nombreux régimes alimentaires peuvent être utilisés,</p>
+      <p begin="00:30:19" end="00:30:22">mais celui qui s’est révélé le plus efficace, en particulier</p>
+      <p begin="00:30:22" end="00:30:26">pour le risque cardiovasculaire, est le régime méditerranéen.</p>
+      <p begin="00:30:26" end="00:30:30">Malheureusement, nous avons oublié le concept de régime méditerranéen</p>
+      <p begin="00:30:30" end="00:30:34">qui ne consiste pas simplement à manger de la pizza et des glaces.</p>
+      <p begin="00:30:34" end="00:30:40">Il s’agit d’un régime alimentaire bien plus complexe, enrichi</p>
+      <p begin="00:30:40" end="00:30:44">en aliments d’origine végétale. 40 % des calories proviennent</p>
+      <p begin="00:30:44" end="00:30:48">de glucides complexes. Ce régime contient une proportion faible de</p>
+      <p begin="00:30:48" end="00:30:53">viande rouge, une proportion élevée de viande blanche. Il est pauvre</p>
+      <p begin="00:30:53" end="00:30:57">en sel et en fructose. Le fructose présent dans ce régime provient</p>
+      <p begin="00:30:57" end="00:31:01">exclusivement des fruits. Le fructose est en effet l’un des éléments</p>
+      <p begin="00:31:01" end="00:31:08">les plus préjudiciables consommés particulièrement par les adolescents</p>
+      <p begin="00:31:08" end="00:31:13">et les enfants, qui boivent des sodas, mangent du pain industriel,</p>
+      <p begin="00:31:13" end="00:31:18">de la nourriture industrielle, etc. Mais finalement, ce qui compte,</p>
+      <p begin="00:31:18" end="00:31:22">c’est la proportion de perte de poids que vous parvenez à atteindre.</p>
+      <p begin="00:31:22" end="00:31:28">Par conséquent, nous essayons dans une certaine mesure d’adapter</p>
+      <p begin="00:31:28" end="00:31:33">le régime alimentaire au patient. Le régime le plus raisonnable</p>
+      <p begin="00:31:33" end="00:31:36">est celui qui fonctionne le mieux parce que le patient le respecte</p>
+      <p begin="00:31:36" end="00:31:41">sur le long terme. Bien sûr, l’activité physique est essentielle</p>
+      <p begin="00:31:41" end="00:31:45">car, au cours d’un régime alimentaire, vous perdez de la graisse,</p>
+      <p begin="00:31:45" end="00:31:50">mais également du muscle, alors que, si vous pratiquez parallèlement</p>
+      <p begin="00:31:50" end="00:31:53">de l’exercice, vous perdez seulement de la graisse et pas de muscle.</p>
+      <p begin="00:31:53" end="00:31:58">Le risque de reprendre du poids à l’arrêt du régime est plus faible</p>
+      <p begin="00:31:58" end="00:32:02">que pour les individus qui ne font pas d’exercice simultanément.</p>
+      <p begin="00:32:02" end="00:32:06">Bien. Envisageons maintenant les agents pharmacologiques</p>
+      <p begin="00:32:06" end="00:32:09">au-delà du changement de mode de vie. L’une des choses ennuyeuses</p>
+      <p begin="00:32:09" end="00:32:12">surtout lorsque nous sommes confrontés à une personne</p>
+      <p begin="00:32:12" end="00:32:14">chez laquelle une maladie hépatique a été diagnostiquée, qui présente</p>
+      <p begin="00:32:14" end="00:32:17">par exemple une biochimie hépatique anormale, une augmentation</p>
+      <p begin="00:32:17" end="00:32:22">de l’ALAT et de l’ASAT, est qu’initialement celle-ci est en bonne santé.</p>
+      <p begin="00:32:22" end="00:32:25">C’est un point important, vraiment important,</p>
+      <p begin="00:32:25" end="00:32:29">car je remarque que nos patients atteints de NAFLD</p>
+      <p begin="00:32:29" end="00:32:33">sont sous-traités par rapport à leur risque cardio-vasculaire,</p>
+      <p begin="00:32:33" end="00:32:37">en particulier les patients diabétiques, alors que les statines sont sûres.</p>
+      <p begin="00:32:37" end="00:32:42">Pour prendre une image, les statines produisent de la fumée</p>
+      <p begin="00:32:42" end="00:32:49">mais pas de feu : les réactions catastrophiques sont vraiment rares.</p>
+      <p begin="00:32:49" end="00:32:52">L’augmentation des ALAT et ASAT observée au cours du premier mois</p>
+      <p begin="00:32:52" end="00:32:56">d’utilisation des statines n’est pas un indicateur</p>
+      <p begin="00:32:56" end="00:32:59">de maladie hépatique. Leur taux diminue généralement spontanément</p>
+      <p begin="00:32:59" end="00:33:04">dans les 6 mois qui suivent le début du traitement. Nous conseillons</p>
+      <p begin="00:33:04" end="00:33:13">généralement de réduire progressivement la concentration des statines</p>
+      <p begin="00:33:13" end="00:33:18">lorsqu’on dépasse 2,5 fois la concentration initiale d’ALAT</p>
+      <p begin="00:33:18" end="00:33:21">ou d’ASAT. Mais si l’on n’utilise pas de statines, on peut choisir</p>
+      <p begin="00:33:21" end="00:33:24">l’ézétimibe ou un autre médicament. Il existe de nombreuses options</p>
+      <p begin="00:33:24" end="00:33:27">parmi les médicaments existants. C’est important. En ce qui concerne</p>
+      <p begin="00:33:27" end="00:33:31">les médicaments en cours de développement, Vlad, il y a</p>
+      <p begin="00:33:31" end="00:33:36">de nombreuses cibles thérapeutiques potentielles. Pourriez-vous</p>
+      <p begin="00:33:36" end="00:33:39">nous en donner un aperçu. Quels sont les médicaments en phase 3 ?</p>
+      <p begin="00:33:39" end="00:33:42">Il existe désormais un certain nombre de médicaments qui ont atteint</p>
+      <p begin="00:33:42" end="00:33:47">la phase 3. L’un d’eux a déjà donné des résultats dans cette phase.</p>
+      <p begin="00:33:47" end="00:33:50">Il s’agit de l’acide obéticholique, qui est un agoniste du FXR.</p>
+      <p begin="00:33:50" end="00:33:55">Il y a également l’élafibranor,</p>
+      <p begin="00:33:55" end="00:33:59">un double agoniste des PPAR dont les résultats</p>
+      <p begin="00:33:59" end="00:34:02">seront bientôt disponibles. Il existe également trois autres études</p>
+      <p begin="00:34:02" end="00:34:06">internationales de phase 3 de grande ampleur, des études internationales</p>
+      <p begin="00:34:06" end="00:34:09">qui impliquent plus de 2 000 patients.</p>
+      <p begin="00:34:09" end="00:34:14">L’une d’elles porte sur le resmetirom qui est un thyromimétique.</p>
+      <p begin="00:34:14" end="00:34:17">L’aramchol est également en cours d’étude.</p>
+      <p begin="00:34:17" end="00:34:21">Il s’agit d’une molécule hybride associant</p>
+      <p begin="00:34:21" end="00:34:23">un acide biliaire et un lipide. Et le troisième en cours d’étude</p>
+      <p begin="00:34:23" end="00:34:27">est le cénicriviroc, qui est un antagoniste du récepteur</p>
+      <p begin="00:34:27" end="00:34:33">de chemokine CCR2/CCR5. En conclusion, tous ces agents</p>
+      <p begin="00:34:33" end="00:34:37">ont des cibles différentes et la plupart</p>
+      <p begin="00:34:37" end="00:34:43">d’entre eux exercent une action métabolique ou anti-inflammatoire.</p>
+      <p begin="00:34:43" end="00:34:45">Et puis, il y a les autres, qui sont davantage antifibrotiques</p>
+      <p begin="00:34:45" end="00:34:50">comme le cénicriviroc. Pour ceux-ci, il sera extrêmement intéressant</p>
+      <p begin="00:34:50" end="00:34:52">de connaître leurs effets et nous découvrirons bientôt les résultats.</p>
+      <p begin="00:34:52" end="00:34:55">Il est très important que tout le monde participe à ces essais</p>
+      <p begin="00:34:55" end="00:34:58">et nous essayons d’expliquer aux patients qu’ils offrent</p>
+      <p begin="00:34:58" end="00:35:05">un avantage significatif et une contribution importante</p>
+      <p begin="00:35:05" end="00:35:09">à la recherche s’ils acceptent de participer à ces essais,</p>
+      <p begin="00:35:09" end="00:35:12">sans être traités comme des cobayes. Ils participent</p>
+      <p begin="00:35:12" end="00:35:14">simplement au progrès de la médecine.</p>
+      <p begin="00:35:14" end="00:35:17">Absolument. Comme vous l’avez dit, c’est une période enthousiasmante.</p>
+      <p begin="00:35:17" end="00:35:20">Nous disposons déjà des résultats positifs pour ces essais.</p>
+      <p begin="00:35:20" end="00:35:23">Ainsi, l’étude REGENERATE qui étudie l’acide obéticholique</p>
+      <p begin="00:35:23" end="00:35:27">a 2 critères de jugement principaux. L’un est associé à la résolution</p>
+      <p begin="00:35:27" end="00:35:30">de la NASH. Il n’a malheureusement pas été atteint.</p>
+      <p begin="00:35:30" end="00:35:33">Mais ce qui est important, c’est que des données probantes</p>
+      <p begin="00:35:33" end="00:35:36">ont été obtenues pour l’autre critère primaire de jugement</p>
+      <p begin="00:35:36" end="00:35:40">dans l’analyse en intention de traiter qui a démontré une amélioration</p>
+      <p begin="00:35:40" end="00:35:43">de la fibrose d’au moins un stade, sans aggravation</p>
+      <p begin="00:35:43" end="00:35:46">de la stéatohépatite chez les patients traités atteints de NASH.</p>
+      <p begin="00:35:46" end="00:35:49">Nous commençons à entrevoir qu’il s’agit d’une maladie</p>
+      <p begin="00:35:49" end="00:35:53">pour laquelle les traitements pharmacologiques seront bénéfiques.</p>
+      <p begin="00:35:53" end="00:35:55">Il reste maintenant à décider</p>
+      <p begin="00:35:55" end="00:35:57">des traitements qui seront finalement bénéfiques.</p>
+      <p begin="00:35:57" end="00:36:00">Oui. Il est donc important de comprendre ici</p>
+      <p begin="00:36:00" end="00:36:02">que les 2 résultats donc vous venez de parler sont probablement liés</p>
+      <p begin="00:36:02" end="00:36:06">à l’évolution de la maladie. Ce qui est important maintenant</p>
+      <p begin="00:36:06" end="00:36:10">est que certains d’entre eux ont été contrôlés à court terme</p>
+      <p begin="00:36:10" end="00:36:12">est de voir si cela permet de réduire le nombre</p>
+      <p begin="00:36:12" end="00:36:15">d’individus qui développent une cirrhose.</p>
+      <p begin="00:36:15" end="00:36:17">Il est essentiel que ces essais soient menés à leur terme.</p>
+      <p begin="00:36:17" end="00:36:21">Nous sommes dans une situation dans laquelle, dès l’année prochaine,</p>
+      <p begin="00:36:21" end="00:36:25">peut-être des médicaments seront approuvés pour la stéatose hépatique.</p>
+      <p begin="00:36:25" end="00:36:28">En quoi cela va-t-il changer votre pratique ? </p>
+      <p begin="00:36:28" end="00:36:31">Cela modifiera surtout l’orientation des patients car jusqu’à présent,</p>
+      <p begin="00:36:31" end="00:36:36">les généralistes et les spécialistes ne les réorientaient pas.</p>
+      <p begin="00:36:36" end="00:36:38">Cela est dû au fait qu’il n’existe pas de traitement spécifique,</p>
+      <p begin="00:36:38" end="00:36:40">ce qui explique qu’ils se disent : « Pourquoi est-ce que j’adresserais</p>
+      <p begin="00:36:40" end="00:36:43">le patient à un hépatologue, qu’est-ce qu’il fera de plus que moi ? »</p>
+      <p begin="00:36:43" end="00:36:44">Cela va donc changer.</p>
+      <p begin="00:36:44" end="00:36:45">Tout à fait.</p>
+      <p begin="00:36:45" end="00:36:46">Oui cela va évoluer.</p>
+      <p begin="00:36:46" end="00:36:50">Pour conclure, je pense que nous sommes conscients désormais du fait</p>
+      <p begin="00:36:50" end="00:36:52">que la stéatose hépatique est une maladie avec une prévalence élevée.</p>
+      <p begin="00:36:52" end="00:36:55">Nous savons qu’il existe des conséquences importantes pour le foie</p>
+      <p begin="00:36:55" end="00:36:58">et des conséquences cardiovasculaires. Il est donc de notre devoir</p>
+      <p begin="00:36:58" end="00:37:03">en tant qu’hépatologues de prendre tout cela en charge.</p>
+      <p begin="00:37:03" end="00:37:06">Nous devons traiter la cause en nous attaquant à l’obésité.</p>
+      <p begin="00:37:06" end="00:37:08">Il faut traiter le risque cardiovasculaire en intervenant</p>
+      <p begin="00:37:08" end="00:37:12">sur la dyslipidémie et le diabète. Nous devons stratifier le risque</p>
+      <p begin="00:37:12" end="00:37:15">de nos patients et intensifier les soins aux personnes présentant</p>
+      <p begin="00:37:15" end="00:37:18">le plus grand risque d’aggravation. Nous disposons également</p>
+      <p begin="00:37:18" end="00:37:21">de quelques concepts thérapeutiques élémentaires et nous aurons</p>
+      <p begin="00:37:21" end="00:37:24">la chance de disposer dans les années à venir</p>
+      <p begin="00:37:24" end="00:37:27">de traitements complémentaires dans notre arsenal.</p>
+      <p begin="00:37:27" end="00:37:31">C’est un moment passionnant pour la stéatose hépatique.</p>
+      <p begin="00:37:31" end="00:37:34">Je vais maintenant conclure et vous remercier,</p>
+      <p begin="00:37:34" end="00:37:36">Elisabetta et vous, Vlad, d’avoir participé à cette activité.</p>
+      <p begin="00:37:36" end="00:37:41">Merci également à vous d’avoir participé et suivi</p>
+      <p begin="00:37:41" end="00:37:44">cette activité. Veuillez poursuivre en répondant</p>
+      <p begin="00:37:44" end="00:37:45">aux questions à venir</p>
+      <p begin="00:37:45" end="00:37:47">et en remplissant l’évaluation.</p>
+    </div>
+  </body>
+</tt>

@@ -1,0 +1,684 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+  <body>
+    <div xml:lang="en">
+      <p begin="00:00:07" end="00:00:09">Hello. I'm Dr. David Carr, professor of medicine in</p>
+      <p begin="00:00:09" end="00:00:13">neurology, and the Alan A and Edith L. Wolff,</p>
+      <p begin="00:00:13" end="00:00:15">professor of Geriatric Medicine at Washington</p>
+      <p begin="00:00:15" end="00:00:18">University School of Medicine in St. Louis,</p>
+      <p begin="00:00:18" end="00:00:22">Missouri. Welcome to our program titled, mild</p>
+      <p begin="00:00:22" end="00:00:25">cognitive impairment and driving safety: early</p>
+      <p begin="00:00:25" end="00:00:27">action with patients.</p>
+      <p begin="00:00:27" end="00:00:31">I'm delighted joining me today is Dr. Linda Hill is</p>
+      <p begin="00:00:31" end="00:00:33">professor in the Department of Family Medicine</p>
+      <p begin="00:00:33" end="00:00:36">and Public Health and the Department of Surgery</p>
+      <p begin="00:00:36" end="00:00:39">at the UC San Diego School of Medicine, in San</p>
+      <p begin="00:00:39" end="00:00:43">Diego, California. Also director of the UCSD SDSU</p>
+      <p begin="00:00:43" end="00:00:46">preventative medicine residency, and training,</p>
+      <p begin="00:00:46" end="00:00:49">research and education for driving safety.</p>
+      <p begin="00:00:49" end="00:00:53">Also welcome Dr. Tammy Arms, who is an</p>
+      <p begin="00:00:53" end="00:00:56">associate professor at the UNCW College of</p>
+      <p begin="00:00:56" end="00:00:59">Health and Human Services School of Nursing,</p>
+      <p begin="00:00:59" end="00:01:01">and the Nurse Faculty Leadership Academy</p>
+      <p begin="00:01:01" end="00:01:05">scholar in Wilmington, North Carolina. Welcome</p>
+      <p begin="00:01:05" end="00:01:07">to both of you. I know you both do research,</p>
+      <p begin="00:01:07" end="00:01:11">teaching and also see patients, so we're delighted</p>
+      <p begin="00:01:11" end="00:01:13">to have you on our panel today.</p>
+      <p begin="00:01:13" end="00:01:17">Just to background, some of the information that</p>
+      <p begin="00:01:17" end="00:01:20">we're going to be touching on is this area of</p>
+      <p begin="00:01:20" end="00:01:22">cognitive impairment, which we see very often in</p>
+      <p begin="00:01:22" end="00:01:27">older adults in our practice. We as clinicians need</p>
+      <p begin="00:01:27" end="00:01:30">to be aware of the different types of factors,</p>
+      <p begin="00:01:30" end="00:01:32">medications, medical conditions that can affect</p>
+      <p begin="00:01:32" end="00:01:36">driving, and makes sure we consider driving as an</p>
+      <p begin="00:01:36" end="00:01:39">important instrumental activity of daily living in</p>
+      <p begin="00:01:39" end="00:01:43">our practice. I think it's also important, not just</p>
+      <p begin="00:01:43" end="00:01:45">the safety issues, because we know that there is</p>
+      <p begin="00:01:45" end="00:01:48">some risk in driving with older adults, especially</p>
+      <p begin="00:01:48" end="00:01:51">those that have medical impairments. But we also</p>
+      <p begin="00:01:51" end="00:01:54">know older adults are risk for driving cessation.</p>
+      <p begin="00:01:54" end="00:01:56">The average older adult male may be without</p>
+      <p begin="00:01:56" end="00:02:00">driving a car for six years, a female for 10 years.</p>
+      <p begin="00:02:00" end="00:02:02">That's a long time. And what are those risk</p>
+      <p begin="00:02:02" end="00:02:05">factors? Pretty much the same as they are for</p>
+      <p begin="00:02:05" end="00:02:09">motor vehicle crashes. We know that there's age</p>
+      <p begin="00:02:09" end="00:02:12">associated illnesses, visual impairment, cognitive</p>
+      <p begin="00:02:12" end="00:02:16">decline, diminished motor strength that can occur</p>
+      <p begin="00:02:16" end="00:02:18">as we age.</p>
+      <p begin="00:02:18" end="00:02:22">Tammy, would you like to talk to us a little bit</p>
+      <p begin="00:02:22" end="00:02:25">about some of the crash statistics and some of</p>
+      <p begin="00:02:25" end="00:02:27">our concerns about older adult drivers?</p>
+      <p begin="00:02:27" end="00:02:31">Yes, thank you David. We do know that older</p>
+      <p begin="00:02:31" end="00:02:34">adults have an increased crash risk and fatality</p>
+      <p begin="00:02:34" end="00:02:38">rate per miles driven. And this is the highest in</p>
+      <p begin="00:02:38" end="00:02:40">this aging demographic compared to any other</p>
+      <p begin="00:02:40" end="00:02:44">demographics. These graphs right here actually</p>
+      <p begin="00:02:44" end="00:02:48">show us the significant change and the increased</p>
+      <p begin="00:02:48" end="00:02:50">driver fatalities.</p>
+      <p begin="00:02:50" end="00:02:53">We also know that these numbers are expected to</p>
+      <p begin="00:02:53" end="00:02:56">only increase. Dr. Hill, could you tell us a little</p>
+      <p begin="00:02:56" end="00:02:58">bit about the prevalence of cognitive impairment?</p>
+      <p begin="00:02:58" end="00:03:01">Why this is such an important issue for clinicians?</p>
+      <p begin="00:03:01" end="00:03:05">Certainly. Dementia prevalence rises with age.</p>
+      <p begin="00:03:05" end="00:03:10">Only 2.4% of individuals 65 to 74 years of age</p>
+      <p begin="00:03:10" end="00:03:12">have cognitive impairment, whereas this</p>
+      <p begin="00:03:12" end="00:03:16">percentage ranges between 34 and 50% in those</p>
+      <p begin="00:03:16" end="00:03:21">over age 85. However, primary care physicians</p>
+      <p begin="00:03:21" end="00:03:25">are missing as many as 76% of dementia cases,</p>
+      <p begin="00:03:25" end="00:03:30">and 65% of dementia diagnoses are not</p>
+      <p begin="00:03:30" end="00:03:33">documented in outpatient medical records. Part</p>
+      <p begin="00:03:33" end="00:03:36">of this trend is explained by the quarter of older</p>
+      <p begin="00:03:36" end="00:03:40">adults without overt signs of cognitive</p>
+      <p begin="00:03:40" end="00:03:42">impairment, but who failed testing when done.</p>
+      <p begin="00:03:42" end="00:03:46">The other issue is the lack of systematic screening.</p>
+      <p begin="00:03:46" end="00:03:48">We'd like to present a case that we've had in</p>
+      <p begin="00:03:48" end="00:03:53">clinic, of an 83-year-old female whose major</p>
+      <p begin="00:03:53" end="00:03:56">complaint is a short-term memory loss. She's</p>
+      <p begin="00:03:56" end="00:03:59">accompanied by her daughter in clinic, and the</p>
+      <p begin="00:03:59" end="00:04:02">daughter does raise concerns about driving. No</p>
+      <p begin="00:04:02" end="00:04:04">specifics but just in general, given mother's</p>
+      <p begin="00:04:04" end="00:04:08">slowed reaction time. Also as noted, some</p>
+      <p begin="00:04:08" end="00:04:11">repetition, some short-term memory loss, and</p>
+      <p begin="00:04:11" end="00:04:13">some of the medications and medical conditions.</p>
+      <p begin="00:04:13" end="00:04:16">A review of the record does show a past medical</p>
+      <p begin="00:04:16" end="00:04:19">history of hypertension, diabetes, and general</p>
+      <p begin="00:04:19" end="00:04:23">anxiety disorder. Her current medications are</p>
+      <p begin="00:04:23" end="00:04:27">atenolol, metformin, alprazolam, and sertraline.</p>
+      <p begin="00:04:27" end="00:04:31">So we'd like to use this case as an example as we</p>
+      <p begin="00:04:31" end="00:04:35">go through our curriculum, and address what is</p>
+      <p begin="00:04:35" end="00:04:39">MCI, and how can it potentially impact driving.</p>
+      <p begin="00:04:39" end="00:04:43">So when it comes to making the diagnosis of MCI,</p>
+      <p begin="00:04:43" end="00:04:46">there are several areas that the clinician needs to</p>
+      <p begin="00:04:46" end="00:04:50">be aware of. First of all is a concern regarding a</p>
+      <p begin="00:04:50" end="00:04:53">change in cognition. This could either be from the</p>
+      <p begin="00:04:53" end="00:04:56">collateral source, the informant, or the patient.</p>
+      <p begin="00:04:56" end="00:05:00">And clinicians need to be aware that the brain can</p>
+      <p begin="00:05:00" end="00:05:02">go down in a variety of different ways. It doesn't</p>
+      <p begin="00:05:02" end="00:05:05">just have to be short-term memory. We can be</p>
+      <p begin="00:05:05" end="00:05:07">talking language, visual spatial skill, attention,</p>
+      <p begin="00:05:07" end="00:05:11">what we call executive function, which again can</p>
+      <p begin="00:05:11" end="00:05:13">be changes in personality or behavior,</p>
+      <p begin="00:05:13" end="00:05:17">sequencing, organizing, etc. There also needs to</p>
+      <p begin="00:05:17" end="00:05:20">be documented impairment in one or more</p>
+      <p begin="00:05:20" end="00:05:21">cognitive domains.</p>
+      <p begin="00:05:21" end="00:05:24">Historically in research situations, this was done</p>
+      <p begin="00:05:24" end="00:05:27">by psychometric tests in neuro psychologists, but</p>
+      <p begin="00:05:27" end="00:05:30">clinicians can certainly assess different cognitive</p>
+      <p begin="00:05:30" end="00:05:33">domains, and we have tools like the MoCA, mini</p>
+      <p begin="00:05:33" end="00:05:35">mental status examination, and brief mental</p>
+      <p begin="00:05:35" end="00:05:37">status screens that we can apply in the clinical</p>
+      <p begin="00:05:37" end="00:05:41">setting, that will help us determine if the history</p>
+      <p begin="00:05:41" end="00:05:43">goes along with the cognitive testing.</p>
+      <p begin="00:05:43" end="00:05:48">The third aspect of a diagnosis of mild cognitive</p>
+      <p begin="00:05:48" end="00:05:51">impairment is the relative preservation or</p>
+      <p begin="00:05:51" end="00:05:54">independence in functional abilities. Now how is</p>
+      <p begin="00:05:54" end="00:05:58">the clinician to assess those abilities? One</p>
+      <p begin="00:05:58" end="00:06:00">common tool is the functional assessment</p>
+      <p begin="00:06:00" end="00:06:02">questionnaire that asks 10 questions over a</p>
+      <p begin="00:06:02" end="00:06:05">variety of different activities of daily living.</p>
+      <p begin="00:06:05" end="00:06:08">The AD-8, also known as the Alzheimer's disease</p>
+      <p begin="00:06:08" end="00:06:11">questionnaire eight, has questions, some related to</p>
+      <p begin="00:06:11" end="00:06:14">cognitive impairment, but many related to functional</p>
+      <p begin="00:06:14" end="00:06:17">decline. And finally some of the classic tools in</p>
+      <p begin="00:06:17" end="00:06:20">the geriatric literature, the Katz and Lawton tools</p>
+      <p begin="00:06:20" end="00:06:22">for basic activities of daily living and instrumental</p>
+      <p begin="00:06:22" end="00:06:24">activities of daily living that are out there.</p>
+      <p begin="00:06:24" end="00:06:27">The final aspect of a diagnosis of mild cognitive</p>
+      <p begin="00:06:27" end="00:06:30">impairment, is that the individual is not</p>
+      <p begin="00:06:30" end="00:06:32">demented. So again, we go back to this issue</p>
+      <p begin="00:06:32" end="00:06:34">where we're not seeing functional impairment,</p>
+      <p begin="00:06:34" end="00:06:37">and there's also no impairment in social or</p>
+      <p begin="00:06:37" end="00:06:41">occupational functioning. The diagnosis of MCI</p>
+      <p begin="00:06:41" end="00:06:43">that we just mentioned is compatible with the</p>
+      <p begin="00:06:43" end="00:06:47">DSM-V criteria, mild neurocognitive disorder.</p>
+      <p begin="00:06:47" end="00:06:51">But I think there are some key points that need</p>
+      <p begin="00:06:51" end="00:06:53">to be discussed for clinicians if they're going to</p>
+      <p begin="00:06:53" end="00:06:55">tackle this diagnosis in their office.</p>
+      <p begin="00:06:55" end="00:07:00">We get into semantics, but theoretically with MCI,</p>
+      <p begin="00:07:00" end="00:07:04">you shouldn't have functional impairment. So if</p>
+      <p begin="00:07:04" end="00:07:07">somebody had some cognitive decline that is</p>
+      <p begin="00:07:07" end="00:07:10">obviously infecting their driving, one could</p>
+      <p begin="00:07:10" end="00:07:12">actually classify that individual as having a</p>
+      <p begin="00:07:12" end="00:07:15">dementing illness, which makes sense. It's not</p>
+      <p begin="00:07:15" end="00:07:18">always obvious, and that's part of what our</p>
+      <p begin="00:07:18" end="00:07:21">discussion and curriculum is today. I think it's also</p>
+      <p begin="00:07:21" end="00:07:24">fair to say, as you know, especially in patients that</p>
+      <p begin="00:07:24" end="00:07:26">have short-term memory impairment, they may</p>
+      <p begin="00:07:26" end="00:07:28">not be very accurate in their histories. So we</p>
+      <p begin="00:07:28" end="00:07:32">really urge clinicians to allow a person who knows</p>
+      <p begin="00:07:32" end="00:07:34">the patient to come in and have that dialogue.</p>
+      <p begin="00:07:34" end="00:07:38">Many clinicians feel comfortable diagnosing</p>
+      <p begin="00:07:38" end="00:07:41">Alzheimer's disease in an MCI phase. However,</p>
+      <p begin="00:07:41" end="00:07:46">progression is variable, and we know that similar</p>
+      <p begin="00:07:46" end="00:07:50">to dementia, MCI is a syndrome, and there's a lot</p>
+      <p begin="00:07:50" end="00:07:53">of different causes. And clinicians need to rule out</p>
+      <p begin="00:07:53" end="00:07:55">those reversible causes for cognitive decline.</p>
+      <p begin="00:07:55" end="00:07:58">I think it's also important for many of us that</p>
+      <p begin="00:07:58" end="00:08:01">follow our patients that we've labeled with MCI,</p>
+      <p begin="00:08:01" end="00:08:03">many do stay stable over time.</p>
+      <p begin="00:08:03" end="00:08:07">Finally, I think it's also important to make two</p>
+      <p begin="00:08:07" end="00:08:10">additional points. One is that it's not all about</p>
+      <p begin="00:08:10" end="00:08:12">short-term memory. We mentioned that before.</p>
+      <p begin="00:08:12" end="00:08:15">There are other cognitive domains, language</p>
+      <p begin="00:08:15" end="00:08:18">decline, executive dysfunction, attention, visual</p>
+      <p begin="00:08:18" end="00:08:20">spatial impairment, that we need to ask about.</p>
+      <p begin="00:08:20" end="00:08:24">And I think it's also fair to say that no</p>
+      <p begin="00:08:24" end="00:08:26">pharmacological interventions have been shown</p>
+      <p begin="00:08:26" end="00:08:28">useful in this state.</p>
+      <p begin="00:08:28" end="00:08:33">So in going on with our case, as we interviewed</p>
+      <p begin="00:08:33" end="00:08:37">both the patient and the daughter, they both</p>
+      <p begin="00:08:37" end="00:08:40">endorsed short-term memory loss. The individual</p>
+      <p begin="00:08:40" end="00:08:44">could repeat questions, misplace items. This was</p>
+      <p begin="00:08:44" end="00:08:46">further corroborated on a MoCA score, which</p>
+      <p begin="00:08:46" end="00:08:50">showed impaired recall. Currently there was no</p>
+      <p begin="00:08:50" end="00:08:53">obvious impairment in social, occupational or IDL</p>
+      <p begin="00:08:53" end="00:08:58">function. So based on both the history and exam,</p>
+      <p begin="00:08:58" end="00:09:01">felt like this was a diagnosis of mild cognitive</p>
+      <p begin="00:09:01" end="00:09:05">impairment. So in this situation, we do believe</p>
+      <p begin="00:09:05" end="00:09:10">that working individuals up for reversible causes</p>
+      <p begin="00:09:10" end="00:09:12">of dementia is indicated.</p>
+      <p begin="00:09:12" end="00:09:15">One of our mnemonics that we typically use in</p>
+      <p begin="00:09:15" end="00:09:19">geriatrics is DEMENTIA where D is for drugs.</p>
+      <p begin="00:09:19" end="00:09:22">So we need to consider medications that can mimic</p>
+      <p begin="00:09:22" end="00:09:24">Alzheimer's disease or related disorders.</p>
+      <p begin="00:09:24" end="00:09:27">Emotional disorders such as anxiety or depression</p>
+      <p begin="00:09:27" end="00:09:30">which we know can affect older adults’ cognition.</p>
+      <p begin="00:09:30" end="00:09:34">Metabolic disorders such as obstructive sleep</p>
+      <p begin="00:09:34" end="00:09:37">apnea that can cause hypoxia. Sensory</p>
+      <p begin="00:09:37" end="00:09:40">deprivation, nutritional deficiencies such as B12.</p>
+      <p begin="00:09:40" end="00:09:46">Brain injuries, infections and vascular issues such</p>
+      <p begin="00:09:46" end="00:09:49">as stroke or seizure disorders, can be in the</p>
+      <p begin="00:09:49" end="00:09:52">differential diagnosis and need to be considered.</p>
+      <p begin="00:09:52" end="00:09:57">Now in our patient, we did some screens that</p>
+      <p begin="00:09:57" end="00:09:59">helped supplement and look for some of these</p>
+      <p begin="00:09:59" end="00:10:02">causes. One that we recommend to clinicians is</p>
+      <p begin="00:10:02" end="00:10:05">adopting the Epworth sleepiness scale, which</p>
+      <p begin="00:10:05" end="00:10:07">basically is a tried and true scale for</p>
+      <p begin="00:10:07" end="00:10:09">hypersomnolence. Score of 10 or greater is an</p>
+      <p begin="00:10:09" end="00:10:12">abnormal score. Doesn't necessarily mean</p>
+      <p begin="00:10:12" end="00:10:14">somebody has a primary sleep disorder, may be</p>
+      <p begin="00:10:14" end="00:10:17">either sedated from their benzos or their</p>
+      <p begin="00:10:17" end="00:10:21">anticholinergic drugs. But if you see a level and</p>
+      <p begin="00:10:21" end="00:10:24">this individual has a score of 12, that's a concern.</p>
+      <p begin="00:10:24" end="00:10:26">The patient health questionnaire, which basically</p>
+      <p begin="00:10:26" end="00:10:30">follows the outline for DSM five criteria for major</p>
+      <p begin="00:10:30" end="00:10:33">depression disorder, is a nice screen that</p>
+      <p begin="00:10:33" end="00:10:36">clinicians can adopt. And in this individual, she</p>
+      <p begin="00:10:36" end="00:10:38">had a score of 12 which showed some mild</p>
+      <p begin="00:10:38" end="00:10:41">depressive symptomatology. Thankfully there was</p>
+      <p begin="00:10:41" end="00:10:44">no history of hypoglycemia, but the medication</p>
+      <p begin="00:10:44" end="00:10:48">review did identify a concerning drug, alprazolam.</p>
+      <p begin="00:10:48" end="00:10:52">Now before we can go on with a further</p>
+      <p begin="00:10:52" end="00:10:55">evaluation in the clinical setting, what do we</p>
+      <p begin="00:10:55" end="00:10:58">know about MCI in the driving literature? Well,</p>
+      <p begin="00:10:58" end="00:11:03">the studies are few, but they tend to line up with</p>
+      <p begin="00:11:03" end="00:11:08">two general findings. One is that individuals with</p>
+      <p begin="00:11:08" end="00:11:10">mild cognitive impairment on average appear to</p>
+      <p begin="00:11:10" end="00:11:14">have more errors when performing driving</p>
+      <p begin="00:11:14" end="00:11:19">simulation tasks, or on the road tests. However,</p>
+      <p begin="00:11:19" end="00:11:22">on the positive side, studies have shown the</p>
+      <p begin="00:11:22" end="00:11:25">potential for training and education can</p>
+      <p begin="00:11:25" end="00:11:28">potentially improve driving safety behaviors.</p>
+      <p begin="00:11:28" end="00:11:31">Improvement in simulation performance, and</p>
+      <p begin="00:11:31" end="00:11:34">improvement in on the road testing was noted in</p>
+      <p begin="00:11:34" end="00:11:37">a couple of interventions. Again, small studies,</p>
+      <p begin="00:11:37" end="00:11:39">nothing's been proven, but I think it shows some</p>
+      <p begin="00:11:39" end="00:11:41">optimism that this may be a group that could</p>
+      <p begin="00:11:41" end="00:11:43">benefit by education.</p>
+      <p begin="00:11:43" end="00:11:48">Tammy, would you like to talk to a little bit about</p>
+      <p begin="00:11:48" end="00:11:50">additional information we could obtain in the</p>
+      <p begin="00:11:50" end="00:11:53">clinic that might put older adults at risk for</p>
+      <p begin="00:11:53" end="00:11:54">driving impairment?</p>
+      <p begin="00:11:54" end="00:11:58">Absolutely. As a clinician, sometimes we have to</p>
+      <p begin="00:11:58" end="00:12:02">be a detective, if you will, and be alert to some</p>
+      <p begin="00:12:02" end="00:12:05">red flags on our medical exam and history taking.</p>
+      <p begin="00:12:05" end="00:12:08">So when we're taking the history of the patient,</p>
+      <p begin="00:12:08" end="00:12:11">from the patient as well as any family members</p>
+      <p begin="00:12:11" end="00:12:14">that may be included, we really need to be alert</p>
+      <p begin="00:12:14" end="00:12:18">to any medical conditions, any sensory conditions</p>
+      <p begin="00:12:18" end="00:12:20">or cognitive motor changes, as well as the</p>
+      <p begin="00:12:20" end="00:12:23">medications that you've identified. As well as</p>
+      <p begin="00:12:23" end="00:12:26">really looking at that functional decline that our</p>
+      <p begin="00:12:26" end="00:12:29">older patients sometimes do have.</p>
+      <p begin="00:12:29" end="00:12:32">And so we're looking for any type of decreased</p>
+      <p begin="00:12:32" end="00:12:34">short-term memory, which you discussed, and</p>
+      <p begin="00:12:34" end="00:12:36">obtained that information through the MoCA</p>
+      <p begin="00:12:36" end="00:12:39">screening. Decreased or impaired way finding.</p>
+      <p begin="00:12:39" end="00:12:43">You see this especially with road construction.</p>
+      <p begin="00:12:43" end="00:12:46">Somebody having more difficulty finding their</p>
+      <p begin="00:12:46" end="00:12:49">way around road constructions and detours.</p>
+      <p begin="00:12:49" end="00:12:51">Somebody who's being reportedly easily</p>
+      <p begin="00:12:51" end="00:12:55">distracted. And not really able to learn new</p>
+      <p begin="00:12:55" end="00:12:57">information as quickly as they used to.</p>
+      <p begin="00:12:57" end="00:13:02">Near misses and unexplained crashes. An older</p>
+      <p begin="00:13:02" end="00:13:07">adult's car may have scratches or unexplained</p>
+      <p begin="00:13:07" end="00:13:12">dents that a family member may recognize. Poor</p>
+      <p begin="00:13:12" end="00:13:14">judgment making left turns, sensory depth</p>
+      <p begin="00:13:14" end="00:13:17">perceptions can actually cause some of this</p>
+      <p begin="00:13:17" end="00:13:21">problem. Confusing the gas and brake pedal, of</p>
+      <p begin="00:13:21" end="00:13:24">course, is a big thing that needs to be looked at.</p>
+      <p begin="00:13:24" end="00:13:26">Getting lost while driving.</p>
+      <p begin="00:13:26" end="00:13:30">Difficultly merging and changing lanes is also</p>
+      <p begin="00:13:30" end="00:13:32">something that needs to be really considered</p>
+      <p begin="00:13:32" end="00:13:38">because you have the physical mobility that you</p>
+      <p begin="00:13:38" end="00:13:40">need to be able to turn your neck to be able to</p>
+      <p begin="00:13:40" end="00:13:43">see, as well as, again, that decision making</p>
+      <p begin="00:13:43" end="00:13:46">equipped judgment, and literature's also showing</p>
+      <p begin="00:13:46" end="00:13:50">us that older adults who have falls are also at an</p>
+      <p begin="00:13:50" end="00:13:52">increased risk of motor vehicle crashes.</p>
+      <p begin="00:13:52" end="00:13:55">Sometimes you might see a patient with an older</p>
+      <p begin="00:13:55" end="00:13:59">adult child who actually makes comments such as,</p>
+      <p begin="00:13:59" end="00:14:04">"I'm afraid to ride with my mom, my dad," or,</p>
+      <p begin="00:14:04" end="00:14:07">"I don't feel comfortable letting my children actually</p>
+      <p begin="00:14:07" end="00:14:11">in the car riding with my mom or my dad." These</p>
+      <p begin="00:14:11" end="00:14:14">are really big comments and concerns and you</p>
+      <p begin="00:14:14" end="00:14:16">really, as a provider, cannot discount these</p>
+      <p begin="00:14:16" end="00:14:19">comments because it's telling you that there is a</p>
+      <p begin="00:14:19" end="00:14:24">big concern here for their safety as well as the</p>
+      <p begin="00:14:24" end="00:14:25">safety of other drivers on the road.</p>
+      <p begin="00:14:25" end="00:14:29">So, the Clinician's Guide, the fourth edition, has</p>
+      <p begin="00:14:29" end="00:14:32">recently come out. This describes the clinical</p>
+      <p begin="00:14:32" end="00:14:36">team that we create around our older adult</p>
+      <p begin="00:14:36" end="00:14:40">drivers, as well as their families and when the</p>
+      <p begin="00:14:40" end="00:14:43">appropriate time is for driving retirement. And</p>
+      <p begin="00:14:43" end="00:14:46">then it also helps us identify who is at risk for</p>
+      <p begin="00:14:46" end="00:14:49">unsafe driving. Again, we don't want people</p>
+      <p begin="00:14:49" end="00:14:51">having to give up driver's license that aren't ready</p>
+      <p begin="00:14:51" end="00:14:55">to do so because, again, if that is the case, they're</p>
+      <p begin="00:14:55" end="00:14:58">losing some of their independence too early and</p>
+      <p begin="00:14:58" end="00:14:59">we don't want that.</p>
+      <p begin="00:14:59" end="00:15:01">Some of the screening tools that you've</p>
+      <p begin="00:15:01" end="00:15:04">identified, the functional assessments.</p>
+      <p begin="00:15:04" end="00:15:08">Oftentimes, an older patient may become quite</p>
+      <p begin="00:15:08" end="00:15:11">defensive if they hear the term "driving</p>
+      <p begin="00:15:11" end="00:15:13">cessation," "driving retirement."</p>
+      <p begin="00:15:13" end="00:15:17">Looking at clinical interventions that can be done</p>
+      <p begin="00:15:17" end="00:15:21">to help someone maintain driving independence</p>
+      <p begin="00:15:21" end="00:15:22">as long possible.</p>
+      <p begin="00:15:22" end="00:15:26">Transitioning into driving retirement, again, has to</p>
+      <p begin="00:15:26" end="00:15:29">be an ongoing conversation. There are some legal</p>
+      <p begin="00:15:29" end="00:15:31">and ethical issues that we have to consider when</p>
+      <p begin="00:15:31" end="00:15:37">it comes to this. State reporting laws vary in every</p>
+      <p begin="00:15:37" end="00:15:40">state. And in the Clinician's Guide, there are</p>
+      <p begin="00:15:40" end="00:15:43">reference tables that discuss different medical</p>
+      <p begin="00:15:43" end="00:15:45">conditions and functional deficits, as well as</p>
+      <p begin="00:15:45" end="00:15:49">medications that providers really need to be</p>
+      <p begin="00:15:49" end="00:15:51">aware of that can affect driving abilities.</p>
+      <p begin="00:15:51" end="00:15:54">So, how about some of the team members and</p>
+      <p begin="00:15:54" end="00:15:56">who can we turn to help us with some</p>
+      <p begin="00:15:56" end="00:15:57">of these challenges?</p>
+      <p begin="00:15:57" end="00:15:59">That's a great question because a lot of us don't</p>
+      <p begin="00:15:59" end="00:16:02">feel comfortable making this decision alone, and</p>
+      <p begin="00:16:02" end="00:16:05">we really shouldn't because we do have a team of</p>
+      <p begin="00:16:05" end="00:16:08">professionals that we can communicate with and</p>
+      <p begin="00:16:08" end="00:16:11">collaborate with. Occupational therapists are one</p>
+      <p begin="00:16:11" end="00:16:14">professional colleague that we can turn to, as</p>
+      <p begin="00:16:14" end="00:16:18">many of them are professionals in identifying</p>
+      <p begin="00:16:18" end="00:16:20">when a person really should stop driving.</p>
+      <p begin="00:16:20" end="00:16:26">We do have driving rehabilitation specialists as</p>
+      <p begin="00:16:26" end="00:16:28">well as neuropsychologist who can perform some</p>
+      <p begin="00:16:28" end="00:16:30">of the psychometric testing that you referenced</p>
+      <p begin="00:16:30" end="00:16:33">into the case. Social workers can also help us</p>
+      <p begin="00:16:33" end="00:16:36">identify alternative forms of transportation for</p>
+      <p begin="00:16:36" end="00:16:39">people. Medical assistants can help us in</p>
+      <p begin="00:16:39" end="00:16:41">identifying some of those functional declines.</p>
+      <p begin="00:16:41" end="00:16:46">Traffic safety professionals actually is a very global</p>
+      <p begin="00:16:46" end="00:16:49">term to include our law enforcements as well as</p>
+      <p begin="00:16:49" end="00:16:53">DMV professionals. The Clinician's Guide office-</p>
+      <p begin="00:16:53" end="00:16:56">based screening tests could be inconclusive, and</p>
+      <p begin="00:16:56" end="00:16:59">further testing and assessments may be needed.</p>
+      <p begin="00:16:59" end="00:17:02">For example, neurology or neuropsychological</p>
+      <p begin="00:17:02" end="00:17:05">testing or social work may need to be brought in.</p>
+      <p begin="00:17:05" end="00:17:08">So Linda, clinicians have a lot of options for</p>
+      <p begin="00:17:08" end="00:17:10">different tests that they can do in the office</p>
+      <p begin="00:17:10" end="00:17:13">setting and we'd like to hear a little bit more</p>
+      <p begin="00:17:13" end="00:17:16">about your perspectives on when and how often</p>
+      <p begin="00:17:16" end="00:17:18">these tests should be done and what are the</p>
+      <p begin="00:17:18" end="00:17:19">choices that we have.</p>
+      <p begin="00:17:19" end="00:17:23">I suggest starting screening at 70. And then, I do it</p>
+      <p begin="00:17:23" end="00:17:26">about every two to three years, although I do it</p>
+      <p begin="00:17:26" end="00:17:31">earlier and more frequently if I see signs of MCI or</p>
+      <p begin="00:17:31" end="00:17:34">a decline in baseline driving skills, either reported</p>
+      <p begin="00:17:34" end="00:17:36">by my patient or the caregivers.</p>
+      <p begin="00:17:36" end="00:17:40">I do take a thorough medical history to identify</p>
+      <p begin="00:17:40" end="00:17:42">any conditions characterized by lapses of</p>
+      <p begin="00:17:42" end="00:17:45">consciousness, which may require reporting to</p>
+      <p begin="00:17:45" end="00:17:49">the DMV. So, this includes dementia, seizures,</p>
+      <p begin="00:17:49" end="00:17:52">loss of consciousness, brain tumors, and</p>
+      <p begin="00:17:52" end="00:17:55">abnormal metabolic states associated with a loss</p>
+      <p begin="00:17:55" end="00:17:57">of consciousness. I do obtain a thorough</p>
+      <p begin="00:17:57" end="00:18:01">medication history to rule out any medications</p>
+      <p begin="00:18:01" end="00:18:03">that may be interfering with driving.</p>
+      <p begin="00:18:03" end="00:18:07">So, what are some of these office screening tools?</p>
+      <p begin="00:18:07" end="00:18:10">The Clinician's Guide recommends formally</p>
+      <p begin="00:18:10" end="00:18:13">screening for vision, frailty, and cognitive decline,</p>
+      <p begin="00:18:13" end="00:18:16">starting with vision and strength testing. The</p>
+      <p begin="00:18:16" end="00:18:19">details are outlined in the guide. The tests were</p>
+      <p begin="00:18:19" end="00:18:21">selected based on an extensive review of the</p>
+      <p begin="00:18:21" end="00:18:23">literature, as well as the counsel of an expert</p>
+      <p begin="00:18:23" end="00:18:26">panel. Some of these assessments can be</p>
+      <p begin="00:18:26" end="00:18:29">conducted by the medical assistant or nurse in</p>
+      <p begin="00:18:29" end="00:18:32">your office, allowing me as the clinician to</p>
+      <p begin="00:18:32" end="00:18:34">interpret and manage the results.</p>
+      <p begin="00:18:34" end="00:18:37">While there are many cognitive assessments</p>
+      <p begin="00:18:37" end="00:18:40">available, these tests were selected because they</p>
+      <p begin="00:18:40" end="00:18:42">are simple and quick, done with pencil and paper,</p>
+      <p begin="00:18:42" end="00:18:46">and can be administered by a clinician. The Maze</p>
+      <p begin="00:18:46" end="00:18:49">test is first and is a required element of screening.</p>
+      <p begin="00:18:49" end="00:18:53">Failure is if it takes longer than 60 seconds, with</p>
+      <p begin="00:18:53" end="00:18:54">or without errors.</p>
+      <p begin="00:18:54" end="00:18:58">The cognitive tests are the MoCA or the trail</p>
+      <p begin="00:18:58" end="00:19:01">making B and clock drawing. Trail making and</p>
+      <p begin="00:19:01" end="00:19:04">clock drawing are components of the MoCA. The</p>
+      <p begin="00:19:04" end="00:19:06">MoCA's a 10-minute test that's measured by</p>
+      <p begin="00:19:06" end="00:19:10">performance on 11 components. It's available in</p>
+      <p begin="00:19:10" end="00:19:12">multiple languages and is scored on a scale of 1 to</p>
+      <p begin="00:19:12" end="00:19:15">30, with additional points being added if the</p>
+      <p begin="00:19:15" end="00:19:19">patient has less than 12 years of formal education.</p>
+      <p begin="00:19:19" end="00:19:23">The next cognitive assessment is the trail making</p>
+      <p begin="00:19:23" end="00:19:27">test. It evaluates cognitive skills, as the goal is to</p>
+      <p begin="00:19:27" end="00:19:29">have the patient make logical connections from</p>
+      <p begin="00:19:29" end="00:19:31">one item to another, according to the rules.</p>
+      <p begin="00:19:31" end="00:19:35">Corrective lenses should be worn as vision</p>
+      <p begin="00:19:35" end="00:19:37">impairment could impact the test results.</p>
+      <p begin="00:19:37" end="00:19:41">Administering trail making A prior to trail making</p>
+      <p begin="00:19:41" end="00:19:44">B improves sensitivity and specificity and is</p>
+      <p begin="00:19:44" end="00:19:47">consistent with studies that have used these tools</p>
+      <p begin="00:19:47" end="00:19:49">to predict driving performance.</p>
+      <p begin="00:19:49" end="00:19:55">Trail making B is shown here. Instruct the patient</p>
+      <p begin="00:19:55" end="00:19:58">to alternate numbers and letters. Start the timer</p>
+      <p begin="00:19:58" end="00:20:01">at the beginning of the test. If the patient makes</p>
+      <p begin="00:20:01" end="00:20:03">a mistake, have them go back to the last correct</p>
+      <p begin="00:20:03" end="00:20:06">number or letter and continue, but don't stop the</p>
+      <p begin="00:20:06" end="00:20:09">clock. Stop the timer when finished or at five</p>
+      <p begin="00:20:09" end="00:20:13">minutes. Refusal or quitting is scored as a failure.</p>
+      <p begin="00:20:13" end="00:20:17">The interpretation of trail making's very simple;</p>
+      <p begin="00:20:17" end="00:20:21">a time of greater than 180 seconds is a failure.</p>
+      <p begin="00:20:21" end="00:20:24">However, screening tests for dementia can result</p>
+      <p begin="00:20:24" end="00:20:27">in false positives due to depression, visual</p>
+      <p begin="00:20:27" end="00:20:29">impairment, or metabolic disorders, such as</p>
+      <p begin="00:20:29" end="00:20:33">hypoglycemia. Medications can also interfere</p>
+      <p begin="00:20:33" end="00:20:35">with cognitive function on a temporary basis.</p>
+      <p begin="00:20:35" end="00:20:39">While normal controls complete trail making in</p>
+      <p begin="00:20:39" end="00:20:43">less than 81 seconds, individuals with MCI</p>
+      <p begin="00:20:43" end="00:20:46">average 130 seconds to completion.</p>
+      <p begin="00:20:46" end="00:20:50">If you do not do the MoCA, the final test is the</p>
+      <p begin="00:20:50" end="00:20:53">clock drawing test. Tell the patient to draw a clock</p>
+      <p begin="00:20:53" end="00:20:56">on a piece of paper as a child would. Ask them to</p>
+      <p begin="00:20:56" end="00:20:59">draw the face of the clock, put in all the numbers,</p>
+      <p begin="00:20:59" end="00:21:03">and set the time to 10 minutes after 11:00. The</p>
+      <p begin="00:21:03" end="00:21:05">interpretation is based on the presence of the</p>
+      <p begin="00:21:05" end="00:21:08">numbers 1 through 12 in order inside the circle,</p>
+      <p begin="00:21:08" end="00:21:13">evenly spaced from each other and the edge, only</p>
+      <p begin="00:21:13" end="00:21:17">two clock hands, and one hand pointing to two</p>
+      <p begin="00:21:17" end="00:21:20">with no intrusive marks. This can be scored on a</p>
+      <p begin="00:21:20" end="00:21:25">seven-point scale or pass/fail. This test has the</p>
+      <p begin="00:21:25" end="00:21:27">advantage of only requiring numeracy and not</p>
+      <p begin="00:21:27" end="00:21:30">literacy, and is culturally appropriate across</p>
+      <p begin="00:21:30" end="00:21:34">groups. Failure of the test or refusal is highly</p>
+      <p begin="00:21:34" end="00:21:39">predictive of dementia. MCI cannot be diagnosed</p>
+      <p begin="00:21:39" end="00:21:41">with this pass/fail format, but scoring each</p>
+      <p begin="00:21:41" end="00:21:44">element individually may have some utility in</p>
+      <p begin="00:21:44" end="00:21:47">distinguishing MCI from dementia.</p>
+      <p begin="00:21:47" end="00:21:51">Linda, thank you for all that information on</p>
+      <p begin="00:21:51" end="00:21:55">screening. In going back to our case in talking with</p>
+      <p begin="00:21:55" end="00:21:58">both the patient and the daughter, our patient</p>
+      <p begin="00:21:58" end="00:22:01">had no history of prior driving performance</p>
+      <p begin="00:22:01" end="00:22:04">issues. The alprazolam, since it has been</p>
+      <p begin="00:22:04" end="00:22:07">associated with increased crash risk in older</p>
+      <p begin="00:22:07" end="00:22:11">adults, was slowly tapered off. Sertraline was</p>
+      <p begin="00:22:11" end="00:22:13">increased for depression and for anxiety</p>
+      <p begin="00:22:13" end="00:22:16">symptoms. Thankfully, visual acuity corrected and</p>
+      <p begin="00:22:16" end="00:22:20">was 20/40, which is generally legal in most states.</p>
+      <p begin="00:22:20" end="00:22:24">Test results reviewed with the patient’s daughter</p>
+      <p begin="00:22:24" end="00:22:27">and the patient was counseled that she continued</p>
+      <p begin="00:22:27" end="00:22:31">to drive, but given her diagnosis of MCI and also</p>
+      <p begin="00:22:31" end="00:22:34">her trajectory, which was concerning, we wanted</p>
+      <p begin="00:22:34" end="00:22:37">her back to be reassessed in the office in six months.</p>
+      <p begin="00:22:37" end="00:22:42">So, Dr. Hill, talk to us a little bit about some of the</p>
+      <p begin="00:22:42" end="00:22:44">next steps when it comes to following our</p>
+      <p begin="00:22:44" end="00:22:46">patients that have been diagnosed with MCI.</p>
+      <p begin="00:22:46" end="00:22:50">The screening test for medically-related driving</p>
+      <p begin="00:22:50" end="00:22:53">impairments include four domains: vision, frailty,</p>
+      <p begin="00:22:53" end="00:22:57">lapses of consciousness, and cognition. For those</p>
+      <p begin="00:22:57" end="00:23:00">failing vision or frailty testing without a reversible</p>
+      <p begin="00:23:00" end="00:23:04">cause, driving cessation should be discussed and</p>
+      <p begin="00:23:04" end="00:23:06">reporting to the DMV considered. Lapses of</p>
+      <p begin="00:23:06" end="00:23:09">consciousness may have treatable causes, such as</p>
+      <p begin="00:23:09" end="00:23:12">hypoglycemia, and are also reportable in some</p>
+      <p begin="00:23:12" end="00:23:17">states. In the work-up of cognitive decline, only</p>
+      <p begin="00:23:17" end="00:23:20">those with MCI and mild dementia should be</p>
+      <p begin="00:23:20" end="00:23:23">evaluated further for driving abilities, since</p>
+      <p begin="00:23:23" end="00:23:26">moderate and severe dementia diagnoses are not</p>
+      <p begin="00:23:26" end="00:23:29">compatible with safe driving and dementia's</p>
+      <p begin="00:23:29" end="00:23:30">reportable in some states.</p>
+      <p begin="00:23:30" end="00:23:35">When MCI is diagnosed, look for reversible</p>
+      <p begin="00:23:35" end="00:23:37">causes, as we've discussed, and assess for</p>
+      <p begin="00:23:37" end="00:23:41">amnestic components. Those with single-domain</p>
+      <p begin="00:23:41" end="00:23:45">MCI who are non-amnestic can continue driving</p>
+      <p begin="00:23:45" end="00:23:50">but need to be followed yearly. If an amnestic</p>
+      <p begin="00:23:50" end="00:23:53">component is present, obtain an on-the-road</p>
+      <p begin="00:23:53" end="00:23:56">assessment or simulator testing. Those failing</p>
+      <p begin="00:23:56" end="00:23:59">should be advised to retire from driving. Those</p>
+      <p begin="00:23:59" end="00:24:03">passing with amnestic MCI should be followed</p>
+      <p begin="00:24:03" end="00:24:04">up in six months.</p>
+      <p begin="00:24:04" end="00:24:06">So, Tammy, tell us a little bit about these health</p>
+      <p begin="00:24:06" end="00:24:09">professionals, that may be able to help us in</p>
+      <p begin="00:24:09" end="00:24:10">evaluating our patients.</p>
+      <p begin="00:24:10" end="00:24:12">Actually I'd like to take a step back for a second</p>
+      <p begin="00:24:12" end="00:24:16">if I might, and just say that DRSs are highly trained</p>
+      <p begin="00:24:16" end="00:24:20">to evaluate and teach, but there are so few of them.</p>
+      <p begin="00:24:20" end="00:24:22">They are not always available, and there may be</p>
+      <p begin="00:24:22" end="00:24:25">other instrumental activities of daily</p>
+      <p begin="00:24:25" end="00:24:27">living issues going on.</p>
+      <p begin="00:24:27" end="00:24:30">So, a referral to an occupational therapist for a</p>
+      <p begin="00:24:30" end="00:24:35">comprehensive evaluation of IADLs can offer a lot</p>
+      <p begin="00:24:35" end="00:24:39">of information to determine if the person has no</p>
+      <p begin="00:24:39" end="00:24:44">indication of issues or is so impaired that they</p>
+      <p begin="00:24:44" end="00:24:48">cannot follow a two-step direction, or is not ready</p>
+      <p begin="00:24:48" end="00:24:50">for a driving evaluation.</p>
+      <p begin="00:24:50" end="00:24:53">This comprehensive evaluation by the</p>
+      <p begin="00:24:53" end="00:24:56">occupational therapist can also tell us if a person</p>
+      <p begin="00:24:56" end="00:24:58">would benefit from a comprehensive driving</p>
+      <p begin="00:24:58" end="00:25:03">evaluation. Seeing the occupational therapist is</p>
+      <p begin="00:25:03" end="00:25:06">equivalent to using appropriate cutoff scores on</p>
+      <p begin="00:25:06" end="00:25:09">screening tools, and OTs are best able to decide</p>
+      <p begin="00:25:09" end="00:25:12">whether the referral to a specialist is needed.</p>
+      <p begin="00:25:12" end="00:25:16">It is sort of like using triage just as</p>
+      <p begin="00:25:16" end="00:25:17">in any medical setting.</p>
+      <p begin="00:25:17" end="00:25:21">So, Linda, what are some other conditions that</p>
+      <p begin="00:25:21" end="00:25:24">might impact driving that clinicians</p>
+      <p begin="00:25:24" end="00:25:26">should be aware of?</p>
+      <p begin="00:25:26" end="00:25:30">It's important to address individuals with MCI and</p>
+      <p begin="00:25:30" end="00:25:34">assess them holistically for other driving impairing</p>
+      <p begin="00:25:34" end="00:25:37">medical conditions, such as those listed here, and</p>
+      <p begin="00:25:37" end="00:25:40">treat as appropriate. For example, obstructive</p>
+      <p begin="00:25:40" end="00:25:42">sleep apnea warrants sleep studies and CPAP if</p>
+      <p begin="00:25:42" end="00:25:46">appropriate. Hypoglycemia from diabetes can be</p>
+      <p begin="00:25:46" end="00:25:48">managed with improved control.</p>
+      <p begin="00:25:48" end="00:25:53">Unfortunately, as we age, we also tend to</p>
+      <p begin="00:25:53" end="00:25:56">accumulate prescribed and OTC daily</p>
+      <p begin="00:25:56" end="00:25:59">medications. There are numerous medications</p>
+      <p begin="00:25:59" end="00:26:01">that can reduce the ability to drive safely when</p>
+      <p begin="00:26:01" end="00:26:04">taken alone, and often the effects are multiplied</p>
+      <p begin="00:26:04" end="00:26:07">as two or more drugs interact. There are many</p>
+      <p begin="00:26:07" end="00:26:09">mechanisms by which medication acts to impair</p>
+      <p begin="00:26:09" end="00:26:13">the driving task, although delayed reaction time</p>
+      <p begin="00:26:13" end="00:26:15">and drowsy driving may be more common ones,</p>
+      <p begin="00:26:15" end="00:26:19">other potential drug side effects include dizziness,</p>
+      <p begin="00:26:19" end="00:26:21">confusion, and blurred vision.</p>
+      <p begin="00:26:21" end="00:26:25">Medications can potentially enhance driving</p>
+      <p begin="00:26:25" end="00:26:28">ability, such as non-sedating pain medications or</p>
+      <p begin="00:26:28" end="00:26:31">Parkinson medications, for example, where the</p>
+      <p begin="00:26:31" end="00:26:34">symptoms are improved but they don't have side effects.</p>
+      <p begin="00:26:34" end="00:26:40">Ultimately, de-prescribing, where possible, is the</p>
+      <p begin="00:26:40" end="00:26:43">best practice. Avoiding high-risk drug classes,</p>
+      <p begin="00:26:43" end="00:26:47">using the lowest possible doses, will also reduce</p>
+      <p begin="00:26:47" end="00:26:50">the effects of prescription medication on driving.</p>
+      <p begin="00:26:50" end="00:26:56">An estimated 35% of dementia is preventable</p>
+      <p begin="00:26:56" end="00:26:59">with the adoption of the protective behaviors</p>
+      <p begin="00:26:59" end="00:27:02">listed here. We should educate our patients on</p>
+      <p begin="00:27:02" end="00:27:05">the risks of tobacco, alcohol, cannabis and</p>
+      <p begin="00:27:05" end="00:27:09">obesity. Encouraging exercise and a healthy diet is</p>
+      <p begin="00:27:09" end="00:27:12">a great idea, and control of hearing loss and</p>
+      <p begin="00:27:12" end="00:27:15">hypertension is also beneficial in preventing</p>
+      <p begin="00:27:15" end="00:27:16">cognitive decline.</p>
+      <p begin="00:27:16" end="00:27:20">So this is exciting since we have the potential to</p>
+      <p begin="00:27:20" end="00:27:24">actually prolong safe driving life expectancy with</p>
+      <p begin="00:27:24" end="00:27:28">healthy lifestyle behaviors. Again, nothing proven,</p>
+      <p begin="00:27:28" end="00:27:30">but there's a lot of potential there and certainly</p>
+      <p begin="00:27:30" end="00:27:32">we recommend that in the primary care setting.</p>
+      <p begin="00:27:32" end="00:27:36">Tammy, can you talk to us a little bit about some</p>
+      <p begin="00:27:36" end="00:27:38">of the courses and other things that may be</p>
+      <p begin="00:27:38" end="00:27:41">available out there to help preserve driving skills?</p>
+      <p begin="00:27:41" end="00:27:44">Yeah, sometimes patients may ask us what they</p>
+      <p begin="00:27:44" end="00:27:47">can do to preserve driving capabilities. And these</p>
+      <p begin="00:27:47" end="00:27:49">courses I'm going to mention are available,</p>
+      <p begin="00:27:49" end="00:27:52">although they have not been proven to improve</p>
+      <p begin="00:27:52" end="00:27:54">driving safety.</p>
+      <p begin="00:27:54" end="00:27:56">There is recent evidence, albeit small, that should</p>
+      <p begin="00:27:56" end="00:27:58">not discourage participation and certainly</p>
+      <p begin="00:27:58" end="00:28:01">encourage further study. And these you would be</p>
+      <p begin="00:28:01" end="00:28:05">able to find on the AARP websites, the AAA online</p>
+      <p begin="00:28:05" end="00:28:08">defensive driving courses, traffic school-based</p>
+      <p begin="00:28:08" end="00:28:11">driving courses, and DMV driving courses.</p>
+      <p begin="00:28:11" end="00:28:14">So to follow up on our case, one year later the</p>
+      <p begin="00:28:14" end="00:28:17">patient came back and unfortunately, as was the</p>
+      <p begin="00:28:17" end="00:28:21">initial concern, the patient had progressed. The</p>
+      <p begin="00:28:21" end="00:28:24">daughter noted worsening cognitive decline in</p>
+      <p begin="00:28:24" end="00:28:27">memory and in judgment. There was more</p>
+      <p begin="00:28:27" end="00:28:31">functional decline in the way of cooking, cleaning,</p>
+      <p begin="00:28:31" end="00:28:34">and keeping the house tidy. And now the patient</p>
+      <p begin="00:28:34" end="00:28:37">met official criteria for dementia and Alzheimer's</p>
+      <p begin="00:28:37" end="00:28:40">disease. In addition, when reviewing some of the</p>
+      <p begin="00:28:40" end="00:28:43">driving behaviors, there was a minor crash that</p>
+      <p begin="00:28:43" end="00:28:46">occurred when backing into a car in a parking lot,</p>
+      <p begin="00:28:46" end="00:28:50">and indeed the cognitive scores had declined.</p>
+      <p begin="00:28:50" end="00:28:53">Trail Making Test B was now over 200 seconds,</p>
+      <p begin="00:28:53" end="00:28:56">and clock drawing was much more impaired with</p>
+      <p begin="00:28:56" end="00:28:59">a score of two, or a fail.</p>
+      <p begin="00:28:59" end="00:29:03">So in this situation, we recommended driving</p>
+      <p begin="00:29:03" end="00:29:07">retirement. We did not believe that on-road</p>
+      <p begin="00:29:07" end="00:29:09">assessment was indicated based on the</p>
+      <p begin="00:29:09" end="00:29:13">information that we had at hand. The patient was</p>
+      <p begin="00:29:13" end="00:29:15">resistant to retiring from driving, so we did make</p>
+      <p begin="00:29:15" end="00:29:18">a referral to case manager or social services to</p>
+      <p begin="00:29:18" end="00:29:19">assist with this.</p>
+      <p begin="00:29:19" end="00:29:23">So Tammy, what can you suggest to clinicians</p>
+      <p begin="00:29:23" end="00:29:27">regarding how can we help our older adults stay</p>
+      <p begin="00:29:27" end="00:29:29">socially connected?</p>
+      <p begin="00:29:29" end="00:29:32">One thing that we need to do is we need to</p>
+      <p begin="00:29:32" end="00:29:35">discuss driving retirement plans long before they</p>
+      <p begin="00:29:35" end="00:29:38">are needed. So there are five As that we need to</p>
+      <p begin="00:29:38" end="00:29:40">look at when we're talking to our patients and our</p>
+      <p begin="00:29:40" end="00:29:43">families. These are also in the Clinician’s Guide.</p>
+      <p begin="00:29:43" end="00:29:47">Availability of alternate transportation when the</p>
+      <p begin="00:29:47" end="00:29:48">person needs it the most.</p>
+      <p begin="00:29:48" end="00:29:51">Accessibility of alternate transportations.</p>
+      <p begin="00:29:51" end="00:29:54">Acceptability of alternate forms of transportation</p>
+      <p begin="00:29:54" end="00:29:57">needs to be considered, such as the cleanliness,</p>
+      <p begin="00:29:57" end="00:29:59">or the standards, or whether or not the</p>
+      <p begin="00:29:59" end="00:30:02">neighborhood is safe for the person to get to</p>
+      <p begin="00:30:02" end="00:30:04">these alternate forms of transportation.</p>
+      <p begin="00:30:04" end="00:30:08">Affordability of forms of transportation must be</p>
+      <p begin="00:30:08" end="00:30:10">considered as many older adults are living</p>
+      <p begin="00:30:10" end="00:30:11">on a fixed income.</p>
+      <p begin="00:30:11" end="00:30:16">Adaptability is the fifth A in the Clinician’s Guide.</p>
+      <p begin="00:30:16" end="00:30:19">And this can be talking about their current vehicle</p>
+      <p begin="00:30:19" end="00:30:21">and whether or not their vehicle can be adapted</p>
+      <p begin="00:30:21" end="00:30:25">to prolong their safe driving, and again, prolong</p>
+      <p begin="00:30:25" end="00:30:28">driving life expectancy if appropriate for the person.</p>
+      <p begin="00:30:28" end="00:30:31">Conversations with the patients and family, again,</p>
+      <p begin="00:30:31" end="00:30:33">have to be ongoing, we need to have a very</p>
+      <p begin="00:30:33" end="00:30:37">holistic approach where we include all of the</p>
+      <p begin="00:30:37" end="00:30:39">clinical team members that we've recently</p>
+      <p begin="00:30:39" end="00:30:42">discussed in this conversation. We want to use</p>
+      <p begin="00:30:42" end="00:30:46">objective testing that we have talked about to</p>
+      <p begin="00:30:46" end="00:30:48">explain to the person and their family about the</p>
+      <p begin="00:30:48" end="00:30:51">safety concerns. When we use the objective</p>
+      <p begin="00:30:51" end="00:30:54">measures, it eliminates or decreases the amount</p>
+      <p begin="00:30:54" end="00:30:57">of emotional response that people have. Some</p>
+      <p begin="00:30:57" end="00:30:59">patients that I've had have actually responded</p>
+      <p begin="00:30:59" end="00:31:02">better to having a written prescription indicating</p>
+      <p begin="00:31:02" end="00:31:04">that they really should stop driving. The</p>
+      <p begin="00:31:04" end="00:31:05">conversation really should begin at the time of</p>
+      <p begin="00:31:05" end="00:31:11">diagnosis, as soon as we understand that the</p>
+      <p begin="00:31:11" end="00:31:12">diagnosis will be progressive.</p>
+      <p begin="00:31:12" end="00:31:15">Appropriate language such as driving retirement</p>
+      <p begin="00:31:15" end="00:31:19">should be used, rather than one is unable or unfit</p>
+      <p begin="00:31:19" end="00:31:21">to drive any longer.</p>
+      <p begin="00:31:21" end="00:31:23">Tammy, I think that's a great point, because when</p>
+      <p begin="00:31:23" end="00:31:25">you think about it, so many times people will</p>
+      <p begin="00:31:25" end="00:31:28">show up on our doorstep and it's like, "Oh my</p>
+      <p begin="00:31:28" end="00:31:31">God, they need to be off the road," and it's such a</p>
+      <p begin="00:31:31" end="00:31:35">difficult pill to swallow for patients and families.</p>
+      <p begin="00:31:35" end="00:31:38">Absolutely. You don't want the patient to feel like</p>
+      <p begin="00:31:38" end="00:31:41">they're being ganged up on by the team, but you</p>
+      <p begin="00:31:41" end="00:31:43">want to be working with the patient. Motivational</p>
+      <p begin="00:31:43" end="00:31:46">interviewing skills help with this. And unless there</p>
+      <p begin="00:31:46" end="00:31:49">are no other choices for safety concerns, do not</p>
+      <p begin="00:31:49" end="00:31:51">abruptly take the keys away from somebody.</p>
+      <p begin="00:31:51" end="00:31:56">So we also can get into this issue of reporting. Are</p>
+      <p begin="00:31:56" end="00:31:59">there situations where we will consider reporting</p>
+      <p begin="00:31:59" end="00:32:01">and how do we do that, Linda?</p>
+      <p begin="00:32:01" end="00:32:05">It's a really complex issue. The laws vary from</p>
+      <p begin="00:32:05" end="00:32:09">state to state. The Clinician’s Guide outlines</p>
+      <p begin="00:32:09" end="00:32:12">details about this process. MCI is generally not</p>
+      <p begin="00:32:12" end="00:32:14">reportable and only dementia.</p>
+      <p begin="00:32:14" end="00:32:18">So where else can one find assistance? In general,</p>
+      <p begin="00:32:18" end="00:32:21">if a clinician wants more information about MCI</p>
+      <p begin="00:32:21" end="00:32:24">and diagnosis, the Alzheimer's Association has an</p>
+      <p begin="00:32:24" end="00:32:27">amazing website, the AD Education Referral</p>
+      <p begin="00:32:27" end="00:32:31">center also [is] good. If clinicians want more</p>
+      <p begin="00:32:31" end="00:32:34">information on screening and assessment, they</p>
+      <p begin="00:32:34" end="00:32:36">can go to the Clinician's Guide and there are other</p>
+      <p begin="00:32:36" end="00:32:39">countries that keep up-to-date manuals on</p>
+      <p begin="00:32:39" end="00:32:42">medical conditions. A couple that come to mind</p>
+      <p begin="00:32:42" end="00:32:45">are the CMA, Canadian Medical Association. And</p>
+      <p begin="00:32:45" end="00:32:47">when it comes to assessment, as we said, we</p>
+      <p begin="00:32:47" end="00:32:50">prefer to have someone who's, if there's going to</p>
+      <p begin="00:32:50" end="00:32:52">be a performance-based road test, that's familiar</p>
+      <p begin="00:32:52" end="00:32:54">with memory problems, cognitive domains in</p>
+      <p begin="00:32:54" end="00:32:57">driving. One can do some research to look for</p>
+      <p begin="00:32:57" end="00:33:00">some of these individuals if they're in your area</p>
+      <p begin="00:33:00" end="00:33:02">through the American Occupational Therapy</p>
+      <p begin="00:33:02" end="00:33:04">Association website.</p>
+      <p begin="00:33:04" end="00:33:08">Finally, if you're having difficulty in finding those</p>
+      <p begin="00:33:08" end="00:33:10">mobility options or those driving destinations,</p>
+      <p begin="00:33:10" end="00:33:13">referral to a case manager, eldercare locator,</p>
+      <p begin="00:33:13" end="00:33:17">perhaps a referral to the Association on Aging</p>
+      <p begin="00:33:17" end="00:33:20">that's local, may have some tips on where other</p>
+      <p begin="00:33:20" end="00:33:24">transportation options are available to our clients.</p>
+      <p begin="00:33:24" end="00:33:28">So in conclusion, MCI and dementia are increasing</p>
+      <p begin="00:33:28" end="00:33:33">in prevalence with our aging population. We</p>
+      <p begin="00:33:33" end="00:33:36">know that certain levels of cognitive decline will</p>
+      <p begin="00:33:36" end="00:33:39">adversely affect driving skills and safety, and</p>
+      <p begin="00:33:39" end="00:33:42">certainly if one continues to progress like a</p>
+      <p begin="00:33:42" end="00:33:44">neurodegenerative disease, eventually</p>
+      <p begin="00:33:44" end="00:33:46">driving will have to stop.</p>
+      <p begin="00:33:46" end="00:33:49">Older drivers in your clinic should be assessed</p>
+      <p begin="00:33:49" end="00:33:52">routinely for cognitive function. If there are</p>
+      <p begin="00:33:52" end="00:33:55">concerns and it's appropriate, assess with some of</p>
+      <p begin="00:33:55" end="00:33:57">the driving red flags and certainly rule out</p>
+      <p begin="00:33:57" end="00:34:01">reversible causes are in order. The diagnosis of</p>
+      <p begin="00:34:01" end="00:34:04">MCI should prompt further assessment if those</p>
+      <p begin="00:34:04" end="00:34:09">red flags or declines or failed screens are found.</p>
+      <p begin="00:34:09" end="00:34:12">Again, we'd like to summarize. Consider</p>
+      <p begin="00:34:12" end="00:34:14">recommending adopting healthy lifestyle</p>
+      <p begin="00:34:14" end="00:34:17">behaviors, because you may not only help the</p>
+      <p begin="00:34:17" end="00:34:19">brain but prolong driving life expectancy.</p>
+      <p begin="00:34:19" end="00:34:23">Dr. Hill, Dr. Arms, thank you both so much for</p>
+      <p begin="00:34:23" end="00:34:25">being here. It was great to hear your perspectives</p>
+      <p begin="00:34:25" end="00:34:28">on assessing and counseling older drivers, and</p>
+      <p begin="00:34:28" end="00:34:31">especially those with mild cognitive impairment.</p>
+      <p begin="00:34:31" end="00:34:34">We also want to thank you for participating in this</p>
+      <p begin="00:34:34" end="00:34:36">activity. Please continue on to answer the</p>
+      <p begin="00:34:36" end="00:34:39">questions that follow and complete the evaluation.</p>
+      <p begin="00:34:39" end="00:34:43">After you answer the questions that follow and</p>
+      <p begin="00:34:43" end="00:34:45">complete the evaluation, please take a moment</p>
+      <p begin="00:34:45" end="00:34:48">to review the other activities on the collection</p>
+      <p begin="00:34:48" end="00:34:52">page titled Driver Safety: The Clinician’s</p>
+      <p begin="00:34:52" end="00:34:56">Connection, where we address driver safety issues.</p>
+    </div>
+  </body>
+</tt>

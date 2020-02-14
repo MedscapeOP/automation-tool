@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="it" xmlns="http://www.w3.org/ns/ttml" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+  <body>
+    <div xml:lang="it">
+      <p begin="00:00:06" end="00:00:08">Salve, mi chiamo Quentin Anstee e sono professore </p>
+      <p begin="00:00:08" end="00:00:11">di Epatologia sperimentale presso la Facoltà di Scienze Mediche</p>
+      <p begin="00:00:11" end="00:00:14">della Newcastle University, nonché medico specialista </p>
+      <p begin="00:00:14" end="00:00:17">in epatologia presso la Liver Unit del Freeman Hospital</p>
+      <p begin="00:00:17" end="00:00:21">di Newcastle Upon Tyne, nel Regno Unito. Benvenuti</p>
+      <p begin="00:00:21" end="00:00:24">a questo programma intitolato "Nuovi progressi nella steatosi epatica:</p>
+      <p begin="00:00:24" end="00:00:27">impatto dei dati emergenti sulla pratica clinica in Europa".</p>
+      <p begin="00:00:27" end="00:00:31">Oggi sono in compagnia della professoressa Elisabetta Bugianesi, </p>
+      <p begin="00:00:31" end="00:00:34">che lavora presso la Divisione di Gastroenterologia</p>
+      <p begin="00:00:34" end="00:00:37">ed Epatologia del Dipartimento di Scienze Mediche </p>
+      <p begin="00:00:37" end="00:00:42">dell’Università di Torino e di Vlad Ratziu,</p>
+      <p begin="00:00:42" end="00:00:46">professore di Epatologia all’Università della Sorbona </p>
+      <p begin="00:00:46" end="00:00:49">e all’ospedale Pitié-Salpêtrière di Parigi, in Francia. Benvenuti.</p>
+      <p begin="00:00:49" end="00:00:54">Oggi ci occuperemo dello spettro</p>
+      <p begin="00:00:54" end="00:00:57">della steatosi epatica non alcolica. Penso che molti di noi abbiano</p>
+      <p begin="00:00:57" end="00:01:01">familiarità con questa patologia. Quando in un fegato normale</p>
+      <p begin="00:01:01" end="00:01:04">iniziano ad accumularsi lipidi, si sviluppa una condizione</p>
+      <p begin="00:01:04" end="00:01:08">chiamata steatosi epatica non alcolica, nota con l’acronimo NAFLD. </p>
+      <p begin="00:01:08" end="00:01:12">In alcuni individui, ciò porta a una forma infiammatoria </p>
+      <p begin="00:01:12" end="00:01:16">della malattia, chiamata steatoepatite non alcolica o NASH,</p>
+      <p begin="00:01:16" end="00:01:20">che, se si protrae per un tempo sufficientemente lungo, può, in alcuni soggetti,</p>
+      <p begin="00:01:20" end="00:01:23">dare origine a tessuto cicatriziale e fibrosi epatica e, talvolta,</p>
+      <p begin="00:01:23" end="00:01:27">progredire in fibrosi avanzata, cirrosi e, in alcune persone, </p>
+      <p begin="00:01:27" end="00:01:32">anche in carcinoma epatocellulare. Man mano che approfondiamo </p>
+      <p begin="00:01:32" end="00:01:36">le nostre conoscenze sulla steatosi epatica, ci rendiamo sempre più conto </p>
+      <p begin="00:01:36" end="00:01:39">che si tratta di un processo molto dinamico. In alcuni soggetti </p>
+      <p begin="00:01:39" end="00:01:43">la progressione è continua. In altri, invece,</p>
+      <p begin="00:01:43" end="00:01:46">la patologia ha un andamento altalenante</p>
+      <p begin="00:01:46" end="00:01:49">e ciò può verificarsi per diversi motivi.</p>
+      <p begin="00:01:49" end="00:01:53">Alcuni di questi sono legati a fattori ambientali, mentre altri</p>
+      <p begin="00:01:53" end="00:01:57">dipendono da fattori genetici intrinseci all’individuo. Tuttavia, i principali </p>
+      <p begin="00:01:57" end="00:02:00">fattori di rischio a cui dobbiamo prestare attenzione nella pratica clinica</p>
+      <p begin="00:02:00" end="00:02:04">sono obesità, diabete di tipo 2 e insulinoresistenza, </p>
+      <p begin="00:02:04" end="00:02:07">ipertensione e colesterolo alto; nel complesso,</p>
+      <p begin="00:02:07" end="00:02:11">le caratteristiche della sindrome metabolica. Esistono anche</p>
+      <p begin="00:02:11" end="00:02:13">diversi fattori genetici coinvolti in questa patologia.</p>
+      <p begin="00:02:13" end="00:02:18">Alcuni esempi sono i geni PNPLA3 and TM6SF2,</p>
+      <p begin="00:02:18" end="00:02:22">che presentano polimorfismi a singolo nucleotide </p>
+      <p begin="00:02:22" end="00:02:25">che sono stati associati a un maggior rischio di progressione</p>
+      <p begin="00:02:25" end="00:02:28">della malattia, a un maggior rischio di cirrosi e, nel caso</p>
+      <p begin="00:02:28" end="00:02:33">di PNPLA3, anche a un maggior rischio di carcinoma epatico.</p>
+      <p begin="00:02:33" end="00:02:38">La prevalenza della steatosi epatica in Europa è alta</p>
+      <p begin="00:02:38" end="00:02:42">e una recente meta-analisi suggerisce che continuerà</p>
+      <p begin="00:02:42" end="00:02:46">ad aumentare. Attualmente, si stima che circa</p>
+      <p begin="00:02:46" end="00:02:50">il 25% della popolazione europea svilupperà </p>
+      <p begin="00:02:50" end="00:02:53">un certo grado di steatosi epatica non alcolica, il che implica </p>
+      <p begin="00:02:53" end="00:02:56">che la steatosi epatica ha sostituito il consumo</p>
+      <p begin="00:02:56" end="00:02:59">di alcol e l’epatite virale come causa più comune di</p>
+      <p begin="00:02:59" end="00:03:03">epatopatia. Un dato preoccupante è che non è limitata</p>
+      <p begin="00:03:03" end="00:03:07">agli adulti, ma è una malattia che sta interessando </p>
+      <p begin="00:03:07" end="00:03:09">anche i bambini; di conseguenza, le persone saranno</p>
+      <p begin="00:03:09" end="00:03:11">esposte al rischio di malattia progressiva</p>
+      <p begin="00:03:11" end="00:03:15">a partire da un’età molto più giovane. </p>
+      <p begin="00:03:15" end="00:03:21">Una delle difficoltà, tuttavia, è ottenere dati affidabili</p>
+      <p begin="00:03:21" end="00:03:25">sulla prevalenza, pertanto gran parte dei dati che abbiamo</p>
+      <p begin="00:03:25" end="00:03:28">attualmente a disposizione è stata ricavata dalla conoscenza</p>
+      <p begin="00:03:28" end="00:03:32">della prevalenza dell’obesità e del diabete. Ad ogni modo, il modello</p>
+      <p begin="00:03:32" end="00:03:37">di Markov suggerisce che, nei prossimi 10 anni circa,</p>
+      <p begin="00:03:37" end="00:03:40">la prevalenza continuerà ad aumentare. Infatti,</p>
+      <p begin="00:03:40" end="00:03:45">si prevede che crescerà di un ulteriore 21%, passando</p>
+      <p begin="00:03:45" end="00:03:49">da 80 milioni di soggetti in tutta Europa a circa 100 milioni</p>
+      <p begin="00:03:49" end="00:03:52">di soggetti. In questo scenario, non è solo la prevalenza </p>
+      <p begin="00:03:52" end="00:03:55">della steatosi che andrà ad aumentare, ma verosimilmente</p>
+      <p begin="00:03:55" end="00:03:59">anche quella della steatoepatite. Naturalmente, ciò comporta</p>
+      <p begin="00:03:59" end="00:04:03">implicazioni significative in termini di spesa sanitaria.</p>
+      <p begin="00:04:03" end="00:04:07">Professor Ratziu, Vlad, puoi dirci qualcosa di più?</p>
+      <p begin="00:04:07" end="00:04:08">Cosa sappiamo dei possibili costi sanitari</p>
+      <p begin="00:04:08" end="00:04:10">associati alla steatosi epatica?</p>
+      <p begin="00:04:10" end="00:04:13">Al momento, disponiamo solo di stime, non conosciamo</p>
+      <p begin="00:04:13" end="00:04:17">i dati reali e questi sono certamente</p>
+      <p begin="00:04:17" end="00:04:22">determinati dal tasso di diagnosi e anche dal fatto</p>
+      <p begin="00:04:22" end="00:04:26">che la diagnosi avvenga precocemente o tardivamente. Pertanto,</p>
+      <p begin="00:04:26" end="00:04:29">possiamo basarci soltanto sulle stime ricavate dalla prevalenza di obesità</p>
+      <p begin="00:04:29" end="00:04:32">e diabete, sulla nostra conoscenza della prevalenza </p>
+      <p begin="00:04:32" end="00:04:36">di patologie gravi nell’ambito di tutti i pazienti affetti da NAFLD,</p>
+      <p begin="00:04:36" end="00:04:39">e anche su quelle che sono le nostre pratiche correnti.</p>
+      <p begin="00:04:39" end="00:04:43">Naturalmente, questi dati non sono molto precisi, anche perché</p>
+      <p begin="00:04:43" end="00:04:47">aumenterà la consapevolezza, gli strumenti diagnostici stanno migliorando, </p>
+      <p begin="00:04:47" end="00:04:51">la diagnosi non invasiva contribuirà allo screening di un maggior numero</p>
+      <p begin="00:04:51" end="00:04:56">di pazienti e, aspetto importante, la nostra pratica clinica andrà incontro </p>
+      <p begin="00:04:56" end="00:05:00">a grossi cambiamenti grazie alla disponibilità di nuovi farmaci.</p>
+      <p begin="00:05:00" end="00:05:05">Nel complesso, possiamo dire, come mostrato da uno degli studi</p>
+      <p begin="00:05:05" end="00:05:09">presentati qui all’American Liver Meeting,</p>
+      <p begin="00:05:09" end="00:05:13">che in 5 grandi paesi dell’Europa occidentale</p>
+      <p begin="00:05:13" end="00:05:19">la spesa sanitaria associata a questi pazienti è considerevole.</p>
+      <p begin="00:05:19" end="00:05:22">Gran parte dei costi sembra imputabile ai casi più gravi </p>
+      <p begin="00:05:22" end="00:05:26">di NAFLD e NASH. In realtà, è stato stimato</p>
+      <p begin="00:05:26" end="00:05:31">che il 95% dei costi riguardano i pazienti con fibrosi o cirrosi avanzate.</p>
+      <p begin="00:05:31" end="00:05:34">Ciò è molto preoccupante, perché sappiamo</p>
+      <p begin="00:05:34" end="00:05:37">che una volta giunti allo stato cirrotico in molte altre</p>
+      <p begin="00:05:37" end="00:05:40">patologie epatiche è molto costoso prevenire </p>
+      <p begin="00:05:40" end="00:05:44">le complicanze ed evitare trattamenti drastici</p>
+      <p begin="00:05:44" end="00:05:47">quali il trapianto di fegato. Ci stiamo occupando di</p>
+      <p begin="00:05:47" end="00:05:51">tutti questi aspetti adesso, tuttavia ci aspettiamo un impatto significativo</p>
+      <p begin="00:05:51" end="00:05:55">sui sistemi sanitari a causa di questa patologia.</p>
+      <p begin="00:05:55" end="00:05:58">Va bene, grazie. Questo è un punto molto importante. </p>
+      <p begin="00:05:58" end="00:06:02">C’è da dire che noi medici tendiamo a dicotomizzare </p>
+      <p begin="00:06:02" end="00:06:06">la diagnosi e a inserire i soggetti in categorie specifiche,</p>
+      <p begin="00:06:06" end="00:06:10">ovvero steatosi epatica non alcolica ed epatopatia</p>
+      <p begin="00:06:10" end="00:06:13">alcolica. Esistono evidenze emergenti di un effetto</p>
+      <p begin="00:06:13" end="00:06:18">sinergico tra alcol e obesità, secondo te dovremmo</p>
+      <p begin="00:06:18" end="00:06:20">iniziare a considerare queste condizioni come lo spettro</p>
+      <p begin="00:06:20" end="00:06:24">di un’unica patologia. Qual è la tua opinione Vlad?</p>
+      <p begin="00:06:24" end="00:06:26">Non sono convinto che si possa parlare di uno spettro. Uno spettro potrebbe</p>
+      <p begin="00:06:26" end="00:06:30">presupporre che le vie metaboliche comuni siano identiche,</p>
+      <p begin="00:06:30" end="00:06:32">ma di certo ciò che dobbiamo comprendere è la coesistenza</p>
+      <p begin="00:06:32" end="00:06:35">delle due condizioni. Molte persone possono bere occasionalmente</p>
+      <p begin="00:06:35" end="00:06:39">o anche regolarmente quantità di alcol dannose.</p>
+      <p begin="00:06:39" end="00:06:42">Pertanto le due condizioni possono chiaramente coesistere</p>
+      <p begin="00:06:42" end="00:06:46">ed è stato dimostrato che se si è obesi e si consuma alcol</p>
+      <p begin="00:06:46" end="00:06:49">o, viceversa, se si bevono quantità elevate di alcol</p>
+      <p begin="00:06:49" end="00:06:52">e in più si è anche obesi o si è affetti da sindrome metabolica,</p>
+      <p begin="00:06:52" end="00:06:56">il danno epatico è molto più grave.</p>
+      <p begin="00:06:56" end="00:07:00">Questa sorta di additività/sinergia è stata dimostrata retrospettivamente. </p>
+      <p begin="00:07:00" end="00:07:04">Ma, aspetto più interessante, dall’altro lato dello spettro</p>
+      <p begin="00:07:04" end="00:07:07">rispetto al consumo nocivo di alcol, anche </p>
+      <p begin="00:07:07" end="00:07:12">in studi più ampi basati sulle popolazioni, indipendentemente</p>
+      <p begin="00:07:12" end="00:07:15">dal consumo di alcol, la presenza di fattori di rischio metabolici</p>
+      <p begin="00:07:15" end="00:07:19">aumenta la probabilità di sviluppare eventi a livello epatico.</p>
+      <p begin="00:07:19" end="00:07:24">Nei pazienti che consumano alcol, anche in modiche quantità,</p>
+      <p begin="00:07:24" end="00:07:27">siano essi diabetici o obesi, la prevalenza di</p>
+      <p begin="00:07:27" end="00:07:31">fattori di rischio metabolici aumenta il danno associato </p>
+      <p begin="00:07:31" end="00:07:33">e con esso il numero di eventi a livello epatico. Pertanto, </p>
+      <p begin="00:07:33" end="00:07:36">esiste un contributo da parte di entrambi questi elementi. Non è possibile</p>
+      <p begin="00:07:36" end="00:07:39">ignorare l’uno o l’altro. Quindi, piuttosto che cercare di comprenderne</p>
+      <p begin="00:07:39" end="00:07:42">la fisiopatologia o se esista o meno uno spettro,</p>
+      <p begin="00:07:42" end="00:07:44">ritengo che dovremmo fare uno sforzo per cercare</p>
+      <p begin="00:07:44" end="00:07:48">di quantificare il meglio possibile la quantità di alcol</p>
+      <p begin="00:07:48" end="00:07:51">e quindi di stabilire tra noi se modiche quantità </p>
+      <p begin="00:07:51" end="00:07:53">di alcol sono accettabili o se, piuttosto,</p>
+      <p begin="00:07:53" end="00:07:56">dobbiamo bandire del tutto il consumo di alcol.</p>
+      <p begin="00:07:56" end="00:07:59">Ritengo che questa sia ancora una questione irrisolta.</p>
+      <p begin="00:07:59" end="00:08:01">Sì, assolutamente. Ci sono alcuni dati emergenti </p>
+      <p begin="00:08:01" end="00:08:04">secondo i quali anche una sola unità di alcol al giorno, in particolare</p>
+      <p begin="00:08:04" end="00:08:07">nei pazienti con diabete di tipo 2, può essere associata a una maggiore</p>
+      <p begin="00:08:07" end="00:08:11">probabilità di fibrosi epatica avanzata. Si tratta</p>
+      <p begin="00:08:11" end="00:08:13">di una questione ancora aperta e ritengo che in futuro</p>
+      <p begin="00:08:13" end="00:08:16">debba essere presa in considerazione da chi lavora in questo campo.</p>
+      <p begin="00:08:16" end="00:08:20">Esistono diverse caratteristiche che costituiscono</p>
+      <p begin="00:08:20" end="00:08:23">i principali indicatori di morbilità e mortalità</p>
+      <p begin="00:08:23" end="00:08:26">per quanto riguarda la steatosi epatica. La cirrosi è uno a cui</p>
+      <p begin="00:08:26" end="00:08:29">noi medici pensiamo spesso. Un altro è il carcinoma </p>
+      <p begin="00:08:29" end="00:08:33">epatocellulare e, naturalmente, entrambi contribuiscono</p>
+      <p begin="00:08:33" end="00:08:38">alla crescente necessità di trapianti di fegato.</p>
+      <p begin="00:08:38" end="00:08:42">Elisabetta, in riferimento al rischio di carcinoma epatocellulare,</p>
+      <p begin="00:08:42" end="00:08:46">quali sono i principali fattori coinvolti? Quali sono</p>
+      <p begin="00:08:46" end="00:08:50">le probabilità di sviluppare un carcinoma epatocellulare</p>
+      <p begin="00:08:50" end="00:08:52">in un quadro di steatosi epatica?</p>
+      <p begin="00:08:52" end="00:08:55">Il carcinoma epatocellulare nell’ambito della NASH è un tipo particolare</p>
+      <p begin="00:08:55" end="00:08:59">di carcinoma epatocellulare, nel senso che non è influenzato</p>
+      <p begin="00:08:59" end="00:09:02">soltanto dalla malattia epatica in quanto tale, in particolar modo</p>
+      <p begin="00:09:02" end="00:09:06">dalla cirrosi, dal momento che può anche insorgere nel fegato non cirrotico.</p>
+      <p begin="00:09:06" end="00:09:10">Ciò avviene perché alcuni dei componenti</p>
+      <p begin="00:09:10" end="00:09:13">della sindrome metabolica, in particolare il diabete di tipo 2</p>
+      <p begin="00:09:13" end="00:09:16">e l’obesità, sono anch’essi correlati al rischio</p>
+      <p begin="00:09:16" end="00:09:20">di carcinoma epatocellulare, per cui esiste un effetto additivo</p>
+      <p begin="00:09:20" end="00:09:25">di cirrosi, obesità e diabete di tipo 2; </p>
+      <p begin="00:09:25" end="00:09:28">oltre a ciò potrebbe essere presente un aspetto genetico, </p>
+      <p begin="00:09:28" end="00:09:33">quello a cui hai accennato, la variante PNPLA3 GG,</p>
+      <p begin="00:09:33" end="00:09:37">che è associata a un rischio 5 volte maggiore di carcinoma epatocellulare.</p>
+      <p begin="00:09:37" end="00:09:43">E, se si vuole prendere in considerazione un singolo fattore di rischio</p>
+      <p begin="00:09:43" end="00:09:46">o, per meglio dire, se si considera un paziente affetto </p>
+      <p begin="00:09:46" end="00:09:50">da molto tempo da malattia epatica, da cirrosi</p>
+      <p begin="00:09:50" end="00:09:53">o da diabete e il paziente presenta alcune varianti</p>
+      <p begin="00:09:53" end="00:09:58">di PNPLA3, il rischio di carcinoma epatocellulare </p>
+      <p begin="00:09:58" end="00:10:02">è davvero molto alto. Ciò perché la malattia stessa</p>
+      <p begin="00:10:02" end="00:10:08">aumenta il rischio di 2,5 volte, l’obesità aumenta il rischio di 2,5 volte.</p>
+      <p begin="00:10:08" end="00:10:13">Nel caso dell’obesità, il rischio dipende anche dalla sua durata, </p>
+      <p begin="00:10:13" end="00:10:17">perché se l’obesità inizia dall’infanzia,</p>
+      <p begin="00:10:17" end="00:10:21">aumenta il rischio di sviluppare un HCC in età adulta</p>
+      <p begin="00:10:21" end="00:10:25">e il carcinoma epatocellulare si svilupperà</p>
+      <p begin="00:10:25" end="00:10:29">più precocemente rispetto a coloro che diventano obesi</p>
+      <p begin="00:10:29" end="00:10:34">in età adulta. Questo è un problema particolarmente importante </p>
+      <p begin="00:10:34" end="00:10:37">nell’ottica dell’aumento della prevalenza dell’obesità</p>
+      <p begin="00:10:37" end="00:10:40">infantile in tutta Europa, ma anche a livello mondiale.</p>
+      <p begin="00:10:40" end="00:10:43">Quindi, è la durata della condizione di rischio che ha un ruolo importante?</p>
+      <p begin="00:10:43" end="00:10:48">È l’esposizione ai fattori di rischio: uno è l’obesità e un altro</p>
+      <p begin="00:10:48" end="00:10:52">è il diabete di tipo 2. In combinazione con il background genetico,</p>
+      <p begin="00:10:52" end="00:10:55">questo aspetto potrebbe accelerare la progressione ad HCC.</p>
+      <p begin="00:10:55" end="00:10:58">E poi magari nel corso della vita si beve un po’ più di alcol</p>
+      <p begin="00:10:58" end="00:11:04">o si contrae un virus, e questi fattori possono certamente</p>
+      <p begin="00:11:04" end="00:11:07">far aumentare il rischio di carcinoma epatocellulare.</p>
+      <p begin="00:11:07" end="00:11:12">L’insorgenza di carcinoma epatocellulare </p>
+      <p begin="00:11:12" end="00:11:17">in un quadro di NASH diventerà la condizione con il maggior tasso di crescita</p>
+      <p begin="00:11:17" end="00:11:23">per l’inclusione nelle liste d’attesa per il trapianto di fegato. Ovviamente,</p>
+      <p begin="00:11:23" end="00:11:27">l’epatite C e l’epatite B continuano a essere le cause principali,</p>
+      <p begin="00:11:27" end="00:11:30">ma sono in diminuzione, specialmente l’epatite C.</p>
+      <p begin="00:11:30" end="00:11:35">Non così rapidamente. Ci vorrà del tempo prima di assistere al reale</p>
+      <p begin="00:11:35" end="00:11:42">impatto delle nuove terapie. Tuttavia, nei prossimi 20 anni</p>
+      <p begin="00:11:42" end="00:11:46">probabilmente il carcinoma epatocellulare nell’ambito della NASH </p>
+      <p begin="00:11:46" end="00:11:49">diventerà un onere notevole se non facciamo qualcosa prima.</p>
+      <p begin="00:11:49" end="00:11:53">OK. Tenendo conto di questo, Vlad, cosa dovremmo fare</p>
+      <p begin="00:11:53" end="00:11:56">attualmente riguardo allo screening per l’HCC?</p>
+      <p begin="00:11:56" end="00:11:59">Dovremmo testare tutti i soggetti con steatosi epatica? Quale potrebbe essere</p>
+      <p begin="00:11:59" end="00:12:01">il nostro approccio? Cosa ne pensi?</p>
+      <p begin="00:12:01" end="00:12:08">Per il momento, ritengo che se si tratta di un singolo paziente si debba</p>
+      <p begin="00:12:08" end="00:12:11">agire come meglio si ritiene, ma se si tratta di più pazienti</p>
+      <p begin="00:12:11" end="00:12:16">è necessario elaborare delle politiche che siano applicabili</p>
+      <p begin="00:12:16" end="00:12:19">e con un buon rapporto costo-beneficio. Penso che l’unica cosa</p>
+      <p begin="00:12:19" end="00:12:23">che si possa dire oggi è che i pazienti cirrotici devono essere sottoposti</p>
+      <p begin="00:12:23" end="00:12:25">a screening per carcinoma epatocellulare</p>
+      <p begin="00:12:25" end="00:12:28">esattamente come viene fatto per qualsiasi causa di cirrosi.</p>
+      <p begin="00:12:28" end="00:12:31">Ma come comportarsi con i non cirrotici? Si tratta di una questione</p>
+      <p begin="00:12:31" end="00:12:34">molto difficile, perché è chiaro che esistono casi senza cirrosi,</p>
+      <p begin="00:12:34" end="00:12:37">a volte anche senza un quadro di NASH, ma semplicemente</p>
+      <p begin="00:12:37" end="00:12:41">di steatosi epatica. Tuttavia, tali casi sembrano sufficientemente rari</p>
+      <p begin="00:12:41" end="00:12:44">in termini di incidenza da non giustificare</p>
+      <p begin="00:12:44" end="00:12:48">uno screening sistematico. Inoltre, il numero di pazienti a rischio</p>
+      <p begin="00:12:48" end="00:12:51">è troppo alto. Pertanto, se seguiamo ciò che i nostri colleghi</p>
+      <p begin="00:12:51" end="00:12:56">hanno indicato nelle linee guida per la pratica clinica,</p>
+      <p begin="00:12:56" end="00:13:02">specialmente quelle dell’ESMO per l’HCC, esiste consenso sul fatto</p>
+      <p begin="00:13:02" end="00:13:09">che lo screening sistematico quando l’incidenza annua è inferiore all’1,5%</p>
+      <p begin="00:13:09" end="00:13:11">non è economicamente conveniente. E chiaramente</p>
+      <p begin="00:13:11" end="00:13:13">è questo il caso dei pazienti con NASH non cirrotici.</p>
+      <p begin="00:13:13" end="00:13:16">È interessante notare che i pazienti cirrotici devono essere</p>
+      <p begin="00:13:16" end="00:13:20">monitorati come facciamo regolarmente, ma anche tra i cirrotici</p>
+      <p begin="00:13:20" end="00:13:23">sembra esistere un’ampia variabilità in termini</p>
+      <p begin="00:13:23" end="00:13:26">di rischio e alcuni cirrotici sono molto più a rischio di altri.</p>
+      <p begin="00:13:26" end="00:13:30">Questo è un aspetto che abbiamo constatato. È anche vero</p>
+      <p begin="00:13:30" end="00:13:34">che ciascun agente cancerogeno ha la sua potenza e il potere</p>
+      <p begin="00:13:34" end="00:13:37">oncogeno può essere diverso tra HPV, aflatossina, </p>
+      <p begin="00:13:37" end="00:13:40">HCC e NASH. Pertanto, è ragionevole ritenere</p>
+      <p begin="00:13:40" end="00:13:43">che ogni patologia possa averne uno diverso. Quindi si sta ancora </p>
+      <p begin="00:13:43" end="00:13:47">cercando di identificare, anche tra i pazienti cirrotici,</p>
+      <p begin="00:13:47" end="00:13:51">quelli a maggior rischio. Per il momento, </p>
+      <p begin="00:13:51" end="00:13:53">ritengo che i cirrotici debbano essere sottoposti a screening ogni 6 mesi.</p>
+      <p begin="00:13:53" end="00:13:55">Per gli altri, solo occasionalmente l’ecografia;</p>
+      <p begin="00:13:55" end="00:13:57">non può essere fatta alcuna raccomandazione.</p>
+      <p begin="00:13:57" end="00:14:00">Va bene, grazie. Dunque, sappiamo che molti pazienti</p>
+      <p begin="00:14:00" end="00:14:03">con steatosi epatica non alcolica non sviluppano</p>
+      <p begin="00:14:03" end="00:14:07">alcun danno diretto a livello epatico. Infatti, l’articolo del 2015</p>
+      <p begin="00:14:07" end="00:14:11">del compianto Paul Angulo ha dimostrato che solo circa</p>
+      <p begin="00:14:11" end="00:14:15">il 9-10% dei pazienti seguiti longitudinalmente </p>
+      <p begin="00:14:15" end="00:14:18">è andato incontro a decesso legato a problemi epatici e che </p>
+      <p begin="00:14:18" end="00:14:23">per un numero maggiore di soggetti la causa è stata di tipo cardiovascolare.</p>
+      <p begin="00:14:23" end="00:14:27">Elisabetta, puoi dirci qualcosa di più sugli eventi non correlati al fegato</p>
+      <p begin="00:14:27" end="00:14:30">e sugli effetti nei pazienti con steatosi epatica?</p>
+      <p begin="00:14:30" end="00:14:33">Per prima cosa vorrei fare una premessa su questo lavoro,</p>
+      <p begin="00:14:33" end="00:14:37">poiché noi abbiamo contribuito alla sua realizzazione. I pazienti </p>
+      <p begin="00:14:37" end="00:14:41">con NAFLD che stavamo seguendo si trovavano</p>
+      <p begin="00:14:41" end="00:14:44">in uno stadio precoce di epatopatia. Questi soggetti erano</p>
+      <p begin="00:14:44" end="00:14:49">sotto sorveglianza, pertanto vi è un basso tasso di morbilità e mortalità</p>
+      <p begin="00:14:49" end="00:14:52">correlate al fegato appunto a causa di queste due premesse. </p>
+      <p begin="00:14:52" end="00:14:57">Allo stesso tempo, vediamo molti pazienti </p>
+      <p begin="00:14:57" end="00:15:01">che non sono sotto sorveglianza e che vengono inviati da noi in situazioni</p>
+      <p begin="00:15:01" end="00:15:05">di cirrosi scompensata, una grave complicanza </p>
+      <p begin="00:15:05" end="00:15:08">come il carcinoma epatocellulare. Detto questo, naturalmente,</p>
+      <p begin="00:15:08" end="00:15:12">la patologia cardiovascolare è la prima causa di decesso</p>
+      <p begin="00:15:12" end="00:15:15">per questi tipi di pazienti, dal momento che la NAFLD non è semplicemente</p>
+      <p begin="00:15:15" end="00:15:20">una malattia epatica. Si tratta di una patologia sistemica, che deriva</p>
+      <p begin="00:15:20" end="00:15:26">da una condizione metabolica che a volte colpisce</p>
+      <p begin="00:15:26" end="00:15:32">anche il fegato, ma in genere il maggior rischio </p>
+      <p begin="00:15:32" end="00:15:36">per questi pazienti è di tipo cardiovascolare.</p>
+      <p begin="00:15:36" end="00:15:39">Il corollario è che la NAFLD e la sindrome metabolica</p>
+      <p begin="00:15:39" end="00:15:44">hanno una sorta di rapporto bidirezionale, poiché la steatosi</p>
+      <p begin="00:15:44" end="00:15:49">epatica si verifica quando vi è un maggior flusso di acidi grassi liberi</p>
+      <p begin="00:15:49" end="00:15:53">verso il fegato a causa, da un lato, dell’insulinoresistenza del tessuto</p>
+      <p begin="00:15:53" end="00:15:58">adiposo. Ma dall’altro lato, quando il fegato diventa grasso</p>
+      <p begin="00:15:58" end="00:16:01">aumenta la sua produzione di glucosio,</p>
+      <p begin="00:16:01" end="00:16:05">quindi il paziente ha maggiori probabilità di sviluppare diabete di tipo 2</p>
+      <p begin="00:16:05" end="00:16:09">e il fegato produce anche una maggiore quantità di lipidi.</p>
+      <p begin="00:16:09" end="00:16:13">Questo meccanismo produce infine un profilo più aterogenico</p>
+      <p begin="00:16:13" end="00:16:20">e, in combinazione con la produzione di proteina C-reattiva e PAI-1,</p>
+      <p begin="00:16:20" end="00:16:25">che sono tutti fattori pro-infiammatori, favorisce in definitiva</p>
+      <p begin="00:16:25" end="00:16:29">lo sviluppo della patologia cardiovascolare.</p>
+      <p begin="00:16:29" end="00:16:32">Quindi si tratta di una strada a doppio senso, in cui un fattore induce</p>
+      <p begin="00:16:32" end="00:16:36">l’altro e viceversa. È così che lo descriveresti?</p>
+      <p begin="00:16:36" end="00:16:40">Sì, non è semplicemente una conseguenza della sindrome </p>
+      <p begin="00:16:40" end="00:16:44">metabolica, nonostante sia uno dei fattori principali della sindrome metabolica</p>
+      <p begin="00:16:44" end="00:16:49">una volta che il fegato diventa grasso, quindi accresce tutte le conseguenze</p>
+      <p begin="00:16:49" end="00:16:53">negative della sindrome metabolica, sia il rischio</p>
+      <p begin="00:16:53" end="00:16:55">di sviluppare il diabete di tipo 2 che il rischio</p>
+      <p begin="00:16:55" end="00:16:59">di sviluppare eventi di tipo cardiovascolare.</p>
+      <p begin="00:16:59" end="00:17:03">OK, grazie. Quindi, esistono diverse difficoltà</p>
+      <p begin="00:17:03" end="00:17:06">relative alla gestione dei pazienti</p>
+      <p begin="00:17:06" end="00:17:09">con steatosi epatica. Prima di tutto, dobbiamo identificare </p>
+      <p begin="00:17:09" end="00:17:12">i pazienti che hanno un rischio maggiore di sviluppare la NAFLD.</p>
+      <p begin="00:17:12" end="00:17:16">Dopodiché, dobbiamo occuparci della stratificazione del rischio,</p>
+      <p begin="00:17:16" end="00:17:18">al fine di identificare i pazienti affetti da steatosi epatica a rischio</p>
+      <p begin="00:17:18" end="00:17:21">di presentare gli esiti peggiori. E infine </p>
+      <p begin="00:17:21" end="00:17:23">ci sono naturalmente problemi relativamente a come gestire </p>
+      <p begin="00:17:23" end="00:17:25">e trattare al meglio questa patologia.</p>
+      <p begin="00:17:25" end="00:17:30">Una delle cose che mi preoccupa sempre</p>
+      <p begin="00:17:30" end="00:17:34">è se siamo realmente efficaci nell’identificare tutti i pazienti</p>
+      <p begin="00:17:34" end="00:17:37">nella popolazione che sono affetti da steatosi epatica.</p>
+      <p begin="00:17:37" end="00:17:40">Da una parte, le previsioni suggeriscono che circa</p>
+      <p begin="00:17:40" end="00:17:43">un quarto della popolazione presenti un certo grado di steatosi epatica.</p>
+      <p begin="00:17:43" end="00:17:46">E tuttavia, quando consideriamo i dati prevenienti dalla pratica clinica reale,</p>
+      <p begin="00:17:46" end="00:17:50">come ha fatto un recente studio che ha esaminato una popolazione di oltre</p>
+      <p begin="00:17:50" end="00:17:53">18 milioni di soggetti adulti registrati in un database di assistenza primaria</p>
+      <p begin="00:17:53" end="00:17:57">in quattro paesi europei, si rileva che </p>
+      <p begin="00:17:57" end="00:18:01">solo 137.000 di tali individui erano effettivamente </p>
+      <p begin="00:18:01" end="00:18:03">classificati come affetti da steatosi epatica.</p>
+      <p begin="00:18:03" end="00:18:08">Si tratta di una grossa discrepanza e probabilmente</p>
+      <p begin="00:18:08" end="00:18:11">ciò implica che la steatosi epatica non è così comune</p>
+      <p begin="00:18:11" end="00:18:16">come pensiamo, ma l’altra interpretazione dei dati,</p>
+      <p begin="00:18:16" end="00:18:18">e ritengo sia quella molto più probabile, è che </p>
+      <p begin="00:18:18" end="00:18:20">stiamo sbagliando nel diagnosticare in modo accurato questa condizione</p>
+      <p begin="00:18:20" end="00:18:24">e che non la stiamo classificando correttamente, pertanto non viene rilevata</p>
+      <p begin="00:18:24" end="00:18:27">nei dati statistici. Sappiamo che i soggetti affetti da diabete</p>
+      <p begin="00:18:27" end="00:18:31">di tipo 2, ipertensione, obesità e sindrome </p>
+      <p begin="00:18:31" end="00:18:34">metabolica hanno una probabilità molto più elevata di presentare</p>
+      <p begin="00:18:34" end="00:18:37">steatosi epatica. Vlad, puoi commentare ulteriormente</p>
+      <p begin="00:18:37" end="00:18:40">alcuni dei motivi per cui la steatosi epatica</p>
+      <p begin="00:18:40" end="00:18:43">potrebbe essere sottostimata?</p>
+      <p begin="00:18:43" end="00:18:50">Penso che esistano dei motivi storici perché per</p>
+      <p begin="00:18:50" end="00:18:52">lungo tempo la steatosi è stata considerata una condizione</p>
+      <p begin="00:18:52" end="00:18:56">benigna, che accompagna l’obesità</p>
+      <p begin="00:18:56" end="00:19:02">o il sovrappeso, di cui non era il caso di preoccuparsi. Inoltre,</p>
+      <p begin="00:19:02" end="00:19:08">penso che il fatto che non sia disponibile un test semplice</p>
+      <p begin="00:19:08" end="00:19:14">in grado di predire la malattia sia anch’esso un ostacolo all’identificazione</p>
+      <p begin="00:19:14" end="00:19:17">di questi pazienti. Naturalmente, esiste l’ecografia, </p>
+      <p begin="00:19:17" end="00:19:21">ma non è un esame molto sensibile. Il terzo aspetto</p>
+      <p begin="00:19:21" end="00:19:26">è che per moltissimo tempo la storia naturale </p>
+      <p begin="00:19:26" end="00:19:28">della malattia non era stata ben compresa, pertanto </p>
+      <p begin="00:19:28" end="00:19:33">non esisteva il senso di urgenza che abbiamo oggi in base ai dati disponibili,</p>
+      <p begin="00:19:33" end="00:19:35">ovvero che i soggetti possono progredire allo stadio terminale</p>
+      <p begin="00:19:35" end="00:19:38">di malattia epatica. Per molti anni si è ritenuto</p>
+      <p begin="00:19:38" end="00:19:41">che non si sarebbe verificata mai, o solo in rari casi, la progressione</p>
+      <p begin="00:19:41" end="00:19:45">di questa condizione a malattia epatica in stadio terminale. Infine,</p>
+      <p begin="00:19:45" end="00:19:50">anche in caso di diagnosi e di stadiazione, </p>
+      <p begin="00:19:50" end="00:19:54">non possiamo fare molto di più di ciò che stiamo già facendo,</p>
+      <p begin="00:19:54" end="00:19:56">ossia cercare di implementare misure a livello di alimentazione e stile di vita.</p>
+      <p begin="00:19:56" end="00:19:58">In altre parole, il fatto che non esista una terapia specifica</p>
+      <p begin="00:19:58" end="00:20:02">rappresenta anch’esso un ostacolo significativo per coloro</p>
+      <p begin="00:20:02" end="00:20:05">che cercano attivamente di rilevare questa patologia.</p>
+      <p begin="00:20:05" end="00:20:08">Penso che questi possano essere i fattori. Anche per quanto riguarda</p>
+      <p begin="00:20:08" end="00:20:11">tutti gli studi che sono stati iniziati, in particolare quello che hai</p>
+      <p begin="00:20:11" end="00:20:17">menzionato prima, dipende dal contesto nel quale</p>
+      <p begin="00:20:17" end="00:20:19">vengono condotti. Se si considerano solo</p>
+      <p begin="00:20:19" end="00:20:21">i pazienti ricoverati, naturalmente la percentuale</p>
+      <p begin="00:20:21" end="00:20:24">sarà notevolmente inferiore al 24% della popolazione.</p>
+      <p begin="00:20:24" end="00:20:26">Se si considera l’assistenza primaria, secondaria e terziaria,</p>
+      <p begin="00:20:26" end="00:20:29">a seconda del motivo per il quale le persone si recano dal medico,</p>
+      <p begin="00:20:29" end="00:20:32">la percentuale potrebbe essere altamente variabile.</p>
+      <p begin="00:20:32" end="00:20:35">OK. Vorrei parlare un po’ della stratificazione del rischio,</p>
+      <p begin="00:20:35" end="00:20:39">che cos’è, perché è importante</p>
+      <p begin="00:20:39" end="00:20:43">e come dovrebbe essere fatta. La prima cosa da dire è che dobbiamo</p>
+      <p begin="00:20:43" end="00:20:47">iniziare questo processo individuando chi è a rischio di malattia epatica.</p>
+      <p begin="00:20:47" end="00:20:49">E questo ci riporta a ciò di cui abbiamo parlato</p>
+      <p begin="00:20:49" end="00:20:52">circa gli aspetti della sindrome metabolica. </p>
+      <p begin="00:20:52" end="00:20:54">Maggiore è il numero di fattori presentati da un individuo,</p>
+      <p begin="00:20:54" end="00:20:57">maggiore sarà il rischio a cui è esposto. Dobbiamo inoltre pensare</p>
+      <p begin="00:20:57" end="00:21:01">ad escludere altre patologie. Attualmente, la diagnosi di steatosi epatica</p>
+      <p begin="00:21:01" end="00:21:04">viene fatta per esclusione, quindi è importante escludere l’epatite virale,</p>
+      <p begin="00:21:04" end="00:21:08">l’epatite autoimmune, ecc. Questo è un passaggio</p>
+      <p begin="00:21:08" end="00:21:11">fondamentale della diagnosi. In terzo luogo, dobbiamo determinare</p>
+      <p begin="00:21:11" end="00:21:14">la gravità della malattia, una volta stabilita la diagnosi.</p>
+      <p begin="00:21:14" end="00:21:19">Elisabetta, nel contesto dell’assistenza primaria,</p>
+      <p begin="00:21:19" end="00:21:23">nell’ambito della comunità, come stratificheresti</p>
+      <p begin="00:21:23" end="00:21:26">i soggetti in base al rischio? Esistono metodi non invasivi</p>
+      <p begin="00:21:26" end="00:21:28">che potrebbero essere utilizzati?</p>
+      <p begin="00:21:28" end="00:21:33">Innanzitutto, la stratificazione per la NAFLD</p>
+      <p begin="00:21:33" end="00:21:36">nella popolazione totale non è raccomandata nelle linee guida</p>
+      <p begin="00:21:36" end="00:21:40">per la pratica clinica. È raccomandata nella popolazione</p>
+      <p begin="00:21:40" end="00:21:44">ad alto rischio, ovvero nei soggetti affetti da diabete di tipo 2,</p>
+      <p begin="00:21:44" end="00:21:48">con sindrome metabolica conclamata, possibilmente dopo i 45 anni.</p>
+      <p begin="00:21:48" end="00:21:52">Questo è quanto stabiliscono le linee guida europee. Poi, una volta</p>
+      <p begin="00:21:52" end="00:21:56">eseguito lo screening per la NAFLD, si possono</p>
+      <p begin="00:21:56" end="00:22:00">identificare i soggetti con NASH, che rappresenta la vera patologia</p>
+      <p begin="00:22:00" end="00:22:04">epatica progressiva, e in particolare è necessario stratificare</p>
+      <p begin="00:22:04" end="00:22:07">coloro che sono a rischio di sviluppare fibrosi grave.</p>
+      <p begin="00:22:07" end="00:22:11">Quindi, gran parte dei test epatici non invasivi di cui disponiamo</p>
+      <p begin="00:22:11" end="00:22:17">al momento sono concepiti per identificare o escludere la fibrosi</p>
+      <p begin="00:22:17" end="00:22:21">epatica significativa, ovvero F3, F4, pre-cirrosi o</p>
+      <p begin="00:22:21" end="00:22:25">cirrosi. Esistono diversi livelli di test </p>
+      <p begin="00:22:25" end="00:22:29">non invasivi che possiamo utilizzare. I medici di medicina generale</p>
+      <p begin="00:22:29" end="00:22:33">o gli specialisti di altri campi come endocrinologi o</p>
+      <p begin="00:22:33" end="00:22:37">cardiologi possono utilizzare, per esempio, il punteggio di fibrosi NAFLD,</p>
+      <p begin="00:22:37" end="00:22:42">che si basa su età, AST, ALT, conta piastrinica, IMC,</p>
+      <p begin="00:22:42" end="00:22:47">presenza di alterata glicemia a digiuno, oppure FIB-4,</p>
+      <p begin="00:22:47" end="00:22:52">età, AST, ATL e conta piastrinica. Questi sono i due punteggi</p>
+      <p begin="00:22:52" end="00:22:55">maggiormente raccomandati. Esiste anche</p>
+      <p begin="00:22:55" end="00:22:59">un secondo livello di test, come ad esempio il test ELF,</p>
+      <p begin="00:22:59" end="00:23:04">che combina componenti del rimodellamento</p>
+      <p begin="00:23:04" end="00:23:07">del collagene che si verifica nel corso della fibrosi.</p>
+      <p begin="00:23:07" end="00:23:12">Un buon esempio di screening nell’ambito dell’assistenza primaria è il Camden</p>
+      <p begin="00:23:12" end="00:23:16">and Islington NAFLD Pathway, che è stato condotto</p>
+      <p begin="00:23:16" end="00:23:20">nel Regno Unito. Tutti i medici di medicina generale sono stati invitati</p>
+      <p begin="00:23:20" end="00:23:24">a sottoporre a screening i propri pazienti con steatosi epatica all’ecografia,</p>
+      <p begin="00:23:24" end="00:23:28">ALT elevata dopo esclusione del consumo di alcol,</p>
+      <p begin="00:23:28" end="00:23:30">consumo di alcol significativo</p>
+      <p begin="00:23:30" end="00:23:33">e altre cause di malattia epatica cronica.</p>
+      <p begin="00:23:33" end="00:23:38">Il primo tipo di screening è stato effettuato in base al FIB-4. Il FIB-4</p>
+      <p begin="00:23:38" end="00:23:41">definisce due soglie, una inferiore e una superiore. Se i pazienti ricadevano</p>
+      <p begin="00:23:41" end="00:23:46">al di sotto della soglia inferiore, non venivano inviati</p>
+      <p begin="00:23:46" end="00:23:49">da un epatologo. Se ricadevano al di sopra della soglia superiore,</p>
+      <p begin="00:23:49" end="00:23:52">venivano inviati da un epatologo a causa</p>
+      <p begin="00:23:52" end="00:23:55">del maggior rischio di fibrosi epatica significativa.</p>
+      <p begin="00:23:55" end="00:23:59">Il problema di tutti questi test non invasivi è che </p>
+      <p begin="00:23:59" end="00:24:04">presentano una zona grigia, una zona non definita. Pertanto, questa parte</p>
+      <p begin="00:24:04" end="00:24:08">di pazienti che ricadeva nella zona grigia veniva sottoposta a</p>
+      <p begin="00:24:08" end="00:24:12">un test di secondo livello, ovvero il test ELF e, ancora una volta,</p>
+      <p begin="00:24:12" end="00:24:15">ristratificata in base al rischio di fibrosi significativa.</p>
+      <p begin="00:24:15" end="00:24:19">Questo metodo si è dimostrato efficace, poiché il numero di pazienti</p>
+      <p begin="00:24:19" end="00:24:26">con fibrosi grave inviati dallo specialista è passato dall’8%</p>
+      <p begin="00:24:26" end="00:24:33">al 30%, mentre la percentuale dei pazienti cirrotici è passata dal 6% al 14%.</p>
+      <p begin="00:24:33" end="00:24:36">Va bene. Ritengo che uno degli aspetti fondamentali</p>
+      <p begin="00:24:36" end="00:24:39">di questi test non invasivi è che hanno tutti un elevato</p>
+      <p begin="00:24:39" end="00:24:41">valore predittivo negativo. Ovvero, sono molto efficaci nell’escludere </p>
+      <p begin="00:24:41" end="00:24:45">la malattia avanzata, ma sono meno efficaci quando si tratta di includerla.</p>
+      <p begin="00:24:45" end="00:24:49">Quindi, anche in questo esempio, si è avuto un grande miglioramento per quanto</p>
+      <p begin="00:24:49" end="00:24:52">riguarda le pratiche di invio allo specialista per la malattia avanzata,</p>
+      <p begin="00:24:52" end="00:24:55">tuttavia, il 70% dei soggetti inviati non presentava</p>
+      <p begin="00:24:55" end="00:24:58">patologia avanzata. Quindi è un’area in cui c’è ancora molto</p>
+      <p begin="00:24:58" end="00:25:02">lavoro da fare, ma il messaggio fondamentale è che si può</p>
+      <p begin="00:25:02" end="00:25:04">perdere molto tempo a cercare di capire quale sia il test</p>
+      <p begin="00:25:04" end="00:25:07">corretto da effettuare. Io ritengo che vada bene qualsiasi test,</p>
+      <p begin="00:25:07" end="00:25:09">purché effettuato in maniera coerente. </p>
+      <p begin="00:25:09" end="00:25:11">Meglio di niente, dal momento che prima lo standard di cura era</p>
+      <p begin="00:25:11" end="00:25:15">"invia chiunque, non inviare nessuno o invia a caso".</p>
+      <p begin="00:25:15" end="00:25:16">Certo, assolutamente.</p>
+      <p begin="00:25:16" end="00:25:20">Anche al di là di questo, penso che il messaggio più importante </p>
+      <p begin="00:25:20" end="00:25:22">da trasmettere al pubblico generale e ai medici</p>
+      <p begin="00:25:22" end="00:25:26">di medicina generale è che, anche prima di effettuare</p>
+      <p begin="00:25:26" end="00:25:29">un determinato test, è necessario riconoscere </p>
+      <p begin="00:25:29" end="00:25:32">che la presenza di fattori di rischio metabolici pone il fegato</p>
+      <p begin="00:25:32" end="00:25:36">a rischio. Dopodiché, bisogna chiedersi</p>
+      <p begin="00:25:36" end="00:25:39">se il paziente è sovrappeso o diabetico o soffre </p>
+      <p begin="00:25:39" end="00:25:42">di dislipidemia o ipertensione o presenta un’associazione</p>
+      <p begin="00:25:42" end="00:25:45">di queste condizioni; in tal caso, occorre controllare il fegato.</p>
+      <p begin="00:25:45" end="00:25:47">A quel punto, si è liberi di effettuare il test di cui ci si fida.</p>
+      <p begin="00:25:47" end="00:25:49">Quando un paziente viene identificato nell’ambito dell’assistenza primaria</p>
+      <p begin="00:25:49" end="00:25:54">e inviato da te, Vlad, come procedi per la valutazione?</p>
+      <p begin="00:25:54" end="00:25:56">Tutti i pazienti devono essere sottoposti a biopsia epatica</p>
+      <p begin="00:25:56" end="00:25:57">o possiamo lavorare in modo più consapevole?</p>
+      <p begin="00:25:57" end="00:26:02">Sì, in pratica ciò che si cerca di fare è di capire </p>
+      <p begin="00:26:02" end="00:26:05">se il paziente è a rischio di progressione verso la cirrosi.</p>
+      <p begin="00:26:05" end="00:26:09">Tale rischio viene principalmente calcolato in base allo stadio</p>
+      <p begin="00:26:09" end="00:26:13">della fibrosi, ma anche all’attività della malattia. </p>
+      <p begin="00:26:13" end="00:26:17">Talvolta è sufficiente valutare lo stadio</p>
+      <p begin="00:26:17" end="00:26:20">della fibrosi, altre volte è necessario spingersi leggermente oltre</p>
+      <p begin="00:26:20" end="00:26:24">e cercare anche di comprendere se la NASH stessa</p>
+      <p begin="00:26:24" end="00:26:27">sia molto attiva o meno. La prima cosa, naturalmente,</p>
+      <p begin="00:26:27" end="00:26:31">è accertarsi che non esistano altre malattie croniche</p>
+      <p begin="00:26:31" end="00:26:34">e questo ci riporta al problema dell’alcol.</p>
+      <p begin="00:26:34" end="00:26:36">È indispensabile capire bene </p>
+      <p begin="00:26:36" end="00:26:39">se il consumo di alcol metta il paziente </p>
+      <p begin="00:26:39" end="00:26:41">maggiormente a rischio rispetto a quanto </p>
+      <p begin="00:26:41" end="00:26:43">non sia già a causa della sindrome metabolica.</p>
+      <p begin="00:26:43" end="00:26:47">Il secondo punto è quello di cercare di ottenere una stima non invasiva</p>
+      <p begin="00:26:47" end="00:26:51">del grado di fibrosi. Si utilizzano diversi test,</p>
+      <p begin="00:26:51" end="00:26:54">che sono più specialistici, non sono quelli che abbiamo</p>
+      <p begin="00:26:54" end="00:26:56">menzionato in precedenza, sono più specifici.</p>
+      <p begin="00:26:56" end="00:27:00">Il problema è che non basta un singolo test, quindi idealmente</p>
+      <p begin="00:27:00" end="00:27:02">bisognerebbe combinare almeno due test che siano</p>
+      <p begin="00:27:02" end="00:27:05">di natura diversa con biomarker biofisici come la</p>
+      <p begin="00:27:05" end="00:27:09">rigidità epatica. A questo punto, il problema diventa l’interpretazione</p>
+      <p begin="00:27:09" end="00:27:11">dei risultati. A volte sono chiarissimi, a volte </p>
+      <p begin="00:27:11" end="00:27:15">è necessario capire perché esistono delle discordanze o meno.</p>
+      <p begin="00:27:15" end="00:27:22">Una volta fatto questo, in base al profilo del paziente,</p>
+      <p begin="00:27:22" end="00:27:26">potrebbe essere il caso di aspettare un po’ di tempo</p>
+      <p begin="00:27:26" end="00:27:28">per vedere se il paziente è in grado di implementare le modifiche della dieta</p>
+      <p begin="00:27:28" end="00:27:31">e dello stile di vita e verificare se queste misure hanno successo.</p>
+      <p begin="00:27:31" end="00:27:33">Alcuni soggetti giovani che non hanno la malattia in stadio avanzato</p>
+      <p begin="00:27:33" end="00:27:35">potrebbero non sapere affatto di esserne affetti. Potrebbero poi</p>
+      <p begin="00:27:35" end="00:27:38">ritornare dopo 4 o 6 mesi e aver già iniziato</p>
+      <p begin="00:27:38" end="00:27:41">a perdere peso e a presentare un miglioramento di alcuni di questi parametri.</p>
+      <p begin="00:27:41" end="00:27:44">In tal caso, la biopsia epatica non è necessaria. Viceversa, soggetti malati</p>
+      <p begin="00:27:44" end="00:27:47">da molti anni potrebbero aver già tentato di ottenere questi risultati</p>
+      <p begin="00:27:47" end="00:27:51">molte volte senza riuscirci. A questo punto, bisogna</p>
+      <p begin="00:27:51" end="00:27:54">chiedersi se la biopsia potrebbe aiutare a comprendere</p>
+      <p begin="00:27:54" end="00:27:58">meglio il rischio. Aiuta il paziente a essere maggiormente</p>
+      <p begin="00:27:58" end="00:28:01">consapevole delle conseguenze se non introduce qualche cambiamento?</p>
+      <p begin="00:28:01" end="00:28:05">Inoltre, aiuta il paziente a usufruire di</p>
+      <p begin="00:28:05" end="00:28:07">questi nuovi farmaci che sono attualmente in via di sviluppo?</p>
+      <p begin="00:28:07" end="00:28:10">È in questi casi che si esegue una biopsia epatica. Naturalmente,</p>
+      <p begin="00:28:10" end="00:28:13">quando si decide di procedere con la biopsia, occorre prendere in considerazione</p>
+      <p begin="00:28:13" end="00:28:16">età, comorbilità e trattamenti che potrebbero introdurre dei rischi</p>
+      <p begin="00:28:16" end="00:28:21">nella procedura. È una questione molto complessa</p>
+      <p begin="00:28:21" end="00:28:23">e inoltre bisogna convincere il paziente a</p>
+      <p begin="00:28:23" end="00:28:28">sottoporsi a questa procedura, che può essere dolorosa.</p>
+      <p begin="00:28:28" end="00:28:31">OK, grazie. Naturalmente ci sono diversi nuovi</p>
+      <p begin="00:28:31" end="00:28:34">biomarker in via di sviluppo. Vari di noi qui a questo</p>
+      <p begin="00:28:34" end="00:28:36">tavolo sono coinvolti in questo processo, per esempio nel consorzio LITMUS,</p>
+      <p begin="00:28:36" end="00:28:40">sostenuto dall’UE, che sta sviluppando e validando nuovi biomarker.</p>
+      <p begin="00:28:40" end="00:28:44">Esiste anche una gamma di strumenti, come il procollagene C3</p>
+      <p begin="00:28:44" end="00:28:48">o l’elastografia a risonanza magnetica. Al momento sono</p>
+      <p begin="00:28:48" end="00:28:50">più che altro strumenti di ricerca, soprattutto nell’ambito degli studi clinici.</p>
+      <p begin="00:28:50" end="00:28:53">Sarà comunque interessante verificare se sono efficaci</p>
+      <p begin="00:28:53" end="00:28:57">e se possono essere utili nella pratica clinica di routine.</p>
+      <p begin="00:28:57" end="00:29:01">In definitiva, al momento, non esiste alcun esame</p>
+      <p begin="00:29:01" end="00:29:06">valido non invasivo per diagnosticare specificamente la steatoepatite.</p>
+      <p begin="00:29:06" end="00:29:08">Siamo in grado di identificare efficacemente la fibrosi avanzata,</p>
+      <p begin="00:29:08" end="00:29:11">possiamo identificare bene la steatosi, ma la biopsia ha ancora</p>
+      <p begin="00:29:11" end="00:29:15">la sua utilità e in tal caso si tratta di come</p>
+      <p begin="00:29:15" end="00:29:18">eseguirla al meglio. A mio avviso, la tua spiegazione </p>
+      <p begin="00:29:18" end="00:29:20">è assolutamente ragionevole.</p>
+      <p begin="00:29:20" end="00:29:24">Attualmente non esistono farmaci approvati per il trattamento della steatosi</p>
+      <p begin="00:29:24" end="00:29:27">epatica, ma ciò non significa che non abbiamo opzioni a disposizione.</p>
+      <p begin="00:29:27" end="00:29:31">Gli interventi sullo stile di vita sono fondamentali in questi casi.</p>
+      <p begin="00:29:31" end="00:29:33">Dobbiamo collaborare con i nostri pazienti per aiutarli a seguire</p>
+      <p begin="00:29:33" end="00:29:36">una dieta e a compiere esercizio fisico per perdere peso,</p>
+      <p begin="00:29:36" end="00:29:39">e valide evidenze indicano che il calo ponderale può migliorare l’aspetto</p>
+      <p begin="00:29:39" end="00:29:43">istologico dei pazienti con steatosi epatica. La cosa fondamentale, e va tenuto</p>
+      <p begin="00:29:43" end="00:29:45">presente ciò che abbiamo già detto sul rischio cardiovascolare, </p>
+      <p begin="00:29:45" end="00:29:49">è che è assolutamente cruciale migliorare il profilo di rischio</p>
+      <p begin="00:29:49" end="00:29:52">cardiovascolare dei nostri pazienti diabetici, per ottenere</p>
+      <p begin="00:29:52" end="00:29:55">un buon controllo del diabete e nel contempo trattare efficacemente </p>
+      <p begin="00:29:55" end="00:30:00">la dislipidemia. Sono ancora molte le questioni da chiarire</p>
+      <p begin="00:30:00" end="00:30:04">in relazione a quale sia il modo più efficace per ottenere</p>
+      <p begin="00:30:04" end="00:30:08">un calo ponderale. Elisabetta, potresti brevemente darci</p>
+      <p begin="00:30:08" end="00:30:10">qualche informazione su cosa consigliare</p>
+      <p begin="00:30:10" end="00:30:12">ai pazienti e quali sono gli obiettivi da perseguire</p>
+      <p begin="00:30:12" end="00:30:14">per quanto riguarda la perdita di peso?</p>
+      <p begin="00:30:14" end="00:30:19">Sono molte le diete che possono essere seguite,</p>
+      <p begin="00:30:19" end="00:30:22">ma quella che è risultata maggiormente efficace, in particolare</p>
+      <p begin="00:30:22" end="00:30:26">per quanto riguarda il rischio cardiovascolare, è la dieta mediterranea.</p>
+      <p begin="00:30:26" end="00:30:30">Sfortunatamente, abbiamo perso il concetto di dieta mediterranea,</p>
+      <p begin="00:30:30" end="00:30:34">che non è costituita solo da pizza e gelato, </p>
+      <p begin="00:30:34" end="00:30:40">ma è una dieta molto più complessa, ricca di alimenti di origine vegetale.</p>
+      <p begin="00:30:40" end="00:30:44">Il 40% delle calorie proviene da carboidrati complessi.</p>
+      <p begin="00:30:44" end="00:30:48">Prevede una piccola quantità di carne rossa, </p>
+      <p begin="00:30:48" end="00:30:53">una maggiore quantità di carne bianca e un basso apporto di sale e fruttosio.</p>
+      <p begin="00:30:53" end="00:30:57">L’unico fruttosio presente nella dieta mediterranea proviene</p>
+      <p begin="00:30:57" end="00:31:01">dalla frutta. Il fruttosio è certamente uno degli elementi </p>
+      <p begin="00:31:01" end="00:31:08">più nocivi che viene ingerito soprattutto</p>
+      <p begin="00:31:08" end="00:31:13">da adolescenti e bambini e che si trova nelle bibite, nei cibi industriali,</p>
+      <p begin="00:31:13" end="00:31:18">nel pane di produzione industriale e così via. In definitiva, però, ciò che</p>
+      <p begin="00:31:18" end="00:31:22">importa realmente è la percentuale di calo ponderale che si può ottenere.</p>
+      <p begin="00:31:22" end="00:31:28">Quindi cerchiamo in qualche modo di personalizzare la dieta</p>
+      <p begin="00:31:28" end="00:31:33">in base al paziente. La dieta che funziona meglio</p>
+      <p begin="00:31:33" end="00:31:36">è quella più conveniente, perché il paziente può</p>
+      <p begin="00:31:36" end="00:31:41">seguirla a lungo. Naturalmente, anche l’attività fisica </p>
+      <p begin="00:31:41" end="00:31:45">è molto importante, perché durante la dieta si perdono grassi,</p>
+      <p begin="00:31:45" end="00:31:50">ma anche massa muscolare, mentre, se si svolge attività fisica,</p>
+      <p begin="00:31:50" end="00:31:53">si perdono solo grassi preservando i muscoli.</p>
+      <p begin="00:31:53" end="00:31:58">Inoltre, il rischio di riacquistare il peso perso quando si interrompe la dieta </p>
+      <p begin="00:31:58" end="00:32:02">è minore rispetto a coloro che seguono solo la dieta. </p>
+      <p begin="00:32:02" end="00:32:06">Pensando agli agenti farmacologici,</p>
+      <p begin="00:32:06" end="00:32:09">al di là delle modifiche dello stile di vita, una delle cose</p>
+      <p begin="00:32:09" end="00:32:12">che spesso preoccupa, in particolare quando si ha a che fare</p>
+      <p begin="00:32:12" end="00:32:14">con un soggetto con diagnosi di malattia epatica,</p>
+      <p begin="00:32:14" end="00:32:17">probabilmente con valori epatici alterati,</p>
+      <p begin="00:32:17" end="00:32:22">livelli di ALT e AST elevati, è iniziare in sicurezza.</p>
+      <p begin="00:32:22" end="00:32:25">Questo è un punto estremamente importante,</p>
+      <p begin="00:32:25" end="00:32:29">perché vedo che i nostri pazienti affetti da NAFLD</p>
+      <p begin="00:32:29" end="00:32:33">sono sottotrattati rispetto al rischio cardiovascolare,</p>
+      <p begin="00:32:33" end="00:32:37">in particolare i pazienti diabetici, ma le statine sono sicure.</p>
+      <p begin="00:32:37" end="00:32:42">Si dice che le statine producono fumo, non fuoco. Intendo dire</p>
+      <p begin="00:32:42" end="00:32:49">che le reazioni con esiti funesti sono davvero molto basse. L’aumento di AST</p>
+      <p begin="00:32:49" end="00:32:52">e ALT che si può osservare durante il primo mese</p>
+      <p begin="00:32:52" end="00:32:56">di impiego delle statine non è un indice di malattia epatica;</p>
+      <p begin="00:32:56" end="00:32:59">in genere i valori si abbassano spontaneamente dopo al massimo 6 mesi</p>
+      <p begin="00:32:59" end="00:33:04">dell’avvio della terapia con statine. Generalmente, consigliamo di ridurre</p>
+      <p begin="00:33:04" end="00:33:13">gradualmente il dosaggio delle statine in caso di aumento dei livelli di AST o</p>
+      <p begin="00:33:13" end="00:33:18">ALT di oltre 2,5 volte rispetto a quelli basali. Comunque, se non si impiegano </p>
+      <p begin="00:33:18" end="00:33:21">le statine, si può far ricorso all’ezetimibe o ad altri farmaci.</p>
+      <p begin="00:33:21" end="00:33:24">Quindi, abbiamo diverse opzioni con i farmaci esistenti.</p>
+      <p begin="00:33:24" end="00:33:27">Questo è importante. Attualmente nella pipeline di sviluppo, </p>
+      <p begin="00:33:27" end="00:33:31">Vlad, sono in fase di sperimentazione molti bersagli terapeutici,</p>
+      <p begin="00:33:31" end="00:33:36">ti pregherei di farci una breve panoramica in proposito.</p>
+      <p begin="00:33:36" end="00:33:39">Cosa abbiamo nella pipeline in termini di fase 3?</p>
+      <p begin="00:33:39" end="00:33:42">Attualmente abbiamo diversi farmaci in fase 3 avanzata.</p>
+      <p begin="00:33:42" end="00:33:47">Per uno di questi sono già stati riportati i risultati</p>
+      <p begin="00:33:47" end="00:33:50">di fase 3 e si tratta dell’acido obeticolico. Poi abbiamo </p>
+      <p begin="00:33:50" end="00:33:55">elafibranor che, a differenza dell’acido obeticolico che è un agonista di FXR,</p>
+      <p begin="00:33:55" end="00:33:59">è un duplice agonista di PPAR, e i risultati</p>
+      <p begin="00:33:59" end="00:34:02">saranno presentati molto presto. Abbiamo poi altri tre studi</p>
+      <p begin="00:34:02" end="00:34:06">di fase 3 attualmente in corso, si tratta di ampi studi globali di fase 3, </p>
+      <p begin="00:34:06" end="00:34:09">internazionali, con oltre 2000 pazienti.</p>
+      <p begin="00:34:09" end="00:34:14">Uno di questi sta valutando resmetirom,</p>
+      <p begin="00:34:14" end="00:34:17">un farmaco tiromimetico. Un altro sta valutando aramchol,</p>
+      <p begin="00:34:17" end="00:34:21">una molecola ibrida tra un acido biliare e un lipide.</p>
+      <p begin="00:34:21" end="00:34:23">Il terzo sta valutando cenicriviroc,</p>
+      <p begin="00:34:23" end="00:34:27">che è un antagonista del recettore chemochinico CCR2/CCR5.</p>
+      <p begin="00:34:27" end="00:34:33">Questi vari agenti quindi sono diretti</p>
+      <p begin="00:34:33" end="00:34:37">contro diversi aspetti della malattia e la maggior parte di essi</p>
+      <p begin="00:34:37" end="00:34:43">ha una certa azione metabolica e una certa azione antinfiammatoria.</p>
+      <p begin="00:34:43" end="00:34:45">E ne esistono altri che hanno un’azione più antifibrotica,</p>
+      <p begin="00:34:45" end="00:34:50">come cenicriviroc. Per questi, sarà estremamente</p>
+      <p begin="00:34:50" end="00:34:52">interessante conoscere l’efficacia e avremo i risultati a breve.</p>
+      <p begin="00:34:52" end="00:34:55">È molto importante che tutti prendano parte</p>
+      <p begin="00:34:55" end="00:34:58">a questi studi e che convinciamo i pazienti</p>
+      <p begin="00:34:58" end="00:35:05">che possono offrire un vantaggio e un contributo significativo</p>
+      <p begin="00:35:05" end="00:35:09">alla ricerca se decidono di prendere parte a questi studi</p>
+      <p begin="00:35:09" end="00:35:12">e che non vengono trattati come cavie,</p>
+      <p begin="00:35:12" end="00:35:14">ma contribuiscono semplicemente al progresso generale della medicina.</p>
+      <p begin="00:35:14" end="00:35:17">Certo, e, come dici tu, questo è un periodo</p>
+      <p begin="00:35:17" end="00:35:20">molto interessante. Uno di questi studi è già stato presentato</p>
+      <p begin="00:35:20" end="00:35:23">e ha fornito risultati positivi. Nello studio REGENERATE</p>
+      <p begin="00:35:23" end="00:35:27">sull’acido obeticolico vi erano 2 endpoint primari.</p>
+      <p begin="00:35:27" end="00:35:30">Uno era associato alla risoluzione della NASH,</p>
+      <p begin="00:35:30" end="00:35:33">che purtroppo non è stato raggiunto. Tuttavia, aspetto importante,</p>
+      <p begin="00:35:33" end="00:35:36">sono stati ottenuti dati circa l’altro endpoint primario,</p>
+      <p begin="00:35:36" end="00:35:40">nell’analisi intention-to-treat, che hanno dimostrato un miglioramento</p>
+      <p begin="00:35:40" end="00:35:43">di almeno uno stadio della fibrosi senza peggioramento</p>
+      <p begin="00:35:43" end="00:35:46">della steatoepatite nei pazienti trattati affetti da NASH.</p>
+      <p begin="00:35:46" end="00:35:49">Stiamo iniziando a vedere che in questa patologia</p>
+      <p begin="00:35:49" end="00:35:53">le terapie farmacologiche saranno di beneficio.</p>
+      <p begin="00:35:53" end="00:35:55">Si tratta solo di vedere quali di queste</p>
+      <p begin="00:35:55" end="00:35:57">saranno approvate.</p>
+      <p begin="00:35:57" end="00:36:00">Sì. Ciò che è importante capire è che </p>
+      <p begin="00:36:00" end="00:36:02">questi due esiti a cui hai accennato sono probabilmente</p>
+      <p begin="00:36:02" end="00:36:06">legati alla progressione della malattia. Ora è importante</p>
+      <p begin="00:36:06" end="00:36:10">che alcuni di questi sono stati controllati</p>
+      <p begin="00:36:10" end="00:36:12">nel breve periodo. Sarà importante verificare</p>
+      <p begin="00:36:12" end="00:36:15">se ciò si tradurrà in una riduzione dello sviluppo di cirrosi.</p>
+      <p begin="00:36:15" end="00:36:17">Quindi è importante che questi studi vengano portati a termine.</p>
+      <p begin="00:36:17" end="00:36:21">Assolutamente. Dimmi, ci troviamo in una situazione in cui</p>
+      <p begin="00:36:21" end="00:36:25">forse l’anno prossimo saranno disponibili dei farmaci approvati</p>
+      <p begin="00:36:25" end="00:36:28">per la steatosi epatica. In che modo ciò cambierà la tua pratica clinica?</p>
+      <p begin="00:36:28" end="00:36:31">Cambierà soprattutto rispetto all’invio dallo specialista, perché attualmente</p>
+      <p begin="00:36:31" end="00:36:36">i medici di medicina generale non inviano i pazienti,</p>
+      <p begin="00:36:36" end="00:36:38">anche perché non esistono trattamenti specifici.</p>
+      <p begin="00:36:38" end="00:36:40">Quindi dicono: "Perché dovrei inviare il paziente a un epatologo?</p>
+      <p begin="00:36:40" end="00:36:43">Cosa potrebbe fare di diverso da ciò che facciamo noi?"</p>
+      <p begin="00:36:43" end="00:36:44">Questa situazione cambierà.</p>
+      <p begin="00:36:44" end="00:36:45">Assolutamente.</p>
+      <p begin="00:36:45" end="00:36:46">Sì, cambierà.</p>
+      <p begin="00:36:46" end="00:36:50">Per concludere, al momento </p>
+      <p begin="00:36:50" end="00:36:52">la steatosi epatica è una condizione ad alta prevalenza.</p>
+      <p begin="00:36:52" end="00:36:55">Sappiamo che può avere conseguenze importanti a livello epatico</p>
+      <p begin="00:36:55" end="00:36:58">e a livello cardiovascolare, pertanto il nostro compito in quanto</p>
+      <p begin="00:36:58" end="00:37:03">epatologi è quello di affrontare tutti questi problemi. Dobbiamo intervenire</p>
+      <p begin="00:37:03" end="00:37:06">sulla causa trattando l’obesità. Dobbiamo intervenire</p>
+      <p begin="00:37:06" end="00:37:08">sul rischio cardiovascolare trattando la dislipidemia</p>
+      <p begin="00:37:08" end="00:37:12">e il diabete. Dobbiamo stratificare i pazienti in base al rischio</p>
+      <p begin="00:37:12" end="00:37:15">e concentrare le cure su quelli che sono a maggior rischio</p>
+      <p begin="00:37:15" end="00:37:18">di esiti negativi. Disponiamo già di alcuni concetti terapeutici di base,</p>
+      <p begin="00:37:18" end="00:37:21">ma ritengo che uno degli aspetti più entusiasmanti</p>
+      <p begin="00:37:21" end="00:37:24">sia senza dubbio che nei prossimi anni il nostro arsenale</p>
+      <p begin="00:37:24" end="00:37:27">si arricchirà di ulteriori terapie.</p>
+      <p begin="00:37:27" end="00:37:31">È un ottimo periodo per occuparsi di steatosi epatica. </p>
+      <p begin="00:37:31" end="00:37:34">Detto questo, desidero concludere e ringraziare te,</p>
+      <p begin="00:37:34" end="00:37:36">Elisabetta e te, Vlad, per aver partecipato a questa attività.</p>
+      <p begin="00:37:36" end="00:37:41">Inoltre, grazie anche a voi per la partecipazione e </p>
+      <p begin="00:37:41" end="00:37:44">per esservi uniti a noi in questa attività. Vi invito </p>
+      <p begin="00:37:44" end="00:37:45">a proseguire rispondendo alle domande che seguiranno </p>
+      <p begin="00:37:45" end="00:37:47">e a completate la valutazione.</p>
+    </div>
+  </body>
+</tt>

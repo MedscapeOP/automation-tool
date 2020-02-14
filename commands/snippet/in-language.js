@@ -20,7 +20,11 @@ const N = cliTools.N;
 const inLanguageHelp = `
 Generates code for in language add-ons. ${N}Use flags for components you wish to include.`;
 
-const languageChoices = _.keys(languages);
+const languageChoices = _.filter(_.keys(languages), (language) => {
+    if (language != "english") {
+        return true; 
+    }
+});
 let outputFile = function () {
     return `${infoObject.articleID}/in-language.xml`; 
 }; 
