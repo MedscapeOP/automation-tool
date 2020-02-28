@@ -82,7 +82,7 @@ function readInputFile(filepath) {
         return fs.readFileSync(filepath, 'utf8');
     } catch (e) {
         if (e.code == 'ENOENT') {
-            throw new BadInputException(`No such directory exists: "${filepath}". ${N} Be sure to create "input/article.html" file in your current directory.`);
+            throw new BadInputException(`No such directory exists: "${filepath}". ${N} Be sure to create this file in your current working directory.`);
         } else {
             throw new RandomException(`Something went wrong reading the input file!`);
         }

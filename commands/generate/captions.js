@@ -26,7 +26,8 @@ const languageChoices = _.filter(_.keys(languages), (language) => {
 });
 
 let inputFile = function () {
-    return cliTools.getInputDirectory() + '/captions/sheet001.htm';
+    // return cliTools.getInputDirectory() + '/captions/sheet001.htm';
+    return cliTools.getInputDirectory() + '/captions/captions.html';
 };
 
 let outputFiles = function () {
