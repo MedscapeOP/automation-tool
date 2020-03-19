@@ -30,6 +30,12 @@ function preClean(htmlString) {
     var titleRemoveRegex = /<title>.*<\/title>/g;
     htmlString = htmlString.replace(titleRemoveRegex, '');
     
+    var smartQuoteRegex = /&lsquo;|&rsquo;|&#8216;|&#8217;/g;
+    htmlString = htmlString.replace(smartQuoteRegex, '\'');
+
+    var smartDoubleQuoteRegex = /&ldquo;|&rdquo;|&#8220;|&#8221;/g;
+    htmlString = htmlString.replace(smartDoubleQuoteRegex, '"');
+
     const buffer = Buffer.from(htmlString, "utf16le");
     const decoder = new StringDecoder('utf16le');
     decoder.write(buffer);
