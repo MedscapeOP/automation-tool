@@ -9,8 +9,7 @@ const { StringDecoder } = require('string_decoder');
 Utility functions 
 */
 function generateXMLWrapper(language, bodyTags) {
-    let wrapper = 
-`
+    let wrapper = `
 <?xml version="1.0" encoding="UTF-8"?>
 <tt xml:lang="${language.xmlLang}" xmlns="http://www.w3.org/ns/ttml" xmlns:tts="http://www.w3.org/ns/ttml#styling">
   <body>
@@ -20,7 +19,7 @@ function generateXMLWrapper(language, bodyTags) {
   </body>
 </tt>
 `
-    return wrapper;
+    return wrapper.trim();
 }
 
 function preClean(htmlString) {
