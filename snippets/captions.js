@@ -48,7 +48,7 @@ function preClean(htmlString) {
 Main Functions 
 */
 const timestampRegex = /(\d\d:\d\d:\d\d)(?:\s){0,}\n+(\d\d:\d\d:\d\d)/g
-const timestampRegexShort = /(\d\d:\d\d:\d\d)/g
+const timestampRegexShort = /(\d\d?:\d\d:\d\d)/g
 function buildVttFile (htmlString, articleID, language) {
     let cleanedString, fileName;
     fileName = `${articleID}_${language.videoConfigSuffix}_cc_DFXP.vtt`
@@ -58,7 +58,7 @@ function buildVttFile (htmlString, articleID, language) {
     // var altTimestampRegex = /(\d\d:\d\d:\d\d)(?:\s){0,}\n+\s+?(\d\d:\d\d:\d\d)/g
     cleanedString = cleanedString.replace(timestampRegex, "$1.000 --> $2.000 align:middle line:90%")
     var matches = cleanedString.match(/.*/g);
-
+    console.log('matches: ', matches);
 
     var outputString = ""
     var isTimeStamp = false;
@@ -107,7 +107,9 @@ function buildXmlFile (htmlString, articleID, language) {
             outputString += `<p begin="${matches[i].trim()}" end="${matches[i+1].trim()}">`
             i++; 
         } else if (!isTimeStamp && !nextIsTimeStamp) {
-            outputString += `${matches[i].trim()} ${matches[i+1].trim()}</p>\n`
+            console.log('matches[i]: ', matches[i]);
+            console.log('matches[i]: ', matches[i+1]);
+            outputString += `${matches[i].trim()} ${matches[i+1] ? matches[i+1].trim() : ''}</p>\n`
             i++;
         } else if (!isTimeStamp && nextIsTimeStamp) {
             outputString += `${matches[i].trim()}</p>\n`            
