@@ -606,12 +606,12 @@ function learningObjectives(textBlock, removeFluff=true) {
     removeRegExp = /.*Slide #.*/g;
     textBlock = textBlock.replace(removeRegExp, '');
 
-    removeRegExp = /.*Question type answering this objective.*/g;
+    removeRegExp = /.*Question type (answering|assessing) this objective.*/g;
     textBlock = textBlock.replace(removeRegExp, '');
-
-    removeRegExp = /.*Question type assessing this objective.*/g;
+    
+    removeRegExp = /.*Learning Needs.*/g;
     textBlock = textBlock.replace(removeRegExp, '');
-
+    
     removeRegExp = /.*Upon completion of this activity.*/g;
     textBlock = textBlock.replace(removeRegExp, '');
 
@@ -622,7 +622,11 @@ function learningObjectives(textBlock, removeFluff=true) {
     removeRegExp = /<p>\d+.*|<p>(?:\d+\,){1,}.*|.*\d+\-\d+.*/g;
     textBlock = textBlock.replace(removeRegExp, '');
 
+    // BULLET DOT
     removeRegExp = /&#8226;/g;
+    textBlock = textBlock.replace(removeRegExp, '');
+
+    removeRegExp = /<p>N\/A<\/p>/ig
     textBlock = textBlock.replace(removeRegExp, '');
 
     removeRegExp = /<p>CME evaluation<\/p>/g;
